@@ -1,0 +1,243 @@
+id,name,website,latitude,longitude
+1,SpringHill Suites Baltimore Downtown Convention Center Area,https://www.marriott.com/bwisl,39.290552,-76.621216
+2,Comfort Inn & Suites,https://www.choicehotels.com/maryland/baltimore/comfort-inn-hotels/md277,39.287981,-76.612415
+3,Baltimore Marriott Inner Harbor Camden Yards,https://www.marriott.com/en-us/hotels/bwiih-baltimore-marriott-inner-harbor-at-camden-yards/overview/,39.286952,-76.621437
+4,Residence Inn Marriott,https://www.marriott.com/bwihb,39.28865,-76.613239
+5,Lord Baltimore Hotel,https://www.lordbaltimorehotel.com/,39.289748,-76.616122
+6,Days Inn,https://www.wyndhamhotels.com/days-inn/baltimore-maryland/days-inn-baltimore-inner-harbor-hotel/overview,39.287218,-76.618022
+7,Hampton Inn,https://www.hilton.com/en/hotels/balcyhx-hampton-baltimore-downtown-convention-center/,39.28548,-76.623187
+8,Sheraton Inner Harbor Hotel,https://www.marriott.com/en-us/hotels/bwiis-sheraton-inner-harbor-hotel/overview/,39.284599,-76.615401
+9,Kimpton Hotel Monaco Baltimore,https://www.monaco-baltimore.com/,39.2898,-76.61559
+10,Hyatt Regency Baltimore Inner Harbor,https://baltimore.regency.hyatt.com/,39.284912,-76.614106
+11,The Royal Sonesta Harbor Court Baltimore,https://www.sonesta.com/royal-sonesta/md/baltimore/royal-sonesta-harbor-court-baltimore,39.282722,-76.613947
+12,Hilton Baltimore,https://www.hilton.com/en/hotels/bwicchh-hilton-baltimore/,39.285687,-76.620879
+13,Courtyard Fredericksburg Historic District,https://www.marriott.com/hotels/travel/FKRCY-Courtyard-Fredericksburg-Historic-District,38.300373,-77.457952
+14,The Town's Inn,https://thetownsinn.com/,39.323706,-77.731624
+15,Motel 6,https://www.motel6.com/content/g6/motel6/motel6-com/en/motels.md.gaithersburg.1489.html,39.146426,-77.21854
+16,Sleep Inn - Frederick,https://www.choicehotels.com/west-virginia/harpers-ferry/clarion-hotels/wv078,39.38054,-77.401299
+17,Courtyard,https://www.marriott.com/wasld,38.947648,-76.863482
+18,The Ivy Hotel,https://www.theivybaltimore.com/?utm_source=google&utm_medium=Local&utm_campaign=Google+My+Business,39.303356,-76.612905
+19,Cambria Hotel Rockville,https://www.cambriarockville.com/,39.08449,-77.150179
+20,Quality Inn,https://www.choicehotels.com/virginia/woodbridge/quality-inn-hotels/va400?mc=llgoxxpx,38.662242,-77.251257
+21,AC Hotel,https://www.marriott.com/en-us/hotels/wasae-ac-hotel-washington-dc-convention-center/overview/,38.902868,-77.020246
+22,AC Hotel Washington DC Capitol Hill-Navy Yard,https://www.marriott.com/en-us/hotels/wasao-ac-hotel-washington-dc-capitol-hill-navy-yard/overview/,38.880217,-77.005765
+23,AKA White House,https://www.stayaka.com/locations/washington-dc,38.899927,-77.040355
+24,American Guest House,https://www.americanguesthouse.com/,38.917657,-77.045978
+25,Arc Hotel Washington DC,https://www.archoteldc.com/,38.900269,-77.052899
+26,Archer Hotel Old Town Alexandria,https://archerhotel.com/alexandria,38.806031,-77.056858
+27,Archer Hotel Tysons,https://archerhotel.com/tysons,38.923862,-77.20756
+28,Beacon Hotel,https://www.beaconhotelwdc.com/,38.907049,-77.03805
+29,Bethesda North Marriott,https://www.marriott.com/en-us/hotels/wasbn-bethesda-north-marriott-hotel-and-conference-center/,39.047305,-77.11522
+30,Cambria Hotel,https://www.cambriadccapitolriverfront.com/,38.87096,-77.011072
+31,Cambria Hotel Rockville,https://www.cambriarockville.com/,39.08449,-77.150179
+32,Canopy,https://www.hilton.com/en/hotels/dcaempy-canopy-washington-dc-embassy-row/,38.906666,-77.036971
+33,Canopy by Hilton,https://www.hilton.com/en/hotels/dcacupy-canopy-washington-dc-the-wharf/?SEO_id=GMB-AMER-PY-DCACUPY&y_source=1_ODQyMDQ4My03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D,38.878413,-77.0235
+34,Canopy by Hilton Washington DC Bethesda North,https://www.hilton.com/en/hotels/dcabnpy-canopy-washington-dc-bethesda-north/,39.050782,-77.116876
+35,Capital Hilton,https://www.hilton.com/en/hotels/dcashhh-capital-hilton/?SEO_id=GMB-AMER-HH-DCASHHH&y_source=1_MTIyMDc2NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D,38.903172,-77.035975
+36,Capitol Comfort Hostel,http://runinout.com/Capital-Comfort-Hostel,38.911552,-77.022232
+37,Capitol Hill Hotel,https://www.capitolhillhotel-dc.com/,38.886254,-77.003128
+38,Churchill Hotel Near Embassy Row,https://www.thechurchillhotel.com/,38.916374,-77.046961
+39,Club Quarters,https://clubquartershotels.com/washington-dc/white-house,38.901076,-77.039165
+40,Club Wyndham Old Town Alexandria,https://www.extraholidays.com/alexandria-virginia/wyndham-old-town-alexandria?Identifier=psearch&hotelid=15173&utm_medium=referral&utm_source=google.com-local&utm_campaign=yext&utm_content=wynoldtownalexandria,38.807501,-77.058771
+41,Comfort Inn,https://www.choicehotels.com/virginia/vienna/quality-inn-hotels,38.894508,-76.842227
+42,Comfort Inn & Suites,https://www.choicehotels.com/virginia/woodbridge/sleep-inn-hotels/va054,38.795144,-77.136825
+43,Comfort Inn Ballston,https://www.choicehotels.com/virginia/arlington/comfort-inn-hotels/va417,38.88594,-77.116885
+44,Comfort Inn Downtown Dc/Convention Center Washington,https://www.choicehotels.com/district-of-columbia/washington/comfort-inn-hotels/dc601,38.905905,-77.029349
+45,Concordia,https://www.theconcordia.com/,38.906323,-77.046822
+46,Conrad Hotel Washington DC,https://www.hilton.com/en/hotels/wascici-conrad-washington-dc/,38.901277,-77.025366
+47,Country Inn & Suites,https://www.radissonhotels.com/en-us/hotels/country-inn-camp-springs-md,38.821987,-76.915797
+48,Courtyard,https://www.marriott.com/wasny,38.877979,-77.004061
+49,Courtyard,https://www.marriott.com/en-us/hotels/wasyv-courtyard-washington-downtown-convention-center/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0,38.897138,-77.024348
+50,Courtyard,https://www.marriott.com/waspg,38.906878,-76.846981
+51,Courtyard,https://www.marriott.com/wasus,38.907859,-77.003147
+52,Courtyard,https://www.marriott.com/wasld,38.947648,-76.863482
+53,Courtyard,https://www.marriott.com/wassv,38.995649,-77.024807
+54,Courtyard Alexandria Old Town/Southwest,https://www.marriott.com/wasal,38.801915,-77.079262
+55,Courtyard Bethesda Chevy Chase,https://www.marriott.com/wasvy,38.964391,-77.087976
+56,Courtyard Dulles Airport Herndon,https://www.marriott.com/IADHE,38.958328,-77.421644
+57,Courtyard Dulles Airport Herndon/Reston,https://www.marriott.com/IADHC,38.953984,-77.379007
+58,Courtyard Dunn Loring Fairfax,https://www.marriott.com/IADCY,38.880261,-77.228275
+59,Courtyard Marriott - Foggy Bottom,https://www.marriott.com/wasfb,38.89654,-77.044523
+60,Courtyard Tysons McLean,https://www.marriott.com/WASTN,38.920286,-77.227036
+61,Courtyard Washington Downtown/Convention Center,https://www.marriott.com/en-us/hotels/wasyv-courtyard-washington-downtown-convention-center/overview,38.904317,-77.024419
+62,"Courtyard Washington, DC Dupont Circle",https://www.marriott.com/hotels/travel/wasnc-courtyard-washington-dc-dupont-circle/,38.90742,-77.039708
+63,"Crowne Plaza Crystal City-Washington, D.C.",https://www.ihg.com/crowneplaza/hotels/us/en/arlington/wasna/hoteldetail,38.860595,-77.050241
+64,Crystal City Marriott at Reagan National Airport,https://www.marriott.com/WASCC,38.856629,-77.05157
+65,Crystal Gateway Marriott,https://www.marriott.com/WASGW,38.858669,-77.052671
+66,DUO Housing,http://duohousing.com/,38.906466,-77.026732
+67,Days Inn,https://www.wyndhamhotels.com/days-inn/washington-district-of-columbia/days-inn-washington-dc-connecticut-avenue/overview?CID=LC:iqv0j1dklijly45:06507&iata=00093796,38.946943,-77.065618
+68,Days Inn,https://www.wyndhamhotels.com/days-inn/silver-spring-maryland/days-inn-silver-spring/overview,38.987486,-77.02851
+69,District Hotel,https://dcembassyinn.wixsite.com/district,38.908122,-77.033312
+70,DoubleTree,https://www.hilton.com/en/hotels/mcldtdt-doubletree-mclean-tysons/,38.920259,-77.227274
+71,DoubleTree,https://www.hilton.com/en/hotels/dcagsdt-doubletree-silver-spring-washington-dc-north/,38.998773,-77.030338
+72,DoubleTree by Hilton Hotel Washington DC - Crystal City,https://www.hilton.com/en/hotels/dcaaedt-doubletree-washington-dc-crystal-city/,38.863924,-77.052755
+73,Dupont Circle Hotel,https://www.doylecollection.com/Washington,38.910652,-77.04301
+74,"EVEN Hotel Rockville - Washington, D.C. Area",https://www.ihg.com/evenhotels/hotels/us/en/rockville/wasrk/hoteldetail,39.059999,-77.123464
+75,Eaton DC,https://www.eatonworkshop.com/en-us/washington-dc/?utm_source=gmb&utm_medium=organic&utm_campaign=gmb,38.902787,-77.028462
+76,Econo Lodge Metro,https://www.choicehotels.com/virginia/arlington/econo-lodge-hotels/va166?mc=llgoxxpx,38.886839,-77.162128
+77,Eldon Luxury Suites,https://www.thehoteleldon.com/,38.904386,-77.02541
+78,Embassy Inn,https://dupontcirclefound.hotelsofwashington.com/en/,38.9121,-77.034333
+79,Embassy Suites Crystal City National Airport,https://www.hilton.com/en/hotels/wascres-embassy-suites-crystal-city-national-airport/,38.861372,-77.052601
+80,Embassy Suites Downtown,https://www.hilton.com/en/hotels/wasdnes-embassy-suites-washington-dc-georgetown/?SEO_id=GMB-AMER-ES-WASDNES&y_source=1_MTExMDA4Ni03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D,38.906849,-77.049445
+81,Embassy Suites Tysons Corner,https://www.hilton.com/en/hotels/wastses-embassy-suites-tysons-corner/,38.925481,-77.240126
+82,Embassy Suites by Hilton Alexandria-Old Town,https://www.hilton.com/en/hotels/wasotes-embassy-suites-alexandria-old-town/,38.805277,-77.061283
+83,Embassy Suites by Hilton Washington DC Chevy Chase Pavilion,https://www.hilton.com/en/hotels/wasches-embassy-suites-washington-dc-chevy-chase-pavilion/,38.960764,-77.084848
+84,Embassy Suites by Hilton Washington DC Convention Center,https://www.hilton.com/en/hotels/wascces-embassy-suites-washington-dc-convention-center/,38.901932,-77.026292
+85,Extended Stay Hotel,https://www.extendedstayamerica.com/hotels/dc/washington-dc/reston?channel=gmb-listing&utm_source=google&utm_medium=organic&utm_campaign=gmb_listing,38.955541,-77.366424
+86,Fairfield Inn,https://www.marriott.com/wasfc,38.899482,-77.01917
+87,"Four Seasons Hotel Washington, DC",https://www.fourseasons.com/,38.904489,-77.057366
+88,Generator Hotel,https://staygenerator.com/hotels/washington-dc?utm_source=google-my-business&utm_medium=organic&utm_campaign=hostel-washington,38.916045,-77.046811
+89,Grand Hyatt Washington,https://washingtondc.grand.hyatt.com/,38.899341,-77.026488
+90,Hamilton Hotel,https://www.hamiltonhoteldc.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp_listing,38.902926,-77.031606
+91,Hampton,https://www.hilton.com/en/hotels/washshx-hampton-washington-dc-white-house/,38.900398,-77.04108
+92,Hampton,https://www.hilton.com/en/hotels/washhhx-hampton-washington-downtown-convention-center/,38.901817,-77.019572
+93,Hampton Inn & Suites,https://www.hilton.com/en/hotels/adwcshx-hampton-suites-camp-springs-andrews-afb/,38.821362,-76.914887
+94,Hampton Inn & Suites Arlington Crystal City DCA,https://www.hilton.com/en/hotels/wasrrhx-hampton-suites-reagan-national-airport/,38.855466,-77.052854
+95,Hampton Inn & Suites Washington DC-Navy Yard,https://www.hilton.com/en/hotels/wasnyhx-hampton-suites-washington-dc-navy-yard/,38.87495,-77.00626
+96,Hampton Inn Alexandria - Old Town/King Street Metro,https://www.hilton.com/en/hotels/wasalhx-hampton-alexandria-old-town-king-st-metro/,38.806083,-77.057505
+97,Hampton Inn Washington DC NoMa Union Station,https://www.hilton.com/en/hotels/dcanyhx-hampton-washington-dc-noma-union-station/,38.911243,-76.997061
+98,Hay-Adams Hotel,https://www.hayadams.com/,38.900505,-77.036949
+99,Hereford House,https://www.innsite.com/inns/A003364.html,38.883629,-76.998179
+100,Hilton,https://www.hilton.com/en/hotels/iadmrhf-hilton-washington-dc-rockville-hotel-and-executive-meeting-ctr/?SEO_id=GMB-AMER-HH-IADMRHF&y_source=1_MTIyMDgwOC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D,39.06111,-77.122441
+101,Hilton Alexandria Old Town,https://www.hilton.com/en/hotels/dcaothf-hilton-alexandria-old-town/?SEO_id=GMB-AMER-HH-DCAOTHF&y_source=1_MTIyMDgxMS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D,38.807109,-77.059355
+102,Hilton Arlington,https://www.hilton.com/en/hotels/dcavahf-hilton-arlington/,38.881742,-77.110883
+103,Hilton Crystal City at Ronald Reagan International Airport,https://www.hilton.com/en/hotels/dcanahf-hilton-crystal-city-at-washington-reagan-national-airport/,38.852208,-77.051953
+104,Hilton Garden Inn,https://www.hilton.com/en/hotels/dcachgi-hilton-garden-inn-washington-dc-downtown/,38.900666,-77.031638
+105,Hilton Garden Inn,https://www.hilton.com/en/hotels/waswegi-hilton-garden-inn-washington-dc-georgetown-area/,38.905457,-77.049197
+106,Hilton Garden Inn,https://www.hilton.com/en/hotels/dcanmgi-hilton-garden-inn-washington-dc-us-capitol/,38.906296,-77.005634
+107,Hilton Garden Inn,https://www.hilton.com/en/hotels/dcatcgi-hilton-garden-inn-tysons-corner/,38.916502,-77.23283
+108,"Hilton Garden Inn - Washington, D.C./ Bethesda",http://www.bethesda.hgi.com,38.983326,-77.091509
+109,Hilton Garden Inn Alexandria Old Town,https://www.hilton.com/en/hotels/dcaolgi-hilton-garden-inn-alexandria-old-town-national-harbor/,38.805081,-77.058185
+110,Hilton Garden Inn Arlington/Courthouse Plaza,https://www.hilton.com/en/hotels/dcaargi-hilton-garden-inn-arlington-courthouse-plaza/,38.88892,-77.083328
+111,Hilton Garden Inn Reagan National Airport,https://www.hilton.com/en/hotels/dcaccgi-hilton-garden-inn-reagan-national-airport/,38.854391,-77.052916
+112,Hilton Garden Inn Reagan National Airport,https://www.hilton.com/en/hotels/dcaccgi-hilton-garden-inn-reagan-national-airport/,38.854963,-77.052936
+113,Hilton McLean Tysons Corner,https://www.hilton.com/en/hotels/mclmhhh-hilton-mclean-tysons-corner/,38.926531,-77.216094
+114,Hilton Washington DC Capitol Hill,https://www.hilton.com/en/hotels/dcadchh-hilton-washington-dc-capitol-hill/,38.896924,-77.010821
+115,Hilton Washington DC National Mall Hotel,https://www.hiltondcnationalmall.com/,38.883878,-77.024442
+116,Holiday Inn,https://www.hicapitoldc.com/,38.885553,-77.019375
+117,Holiday Inn Alexandria - Carlyle,https://www.ihg.com/holidayinn/hotels/us/en/alexandria/axetd/hoteldetail,38.80097,-77.073959
+118,Holiday Inn Arlington at Ballston,http://hiarlington.com,38.881595,-77.117478
+119,Holiday Inn Express,https://www.ihg.com/holidayinnexpress/hotels/us/en/camp-springs/wasmd/hoteldetail?cm_mmc=GoogleMaps-_-EX-_-US-_-WASMD,38.820763,-76.916433
+120,Holiday Inn Express,https://www.ihg.com/holidayinnexpress/hotels/us/en/washington/wasnw/hoteldetail,38.902829,-77.01574
+121,Holiday Inn Washington DC - Central / White House,https://www.inndc.com/,38.908116,-77.034971
+122,Homewood Suites,https://homewoodsuites3.hilton.com/en/hotels/virginia/homewood-suites-by-hilton-dulles-intl-airport-WASDLHW/index.html,38.957816,-77.410857
+123,Homewood Suites By Hilton,https://www.hilton.com/en/hotels/washwhw-homewood-suites-washington-dc-downtown/?SEO_id=GMB-AMER-HG-WASHWHW&y_source=1_MjA4MjQwNy03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D,38.906606,-77.033498
+124,Homewood Suites Rosslyn,https://www.hilton.com/en/hotels/dcalhhw-homewood-suites-arlington-rosslyn-key-bridge/?SEO_id=GMB-AMER-HG-DCALHHW&y_source=1_ODg5MzkzMC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D,38.897236,-77.079189
+125,Homewood Suites by Hilton Washington DC Capitol-Navy Yard,https://www.hilton.com/en/hotels/wascahw-homewood-suites-washington-dc-capitol-navy-yard/,38.876749,-77.007046
+126,Homewood Suites by Hilton Washington DC Convention Center,https://www.hilton.com/en/hotels/wascohw-homewood-suites-washington-dc-convention-center/,38.904381,-77.018529
+127,Homewood Suites by Hilton Washington DC Convention Center,https://www.hilton.com/en/hotels/wascohw-homewood-suites-washington-dc-convention-center/,38.904465,-77.018308
+128,Homewood Suites by Hilton Washington DC NoMa Union Station,https://www.hilton.com/en/hotels/dcanehw-homewood-suites-washington-dc-noma-union-station/?SEO_id=GMB-AMER-HG-DCANEHW&y_source=1_MzI2NDY5Mi03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D,38.911078,-76.996612
+129,Hotel AKA Washington Circle,https://www.stayaka.com/hotel-aka-washington-circle,38.903358,-77.049794
+130,Hotel Hive,https://www.hotelhive.com/,38.897117,-77.049687
+131,Hotel Lombardy,https://www.hotellombardy.com/hl/Default.htm,38.901482,-77.045925
+132,Hotel Madera,https://www.hotelmadera.com/,38.907595,-77.045695
+133,Hotel Monaco,https://www.monaco-dc.com/,38.896992,-77.022438
+134,Hotel Nell â€“ Union Market,https://www.hotelnelldc.com/,38.911021,-76.997487
+135,Hotel Rouge,https://www.rougehotel.com/,38.908266,-77.03613
+136,Hotel Washington,https://www.thehotelwashington.com/,38.896935,-77.033225
+137,Hotel Zena Washington DC,https://www.viceroyhotelsandresorts.com/zena,38.905102,-77.031574
+138,Hyatt Centric,https://www.hyatt.com/hyatt-centric/iadct-hyatt-centric-old-town-alexandria?src=corp_lclb_gmb_seo_iadct,38.806667,-77.057582
+139,Hyatt Centric Arlington,https://www.hyatt.com/hyatt-centric/wasar-hyatt-centric-arlington?src=corp_lclb_gmb_seo_wasar,38.895178,-77.072745
+140,Hyatt House,https://www.hyatt.com/en-us/hotel/washington-dc/hyatt-house-washington-dc-the-wharf/wasxs,38.878548,-77.024001
+141,Hyatt Place,https://www.hyatt.com/en-us/hotel/washington-dc/hyatt-place-washington-dc-national-mall/waszc,38.882907,-77.017977
+142,Hyatt Place Arlington / Courthouse Plaza,https://www.hyatt.com/en-US/hotel/virginia/hyatt-place-arlington-courthouse-plaza/wasza,38.89106,-77.087625
+143,Hyatt Place DC/Downtown/K Street,https://www.hyatt.com/hyatt-place/en-US/waszw-hyatt-place-washington-dc-white-house?src=corp_lclb_gmb_seo_waszw,38.902198,-77.035711
+144,Hyatt Place Herndon/Dulles Airport-East,https://www.hyatt.com/en-us/hotel/virginia/hyatt-place-herndon-dulles-airport-east/iadzh,38.957502,-77.420326
+145,Hyatt Place Washington DC/Georgetown/West End,https://washingtondcgeorgetown.place.hyatt.com/en/hotel/home.html,38.905653,-77.048173
+146,Hyatt Place Washington DC/US Capitol,https://www.hyatt.com/en-us/hotel/washington-dc/hyatt-place-washington-dc-us-capitol/waszd,38.907512,-77.007791
+147,Hyatt Regency,https://www.hyatt.com/en-us/hotel/virginia/hyatt-regency-tysons-corner-center/iadrt,38.91871,-77.219952
+148,Hyatt Regency,https://www.hyatt.com/en-us/hotel/maryland/hyatt-regency-bethesda/bethe,38.984089,-77.094852
+149,Hyatt Regency Dulles,https://dulles.regency.hyatt.com/en/hotel/home.html,38.960826,-77.423243
+150,Hyatt Regency Reston,https://reston.regency.hyatt.com/,38.958263,-77.356004
+151,Hyatt Regency Washington on Capitol Hill,https://washingtondc.regency.hyatt.com/en/hotel/home.html,38.895429,-77.011633
+152,InterContinental Washington D.C. - The Wharf,https://wharfintercontinentaldc.com,38.87945,-77.025016
+153,JW Marriott,https://www.marriott.com/en-us/hotels/wasjw-jw-marriott-washington-dc/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0,38.896408,-77.031622
+154,Jefferson Hotel,https://www.jeffersondc.com/,38.905938,-77.036956
+155,Kimpton George Hotel,https://www.hotelgeorge.com/?&cm_mmc=WEB-_-KI-_-AMER-_-EN-_-EV-_-Google%20Business%20Profile-_-DD-_-george,38.896396,-77.009908
+156,Le Maridien Arlington,https://www.marriott.com/en-us/hotels/wasrl-le-meridien-arlington/overview/,38.897275,-77.069829
+157,Lyle Washington DC,http://www.carlylesuites.com/,38.913333,-77.039457
+158,Marriott,https://www.marriott.com/en-us/hotels/wasfb-courtyard-washington-dc-foggy-bottom/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0,38.905883,-77.048362
+159,Marriott Bethesda Downtown at Marriott HQ,https://www.marriott.com/en-us/hotels/wasbd-marriott-bethesda-downtown-at-marriott-hq/overview/,38.987138,-77.095442
+160,Marriott Marquis,https://www.marriott.com/en-us/hotels/wasco-marriott-marquis-washington-dc/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0,38.903619,-77.024984
+161,Melrose Georgetown Hotel,https://www.melrosehoteldc.com/,38.903037,-77.052388
+162,Morrison-Clark Inn,https://www.morrisonclark.com/,38.904381,-77.026724
+163,"Motel 6 Washington, DC - Convention Center",https://www.motel6.com/en/home/motels.dc.washington.4481.html?pid=google&travelAgentNumber=TA001300&corporatePlusNumber=CPFMX2NJ&gad_source=1&gclid=CjwKCAjw3P-2BhAEEiwA3yPhwMe9indZwrtAFbZOho7IHNnXu2Vg2AKicylBx4VlZmyLHizytMhoEhoCf4UQAvD_BwE&gclsrc=aw.ds,38.910201,-76.997985
+164,Motto by Hilton,https://www.hilton.com/en/hotels/wasuaua-motto-washington-dc-city-center/?SEO_id=GMB-AMER-UA-WASUAUA&y_source=1_MTYyODg3ODQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D,38.900113,-77.021204
+165,"Moxy Washington, DC Downtown",https://www.marriott.com/hotels/travel/wasox-moxy-washington-dc-downtown/,38.902889,-77.02651
+166,Omni Shoreham Hotel,https://www.omnihotels.com/hotels/washington-dc-shoreham,38.922685,-77.053664
+167,Park Hyatt Washington,https://washingtondc.park.hyatt.com/,38.905797,-77.051092
+168,Pendry Hotel,https://www.pendry.com/washington-dc/,38.877373,-77.022296
+169,Phoenix Park Hotel,https://www.phoenixparkhotel.com/,38.897085,-77.009469
+170,Quality Inn Tysons Center,https://www.choicehotels.com/virginia/vienna/quality-inn-hotels/va282?mc=llgoxxpx,38.926557,-77.243766
+171,Red Lion - Rosslyn / Iwo Jima,https://www.sonesta.com/red-lion-hotels/va/arlington/red-lion-hotel-rosslyn-iwo-jima,38.891828,-77.075094
+172,Residence Inn,https://www.marriott.com/hotels/travel/wasxr-residence-inn-washington-capitol-hill-navy-yard/,38.875809,-77.006368
+173,Residence Inn,https://www.marriott.com/en-us/hotels/wasfg-residence-inn-washington-dc-foggy-bottom/,38.899841,-77.052258
+174,Residence Inn,https://www.marriott.com/wasrd,38.904344,-77.024521
+175,Residence Inn,https://www.marriott.com/en-us/hotels/wasri-residence-inn-washington-dc-dupont-circle/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0,38.909459,-77.047334
+176,Residence Inn - Thomas Circle,https://www.marriott.com/en-us/hotels/wasdc-residence-inn-washington-dc-downtown/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0,38.904494,-77.032345
+177,Residence Inn Alexandria Old Town South at Carlyle,https://www.marriott.com/wasra,38.802749,-77.067691
+178,Residence Inn Alexandria Old Town/Duke Street,https://www.marriott.com/wasdk,38.803426,-77.057764
+179,Residence Inn Arlington Ballston,https://www.marriott.com/WASIN,38.878691,-77.107976
+180,Residence Inn Arlington Courthouse,https://www.marriott.com/WASCA,38.889623,-77.087005
+181,Residence Inn Arlington Rosslyn,https://www.marriott.com/WASRR,38.893767,-77.07329
+182,Residence Inn Bethesda Downtown,https://www.marriott.com/wasbr,38.983138,-77.092706
+183,Residence Inn Capitol,https://www.marriott.com/property/propertypage/WASCP,38.883646,-77.015933
+184,Residence Inn Tysons Corner Mall,https://www.marriott.com/WASTO,38.915749,-77.235359
+185,Saint Gregory Hotel & Suites,https://www.stgregoryhotelwdc.com/,38.905872,-77.04637
+186,Salamander Washington DC,https://www.salamanderdc.com/,38.883403,-77.030663
+187,Selina Union Market,https://www.selina.com/usa/washington/,38.911021,-76.997496
+188,Sheraton Reston Hotel,http://www.sheratonreston.com/?SWAQ=958P,38.949889,-77.354414
+189,Sofitel Lafayette Square,https://www.sofitel-washington-dc.com/,38.900507,-77.033942
+190,Sonder at FOUND,https://www.sonder.com/destinations/washington_dc/WDC-NW-16TH1627-404/c34358,38.912231,-77.03605
+191,Sonesta Select Arlington Rosslyn,https://www.sonesta.com/us/virginia/arlington/sonesta-select-arlington-rosslyn,38.893923,-77.075778
+192,State Plaza Hotel,https://www.stateplaza.com/,38.896684,-77.047515
+193,Staybridge Suites,https://www.ihg.com/staybridge/hotels/us/en/largo/nhklr/hoteldetail?cm_mmc=GoogleMaps-_-SB-_-US-_-NHKLR,38.907017,-76.840718
+194,Swann House Llc,https://www.swannhouse.com/,38.914558,-77.03928
+195,Tabard Inn,https://www.tabardinn.com/,38.907504,-77.039954
+196,The Baron Hotel,http://www.thebaronhotel.com/,38.910295,-77.048396
+197,"The Bethesdan Hotel, Tapestry Collection by Hilton",https://www.hilton.com/en/hotels/wasbaup-the-bethesdan-hotel/,38.991227,-77.095935
+198,The Darcy Washington D.C,http://www.doubletree.com/,38.908058,-77.03543
+199,The Dupont At The Circle,https://www.dupontatthecircle.com/,38.911358,-77.043725
+200,The Fairmont,https://www.fairmont.com/washington/,38.905752,-77.05195
+201,The Henley Park Hotel,https://www.henleypark.com/,38.903147,-77.025708
+202,The Jefferson,https://www.jeffersondc.com/,38.905949,-77.036936
+203,The Madison Hotel,https://www.marriott.com/en-us/hotels/wasmm-the-madison-hotel/overview/,38.905369,-77.03406
+204,The Mansion On O Street,https://www.omansion.com/,38.908363,-77.045874
+205,The Mayflower Hotel,https://www.marriott.com/en-us/hotels/wasak-the-mayflower-hotel-autograph-collection/overview/,38.904444,-77.039472
+206,The Morrow Washington DC,https://www.hilton.com/en/hotels/dcanoqq-the-morrow-washington-dc/?SEO_id=GMB-AMER-QQ-DCANOQQ&y_source=1_MzU2NTg1NTEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D,38.906058,-77.002842
+207,The Normandy Hotel,https://www.thenormandydc.com/?utm_source=google&utm_medium=organic&utm_campaign=business_listing,38.91741,-77.047621
+208,The Ritz-Carlton,https://www.ritzcarlton.com/en/hotels/wasrt-the-ritz-carlton-washington-d-c/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0,38.904628,-77.049143
+209,The Ritz-Carlton Pentagon City,https://www.ritzcarlton.com/en/hotels/washington-dc/pentagon-city,38.862452,-77.060591
+210,"The Ritz-Carlton, Tysons Corner",https://www.ritzcarlton.com/en/hotels/wasty-the-ritz-carlton-tysons-corner/overview/,38.924233,-77.223881
+211,The River Inn,https://www.theriverinn.com/,38.901408,-77.053622
+212,The Royal Sonesta Washington DC Dupont Circle,https://www.sonesta.com/royal-sonesta/dc/washington/royal-sonesta-washington-dc-dupont-circle/,38.909813,-77.047413
+213,"The St. Regis Washington, D.C.",https://www.marriott.com/hotels/travel/wassx-the-st-regis-washington-dc/,38.902104,-77.036088
+214,"The Ven at Embassy Row, Washington, D.C., A Tribute Portfolio Hotel",https://www.marriott.com/hotels/travel/wastx-the-ven-at-embassy-row-washington-dc-a-tribute-portfolio-hotel/,38.910817,-77.045656
+215,The Watergate Hotel,http://www.watergatehotel.com/,38.899338,-77.055843
+216,The Watermark Hotel,https://www.thewatermarkhotel.com/,38.925663,-77.210501
+217,The Westin,http://www.westin.com/,38.905009,-77.051066
+218,The Westin Alexandria Old Town,https://www.marriott.com/en-us/hotels/wasxw-the-westin-alexandria-old-town/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0,38.803169,-77.065071
+219,The Westin Arlington Gateway,https://www.marriott.com/hotels/travel/wasag-the-westin-arlington-gateway/,38.88062,-77.114334
+220,The Westin Crystal City Reagan National Airport,https://www.marriott.com/en-us/hotels/waswi-the-westin-crystal-city-reagan-national-airport/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0,38.857091,-77.052573
+221,The Westin Reston Heights,http://www.westinreston.com/,38.950417,-77.352124
+222,"The Westin Washington, D.C City Center",https://www.marriott.com/en-us/hotels/wascw-the-westin-washington-dc-city-center/overview/,38.905316,-77.033436
+223,"The Westin Washington, DC Downtown",https://www.marriott.com/en-us/hotels/waswc-the-westin-washington-dc-downtown/overview/,38.901508,-77.023693
+224,Thompson Washington D.C.,https://www.hyatt.com/thompson-hotels/iadth-thompson-washington-dc?src=corp_lclb_gmb_seo_iadth,38.87466,-77.002501
+225,Travelodge,https://www.wyndhamhotels.com/days-inn/silver-spring-maryland/days-inn-silver-spring/overview,38.987408,-77.029478
+226,Tysons Corner Marriott,https://www.marriott.com/WASTC,38.913795,-77.22122
+227,U Street Hostel,https://ustreethostel.com/,38.916657,-77.029351
+228,Viceroy Washington DC,https://www.viceroyhotelsandresorts.com/washington-dc,38.908176,-77.033047
+229,Waldorf Astoria Washington DC,https://www.hilton.com/en/hotels/dcawawa-waldorf-astoria-washington-dc/,38.894096,-77.027581
+230,Washington Dulles Airport Marriott,https://www.marriott.com/hotels/travel/iadap-washington-dulles-airport-marriott/,38.959908,-77.448268
+231,Washington Hilton,https://www3.hilton.com/en/hotels/district-of-columbia/washington-hilton-DCAWHHH/index.html,38.916457,-77.044898
+232,Washington Marriott at Metro Center,https://www.marriott.com/en-us/hotels/wasmc-washington-marriott-at-metro-center/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0,38.899361,-77.027584
+233,Washington Plaza Hotel,https://www.washingtonplazahotel.com/,38.906243,-77.030919
+234,West End Washington DC,https://www.hilton.com/en/hotels/dcagcup-west-end-washington-dc/,38.904299,-77.047962
+235,Willard InterContinental Hotel,https://www.ihg.com/intercontinental/hotels/us/en/washington/washa/hoteldetail?cm_mmc=GoogleMaps-_-IC-_-US-_-WASHA,38.897039,-77.032413
+236,Windsor Inn,https://thewindsorinn.hotelsofwashington.com/en/,38.915287,-77.036946
+237,Windsor Inn,https://thewindsorinn.hotelsofwashington.com/en/,38.917394,-77.04864
+238,Woodley Park Guest House,https://www.woodleyparkguesthouse.com/,38.925869,-77.053735
+239,YOTEL Washington DC,https://www.yotel.com/en/hotels/yotel-washington-dc?utm_marin=mkwid_scLjb06l6-dc_slid__productid__ptaid_kwd-466585057916&gad_source=1&gclid=CjwKCAjwreW2BhBhEiwAavLwfFfVKk9fPj6wMm04lxuvuWRjT8SwrLyp4_H4qOgFZRuidSiNOFMBaxoCztAQAvD_BwE,38.895419,-77.010692
+240,Yours Truly DC,https://www.yourstrulydc.com/,38.904757,-77.047599
+241,citizenM,https://www.citizenm.com/hotels/united-states/washington-dc/washington-dc-capitol-hotel,38.883762,-77.01944
+242,citizenM Washington DC NOMA,https://www.citizenm.com/hotels/united-states/washington-dc/washington-dc-noma?utm_source=google&utm_medium=Yext&y_source=1_NDkyNzM5MjItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D,38.906635,-77.006187

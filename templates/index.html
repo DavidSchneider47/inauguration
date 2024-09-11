@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DMV Inauguration Navigator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Leaflet CSS for the map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Title and Description -->
+    <h1 style="text-align: center;">DMV Inauguration Navigator</h1>
+    <p style="font-size: 18px; text-align: center;">
+        Keep your inauguration visit on track by lodging, dining, and celebrating near transit.
+        Use this platform to book a hotel a short walk away from a station and explore the food,
+        culture, and nightlife of the region's transit-oriented neighborhoods.
+    </p>
+
+    <!-- Map Container -->
+    <div id="map" style="height: 600px;"></div>
+
+    <!-- Leaflet JS for the map -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Your custom JS for the map -->
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+</body>
+</html>
