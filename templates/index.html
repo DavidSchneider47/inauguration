@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DMV Inauguration Navigator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <!-- Leaflet CSS for the map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet Fullscreen CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.5.0/leaflet.fullscreen.min.css" />
 </head>
 <body>
     <!-- Title and Description -->
@@ -21,6 +24,8 @@
 
     <!-- Leaflet JS for the map -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Leaflet Fullscreen JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.5.0/Leaflet.fullscreen.min.js"></script>
     <!-- Your custom JS for the map -->
     <script src="{{ url_for('static', filename='js/map.js') }}"></script>
 </body>

@@ -1,5 +1,3 @@
-// static/js/map.js
-
 // Debugging message to ensure map.js is loaded
 console.log("map.js loaded successfully");
 
@@ -11,6 +9,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
+// Add fullscreen control
+L.control.fullscreen().addTo(map);
+
 // Fetch and display stations with custom icons
 fetch('/api/stations')
     .then(response => response.json())
@@ -21,13 +22,12 @@ fetch('/api/stations')
                 color: 'gray',        // Border color
                 fillColor: 'gray',    // Fill color
                 fillOpacity: 1.0,     // Fill opacity
-                radius: 8             // Medium size for station icons
+                radius: getIconSize()
             })
             .addTo(map)
             .bindPopup(`<b>${station.name}</b>`);
         });
-    })
-    .catch(err => console.error('Error fetching stations:', err));
+    });
 
 // Fetch and display hotels with custom icons
 fetch('/api/hotels')
@@ -39,10 +39,9 @@ fetch('/api/hotels')
                 color: 'green',        // Border color
                 fillColor: 'green',    // Fill color
                 fillOpacity: 1.0,      // Fill opacity
-                radius: 5              // Smaller size for hotel icons
+                radius: getIconSize()
             })
             .addTo(map)
             .bindPopup(`<b>${hotel.name}</b><br><a href="${hotel.website}" target="_blank">Website</a>`);
         });
-    })
-    .catch(err => console.error('Error fetching hotels:', err));
+    });
