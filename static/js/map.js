@@ -9,8 +9,13 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Add fullscreen control
-L.control.fullscreen().addTo(map);
+// Check if fullscreen control is available and add it
+if (typeof L.control.fullscreen === 'function') {
+    L.control.fullscreen().addTo(map);
+    console.log("Fullscreen control added.");
+} else {
+    console.warn("Fullscreen control not available.");
+}
 
 // Fetch and display stations with custom icons
 fetch('/api/stations')
