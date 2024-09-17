@@ -1,20 +1,49 @@
 /* In static/css/styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    position: sticky; /* Make the header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure it stays above the map */
+    border-bottom: 1px solid #ccc;
+}
+
+/* Styling for the title */
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Styling for the description text */
+header p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Map container */
 #map {
-    height: 600px; /* Default for desktop */
+    height: 600px; /* Default height for desktop */
     width: 100%;
     border: 2px solid #2c3e50;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
 }
 
+/* Adjustments for smaller screens */
 @media (max-width: 768px) {
-    /* Adjust for tablets and small screens */
     #map {
         height: 400px;
     }
 }
 
 @media (max-width: 480px) {
-    /* Adjust for mobile phones */
     #map {
         height: 300px;
     }
