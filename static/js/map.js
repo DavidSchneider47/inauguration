@@ -29,11 +29,15 @@ if (typeof L.control.fullscreen === 'function') {
 
 // Fetch and display stations with custom icons
 fetch('/api/stations')
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Failed to fetch stations data");
+        }
+        return response.json();
+    })
     .then(stations => {
         console.log("Stations data:", stations); // Debugging: Log stations data
         stations.forEach(station => {
-            // Add a circle marker for each station
             L.circleMarker([station.latitude, station.longitude], {
                 color: 'gray',        // Border color
                 fillColor: 'gray',    // Fill color
@@ -50,11 +54,15 @@ fetch('/api/stations')
 
 // Fetch and display hotels with custom icons
 fetch('/api/hotels')
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Failed to fetch hotels data");
+        }
+        return response.json();
+    })
     .then(hotels => {
         console.log("Hotels data:", hotels);  // Debugging: Log hotels data
         hotels.forEach(hotel => {
-            // Add a circle marker for each hotel
             L.circleMarker([hotel.latitude, hotel.longitude], {
                 color: 'green',        // Border color
                 fillColor: 'green',    // Fill color
@@ -68,3 +76,4 @@ fetch('/api/hotels')
     .catch(error => {
         console.error("Error fetching hotels:", error);  // Debugging: Log errors
     });
+
