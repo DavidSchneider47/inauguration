@@ -9,6 +9,63 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <!-- Leaflet Fullscreen CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.5.0/leaflet.fullscreen.min.css" />
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        /* Make sure header doesn't overlap with the map */
+        header {
+            background-color: white;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Ensure header stays on top */
+        }
+
+        /* Adjustments for better spacing between the header and map */
+        #map {
+            height: 600px; /* Set a height for the map container */
+            margin-top: 10px; /* Add some space between the header and the map */
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            #map {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #map {
+                height: 300px;
+            }
+        }
+
+        /* Loading spinner styling */
+        #loading-indicator {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+        }
+
+        .spinner {
+            border: 6px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 6px solid black;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
     <!-- Sticky Header with Title and Description -->
@@ -21,6 +78,11 @@
         </p>
     </header>
 
+    <!-- Loading spinner -->
+    <div id="loading-indicator">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Map Container -->
     <div id="map"></div>
 
@@ -32,3 +94,5 @@
     <script src="{{ url_for('static', filename='js/map.js') }}"></script>
 </body>
 </html>
+
+
