@@ -1,0 +1,1292 @@
+[
+    {
+        "pharmacy_id": "1",
+        "station_name": "ASHBURN METRO STATION",
+        "station_id": "87",
+        "pharmacy_name": "Giant",
+        "pharmacy_website": "https://stores.giantfood.com/va/ashburn/43670-greenway-corp-drive",
+        "pharmacy_lat": 39.0095897,
+        "pharmacy_lon": -77.4914024,
+        "pharmacy_distance_miles": 0.3
+    },
+    {
+        "pharmacy_id": "2",
+        "station_name": "BALLSTON METRO STATION",
+        "station_id": "77",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/arlington-va-pharmacies/4238-wilson-blvd-ballston-commons-1831-arlington-va-22203/storeid=1833",
+        "pharmacy_lat": 38.8796972,
+        "pharmacy_lon": -77.1101053,
+        "pharmacy_distance_miles": 0.19
+    },
+    {
+        "pharmacy_id": "3",
+        "station_name": "BALLSTON METRO STATION",
+        "station_id": "77",
+        "pharmacy_name": "Target",
+        "pharmacy_website": "https://www.target.com/sl/ballston/3257",
+        "pharmacy_lat": 38.8795681,
+        "pharmacy_lon": -77.1135125,
+        "pharmacy_distance_miles": 0.21
+    },
+    {
+        "pharmacy_id": "4",
+        "station_name": "BALLSTON METRO STATION",
+        "station_id": "77",
+        "pharmacy_name": "Harris Teeter",
+        "pharmacy_website": "https://www.harristeeter.com/stores/grocery/va/arlington/arlington/097/00486",
+        "pharmacy_lat": 38.8770965,
+        "pharmacy_lon": -77.1102105,
+        "pharmacy_distance_miles": 0.36
+    },
+    {
+        "pharmacy_id": "5",
+        "station_name": "BETHESDA METRO STATION",
+        "station_id": "55",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/bethesda-md-pharmacies/6917-arlington-road-bethesda-md-20814/storeid=1479",
+        "pharmacy_lat": 38.9783542,
+        "pharmacy_lon": -77.0985452,
+        "pharmacy_distance_miles": 0.48
+    },
+    {
+        "pharmacy_id": "6",
+        "station_name": "BETHESDA METRO STATION",
+        "station_id": "55",
+        "pharmacy_name": "Target",
+        "pharmacy_website": "https://www.target.com/sl/bethesda/3242",
+        "pharmacy_lat": 38.9784047,
+        "pharmacy_lon": -77.0906623,
+        "pharmacy_distance_miles": 0.46
+    },
+    {
+        "pharmacy_id": "7",
+        "station_name": "BETHESDA METRO STATION",
+        "station_id": "55",
+        "pharmacy_name": "Giant",
+        "pharmacy_website": "https://stores.giantfood.com/md/bethesda/7142-arlington-road",
+        "pharmacy_lat": 38.981218,
+        "pharmacy_lon": -77.0990183,
+        "pharmacy_distance_miles": 0.34
+    },
+    {
+        "pharmacy_id": "8",
+        "station_name": "BETHESDA METRO STATION",
+        "station_id": "55",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/bethesda-md-pharmacies/7809-wisconsin-ave-bethesda-md-20814/storeid=1831",
+        "pharmacy_lat": 38.9890583,
+        "pharmacy_lon": -77.0947785,
+        "pharmacy_distance_miles": 0.32
+    },
+    {
+        "pharmacy_id": "9",
+        "station_name": "BRADDOCK ROAD METRO STATION",
+        "station_id": "84",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/alexandria-va-pharmacies/415-e-monroe-avenue-alexandria-va-22301/storeid=1410",
+        "pharmacy_lat": 38.820614,
+        "pharmacy_lon": -77.0546034,
+        "pharmacy_distance_miles": 0.46
+    },
+    {
+        "pharmacy_id": "10",
+        "station_name": "BRADDOCK ROAD METRO STATION",
+        "station_id": "84",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/alexandria-va-pharmacies/415-e-monroe-avenue-alexandria-va-22301/storeid=1410",
+        "pharmacy_lat": 38.8205806,
+        "pharmacy_lon": -77.0546383,
+        "pharmacy_distance_miles": 0.46
+    },
+    {
+        "pharmacy_id": "11",
+        "station_name": "BRADDOCK ROAD METRO STATION",
+        "station_id": "84",
+        "pharmacy_name": "Walgreens",
+        "pharmacy_website": "https://www.walgreens.com/locator/walgreens-1517+mount+vernon+ave-alexandria-va-22301/id=12359",
+        "pharmacy_lat": 38.8203412,
+        "pharmacy_lon": -77.0572475,
+        "pharmacy_distance_miles": 0.48
+    },
+    {
+        "pharmacy_id": "12",
+        "station_name": "BROOKLAND-CUA METRO STATION",
+        "station_id": "26",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/3601-12th-street-ne-washington-dc-20017/storeid=1333",
+        "pharmacy_lat": 38.9338185,
+        "pharmacy_lon": -76.9908249,
+        "pharmacy_distance_miles": 0.2
+    },
+    {
+        "pharmacy_id": "13",
+        "station_name": "BURKE CENTER VRE",
+        "station_id": "103",
+        "pharmacy_name": "Target",
+        "pharmacy_website": "https://www.target.com/sl/fairfax/1005",
+        "pharmacy_lat": 38.7983469,
+        "pharmacy_lon": -77.3011313,
+        "pharmacy_distance_miles": 0.14
+    },
+    {
+        "pharmacy_id": "14",
+        "station_name": "CAMDEN MARC",
+        "station_id": "124",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/baltimore-md-pharmacies/1000-s-charles-st-baltimore-md-21230/storeid=5381",
+        "pharmacy_lat": 39.2776681,
+        "pharmacy_lon": -76.6147523,
+        "pharmacy_distance_miles": 0.49
+    },
+    {
+        "pharmacy_id": "15",
+        "station_name": "CLARENDON METRO STATION",
+        "station_id": "71",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/cvs-pharmacy-address/3141+Wilson+Boulevard,+Clarendon+Metro-Arlington-VA-22201/storeid=2274",
+        "pharmacy_lat": 38.886979,
+        "pharmacy_lon": -77.0960835,
+        "pharmacy_distance_miles": 0.06
+    },
+    {
+        "pharmacy_id": "16",
+        "station_name": "CLEVELAND PARK METRO STATION",
+        "station_id": "17",
+        "pharmacy_name": "Target",
+        "pharmacy_website": "https://www.target.com/sl/cleveland-park/3308",
+        "pharmacy_lat": 38.9358776,
+        "pharmacy_lon": -77.0580217,
+        "pharmacy_distance_miles": 0.03
+    },
+    {
+        "pharmacy_id": "17",
+        "station_name": "CLEVELAND PARK METRO STATION",
+        "station_id": "17",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/3327-connecticut-avenue-nw-washington-dc-20008/storeid=1353",
+        "pharmacy_lat": 38.9343501,
+        "pharmacy_lon": -77.0573234,
+        "pharmacy_distance_miles": 0.13
+    },
+    {
+        "pharmacy_id": "18",
+        "station_name": "COLUMBIA HEIGHTS METRO STATION",
+        "station_id": "21",
+        "pharmacy_name": "Giant",
+        "pharmacy_website": "https://stores.giantfood.com/dc/washington/1345-park-road,-nw",
+        "pharmacy_lat": 38.9308461,
+        "pharmacy_lon": -77.0318599,
+        "pharmacy_distance_miles": 0.15
+    },
+    {
+        "pharmacy_id": "19",
+        "station_name": "COLUMBIA HEIGHTS METRO STATION",
+        "station_id": "21",
+        "pharmacy_name": "Target",
+        "pharmacy_website": "https://www.target.com/sl/columbia-heights/2259",
+        "pharmacy_lat": 38.9295447,
+        "pharmacy_lon": -77.0331711,
+        "pharmacy_distance_miles": 0.07
+    },
+    {
+        "pharmacy_id": "20",
+        "station_name": "CONGRESS HEIGHTS METRO STATION",
+        "station_id": "32",
+        "pharmacy_name": "Giant",
+        "pharmacy_website": "https://stores.giantfood.com/dc/washington/1535-alabama-avenue-se",
+        "pharmacy_lat": 38.8450821,
+        "pharmacy_lon": -76.9810368,
+        "pharmacy_distance_miles": 0.37
+    },
+    {
+        "pharmacy_id": "21",
+        "station_name": "CONGRESS HEIGHTS METRO STATION",
+        "station_id": "32",
+        "pharmacy_name": "Giant",
+        "pharmacy_website": "https://pharmacy.giantfood.com/dc/washington/1535-alabama-avenue-se",
+        "pharmacy_lat": 38.8448036,
+        "pharmacy_lon": -76.9825046,
+        "pharmacy_distance_miles": 0.29
+    },
+    {
+        "pharmacy_id": "22",
+        "station_name": "COURTHOUSE METRO STATION",
+        "station_id": "72",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/cvs-pharmacy-address/2121+15th+Street+North-Arlington-VA-22201/storeid=2418",
+        "pharmacy_lat": 38.8910272,
+        "pharmacy_lon": -77.0853067,
+        "pharmacy_distance_miles": 0.03
+    },
+    {
+        "pharmacy_id": "23",
+        "station_name": "CRYSTAL CITY METRO STATION",
+        "station_id": "74",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/arlington-va-pharmacies/1550-crystal-dr-suite-c-arlington-va-22202/storeid=11229",
+        "pharmacy_lat": 38.859186,
+        "pharmacy_lon": -77.049385,
+        "pharmacy_distance_miles": 0.05
+    },
+    {
+        "pharmacy_id": "24",
+        "station_name": "DUNN LORING MERRIFIELD METRO STATION",
+        "station_id": "67",
+        "pharmacy_name": "Harris Teeter",
+        "pharmacy_website": "https://www.harristeeter.com/stores/grocery/va/vienna/dunn-loring/097/00308",
+        "pharmacy_lat": 38.8813647,
+        "pharmacy_lon": -77.2285315,
+        "pharmacy_distance_miles": 0.12
+    },
+    {
+        "pharmacy_id": "25",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/6-dupont-circle-nw-washington-dc-20036/storeid=1347",
+        "pharmacy_lat": 38.9094458,
+        "pharmacy_lon": -77.0444,
+        "pharmacy_distance_miles": 0.12
+    },
+    {
+        "pharmacy_id": "26",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "pharmacy_name": "Walgreens",
+        "pharmacy_website": "https://www.walgreens.com/locator/walgreens-1815+connecticut+ave+nw-washington-dc-20009/id=19076",
+        "pharmacy_lat": 38.9148265,
+        "pharmacy_lon": -77.0458618,
+        "pharmacy_distance_miles": 0.27
+    },
+    {
+        "pharmacy_id": "27",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/1637-p-street-nw-washington-dc-20036/storeid=1365",
+        "pharmacy_lat": 38.9098041,
+        "pharmacy_lon": -77.0382878,
+        "pharmacy_distance_miles": 0.34
+    },
+    {
+        "pharmacy_id": "28",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/1781-florida-avenue-nw-washington-dc-20009/storeid=10834",
+        "pharmacy_lat": 38.9173589,
+        "pharmacy_lon": -77.0409639,
+        "pharmacy_distance_miles": 0.47
+    },
+    {
+        "pharmacy_id": "29",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/1418-p-street-nw-washington-dc-20005/storeid=2817?WT.mc_id=LS_GOOGLE_FS_2817",
+        "pharmacy_lat": 38.9098859,
+        "pharmacy_lon": -77.0382484,
+        "pharmacy_distance_miles": 0.34
+    },
+    {
+        "pharmacy_id": "30",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "pharmacy_name": "Safeway",
+        "pharmacy_website": "https://local.safeway.com/safeway/dc/washington/1701-corcoran-st-nw.html",
+        "pharmacy_lat": 38.9120538,
+        "pharmacy_lon": -77.038953,
+        "pharmacy_distance_miles": 0.3
+    },
+    {
+        "pharmacy_id": "31",
+        "station_name": "EASTERN MARKET METRO STATION",
+        "station_id": "8",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/661-pennsylvania-avenue-se-washington-dc-20003/storeid=1338",
+        "pharmacy_lat": 38.8844608,
+        "pharmacy_lon": -76.9964341,
+        "pharmacy_distance_miles": 0.08
+    },
+    {
+        "pharmacy_id": "32",
+        "station_name": "EISENHOWER AVE METRO STATION",
+        "station_id": "85",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/alexandria-va-pharmacies/2441-eisenhower-ave-alexandria-va-22314/storeid=10900",
+        "pharmacy_lat": 38.8014161,
+        "pharmacy_lon": -77.0709507,
+        "pharmacy_distance_miles": 0.07
+    },
+    {
+        "pharmacy_id": "33",
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": "38",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/2240-m-st-nw-washington-dc-20037/storeid=7074?WT.mc_id=LS_GOOGLE_FS_7074",
+        "pharmacy_lat": 38.9054891,
+        "pharmacy_lon": -77.045132,
+        "pharmacy_distance_miles": 0.34
+    },
+    {
+        "pharmacy_id": "34",
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": "38",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/675-k-street-nw-washington-dc-20001/storeid=10685",
+        "pharmacy_lat": 38.9027889,
+        "pharmacy_lon": -77.0359229,
+        "pharmacy_distance_miles": 0.2
+    },
+    {
+        "pharmacy_id": "35",
+        "station_name": "FARRAGUT WEST METRO STATION",
+        "station_id": "16",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/1901-pennsylvania-avenue-nw-washington-dc-20006/storeid=1342",
+        "pharmacy_lat": 38.9005424,
+        "pharmacy_lon": -77.0437113,
+        "pharmacy_distance_miles": 0.23
+    },
+    {
+        "pharmacy_id": "36",
+        "station_name": "FEDERAL TRIANGLE METRO STATION",
+        "station_id": "13",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/1275-pennsylvania-avenue-nw-washington-dc-20004/storeid=1842",
+        "pharmacy_lat": 38.8956266,
+        "pharmacy_lon": -77.029397,
+        "pharmacy_distance_miles": 0.15
+    },
+    {
+        "pharmacy_id": "37",
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": "39",
+        "pharmacy_name": "Walgreens",
+        "pharmacy_website": "https://www.walgreens.com/locator/walgreens-1217+22nd+st+nw-washington-dc-20037/id=10071",
+        "pharmacy_lat": 38.90545,
+        "pharmacy_lon": -77.0485113,
+        "pharmacy_distance_miles": 0.34
+    },
+    {
+        "pharmacy_id": "38",
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": "39",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/2000-pennsylvania-ave-nw-washington-dc-20006/storeid=2847",
+        "pharmacy_lat": 38.900342,
+        "pharmacy_lon": -77.0464291,
+        "pharmacy_distance_miles": 0.2
+    },
+    {
+        "pharmacy_id": "39",
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": "39",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/2240-m-st-nw-washington-dc-20037/storeid=7074",
+        "pharmacy_lat": 38.904798,
+        "pharmacy_lon": -77.049734,
+        "pharmacy_distance_miles": 0.28
+    },
+    {
+        "pharmacy_id": "40",
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": "39",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/2125-e-street-nw-washington-dc-20037/storeid=1358",
+        "pharmacy_lat": 38.8961808,
+        "pharmacy_lon": -77.0477743,
+        "pharmacy_distance_miles": 0.33
+    },
+    {
+        "pharmacy_id": "41",
+        "station_name": "FOREST GLEN METRO STATION",
+        "station_id": "65",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/silver-spring-md-pharmacies/9520-georgia-avenue-silver-spring-md-20910/storeid=1492",
+        "pharmacy_lat": 39.0107695,
+        "pharmacy_lon": -77.0419964,
+        "pharmacy_distance_miles": 0.33
+    },
+    {
+        "pharmacy_id": "42",
+        "station_name": "FORT TOTTEN METRO STATION",
+        "station_id": "23",
+        "pharmacy_name": "Walmart Supercenter",
+        "pharmacy_website": "https://www.walmart.com/store/3035-washington-dc",
+        "pharmacy_lat": 38.9578188,
+        "pharmacy_lon": -77.0022035,
+        "pharmacy_distance_miles": 0.42
+    },
+    {
+        "pharmacy_id": "43",
+        "station_name": "GEORGIA AVE PETWORTH METRO STATION",
+        "station_id": "22",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/3642-georgia-ave-washington-dc-20010/storeid=2787",
+        "pharmacy_lat": 38.9355894,
+        "pharmacy_lon": -77.0244781,
+        "pharmacy_distance_miles": 0.05
+    },
+    {
+        "pharmacy_id": "44",
+        "station_name": "GEORGIA AVE PETWORTH METRO STATION",
+        "station_id": "22",
+        "pharmacy_name": "Safeway",
+        "pharmacy_website": "https://local.safeway.com/safeway/dc/washington/3830-georgia-ave-nw.html",
+        "pharmacy_lat": 38.9383742,
+        "pharmacy_lon": -77.0249072,
+        "pharmacy_distance_miles": 0.15
+    },
+    {
+        "pharmacy_id": "45",
+        "station_name": "GERMANTOWN MARC",
+        "station_id": "133",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/germantown-md-pharmacies/12825-wisteria-dr-germantown-md-20874/storeid=1880",
+        "pharmacy_lat": 39.1770902,
+        "pharmacy_lon": -77.2689483,
+        "pharmacy_distance_miles": 0.29
+    },
+    {
+        "pharmacy_id": "46",
+        "station_name": "GLENMONT METRO STATION",
+        "station_id": "64",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/silver-spring-md-pharmacies/12359-georgia-avenue-silver-spring-md-20906/storeid=1459",
+        "pharmacy_lat": 39.0609441,
+        "pharmacy_lon": -77.0498313,
+        "pharmacy_distance_miles": 0.18
+    },
+    {
+        "pharmacy_id": "48",
+        "station_name": "HYATTSVILLE CROSSING METRO STATION",
+        "station_id": "50",
+        "pharmacy_name": "Target",
+        "pharmacy_website": "https://www.target.com/sl/prince-georges-plaza/1890",
+        "pharmacy_lat": 38.9687486,
+        "pharmacy_lon": -76.9550577,
+        "pharmacy_distance_miles": 0.25
+    },
+    {
+        "pharmacy_id": "49",
+        "station_name": "HYATTSVILLE CROSSING METRO STATION",
+        "station_id": "50",
+        "pharmacy_name": "Safeway",
+        "pharmacy_website": "https://local.safeway.com/safeway/md/hyattsville/3702-east-west-hwy.html",
+        "pharmacy_lat": 38.9670494,
+        "pharmacy_lon": -76.9515119,
+        "pharmacy_distance_miles": 0.27
+    },
+    {
+        "pharmacy_id": "50",
+        "station_name": "HYATTSVILLE CROSSING METRO STATION",
+        "station_id": "50",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/hyattsville-md-pharmacies/3605-east-west-highway-hyattsville-md-20782/storeid=2373",
+        "pharmacy_lat": 38.9659717,
+        "pharmacy_lon": -76.9527152,
+        "pharmacy_distance_miles": 0.18
+    },
+    {
+        "pharmacy_id": "51",
+        "station_name": "HYATTSVILLE CROSSING METRO STATION",
+        "station_id": "50",
+        "pharmacy_name": "Giant",
+        "pharmacy_website": "https://stores.giantfood.com/md/hyattsville/3521-east-west-highway",
+        "pharmacy_lat": 38.9656587,
+        "pharmacy_lon": -76.9585422,
+        "pharmacy_distance_miles": 0.14
+    },
+    {
+        "pharmacy_id": "52",
+        "station_name": "KENSINGTON MARC",
+        "station_id": "138",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/kensington-md-pharmacies/3715-university-boulevard-west-kensington-md-20895/storeid=2221",
+        "pharmacy_lat": 39.033532,
+        "pharmacy_lon": -77.073454,
+        "pharmacy_distance_miles": 0.48
+    },
+    {
+        "pharmacy_id": "53",
+        "station_name": "KENSINGTON MARC",
+        "station_id": "138",
+        "pharmacy_name": "Safeway",
+        "pharmacy_website": "https://local.pharmacy.safeway.com/safeway/md/kensington/10541-connecticut-ave.html",
+        "pharmacy_lat": 39.0275528,
+        "pharmacy_lon": -77.0750011,
+        "pharmacy_distance_miles": 0.18
+    },
+    {
+        "pharmacy_id": "54",
+        "station_name": "KING STREET METRO STATION",
+        "station_id": "86",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/alexandria-va-pharmacies/1680-duke-st-alexandria-va-22314/storeid=10876",
+        "pharmacy_lat": 38.8041246,
+        "pharmacy_lon": -77.0593692,
+        "pharmacy_distance_miles": 0.18
+    },
+    {
+        "pharmacy_id": "55",
+        "station_name": "LAUREL MARC",
+        "station_id": "140",
+        "pharmacy_name": "Walgreens",
+        "pharmacy_website": "https://www.walgreens.com/locator/walgreens-600+washington+blvd+s-laurel-md-20707/id=15185",
+        "pharmacy_lat": 39.0987775,
+        "pharmacy_lon": -76.8483347,
+        "pharmacy_distance_miles": 0.44
+    },
+    {
+        "pharmacy_id": "56",
+        "station_name": "L'ENFANT PLAZA METRO STATION",
+        "station_id": "36",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/804-maine-avenue-sw-washington-dc-20024/storeid=10415",
+        "pharmacy_lat": 38.8796244,
+        "pharmacy_lon": -77.0244697,
+        "pharmacy_distance_miles": 0.39
+    },
+    {
+        "pharmacy_id": "57",
+        "station_name": "MANASSAS VRE",
+        "station_id": "100",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/manassas-va-pharmacies/9200-centreville-rd-manassas-va-20110/storeid=1406",
+        "pharmacy_lat": 38.7552918,
+        "pharmacy_lon": -77.4668483,
+        "pharmacy_distance_miles": 0.48
+    },
+    {
+        "pharmacy_id": "58",
+        "station_name": "MCLEAN METRO STATION",
+        "station_id": "97",
+        "pharmacy_name": "Safeway",
+        "pharmacy_website": "https://local.safeway.com/safeway/va/mclean/1688-anderson-rd.html",
+        "pharmacy_lat": 38.922556,
+        "pharmacy_lon": -77.2021967,
+        "pharmacy_distance_miles": 0.47
+    },
+    {
+        "pharmacy_id": "59",
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": "15",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/1199-vermont-avenue-nw-washington-dc-20005/storeid=1341",
+        "pharmacy_lat": 38.9044611,
+        "pharmacy_lon": -77.0322853,
+        "pharmacy_distance_miles": 0.22
+    },
+    {
+        "pharmacy_id": "60",
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": "15",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/717-14th-street-nw-washington-dc-20005/storeid=1334",
+        "pharmacy_lat": 38.898915,
+        "pharmacy_lon": -77.03167,
+        "pharmacy_distance_miles": 0.17
+    },
+    {
+        "pharmacy_id": "61",
+        "station_name": "MEDICAL CENTER METRO STATION",
+        "station_id": "56",
+        "pharmacy_name": "Harris Teeter",
+        "pharmacy_website": "https://www.harristeeter.com/stores/grocery/md/bethesda/downtown-bethesda/097/00404",
+        "pharmacy_lat": 38.9928729,
+        "pharmacy_lon": -77.0968915,
+        "pharmacy_distance_miles": 0.5
+    },
+    {
+        "pharmacy_id": "62",
+        "station_name": "METRO CENTER METRO STATION",
+        "station_id": "3",
+        "pharmacy_name": "Walgreens",
+        "pharmacy_website": "https://www.walgreens.com/locator/walgreens-1155+f+st+nw-washington-dc-20004/id=15953",
+        "pharmacy_lat": 38.8975523,
+        "pharmacy_lon": -77.0278689,
+        "pharmacy_distance_miles": 0.05
+    },
+    {
+        "pharmacy_id": "63",
+        "station_name": "METRO CENTER METRO STATION",
+        "station_id": "3",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/1101-new-york-ave-nw-washington-dc-20005/storeid=10833",
+        "pharmacy_lat": 38.9014953,
+        "pharmacy_lon": -77.0272619,
+        "pharmacy_distance_miles": 0.22
+    },
+    {
+        "pharmacy_id": "64",
+        "station_name": "MINNESOTA AVE METRO STATION",
+        "station_id": "30",
+        "pharmacy_name": "Safeway",
+        "pharmacy_website": "https://local.safeway.com/safeway/dc/washington/322-40th-st-ne.html",
+        "pharmacy_lat": 38.8933254,
+        "pharmacy_lon": -76.9477203,
+        "pharmacy_distance_miles": 0.34
+    },
+    {
+        "pharmacy_id": "65",
+        "station_name": "MONOCACY MARC",
+        "station_id": "144",
+        "pharmacy_name": "Target",
+        "pharmacy_website": "https://www.target.com/sl/frederick/1137",
+        "pharmacy_lat": 39.3821916,
+        "pharmacy_lon": -77.3972348,
+        "pharmacy_distance_miles": 0.14
+    },
+    {
+        "pharmacy_id": "66",
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": "1",
+        "pharmacy_name": "Walgreens",
+        "pharmacy_website": "https://www.walgreens.com/locator/walgreens-801+7th+st+nw-washington-dc-20001/id=15360",
+        "pharmacy_lat": 38.8999767,
+        "pharmacy_lon": -77.0217001,
+        "pharmacy_distance_miles": 0.08
+    },
+    {
+        "pharmacy_id": "67",
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": "1",
+        "pharmacy_name": "Safeway",
+        "pharmacy_website": "https://local.safeway.com/safeway/dc/washington/490-l-st-nw.html",
+        "pharmacy_lat": 38.9035899,
+        "pharmacy_lon": -77.0187533,
+        "pharmacy_distance_miles": 0.25
+    },
+    {
+        "pharmacy_id": "68",
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": "1",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/1117-10th-st-unit-c-1-washington-dc-20001/storeid=21",
+        "pharmacy_lat": 38.9046321,
+        "pharmacy_lon": -77.0257161,
+        "pharmacy_distance_miles": 0.32
+    },
+    {
+        "pharmacy_id": "69",
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": "1",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/675-k-street-nw-washington-dc-20001/storeid=10685",
+        "pharmacy_lat": 38.9027977,
+        "pharmacy_lon": -77.0212666,
+        "pharmacy_distance_miles": 0.13
+    },
+    {
+        "pharmacy_id": "70",
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": "9",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/1100-new-jersey-ave-s-e-washington-dc-20003/storeid=7102",
+        "pharmacy_lat": 38.8767087,
+        "pharmacy_lon": -77.0038744,
+        "pharmacy_distance_miles": 0.05
+    },
+    {
+        "pharmacy_id": "71",
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": "9",
+        "pharmacy_name": "Harris Teeter",
+        "pharmacy_website": "https://www.harristeeter.com/stores/grocery/dc/washington/the-yards/097/00383",
+        "pharmacy_lat": 38.8760895,
+        "pharmacy_lon": -77.0002448,
+        "pharmacy_distance_miles": 0.24
+    },
+    {
+        "pharmacy_id": "72",
+        "station_name": "NEW CARROLLTON MARC",
+        "station_id": "146",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/new-carrollton-md-pharmacies/8201-annapolis-rd-new-carrollton-md-20784/storeid=1448",
+        "pharmacy_lat": 38.9550742,
+        "pharmacy_lon": -76.872463,
+        "pharmacy_distance_miles": 0.48
+    },
+    {
+        "pharmacy_id": "73",
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": "6",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/1200-first-st-ne-washington-dc-20002/storeid=7174",
+        "pharmacy_lat": 38.9058022,
+        "pharmacy_lon": -77.0062287,
+        "pharmacy_distance_miles": 0.21
+    },
+    {
+        "pharmacy_id": "74",
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": "6",
+        "pharmacy_name": "Harris Teeter",
+        "pharmacy_website": "https://www.harristeeter.com/stores/grocery/dc/washington/constitution-square/097/00352",
+        "pharmacy_lat": 38.9058621,
+        "pharmacy_lon": -77.0056211,
+        "pharmacy_distance_miles": 0.18
+    },
+    {
+        "pharmacy_id": "75",
+        "station_name": "NORTH BETHESDA METRO STATION",
+        "station_id": "61",
+        "pharmacy_name": "Harris Teeter",
+        "pharmacy_website": "https://www.harristeeter.com/stores/grocery/md/rockville/north-bethesda-center/097/00328",
+        "pharmacy_lat": 39.0495732,
+        "pharmacy_lon": -77.1091078,
+        "pharmacy_distance_miles": 0.26
+    },
+    {
+        "pharmacy_id": "76",
+        "station_name": "NORTH BETHESDA METRO STATION",
+        "station_id": "61",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/rockville-md-pharmacies/11416-rockville-pike-rockville-md-20852/storeid=1879",
+        "pharmacy_lat": 39.0430355,
+        "pharmacy_lon": -77.1113772,
+        "pharmacy_distance_miles": 0.29
+    },
+    {
+        "pharmacy_id": "77",
+        "station_name": "ODENTON MARC",
+        "station_id": "147",
+        "pharmacy_name": "Walgreens",
+        "pharmacy_website": "https://www.walgreens.com/locator/walgreens-8374+piney+orchard+pkwy-odenton-md-21113/id=13816",
+        "pharmacy_lat": 39.0858072,
+        "pharmacy_lon": -76.7002128,
+        "pharmacy_distance_miles": 0.33
+    },
+    {
+        "pharmacy_id": "78",
+        "station_name": "PENN STATION MARC",
+        "station_id": "148",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/baltimore-md-pharmacies/934-north-charles-st-baltimore-md-21201/storeid=10751",
+        "pharmacy_lat": 39.3008388,
+        "pharmacy_lon": -76.6161719,
+        "pharmacy_distance_miles": 0.43
+    },
+    {
+        "pharmacy_id": "79",
+        "station_name": "PENTAGON CITY METRO STATION",
+        "station_id": "76",
+        "pharmacy_name": "Walgreens",
+        "pharmacy_website": "https://www.walgreens.com/locator/walgreens-1301+s+joyce+st-arlington-va-22202/id=18419",
+        "pharmacy_lat": 38.8621971,
+        "pharmacy_lon": -77.0631491,
+        "pharmacy_distance_miles": 0.22
+    },
+    {
+        "pharmacy_id": "80",
+        "station_name": "PENTAGON CITY METRO STATION",
+        "station_id": "76",
+        "pharmacy_name": "Target",
+        "pharmacy_website": "https://www.target.com/sl/pentagon-city-army-navy-dr/3430",
+        "pharmacy_lat": 38.8652192,
+        "pharmacy_lon": -77.0624317,
+        "pharmacy_distance_miles": 0.24
+    },
+    {
+        "pharmacy_id": "81",
+        "station_name": "PENTAGON CITY METRO STATION",
+        "station_id": "76",
+        "pharmacy_name": "Harris Teeter",
+        "pharmacy_website": "https://www.harristeeter.com/stores/grocery/va/arlington/pentagon-row/097/00083",
+        "pharmacy_lat": 38.865068,
+        "pharmacy_lon": -77.0616321,
+        "pharmacy_distance_miles": 0.2
+    },
+    {
+        "pharmacy_id": "82",
+        "station_name": "PENTAGON CITY METRO STATION",
+        "station_id": "76",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/arlington-va-pharmacies/1201-south-hayes-st-suite-c-arlington-va-22202/storeid=2750",
+        "pharmacy_lat": 38.8622888,
+        "pharmacy_lon": -77.0588243,
+        "pharmacy_distance_miles": 0.05
+    },
+    {
+        "pharmacy_id": "83",
+        "station_name": "POTOMAC AVE METRO STATION",
+        "station_id": "11",
+        "pharmacy_name": "Safeway",
+        "pharmacy_website": "https://local.safeway.com/safeway/dc/washington/415-14th-st-se.html",
+        "pharmacy_lat": 38.8838325,
+        "pharmacy_lon": -76.9858314,
+        "pharmacy_distance_miles": 0.21
+    },
+    {
+        "pharmacy_id": "84",
+        "station_name": "POTOMAC AVE METRO STATION",
+        "station_id": "11",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/500-12th-street-se-washington-dc-20003/storeid=1344",
+        "pharmacy_lat": 38.882529,
+        "pharmacy_lon": -76.9898733,
+        "pharmacy_distance_miles": 0.27
+    },
+    {
+        "pharmacy_id": "85",
+        "station_name": "RESTON TOWN CENTER METRO STATION",
+        "station_id": "92",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/reston-va-pharmacies/12027-town-square-street-reston-va-20190/storeid=10361",
+        "pharmacy_lat": 38.958062,
+        "pharmacy_lon": -77.3615547,
+        "pharmacy_distance_miles": 0.37
+    },
+    {
+        "pharmacy_id": "86",
+        "station_name": "RHODE ISLAND AVE METRO STATION",
+        "station_id": "27",
+        "pharmacy_name": "Giant",
+        "pharmacy_website": "https://stores.giantfood.com/dc/washington/1050-brentwood-road",
+        "pharmacy_lat": 38.919222,
+        "pharmacy_lon": -76.9924287,
+        "pharmacy_distance_miles": 0.21
+    },
+    {
+        "pharmacy_id": "87",
+        "station_name": "RHODE ISLAND AVE METRO STATION",
+        "station_id": "27",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/2350-washington-pl-suite-101-n-washington-dc-20018/storeid=1363",
+        "pharmacy_lat": 38.9217166,
+        "pharmacy_lon": -76.9941157,
+        "pharmacy_distance_miles": 0.11
+    },
+    {
+        "pharmacy_id": "88",
+        "station_name": "RIVERDALE MARC",
+        "station_id": "151",
+        "pharmacy_name": "Walgreens",
+        "pharmacy_website": "https://www.walgreens.com/locator/walgreens-6130+baltimore+ave-riverdale-md-20737/id=19312",
+        "pharmacy_lat": 38.9626295,
+        "pharmacy_lon": -76.9398877,
+        "pharmacy_distance_miles": 0.27
+    },
+    {
+        "pharmacy_id": "89",
+        "station_name": "ROCKVILLE METRO STATION",
+        "station_id": "58",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/rockville-md-pharmacies/799-rockville-pike-rockville-md-20852/storeid=169",
+        "pharmacy_lat": 39.0872469,
+        "pharmacy_lon": -77.1503462,
+        "pharmacy_distance_miles": 0.23
+    },
+    {
+        "pharmacy_id": "90",
+        "station_name": "ROCKVILLE METRO STATION",
+        "station_id": "58",
+        "pharmacy_name": "Walgreens",
+        "pharmacy_website": "https://www.walgreens.com/locator/walgreens-430+hungerford+dr-rockville-md-20850/id=15117",
+        "pharmacy_lat": 39.0886667,
+        "pharmacy_lon": -77.1518898,
+        "pharmacy_distance_miles": 0.36
+    },
+    {
+        "pharmacy_id": "91",
+        "station_name": "ROSSLYN METRO STATION",
+        "station_id": "80",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/rosslyn-va-pharmacies/1500-wilson-blvd-rosslyn-va-22209/storeid=17678?WT.mc_id=LS_GOOGLE_RX_17678",
+        "pharmacy_lat": 38.89454,
+        "pharmacy_lon": -77.0705975,
+        "pharmacy_distance_miles": 0.1
+    },
+    {
+        "pharmacy_id": "92",
+        "station_name": "ROSSLYN METRO STATION",
+        "station_id": "80",
+        "pharmacy_name": "Target",
+        "pharmacy_website": "https://www.target.com/sl/rosslyn/3210",
+        "pharmacy_lat": 38.8946186,
+        "pharmacy_lon": -77.0741766,
+        "pharmacy_distance_miles": 0.13
+    },
+    {
+        "pharmacy_id": "93",
+        "station_name": "ROSSLYN METRO STATION",
+        "station_id": "80",
+        "pharmacy_name": "Safeway",
+        "pharmacy_website": "https://local.safeway.com/safeway/va/arlington/1525-wilson-blvd.html",
+        "pharmacy_lat": 38.8950475,
+        "pharmacy_lon": -77.0749943,
+        "pharmacy_distance_miles": 0.17
+    },
+    {
+        "pharmacy_id": "94",
+        "station_name": "SHADY GROVE METRO STATION",
+        "station_id": "62",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/rockville-md-pharmacies/799-rockville-pike-rockville-md-20852/storeid=169",
+        "pharmacy_lat": 39.1245323,
+        "pharmacy_lon": -77.1646676,
+        "pharmacy_distance_miles": 0.31
+    },
+    {
+        "pharmacy_id": "95",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "pharmacy_name": "Giant",
+        "pharmacy_website": "https://stores.giantfood.com/dc/washington/1400-7th-street-nw",
+        "pharmacy_lat": 38.9090968,
+        "pharmacy_lon": -77.0226834,
+        "pharmacy_distance_miles": 0.38
+    },
+    {
+        "pharmacy_id": "96",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/2009-eight-street-nw-washington-dc-20001/storeid=1355",
+        "pharmacy_lat": 38.9169974,
+        "pharmacy_lon": -77.0227755,
+        "pharmacy_distance_miles": 0.18
+    },
+    {
+        "pharmacy_id": "97",
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": "66",
+        "pharmacy_name": "Giant",
+        "pharmacy_website": "https://stores.giantfood.com/md/silver-spring/1280-east-west-hwy",
+        "pharmacy_lat": 38.991893,
+        "pharmacy_lon": -77.031655,
+        "pharmacy_distance_miles": 0.09
+    },
+    {
+        "pharmacy_id": "98",
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": "66",
+        "pharmacy_name": "Safeway",
+        "pharmacy_website": "https://local.safeway.com/safeway/md/silver-spring/909-thayer-ave.html",
+        "pharmacy_lat": 38.9933627,
+        "pharmacy_lon": -77.024375,
+        "pharmacy_distance_miles": 0.32
+    },
+    {
+        "pharmacy_id": "99",
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": "66",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/silver-spring-md-pharmacies/1290-east-west-highway-silver-spring-md-20910/storeid=1477",
+        "pharmacy_lat": 38.99234,
+        "pharmacy_lon": -77.0320927,
+        "pharmacy_distance_miles": 0.09
+    },
+    {
+        "pharmacy_id": "100",
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": "66",
+        "pharmacy_name": "Walgreens",
+        "pharmacy_website": "https://www.walgreens.com/locator/walgreens-8701+georgia+ave-silver+spring-md-20910/id=19619",
+        "pharmacy_lat": 38.9978034,
+        "pharmacy_lon": -77.0297199,
+        "pharmacy_distance_miles": 0.32
+    },
+    {
+        "pharmacy_id": "101",
+        "station_name": "SPRING HILL METRO STATION",
+        "station_id": "94",
+        "pharmacy_name": "Walmart Supercenter",
+        "pharmacy_website": "https://www.walmart.com/store/5936-vienna-va",
+        "pharmacy_lat": 38.9295775,
+        "pharmacy_lon": -77.2452367,
+        "pharmacy_distance_miles": 0.18
+    },
+    {
+        "pharmacy_id": "102",
+        "station_name": "TAKOMA METRO STATION",
+        "station_id": "24",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/110-carroll-street-nw-washington-dc-20012/storeid=2330",
+        "pharmacy_lat": 38.9744843,
+        "pharmacy_lon": -77.01456,
+        "pharmacy_distance_miles": 0.17
+    },
+    {
+        "pharmacy_id": "103",
+        "station_name": "TENLEYTOWN METRO STATION",
+        "station_id": "25",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/4555-wisconsin-avenue-nw-washington-dc-20016/storeid=2174",
+        "pharmacy_lat": 38.9494017,
+        "pharmacy_lon": -77.0795886,
+        "pharmacy_distance_miles": 0.11
+    },
+    {
+        "pharmacy_id": "104",
+        "station_name": "TENLEYTOWN METRO STATION",
+        "station_id": "25",
+        "pharmacy_name": "Target",
+        "pharmacy_website": "https://www.target.com/sl/dc-tenleytown/3351",
+        "pharmacy_lat": 38.9482423,
+        "pharmacy_lon": -77.0803691,
+        "pharmacy_distance_miles": 0.06
+    },
+    {
+        "pharmacy_id": "105",
+        "station_name": "TWINBROOK METRO STATION",
+        "station_id": "60",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/rockville-md-pharmacies/1580-rockville-pike-rockville-md-20852/storeid=1441",
+        "pharmacy_lat": 39.0643259,
+        "pharmacy_lon": -77.125445,
+        "pharmacy_distance_miles": 0.28
+    },
+    {
+        "pharmacy_id": "106",
+        "station_name": "TWINBROOK METRO STATION",
+        "station_id": "60",
+        "pharmacy_name": "Safeway",
+        "pharmacy_website": "https://local.safeway.com/safeway/md/rockville/1800-rockville-pike.html",
+        "pharmacy_lat": 39.0604288,
+        "pharmacy_lon": -77.1219769,
+        "pharmacy_distance_miles": 0.15
+    },
+    {
+        "pharmacy_id": "107",
+        "station_name": "TWINBROOK METRO STATION",
+        "station_id": "60",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/rockville-md-pharmacies/1580-rockville-pike-rockville-md-20852/storeid=1441",
+        "pharmacy_lat": 39.0643637,
+        "pharmacy_lon": -77.1252593,
+        "pharmacy_distance_miles": 0.28
+    },
+    {
+        "pharmacy_id": "108",
+        "station_name": "TYSONS METRO STATION",
+        "station_id": "96",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/vienna-va-pharmacies/8117-leesburg-pike-vienna-va-22182/storeid=10170",
+        "pharmacy_lat": 38.9147055,
+        "pharmacy_lon": -77.2263722,
+        "pharmacy_distance_miles": 0.49
+    },
+    {
+        "pharmacy_id": "109",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/1418-p-street-nw-washington-dc-20005/storeid=2817?WT.mc_id=LS_GOOGLE_FS_2817",
+        "pharmacy_lat": 38.9168527,
+        "pharmacy_lon": -77.0261698,
+        "pharmacy_distance_miles": 0.16
+    },
+    {
+        "pharmacy_id": "110",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "pharmacy_name": "Walgreens",
+        "pharmacy_website": "https://www.walgreens.com/locator/walgreens-1306+u+st+nw-washington-dc-20009/id=17712",
+        "pharmacy_lat": 38.9168144,
+        "pharmacy_lon": -77.0298869,
+        "pharmacy_distance_miles": 0.04
+    },
+    {
+        "pharmacy_id": "111",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/2129-14th-street-nw-washington-dc-20009/storeid=4546",
+        "pharmacy_lat": 38.9189228,
+        "pharmacy_lon": -77.0317177,
+        "pharmacy_distance_miles": 0.19
+    },
+    {
+        "pharmacy_id": "112",
+        "station_name": "UNION STATION MARC",
+        "station_id": "157",
+        "pharmacy_name": "Giant",
+        "pharmacy_website": "https://stores.giantfood.com/dc/washington/300-h-street-ne",
+        "pharmacy_lat": 38.9006223,
+        "pharmacy_lon": -77.0015231,
+        "pharmacy_distance_miles": 0.3
+    },
+    {
+        "pharmacy_id": "113",
+        "station_name": "UNION STATION VRE",
+        "station_id": "98",
+        "pharmacy_name": "Walgreens",
+        "pharmacy_website": "https://www.walgreens.com/locator/walgreens-50+massachusetts+ave-washington-dc-20002/id=16290",
+        "pharmacy_lat": 38.8974908,
+        "pharmacy_lon": -77.0058994,
+        "pharmacy_distance_miles": 0.02
+    },
+    {
+        "pharmacy_id": "114",
+        "station_name": "VAN NESS-UDC METRO STATION",
+        "station_id": "18",
+        "pharmacy_name": "Giant",
+        "pharmacy_website": "https://stores.giantfood.com/dc/washington/4303-conn-ave-nw",
+        "pharmacy_lat": 38.944499,
+        "pharmacy_lon": -77.0631702,
+        "pharmacy_distance_miles": 0.03
+    },
+    {
+        "pharmacy_id": "115",
+        "station_name": "VAN NESS-UDC METRO STATION",
+        "station_id": "18",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/4309-connecticut-avenue-nw-washington-dc-20008/storeid=1362",
+        "pharmacy_lat": 38.9448585,
+        "pharmacy_lon": -77.0636184,
+        "pharmacy_distance_miles": 0.02
+    },
+    {
+        "pharmacy_id": "116",
+        "station_name": "VIRGINIA SQUARE METRO STATION",
+        "station_id": "78",
+        "pharmacy_name": "Giant",
+        "pharmacy_website": "https://stores.giantfood.com/va/arlington/3450-washington-blvd",
+        "pharmacy_lat": 38.8856573,
+        "pharmacy_lon": -77.1029518,
+        "pharmacy_distance_miles": 0.18
+    },
+    {
+        "pharmacy_id": "117",
+        "station_name": "VIRGINIA SQUARE METRO STATION",
+        "station_id": "78",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/arlington-va-pharmacies/3336-wilson-blvd-arlington-va-22201/storeid=10968",
+        "pharmacy_lat": 38.8830611,
+        "pharmacy_lon": -77.0997655,
+        "pharmacy_distance_miles": 0.22
+    },
+    {
+        "pharmacy_id": "118",
+        "station_name": "WATERFRONT METRO STATION",
+        "station_id": "33",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/804-maine-avenue-sw-washington-dc-20024/storeid=10415",
+        "pharmacy_lat": 38.8779561,
+        "pharmacy_lon": -77.0173577,
+        "pharmacy_distance_miles": 0.1
+    },
+    {
+        "pharmacy_id": "119",
+        "station_name": "WATERFRONT METRO STATION",
+        "station_id": "33",
+        "pharmacy_name": "Safeway",
+        "pharmacy_website": "https://local.safeway.com/safeway/dc/washington/1100-4th-st-sw.html",
+        "pharmacy_lat": 38.8774173,
+        "pharmacy_lon": -77.0172181,
+        "pharmacy_distance_miles": 0.06
+    },
+    {
+        "pharmacy_id": "120",
+        "station_name": "WEST BALTIMORE MARC",
+        "station_id": "159",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/baltimore-md-pharmacies/2560-west-franklin-street-baltimore-md-21223/storeid=5764",
+        "pharmacy_lat": 39.293739,
+        "pharmacy_lon": -76.6589382,
+        "pharmacy_distance_miles": 0.31
+    },
+    {
+        "pharmacy_id": "121",
+        "station_name": "WEST FALLS CHURCH METRO STATION",
+        "station_id": "69",
+        "pharmacy_name": "Giant",
+        "pharmacy_website": "https://stores.giantfood.com/va/falls-church/1230-w-broad-st",
+        "pharmacy_lat": 38.8950203,
+        "pharmacy_lon": -77.189078,
+        "pharmacy_distance_miles": 0.39
+    },
+    {
+        "pharmacy_id": "122",
+        "station_name": "WEST FALLS CHURCH METRO STATION",
+        "station_id": "69",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/cvs-pharmacy-address/1150+West+Broad+Street-Falls+Church-VA-22046/storeid=1400",
+        "pharmacy_lat": 38.8941213,
+        "pharmacy_lon": -77.18785,
+        "pharmacy_distance_miles": 0.46
+    },
+    {
+        "pharmacy_id": "123",
+        "station_name": "WEST HYATTSVILLE METRO STATION",
+        "station_id": "49",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/hyattsville-md-pharmacies/3130-queens-chapel-road-hyattsville-md-20782/storeid=1436",
+        "pharmacy_lat": 38.9512911,
+        "pharmacy_lon": -76.9678652,
+        "pharmacy_distance_miles": 0.27
+    },
+    {
+        "pharmacy_id": "124",
+        "station_name": "WHEATON METRO STATION",
+        "station_id": "63",
+        "pharmacy_name": "Safeway",
+        "pharmacy_website": "https://local.safeway.com/safeway/md/wheaton/11201-georgia-ave.html",
+        "pharmacy_lat": 39.0388892,
+        "pharmacy_lon": -77.0506057,
+        "pharmacy_distance_miles": 0.02
+    },
+    {
+        "pharmacy_id": "125",
+        "station_name": "WHEATON METRO STATION",
+        "station_id": "63",
+        "pharmacy_name": "Target",
+        "pharmacy_website": "https://www.target.com/sl/wheaton/1415",
+        "pharmacy_lat": 39.0367821,
+        "pharmacy_lon": -77.05678,
+        "pharmacy_distance_miles": 0.35
+    },
+    {
+        "pharmacy_id": "126",
+        "station_name": "WHEATON METRO STATION",
+        "station_id": "63",
+        "pharmacy_name": "Giant",
+        "pharmacy_website": "https://stores.giantfood.com/md/wheaton/2900-university-boulevard-west",
+        "pharmacy_lat": 39.0375316,
+        "pharmacy_lon": -77.0584056,
+        "pharmacy_distance_miles": 0.42
+    },
+    {
+        "pharmacy_id": "127",
+        "station_name": "WHEATON METRO STATION",
+        "station_id": "63",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/wheaton-md-pharmacies/11190-viers-mill-road-wheaton-md-20902/storeid=1177",
+        "pharmacy_lat": 39.038971,
+        "pharmacy_lon": -77.0544619,
+        "pharmacy_distance_miles": 0.2
+    },
+    {
+        "pharmacy_id": "128",
+        "station_name": "WIEHLE-RESTON EAST METRO STATION",
+        "station_id": "93",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/reston-va-pharmacies/1906-reston-metro-plaza-suite-100-reston-va-20190/storeid=10971",
+        "pharmacy_lat": 38.9486478,
+        "pharmacy_lon": -77.3389095,
+        "pharmacy_distance_miles": 0.09
+    },
+    {
+        "pharmacy_id": "129",
+        "station_name": "WOODBRIDGE VRE",
+        "station_id": "110",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/woodbridge-va-pharmacies/13600-jefferson-davis-highway-woodbridge-va-22191/storeid=1404",
+        "pharmacy_lat": 38.6582589,
+        "pharmacy_lon": -77.2504454,
+        "pharmacy_distance_miles": 0.14
+    },
+    {
+        "pharmacy_id": "130",
+        "station_name": "WOODLEY PARK-ZOO METRO STATION",
+        "station_id": "19",
+        "pharmacy_name": "CVS Pharmacy",
+        "pharmacy_website": "https://www.cvs.com/store-locator/washington-dc-pharmacies/2601-connecticut-avenue-nw-washington-dc-20008/storeid=1354",
+        "pharmacy_lat": 38.9238258,
+        "pharmacy_lon": -77.0512391,
+        "pharmacy_distance_miles": 0.1
+    }
+]

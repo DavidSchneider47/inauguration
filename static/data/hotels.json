@@ -1,0 +1,2153 @@
+[
+    {
+        "hotel_id": "1",
+        "hotel_name": "Comfort Inn",
+        "hotel_website": "https://www.choicehotels.com/virginia/vienna/quality-inn-hotels",
+        "hotel_lat": 38.894508,
+        "hotel_lon": -76.8422267,
+        "hotel_distance_miles": 0.42,
+        "station_id": "48"
+    },
+    {
+        "hotel_id": "2",
+        "hotel_name": "AC Hotel Washington DC Capitol Hill-Navy Yard",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/wasao-ac-hotel-washington-dc-capitol-hill-navy-yard/overview/",
+        "hotel_lat": 38.8802166,
+        "hotel_lon": -77.0057653,
+        "hotel_distance_miles": 0.26,
+        "station_id": "9"
+    },
+    {
+        "hotel_id": "3",
+        "hotel_name": "AKA White House",
+        "hotel_website": "https://www.stayaka.com/locations/washington-dc",
+        "hotel_lat": 38.899927,
+        "hotel_lon": -77.0403545,
+        "hotel_distance_miles": 0.11,
+        "station_id": "16"
+    },
+    {
+        "hotel_id": "4",
+        "hotel_name": "American Guest House",
+        "hotel_website": "https://www.americanguesthouse.com/",
+        "hotel_lat": 38.9176566,
+        "hotel_lon": -77.0459777,
+        "hotel_distance_miles": 0.46,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "5",
+        "hotel_name": "Arc Hotel Washington DC",
+        "hotel_website": "https://www.archoteldc.com/",
+        "hotel_lat": 38.9002688,
+        "hotel_lon": -77.0528992,
+        "hotel_distance_miles": 0.16,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "6",
+        "hotel_name": "Archer Hotel Old Town Alexandria",
+        "hotel_website": "https://archerhotel.com/alexandria",
+        "hotel_lat": 38.8060311,
+        "hotel_lon": -77.0568581,
+        "hotel_distance_miles": 0.22,
+        "station_id": "86"
+    },
+    {
+        "hotel_id": "7",
+        "hotel_name": "Hilton Arlington",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcavahf-hilton-arlington/",
+        "hotel_lat": 38.8817423,
+        "hotel_lon": -77.1108828,
+        "hotel_distance_miles": 0.05,
+        "station_id": "77"
+    },
+    {
+        "hotel_id": "8",
+        "hotel_name": "Avenue Suites",
+        "hotel_website": "http://WashingtonSuitesHotel.com",
+        "hotel_lat": 38.9034654,
+        "hotel_lon": -77.0536656,
+        "hotel_distance_miles": 0.27,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "9",
+        "hotel_name": "Beacon Hotel",
+        "hotel_website": "https://www.beaconhotelwdc.com/",
+        "hotel_lat": 38.907049,
+        "hotel_lon": -77.0380497,
+        "hotel_distance_miles": 0.27,
+        "station_id": "38"
+    },
+    {
+        "hotel_id": "10",
+        "hotel_name": "Holiday Inn Arlington at Ballston",
+        "hotel_website": "http://hiarlington.com",
+        "hotel_lat": 38.8815949,
+        "hotel_lon": -77.1174776,
+        "hotel_distance_miles": 0.32,
+        "station_id": "77"
+    },
+    {
+        "hotel_id": "11",
+        "hotel_name": "Bridgestreet Westbrook",
+        "hotel_website": "http://www.washingtondchotels.com/bridgestreet_westbrook_place.html",
+        "hotel_lat": 38.9074241,
+        "hotel_lon": -77.0495846,
+        "hotel_distance_miles": 0.38,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "12",
+        "hotel_name": "Cambria Hotel",
+        "hotel_website": "https://www.cambriadccapitolriverfront.com/",
+        "hotel_lat": 38.87096,
+        "hotel_lon": -77.0110724,
+        "hotel_distance_miles": 0.5,
+        "station_id": "33"
+    },
+    {
+        "hotel_id": "13",
+        "hotel_name": "Cambria Hotel Rockville",
+        "hotel_website": "https://www.cambriarockville.com/",
+        "hotel_lat": 39.0844898,
+        "hotel_lon": -77.1501787,
+        "hotel_distance_miles": 0.2,
+        "station_id": "58"
+    },
+    {
+        "hotel_id": "14",
+        "hotel_name": "Cambria Hotel Washington, D.C. Convention Center",
+        "hotel_website": "https://www.choicehotels.com/district-of-columbia/washington/cambria-hotels/dc018",
+        "hotel_lat": 38.9087268,
+        "hotel_lon": -77.0237541,
+        "hotel_distance_miles": 0.41,
+        "station_id": "2"
+    },
+    {
+        "hotel_id": "15",
+        "hotel_name": "Canopy",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcaempy-canopy-washington-dc-embassy-row/",
+        "hotel_lat": 38.9066662,
+        "hotel_lon": -77.0369714,
+        "hotel_distance_miles": 0.27,
+        "station_id": "38"
+    },
+    {
+        "hotel_id": "16",
+        "hotel_name": "Canopy by Hilton",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcacupy-canopy-washington-dc-the-wharf/?SEO_id=GMB-AMER-PY-DCACUPY&y_source=1_ODQyMDQ4My03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+        "hotel_lat": 38.8784134,
+        "hotel_lon": -77.0234995,
+        "hotel_distance_miles": 0.37,
+        "station_id": "33"
+    },
+    {
+        "hotel_id": "17",
+        "hotel_name": "Residence Inn Arlington Ballston",
+        "hotel_website": "https://www.marriott.com/WASIN",
+        "hotel_lat": 38.8786906,
+        "hotel_lon": -77.1079758,
+        "hotel_distance_miles": 0.31,
+        "station_id": "77"
+    },
+    {
+        "hotel_id": "18",
+        "hotel_name": "Capital Hilton",
+        "hotel_website": "https://www.hilton.com/",
+        "hotel_lat": 38.9031717,
+        "hotel_lon": -77.0359751,
+        "hotel_distance_miles": 0.19,
+        "station_id": "38"
+    },
+    {
+        "hotel_id": "19",
+        "hotel_name": "The Westin Arlington Gateway",
+        "hotel_website": "https://www.marriott.com/hotels/travel/wasag-the-westin-arlington-gateway/",
+        "hotel_lat": 38.8806204,
+        "hotel_lon": -77.1143336,
+        "hotel_distance_miles": 0.19,
+        "station_id": "77"
+    },
+    {
+        "hotel_id": "20",
+        "hotel_name": "Capitol Comfort Hostel",
+        "hotel_website": "http://runinout.com/Capital-Comfort-Hostel",
+        "hotel_lat": 38.9115516,
+        "hotel_lon": -77.022232,
+        "hotel_distance_miles": 0.21,
+        "station_id": "2"
+    },
+    {
+        "hotel_id": "21",
+        "hotel_name": "Capitol Hill Hotel",
+        "hotel_website": "https://www.capitolhillhotel-dc.com/",
+        "hotel_lat": 38.8862537,
+        "hotel_lon": -77.0031283,
+        "hotel_distance_miles": 0.15,
+        "station_id": "10"
+    },
+    {
+        "hotel_id": "22",
+        "hotel_name": "Churchill Hotel Near Embassy Row",
+        "hotel_website": "https://www.thechurchillhotel.com/",
+        "hotel_lat": 38.9163741,
+        "hotel_lon": -77.0469605,
+        "hotel_distance_miles": 0.39,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "23",
+        "hotel_name": "Club Quarters",
+        "hotel_website": "http://www.clubquarters.com/",
+        "hotel_lat": 38.9010756,
+        "hotel_lon": -77.0391649,
+        "hotel_distance_miles": 0.03,
+        "station_id": "16"
+    },
+    {
+        "hotel_id": "24",
+        "hotel_name": "Club Wyndham Old Town Alexandria",
+        "hotel_website": "https://www.extraholidays.com/alexandria-virginia/wyndham-old-town-alexandria?Identifier=psearch&hotelid=15173&utm_medium=referral&utm_source=google.com-local&utm_campaign=yext&utm_content=wynoldtownalexandria",
+        "hotel_lat": 38.807501,
+        "hotel_lon": -77.0587714,
+        "hotel_distance_miles": 0.13,
+        "station_id": "86"
+    },
+    {
+        "hotel_id": "25",
+        "hotel_name": "Comfort Inn Ballston",
+        "hotel_website": "https://www.choicehotels.com/virginia/arlington/comfort-inn-hotels/va417",
+        "hotel_lat": 38.8859404,
+        "hotel_lon": -77.1168845,
+        "hotel_distance_miles": 0.38,
+        "station_id": "77"
+    },
+    {
+        "hotel_id": "26",
+        "hotel_name": "Comfort Inn & Suites",
+        "hotel_website": "https://www.choicehotels.com/virginia/woodbridge/sleep-inn-hotels",
+        "hotel_lat": 38.7951437,
+        "hotel_lon": -77.1368246,
+        "hotel_distance_miles": 0.5,
+        "station_id": "83"
+    },
+    {
+        "hotel_id": "27",
+        "hotel_name": "Courtyard Alexandria Old Town/Southwest",
+        "hotel_website": "https://www.marriott.com/wasal",
+        "hotel_lat": 38.8019148,
+        "hotel_lon": -77.0792615,
+        "hotel_distance_miles": 0.47,
+        "station_id": "85"
+    },
+    {
+        "hotel_id": "28",
+        "hotel_name": "Comfort Inn Downtown Dc/Convention Center Washington",
+        "hotel_website": "https://www.choicehotels.com/district-of-columbia/washington/comfort-inn-hotels/dc601",
+        "hotel_lat": 38.9059047,
+        "hotel_lon": -77.0293494,
+        "hotel_distance_miles": 0.35,
+        "station_id": "15"
+    },
+    {
+        "hotel_id": "29",
+        "hotel_name": "Concordia",
+        "hotel_website": "https://www.theconcordia.com/",
+        "hotel_lat": 38.9063234,
+        "hotel_lon": -77.0468217,
+        "hotel_distance_miles": 0.36,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "30",
+        "hotel_name": "Holiday Inn Alexandria - Carlyle",
+        "hotel_website": "https://www.ihg.com/holidayinn/hotels/us/en/alexandria/axetd/hoteldetail",
+        "hotel_lat": 38.8009696,
+        "hotel_lon": -77.0739593,
+        "hotel_distance_miles": 0.17,
+        "station_id": "85"
+    },
+    {
+        "hotel_id": "31",
+        "hotel_name": "Country Inn & Suites",
+        "hotel_website": "https://www.radissonhotels.com/en-us/hotels/country-inn-camp-springs-md",
+        "hotel_lat": 38.8219871,
+        "hotel_lon": -76.9157969,
+        "hotel_distance_miles": 0.41,
+        "station_id": "43"
+    },
+    {
+        "hotel_id": "32",
+        "hotel_name": "Courtyard",
+        "hotel_website": "https://www.marriott.com/wasny",
+        "hotel_lat": 38.8779789,
+        "hotel_lon": -77.004061,
+        "hotel_distance_miles": 0.11,
+        "station_id": "9"
+    },
+    {
+        "hotel_id": "33",
+        "hotel_name": "Courtyard",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/wasyv-courtyard-washington-downtown-convention-center/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0",
+        "hotel_lat": 38.8971375,
+        "hotel_lon": -77.0243479,
+        "hotel_distance_miles": 0.17,
+        "station_id": "5"
+    },
+    {
+        "hotel_id": "34",
+        "hotel_name": "Residence Inn Alexandria Old Town South at Carlyle",
+        "hotel_website": "https://www.marriott.com/wasra",
+        "hotel_lat": 38.8027491,
+        "hotel_lon": -77.0676905,
+        "hotel_distance_miles": 0.24,
+        "station_id": "85"
+    },
+    {
+        "hotel_id": "35",
+        "hotel_name": "Hilton Garden Inn",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcatcgi-hilton-garden-inn-tysons-corner/",
+        "hotel_lat": 38.9165017,
+        "hotel_lon": -77.23283,
+        "hotel_distance_miles": 0.34,
+        "station_id": "95"
+    },
+    {
+        "hotel_id": "36",
+        "hotel_name": "Courtyard",
+        "hotel_website": "https://www.marriott.com/wasld",
+        "hotel_lat": 38.9476478,
+        "hotel_lon": -76.8634817,
+        "hotel_distance_miles": 0.38,
+        "station_id": "54"
+    },
+    {
+        "hotel_id": "37",
+        "hotel_name": "Courtyard",
+        "hotel_website": "https://www.marriott.com/wassv",
+        "hotel_lat": 38.995649,
+        "hotel_lon": -77.0248069,
+        "hotel_distance_miles": 0.43,
+        "station_id": "66"
+    },
+    {
+        "hotel_id": "38",
+        "hotel_name": "Residence Inn Tysons Corner Mall",
+        "hotel_website": "https://www.marriott.com/WASTO",
+        "hotel_lat": 38.9157488,
+        "hotel_lon": -77.235359,
+        "hotel_distance_miles": 0.39,
+        "station_id": "95"
+    },
+    {
+        "hotel_id": "39",
+        "hotel_name": "Courtyard Bethesda Chevy Chase",
+        "hotel_website": "https://www.marriott.com/wasvy",
+        "hotel_lat": 38.9643906,
+        "hotel_lon": -77.0879761,
+        "hotel_distance_miles": 0.26,
+        "station_id": "57"
+    },
+    {
+        "hotel_id": "40",
+        "hotel_name": "WhyHotel",
+        "hotel_website": "https://whyhotel.com/hotels/tysons-greensboro/",
+        "hotel_lat": 38.9251334,
+        "hotel_lon": -77.233092,
+        "hotel_distance_miles": 0.27,
+        "station_id": "95"
+    },
+    {
+        "hotel_id": "41",
+        "hotel_name": "Courtyard Dulles Airport Herndon/Reston",
+        "hotel_website": "https://www.marriott.com/IADHC",
+        "hotel_lat": 38.9539839,
+        "hotel_lon": -77.3790073,
+        "hotel_distance_miles": 0.34,
+        "station_id": "91"
+    },
+    {
+        "hotel_id": "42",
+        "hotel_name": "Courtyard Dunn Loring Fairfax",
+        "hotel_website": "https://www.marriott.com/IADCY",
+        "hotel_lat": 38.8802609,
+        "hotel_lon": -77.2282747,
+        "hotel_distance_miles": 0.2,
+        "station_id": "67"
+    },
+    {
+        "hotel_id": "43",
+        "hotel_name": "Courtyard Marriott - Foggy Bottom",
+        "hotel_website": "https://www.marriott.com/wasfb",
+        "hotel_lat": 38.8965404,
+        "hotel_lon": -77.0445227,
+        "hotel_distance_miles": 0.41,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "44",
+        "hotel_name": "Courtyard Dulles Airport Herndon",
+        "hotel_website": "https://www.marriott.com/IADHE",
+        "hotel_lat": 38.9583275,
+        "hotel_lon": -77.4216438,
+        "hotel_distance_miles": 0.38,
+        "station_id": "90"
+    },
+    {
+        "hotel_id": "45",
+        "hotel_name": "Homewood Suites",
+        "hotel_website": "https://homewoodsuites3.hilton.com/en/hotels/virginia/homewood-suites-by-hilton-dulles-intl-airport-WASDLHW/index.html",
+        "hotel_lat": 38.9578163,
+        "hotel_lon": -77.4108569,
+        "hotel_distance_miles": 0.31,
+        "station_id": "90"
+    },
+    {
+        "hotel_id": "46",
+        "hotel_name": "Courtyard Washington, DC Dupont Circle",
+        "hotel_website": "https://www.marriott.com/hotels/travel/wasnc-courtyard-washington-dc-dupont-circle/",
+        "hotel_lat": 38.9074198,
+        "hotel_lon": -77.0397084,
+        "hotel_distance_miles": 0.28,
+        "station_id": "38"
+    },
+    {
+        "hotel_id": "47",
+        "hotel_name": "Crowne Plaza Crystal City-Washington, D.C.",
+        "hotel_website": "https://www.ihg.com/crowneplaza/hotels/us/en/arlington/wasna/hoteldetail",
+        "hotel_lat": 38.8605953,
+        "hotel_lon": -77.0502406,
+        "hotel_distance_miles": 0.19,
+        "station_id": "74"
+    },
+    {
+        "hotel_id": "48",
+        "hotel_name": "Crystal City Marriott at Reagan National Airport",
+        "hotel_website": "https://www.marriott.com/WASCC",
+        "hotel_lat": 38.8566288,
+        "hotel_lon": -77.0515702,
+        "hotel_distance_miles": 0.11,
+        "station_id": "74"
+    },
+    {
+        "hotel_id": "49",
+        "hotel_name": "Crystal Gateway Marriott",
+        "hotel_website": "https://www.marriott.com/WASGW",
+        "hotel_lat": 38.8586692,
+        "hotel_lon": -77.0526713,
+        "hotel_distance_miles": 0.14,
+        "station_id": "74"
+    },
+    {
+        "hotel_id": "50",
+        "hotel_name": "Hyatt Place Herndon/Dulles Airport-East",
+        "hotel_website": "https://www.hyatt.com/en-us/hotel/virginia/hyatt-place-herndon-dulles-airport-east/iadzh",
+        "hotel_lat": 38.9575015,
+        "hotel_lon": -77.4203257,
+        "hotel_distance_miles": 0.35,
+        "station_id": "90"
+    },
+    {
+        "hotel_id": "51",
+        "hotel_name": "Days Inn",
+        "hotel_website": "http://www.daysinn.com/",
+        "hotel_lat": 38.946943,
+        "hotel_lon": -77.0656178,
+        "hotel_distance_miles": 0.2,
+        "station_id": "18"
+    },
+    {
+        "hotel_id": "52",
+        "hotel_name": "Days Inn",
+        "hotel_website": "https://www.wyndhamhotels.com/days-inn/silver-spring-maryland/days-inn-silver-spring/overview",
+        "hotel_lat": 38.9874856,
+        "hotel_lon": -77.0285101,
+        "hotel_distance_miles": 0.47,
+        "station_id": "66"
+    },
+    {
+        "hotel_id": "53",
+        "hotel_name": "District Hotel",
+        "hotel_website": "https://dcembassyinn.wixsite.com/district",
+        "hotel_lat": 38.9081221,
+        "hotel_lon": -77.0333119,
+        "hotel_distance_miles": 0.47,
+        "station_id": "15"
+    },
+    {
+        "hotel_id": "54",
+        "hotel_name": "Hyatt Regency Dulles",
+        "hotel_website": "https://dulles.regency.hyatt.com/en/hotel/home.html",
+        "hotel_lat": 38.9608257,
+        "hotel_lon": -77.423243,
+        "hotel_distance_miles": 0.43,
+        "station_id": "90"
+    },
+    {
+        "hotel_id": "55",
+        "hotel_name": "DoubleTree",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcagsdt-doubletree-silver-spring-washington-dc-north/",
+        "hotel_lat": 38.9987731,
+        "hotel_lon": -77.030338,
+        "hotel_distance_miles": 0.37,
+        "station_id": "66"
+    },
+    {
+        "hotel_id": "56",
+        "hotel_name": "DoubleTree by Hilton",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcassdt-doubletree-washington-dc-silver-spring/",
+        "hotel_lat": 38.9985187,
+        "hotel_lon": -77.0260882,
+        "hotel_distance_miles": 0.47,
+        "station_id": "66"
+    },
+    {
+        "hotel_id": "57",
+        "hotel_name": "DoubleTree by Hilton Hotel Washington DC - Crystal City",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcaaedt-doubletree-washington-dc-crystal-city/",
+        "hotel_lat": 38.8639237,
+        "hotel_lon": -77.0527551,
+        "hotel_distance_miles": 0.35,
+        "station_id": "76"
+    },
+    {
+        "hotel_id": "58",
+        "hotel_name": "Dupont Circle Hotel",
+        "hotel_website": "https://www.doylecollection.com/Washington",
+        "hotel_lat": 38.910652,
+        "hotel_lon": -77.0430104,
+        "hotel_distance_miles": 0.08,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "59",
+        "hotel_name": "EVEN Hotel Rockville - Washington, D.C. Area",
+        "hotel_website": "https://www.ihg.com/evenhotels/hotels/us/en/rockville/wasrk/hoteldetail",
+        "hotel_lat": 39.0599992,
+        "hotel_lon": -77.1234637,
+        "hotel_distance_miles": 0.22,
+        "station_id": "60"
+    },
+    {
+        "hotel_id": "60",
+        "hotel_name": "Eaton DC",
+        "hotel_website": "https://www.eatonworkshop.com/en-us/washington-dc/?utm_source=gmb&utm_medium=organic&utm_campaign=gmb",
+        "hotel_lat": 38.9027867,
+        "hotel_lon": -77.028462,
+        "hotel_distance_miles": 0.21,
+        "station_id": "15"
+    },
+    {
+        "hotel_id": "61",
+        "hotel_name": "Econo Lodge Metro",
+        "hotel_website": "https://www.choicehotels.com/virginia/woodbridge/sleep-inn-hotels",
+        "hotel_lat": 38.8868392,
+        "hotel_lon": -77.1621284,
+        "hotel_distance_miles": 0.3,
+        "station_id": "79"
+    },
+    {
+        "hotel_id": "62",
+        "hotel_name": "Courtyard",
+        "hotel_website": "https://www.marriott.com/waspg",
+        "hotel_lat": 38.9068778,
+        "hotel_lon": -76.8469808,
+        "hotel_distance_miles": 0.47,
+        "station_id": "48"
+    },
+    {
+        "hotel_id": "63",
+        "hotel_name": "Embassy Inn",
+        "hotel_website": "https://dupontcirclefound.hotelsofwashington.com/en/",
+        "hotel_lat": 38.9121001,
+        "hotel_lon": -77.0343325,
+        "hotel_distance_miles": 0.44,
+        "station_id": "20"
+    },
+    {
+        "hotel_id": "64",
+        "hotel_name": "Embassy Suites Crystal City National Airport",
+        "hotel_website": "https://www.hilton.com/en/hotels/wascres-embassy-suites-crystal-city-national-airport/",
+        "hotel_lat": 38.8613721,
+        "hotel_lon": -77.0526007,
+        "hotel_distance_miles": 0.27,
+        "station_id": "74"
+    },
+    {
+        "hotel_id": "65",
+        "hotel_name": "Embassy Suites Downtown",
+        "hotel_website": "https://embassysuites.hilton.com/",
+        "hotel_lat": 38.9068492,
+        "hotel_lon": -77.0494454,
+        "hotel_distance_miles": 0.4,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "66",
+        "hotel_name": "Staybridge Suites",
+        "hotel_website": "https://www.ihg.com/staybridge/hotels/us/en/largo/nhklr/hoteldetail?cm_mmc=GoogleMaps-_-SB-_-US-_-NHKLR",
+        "hotel_lat": 38.9070174,
+        "hotel_lon": -76.8407183,
+        "hotel_distance_miles": 0.51,
+        "station_id": "48"
+    },
+    {
+        "hotel_id": "67",
+        "hotel_name": "Embassy Suites by Hilton Alexandria-Old Town",
+        "hotel_website": "https://www.hilton.com/en/hotels/wasotes-embassy-suites-alexandria-old-town/",
+        "hotel_lat": 38.8052766,
+        "hotel_lon": -77.0612833,
+        "hotel_distance_miles": 0.09,
+        "station_id": "86"
+    },
+    {
+        "hotel_id": "68",
+        "hotel_name": "Embassy Suites by Hilton Washington DC Chevy Chase Pavilion",
+        "hotel_website": "https://www.hilton.com/en/hotels/wasches-embassy-suites-washington-dc-chevy-chase-pavilion/",
+        "hotel_lat": 38.9607639,
+        "hotel_lon": -77.0848476,
+        "hotel_distance_miles": 0.05,
+        "station_id": "57"
+    },
+    {
+        "hotel_id": "69",
+        "hotel_name": "Hilton McLean Tysons Corner",
+        "hotel_website": "https://www.hilton.com/en/hotels/mclmhhh-hilton-mclean-tysons-corner/",
+        "hotel_lat": 38.9265311,
+        "hotel_lon": -77.2160939,
+        "hotel_distance_miles": 0.34,
+        "station_id": "97"
+    },
+    {
+        "hotel_id": "70",
+        "hotel_name": "The Watermark Hotel",
+        "hotel_website": "https://www.thewatermarkhotel.com/",
+        "hotel_lat": 38.9256632,
+        "hotel_lon": -77.2105014,
+        "hotel_distance_miles": 0.09,
+        "station_id": "97"
+    },
+    {
+        "hotel_id": "71",
+        "hotel_name": "Fairfield Inn",
+        "hotel_website": "https://www.marriott.com/wasfc",
+        "hotel_lat": 38.8994821,
+        "hotel_lon": -77.0191703,
+        "hotel_distance_miles": 0.15,
+        "station_id": "5"
+    },
+    {
+        "hotel_id": "72",
+        "hotel_name": "Four Seasons Hotel Washington, DC",
+        "hotel_website": "https://www.fourseasons.com/",
+        "hotel_lat": 38.9044886,
+        "hotel_lon": -77.057366,
+        "hotel_distance_miles": 0.47,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "73",
+        "hotel_name": "Archer Hotel Tysons",
+        "hotel_website": "https://archerhotel.com/tysons",
+        "hotel_lat": 38.9238621,
+        "hotel_lon": -77.20756,
+        "hotel_distance_miles": 0.16,
+        "station_id": "97"
+    },
+    {
+        "hotel_id": "74",
+        "hotel_name": "Generator Hotel",
+        "hotel_website": "https://staygenerator.com/hotels/washington-dc?utm_source=google-my-business&utm_medium=organic&utm_campaign=hostel-washington",
+        "hotel_lat": 38.9160449,
+        "hotel_lon": -77.0468105,
+        "hotel_distance_miles": 0.36,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "75",
+        "hotel_name": "Georgetown Suites Harbor Building",
+        "hotel_website": "https://www.georgetownsuites.com/",
+        "hotel_lat": 38.902922,
+        "hotel_lon": -77.0583576,
+        "hotel_distance_miles": 0.47,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "76",
+        "hotel_name": "Grand Hyatt Washington",
+        "hotel_website": "https://washingtondc.grand.hyatt.com/",
+        "hotel_lat": 38.8993407,
+        "hotel_lon": -77.0264883,
+        "hotel_distance_miles": 0.1,
+        "station_id": "3"
+    },
+    {
+        "hotel_id": "77",
+        "hotel_name": "Hamilton Hotel",
+        "hotel_website": "https://www.hamiltonhoteldc.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp_listing",
+        "hotel_lat": 38.9029257,
+        "hotel_lon": -77.0316057,
+        "hotel_distance_miles": 0.11,
+        "station_id": "15"
+    },
+    {
+        "hotel_id": "78",
+        "hotel_name": "Hampton",
+        "hotel_website": "https://www.hilton.com/en/hotels/washshx-hampton-washington-dc-white-house/",
+        "hotel_lat": 38.9003976,
+        "hotel_lon": -77.0410804,
+        "hotel_distance_miles": 0.11,
+        "station_id": "16"
+    },
+    {
+        "hotel_id": "79",
+        "hotel_name": "Conrad Hotel Washington DC",
+        "hotel_website": "https://www.hilton.com/en/hotels/wascici-conrad-washington-dc/",
+        "hotel_lat": 38.9012767,
+        "hotel_lon": -77.0253663,
+        "hotel_distance_miles": 0.18,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "80",
+        "hotel_name": "Hampton Inn & Suites",
+        "hotel_website": "https://www.hilton.com/en/hotels/adwcshx-hampton-suites-camp-springs-andrews-afb/",
+        "hotel_lat": 38.8213617,
+        "hotel_lon": -76.9148869,
+        "hotel_distance_miles": 0.42,
+        "station_id": "43"
+    },
+    {
+        "hotel_id": "81",
+        "hotel_name": "Hampton Inn & Suites Arlington Crystal City DCA",
+        "hotel_website": "https://www.hilton.com/en/hotels/wasrrhx-hampton-suites-reagan-national-airport/",
+        "hotel_lat": 38.8554664,
+        "hotel_lon": -77.0528535,
+        "hotel_distance_miles": 0.21,
+        "station_id": "74"
+    },
+    {
+        "hotel_id": "82",
+        "hotel_name": "Hampton Inn & Suites Washington DC-Navy Yard",
+        "hotel_website": "https://www.hilton.com/en/hotels/wasnyhx-hampton-suites-washington-dc-navy-yard/",
+        "hotel_lat": 38.8749496,
+        "hotel_lon": -77.0062602,
+        "hotel_distance_miles": 0.14,
+        "station_id": "9"
+    },
+    {
+        "hotel_id": "83",
+        "hotel_name": "Hampton Inn Alexandria - Old Town/King Street Metro",
+        "hotel_website": "https://hamptoninn3.hilton.com/en/hotels/virginia/hampton-inn-alexandria-old-town-king-st-metro-WASALHX/index.html",
+        "hotel_lat": 38.8060832,
+        "hotel_lon": -77.0575051,
+        "hotel_distance_miles": 0.18,
+        "station_id": "86"
+    },
+    {
+        "hotel_id": "84",
+        "hotel_name": "Courtyard Washington Downtown/Convention Center",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/wasyv-courtyard-washington-downtown-convention-center/overview",
+        "hotel_lat": 38.9043172,
+        "hotel_lon": -77.0244189,
+        "hotel_distance_miles": 0.26,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "85",
+        "hotel_name": "Hay-Adams Hotel",
+        "hotel_website": "https://www.hayadams.com/",
+        "hotel_lat": 38.9005054,
+        "hotel_lon": -77.0369485,
+        "hotel_distance_miles": 0.15,
+        "station_id": "16"
+    },
+    {
+        "hotel_id": "86",
+        "hotel_name": "Hereford House",
+        "hotel_website": "https://www.innsite.com/inns/A003364.html",
+        "hotel_lat": 38.883629,
+        "hotel_lon": -76.9981792,
+        "hotel_distance_miles": 0.17,
+        "station_id": "8"
+    },
+    {
+        "hotel_id": "87",
+        "hotel_name": "Hilton",
+        "hotel_website": "https://www.hilton.com/en/hotels/iadmrhf-hilton-washington-dc-rockville-hotel-and-executive-meeting-ctr/?SEO_id=GMB-AMER-HH-IADMRHF&y_source=1_MTIyMDgwOC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+        "hotel_lat": 39.0611103,
+        "hotel_lon": -77.122441,
+        "hotel_distance_miles": 0.13,
+        "station_id": "60"
+    },
+    {
+        "hotel_id": "88",
+        "hotel_name": "Hilton Alexandria Old Town",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcaothf-hilton-alexandria-old-town/?SEO_id=GMB-AMER-HH-DCAOTHF&y_source=1_MTIyMDgxMS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+        "hotel_lat": 38.8071088,
+        "hotel_lon": -77.0593553,
+        "hotel_distance_miles": 0.09,
+        "station_id": "86"
+    },
+    {
+        "hotel_id": "89",
+        "hotel_name": "DUO Housing",
+        "hotel_website": "http://duohousing.com/",
+        "hotel_lat": 38.9064656,
+        "hotel_lon": -77.0267318,
+        "hotel_distance_miles": 0.45,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "90",
+        "hotel_name": "Hilton Crystal City at Ronald Reagan International Airport",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcanahf-hilton-crystal-city-at-washington-reagan-national-airport/",
+        "hotel_lat": 38.8522076,
+        "hotel_lon": -77.051953,
+        "hotel_distance_miles": 0.4,
+        "station_id": "74"
+    },
+    {
+        "hotel_id": "91",
+        "hotel_name": "Hilton Garden Inn",
+        "hotel_website": "http://www.hiltongardeninn.com/",
+        "hotel_lat": 38.9006663,
+        "hotel_lon": -77.0316376,
+        "hotel_distance_miles": 0.05,
+        "station_id": "15"
+    },
+    {
+        "hotel_id": "92",
+        "hotel_name": "Hilton Garden Inn",
+        "hotel_website": "https://www.hilton.com/en/hotels/waswegi-hilton-garden-inn-washington-dc-georgetown-area/",
+        "hotel_lat": 38.9054574,
+        "hotel_lon": -77.049197,
+        "hotel_distance_miles": 0.33,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "93",
+        "hotel_name": "Eldon Luxury Suites",
+        "hotel_website": "https://www.thehoteleldon.com/",
+        "hotel_lat": 38.904386,
+        "hotel_lon": -77.02541,
+        "hotel_distance_miles": 0.29,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "94",
+        "hotel_name": "Embassy Suites by Hilton Washington DC Convention Center",
+        "hotel_website": "https://www.hilton.com/en/hotels/wascces-embassy-suites-washington-dc-convention-center/",
+        "hotel_lat": 38.9019316,
+        "hotel_lon": -77.0262924,
+        "hotel_distance_miles": 0.24,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "95",
+        "hotel_name": "Hilton Garden Inn - Washington, D.C./ Bethesda",
+        "hotel_website": "http://www.bethesda.hgi.com",
+        "hotel_lat": 38.9833261,
+        "hotel_lon": -77.0915086,
+        "hotel_distance_miles": 0.16,
+        "station_id": "55"
+    },
+    {
+        "hotel_id": "96",
+        "hotel_name": "Hilton Garden Inn Alexandria Old Town",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcaolgi-hilton-garden-inn-alexandria-old-town-national-harbor/",
+        "hotel_lat": 38.8050813,
+        "hotel_lon": -77.0581848,
+        "hotel_distance_miles": 0.17,
+        "station_id": "86"
+    },
+    {
+        "hotel_id": "97",
+        "hotel_name": "Hilton Garden Inn Arlington/Courthouse Plaza",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcaargi-hilton-garden-inn-arlington-courthouse-plaza/",
+        "hotel_lat": 38.88892,
+        "hotel_lon": -77.0833281,
+        "hotel_distance_miles": 0.18,
+        "station_id": "72"
+    },
+    {
+        "hotel_id": "98",
+        "hotel_name": "Hilton Garden Inn Reagan National Airport",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcaccgi-hilton-garden-inn-reagan-national-airport/",
+        "hotel_lat": 38.8543908,
+        "hotel_lon": -77.0529163,
+        "hotel_distance_miles": 0.27,
+        "station_id": "74"
+    },
+    {
+        "hotel_id": "99",
+        "hotel_name": "Hilton Garden Inn Reagan National Airport",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcaccgi-hilton-garden-inn-reagan-national-airport/",
+        "hotel_lat": 38.8549633,
+        "hotel_lon": -77.0529364,
+        "hotel_distance_miles": 0.24,
+        "station_id": "74"
+    },
+    {
+        "hotel_id": "100",
+        "hotel_name": "Hampton",
+        "hotel_website": "https://www.hilton.com/en/hotels/washhhx-hampton-washington-downtown-convention-center/",
+        "hotel_lat": 38.9018165,
+        "hotel_lon": -77.0195715,
+        "hotel_distance_miles": 0.14,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "101",
+        "hotel_name": "Hilton Washington DC Capitol Hill",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcadchh-hilton-washington-dc-capitol-hill/",
+        "hotel_lat": 38.8969235,
+        "hotel_lon": -77.0108206,
+        "hotel_distance_miles": 0.25,
+        "station_id": "7"
+    },
+    {
+        "hotel_id": "102",
+        "hotel_name": "Hilton Washington DC National Mall Hotel",
+        "hotel_website": "https://www.hiltondcnationalmall.com/",
+        "hotel_lat": 38.8838777,
+        "hotel_lon": -77.0244424,
+        "hotel_distance_miles": 0.17,
+        "station_id": "36"
+    },
+    {
+        "hotel_id": "103",
+        "hotel_name": "Holiday Inn",
+        "hotel_website": "https://www.hicapitoldc.com/",
+        "hotel_lat": 38.8855527,
+        "hotel_lon": -77.0193752,
+        "hotel_distance_miles": 0.13,
+        "station_id": "36"
+    },
+    {
+        "hotel_id": "104",
+        "hotel_name": "Holiday Inn Express",
+        "hotel_website": "https://www.ihg.com/holidayinnexpress/hotels/us/en/washington/wasnw/hoteldetail",
+        "hotel_lat": 38.9028289,
+        "hotel_lon": -77.01574,
+        "hotel_distance_miles": 0.36,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "105",
+        "hotel_name": "Homewood Suites by Hilton Washington DC Convention Center",
+        "hotel_website": "https://www.hilton.com/en/hotels/wascohw-homewood-suites-washington-dc-convention-center/",
+        "hotel_lat": 38.9043805,
+        "hotel_lon": -77.0185286,
+        "hotel_distance_miles": 0.3,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "106",
+        "hotel_name": "Holiday Inn Express",
+        "hotel_website": "https://www.ihg.com/holidayinnexpress/hotels/us/en/camp-springs/wasmd/hoteldetail?cm_mmc=GoogleMaps-_-EX-_-US-_-WASMD",
+        "hotel_lat": 38.8207627,
+        "hotel_lon": -76.9164325,
+        "hotel_distance_miles": 0.5,
+        "station_id": "43"
+    },
+    {
+        "hotel_id": "107",
+        "hotel_name": "Homewood Suites by Hilton Washington DC Convention Center",
+        "hotel_website": "https://www.hilton.com/en/hotels/wascohw-homewood-suites-washington-dc-convention-center/",
+        "hotel_lat": 38.9044652,
+        "hotel_lon": -77.0183084,
+        "hotel_distance_miles": 0.31,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "108",
+        "hotel_name": "Holiday Inn Washington DC - Central / White House",
+        "hotel_website": "https://www.inndc.com/",
+        "hotel_lat": 38.9081157,
+        "hotel_lon": -77.0349707,
+        "hotel_distance_miles": 0.41,
+        "station_id": "38"
+    },
+    {
+        "hotel_id": "109",
+        "hotel_name": "Marriott Marquis",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/wasco-marriott-marquis-washington-dc/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0",
+        "hotel_lat": 38.9036189,
+        "hotel_lon": -77.0249844,
+        "hotel_distance_miles": 0.24,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "110",
+        "hotel_name": "Homewood Suites By Hilton",
+        "hotel_website": "https://www.hilton.com/en/hotels/washwhw-homewood-suites-washington-dc-downtown/?SEO_id=GMB-AMER-HG-WASHWHW&y_source=1_MjA4MjQwNy03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+        "hotel_lat": 38.9066064,
+        "hotel_lon": -77.0334979,
+        "hotel_distance_miles": 0.37,
+        "station_id": "15"
+    },
+    {
+        "hotel_id": "111",
+        "hotel_name": "Homewood Suites Rosslyn",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcalhhw-homewood-suites-arlington-rosslyn-key-bridge/?SEO_id=GMB-AMER-HG-DCALHHW&y_source=1_ODg5MzkzMC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+        "hotel_lat": 38.8972358,
+        "hotel_lon": -77.0791885,
+        "hotel_distance_miles": 0.41,
+        "station_id": "80"
+    },
+    {
+        "hotel_id": "112",
+        "hotel_name": "Homewood Suites by Hilton Washington DC Capitol-Navy Yard",
+        "hotel_website": "https://www.hilton.com/en/hotels/wascahw-homewood-suites-washington-dc-capitol-navy-yard/",
+        "hotel_lat": 38.8767488,
+        "hotel_lon": -77.0070457,
+        "hotel_distance_miles": 0.12,
+        "station_id": "9"
+    },
+    {
+        "hotel_id": "113",
+        "hotel_name": "Morrison-Clark Inn",
+        "hotel_website": "https://www.morrisonclark.com/",
+        "hotel_lat": 38.9043814,
+        "hotel_lon": -77.0267236,
+        "hotel_distance_miles": 0.34,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "114",
+        "hotel_name": "Motto by Hilton",
+        "hotel_website": "https://www.hilton.com/en/hotels/wasuaua-motto-washington-dc-city-center/?SEO_id=GMB-AMER-UA-WASUAUA&y_source=1_MTYyODg3ODQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+        "hotel_lat": 38.9001131,
+        "hotel_lon": -77.0212039,
+        "hotel_distance_miles": 0.08,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "115",
+        "hotel_name": "Moxy Washington, DC Downtown",
+        "hotel_website": "https://www.marriott.com/hotels/travel/wasox-moxy-washington-dc-downtown/",
+        "hotel_lat": 38.9028887,
+        "hotel_lon": -77.0265098,
+        "hotel_distance_miles": 0.27,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "116",
+        "hotel_name": "Hotel AKA Washington Circle",
+        "hotel_website": "https://www.stayaka.com/hotel-aka-washington-circle",
+        "hotel_lat": 38.9033582,
+        "hotel_lon": -77.049794,
+        "hotel_distance_miles": 0.18,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "117",
+        "hotel_name": "Hotel Harrington",
+        "hotel_website": "https://www.hotel-harrington.com/",
+        "hotel_lat": 38.8958971,
+        "hotel_lon": -77.0273017,
+        "hotel_distance_miles": 0.15,
+        "station_id": "13"
+    },
+    {
+        "hotel_id": "118",
+        "hotel_name": "Hotel Hive",
+        "hotel_website": "https://www.hotelhive.com/",
+        "hotel_lat": 38.8971172,
+        "hotel_lon": -77.0496873,
+        "hotel_distance_miles": 0.25,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "119",
+        "hotel_name": "Hotel Lombardy",
+        "hotel_website": "https://www.hotellombardy.com/hl/Default.htm",
+        "hotel_lat": 38.9014819,
+        "hotel_lon": -77.0459249,
+        "hotel_distance_miles": 0.23,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "120",
+        "hotel_name": "Hotel Madera",
+        "hotel_website": "https://www.hotelmadera.com/",
+        "hotel_lat": 38.9075946,
+        "hotel_lon": -77.045695,
+        "hotel_distance_miles": 0.25,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "121",
+        "hotel_name": "Hotel Monaco",
+        "hotel_website": "https://www.monaco-dc.com/",
+        "hotel_lat": 38.8969924,
+        "hotel_lon": -77.0224383,
+        "hotel_distance_miles": 0.11,
+        "station_id": "5"
+    },
+    {
+        "hotel_id": "122",
+        "hotel_name": "Residence Inn",
+        "hotel_website": "https://www.marriott.com/wasrd",
+        "hotel_lat": 38.904344,
+        "hotel_lon": -77.0245211,
+        "hotel_distance_miles": 0.26,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "123",
+        "hotel_name": "Hotel Rouge",
+        "hotel_website": "https://www.rougehotel.com/",
+        "hotel_lat": 38.908266,
+        "hotel_lon": -77.0361302,
+        "hotel_distance_miles": 0.39,
+        "station_id": "38"
+    },
+    {
+        "hotel_id": "124",
+        "hotel_name": "Hotel Washington",
+        "hotel_website": "https://www.thehotelwashington.com/",
+        "hotel_lat": 38.8969352,
+        "hotel_lon": -77.0332251,
+        "hotel_distance_miles": 0.31,
+        "station_id": "3"
+    },
+    {
+        "hotel_id": "125",
+        "hotel_name": "Hotel Zena Washington DC",
+        "hotel_website": "https://www.viceroyhotelsandresorts.com/zena",
+        "hotel_lat": 38.9051023,
+        "hotel_lon": -77.0315742,
+        "hotel_distance_miles": 0.26,
+        "station_id": "15"
+    },
+    {
+        "hotel_id": "126",
+        "hotel_name": "Hyatt Centric",
+        "hotel_website": "https://www.hyatt.com/hyatt-centric/iadct-hyatt-centric-old-town-alexandria?src=corp_lclb_gmb_seo_iadct",
+        "hotel_lat": 38.8066674,
+        "hotel_lon": -77.0575817,
+        "hotel_distance_miles": 0.17,
+        "station_id": "86"
+    },
+    {
+        "hotel_id": "127",
+        "hotel_name": "Hyatt Centric Arlington",
+        "hotel_website": "https://www.hyatt.com/hyatt-centric/wasar-hyatt-centric-arlington?src=corp_lclb_gmb_seo_wasar",
+        "hotel_lat": 38.8951776,
+        "hotel_lon": -77.0727448,
+        "hotel_distance_miles": 0.05,
+        "station_id": "80"
+    },
+    {
+        "hotel_id": "128",
+        "hotel_name": "Hyatt House",
+        "hotel_website": "https://www.hyatt.com/en-us/hotel/washington-dc/hyatt-house-washington-dc-the-wharf/wasxs",
+        "hotel_lat": 38.878548,
+        "hotel_lon": -77.024001,
+        "hotel_distance_miles": 0.39,
+        "station_id": "33"
+    },
+    {
+        "hotel_id": "129",
+        "hotel_name": "Hyatt Place",
+        "hotel_website": "https://www.hyatt.com/en-us/hotel/washington-dc/hyatt-place-washington-dc-national-mall/waszc",
+        "hotel_lat": 38.8829065,
+        "hotel_lon": -77.0179769,
+        "hotel_distance_miles": 0.19,
+        "station_id": "34"
+    },
+    {
+        "hotel_id": "130",
+        "hotel_name": "Hyatt Place Arlington / Courthouse Plaza",
+        "hotel_website": "https://www.hyatt.com/en-US/hotel/virginia/hyatt-place-arlington-courthouse-plaza/wasza",
+        "hotel_lat": 38.8910595,
+        "hotel_lon": -77.087625,
+        "hotel_distance_miles": 0.15,
+        "station_id": "72"
+    },
+    {
+        "hotel_id": "131",
+        "hotel_name": "Hyatt Place DC/Downtown/K Street",
+        "hotel_website": "https://www.hyatt.com/hyatt-place/en-us/waszw-hyatt-place-washington-dc-white-house",
+        "hotel_lat": 38.9021983,
+        "hotel_lon": -77.0357112,
+        "hotel_distance_miles": 0.21,
+        "station_id": "15"
+    },
+    {
+        "hotel_id": "132",
+        "hotel_name": "The Henley Park Hotel",
+        "hotel_website": "https://www.henleypark.com/",
+        "hotel_lat": 38.9031469,
+        "hotel_lon": -77.0257082,
+        "hotel_distance_miles": 0.25,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "133",
+        "hotel_name": "Hyatt Place Washington DC/Georgetown/West End",
+        "hotel_website": "https://washingtondcgeorgetown.place.hyatt.com/en/hotel/home.html",
+        "hotel_lat": 38.9056525,
+        "hotel_lon": -77.0481729,
+        "hotel_distance_miles": 0.36,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "134",
+        "hotel_name": "The Westin Washington, DC Downtown",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/waswc-the-westin-washington-dc-downtown/overview/",
+        "hotel_lat": 38.9015084,
+        "hotel_lon": -77.023693,
+        "hotel_distance_miles": 0.1,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "135",
+        "hotel_name": "AC Hotel",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/wasae-ac-hotel-washington-dc-convention-center/overview/",
+        "hotel_lat": 38.9028677,
+        "hotel_lon": -77.0202456,
+        "hotel_distance_miles": 0.16,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "136",
+        "hotel_name": "Hyatt Regency",
+        "hotel_website": "https://www.hyatt.com/en-us/hotel/maryland/hyatt-regency-bethesda/bethe",
+        "hotel_lat": 38.9840894,
+        "hotel_lon": -77.0948518,
+        "hotel_distance_miles": 0.04,
+        "station_id": "55"
+    },
+    {
+        "hotel_id": "137",
+        "hotel_name": "Capital View Hostel",
+        "hotel_website": "https://www.capitalhostels.com/",
+        "hotel_lat": 38.901485,
+        "hotel_lon": -77.0154312,
+        "hotel_distance_miles": 0.36,
+        "station_id": "1"
+    },
+    {
+        "hotel_id": "138",
+        "hotel_name": "Courtyard",
+        "hotel_website": "https://www.marriott.com/wasus",
+        "hotel_lat": 38.9078586,
+        "hotel_lon": -77.003147,
+        "hotel_distance_miles": 0.03,
+        "station_id": "6"
+    },
+    {
+        "hotel_id": "139",
+        "hotel_name": "Hyatt Regency Washington on Capitol Hill",
+        "hotel_website": "https://washingtondc.regency.hyatt.com/en/hotel/home.html",
+        "hotel_lat": 38.8954289,
+        "hotel_lon": -77.0116325,
+        "hotel_distance_miles": 0.26,
+        "station_id": "4"
+    },
+    {
+        "hotel_id": "140",
+        "hotel_name": "Inn At Dupont South",
+        "hotel_website": "https://thedupontcollection.com/",
+        "hotel_lat": 38.9077421,
+        "hotel_lon": -77.0436943,
+        "hotel_distance_miles": 0.24,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "141",
+        "hotel_name": "InterContinental Washington D.C. - The Wharf",
+        "hotel_website": "https://wharfintercontinentaldc.com",
+        "hotel_lat": 38.8794501,
+        "hotel_lon": -77.0250164,
+        "hotel_distance_miles": 0.42,
+        "station_id": "36"
+    },
+    {
+        "hotel_id": "142",
+        "hotel_name": "JW Marriott",
+        "hotel_website": "http://www.marriott.com/",
+        "hotel_lat": 38.8964082,
+        "hotel_lon": -77.031622,
+        "hotel_distance_miles": 0.25,
+        "station_id": "3"
+    },
+    {
+        "hotel_id": "143",
+        "hotel_name": "Jefferson Hotel",
+        "hotel_website": "http://www.thejeffersonwashingtondc.com/",
+        "hotel_lat": 38.9059379,
+        "hotel_lon": -77.0369558,
+        "hotel_distance_miles": 0.23,
+        "station_id": "38"
+    },
+    {
+        "hotel_id": "144",
+        "hotel_name": "Kimpton George Hotel",
+        "hotel_website": "https://www.hotelgeorge.com/?&cm_mmc=WEB-_-KI-_-AMER-_-EN-_-EV-_-Google%20Business%20Profile-_-DD-_-george",
+        "hotel_lat": 38.8963956,
+        "hotel_lon": -77.0099075,
+        "hotel_distance_miles": 0.21,
+        "station_id": "7"
+    },
+    {
+        "hotel_id": "145",
+        "hotel_name": "Le M\u00e9ridien Arlington",
+        "hotel_website": "https://www.marriott.com/WASRL",
+        "hotel_lat": 38.8972751,
+        "hotel_lon": -77.0698288,
+        "hotel_distance_miles": 0.17,
+        "station_id": "80"
+    },
+    {
+        "hotel_id": "146",
+        "hotel_name": "Lyle Washington DC",
+        "hotel_website": "http://www.carlylesuites.com/",
+        "hotel_lat": 38.9133329,
+        "hotel_lon": -77.0394568,
+        "hotel_distance_miles": 0.31,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "147",
+        "hotel_name": "Maison Orleans Bed & Breakfast",
+        "hotel_website": "https://www.bbonline.com/dc/maisonorleans",
+        "hotel_lat": 38.8837723,
+        "hotel_lon": -76.9992643,
+        "hotel_distance_miles": 0.23,
+        "station_id": "8"
+    },
+    {
+        "hotel_id": "148",
+        "hotel_name": "Marriott",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/wasfb-courtyard-washington-dc-foggy-bottom/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0",
+        "hotel_lat": 38.9058832,
+        "hotel_lon": -77.0483621,
+        "hotel_distance_miles": 0.37,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "149",
+        "hotel_name": "Marriott Bethesda Downtown at Marriott HQ",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/wasbd-marriott-bethesda-downtown-at-marriott-hq/overview/",
+        "hotel_lat": 38.9871384,
+        "hotel_lon": -77.0954418,
+        "hotel_distance_miles": 0.2,
+        "station_id": "55"
+    },
+    {
+        "hotel_id": "150",
+        "hotel_name": "Gallaudet University Kellogg Conference",
+        "hotel_website": "http://www.gukcc.com/",
+        "hotel_lat": 38.9078021,
+        "hotel_lon": -76.9952685,
+        "hotel_distance_miles": 0.42,
+        "station_id": "6"
+    },
+    {
+        "hotel_id": "151",
+        "hotel_name": "Melrose Georgetown Hotel",
+        "hotel_website": "https://www.melrosehoteldc.com/",
+        "hotel_lat": 38.9030366,
+        "hotel_lon": -77.0523879,
+        "hotel_distance_miles": 0.21,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "152",
+        "hotel_name": "Hampton Inn Washington DC NoMa Union Station",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcanyhx-hampton-washington-dc-noma-union-station/",
+        "hotel_lat": 38.9112426,
+        "hotel_lon": -76.997061,
+        "hotel_distance_miles": 0.41,
+        "station_id": "6"
+    },
+    {
+        "hotel_id": "153",
+        "hotel_name": "Hilton Garden Inn",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcanmgi-hilton-garden-inn-washington-dc-us-capitol/",
+        "hotel_lat": 38.9062957,
+        "hotel_lon": -77.0056342,
+        "hotel_distance_miles": 0.16,
+        "station_id": "6"
+    },
+    {
+        "hotel_id": "154",
+        "hotel_name": "Homewood Suites by Hilton Washington DC NoMa Union Station",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcanehw-homewood-suites-washington-dc-noma-union-station/?SEO_id=GMB-AMER-HG-DCANEHW&y_source=1_MzI2NDY5Mi03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+        "hotel_lat": 38.9110784,
+        "hotel_lon": -76.9966122,
+        "hotel_distance_miles": 0.43,
+        "station_id": "6"
+    },
+    {
+        "hotel_id": "155",
+        "hotel_name": "Hotel Nell \u2013 Union Market",
+        "hotel_website": "https://www.hotelnelldc.com/",
+        "hotel_lat": 38.9110213,
+        "hotel_lon": -76.9974865,
+        "hotel_distance_miles": 0.39,
+        "station_id": "6"
+    },
+    {
+        "hotel_id": "156",
+        "hotel_name": "Omni Shoreham Hotel",
+        "hotel_website": "https://www.omnihotels.com/hotels/washington-dc-shoreham",
+        "hotel_lat": 38.9226849,
+        "hotel_lon": -77.0536644,
+        "hotel_distance_miles": 0.17,
+        "station_id": "19"
+    },
+    {
+        "hotel_id": "157",
+        "hotel_name": "Park Hyatt Washington",
+        "hotel_website": "https://washingtondc.park.hyatt.com/",
+        "hotel_lat": 38.9057969,
+        "hotel_lon": -77.0510924,
+        "hotel_distance_miles": 0.36,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "158",
+        "hotel_name": "Pendry Hotel",
+        "hotel_website": "https://www.pendry.com/washington-dc/",
+        "hotel_lat": 38.8773728,
+        "hotel_lon": -77.0222964,
+        "hotel_distance_miles": 0.28,
+        "station_id": "33"
+    },
+    {
+        "hotel_id": "159",
+        "hotel_name": "Phoenix Park Hotel",
+        "hotel_website": "https://www.phoenixparkhotel.com/",
+        "hotel_lat": 38.8970847,
+        "hotel_lon": -77.0094692,
+        "hotel_distance_miles": 0.17,
+        "station_id": "7"
+    },
+    {
+        "hotel_id": "160",
+        "hotel_name": "Hyatt Place Washington DC/US Capitol",
+        "hotel_website": "https://www.hyatt.com/en-us/hotel/washington-dc/hyatt-place-washington-dc-us-capitol/waszd",
+        "hotel_lat": 38.9075118,
+        "hotel_lon": -77.0077907,
+        "hotel_distance_miles": 0.26,
+        "station_id": "6"
+    },
+    {
+        "hotel_id": "161",
+        "hotel_name": "Red Lion - Rosslyn / Iwo Jima",
+        "hotel_website": "https://www.sonesta.com/red-lion-hotels/va/arlington/red-lion-hotel-rosslyn-iwo-jima",
+        "hotel_lat": 38.8918281,
+        "hotel_lon": -77.0750939,
+        "hotel_distance_miles": 0.3,
+        "station_id": "80"
+    },
+    {
+        "hotel_id": "162",
+        "hotel_name": "Remington Executive Suites",
+        "hotel_website": "www.remington-dc.com/",
+        "hotel_lat": 38.898072,
+        "hotel_lon": -77.0511367,
+        "hotel_distance_miles": 0.19,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "163",
+        "hotel_name": "Residence At Potomac Place",
+        "hotel_website": "http://www.potomacplacecondo.com/",
+        "hotel_lat": 38.8810464,
+        "hotel_lon": -77.0165669,
+        "hotel_distance_miles": 0.28,
+        "station_id": "34"
+    },
+    {
+        "hotel_id": "164",
+        "hotel_name": "Residence Inn",
+        "hotel_website": "https://www.marriott.com/hotels/travel/wasxr-residence-inn-washington-capitol-hill-navy-yard/",
+        "hotel_lat": 38.8758086,
+        "hotel_lon": -77.0063677,
+        "hotel_distance_miles": 0.1,
+        "station_id": "9"
+    },
+    {
+        "hotel_id": "165",
+        "hotel_name": "Residence Inn",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/wasfg-residence-inn-washington-dc-foggy-bottom/",
+        "hotel_lat": 38.8998414,
+        "hotel_lon": -77.0522575,
+        "hotel_distance_miles": 0.13,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "166",
+        "hotel_name": "Motel 6 Washington, DC - Convention Center",
+        "hotel_website": "www.downtownmotel.net/",
+        "hotel_lat": 38.9102013,
+        "hotel_lon": -76.9979847,
+        "hotel_distance_miles": 0.33,
+        "station_id": "6"
+    },
+    {
+        "hotel_id": "167",
+        "hotel_name": "Residence Inn",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/wasri-residence-inn-washington-dc-dupont-circle/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0",
+        "hotel_lat": 38.9094589,
+        "hotel_lon": -77.0473342,
+        "hotel_distance_miles": 0.19,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "168",
+        "hotel_name": "Residence Inn - Thomas Circle",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/wasdc-residence-inn-washington-dc-downtown/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0",
+        "hotel_lat": 38.9044943,
+        "hotel_lon": -77.0323451,
+        "hotel_distance_miles": 0.22,
+        "station_id": "15"
+    },
+    {
+        "hotel_id": "169",
+        "hotel_name": "Selina Union Market",
+        "hotel_website": "https://www.selina.com/usa/washington/",
+        "hotel_lat": 38.9110213,
+        "hotel_lon": -76.9974961,
+        "hotel_distance_miles": 0.39,
+        "station_id": "6"
+    },
+    {
+        "hotel_id": "170",
+        "hotel_name": "Residence Inn Alexandria Old Town/Duke Street",
+        "hotel_website": "https://www.marriott.com/wasdk",
+        "hotel_lat": 38.8034256,
+        "hotel_lon": -77.0577643,
+        "hotel_distance_miles": 0.27,
+        "station_id": "86"
+    },
+    {
+        "hotel_id": "171",
+        "hotel_name": "The Morrow Washington DC",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcanoqq-the-morrow-washington-dc/?SEO_id=GMB-AMER-QQ-DCANOQQ&y_source=1_MzU2NTg1NTEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+        "hotel_lat": 38.9060575,
+        "hotel_lon": -77.002842,
+        "hotel_distance_miles": 0.09,
+        "station_id": "6"
+    },
+    {
+        "hotel_id": "172",
+        "hotel_name": "Residence Inn Arlington Courthouse",
+        "hotel_website": "https://www.marriott.com/WASCA",
+        "hotel_lat": 38.8896228,
+        "hotel_lon": -77.0870051,
+        "hotel_distance_miles": 0.17,
+        "station_id": "72"
+    },
+    {
+        "hotel_id": "173",
+        "hotel_name": "Residence Inn Arlington Rosslyn",
+        "hotel_website": "https://www.marriott.com/WASRR",
+        "hotel_lat": 38.893767,
+        "hotel_lon": -77.0732901,
+        "hotel_distance_miles": 0.14,
+        "station_id": "80"
+    },
+    {
+        "hotel_id": "174",
+        "hotel_name": "Residence Inn Bethesda Downtown",
+        "hotel_website": "https://www.marriott.com/wasbr",
+        "hotel_lat": 38.9831377,
+        "hotel_lon": -77.0927061,
+        "hotel_distance_miles": 0.12,
+        "station_id": "55"
+    },
+    {
+        "hotel_id": "175",
+        "hotel_name": "Residence Inn Capitol",
+        "hotel_website": "https://www.marriott.com/property/propertypage/WASCP",
+        "hotel_lat": 38.8836459,
+        "hotel_lon": -77.015933,
+        "hotel_distance_miles": 0.09,
+        "station_id": "34"
+    },
+    {
+        "hotel_id": "176",
+        "hotel_name": "citizenM Washington DC NOMA",
+        "hotel_website": "https://www.citizenm.com/hotels/united-states/washington-dc/washington-dc-noma?utm_source=google&utm_medium=Yext&y_source=1_NDkyNzM5MjItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+        "hotel_lat": 38.9066345,
+        "hotel_lon": -77.0061868,
+        "hotel_distance_miles": 0.18,
+        "station_id": "6"
+    },
+    {
+        "hotel_id": "177",
+        "hotel_name": "Saint Gregory Hotel & Suites",
+        "hotel_website": "https://www.stgregoryhotelwdc.com/",
+        "hotel_lat": 38.905872,
+        "hotel_lon": -77.04637,
+        "hotel_distance_miles": 0.38,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "178",
+        "hotel_name": "Salamander Washington DC",
+        "hotel_website": "https://www.salamanderdc.com/",
+        "hotel_lat": 38.8834031,
+        "hotel_lon": -77.0306629,
+        "hotel_distance_miles": 0.32,
+        "station_id": "35"
+    },
+    {
+        "hotel_id": "179",
+        "hotel_name": "Samaritan Inn",
+        "hotel_website": "https://www.samaritaninns.org/",
+        "hotel_lat": 38.9232423,
+        "hotel_lon": -77.0316323,
+        "hotel_distance_miles": 0.38,
+        "station_id": "21"
+    },
+    {
+        "hotel_id": "180",
+        "hotel_name": "Bethesda North Marriott",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/wasbn-bethesda-north-marriott-hotel-and-conference-center/",
+        "hotel_lat": 39.0473054,
+        "hotel_lon": -77.1152204,
+        "hotel_distance_miles": 0.13,
+        "station_id": "61"
+    },
+    {
+        "hotel_id": "181",
+        "hotel_name": "Canopy by Hilton Washington DC Bethesda North",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcabnpy-canopy-washington-dc-bethesda-north/",
+        "hotel_lat": 39.0507822,
+        "hotel_lon": -77.1168761,
+        "hotel_distance_miles": 0.33,
+        "station_id": "61"
+    },
+    {
+        "hotel_id": "182",
+        "hotel_name": "Sofitel Lafayette Square",
+        "hotel_website": "https://www.sofitel-washington-dc.com/",
+        "hotel_lat": 38.9005074,
+        "hotel_lon": -77.0339418,
+        "hotel_distance_miles": 0.12,
+        "station_id": "15"
+    },
+    {
+        "hotel_id": "183",
+        "hotel_name": "Sonder at FOUND",
+        "hotel_website": "https://www.sonder.com/destinations/washington_dc/WDC-NW-16TH1627-404/c34358",
+        "hotel_lat": 38.9122314,
+        "hotel_lon": -77.03605,
+        "hotel_distance_miles": 0.46,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "184",
+        "hotel_name": "Sonesta Select Arlington Rosslyn",
+        "hotel_website": "https://www.sonesta.com/us/virginia/arlington/sonesta-select-arlington-rosslyn",
+        "hotel_lat": 38.8939225,
+        "hotel_lon": -77.0757778,
+        "hotel_distance_miles": 0.23,
+        "station_id": "80"
+    },
+    {
+        "hotel_id": "185",
+        "hotel_name": "State Plaza Hotel",
+        "hotel_website": "https://www.stateplaza.com/",
+        "hotel_lat": 38.8966843,
+        "hotel_lon": -77.0475147,
+        "hotel_distance_miles": 0.31,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "186",
+        "hotel_name": "Extended Stay Hotel",
+        "hotel_website": "https://www.extendedstayamerica.com/hotels/dc/washington-dc/reston?channel=gmb-listing&utm_source=google&utm_medium=organic&utm_campaign=gmb_listing",
+        "hotel_lat": 38.9555405,
+        "hotel_lon": -77.3664239,
+        "hotel_distance_miles": 0.39,
+        "station_id": "92"
+    },
+    {
+        "hotel_id": "187",
+        "hotel_name": "Summerfield Suites",
+        "hotel_website": "http://www.embassysuites.com/",
+        "hotel_lat": 38.9068509,
+        "hotel_lon": -77.0453541,
+        "hotel_distance_miles": 0.3,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "188",
+        "hotel_name": "Swann House Llc",
+        "hotel_website": "https://www.swannhouse.com/",
+        "hotel_lat": 38.9145584,
+        "hotel_lon": -77.0392804,
+        "hotel_distance_miles": 0.36,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "189",
+        "hotel_name": "Swiss Inn",
+        "hotel_website": "http://www.theswissinn.com/",
+        "hotel_lat": 38.9041242,
+        "hotel_lon": -77.0284279,
+        "hotel_distance_miles": 0.27,
+        "station_id": "15"
+    },
+    {
+        "hotel_id": "190",
+        "hotel_name": "Tabard Inn",
+        "hotel_website": "https://www.tabardinn.com/",
+        "hotel_lat": 38.9075037,
+        "hotel_lon": -77.0399539,
+        "hotel_distance_miles": 0.29,
+        "station_id": "38"
+    },
+    {
+        "hotel_id": "191",
+        "hotel_name": "The Baron Hotel",
+        "hotel_website": "http://www.thebaronhotel.com/",
+        "hotel_lat": 38.9102953,
+        "hotel_lon": -77.0483959,
+        "hotel_distance_miles": 0.22,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "192",
+        "hotel_name": "The Bethesdan Hotel, Tapestry Collection by Hilton",
+        "hotel_website": "https://www.hilton.com/en/hotels/wasbaup-the-bethesdan-hotel/",
+        "hotel_lat": 38.9912274,
+        "hotel_lon": -77.0959347,
+        "hotel_distance_miles": 0.48,
+        "station_id": "55"
+    },
+    {
+        "hotel_id": "193",
+        "hotel_name": "The Darcy Washington D.C",
+        "hotel_website": "http://www.doubletree.com/",
+        "hotel_lat": 38.9080583,
+        "hotel_lon": -77.0354295,
+        "hotel_distance_miles": 0.4,
+        "station_id": "38"
+    },
+    {
+        "hotel_id": "194",
+        "hotel_name": "The Dupont At The Circle",
+        "hotel_website": "https://www.dupontatthecircle.com/",
+        "hotel_lat": 38.9113576,
+        "hotel_lon": -77.0437252,
+        "hotel_distance_miles": 0.04,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "195",
+        "hotel_name": "The Fairmont",
+        "hotel_website": "https://www.fairmont.com/washington/",
+        "hotel_lat": 38.9057516,
+        "hotel_lon": -77.0519498,
+        "hotel_distance_miles": 0.36,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "196",
+        "hotel_name": "Hyatt Regency Reston",
+        "hotel_website": "https://reston.regency.hyatt.com/",
+        "hotel_lat": 38.9582626,
+        "hotel_lon": -77.3560035,
+        "hotel_distance_miles": 0.44,
+        "station_id": "92"
+    },
+    {
+        "hotel_id": "197",
+        "hotel_name": "The Jefferson",
+        "hotel_website": "https://www.jeffersondc.com/",
+        "hotel_lat": 38.9059489,
+        "hotel_lon": -77.0369364,
+        "hotel_distance_miles": 0.23,
+        "station_id": "38"
+    },
+    {
+        "hotel_id": "198",
+        "hotel_name": "The Madison Hotel",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/wasmm-the-madison-hotel/overview/",
+        "hotel_lat": 38.905369,
+        "hotel_lon": -77.03406,
+        "hotel_distance_miles": 0.3,
+        "station_id": "15"
+    },
+    {
+        "hotel_id": "199",
+        "hotel_name": "The Mansion On O Street",
+        "hotel_website": "https://www.omansion.com/",
+        "hotel_lat": 38.9083626,
+        "hotel_lon": -77.0458741,
+        "hotel_distance_miles": 0.21,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "200",
+        "hotel_name": "The Mayflower Hotel, Marriott Autograph Collection",
+        "hotel_website": "http://www.renaissancehotels.com/",
+        "hotel_lat": 38.9044444,
+        "hotel_lon": -77.0394719,
+        "hotel_distance_miles": 0.08,
+        "station_id": "38"
+    },
+    {
+        "hotel_id": "201",
+        "hotel_name": "Sheraton Reston Hotel",
+        "hotel_website": "http://www.sheratonreston.com/?SWAQ=958P",
+        "hotel_lat": 38.9498885,
+        "hotel_lon": -77.3544136,
+        "hotel_distance_miles": 0.37,
+        "station_id": "92"
+    },
+    {
+        "hotel_id": "202",
+        "hotel_name": "The Normandy Hotel",
+        "hotel_website": "https://www.thenormandydc.com/?utm_source=google&utm_medium=organic&utm_campaign=business_listing",
+        "hotel_lat": 38.9174098,
+        "hotel_lon": -77.0476207,
+        "hotel_distance_miles": 0.47,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "203",
+        "hotel_name": "The Ritz-Carlton",
+        "hotel_website": "http://www.ritz-carlton.com/",
+        "hotel_lat": 38.9046278,
+        "hotel_lon": -77.0491429,
+        "hotel_distance_miles": 0.27,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "204",
+        "hotel_name": "The Ritz-Carlton Pentagon City",
+        "hotel_website": "https://www.ritzcarlton.com/en/hotels/washington-dc/pentagon-city",
+        "hotel_lat": 38.8624521,
+        "hotel_lon": -77.0605913,
+        "hotel_distance_miles": 0.09,
+        "station_id": "76"
+    },
+    {
+        "hotel_id": "205",
+        "hotel_name": "The Westin Reston Heights",
+        "hotel_website": "http://www.westinreston.com/",
+        "hotel_lat": 38.9504167,
+        "hotel_lon": -77.3521236,
+        "hotel_distance_miles": 0.46,
+        "station_id": "92"
+    },
+    {
+        "hotel_id": "206",
+        "hotel_name": "The River Inn",
+        "hotel_website": "https://www.theriverinn.com/",
+        "hotel_lat": 38.9014081,
+        "hotel_lon": -77.0536224,
+        "hotel_distance_miles": 0.2,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "207",
+        "hotel_name": "The Royal Sonesta Washington DC Dupont Circle",
+        "hotel_website": "https://www.sonesta.com/royal-sonesta/dc/washington/royal-sonesta-washington-dc-dupont-circle/",
+        "hotel_lat": 38.9098133,
+        "hotel_lon": -77.0474131,
+        "hotel_distance_miles": 0.18,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "208",
+        "hotel_name": "The St. Regis Washington, D.C.",
+        "hotel_website": "https://www.marriott.com/hotels/travel/wassx-the-st-regis-washington-dc/",
+        "hotel_lat": 38.9021044,
+        "hotel_lon": -77.0360883,
+        "hotel_distance_miles": 0.19,
+        "station_id": "16"
+    },
+    {
+        "hotel_id": "209",
+        "hotel_name": "The Ven at Embassy Row, Washington, D.C., A Tribute Portfolio Hotel",
+        "hotel_website": "https://www.marriott.com/hotels/travel/wastx-the-ven-at-embassy-row-washington-dc-a-tribute-portfolio-hotel/",
+        "hotel_lat": 38.9108169,
+        "hotel_lon": -77.0456564,
+        "hotel_distance_miles": 0.07,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "210",
+        "hotel_name": "The Watergate Hotel",
+        "hotel_website": "http://www.watergatehotel.com/",
+        "hotel_lat": 38.8993379,
+        "hotel_lon": -77.0558434,
+        "hotel_distance_miles": 0.33,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "211",
+        "hotel_name": "Embassy Suites Tysons Corner",
+        "hotel_website": "https://www.hilton.com/en/hotels/wastses-embassy-suites-tysons-corner/",
+        "hotel_lat": 38.9254806,
+        "hotel_lon": -77.2401256,
+        "hotel_distance_miles": 0.27,
+        "station_id": "94"
+    },
+    {
+        "hotel_id": "212",
+        "hotel_name": "The Westin",
+        "hotel_website": "http://www.westin.com/",
+        "hotel_lat": 38.9050093,
+        "hotel_lon": -77.0510663,
+        "hotel_distance_miles": 0.3,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "213",
+        "hotel_name": "The Westin Alexandria Old Town",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/wasxw-the-westin-alexandria-old-town/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0",
+        "hotel_lat": 38.8031688,
+        "hotel_lon": -77.0650711,
+        "hotel_distance_miles": 0.33,
+        "station_id": "86"
+    },
+    {
+        "hotel_id": "214",
+        "hotel_name": "Quality Inn Tysons Center",
+        "hotel_website": "https://www.choicehotels.com/virginia/vienna/quality-inn-hotels/va282?mc=llgoxxpx",
+        "hotel_lat": 38.926557,
+        "hotel_lon": -77.243766,
+        "hotel_distance_miles": 0.21,
+        "station_id": "94"
+    },
+    {
+        "hotel_id": "215",
+        "hotel_name": "The Westin Crystal City Reagan National Airport",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/waswi-the-westin-crystal-city-reagan-national-airport/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0",
+        "hotel_lat": 38.8570909,
+        "hotel_lon": -77.0525732,
+        "hotel_distance_miles": 0.13,
+        "station_id": "74"
+    },
+    {
+        "hotel_id": "216",
+        "hotel_name": "Courtyard Tysons McLean",
+        "hotel_website": "https://www.marriott.com/WASTN",
+        "hotel_lat": 38.9202861,
+        "hotel_lon": -77.2270364,
+        "hotel_distance_miles": 0.29,
+        "station_id": "96"
+    },
+    {
+        "hotel_id": "217",
+        "hotel_name": "The Westin Washington, D.C City Center",
+        "hotel_website": "https://www.marriott.com/en-us/hotels/wascw-the-westin-washington-dc-city-center/overview/",
+        "hotel_lat": 38.9053158,
+        "hotel_lon": -77.0334359,
+        "hotel_distance_miles": 0.29,
+        "station_id": "15"
+    },
+    {
+        "hotel_id": "218",
+        "hotel_name": "DoubleTree",
+        "hotel_website": "https://www.hilton.com/en/hotels/mcldtdt-doubletree-mclean-tysons/",
+        "hotel_lat": 38.920259,
+        "hotel_lon": -77.2272738,
+        "hotel_distance_miles": 0.31,
+        "station_id": "96"
+    },
+    {
+        "hotel_id": "219",
+        "hotel_name": "Thompson Washington D.C.",
+        "hotel_website": "https://www.hyatt.com/thompson-hotels/iadth-thompson-washington-dc?src=corp_lclb_gmb_seo_iadth",
+        "hotel_lat": 38.8746601,
+        "hotel_lon": -77.0025011,
+        "hotel_distance_miles": 0.18,
+        "station_id": "9"
+    },
+    {
+        "hotel_id": "220",
+        "hotel_name": "Travelodge",
+        "hotel_website": "https://www.wyndhamhotels.com/days-inn/silver-spring-maryland/days-inn-silver-spring/overview",
+        "hotel_lat": 38.9874075,
+        "hotel_lon": -77.0294784,
+        "hotel_distance_miles": 0.46,
+        "station_id": "66"
+    },
+    {
+        "hotel_id": "221",
+        "hotel_name": "Hyatt Regency",
+        "hotel_website": "https://www.hyatt.com/en-us/hotel/virginia/hyatt-regency-tysons-corner-center/iadrt",
+        "hotel_lat": 38.9187101,
+        "hotel_lon": -77.2199522,
+        "hotel_distance_miles": 0.16,
+        "station_id": "96"
+    },
+    {
+        "hotel_id": "222",
+        "hotel_name": "U Street Hostel",
+        "hotel_website": "https://ustreethostel.com/",
+        "hotel_lat": 38.9166571,
+        "hotel_lon": -77.0293509,
+        "hotel_distance_miles": 0.03,
+        "station_id": "20"
+    },
+    {
+        "hotel_id": "223",
+        "hotel_name": "Viceroy Washington DC",
+        "hotel_website": "https://www.viceroyhotelsandresorts.com/washington-dc",
+        "hotel_lat": 38.9081758,
+        "hotel_lon": -77.0330469,
+        "hotel_distance_miles": 0.48,
+        "station_id": "15"
+    },
+    {
+        "hotel_id": "224",
+        "hotel_name": "Waldorf Astoria Washington DC",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcawawa-waldorf-astoria-washington-dc/",
+        "hotel_lat": 38.8940964,
+        "hotel_lon": -77.0275812,
+        "hotel_distance_miles": 0.03,
+        "station_id": "13"
+    },
+    {
+        "hotel_id": "225",
+        "hotel_name": "The Ritz-Carlton, Tysons Corner",
+        "hotel_website": "https://www.ritzcarlton.com/en/hotels/wasty-the-ritz-carlton-tysons-corner/overview/",
+        "hotel_lat": 38.9242327,
+        "hotel_lon": -77.2238805,
+        "hotel_distance_miles": 0.27,
+        "station_id": "96"
+    },
+    {
+        "hotel_id": "226",
+        "hotel_name": "Washington Hilton",
+        "hotel_website": "https://www3.hilton.com/en/hotels/district-of-columbia/washington-hilton-DCAWHHH/index.html",
+        "hotel_lat": 38.9164565,
+        "hotel_lon": -77.0448983,
+        "hotel_distance_miles": 0.37,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "227",
+        "hotel_name": "Washington Marriott at Metro Center",
+        "hotel_website": "http://www.marriotthotels.com/",
+        "hotel_lat": 38.8993606,
+        "hotel_lon": -77.0275841,
+        "hotel_distance_miles": 0.07,
+        "station_id": "3"
+    },
+    {
+        "hotel_id": "228",
+        "hotel_name": "Washington Plaza Hotel",
+        "hotel_website": "https://www.washingtonplazahotel.com/",
+        "hotel_lat": 38.9062426,
+        "hotel_lon": -77.0309188,
+        "hotel_distance_miles": 0.34,
+        "station_id": "15"
+    },
+    {
+        "hotel_id": "229",
+        "hotel_name": "West End Washington DC",
+        "hotel_website": "https://www.hilton.com/en/hotels/dcagcup-west-end-washington-dc/",
+        "hotel_lat": 38.904299,
+        "hotel_lon": -77.047962,
+        "hotel_distance_miles": 0.27,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "230",
+        "hotel_name": "Tysons Corner Marriott",
+        "hotel_website": "https://www.marriott.com/WASTC",
+        "hotel_lat": 38.9137948,
+        "hotel_lon": -77.2212195,
+        "hotel_distance_miles": 0.48,
+        "station_id": "96"
+    },
+    {
+        "hotel_id": "231",
+        "hotel_name": "Willard InterContinental Hotel",
+        "hotel_website": "http://hotels.washington.interconti.com/",
+        "hotel_lat": 38.8970389,
+        "hotel_lon": -77.0324131,
+        "hotel_distance_miles": 0.27,
+        "station_id": "3"
+    },
+    {
+        "hotel_id": "232",
+        "hotel_name": "William Lewis House Bed & Breakfast",
+        "hotel_website": "www.wlewishouse.com",
+        "hotel_lat": 38.9127934,
+        "hotel_lon": -77.0301139,
+        "hotel_distance_miles": 0.3,
+        "station_id": "20"
+    },
+    {
+        "hotel_id": "233",
+        "hotel_name": "Windsor Inn",
+        "hotel_website": "https://thewindsorinn.hotelsofwashington.com/en/",
+        "hotel_lat": 38.9152866,
+        "hotel_lon": -77.0369459,
+        "hotel_distance_miles": 0.44,
+        "station_id": "20"
+    },
+    {
+        "hotel_id": "234",
+        "hotel_name": "Windsor Inn",
+        "hotel_website": "https://thewindsorinn.hotelsofwashington.com/en/",
+        "hotel_lat": 38.9173936,
+        "hotel_lon": -77.0486397,
+        "hotel_distance_miles": 0.49,
+        "station_id": "37"
+    },
+    {
+        "hotel_id": "235",
+        "hotel_name": "Woodley Park Guest House",
+        "hotel_website": "https://www.dcinns.com/",
+        "hotel_lat": 38.9258685,
+        "hotel_lon": -77.053735,
+        "hotel_distance_miles": 0.1,
+        "station_id": "19"
+    },
+    {
+        "hotel_id": "236",
+        "hotel_name": "YOTEL Washington DC",
+        "hotel_website": "https://www.yotel.com/en/hotels/yotel-washington-dc?utm_marin=mkwid_scLjb06l6-dc_slid__productid__ptaid_kwd-466585057916&gad_source=1&gclid=CjwKCAjwreW2BhBhEiwAavLwfFfVKk9fPj6wMm04lxuvuWRjT8SwrLyp4_H4qOgFZRuidSiNOFMBaxoCztAQAvD_BwE",
+        "hotel_lat": 38.8954191,
+        "hotel_lon": -77.0106922,
+        "hotel_distance_miles": 0.28,
+        "station_id": "7"
+    },
+    {
+        "hotel_id": "237",
+        "hotel_name": "Yours Truly DC",
+        "hotel_website": "https://www.yourstrulydc.com/",
+        "hotel_lat": 38.9047565,
+        "hotel_lon": -77.0475992,
+        "hotel_distance_miles": 0.31,
+        "station_id": "39"
+    },
+    {
+        "hotel_id": "238",
+        "hotel_name": "citizenM",
+        "hotel_website": "https://www.citizenm.com/hotels/united-states/washington-dc/washington-dc-capitol-hotel",
+        "hotel_lat": 38.8837618,
+        "hotel_lon": -77.0194401,
+        "hotel_distance_miles": 0.14,
+        "station_id": "36"
+    },
+    {
+        "hotel_id": "239",
+        "hotel_name": "Washington Dulles Airport Marriott",
+        "hotel_website": "https://www.marriott.com/hotels/travel/iadap-washington-dulles-airport-marriott/",
+        "hotel_lat": 38.9599084,
+        "hotel_lon": -77.4482675,
+        "hotel_distance_miles": 0.28,
+        "station_id": "89"
+    }
+]

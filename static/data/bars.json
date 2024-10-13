@@ -1,0 +1,2552 @@
+[
+    {
+        "bar_id": "1",
+        "station_name": "ARCHIVES METRO STATION",
+        "station_id": "14",
+        "bar_name": "Penn Quarter Sports Tavern",
+        "bar_website": "https://www.pennquartersportstavern.com/",
+        "bar_lat": 38.8942389,
+        "bar_lon": -77.0215529,
+        "bar_distance_miles": 0.02
+    },
+    {
+        "bar_id": "2",
+        "station_name": "BALLSTON METRO STATION",
+        "station_id": "77",
+        "bar_name": "First Down Sports Bar and Grill",
+        "bar_website": "https://www.firstdownsportsbar.com/",
+        "bar_lat": 38.8824202,
+        "bar_lon": -77.1112539,
+        "bar_distance_miles": 0.02
+    },
+    {
+        "bar_id": "3",
+        "station_name": "BALLSTON METRO STATION",
+        "station_id": "77",
+        "bar_name": "Quincy Hall",
+        "bar_website": "https://www.quincyhallbar.com/",
+        "bar_lat": 38.8826796,
+        "bar_lon": -77.108435,
+        "bar_distance_miles": 0.17
+    },
+    {
+        "bar_id": "4",
+        "station_name": "BETHESDA METRO STATION",
+        "station_id": "55",
+        "bar_name": "Caddies",
+        "bar_website": "https://www.caddiesoncordell.com/",
+        "bar_lat": 38.988668,
+        "bar_lon": -77.098606,
+        "bar_distance_miles": 0.38
+    },
+    {
+        "bar_id": "5",
+        "station_name": "BETHESDA METRO STATION",
+        "station_id": "55",
+        "bar_name": "Rock Bottom",
+        "bar_website": "https://rockbottom.com/",
+        "bar_lat": 38.9890033,
+        "bar_lon": -77.0976716,
+        "bar_distance_miles": 0.37
+    },
+    {
+        "bar_id": "6",
+        "station_name": "BROOKLAND-CUA METRO STATION",
+        "station_id": "26",
+        "bar_name": "Brookland Pint",
+        "bar_website": "https://brooklandpint.com/",
+        "bar_lat": 38.9326024,
+        "bar_lon": -76.9951953,
+        "bar_distance_miles": 0.06
+    },
+    {
+        "bar_id": "7",
+        "station_name": "CAMDEN MARC",
+        "station_id": "124",
+        "bar_name": "Peter's",
+        "bar_website": "https://www.peterspourhouse.com/",
+        "bar_lat": 39.2883616,
+        "bar_lon": -76.6129808,
+        "bar_distance_miles": 0.48
+    },
+    {
+        "bar_id": "8",
+        "station_name": "CAMDEN MARC",
+        "station_id": "124",
+        "bar_name": "The Water Street Tavern",
+        "bar_website": "https://www.eatatwaterstreet.com/",
+        "bar_lat": 39.2882462,
+        "bar_lon": -76.6133419,
+        "bar_distance_miles": 0.46
+    },
+    {
+        "bar_id": "9",
+        "station_name": "CAMDEN MARC",
+        "station_id": "124",
+        "bar_name": "Section 771",
+        "bar_website": "https://section771.com/",
+        "bar_lat": 39.2856465,
+        "bar_lon": -76.6225963,
+        "bar_distance_miles": 0.21
+    },
+    {
+        "bar_id": "10",
+        "station_name": "CAMDEN MARC",
+        "station_id": "124",
+        "bar_name": "GameOn",
+        "bar_website": "https://www.gameonbararcade.com/",
+        "bar_lat": 39.2787951,
+        "bar_lon": -76.6146141,
+        "bar_distance_miles": 0.43
+    },
+    {
+        "bar_id": "11",
+        "station_name": "CAMDEN MARC",
+        "station_id": "124",
+        "bar_name": "Pickles Pub",
+        "bar_website": "https://www.picklespub.com/",
+        "bar_lat": 39.2855108,
+        "bar_lon": -76.6229373,
+        "bar_distance_miles": 0.21
+    },
+    {
+        "bar_id": "12",
+        "station_name": "CAMDEN MARC",
+        "station_id": "124",
+        "bar_name": "Quigley's Half Irish Pub",
+        "bar_website": "https://www.facebook.com/quigleyspub/",
+        "bar_lat": 39.2850206,
+        "bar_lon": -76.6247475,
+        "bar_distance_miles": 0.29
+    },
+    {
+        "bar_id": "13",
+        "station_name": "CAMDEN MARC",
+        "station_id": "124",
+        "bar_name": "Pratt Street Ale House",
+        "bar_website": "https://www.prattstreetalehouse.com/",
+        "bar_lat": 39.2865888,
+        "bar_lon": -76.6181536,
+        "bar_distance_miles": 0.22
+    },
+    {
+        "bar_id": "14",
+        "station_name": "CAPITOL SOUTH METRO STATION",
+        "station_id": "10",
+        "bar_name": "Bullfeathers",
+        "bar_website": "https://bullfeathersonthehill.com/",
+        "bar_lat": 38.8846415,
+        "bar_lon": -77.0056217,
+        "bar_distance_miles": 0.07
+    },
+    {
+        "bar_id": "15",
+        "station_name": "CAPITOL SOUTH METRO STATION",
+        "station_id": "10",
+        "bar_name": "Hawk 'n' Dove",
+        "bar_website": "https://www.hawkndovebardc.com/",
+        "bar_lat": 38.8863985,
+        "bar_lon": -77.0011504,
+        "bar_distance_miles": 0.26
+    },
+    {
+        "bar_id": "16",
+        "station_name": "CLARENDON METRO STATION",
+        "station_id": "71",
+        "bar_name": "Galaxy Hut",
+        "bar_website": "https://galaxyhut.com/",
+        "bar_lat": 38.8896232,
+        "bar_lon": -77.091012,
+        "bar_distance_miles": 0.27
+    },
+    {
+        "bar_id": "17",
+        "station_name": "CLARENDON METRO STATION",
+        "station_id": "71",
+        "bar_name": "The Renegade",
+        "bar_website": "https://www.renegadeva.com/",
+        "bar_lat": 38.8860496,
+        "bar_lon": -77.0950059,
+        "bar_distance_miles": 0.08
+    },
+    {
+        "bar_id": "18",
+        "station_name": "CLARENDON METRO STATION",
+        "station_id": "71",
+        "bar_name": "The Board Room VA",
+        "bar_website": "https://www.theboardroomva.com/",
+        "bar_lat": 38.8840881,
+        "bar_lon": -77.0931851,
+        "bar_distance_miles": 0.23
+    },
+    {
+        "bar_id": "19",
+        "station_name": "CLARENDON METRO STATION",
+        "station_id": "71",
+        "bar_name": "Brass Rabbit",
+        "bar_website": "https://www.brassrabbitpub.com/",
+        "bar_lat": 38.8868776,
+        "bar_lon": -77.0941118,
+        "bar_distance_miles": 0.05
+    },
+    {
+        "bar_id": "20",
+        "station_name": "CLARENDON METRO STATION",
+        "station_id": "71",
+        "bar_name": "Spider Kelly's",
+        "bar_website": "http://www.spiderkellys.com",
+        "bar_lat": 38.8866213,
+        "bar_lon": -77.096636,
+        "bar_distance_miles": 0.1
+    },
+    {
+        "bar_id": "21",
+        "station_name": "CLARENDON METRO STATION",
+        "station_id": "71",
+        "bar_name": "Liberty Tavern",
+        "bar_website": "https://www.thelibertytavern.com/",
+        "bar_lat": 38.8863769,
+        "bar_lon": -77.0968621,
+        "bar_distance_miles": 0.12
+    },
+    {
+        "bar_id": "22",
+        "station_name": "CLARENDON METRO STATION",
+        "station_id": "71",
+        "bar_name": "O'Sullivan's",
+        "bar_website": "http://osullivansirishpub.com/",
+        "bar_lat": 38.8862654,
+        "bar_lon": -77.0971698,
+        "bar_distance_miles": 0.13
+    },
+    {
+        "bar_id": "23",
+        "station_name": "CLEVELAND PARK METRO STATION",
+        "station_id": "17",
+        "bar_name": "Nanny O'Brien's Irish Pub",
+        "bar_website": "https://nannyobriens.com",
+        "bar_lat": 38.934114,
+        "bar_lon": -77.0572132,
+        "bar_distance_miles": 0.14
+    },
+    {
+        "bar_id": "24",
+        "station_name": "CLEVELAND PARK METRO STATION",
+        "station_id": "17",
+        "bar_name": "Atomic Billiards",
+        "bar_website": "https://atomicbilliards.com/",
+        "bar_lat": 38.9352449,
+        "bar_lon": -77.0580522,
+        "bar_distance_miles": 0.05
+    },
+    {
+        "bar_id": "25",
+        "station_name": "CLEVELAND PARK METRO STATION",
+        "station_id": "17",
+        "bar_name": "Cleveland Park Bar & Grill",
+        "bar_website": "https://cpbargrill.com/",
+        "bar_lat": 38.9350075,
+        "bar_lon": -77.0578689,
+        "bar_distance_miles": 0.07
+    },
+    {
+        "bar_id": "26",
+        "station_name": "COLUMBIA HEIGHTS METRO STATION",
+        "station_id": "21",
+        "bar_name": "The Wonderland Ballroom",
+        "bar_website": "https://www.thewonderlandballroom.com/",
+        "bar_lat": 38.9299311,
+        "bar_lon": -77.0279842,
+        "bar_distance_miles": 0.26
+    },
+    {
+        "bar_id": "27",
+        "station_name": "COLUMBIA HEIGHTS METRO STATION",
+        "station_id": "21",
+        "bar_name": "Raven Grill",
+        "bar_website": "https://x.com/RavenGrillDC",
+        "bar_lat": 38.929396,
+        "bar_lon": -77.0374038,
+        "bar_distance_miles": 0.27
+    },
+    {
+        "bar_id": "28",
+        "station_name": "COLUMBIA HEIGHTS METRO STATION",
+        "station_id": "21",
+        "bar_name": "Marx Cafe American Bar",
+        "bar_website": "http://www.marxcafemtp.com/",
+        "bar_lat": 38.9313351,
+        "bar_lon": -77.0382068,
+        "bar_distance_miles": 0.36
+    },
+    {
+        "bar_id": "29",
+        "station_name": "COLUMBIA HEIGHTS METRO STATION",
+        "station_id": "21",
+        "bar_name": "Johnny's All-American",
+        "bar_website": "https://www.johnnysallamerican.com/",
+        "bar_lat": 38.9302749,
+        "bar_lon": -77.028091,
+        "bar_distance_miles": 0.26
+    },
+    {
+        "bar_id": "30",
+        "station_name": "COLUMBIA HEIGHTS METRO STATION",
+        "station_id": "21",
+        "bar_name": "Lou's City Bar",
+        "bar_website": "https://www.louscitybar.com/",
+        "bar_lat": 38.9284992,
+        "bar_lon": -77.033826,
+        "bar_distance_miles": 0.08
+    },
+    {
+        "bar_id": "31",
+        "station_name": "COLUMBIA HEIGHTS METRO STATION",
+        "station_id": "21",
+        "bar_name": "Zeba Bar",
+        "bar_website": "https://www.yelp.com/biz/zeba-washington",
+        "bar_lat": 38.9322311,
+        "bar_lon": -77.0324622,
+        "bar_distance_miles": 0.24
+    },
+    {
+        "bar_id": "32",
+        "station_name": "COLUMBIA HEIGHTS METRO STATION",
+        "station_id": "21",
+        "bar_name": "Bar Del Monte",
+        "bar_website": "https://www.bardelmonte.com/",
+        "bar_lat": 38.9282509,
+        "bar_lon": -77.0373913,
+        "bar_distance_miles": 0.27
+    },
+    {
+        "bar_id": "33",
+        "station_name": "COLUMBIA HEIGHTS METRO STATION",
+        "station_id": "21",
+        "bar_name": "The Thirsty Crow",
+        "bar_website": "https://www.thirstycrowdc.com/",
+        "bar_lat": 38.9318566,
+        "bar_lon": -77.0285015,
+        "bar_distance_miles": 0.3
+    },
+    {
+        "bar_id": "34",
+        "station_name": "COLUMBIA HEIGHTS METRO STATION",
+        "station_id": "21",
+        "bar_name": "Buddy's",
+        "bar_website": "https://www.buddysdc.com/",
+        "bar_lat": 38.9304647,
+        "bar_lon": -77.0281379,
+        "bar_distance_miles": 0.26
+    },
+    {
+        "bar_id": "35",
+        "station_name": "CONGRESS HEIGHTS METRO STATION",
+        "station_id": "32",
+        "bar_name": "Player's Lounge",
+        "bar_website": "https://www.facebook.com/p/The-Players-Lounge-100063403454369/",
+        "bar_lat": 38.8471912,
+        "bar_lon": -76.9963228,
+        "bar_distance_miles": 0.47
+    },
+    {
+        "bar_id": "36",
+        "station_name": "COURTHOUSE METRO STATION",
+        "station_id": "72",
+        "bar_name": "Courthaus Social",
+        "bar_website": "https://www.courthaussocial.com/",
+        "bar_lat": 38.890214,
+        "bar_lon": -77.0865029,
+        "bar_distance_miles": 0.12
+    },
+    {
+        "bar_id": "37",
+        "station_name": "COURTHOUSE METRO STATION",
+        "station_id": "72",
+        "bar_name": "Cloud Lounge",
+        "bar_website": "https://www.cloudlounge.co/",
+        "bar_lat": 38.8951568,
+        "bar_lon": -77.0908465,
+        "bar_distance_miles": 0.42
+    },
+    {
+        "bar_id": "38",
+        "station_name": "COURTHOUSE METRO STATION",
+        "station_id": "72",
+        "bar_name": "Ireland's Four Courts",
+        "bar_website": "https://www.irelandsfourcourts.com/",
+        "bar_lat": 38.891911,
+        "bar_lon": -77.0842166,
+        "bar_distance_miles": 0.05
+    },
+    {
+        "bar_id": "39",
+        "station_name": "CRYSTAL CITY METRO STATION",
+        "station_id": "74",
+        "bar_name": "Highline RxR",
+        "bar_website": "https://www.highlinerxr.com/",
+        "bar_lat": 38.8557667,
+        "bar_lon": -77.0495687,
+        "bar_distance_miles": 0.15
+    },
+    {
+        "bar_id": "40",
+        "station_name": "CRYSTAL CITY METRO STATION",
+        "station_id": "74",
+        "bar_name": "Maker's Union",
+        "bar_website": "https://www.makersunionpub.com/",
+        "bar_lat": 38.8608673,
+        "bar_lon": -77.0541072,
+        "bar_distance_miles": 0.29
+    },
+    {
+        "bar_id": "41",
+        "station_name": "CRYSTAL CITY METRO STATION",
+        "station_id": "74",
+        "bar_name": "Departures",
+        "bar_website": "https://drafthouse.com/dc-metro-area/theater-bar/crystal-city",
+        "bar_lat": 38.8589667,
+        "bar_lon": -77.0494756,
+        "bar_distance_miles": 0.06
+    },
+    {
+        "bar_id": "42",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "Duke's Grocery",
+        "bar_website": "https://dukesgrocery.com",
+        "bar_lat": 38.9101987,
+        "bar_lon": -77.0382674,
+        "bar_distance_miles": 0.34
+    },
+    {
+        "bar_id": "43",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "The Fireplace",
+        "bar_website": "https://www.facebook.com/thefireplacedc/",
+        "bar_lat": 38.909802,
+        "bar_lon": -77.0486044,
+        "bar_distance_miles": 0.24
+    },
+    {
+        "bar_id": "44",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "The Bier Baron Tavern",
+        "bar_website": "https://www.1523beer.com/",
+        "bar_lat": 38.9102987,
+        "bar_lon": -77.0485698,
+        "bar_distance_miles": 0.23
+    },
+    {
+        "bar_id": "45",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "JR's Bar and Grill",
+        "bar_website": "https://jrsbar-dc.com/",
+        "bar_lat": 38.9104732,
+        "bar_lon": -77.0381978,
+        "bar_distance_miles": 0.34
+    },
+    {
+        "bar_id": "46",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "Phantom",
+        "bar_website": "https://phantomdc.com/",
+        "bar_lat": 38.9080198,
+        "bar_lon": -77.0421979,
+        "bar_distance_miles": 0.25
+    },
+    {
+        "bar_id": "47",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "McClellan's Retreat",
+        "bar_website": "https://www.mcclellansretreat.com/",
+        "bar_lat": 38.9143053,
+        "bar_lon": -77.0465903,
+        "bar_distance_miles": 0.25
+    },
+    {
+        "bar_id": "48",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "Madhatter",
+        "bar_website": "https://www.madhatterdc.com/",
+        "bar_lat": 38.9078618,
+        "bar_lon": -77.042093,
+        "bar_distance_miles": 0.26
+    },
+    {
+        "bar_id": "49",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "The Blaguard",
+        "bar_website": "http://www.blaguarddc.com/",
+        "bar_lat": 38.9172914,
+        "bar_lon": -77.0414228,
+        "bar_distance_miles": 0.45
+    },
+    {
+        "bar_id": "50",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "Doyle",
+        "bar_website": "https://doyle.bar/?utm_source=google&utm_medium=local&utm_campaign=bar-doyle",
+        "bar_lat": 38.910368,
+        "bar_lon": -77.0431485,
+        "bar_distance_miles": 0.09
+    },
+    {
+        "bar_id": "51",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "Bar Charley",
+        "bar_website": "https://www.barcharley.com/",
+        "bar_lat": 38.9150699,
+        "bar_lon": -77.0414418,
+        "bar_distance_miles": 0.32
+    },
+    {
+        "bar_id": "52",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "The Board Room DC",
+        "bar_website": "https://www.boardroomdc.com/",
+        "bar_lat": 38.9136193,
+        "bar_lon": -77.0454577,
+        "bar_distance_miles": 0.18
+    },
+    {
+        "bar_id": "53",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "Fox & Hounds Lounge",
+        "bar_website": "https://www.foxandhoundslounge.com/",
+        "bar_lat": 38.9108644,
+        "bar_lon": -77.0382685,
+        "bar_distance_miles": 0.33
+    },
+    {
+        "bar_id": "54",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "Astoria",
+        "bar_website": "https://astoriadc.com/",
+        "bar_lat": 38.9105253,
+        "bar_lon": -77.0382731,
+        "bar_distance_miles": 0.33
+    },
+    {
+        "bar_id": "55",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "The Imperial",
+        "bar_website": "https://www.imperialdc.com/",
+        "bar_lat": 38.917145,
+        "bar_lon": -77.041461,
+        "bar_distance_miles": 0.44
+    },
+    {
+        "bar_id": "56",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "The Commodore",
+        "bar_website": "https://www.commodoredc.com/",
+        "bar_lat": 38.9123372,
+        "bar_lon": -77.0387101,
+        "bar_distance_miles": 0.32
+    },
+    {
+        "bar_id": "57",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": "37",
+        "bar_name": "Step-Childe Harold",
+        "bar_website": "https://www.thaiverse.com/step-childe",
+        "bar_lat": 38.9116203,
+        "bar_lon": -77.0451294,
+        "bar_distance_miles": 0.05
+    },
+    {
+        "bar_id": "58",
+        "station_name": "EASTERN MARKET METRO STATION",
+        "station_id": "8",
+        "bar_name": "The Brig",
+        "bar_website": "https://www.thebrigdc.com/",
+        "bar_lat": 38.8778261,
+        "bar_lon": -76.9952839,
+        "bar_distance_miles": 0.44
+    },
+    {
+        "bar_id": "59",
+        "station_name": "EASTERN MARKET METRO STATION",
+        "station_id": "8",
+        "bar_name": "Betsy",
+        "bar_website": "https://thebetsyusa.com/",
+        "bar_lat": 38.882216,
+        "bar_lon": -76.9944661,
+        "bar_distance_miles": 0.14
+    },
+    {
+        "bar_id": "60",
+        "station_name": "EASTERN MARKET METRO STATION",
+        "station_id": "8",
+        "bar_name": "Valor Brewpub",
+        "bar_website": "https://valorbrewpub.com/",
+        "bar_lat": 38.8804704,
+        "bar_lon": -76.9951847,
+        "bar_distance_miles": 0.25
+    },
+    {
+        "bar_id": "61",
+        "station_name": "EASTERN MARKET METRO STATION",
+        "station_id": "8",
+        "bar_name": "The Ugly Mug",
+        "bar_website": "https://www.uglymugdc.com/",
+        "bar_lat": 38.8804497,
+        "bar_lon": -76.9953031,
+        "bar_distance_miles": 0.26
+    },
+    {
+        "bar_id": "62",
+        "station_name": "EASTERN MARKET METRO STATION",
+        "station_id": "8",
+        "bar_name": "The Eastern",
+        "bar_website": "https://www.easternwinebar.com/",
+        "bar_lat": 38.885274,
+        "bar_lon": -76.995958,
+        "bar_distance_miles": 0.09
+    },
+    {
+        "bar_id": "63",
+        "station_name": "EASTERN MARKET METRO STATION",
+        "station_id": "8",
+        "bar_name": "The Wells",
+        "bar_website": "https://www.thewellsdc.com/",
+        "bar_lat": 38.885774,
+        "bar_lon": -76.9957564,
+        "bar_distance_miles": 0.12
+    },
+    {
+        "bar_id": "64",
+        "station_name": "EASTERN MARKET METRO STATION",
+        "station_id": "8",
+        "bar_name": "Lola's",
+        "bar_website": "https://www.lolasdc.com/",
+        "bar_lat": 38.8808298,
+        "bar_lon": -76.995287,
+        "bar_distance_miles": 0.23
+    },
+    {
+        "bar_id": "65",
+        "station_name": "EISENHOWER AVE METRO STATION",
+        "station_id": "85",
+        "bar_name": "Atlas Brew Works",
+        "bar_website": "https://atlasbrewworks.com/",
+        "bar_lat": 38.8029728,
+        "bar_lon": -77.070763,
+        "bar_distance_miles": 0.18
+    },
+    {
+        "bar_id": "66",
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": "38",
+        "bar_name": "Saint Arnolds on Jefferson",
+        "bar_website": "https://starnoldsdc.com/",
+        "bar_lat": 38.9065895,
+        "bar_lon": -77.042783,
+        "bar_distance_miles": 0.29
+    },
+    {
+        "bar_id": "67",
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": "38",
+        "bar_name": "Sign Of The Whale",
+        "bar_website": "https://www.whaledc.com/",
+        "bar_lat": 38.9058402,
+        "bar_lon": -77.0427803,
+        "bar_distance_miles": 0.25
+    },
+    {
+        "bar_id": "68",
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": "38",
+        "bar_name": "AC Lounge",
+        "bar_website": "https://www.marriott.com/en-us/hotels/wasad-ac-hotel-washington-dc-downtown/dining/",
+        "bar_lat": 38.9043055,
+        "bar_lon": -77.0437005,
+        "bar_distance_miles": 0.24
+    },
+    {
+        "bar_id": "69",
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": "38",
+        "bar_name": "Heist",
+        "bar_website": "https://www.heistdc.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+        "bar_lat": 38.9063642,
+        "bar_lon": -77.042202,
+        "bar_distance_miles": 0.26
+    },
+    {
+        "bar_id": "70",
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": "38",
+        "bar_name": "Sauf Haus Bier Hall & Garten",
+        "bar_website": "https://saufhausdc.com/?utm_source=google",
+        "bar_lat": 38.9063817,
+        "bar_lon": -77.0419781,
+        "bar_distance_miles": 0.25
+    },
+    {
+        "bar_id": "71",
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": "38",
+        "bar_name": "18th Street Lounge",
+        "bar_website": "https://www.18thstlounge.com/",
+        "bar_lat": 38.9062223,
+        "bar_lon": -77.0421331,
+        "bar_distance_miles": 0.25
+    },
+    {
+        "bar_id": "72",
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": "38",
+        "bar_name": "Rosebar",
+        "bar_website": "https://www.rosebarlounge.com/",
+        "bar_lat": 38.9064031,
+        "bar_lon": -77.0411812,
+        "bar_distance_miles": 0.23
+    },
+    {
+        "bar_id": "73",
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": "38",
+        "bar_name": "Public Bar",
+        "bar_website": "https://publicbarlive.com/",
+        "bar_lat": 38.9062809,
+        "bar_lon": -77.0420858,
+        "bar_distance_miles": 0.25
+    },
+    {
+        "bar_id": "74",
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": "38",
+        "bar_name": "Recessions",
+        "bar_website": "https://www.recessionsdc.com/",
+        "bar_lat": 38.9038921,
+        "bar_lon": -77.0427334,
+        "bar_distance_miles": 0.18
+    },
+    {
+        "bar_id": "75",
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": "38",
+        "bar_name": "Barcode",
+        "bar_website": "https://barcodedc.com/",
+        "bar_lat": 38.9039033,
+        "bar_lon": -77.0380051,
+        "bar_distance_miles": 0.09
+    },
+    {
+        "bar_id": "76",
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": "38",
+        "bar_name": "Off The Record",
+        "bar_website": "https://www.hayadams.com/dining/off-the-record",
+        "bar_lat": 38.9028416,
+        "bar_lon": -77.038828,
+        "bar_distance_miles": 0.05
+    },
+    {
+        "bar_id": "77",
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": "38",
+        "bar_name": "Bravo Bravo",
+        "bar_website": "https://www.bravobravo.club/",
+        "bar_lat": 38.9029189,
+        "bar_lon": -77.0392331,
+        "bar_distance_miles": 0.03
+    },
+    {
+        "bar_id": "78",
+        "station_name": "FARRAGUT WEST METRO STATION",
+        "station_id": "16",
+        "bar_name": "Eden",
+        "bar_website": "https://edendc.com/",
+        "bar_lat": 38.9010862,
+        "bar_lon": -77.040345,
+        "bar_distance_miles": 0.05
+    },
+    {
+        "bar_id": "79",
+        "station_name": "FARRAGUT WEST METRO STATION",
+        "station_id": "16",
+        "bar_name": "The Bottom Line",
+        "bar_website": "https://thebottomlinedc.com/",
+        "bar_lat": 38.9011843,
+        "bar_lon": -77.0403332,
+        "bar_distance_miles": 0.05
+    },
+    {
+        "bar_id": "80",
+        "station_name": "FEDERAL TRIANGLE METRO STATION",
+        "station_id": "13",
+        "bar_name": "Elephant & Castle",
+        "bar_website": "https://www.elephantcastle.com/en/locations/dc/washington/1201-pennsylvania-avenue-nw",
+        "bar_lat": 38.8955933,
+        "bar_lon": -77.0283357,
+        "bar_distance_miles": 0.13
+    },
+    {
+        "bar_id": "81",
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": "39",
+        "bar_name": "Froggy Bottom Pub",
+        "bar_website": "https://www.froggybottompub.com/",
+        "bar_lat": 38.9027776,
+        "bar_lon": -77.0457902,
+        "bar_distance_miles": 0.27
+    },
+    {
+        "bar_id": "82",
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": "39",
+        "bar_name": "Expat",
+        "bar_website": "https://www.expathospitality.com/",
+        "bar_lat": 38.9005531,
+        "bar_lon": -77.0462181,
+        "bar_distance_miles": 0.21
+    },
+    {
+        "bar_id": "83",
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": "39",
+        "bar_name": "Tonic at Quigley's",
+        "bar_website": "https://www.tonicrestaurantdc.com/",
+        "bar_lat": 38.8980519,
+        "bar_lon": -77.0464793,
+        "bar_distance_miles": 0.26
+    },
+    {
+        "bar_id": "84",
+        "station_name": "FREDERICK MARC",
+        "station_id": "130",
+        "bar_name": "Brewer's Alley",
+        "bar_website": "https://www.brewers-alley.com/",
+        "bar_lat": 39.4160849,
+        "bar_lon": -77.4104559,
+        "bar_distance_miles": 0.4
+    },
+    {
+        "bar_id": "85",
+        "station_name": "FREDERICK MARC",
+        "station_id": "130",
+        "bar_name": "White Rabbit Gastropub",
+        "bar_website": "https://www.whiterabbitgastropub.com/",
+        "bar_lat": 39.4158018,
+        "bar_lon": -77.4096948,
+        "bar_distance_miles": 0.35
+    },
+    {
+        "bar_id": "86",
+        "station_name": "FREDERICKSBURG VRE",
+        "station_id": "113",
+        "bar_name": "Harry's",
+        "bar_website": "https://www.harrysalehouse.com/",
+        "bar_lat": 38.3020576,
+        "bar_lon": -77.4642255,
+        "bar_distance_miles": 0.46
+    },
+    {
+        "bar_id": "87",
+        "station_name": "FREDERICKSBURG VRE",
+        "station_id": "113",
+        "bar_name": "J. Brian's Tap Room",
+        "bar_website": "https://www.jbrianstaproom.com/",
+        "bar_lat": 38.301504,
+        "bar_lon": -77.4586403,
+        "bar_distance_miles": 0.22
+    },
+    {
+        "bar_id": "88",
+        "station_name": "GALLERY PLACE CHINATOWN METRO STATION",
+        "station_id": "5",
+        "bar_name": "Rocket Bar",
+        "bar_website": "https://rocketbardc.com/",
+        "bar_lat": 38.8990127,
+        "bar_lon": -77.0221127,
+        "bar_distance_miles": 0.06
+    },
+    {
+        "bar_id": "89",
+        "station_name": "GALLERY PLACE CHINATOWN METRO STATION",
+        "station_id": "5",
+        "bar_name": "Penn Social",
+        "bar_website": "https://www.pennsocialdc.com/",
+        "bar_lat": 38.8963031,
+        "bar_lon": -77.0231869,
+        "bar_distance_miles": 0.17
+    },
+    {
+        "bar_id": "90",
+        "station_name": "GALLERY PLACE CHINATOWN METRO STATION",
+        "station_id": "5",
+        "bar_name": "Irish Channel",
+        "bar_website": "https://www.irishchanneldc.com/",
+        "bar_lat": 38.8995212,
+        "bar_lon": -77.019106,
+        "bar_distance_miles": 0.15
+    },
+    {
+        "bar_id": "91",
+        "station_name": "GALLERY PLACE CHINATOWN METRO STATION",
+        "station_id": "5",
+        "bar_name": "Jackpot",
+        "bar_website": "https://www.jackpotdc.com/",
+        "bar_lat": 38.8993263,
+        "bar_lon": -77.0220884,
+        "bar_distance_miles": 0.07
+    },
+    {
+        "bar_id": "92",
+        "station_name": "GALLERY PLACE CHINATOWN METRO STATION",
+        "station_id": "5",
+        "bar_name": "Denson",
+        "bar_website": "https://www.densondc.com/",
+        "bar_lat": 38.8970771,
+        "bar_lon": -77.0201182,
+        "bar_distance_miles": 0.12
+    },
+    {
+        "bar_id": "93",
+        "station_name": "GALLERY PLACE CHINATOWN METRO STATION",
+        "station_id": "5",
+        "bar_name": "Free State",
+        "bar_website": "https://www.freestatebar.com/",
+        "bar_lat": 38.8984588,
+        "bar_lon": -77.0192399,
+        "bar_distance_miles": 0.12
+    },
+    {
+        "bar_id": "94",
+        "station_name": "GALLERY PLACE CHINATOWN METRO STATION",
+        "station_id": "5",
+        "bar_name": "Dirty Habit",
+        "bar_website": "https://dirtyhabitdc.com/",
+        "bar_lat": 38.8969962,
+        "bar_lon": -77.0224996,
+        "bar_distance_miles": 0.11
+    },
+    {
+        "bar_id": "95",
+        "station_name": "GEORGIA AVE PETWORTH METRO STATION",
+        "station_id": "22",
+        "bar_name": "No Kisses",
+        "bar_website": "https://www.nokissesbar.com/",
+        "bar_lat": 38.9296271,
+        "bar_lon": -77.0236041,
+        "bar_distance_miles": 0.46
+    },
+    {
+        "bar_id": "96",
+        "station_name": "GEORGIA AVE PETWORTH METRO STATION",
+        "station_id": "22",
+        "bar_name": "Looking Glass Lounge",
+        "bar_website": "https://www.lookingglasslounge.com/",
+        "bar_lat": 38.9350298,
+        "bar_lon": -77.0243606,
+        "bar_distance_miles": 0.08
+    },
+    {
+        "bar_id": "97",
+        "station_name": "GEORGIA AVE PETWORTH METRO STATION",
+        "station_id": "22",
+        "bar_name": "Red Derby",
+        "bar_website": "http://www.redderby.com/",
+        "bar_lat": 38.9377279,
+        "bar_lon": -77.0330896,
+        "bar_distance_miles": 0.49
+    },
+    {
+        "bar_id": "98",
+        "station_name": "GEORGIA AVE PETWORTH METRO STATION",
+        "station_id": "22",
+        "bar_name": "Mr. Braxton Bar and Kitchen",
+        "bar_website": "https://www.mrbraxton.com",
+        "bar_lat": 38.9349684,
+        "bar_lon": -77.024351,
+        "bar_distance_miles": 0.09
+    },
+    {
+        "bar_id": "99",
+        "station_name": "GEORGIA AVE PETWORTH METRO STATION",
+        "station_id": "22",
+        "bar_name": "Lyman's Tavern",
+        "bar_website": "https://lymanstaverndc.com/",
+        "bar_lat": 38.93779,
+        "bar_lon": -77.033012,
+        "bar_distance_miles": 0.48
+    },
+    {
+        "bar_id": "100",
+        "station_name": "GEORGIA AVE PETWORTH METRO STATION",
+        "station_id": "22",
+        "bar_name": "Hook Hall",
+        "bar_website": "https://www.hookhall.com/",
+        "bar_lat": 38.9322889,
+        "bar_lon": -77.0239903,
+        "bar_distance_miles": 0.27
+    },
+    {
+        "bar_id": "101",
+        "station_name": "GEORGIA AVE PETWORTH METRO STATION",
+        "station_id": "22",
+        "bar_name": "Midlands Beer Garden",
+        "bar_website": "https://midlandsdc.com/",
+        "bar_lat": 38.9319198,
+        "bar_lon": -77.0232195,
+        "bar_distance_miles": 0.3
+    },
+    {
+        "bar_id": "102",
+        "station_name": "GEORGIA AVE PETWORTH METRO STATION",
+        "station_id": "22",
+        "bar_name": "The Pitch",
+        "bar_website": "https://thepitchtaverndc.com/",
+        "bar_lat": 38.940253,
+        "bar_lon": -77.024788,
+        "bar_distance_miles": 0.28
+    },
+    {
+        "bar_id": "103",
+        "station_name": "GEORGIA AVE PETWORTH METRO STATION",
+        "station_id": "22",
+        "bar_name": "Omari's Music Bar & Agave Lounge",
+        "bar_website": "https://www.omarimusicbar.com/",
+        "bar_lat": 38.9308368,
+        "bar_lon": -77.0232887,
+        "bar_distance_miles": 0.38
+    },
+    {
+        "bar_id": "104",
+        "station_name": "GEORGIA AVE PETWORTH METRO STATION",
+        "station_id": "22",
+        "bar_name": "Entitlement",
+        "bar_website": "https://www.829entitlementlounge.com/",
+        "bar_lat": 38.9421143,
+        "bar_lon": -77.0244874,
+        "bar_distance_miles": 0.4
+    },
+    {
+        "bar_id": "105",
+        "station_name": "GEORGIA AVE PETWORTH METRO STATION",
+        "station_id": "22",
+        "bar_name": "UCB Live",
+        "bar_website": "https://www.ucblivellc.com",
+        "bar_lat": 38.9317927,
+        "bar_lon": -77.0238542,
+        "bar_distance_miles": 0.31
+    },
+    {
+        "bar_id": "106",
+        "station_name": "GLENMONT METRO STATION",
+        "station_id": "64",
+        "bar_name": "Stained Glass Pub",
+        "bar_website": "https://www.stainedglasspub.net/glenmont-menu",
+        "bar_lat": 39.0616762,
+        "bar_lon": -77.0512664,
+        "bar_distance_miles": 0.1
+    },
+    {
+        "bar_id": "107",
+        "station_name": "HALETHORPE MARC",
+        "station_id": "135",
+        "bar_name": "Shuffles Saloon",
+        "bar_website": "https://www.facebook.com/ShufflesSaloon/",
+        "bar_lat": 39.2395847,
+        "bar_lon": -76.6920458,
+        "bar_distance_miles": 0.18
+    },
+    {
+        "bar_id": "108",
+        "station_name": "HARPERS FERRY W. VA MARC",
+        "station_id": "136",
+        "bar_name": "Almost Heaven Pub & Grill",
+        "bar_website": "https://www.facebook.com/almostheavenpubandgrill/",
+        "bar_lat": 39.3239261,
+        "bar_lon": -77.7313091,
+        "bar_distance_miles": 0.06
+    },
+    {
+        "bar_id": "109",
+        "station_name": "HYATTSVILLE CROSSING METRO STATION",
+        "station_id": "50",
+        "bar_name": "Old Dominion Brew House",
+        "bar_website": "https://utcolddominionbrewhouse.com/",
+        "bar_lat": 38.9687239,
+        "bar_lon": -76.9528304,
+        "bar_distance_miles": 0.29
+    },
+    {
+        "bar_id": "110",
+        "station_name": "KENSINGTON MARC",
+        "station_id": "138",
+        "bar_name": "Wine & Co.",
+        "bar_website": "https://knowlesstation.com/",
+        "bar_lat": 39.0278268,
+        "bar_lon": -77.0782372,
+        "bar_distance_miles": 0.35
+    },
+    {
+        "bar_id": "111",
+        "station_name": "KENSINGTON MARC",
+        "station_id": "138",
+        "bar_name": "Babycat Brewing",
+        "bar_website": "https://babycatbrewery.com/",
+        "bar_lat": 39.0258829,
+        "bar_lon": -77.0706064,
+        "bar_distance_miles": 0.09
+    },
+    {
+        "bar_id": "112",
+        "station_name": "KING STREET METRO STATION",
+        "station_id": "86",
+        "bar_name": "Rock it Grill",
+        "bar_website": "https://www.yelp.com/biz_photos/rock-it-grill-alexandria?select=bflHOyXMb-1RmfRMQ6Z3iA",
+        "bar_lat": 38.8061283,
+        "bar_lon": -77.0543436,
+        "bar_distance_miles": 0.35
+    },
+    {
+        "bar_id": "113",
+        "station_name": "KING STREET METRO STATION",
+        "station_id": "86",
+        "bar_name": "Hard Times Cafe",
+        "bar_website": "https://www.hardtimes.com/location/hard-times-alexandria/",
+        "bar_lat": 38.8059633,
+        "bar_lon": -77.0548903,
+        "bar_distance_miles": 0.32
+    },
+    {
+        "bar_id": "114",
+        "station_name": "L'ENFANT PLAZA METRO STATION",
+        "station_id": "36",
+        "bar_name": "Watering Hole",
+        "bar_website": "https://www.wharfdc.com/restaurants/the-watering-hole/",
+        "bar_lat": 38.8792619,
+        "bar_lon": -77.0253497,
+        "bar_distance_miles": 0.44
+    },
+    {
+        "bar_id": "115",
+        "station_name": "L'ENFANT PLAZA METRO STATION",
+        "station_id": "36",
+        "bar_name": "Cantina Bambina",
+        "bar_website": "https://www.cantinabambina.com/",
+        "bar_lat": 38.8798673,
+        "bar_lon": -77.0264338,
+        "bar_distance_miles": 0.43
+    },
+    {
+        "bar_id": "116",
+        "station_name": "L'ENFANT PLAZA METRO STATION",
+        "station_id": "36",
+        "bar_name": "Tiki TNT",
+        "bar_website": "https://www.tikitnt.com/",
+        "bar_lat": 38.881072,
+        "bar_lon": -77.0272646,
+        "bar_distance_miles": 0.4
+    },
+    {
+        "bar_id": "117",
+        "station_name": "L'ENFANT PLAZA METRO STATION",
+        "station_id": "36",
+        "bar_name": "12 Stories",
+        "bar_website": "https://www.12storiesdc.com/",
+        "bar_lat": 38.8796582,
+        "bar_lon": -77.0252829,
+        "bar_distance_miles": 0.41
+    },
+    {
+        "bar_id": "118",
+        "station_name": "L'ENFANT PLAZA METRO STATION",
+        "station_id": "36",
+        "bar_name": "Easy Company Wine Bar",
+        "bar_website": "https://www.easycowharf.com/",
+        "bar_lat": 38.8805699,
+        "bar_lon": -77.0266603,
+        "bar_distance_miles": 0.4
+    },
+    {
+        "bar_id": "119",
+        "station_name": "MANASSAS VRE",
+        "station_id": "100",
+        "bar_name": "Sinistral Brewing Company",
+        "bar_website": "https://sinistralbrewingcompany.com/",
+        "bar_lat": 38.7506877,
+        "bar_lon": -77.471187,
+        "bar_distance_miles": 0.09
+    },
+    {
+        "bar_id": "120",
+        "station_name": "MARTINSBURG W. VA MARC",
+        "station_id": "142",
+        "bar_name": "Stoney's Whiskey Wine & Raw Bar",
+        "bar_website": "https://stoneyswhiskeywinerawbar.com",
+        "bar_lat": 39.458699,
+        "bar_lon": -77.9624531,
+        "bar_distance_miles": 0.09
+    },
+    {
+        "bar_id": "121",
+        "station_name": "MCLEAN METRO STATION",
+        "station_id": "97",
+        "bar_name": "Starr Hill Biergarten",
+        "bar_website": "https://www.starrhilltysons.com/",
+        "bar_lat": 38.9253182,
+        "bar_lon": -77.2108505,
+        "bar_distance_miles": 0.07
+    },
+    {
+        "bar_id": "122",
+        "station_name": "MCLEAN METRO STATION",
+        "station_id": "97",
+        "bar_name": "Shipgarten",
+        "bar_website": "https://shipgarten.com/",
+        "bar_lat": 38.9227383,
+        "bar_lon": -77.2074565,
+        "bar_distance_miles": 0.2
+    },
+    {
+        "bar_id": "123",
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": "15",
+        "bar_name": "Green Lantern",
+        "bar_website": "https://www.greenlanterndc.com/",
+        "bar_lat": 38.9044841,
+        "bar_lon": -77.0308673,
+        "bar_distance_miles": 0.23
+    },
+    {
+        "bar_id": "124",
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": "15",
+        "bar_name": "Post Pub",
+        "bar_website": "http://postpubdc.com/",
+        "bar_lat": 38.9035782,
+        "bar_lon": -77.0340264,
+        "bar_distance_miles": 0.19
+    },
+    {
+        "bar_id": "125",
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": "15",
+        "bar_name": "Strand",
+        "bar_website": "https://strandclubdc.com/",
+        "bar_lat": 38.9011572,
+        "bar_lon": -77.0324504,
+        "bar_distance_miles": 0.03
+    },
+    {
+        "bar_id": "126",
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": "15",
+        "bar_name": "The Living Room",
+        "bar_website": "https://livingroomdc.com/",
+        "bar_lat": 38.903057,
+        "bar_lon": -77.0337505,
+        "bar_distance_miles": 0.15
+    },
+    {
+        "bar_id": "127",
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": "15",
+        "bar_name": "Allegory",
+        "bar_website": "https://www.allegory-dc.com/",
+        "bar_lat": 38.9027885,
+        "bar_lon": -77.0285311,
+        "bar_distance_miles": 0.21
+    },
+    {
+        "bar_id": "128",
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": "15",
+        "bar_name": "Wild Days",
+        "bar_website": "https://www.wild-days-dc.com/menus",
+        "bar_lat": 38.9028446,
+        "bar_lon": -77.0284,
+        "bar_distance_miles": 0.22
+    },
+    {
+        "bar_id": "129",
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": "15",
+        "bar_name": "Churchkey",
+        "bar_website": "https://www.churchkeydc.com/",
+        "bar_lat": 38.9084824,
+        "bar_lon": -77.0316071,
+        "bar_distance_miles": 0.49
+    },
+    {
+        "bar_id": "130",
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": "15",
+        "bar_name": "The Crown & Crow",
+        "bar_website": "https://www.thecrownandcrow.com/",
+        "bar_lat": 38.9078763,
+        "bar_lon": -77.0315771,
+        "bar_distance_miles": 0.45
+    },
+    {
+        "bar_id": "131",
+        "station_name": "METRO CENTER METRO STATION",
+        "station_id": "3",
+        "bar_name": "Round Robin Bar",
+        "bar_website": "https://washington.intercontinental.com/food-drink/round-robin-bar/",
+        "bar_lat": 38.89646,
+        "bar_lon": -77.032238,
+        "bar_distance_miles": 0.27
+    },
+    {
+        "bar_id": "132",
+        "station_name": "METRO CENTER METRO STATION",
+        "station_id": "3",
+        "bar_name": "Capitol City Brewing Company",
+        "bar_website": "https://capcitybrew.com/",
+        "bar_lat": 38.9000347,
+        "bar_lon": -77.0273573,
+        "bar_distance_miles": 0.12
+    },
+    {
+        "bar_id": "133",
+        "station_name": "METRO CENTER METRO STATION",
+        "station_id": "3",
+        "bar_name": "SPIN",
+        "bar_website": "https://wearespin.com/location/washington-dc/",
+        "bar_lat": 38.8971265,
+        "bar_lon": -77.0308623,
+        "bar_distance_miles": 0.19
+    },
+    {
+        "bar_id": "134",
+        "station_name": "MINNESOTA AVE METRO STATION",
+        "station_id": "30",
+        "bar_name": "Chateau Inc",
+        "bar_website": "https://www.yelp.com/biz/chateau-remix-washington",
+        "bar_lat": 38.8960226,
+        "bar_lon": -76.9562037,
+        "bar_distance_miles": 0.48
+    },
+    {
+        "bar_id": "135",
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": "1",
+        "bar_name": "Crimson",
+        "bar_website": "https://crimson-dc.com/",
+        "bar_lat": 38.8999509,
+        "bar_lon": -77.0212492,
+        "bar_distance_miles": 0.09
+    },
+    {
+        "bar_id": "136",
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": "1",
+        "bar_name": "Bulldog",
+        "bar_website": "https://bulldog-dc.com/",
+        "bar_lat": 38.8999512,
+        "bar_lon": -77.0225929,
+        "bar_distance_miles": 0.08
+    },
+    {
+        "bar_id": "137",
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": "1",
+        "bar_name": "Tipsy Scoop",
+        "bar_website": "https://tipsyscoop.com/pages/washington-dc",
+        "bar_lat": 38.9010196,
+        "bar_lon": -77.0214499,
+        "bar_distance_miles": 0.03
+    },
+    {
+        "bar_id": "138",
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": "1",
+        "bar_name": "Lucha Rosa Rooftoo",
+        "bar_website": "https://moxydcdining.com/lucha-rosa/",
+        "bar_lat": 38.9027597,
+        "bar_lon": -77.0266445,
+        "bar_distance_miles": 0.28
+    },
+    {
+        "bar_id": "139",
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": "1",
+        "bar_name": "Morris",
+        "bar_website": "https://www.morrisbardc.com",
+        "bar_lat": 38.9036814,
+        "bar_lon": -77.0221042,
+        "bar_distance_miles": 0.18
+    },
+    {
+        "bar_id": "140",
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": "1",
+        "bar_name": "Lost and Found",
+        "bar_website": "https://www.lostandfounddc.com/",
+        "bar_lat": 38.9067644,
+        "bar_lon": -77.0241783,
+        "bar_distance_miles": 0.41
+    },
+    {
+        "bar_id": "141",
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": "1",
+        "bar_name": "Never Looked Better",
+        "bar_website": "https://neverlookedbetterdc.com/",
+        "bar_lat": 38.9065526,
+        "bar_lon": -77.0241446,
+        "bar_distance_miles": 0.4
+    },
+    {
+        "bar_id": "142",
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": "1",
+        "bar_name": "TallBoy",
+        "bar_website": "https://www.tallboybar.com/",
+        "bar_lat": 38.9065768,
+        "bar_lon": -77.0237048,
+        "bar_distance_miles": 0.39
+    },
+    {
+        "bar_id": "143",
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": "1",
+        "bar_name": "Amazonia",
+        "bar_website": "https://www.causadc.com",
+        "bar_lat": 38.906575,
+        "bar_lon": -77.0247469,
+        "bar_distance_miles": 0.41
+    },
+    {
+        "bar_id": "144",
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": "1",
+        "bar_name": "Eighteenth Street Lounge (ESL)",
+        "bar_website": "https://www.18thstlounge.com/",
+        "bar_lat": 38.9065029,
+        "bar_lon": -77.0241297,
+        "bar_distance_miles": 0.39
+    },
+    {
+        "bar_id": "145",
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": "9",
+        "bar_name": "Smoke & Mirrors",
+        "bar_website": "https://www.smokeandmirrorsrooftop.com/",
+        "bar_lat": 38.8803905,
+        "bar_lon": -77.00585,
+        "bar_distance_miles": 0.27
+    },
+    {
+        "bar_id": "146",
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": "9",
+        "bar_name": "Bluejacket Brewery",
+        "bar_website": "https://bluejacketdc.com/",
+        "bar_lat": 38.8750965,
+        "bar_lon": -77.0006981,
+        "bar_distance_miles": 0.24
+    },
+    {
+        "bar_id": "147",
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": "9",
+        "bar_name": "Walter's Sports Bar",
+        "bar_website": "https://www.waltersdc.com/",
+        "bar_lat": 38.8748565,
+        "bar_lon": -77.0087182,
+        "bar_distance_miles": 0.24
+    },
+    {
+        "bar_id": "148",
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": "9",
+        "bar_name": "Tap99",
+        "bar_website": "https://tap-99.com",
+        "bar_lat": 38.8748026,
+        "bar_lon": -77.0067895,
+        "bar_distance_miles": 0.16
+    },
+    {
+        "bar_id": "149",
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": "9",
+        "bar_name": "Silver Social",
+        "bar_website": "https://www.silversocialdc.com/",
+        "bar_lat": 38.8748861,
+        "bar_lon": -77.0072134,
+        "bar_distance_miles": 0.17
+    },
+    {
+        "bar_id": "150",
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": "9",
+        "bar_name": "Royal Sands Social Club",
+        "bar_website": "https://www.royalsandsdc.com/",
+        "bar_lat": 38.8748562,
+        "bar_lon": -77.0080319,
+        "bar_distance_miles": 0.21
+    },
+    {
+        "bar_id": "151",
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": "9",
+        "bar_name": "Trouble Bird",
+        "bar_website": "https://www.troublebirddc.com/",
+        "bar_lat": 38.8742753,
+        "bar_lon": -77.00035,
+        "bar_distance_miles": 0.28
+    },
+    {
+        "bar_id": "152",
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": "6",
+        "bar_name": "Lost Generation Brewing  Company",
+        "bar_website": "https://www.lostgenbrewing.com/",
+        "bar_lat": 38.91417482,
+        "bar_lon": -77.00100627,
+        "bar_distance_miles": 0.5
+    },
+    {
+        "bar_id": "153",
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": "6",
+        "bar_name": "Sid Gold's Request Room",
+        "bar_website": "https://sidgolds.com/washington-dc/",
+        "bar_lat": 38.907929,
+        "bar_lon": -76.9988294,
+        "bar_distance_miles": 0.23
+    },
+    {
+        "bar_id": "154",
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": "6",
+        "bar_name": "Suburbia",
+        "bar_website": "https://www.yelp.com/biz/suburbia-washington",
+        "bar_lat": 38.9082261,
+        "bar_lon": -76.9971669,
+        "bar_distance_miles": 0.32
+    },
+    {
+        "bar_id": "155",
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": "6",
+        "bar_name": "Last Call",
+        "bar_website": "https://www.lastcallbardc.com/",
+        "bar_lat": 38.9090182,
+        "bar_lon": -76.9986823,
+        "bar_distance_miles": 0.26
+    },
+    {
+        "bar_id": "156",
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": "6",
+        "bar_name": "Crooked Run Fermentation",
+        "bar_website": "https://crookedrunfermentation.com/washington-dc/",
+        "bar_lat": 38.9072368,
+        "bar_lon": -76.9980494,
+        "bar_distance_miles": 0.27
+    },
+    {
+        "bar_id": "157",
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": "6",
+        "bar_name": "Hi-Lawn",
+        "bar_website": "https://www.hilawndc.com/",
+        "bar_lat": 38.9085834,
+        "bar_lon": -76.9974474,
+        "bar_distance_miles": 0.31
+    },
+    {
+        "bar_id": "158",
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": "6",
+        "bar_name": "Nice & Easy",
+        "bar_website": "https://www.niceneasy.co/",
+        "bar_lat": 38.9044418,
+        "bar_lon": -77.0030441,
+        "bar_distance_miles": 0.2
+    },
+    {
+        "bar_id": "159",
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": "6",
+        "bar_name": "Songbyrd Music House",
+        "bar_website": "https://songbyrddc.com/",
+        "bar_lat": 38.9103052,
+        "bar_lon": -76.9964118,
+        "bar_distance_miles": 0.41
+    },
+    {
+        "bar_id": "160",
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": "6",
+        "bar_name": "Wunder Garten",
+        "bar_website": "https://www.wundergartendc.com",
+        "bar_lat": 38.9040241,
+        "bar_lon": -77.0054428,
+        "bar_distance_miles": 0.27
+    },
+    {
+        "bar_id": "161",
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": "6",
+        "bar_name": "Red Bear Brewing Company",
+        "bar_website": "https://www.redbear.beer/",
+        "bar_lat": 38.9056349,
+        "bar_lon": -77.00261685,
+        "bar_distance_miles": 0.1
+    },
+    {
+        "bar_id": "162",
+        "station_name": "NORTH BETHESDA METRO STATION",
+        "station_id": "61",
+        "bar_name": "Bark Social",
+        "bar_website": "https://barksocial.com/pages/bethesda",
+        "bar_lat": 39.05165,
+        "bar_lon": -77.117337,
+        "bar_distance_miles": 0.39
+    },
+    {
+        "bar_id": "163",
+        "station_name": "NORTH BETHESDA METRO STATION",
+        "station_id": "61",
+        "bar_name": "Sports & Social Bethesda",
+        "bar_website": "https://sportsandsocialbethesda.com",
+        "bar_lat": 39.0492394,
+        "bar_lon": -77.1172738,
+        "bar_distance_miles": 0.28
+    },
+    {
+        "bar_id": "164",
+        "station_name": "PENN STATION MARC",
+        "station_id": "148",
+        "bar_name": "The Brass Tap",
+        "bar_website": "https://www.brasstapbeerbar.com/baltimore",
+        "bar_lat": 39.3067858,
+        "bar_lon": -76.6196397,
+        "bar_distance_miles": 0.2
+    },
+    {
+        "bar_id": "165",
+        "station_name": "PENN STATION MARC",
+        "station_id": "148",
+        "bar_name": "Annex",
+        "bar_website": "https://annexloungebaltimore.com/",
+        "bar_lat": 39.3102738,
+        "bar_lon": -76.6180196,
+        "bar_distance_miles": 0.25
+    },
+    {
+        "bar_id": "166",
+        "station_name": "PENN STATION MARC",
+        "station_id": "148",
+        "bar_name": "Charm City Meadworks",
+        "bar_website": "https://charmcitymeadworks.com/",
+        "bar_lat": 39.3040247,
+        "bar_lon": -76.6104762,
+        "bar_distance_miles": 0.36
+    },
+    {
+        "bar_id": "167",
+        "station_name": "PENN STATION MARC",
+        "station_id": "148",
+        "bar_name": "Baltimore Eagle",
+        "bar_website": "https://baltimoreeagle.com/",
+        "bar_lat": 39.3130287,
+        "bar_lon": -76.6168123,
+        "bar_distance_miles": 0.41
+    },
+    {
+        "bar_id": "168",
+        "station_name": "PENN STATION MARC",
+        "station_id": "148",
+        "bar_name": "Turp's Sports Bar & Restaurant",
+        "bar_website": "https://turpsonline.com/",
+        "bar_lat": 39.3051362,
+        "bar_lon": -76.6160224,
+        "bar_distance_miles": 0.14
+    },
+    {
+        "bar_id": "169",
+        "station_name": "PENN STATION MARC",
+        "station_id": "148",
+        "bar_name": "Wet City",
+        "bar_website": "https://wetcitybrewing.com/",
+        "bar_lat": 39.3015994,
+        "bar_lon": -76.6189633,
+        "bar_distance_miles": 0.41
+    },
+    {
+        "bar_id": "170",
+        "station_name": "PENN STATION MARC",
+        "station_id": "148",
+        "bar_name": "The Drinkery",
+        "bar_website": "https://www.thedrinkerybaltimore.com/the-drinkery/home",
+        "bar_lat": 39.3002376,
+        "bar_lon": -76.6187842,
+        "bar_distance_miles": 0.5
+    },
+    {
+        "bar_id": "171",
+        "station_name": "PENN STATION MARC",
+        "station_id": "148",
+        "bar_name": "Guilford Hall Brewery",
+        "bar_website": "Guilford Hall Brewery",
+        "bar_lat": 39.3084009,
+        "bar_lon": -76.612048,
+        "bar_distance_miles": 0.22
+    },
+    {
+        "bar_id": "172",
+        "station_name": "POTOMAC AVE METRO STATION",
+        "station_id": "11",
+        "bar_name": "Trusty's",
+        "bar_website": "http://trustysfullservedc.com/",
+        "bar_lat": 38.8801687,
+        "bar_lon": -76.9844001,
+        "bar_distance_miles": 0.07
+    },
+    {
+        "bar_id": "173",
+        "station_name": "RESTON TOWN CENTER METRO STATION",
+        "station_id": "92",
+        "bar_name": "Crafthouse",
+        "bar_website": "https://crafthouseusa.com/reston-va-crafthouse/",
+        "bar_lat": 38.9578692,
+        "bar_lon": -77.3605982,
+        "bar_distance_miles": 0.35
+    },
+    {
+        "bar_id": "174",
+        "station_name": "RHODE ISLAND AVE METRO STATION",
+        "station_id": "27",
+        "bar_name": "The Dew Drop Inn",
+        "bar_website": "https://www.dewdropinndc.com/",
+        "bar_lat": 38.9259256,
+        "bar_lon": -76.9947513,
+        "bar_distance_miles": 0.36
+    },
+    {
+        "bar_id": "175",
+        "station_name": "RHODE ISLAND AVE METRO STATION",
+        "station_id": "27",
+        "bar_name": "metrobar",
+        "bar_website": "https://metrobardc.com",
+        "bar_lat": 38.9217215,
+        "bar_lon": -76.9979146,
+        "bar_distance_miles": 0.14
+    },
+    {
+        "bar_id": "176",
+        "station_name": "RHODE ISLAND AVE METRO STATION",
+        "station_id": "27",
+        "bar_name": "City State",
+        "bar_website": "https://www.citystatebrewing.com/",
+        "bar_lat": 38.92398498,
+        "bar_lon": -76.99592485,
+        "bar_distance_miles": 0.3
+    },
+    {
+        "bar_id": "177",
+        "station_name": "RHODE ISLAND AVE METRO STATION",
+        "station_id": "27",
+        "bar_name": "Kraken Kourts & Skates | Bryant Street NE",
+        "bar_website": "https://www.experiencekraken.com/bryantstreet",
+        "bar_lat": 38.9216712,
+        "bar_lon": -76.99993,
+        "bar_distance_miles": 0.24
+    },
+    {
+        "bar_id": "178",
+        "station_name": "RIVERDALE MARC",
+        "station_id": "151",
+        "bar_name": "Denizens Brewing Company Riverdale Park",
+        "bar_website": "https://denizensbrewingco.com/",
+        "bar_lat": 38.9699173,
+        "bar_lon": -76.9364385,
+        "bar_distance_miles": 0.49
+    },
+    {
+        "bar_id": "179",
+        "station_name": "ROCKVILLE METRO STATION",
+        "station_id": "58",
+        "bar_name": "World of Beer",
+        "bar_website": "https://worldofbeer.com/locations/rockville/",
+        "bar_lat": 39.0841986,
+        "bar_lon": -77.1503243,
+        "bar_distance_miles": 0.21
+    },
+    {
+        "bar_id": "180",
+        "station_name": "ROSSLYN METRO STATION",
+        "station_id": "80",
+        "bar_name": "Quinn's on the Corner",
+        "bar_website": "https://www.quinnsonthecorner.com/",
+        "bar_lat": 38.8937938,
+        "bar_lon": -77.0784291,
+        "bar_distance_miles": 0.37
+    },
+    {
+        "bar_id": "181",
+        "station_name": "ROSSLYN METRO STATION",
+        "station_id": "80",
+        "bar_name": "Continental Modern Pool Lounge",
+        "bar_website": "https://continentalpoollounge.com/",
+        "bar_lat": 38.897949,
+        "bar_lon": -77.0716336,
+        "bar_distance_miles": 0.17
+    },
+    {
+        "bar_id": "182",
+        "station_name": "ROSSLYN METRO STATION",
+        "station_id": "80",
+        "bar_name": "Continental Beer Garden",
+        "bar_website": "https://continentalpoollounge.com/continental-beer-garden/",
+        "bar_lat": 38.8973693,
+        "bar_lon": -77.0716695,
+        "bar_distance_miles": 0.13
+    },
+    {
+        "bar_id": "183",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "bar_name": "Dacha Beer Garden",
+        "bar_website": "https://www.dachabeergarden.com/",
+        "bar_lat": 38.9112545,
+        "bar_lon": -77.0222317,
+        "bar_distance_miles": 0.23
+    },
+    {
+        "bar_id": "184",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "bar_name": "Nellie's Restaurant & Sports Bar",
+        "bar_website": "https://www.nelliessportsbar.com/",
+        "bar_lat": 38.9168296,
+        "bar_lon": -77.0242217,
+        "bar_distance_miles": 0.2
+    },
+    {
+        "bar_id": "185",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "bar_name": "All Souls",
+        "bar_website": "https://www.allsoulsbar.com/",
+        "bar_lat": 38.9157386,
+        "bar_lon": -77.022716,
+        "bar_distance_miles": 0.09
+    },
+    {
+        "bar_id": "186",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "bar_name": "Flash",
+        "bar_website": "https://www.flashdc.com/",
+        "bar_lat": 38.916227,
+        "bar_lon": -77.021408,
+        "bar_distance_miles": 0.12
+    },
+    {
+        "bar_id": "187",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "bar_name": "Boundary Stone",
+        "bar_website": "https://boundarystonedc.com/",
+        "bar_lat": 38.9152728,
+        "bar_lon": -77.0127371,
+        "bar_distance_miles": 0.5
+    },
+    {
+        "bar_id": "188",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "bar_name": "Right Proper Brewing Company",
+        "bar_website": "https://www.rightproperbrewing.com/",
+        "bar_lat": 38.9154119,
+        "bar_lon": -77.0213751,
+        "bar_distance_miles": 0.07
+    },
+    {
+        "bar_id": "189",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "bar_name": "Ivy & Coney",
+        "bar_website": "https://www.ivyandconey.com/",
+        "bar_lat": 38.9106583,
+        "bar_lon": -77.0217096,
+        "bar_distance_miles": 0.27
+    },
+    {
+        "bar_id": "190",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "bar_name": "The Passenger",
+        "bar_website": "https://passengerdc.com/",
+        "bar_lat": 38.9107097,
+        "bar_lon": -77.0217148,
+        "bar_distance_miles": 0.26
+    },
+    {
+        "bar_id": "191",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "bar_name": "The Dirty Goose",
+        "bar_website": "https://thedirtygoosedc.com/",
+        "bar_lat": 38.9171548,
+        "bar_lon": -77.0246051,
+        "bar_distance_miles": 0.23
+    },
+    {
+        "bar_id": "192",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "bar_name": "The Little Gay Pub",
+        "bar_website": "https://www.thelittlegaypub.com/",
+        "bar_lat": 38.909517,
+        "bar_lon": -77.0272943,
+        "bar_distance_miles": 0.45
+    },
+    {
+        "bar_id": "193",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "bar_name": "Jake's Tavern",
+        "bar_website": "https://www.jakestaverndc.com/",
+        "bar_lat": 38.9114391,
+        "bar_lon": -77.022123,
+        "bar_distance_miles": 0.21
+    },
+    {
+        "bar_id": "194",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "bar_name": "The Groove Lounge",
+        "bar_website": "https://www.instagram.com/thegrooveloungedc/?hl=en",
+        "bar_lat": 38.9159304,
+        "bar_lon": -77.0237413,
+        "bar_distance_miles": 0.14
+    },
+    {
+        "bar_id": "195",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "bar_name": "Electric Cool-Aid",
+        "bar_website": "https://electriccool-aid.com/",
+        "bar_lat": 38.9129265,
+        "bar_lon": -77.0195784,
+        "bar_distance_miles": 0.17
+    },
+    {
+        "bar_id": "196",
+        "station_name": "SHAW METRO STATION",
+        "station_id": "2",
+        "bar_name": "DC 9 Nightclub",
+        "bar_website": "http://www.dcnine.com",
+        "bar_lat": 38.9167081,
+        "bar_lon": -77.0242597,
+        "bar_distance_miles": 0.2
+    },
+    {
+        "bar_id": "197",
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": "66",
+        "bar_name": "Dog Haus",
+        "bar_website": "https://doghaus.com/location/silver-spring-biergarten",
+        "bar_lat": 38.9957735,
+        "bar_lon": -77.0268303,
+        "bar_distance_miles": 0.3
+    },
+    {
+        "bar_id": "198",
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": "66",
+        "bar_name": "McGinty's Public House",
+        "bar_website": "https://www.mcgintyspublichouse.com",
+        "bar_lat": 38.9963967,
+        "bar_lon": -77.0260369,
+        "bar_distance_miles": 0.36
+    },
+    {
+        "bar_id": "199",
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": "66",
+        "bar_name": "Quarry House Tavern",
+        "bar_website": "https://www.quarryhousetavern.com/",
+        "bar_lat": 38.993587,
+        "bar_lon": -77.0263765,
+        "bar_distance_miles": 0.22
+    },
+    {
+        "bar_id": "200",
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": "66",
+        "bar_name": "Golf Ultra Lounge",
+        "bar_website": "https://golfultralounge.com/md/",
+        "bar_lat": 38.9911732,
+        "bar_lon": -77.0262803,
+        "bar_distance_miles": 0.22
+    },
+    {
+        "bar_id": "201",
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": "66",
+        "bar_name": "Palisades Lounge",
+        "bar_website": "https://palisades-lounge.com/",
+        "bar_lat": 38.9919675,
+        "bar_lon": -77.0263014,
+        "bar_distance_miles": 0.21
+    },
+    {
+        "bar_id": "202",
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": "66",
+        "bar_name": "The Society Lounge",
+        "bar_website": "https://societyss.com/",
+        "bar_lat": 38.9925953,
+        "bar_lon": -77.0261738,
+        "bar_distance_miles": 0.21
+    },
+    {
+        "bar_id": "203",
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": "66",
+        "bar_name": "Citizens and Culture",
+        "bar_website": "https://www.citizensculture.com/",
+        "bar_lat": 38.99109995,
+        "bar_lon": -77.02628592,
+        "bar_distance_miles": 0.45
+    },
+    {
+        "bar_id": "204",
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": "66",
+        "bar_name": "Third Hill Brewery",
+        "bar_website": "https://www.thirdhillbrewing.com/",
+        "bar_lat": 38.99231973,
+        "bar_lon": -77.02691989,
+        "bar_distance_miles": 0.44
+    },
+    {
+        "bar_id": "205",
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": "66",
+        "bar_name": "Silver Branch Brewing Company",
+        "bar_website": "https://www.silverbranchbrewing.com/",
+        "bar_lat": 38.9949683,
+        "bar_lon": -77.031233,
+        "bar_distance_miles": 0.11
+    },
+    {
+        "bar_id": "206",
+        "station_name": "SPRING HILL METRO STATION",
+        "station_id": "94",
+        "bar_name": "The Salsa Room",
+        "bar_website": "https://www.instagram.com/thesalsaroom_tysons/?hl=en",
+        "bar_lat": 38.9310786,
+        "bar_lon": -77.236436,
+        "bar_distance_miles": 0.32
+    },
+    {
+        "bar_id": "207",
+        "station_name": "STADIUM ARMORY METRO STATION",
+        "station_id": "12",
+        "bar_name": "Duffy's Irish Pub",
+        "bar_website": "https://dcduffys.com/duffys-cap-hill-east/",
+        "bar_lat": 38.8848906,
+        "bar_lon": -76.9769384,
+        "bar_distance_miles": 0.08
+    },
+    {
+        "bar_id": "208",
+        "station_name": "TAKOMA METRO STATION",
+        "station_id": "24",
+        "bar_name": "Takoma Station Tavern",
+        "bar_website": "https://www.takomastation.com/",
+        "bar_lat": 38.9741918,
+        "bar_lon": -77.0183238,
+        "bar_distance_miles": 0.1
+    },
+    {
+        "bar_id": "209",
+        "station_name": "TWINBROOK METRO STATION",
+        "station_id": "60",
+        "bar_name": "The Rockville Pike",
+        "bar_website": "https://www.yelp.com/biz/the-rockville-pike-rockville",
+        "bar_lat": 39.0600763,
+        "bar_lon": -77.1218697,
+        "bar_distance_miles": 0.17
+    },
+    {
+        "bar_id": "210",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Solly's Tavern",
+        "bar_website": "https://www.sollystavern.com/",
+        "bar_lat": 38.9168501,
+        "bar_lon": -77.0272435,
+        "bar_distance_miles": 0.1
+    },
+    {
+        "bar_id": "211",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Pure Nightclub & Lounge",
+        "bar_website": "https://www.facebook.com/PureLoungeDC/",
+        "bar_lat": 38.9167905,
+        "bar_lon": -77.0307384,
+        "bar_distance_miles": 0.09
+    },
+    {
+        "bar_id": "212",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Saloon",
+        "bar_website": "https://www.openpianodc.org/index.html",
+        "bar_lat": 38.9171639,
+        "bar_lon": -77.0284843,
+        "bar_distance_miles": 0.04
+    },
+    {
+        "bar_id": "213",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Privilege DC",
+        "bar_website": "https://www.privilegedc.com/",
+        "bar_lat": 38.917164,
+        "bar_lon": -77.0276628,
+        "bar_distance_miles": 0.08
+    },
+    {
+        "bar_id": "214",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "American Ice Company",
+        "bar_website": "https://www.amicodc.com/",
+        "bar_lat": 38.9183318,
+        "bar_lon": -77.0252656,
+        "bar_distance_miles": 0.23
+    },
+    {
+        "bar_id": "215",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Wet Dog Tavern",
+        "bar_website": "https://www.wetdogdc.com/",
+        "bar_lat": 38.9182594,
+        "bar_lon": -77.024869,
+        "bar_distance_miles": 0.25
+    },
+    {
+        "bar_id": "216",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Service Bar DC",
+        "bar_website": "https://www.servicebardc.com/",
+        "bar_lat": 38.9168326,
+        "bar_lon": -77.0250287,
+        "bar_distance_miles": 0.22
+    },
+    {
+        "bar_id": "217",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Apple Lounge Hookah Bar",
+        "bar_website": "https://appleloungedc.com/",
+        "bar_lat": 38.916819,
+        "bar_lon": -77.0276426,
+        "bar_distance_miles": 0.08
+    },
+    {
+        "bar_id": "218",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Pop Fizz Bar",
+        "bar_website": "https://www.popdc.com/",
+        "bar_lat": 38.9184521,
+        "bar_lon": -77.0247568,
+        "bar_distance_miles": 0.26
+    },
+    {
+        "bar_id": "219",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Sports & Social",
+        "bar_website": "https://sportsandsocial.com/dc/",
+        "bar_lat": 38.9168338,
+        "bar_lon": -77.030586,
+        "bar_distance_miles": 0.08
+    },
+    {
+        "bar_id": "220",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Cafe Saint Ex",
+        "bar_website": "https://cafesaint-ex.com/",
+        "bar_lat": 38.9154205,
+        "bar_lon": -77.0317015,
+        "bar_distance_miles": 0.18
+    },
+    {
+        "bar_id": "221",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Sudhouse",
+        "bar_website": "https://www.sudhousedc.com/",
+        "bar_lat": 38.9168579,
+        "bar_lon": -77.0311816,
+        "bar_distance_miles": 0.11
+    },
+    {
+        "bar_id": "222",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Exiles",
+        "bar_website": "https://www.exilesbar.com/",
+        "bar_lat": 38.9168536,
+        "bar_lon": -77.0373146,
+        "bar_distance_miles": 0.44
+    },
+    {
+        "bar_id": "223",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Red Lounge",
+        "bar_website": "https://animaxtechnology.in/marketom/redloungebar/",
+        "bar_lat": 38.9174716,
+        "bar_lon": -77.0316138,
+        "bar_distance_miles": 0.14
+    },
+    {
+        "bar_id": "224",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "JoJo Restaurant & Bar",
+        "bar_website": "https://www.jojodc.com/",
+        "bar_lat": 38.9168375,
+        "bar_lon": -77.0353832,
+        "bar_distance_miles": 0.34
+    },
+    {
+        "bar_id": "225",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Barcelona Wine Bar & Restaurant",
+        "bar_website": "https://barcelonawinebar.com/location/14th-street/?utm_source=yext&utm_medium=localsearch&utm_campaign=landing-page&utm_content=14-street",
+        "bar_lat": 38.9120904,
+        "bar_lon": -77.0322592,
+        "bar_distance_miles": 0.38
+    },
+    {
+        "bar_id": "226",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Red Light",
+        "bar_website": "https://www.redlightpizzabar.com/",
+        "bar_lat": 38.912787,
+        "bar_lon": -77.0321987,
+        "bar_distance_miles": 0.33
+    },
+    {
+        "bar_id": "227",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Bunker",
+        "bar_website": "https://bunkerdc.com/",
+        "bar_lat": 38.9171267,
+        "bar_lon": -77.0316631,
+        "bar_distance_miles": 0.13
+    },
+    {
+        "bar_id": "228",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Black Jack",
+        "bar_website": "https://www.blackjackdc.com/",
+        "bar_lat": 38.9116167,
+        "bar_lon": -77.0322189,
+        "bar_distance_miles": 0.41
+    },
+    {
+        "bar_id": "229",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "The Alchemist",
+        "bar_website": "https://www.facebook.com/alchemistbardc/",
+        "bar_lat": 38.9167747,
+        "bar_lon": -77.0309777,
+        "bar_distance_miles": 0.1
+    },
+    {
+        "bar_id": "230",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Enigma",
+        "bar_website": "https://www.enigmadc.com/",
+        "bar_lat": 38.9168086,
+        "bar_lon": -77.0308625,
+        "bar_distance_miles": 0.09
+    },
+    {
+        "bar_id": "231",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Franklin Hall",
+        "bar_website": "https://www.franklinhalldc.com/",
+        "bar_lat": 38.9200515,
+        "bar_lon": -77.0312484,
+        "bar_distance_miles": 0.24
+    },
+    {
+        "bar_id": "232",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Left Door",
+        "bar_website": "https://www.instagram.com/leftdoordc/?hl=en",
+        "bar_lat": 38.914254,
+        "bar_lon": -77.0315008,
+        "bar_distance_miles": 0.23
+    },
+    {
+        "bar_id": "233",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Jane Jane",
+        "bar_website": "https://janejanedc.com/",
+        "bar_lat": 38.9128565,
+        "bar_lon": -77.0317278,
+        "bar_distance_miles": 0.32
+    },
+    {
+        "bar_id": "234",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Licht",
+        "bar_website": "https://www.lichtdc.com/",
+        "bar_lat": 38.916808,
+        "bar_lon": -77.0354444,
+        "bar_distance_miles": 0.34
+    },
+    {
+        "bar_id": "235",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Voodoo",
+        "bar_website": "https://www.facebook.com/voodoobardc/?_rdr",
+        "bar_lat": 38.9168469,
+        "bar_lon": -77.0309962,
+        "bar_distance_miles": 0.1
+    },
+    {
+        "bar_id": "236",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Crush",
+        "bar_website": "https://www.crushbardc.com/",
+        "bar_lat": 38.9173145,
+        "bar_lon": -77.031694,
+        "bar_distance_miles": 0.14
+    },
+    {
+        "bar_id": "237",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Exiles Bar",
+        "bar_website": "https://www.exilesbar.com/",
+        "bar_lat": 38.9167868,
+        "bar_lon": -77.0373153,
+        "bar_distance_miles": 0.44
+    },
+    {
+        "bar_id": "238",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Aslin Beer Company",
+        "bar_website": "https://www.aslinbeer.com/dc",
+        "bar_lat": 38.9139425,
+        "bar_lon": -77.0323787,
+        "bar_distance_miles": 0.27
+    },
+    {
+        "bar_id": "239",
+        "station_name": "U STREET METRO STATION",
+        "station_id": "20",
+        "bar_name": "Garden District",
+        "bar_website": "https://www.gardendistrictdc.com/",
+        "bar_lat": 38.9142269,
+        "bar_lon": -77.0316452,
+        "bar_distance_miles": 0.23
+    },
+    {
+        "bar_id": "240",
+        "station_name": "UNION STATION MARC",
+        "station_id": "157",
+        "bar_name": "Club Elevate",
+        "bar_website": "https://www.nextleveldc.club/",
+        "bar_lat": 38.9022273,
+        "bar_lon": -77.0078247,
+        "bar_distance_miles": 0.23
+    },
+    {
+        "bar_id": "241",
+        "station_name": "UNION STATION METRO STATION",
+        "station_id": "7",
+        "bar_name": "The Dubliner",
+        "bar_website": "https://www.dublinerdc.com/",
+        "bar_lat": 38.8971839,
+        "bar_lon": -77.0095184,
+        "bar_distance_miles": 0.17
+    },
+    {
+        "bar_id": "242",
+        "station_name": "UNION STATION METRO STATION",
+        "station_id": "7",
+        "bar_name": "Kelly's Irish Times",
+        "bar_website": "https://www.kellysirishtimesdc.com/",
+        "bar_lat": 38.89717,
+        "bar_lon": -77.0097882,
+        "bar_distance_miles": 0.19
+    },
+    {
+        "bar_id": "243",
+        "station_name": "UNION STATION VRE",
+        "station_id": "98",
+        "bar_name": "The Big Board",
+        "bar_website": "https://www.facebook.com/thebigboarddc/",
+        "bar_lat": 38.9000577,
+        "bar_lon": -76.9997261,
+        "bar_distance_miles": 0.38
+    },
+    {
+        "bar_id": "244",
+        "station_name": "UNION STATION VRE",
+        "station_id": "98",
+        "bar_name": "Union Pub",
+        "bar_website": "https://www.unionpubdc.com/",
+        "bar_lat": 38.8946397,
+        "bar_lon": -77.0028364,
+        "bar_distance_miles": 0.28
+    },
+    {
+        "bar_id": "245",
+        "station_name": "WATERFRONT METRO STATION",
+        "station_id": "33",
+        "bar_name": "Kirwin's",
+        "bar_website": "https://www.kirwansonthewharf.com/",
+        "bar_lat": 38.8786438,
+        "bar_lon": -77.024236,
+        "bar_distance_miles": 0.41
+    },
+    {
+        "bar_id": "246",
+        "station_name": "WATERFRONT METRO STATION",
+        "station_id": "33",
+        "bar_name": "Pearl Street Warehouse",
+        "bar_website": "https://www.pearlstreetwarehouse.com/",
+        "bar_lat": 38.8788327,
+        "bar_lon": -77.024004,
+        "bar_distance_miles": 0.4
+    },
+    {
+        "bar_id": "247",
+        "station_name": "WATERFRONT METRO STATION",
+        "station_id": "33",
+        "bar_name": "H Bar",
+        "bar_website": "https://www.wharfdc.com/restaurants/h-bar-at-hyatt-house/",
+        "bar_lat": 38.87865,
+        "bar_lon": -77.0240825,
+        "bar_distance_miles": 0.4
+    },
+    {
+        "bar_id": "248",
+        "station_name": "WATERFRONT METRO STATION",
+        "station_id": "33",
+        "bar_name": "Whiskey Charlie",
+        "bar_website": "https://whiskeycharliewharf.com/",
+        "bar_lat": 38.8783704,
+        "bar_lon": -77.0236436,
+        "bar_distance_miles": 0.37
+    },
+    {
+        "bar_id": "249",
+        "station_name": "WATERFRONT METRO STATION",
+        "station_id": "33",
+        "bar_name": "Makers Union",
+        "bar_website": "https://www.makersunionpub.com/",
+        "bar_lat": 38.8778135,
+        "bar_lon": -77.0221445,
+        "bar_distance_miles": 0.28
+    },
+    {
+        "bar_id": "250",
+        "station_name": "WATERFRONT METRO STATION",
+        "station_id": "33",
+        "bar_name": "Boardwalk Bar",
+        "bar_website": "https://www.boardwalkwharf.com/",
+        "bar_lat": 38.8784038,
+        "bar_lon": -77.0239317,
+        "bar_distance_miles": 0.39
+    },
+    {
+        "bar_id": "251",
+        "station_name": "WHEATON METRO STATION",
+        "station_id": "63",
+        "bar_name": "Legends",
+        "bar_website": "https://www.yelp.com/biz/legends-billiards-cafe-silver-spring",
+        "bar_lat": 39.0408732,
+        "bar_lon": -77.0502399,
+        "bar_distance_miles": 0.16
+    },
+    {
+        "bar_id": "252",
+        "station_name": "WHEATON METRO STATION",
+        "station_id": "63",
+        "bar_name": "Unplugged",
+        "bar_website": "https://www.facebook.com/Unpluggedsportsbar/",
+        "bar_lat": 39.040725,
+        "bar_lon": -77.0504146,
+        "bar_distance_miles": 0.15
+    },
+    {
+        "bar_id": "253",
+        "station_name": "WHEATON METRO STATION",
+        "station_id": "63",
+        "bar_name": "The Limerick Pub",
+        "bar_website": "https://www.thelimerickpub.net/",
+        "bar_lat": 39.0404944,
+        "bar_lon": -77.0501819,
+        "bar_distance_miles": 0.14
+    },
+    {
+        "bar_id": "254",
+        "station_name": "WOODBRIDGE VRE",
+        "station_id": "110",
+        "bar_name": "Woodbridge Inn",
+        "bar_website": "https://www.facebook.com/p/The-Woodbridge-Inn-100086036003611/?_rdr",
+        "bar_lat": 38.6633689,
+        "bar_lon": -77.2546813,
+        "bar_distance_miles": 0.47
+    },
+    {
+        "bar_id": "255",
+        "station_name": "WOODLEY PARK-ZOO METRO STATION",
+        "station_id": "19",
+        "bar_name": "The Marquee",
+        "bar_website": "https://www.omnihotels.com/hotels/washington-dc-shoreham/dining/marquee-bar-and-lounge?utm_source=gmblisting&utm_medium=organic",
+        "bar_lat": 38.9229305,
+        "bar_lon": -77.0540902,
+        "bar_distance_miles": 0.17
+    }
+]

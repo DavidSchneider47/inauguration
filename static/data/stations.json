@@ -1,0 +1,1115 @@
+[
+    {
+        "station_id": "118",
+        "station_name": "ABERDEEN MARC",
+        "station_line": "MARC",
+        "station_lat": 39.509165,
+        "station_lon": -76.162681
+    },
+    {
+        "station_id": "41",
+        "station_name": "ADDISON ROAD METRO STATION",
+        "station_line": "Blue, Silver",
+        "station_lat": 38.886702,
+        "station_lon": -76.89329
+    },
+    {
+        "station_id": "112",
+        "station_name": "ALEXANDRIA VRE",
+        "station_line": "VRE",
+        "station_lat": 38.806239,
+        "station_lon": -77.062654
+    },
+    {
+        "station_id": "31",
+        "station_name": "ANACOSTIA METRO STATION",
+        "station_line": "Green",
+        "station_lat": 38.862117,
+        "station_lon": -76.995325
+    },
+    {
+        "station_id": "14",
+        "station_name": "ARCHIVES METRO STATION",
+        "station_line": "Green,  Yellow",
+        "station_lat": 38.893907,
+        "station_lon": -77.021592
+    },
+    {
+        "station_id": "81",
+        "station_name": "ARLINGTON CEMETERY METRO STATION",
+        "station_line": "Blue",
+        "station_lat": 38.884612,
+        "station_lon": -77.062795
+    },
+    {
+        "station_id": "87",
+        "station_name": "ASHBURN METRO STATION",
+        "station_line": "Silver",
+        "station_lat": 39.005286,
+        "station_lon": -77.491529
+    },
+    {
+        "station_id": "108",
+        "station_name": "BACKLICK ROAD VRE",
+        "station_line": "VRE",
+        "station_lat": 38.796892,
+        "station_lon": -77.184073
+    },
+    {
+        "station_id": "77",
+        "station_name": "BALLSTON METRO STATION",
+        "station_line": "Orange, Silver",
+        "station_lat": 38.882238,
+        "station_lon": -77.11155
+    },
+    {
+        "station_id": "119",
+        "station_name": "BARNESVILLE MARC",
+        "station_line": "MARC",
+        "station_lat": 39.209452,
+        "station_lon": -77.38228
+    },
+    {
+        "station_id": "28",
+        "station_name": "BENNING ROAD METRO STATION",
+        "station_line": "Blue, Silver",
+        "station_lat": 38.890418,
+        "station_lon": -76.937662
+    },
+    {
+        "station_id": "55",
+        "station_name": "BETHESDA METRO STATION",
+        "station_line": "Red",
+        "station_lat": 38.984431,
+        "station_lon": -77.094151
+    },
+    {
+        "station_id": "120",
+        "station_name": "BOWIE STATE MARC",
+        "station_line": "MARC",
+        "station_lat": 39.01756,
+        "station_lon": -76.76499
+    },
+    {
+        "station_id": "121",
+        "station_name": "BOYDS MARC",
+        "station_line": "MARC",
+        "station_lat": 39.18424,
+        "station_lon": -77.31429
+    },
+    {
+        "station_id": "84",
+        "station_name": "BRADDOCK ROAD METRO STATION",
+        "station_line": "Blue, Yellow",
+        "station_lat": 38.814052,
+        "station_lon": -77.053434
+    },
+    {
+        "station_id": "43",
+        "station_name": "BRANCH AVE METRO STATION",
+        "station_line": "Green",
+        "station_lat": 38.827022,
+        "station_lon": -76.911802
+    },
+    {
+        "station_id": "102",
+        "station_name": "BROAD RUN AIRPORT VRE",
+        "station_line": "VRE",
+        "station_lat": 38.729255,
+        "station_lon": -77.526106
+    },
+    {
+        "station_id": "115",
+        "station_name": "BROOKE VRE",
+        "station_line": "VRE",
+        "station_lat": 38.387217,
+        "station_lon": -77.381355
+    },
+    {
+        "station_id": "26",
+        "station_name": "BROOKLAND-CUA METRO STATION",
+        "station_line": "Red",
+        "station_lat": 38.933232,
+        "station_lon": -76.994474
+    },
+    {
+        "station_id": "122",
+        "station_name": "BRUNSWICK MARC",
+        "station_line": "MARC",
+        "station_lat": 39.311859,
+        "station_lon": -77.62705
+    },
+    {
+        "station_id": "103",
+        "station_name": "BURKE CENTER VRE",
+        "station_line": "VRE",
+        "station_lat": 38.797351,
+        "station_lon": -77.298807
+    },
+    {
+        "station_id": "123",
+        "station_name": "BWI RAIL STATION MARC",
+        "station_line": "MARC",
+        "station_lat": 39.19219,
+        "station_lon": -76.694236
+    },
+    {
+        "station_id": "124",
+        "station_name": "CAMDEN MARC",
+        "station_line": "MARC",
+        "station_lat": 39.2837,
+        "station_lon": -76.6197
+    },
+    {
+        "station_id": "42",
+        "station_name": "CAPITOL HEIGHTS METRO STATION",
+        "station_line": "Blue, Silver",
+        "station_lat": 38.889571,
+        "station_lon": -76.913313
+    },
+    {
+        "station_id": "10",
+        "station_name": "CAPITOL SOUTH METRO STATION",
+        "station_line": "Blue, Orange, Silver",
+        "station_lat": 38.885669,
+        "station_lon": -77.005892
+    },
+    {
+        "station_id": "52",
+        "station_name": "CHEVERLY METRO STATION",
+        "station_line": "Orange",
+        "station_lat": 38.916552,
+        "station_lon": -76.915104
+    },
+    {
+        "station_id": "71",
+        "station_name": "CLARENDON METRO STATION",
+        "station_line": "Orange, Silver",
+        "station_lat": 38.887176,
+        "station_lon": -77.094987
+    },
+    {
+        "station_id": "17",
+        "station_name": "CLEVELAND PARK METRO STATION",
+        "station_line": "Red",
+        "station_lat": 38.935852,
+        "station_lon": -77.058624
+    },
+    {
+        "station_id": "116",
+        "station_name": "CLIFTON VRE",
+        "station_line": "VRE",
+        "station_lat": 38.7812,
+        "station_lon": -77.38625
+    },
+    {
+        "station_id": "125",
+        "station_name": "COLLEGE PARK MARC",
+        "station_line": "MARC",
+        "station_lat": 38.97788,
+        "station_lon": -76.92876
+    },
+    {
+        "station_id": "40",
+        "station_name": "COLLEGE PARK U- MD METRO STATION",
+        "station_line": "Green",
+        "station_lat": 38.9784,
+        "station_lon": -76.928197
+    },
+    {
+        "station_id": "21",
+        "station_name": "COLUMBIA HEIGHTS METRO STATION",
+        "station_line": "Green",
+        "station_lat": 38.928711,
+        "station_lon": -77.032454
+    },
+    {
+        "station_id": "32",
+        "station_name": "CONGRESS HEIGHTS METRO STATION",
+        "station_line": "Green",
+        "station_lat": 38.845379,
+        "station_lon": -76.98786
+    },
+    {
+        "station_id": "72",
+        "station_name": "COURTHOUSE METRO STATION",
+        "station_line": "Orange, Silver",
+        "station_lat": 38.891331,
+        "station_lon": -77.084823
+    },
+    {
+        "station_id": "74",
+        "station_name": "CRYSTAL CITY METRO STATION",
+        "station_line": "Blue, Yellow",
+        "station_lat": 38.857817,
+        "station_lon": -77.050346
+    },
+    {
+        "station_id": "111",
+        "station_name": "CRYSTAL CITY VRE",
+        "station_line": "VRE",
+        "station_lat": 38.859216,
+        "station_lon": -77.048391
+    },
+    {
+        "station_id": "29",
+        "station_name": "DEANWOOD METRO STATION",
+        "station_line": "Orange",
+        "station_lat": 38.907945,
+        "station_lon": -76.935569
+    },
+    {
+        "station_id": "126",
+        "station_name": "DICKERSON MARC",
+        "station_line": "MARC",
+        "station_lat": 39.21997,
+        "station_lon": -77.42119
+    },
+    {
+        "station_id": "127",
+        "station_name": "DORSEY MARC",
+        "station_line": "MARC",
+        "station_lat": 39.181268,
+        "station_lon": -76.745121
+    },
+    {
+        "station_id": "48",
+        "station_name": "DOWNTOWN LARGO METRO STATION",
+        "station_line": "Blue, Silver",
+        "station_lat": 38.900269,
+        "station_lon": -76.84454
+    },
+    {
+        "station_id": "128",
+        "station_name": "DUFFIELFS W. VA MARC",
+        "station_line": "MARC",
+        "station_lat": 39.362352,
+        "station_lon": -77.82666
+    },
+    {
+        "station_id": "67",
+        "station_name": "DUNN LORING MERRIFIELD METRO STATION",
+        "station_line": "Orange",
+        "station_lat": 38.883146,
+        "station_lon": -77.228654
+    },
+    {
+        "station_id": "37",
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_line": "Red",
+        "station_lat": 38.911129,
+        "station_lon": -77.044428
+    },
+    {
+        "station_id": "79",
+        "station_name": "EAST FALLS CHURCH METRO STATION",
+        "station_line": "Orange, Silver",
+        "station_lat": 38.886042,
+        "station_lon": -77.156567
+    },
+    {
+        "station_id": "8",
+        "station_name": "EASTERN MARKET METRO STATION",
+        "station_line": "Blue, Orange, Silver",
+        "station_lat": 38.884148,
+        "station_lon": -76.99501
+    },
+    {
+        "station_id": "129",
+        "station_name": "EDGEWOOD MARC",
+        "station_line": "MARC",
+        "station_lat": 39.415967,
+        "station_lon": -76.292139
+    },
+    {
+        "station_id": "85",
+        "station_name": "EISENHOWER AVE METRO STATION",
+        "station_line": "Yellow",
+        "station_lat": 38.800345,
+        "station_lon": -77.070831
+    },
+    {
+        "station_id": "38",
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_line": "Red",
+        "station_lat": 38.903297,
+        "station_lon": -77.039502
+    },
+    {
+        "station_id": "16",
+        "station_name": "FARRAGUT WEST METRO STATION",
+        "station_line": "Blue, Orange, Silver",
+        "station_lat": 38.901366,
+        "station_lon": -77.039482
+    },
+    {
+        "station_id": "34",
+        "station_name": "FEDERAL CENTER METRO STATION",
+        "station_line": "Blue, Orange, Silver",
+        "station_lat": 38.884981,
+        "station_lon": -77.015536
+    },
+    {
+        "station_id": "13",
+        "station_name": "FEDERAL TRIANGLE METRO STATION",
+        "station_line": "Blue, Orange, Silver",
+        "station_lat": 38.893789,
+        "station_lon": -77.027896
+    },
+    {
+        "station_id": "39",
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_line": "Blue, Orange, Silver",
+        "station_lat": 38.900705,
+        "station_lon": -77.050026
+    },
+    {
+        "station_id": "65",
+        "station_name": "FOREST GLEN METRO STATION",
+        "station_line": "Red",
+        "station_lat": 39.015465,
+        "station_lon": -77.042667
+    },
+    {
+        "station_id": "23",
+        "station_name": "FORT TOTTEN METRO STATION",
+        "station_line": "Green, Red",
+        "station_lat": 38.951808,
+        "station_lon": -77.001864
+    },
+    {
+        "station_id": "107",
+        "station_name": "FRANCONIA SPRINGFIELD VRE",
+        "station_line": "VRE",
+        "station_lat": 38.766248,
+        "station_lon": -77.168838
+    },
+    {
+        "station_id": "70",
+        "station_name": "FRANCONIA SPRINGFIELD METRO STATION",
+        "station_line": "Blue",
+        "station_lat": 38.766196,
+        "station_lon": -77.168487
+    },
+    {
+        "station_id": "130",
+        "station_name": "FREDERICK MARC",
+        "station_line": "MARC",
+        "station_lat": 39.41186,
+        "station_lon": -77.40544
+    },
+    {
+        "station_id": "113",
+        "station_name": "FREDERICKSBURG VRE",
+        "station_line": "VRE",
+        "station_lat": 38.298551,
+        "station_lon": -77.45695
+    },
+    {
+        "station_id": "57",
+        "station_name": "FRIENDSHIP HEIGHTS METRO STATION",
+        "station_line": "Red",
+        "station_lat": 38.960997,
+        "station_lon": -77.085767
+    },
+    {
+        "station_id": "131",
+        "station_name": "GAITHERSBURG MARC",
+        "station_line": "MARC",
+        "station_lat": 39.141424,
+        "station_lon": -77.193339
+    },
+    {
+        "station_id": "5",
+        "station_name": "GALLERY PLACE CHINATOWN METRO STATION",
+        "station_line": "Red, Green, Yellow",
+        "station_lat": 38.898354,
+        "station_lon": -77.021527
+    },
+    {
+        "station_id": "132",
+        "station_name": "GARRETT PARK MARC",
+        "station_line": "MARC",
+        "station_lat": 39.038859,
+        "station_lon": -77.093281
+    },
+    {
+        "station_id": "22",
+        "station_name": "GEORGIA AVE PETWORTH METRO STATION",
+        "station_line": "Green",
+        "station_lat": 38.936255,
+        "station_lon": -77.024252
+    },
+    {
+        "station_id": "133",
+        "station_name": "GERMANTOWN MARC",
+        "station_line": "MARC",
+        "station_lat": 39.17314,
+        "station_lon": -77.27062
+    },
+    {
+        "station_id": "64",
+        "station_name": "GLENMONT METRO STATION",
+        "station_line": "Red",
+        "station_lat": 39.061743,
+        "station_lon": -77.053097
+    },
+    {
+        "station_id": "134",
+        "station_name": "GREENBELT MARC",
+        "station_line": "MARC",
+        "station_lat": 39.010228,
+        "station_lon": -76.912197
+    },
+    {
+        "station_id": "47",
+        "station_name": "GREENBELT METRO STATION",
+        "station_line": "Green",
+        "station_lat": 39.011067,
+        "station_lon": -76.911011
+    },
+    {
+        "station_id": "95",
+        "station_name": "GREENSBORO METRO STATION",
+        "station_line": "Silver",
+        "station_lat": 38.921261,
+        "station_lon": -77.23416
+    },
+    {
+        "station_id": "59",
+        "station_name": "GROSVENOR METRO STATION",
+        "station_line": "Red",
+        "station_lat": 39.029243,
+        "station_lon": -77.103838
+    },
+    {
+        "station_id": "135",
+        "station_name": "HALETHORPE MARC",
+        "station_line": "MARC",
+        "station_lat": 39.23701,
+        "station_lon": -76.69132
+    },
+    {
+        "station_id": "136",
+        "station_name": "HARPERS FERRY W. VA MARC",
+        "station_line": "MARC",
+        "station_lat": 39.324496,
+        "station_lon": -77.73057
+    },
+    {
+        "station_id": "91",
+        "station_name": "HERNDON METRO STATION",
+        "station_line": "Silver",
+        "station_lat": 38.95282,
+        "station_lon": -77.385178
+    },
+    {
+        "station_id": "82",
+        "station_name": "HUNTINGTON METRO STATION",
+        "station_line": "Yellow",
+        "station_lat": 38.793895,
+        "station_lon": -77.074955
+    },
+    {
+        "station_id": "50",
+        "station_name": "HYATTSVILLE CROSSING METRO STATION",
+        "station_line": "Green",
+        "station_lat": 38.965252,
+        "station_lon": -76.955988
+    },
+    {
+        "station_id": "90",
+        "station_name": "INNOVATION CENTER METRO STATION",
+        "station_line": "Silver",
+        "station_lat": 38.960761,
+        "station_lon": -77.415296
+    },
+    {
+        "station_id": "137",
+        "station_name": "JESSUP MARC",
+        "station_line": "MARC",
+        "station_lat": 39.151525,
+        "station_lon": -76.776332
+    },
+    {
+        "station_id": "4",
+        "station_name": "JUDICIARY SQUARE METRO STATION",
+        "station_line": "Red",
+        "station_lat": 38.896121,
+        "station_lon": -77.016312
+    },
+    {
+        "station_id": "138",
+        "station_name": "KENSINGTON MARC",
+        "station_line": "MARC",
+        "station_lat": 39.02676,
+        "station_lon": -77.07181
+    },
+    {
+        "station_id": "86",
+        "station_name": "KING STREET METRO STATION",
+        "station_line": "Blue, Yellow",
+        "station_lat": 38.806506,
+        "station_lon": -77.060796
+    },
+    {
+        "station_id": "53",
+        "station_name": "LANDOVER METRO STATION",
+        "station_line": "Orange",
+        "station_lat": 38.933994,
+        "station_lon": -76.890005
+    },
+    {
+        "station_id": "140",
+        "station_name": "LAUREL MARC",
+        "station_line": "MARC",
+        "station_lat": 39.10242,
+        "station_lon": -76.84161
+    },
+    {
+        "station_id": "139",
+        "station_name": "LAUREL RACETRACK MARC",
+        "station_line": "MARC",
+        "station_lat": 39.105464,
+        "station_lon": -76.834411
+    },
+    {
+        "station_id": "114",
+        "station_name": "LEELAND ROAD VRE",
+        "station_line": "VRE",
+        "station_lat": 38.347016,
+        "station_lon": -77.437745
+    },
+    {
+        "station_id": "36",
+        "station_name": "L'ENFANT PLAZA METRO STATION",
+        "station_line": "Blue, Green,  Orange, Silver, Yellow",
+        "station_lat": 38.884886,
+        "station_lon": -77.0216
+    },
+    {
+        "station_id": "99",
+        "station_name": "L'ENFANT VRE",
+        "station_line": "VRE",
+        "station_lat": 38.885738,
+        "station_lon": -77.021483
+    },
+    {
+        "station_id": "105",
+        "station_name": "LORTON VRE",
+        "station_line": "VRE",
+        "station_lat": 38.715058,
+        "station_lon": -77.214564
+    },
+    {
+        "station_id": "88",
+        "station_name": "LOUDOUN GATEWAY METRO STATION",
+        "station_line": "Silver",
+        "station_lat": 38.992042,
+        "station_lon": -77.460679
+    },
+    {
+        "station_id": "101",
+        "station_name": "MANASSAS PARK VRE",
+        "station_line": "VRE",
+        "station_lat": 38.765545,
+        "station_lon": -77.440728
+    },
+    {
+        "station_id": "100",
+        "station_name": "MANASSAS VRE",
+        "station_line": "VRE",
+        "station_lat": 38.750134,
+        "station_lon": -77.472794
+    },
+    {
+        "station_id": "141",
+        "station_name": "MARTIN AIRPORT MARC",
+        "station_line": "MARC",
+        "station_lat": 39.33803,
+        "station_lon": -76.41999
+    },
+    {
+        "station_id": "142",
+        "station_name": "MARTINSBURG W. VA MARC",
+        "station_line": "MARC",
+        "station_lat": 39.45839,
+        "station_lon": -77.96087
+    },
+    {
+        "station_id": "97",
+        "station_name": "MCLEAN METRO STATION",
+        "station_line": "Silver",
+        "station_lat": 38.92433,
+        "station_lon": -77.21053
+    },
+    {
+        "station_id": "15",
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_line": "Blue, Orange, Silver",
+        "station_lat": 38.901335,
+        "station_lon": -77.031958
+    },
+    {
+        "station_id": "56",
+        "station_name": "MEDICAL CENTER METRO STATION",
+        "station_line": "Red",
+        "station_lat": 39.000062,
+        "station_lon": -77.096948
+    },
+    {
+        "station_id": "3",
+        "station_name": "METRO CENTER METRO STATION",
+        "station_line": "Red, Blue, Orange, Silver",
+        "station_lat": 38.898327,
+        "station_lon": -77.027777
+    },
+    {
+        "station_id": "143",
+        "station_name": "METROPOLITAN GROVE MARC",
+        "station_line": "MARC",
+        "station_lat": 39.149791,
+        "station_lon": -77.22711
+    },
+    {
+        "station_id": "30",
+        "station_name": "MINNESOTA AVE METRO STATION",
+        "station_line": "Orange",
+        "station_lat": 38.898313,
+        "station_lon": -76.947716
+    },
+    {
+        "station_id": "144",
+        "station_name": "MONOCACY MARC",
+        "station_line": "MARC",
+        "station_lat": 39.38221,
+        "station_lon": -77.39456
+    },
+    {
+        "station_id": "51",
+        "station_name": "MORGAN BOULEVARD METRO STATION",
+        "station_line": "Blue, Silver",
+        "station_lat": 38.893586,
+        "station_lon": -76.868498
+    },
+    {
+        "station_id": "1",
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_line": "Green,  Yellow",
+        "station_lat": 38.901056,
+        "station_lon": -77.022025
+    },
+    {
+        "station_id": "145",
+        "station_name": "MUIRKIRK MARC",
+        "station_line": "MARC",
+        "station_lat": 39.06291,
+        "station_lon": -76.88412
+    },
+    {
+        "station_id": "75",
+        "station_name": "REAGAN NATIONAL AIRPORT METRO STATION",
+        "station_line": "Blue, Yellow",
+        "station_lat": 38.853003,
+        "station_lon": -77.043475
+    },
+    {
+        "station_id": "9",
+        "station_name": "NAVY YARD METRO STATION",
+        "station_line": "Green",
+        "station_lat": 38.876517,
+        "station_lon": -77.004749
+    },
+    {
+        "station_id": "45",
+        "station_name": "NAYLOR ROAD METRO STATION",
+        "station_line": "Green",
+        "station_lat": 38.851164,
+        "station_lon": -76.956314
+    },
+    {
+        "station_id": "146",
+        "station_name": "NEW CARROLLTON MARC",
+        "station_line": "MARC",
+        "station_lat": 38.94807,
+        "station_lon": -76.87229
+    },
+    {
+        "station_id": "54",
+        "station_name": "NEW CARROLLTON METRO STATION",
+        "station_line": "Orange",
+        "station_lat": 38.946912,
+        "station_lon": -76.870445
+    },
+    {
+        "station_id": "6",
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_line": "Red",
+        "station_lat": 38.907413,
+        "station_lon": -77.002981
+    },
+    {
+        "station_id": "61",
+        "station_name": "NORTH BETHESDA METRO STATION",
+        "station_line": "Red",
+        "station_lat": 39.047162,
+        "station_lon": -77.112782
+    },
+    {
+        "station_id": "147",
+        "station_name": "ODENTON MARC",
+        "station_line": "MARC",
+        "station_lat": 39.08776,
+        "station_lon": -76.70591
+    },
+    {
+        "station_id": "148",
+        "station_name": "PENN STATION MARC",
+        "station_line": "MARC",
+        "station_lat": 39.307096,
+        "station_lon": -76.615881
+    },
+    {
+        "station_id": "76",
+        "station_name": "PENTAGON CITY METRO STATION",
+        "station_line": "Blue, Yellow",
+        "station_lat": 38.862961,
+        "station_lon": -77.059142
+    },
+    {
+        "station_id": "73",
+        "station_name": "PENTAGON METRO STATION",
+        "station_line": "Blue, Yellow",
+        "station_lat": 38.869474,
+        "station_lon": -77.053777
+    },
+    {
+        "station_id": "149",
+        "station_name": "PERRYVILLE MARC",
+        "station_line": "MARC",
+        "station_lat": 39.558089,
+        "station_lon": -76.07318
+    },
+    {
+        "station_id": "150",
+        "station_name": "POINT OF ROCKS MARC",
+        "station_line": "MARC",
+        "station_lat": 39.273403,
+        "station_lon": -77.533416
+    },
+    {
+        "station_id": "11",
+        "station_name": "POTOMAC AVE METRO STATION",
+        "station_line": "Blue, Orange, Silver",
+        "station_lat": 38.880874,
+        "station_lon": -76.985397
+    },
+    {
+        "station_id": "106",
+        "station_name": "QUANTICO VRE",
+        "station_line": "VRE",
+        "station_lat": 38.522032,
+        "station_lon": -77.293067
+    },
+    {
+        "station_id": "92",
+        "station_name": "RESTON TOWN CENTER METRO STATION",
+        "station_line": "Silver",
+        "station_lat": 38.952768,
+        "station_lon": -77.360188
+    },
+    {
+        "station_id": "27",
+        "station_name": "RHODE ISLAND AVE METRO STATION",
+        "station_line": "Red",
+        "station_lat": 38.920778,
+        "station_lon": -76.995682
+    },
+    {
+        "station_id": "109",
+        "station_name": "RIPPON VRE",
+        "station_line": "VRE",
+        "station_lat": 38.612436,
+        "station_lon": -77.253574
+    },
+    {
+        "station_id": "151",
+        "station_name": "RIVERDALE MARC",
+        "station_line": "MARC",
+        "station_lat": 38.962925,
+        "station_lon": -76.934956
+    },
+    {
+        "station_id": "152",
+        "station_name": "ROCKVILLE MARC",
+        "station_line": "MARC",
+        "station_lat": 39.08425,
+        "station_lon": -77.14593
+    },
+    {
+        "station_id": "58",
+        "station_name": "ROCKVILLE METRO STATION",
+        "station_line": "Red",
+        "station_lat": 39.085452,
+        "station_lon": -77.146689
+    },
+    {
+        "station_id": "104",
+        "station_name": "ROLLING ROAD VRE",
+        "station_line": "VRE",
+        "station_lat": 38.794575,
+        "station_lon": -77.258627
+    },
+    {
+        "station_id": "80",
+        "station_name": "ROSSLYN METRO STATION",
+        "station_line": "Blue, Orange, Silver",
+        "station_lat": 38.895493,
+        "station_lon": -77.071954
+    },
+    {
+        "station_id": "153",
+        "station_name": "SAVAGE MARC",
+        "station_line": "MARC",
+        "station_lat": 39.122927,
+        "station_lon": -76.796374
+    },
+    {
+        "station_id": "154",
+        "station_name": "SEABROOK MARC",
+        "station_line": "MARC",
+        "station_lat": 38.973444,
+        "station_lon": -76.842772
+    },
+    {
+        "station_id": "62",
+        "station_name": "SHADY GROVE METRO STATION",
+        "station_line": "Red",
+        "station_lat": 39.11999,
+        "station_lon": -77.164761
+    },
+    {
+        "station_id": "2",
+        "station_name": "SHAW METRO STATION",
+        "station_line": "Green",
+        "station_lat": 38.914546,
+        "station_lon": -77.021927
+    },
+    {
+        "station_id": "155",
+        "station_name": "SILVER SPRING MARC",
+        "station_line": "MARC",
+        "station_lat": 38.9923,
+        "station_lon": -77.0301
+    },
+    {
+        "station_id": "66",
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_line": "Red",
+        "station_lat": 38.993658,
+        "station_lon": -77.032307
+    },
+    {
+        "station_id": "35",
+        "station_name": "SMITHSONIAN METRO STATION",
+        "station_line": "Blue, Orange, Silver",
+        "station_lat": 38.887587,
+        "station_lon": -77.028174
+    },
+    {
+        "station_id": "46",
+        "station_name": "SOUTHERN AVE METRO STATION",
+        "station_line": "Green",
+        "station_lat": 38.841047,
+        "station_lon": -76.975003
+    },
+    {
+        "station_id": "117",
+        "station_name": "SPOTSYLVANIA  VRE",
+        "station_line": "VRE",
+        "station_lat": 38.22017,
+        "station_lon": -77.440641
+    },
+    {
+        "station_id": "94",
+        "station_name": "SPRING HILL METRO STATION",
+        "station_line": "Silver",
+        "station_lat": 38.929206,
+        "station_lon": -77.241887
+    },
+    {
+        "station_id": "156",
+        "station_name": "ST DENIS MARC",
+        "station_line": "MARC",
+        "station_lat": 39.22429,
+        "station_lon": -76.70388
+    },
+    {
+        "station_id": "12",
+        "station_name": "STADIUM ARMORY METRO STATION",
+        "station_line": "Blue, Orange, Silver",
+        "station_lat": 38.885982,
+        "station_lon": -76.977168
+    },
+    {
+        "station_id": "44",
+        "station_name": "SUITLAND METRO STATION",
+        "station_line": "Green",
+        "station_lat": 38.843839,
+        "station_lon": -76.93161
+    },
+    {
+        "station_id": "24",
+        "station_name": "TAKOMA METRO STATION",
+        "station_line": "Red",
+        "station_lat": 38.975432,
+        "station_lon": -77.017421
+    },
+    {
+        "station_id": "25",
+        "station_name": "TENLEYTOWN METRO STATION",
+        "station_line": "Red",
+        "station_lat": 38.947849,
+        "station_lon": -77.079299
+    },
+    {
+        "station_id": "60",
+        "station_name": "TWINBROOK METRO STATION",
+        "station_line": "Red",
+        "station_lat": 39.062389,
+        "station_lon": -77.120792
+    },
+    {
+        "station_id": "96",
+        "station_name": "TYSONS METRO STATION",
+        "station_line": "Silver",
+        "station_lat": 38.920677,
+        "station_lon": -77.221586
+    },
+    {
+        "station_id": "20",
+        "station_name": "U STREET METRO STATION",
+        "station_line": "Green",
+        "station_lat": 38.917015,
+        "station_lon": -77.029169
+    },
+    {
+        "station_id": "157",
+        "station_name": "UNION STATION MARC",
+        "station_line": "MARC",
+        "station_lat": 38.899036,
+        "station_lon": -77.006795
+    },
+    {
+        "station_id": "7",
+        "station_name": "UNION STATION METRO STATION",
+        "station_line": "Red",
+        "station_lat": 38.89777,
+        "station_lon": -77.006402
+    },
+    {
+        "station_id": "98",
+        "station_name": "UNION STATION VRE",
+        "station_line": "VRE",
+        "station_lat": 38.897746,
+        "station_lon": -77.006221
+    },
+    {
+        "station_id": "83",
+        "station_name": "VAN DORN METRO STATION",
+        "station_line": "Blue",
+        "station_lat": 38.799263,
+        "station_lon": -77.129111
+    },
+    {
+        "station_id": "18",
+        "station_name": "VAN NESS-UDC METRO STATION",
+        "station_line": "Red",
+        "station_lat": 38.944519,
+        "station_lon": -77.063716
+    },
+    {
+        "station_id": "68",
+        "station_name": "VIENNA METRO STATION",
+        "station_line": "Orange",
+        "station_lat": 38.877881,
+        "station_lon": -77.271363
+    },
+    {
+        "station_id": "78",
+        "station_name": "VIRGINIA SQUARE METRO STATION",
+        "station_line": "Orange, Silver",
+        "station_lat": 38.883074,
+        "station_lon": -77.103809
+    },
+    {
+        "station_id": "89",
+        "station_name": "WASHINGTON DULLES INTERNATIONAL AIRPORT METRO STATION",
+        "station_line": "Silver",
+        "station_lat": 38.955782,
+        "station_lon": -77.44815
+    },
+    {
+        "station_id": "158",
+        "station_name": "WASHINGTON GROVE MARC",
+        "station_line": "MARC",
+        "station_lat": 39.13641,
+        "station_lon": -77.17778
+    },
+    {
+        "station_id": "33",
+        "station_name": "WATERFRONT METRO STATION",
+        "station_line": "Green",
+        "station_lat": 38.876478,
+        "station_lon": -77.017189
+    },
+    {
+        "station_id": "159",
+        "station_name": "WEST BALTIMORE MARC",
+        "station_line": "MARC",
+        "station_lat": 39.293344,
+        "station_lon": -76.653102
+    },
+    {
+        "station_id": "69",
+        "station_name": "WEST FALLS CHURCH METRO STATION",
+        "station_line": "Orange",
+        "station_lat": 38.900738,
+        "station_lon": -77.188871
+    },
+    {
+        "station_id": "49",
+        "station_name": "WEST HYATTSVILLE METRO STATION",
+        "station_line": "Green",
+        "station_lat": 38.955028,
+        "station_lon": -76.969522
+    },
+    {
+        "station_id": "63",
+        "station_name": "WHEATON METRO STATION",
+        "station_line": "Red",
+        "station_lat": 39.038565,
+        "station_lon": -77.050776
+    },
+    {
+        "station_id": "93",
+        "station_name": "WIEHLE-RESTON EAST METRO STATION",
+        "station_line": "Silver",
+        "station_lat": 38.947825,
+        "station_lon": -77.340313
+    },
+    {
+        "station_id": "110",
+        "station_name": "WOODBRIDGE VRE",
+        "station_line": "VRE",
+        "station_lat": 38.659024,
+        "station_lon": -77.248092
+    },
+    {
+        "station_id": "19",
+        "station_name": "WOODLEY PARK-ZOO METRO STATION",
+        "station_line": "Red",
+        "station_lat": 38.925,
+        "station_lon": -77.05235
+    }
+]

@@ -1,97 +1,172 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 from flask import Flask, render_template, jsonify
-import csv
+import json
 import os
+import logging
 
 app = Flask(__name__)
 
-# Load station data from CSV
-def load_stations():
-    stations = []
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+
+# General function to load JSON data
+def load_data(filename):
     try:
-        with open('static/data/stations.csv', newline='', encoding='utf-8') as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                try:
-                    stations.append({
-                        'id': row['id'],
-                        'name': row['name'],
-                        'latitude': float(row['latitude']),
-                        'longitude': float(row['longitude'])
-                    })
-                except ValueError as ve:
-                    print(f"Error processing station row: {row} - {ve}")
+        with open(os.path.join('static', 'data', filename), 'r', encoding='utf-8') as jsonfile:
+            data = json.load(jsonfile)
+        logging.info(f"Loaded {len(data)} records from {filename}.")
+        return data
     except FileNotFoundError:
-        print("Error: stations.csv file not found.")
+        logging.error(f"Error: {filename} file not found.")
+        return []
+    except json.JSONDecodeError as jde:
+        logging.error(f"JSON decode error in {filename}: {jde}")
+        return []
     except Exception as e:
-        print(f"Unexpected error loading stations: {e}")
-    return stations
+        logging.error(f"Unexpected error loading {filename}: {e}")
+        return []
 
-# Load hotel data from CSV with debugging
-def load_hotels():
-    hotels = []
+# API route to get all stations
+@app.route('/api/stations')
+def api_stations():
+    stations = load_data('stations.json')
+    if not stations:
+        return jsonify({"message": "No stations found."}), 200
+    return jsonify(stations)
+
+# API route to get all hotels
+@app.route('/api/hotels')
+def api_hotels():
+    hotels = load_data('hotels.json')
+    if not hotels:
+        return jsonify({"message": "No hotels found."}), 200
+    return jsonify(hotels)
+
+# API route to get all coffee shops
+@app.route('/api/coffee')
+def api_coffee():
+    coffee_shops = load_data('coffee.json')
+    if not coffee_shops:
+        return jsonify({"message": "No coffee shops found."}), 200
+    return jsonify(coffee_shops)
+
+# API route to get all bars
+@app.route('/api/bars')
+def api_bars():
+    bars = load_data('bars.json')
+    if not bars:
+        return jsonify({"message": "No bars found."}), 200
+    return jsonify(bars)
+
+# API route to get all pharmacies
+@app.route('/api/pharmacies')
+def api_pharmacies():
+    pharmacies = load_data('pharmacy.json')
+    if not pharmacies:
+        return jsonify({"message": "No pharmacies found."}), 200
+    return jsonify(pharmacies)
+
+# API route to get pharmacies by station_id
+@app.route('/api/stations/<station_id>/pharmacies')
+def api_pharmacies_by_station(station_id):
     try:
-        with open('static/data/hotels.csv', newline='', encoding='utf-8') as csvfile:
-            reader = csv.DictReader(csvfile)
-
-            # Debugging: Print headers to see how they're being read
-            headers = reader.fieldnames
-            print("Hotel CSV Headers:", headers)
-            
-            for row in reader:
-                # Print each row for debugging
-                print(f"Processing row: {row}")
-                
-                # Check for missing or invalid data and skip rows if necessary
-                if not row.get('id') or not row.get('latitude') or not row.get('longitude'):
-                    print(f"Skipping row due to missing data: {row}")
-                    continue  # Skip rows with missing critical data
-                
-                try:
-                    hotels.append({
-                        'id': row['id'],
-                        'name': row['name'],
-                        'latitude': float(row['latitude']),
-                        'longitude': float(row['longitude']),
-                        'website': row.get('website', '#')  # Default to '#' if website is missing
-                    })
-                except ValueError as ve:
-                    print(f"Error processing hotel row: {row} - {ve}")
-    except FileNotFoundError:
-        print("Error: hotels.csv file not found.")
+        logging.info(f"Fetching pharmacies for station {station_id}")
+        pharmacies = load_data('pharmacy.json')
+        filtered_pharmacies = [pharmacy for pharmacy in pharmacies if str(pharmacy.get('station_id')) == str(station_id)]
+        if not filtered_pharmacies:
+            logging.info(f"No pharmacies found for station {station_id}")
+            return jsonify({"message": "No pharmacies found for this station."}), 200
+        logging.info(f"Found {len(filtered_pharmacies)} pharmacies for station {station_id}")
+        return jsonify(filtered_pharmacies)
     except Exception as e:
-        print(f"Unexpected error loading hotels: {e}")
-    return hotels
+        logging.error(f"Error fetching pharmacies for station {station_id}: {e}")
+        return jsonify({"message": "An error occurred while fetching pharmacies."}), 500
 
-# Home route - serve the main HTML page
+# API route to get coffee shops by station_id
+@app.route('/api/stations/<station_id>/coffee')
+def api_coffee_by_station(station_id):
+    try:
+        logging.info(f"Fetching coffee shops for station {station_id}")
+        coffee_shops = load_data('coffee.json')
+        filtered_coffee = [shop for shop in coffee_shops if str(shop.get('station_id')) == str(station_id)]
+        if not filtered_coffee:
+            logging.info(f"No coffee shops found for station {station_id}")
+            return jsonify({"message": "No coffee shops found for this station."}), 200
+        logging.info(f"Found {len(filtered_coffee)} coffee shops for station {station_id}")
+        return jsonify(filtered_coffee)
+    except Exception as e:
+        logging.error(f"Error fetching coffee shops for station {station_id}: {e}")
+        return jsonify({"message": "An error occurred while fetching coffee shops."}), 500
+
+# API route to get bars by station_id
+@app.route('/api/stations/<station_id>/bars')
+def api_bars_by_station(station_id):
+    try:
+        logging.info(f"Fetching bars for station {station_id}")
+        bars = load_data('bars.json')
+        filtered_bars = [bar for bar in bars if str(bar.get('station_id')) == str(station_id)]
+        if not filtered_bars:
+            logging.info(f"No bars found for station {station_id}")
+            return jsonify({"message": "No bars found for this station."}), 200
+        logging.info(f"Found {len(filtered_bars)} bars for station {station_id}")
+        return jsonify(filtered_bars)
+    except Exception as e:
+        logging.error(f"Error fetching bars for station {station_id}: {e}")
+        return jsonify({"message": "An error occurred while fetching bars."}), 500
+
+# API route to get hotels by station_id
+@app.route('/api/stations/<station_id>/hotels')
+def api_hotels_by_station(station_id):
+    try:
+        logging.info(f"Fetching hotels for station {station_id}")
+        hotels = load_data('hotels.json')
+        filtered_hotels = [hotel for hotel in hotels if str(hotel.get('station_id')) == str(station_id)]
+        if not filtered_hotels:
+            logging.info(f"No hotels found for station {station_id}")
+            return jsonify({"message": "No hotels found for this station."}), 200
+        logging.info(f"Found {len(filtered_hotels)} hotels for station {station_id}")
+        return jsonify(filtered_hotels)
+    except Exception as e:
+        logging.error(f"Error fetching hotels for station {station_id}: {e}")
+        return jsonify({"message": "An error occurred while fetching hotels."}), 500
+
+# Home route
 @app.route('/')
 def home():
     return render_template('index.html')
 
-# API route for stations
-@app.route('/api/stations')
-def api_stations():
-    try:
-        stations = load_stations()
-        print(f"Loaded {len(stations)} stations.")
-        return jsonify(stations)
-    except Exception as e:
-        print(f"Error in /api/stations route: {e}")
-        return jsonify({"error": "Failed to load stations data."}), 500
+# Stations page route
+@app.route('/stations')
+def stations_page():
+    stations = load_data('stations.json')
+    if not stations:
+        logging.warning("No stations data available for rendering.")
+    # Define line colors
+    line_colors = {
+        'Red': '#FF0000',
+        'Blue': '#0000FF',
+        'Yellow': '#FFFF00',
+        'Green': '#008000',
+        'Orange': '#FFA500',
+        'Silver': '#C0C0C0',
+        'MARC': '#800080',
+        'VRE': '#00FFFF'
+        # Add more lines and colors as needed
+    }
+    return render_template('stations.html', stations=stations, line_colors=line_colors)
 
-# API route for hotels with debugging
-@app.route('/api/hotels')
-def api_hotels():
-    try:
-        hotels = load_hotels()
-        print(f"Loaded {len(hotels)} hotels.")
-        return jsonify(hotels)
-    except Exception as e:
-        print(f"Error in /api/hotels route: {e}")
-        return jsonify({"error": "Failed to load hotels data."}), 500
+# Error handling routes
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('error.html', message="Page not found.", status_code=404), 404
+
+# Remove or comment out the explicit favicon route
+# @app.route('/favicon.ico')
+# def favicon():
+#     """
+#     Serves the favicon.ico file.
+#     """
+#     return app.send_static_file('favicon.ico'), 200
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))  # Get the port from the environment
-    app.run(host='0.0.0.0', port=port, debug=True)  # Bind to 0.0.0.0 to make it accessible
+    app.run(debug=True)
+
