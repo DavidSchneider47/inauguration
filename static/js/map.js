@@ -47,7 +47,7 @@ function createCoffeeIcon() {
     });
 }
 
-// Function to create a bar icon
+// Function to create a beer/bar icon
 function createBarIcon() {
     return L.divIcon({
         html: `<i class="fas fa-beer" style="font-size:${getIconSize()}px; color:purple;"></i>`,
@@ -74,6 +74,9 @@ const coffeeLayer = L.layerGroup().addTo(map);
 const barsLayer = L.layerGroup().addTo(map);
 const pharmacyLayer = L.layerGroup().addTo(map); // Layer for pharmacies
 
+// Create a Layer Group for transit routes
+const transitLayer = L.layerGroup().addTo(map);
+
 // Base layers (we have only one)
 const baseLayers = {};
 
@@ -82,7 +85,8 @@ const overlayLayers = {
     "Hotels": hotelLayer,
     "Coffee Shops": coffeeLayer,
     "Bars": barsLayer,
-    "Pharmacies": pharmacyLayer // Added Pharmacies to overlay layers
+    "Pharmacies": pharmacyLayer, // Added Pharmacies to overlay layers
+    "Transit Routes": transitLayer // Added Transit Routes to overlay layers
 };
 
 // Add Layer Control to the map
@@ -182,6 +186,96 @@ fetch('/api/pharmacies')
         filterAndDisplayAmenities(); // Initial display based on any existing search
     })
     .catch(error => console.error("Error fetching pharmacies:", error));
+
+// ================================
+// Fetch and add transit routes GeoJSON
+// ================================
+fetch('/static/data/reduced_routes_data.geojson')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Failed to fetch GeoJSON data: ${response.statusText}`);
+        }
+        return response.json();
+    })
+    .then(geojsonData => {
+        console.log("Fetched Transit Routes GeoJSON:", geojsonData); // Debugging
+        L.geoJSON(geojsonData, {
+            style: function(feature) {
+                let routeColor;
+                const routeId = feature.properties.route_id;
+
+                if (routeId === 'VRE') {
+                    routeColor = '#800080'; // Purple for VRE
+                } else if (routeId === 'MARC') {
+                    routeColor = '#8B4513'; // Brown for MARC
+                } else {
+                    routeColor = feature.properties.route_color || '#000000'; // Default to black if no route color
+                }
+
+                return {
+                    color: routeColor,
+                    weight: 4,
+                    opacity: 0.7
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                if (feature.properties && feature.properties.route_short_name) {
+                    layer.bindPopup(`<strong>Route: ${feature.properties.route_short_name}</strong>`);
+                }
+            }
+        }).addTo(transitLayer);
+    })
+    .catch(error => console.error("Error loading transit routes GeoJSON:", error));
+
+// ================================
+// Function to filter and display only the selected line
+// ================================
+function filterTransitRoutes(lineQuery) {
+    // Normalize the lineQuery to uppercase for comparison with route_id
+    const normalizedLineQuery = lineQuery.toUpperCase();
+
+    // Clear the current transit routes
+    transitLayer.clearLayers();
+
+    fetch('/static/data/reduced_routes_data.geojson')
+        .then(response => response.json())
+        .then(geojsonData => {
+            const filteredData = {
+                ...geojsonData,
+                features: geojsonData.features.filter(feature => {
+                    const routeId = feature.properties.route_id;
+                    return normalizedLineQuery === '' || routeId === normalizedLineQuery; // Match selected line or show all
+                })
+            };
+
+            L.geoJSON(filteredData, {
+                style: function(feature) {
+                    let routeColor;
+                    const routeId = feature.properties.route_id;
+
+                    if (routeId === 'VRE') {
+                        routeColor = '#800080'; // Purple for VRE
+                    } else if (routeId === 'MARC') {
+                        routeColor = '#8B4513'; // Brown for MARC
+                    } else {
+                        routeColor = feature.properties.route_color || '#000000'; // Default to black
+                    }
+
+                    return {
+                        color: routeColor,
+                        weight: 4,
+                        opacity: 0.7
+                    };
+                },
+                onEachFeature: function(feature, layer) {
+                    if (feature.properties && feature.properties.route_short_name) {
+                        layer.bindPopup(`<strong>Route: ${feature.properties.route_short_name}</strong>`);
+                    }
+                }
+            }).addTo(transitLayer);
+        })
+        .catch(error => console.error("Error fetching transit routes:", error));
+}
 
 // ================================
 // Function to add station markers
@@ -361,7 +455,6 @@ function filterAndDisplayMarkers() {
 // Function to filter and display amenities based on search
 // (Called after fetching amenities data)
 function filterAndDisplayAmenities() {
-    // Amenities are already handled in filterAndDisplayMarkers
     filterAndDisplayMarkers();
 }
 
@@ -396,13 +489,17 @@ function debounce(func, delay) {
 // ================================
 window.addEventListener('searchUpdated', () => {
     filterAndDisplayMarkers();
+    const { lineQuery } = getSearchParams();
+    filterTransitRoutes(lineQuery);
 });
 
 // ================================
 // Perform initial filtering on page load
 // ================================
 window.addEventListener('load', () => {
+    const { lineQuery } = getSearchParams();
     filterAndDisplayMarkers();
+    filterTransitRoutes(lineQuery);
 });
 
 // ================================
@@ -425,3 +522,4 @@ function centerMapOnStation(stationId) {
 
 // Make the function globally accessible
 window.centerMapOnStation = centerMapOnStation;
+

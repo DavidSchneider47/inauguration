@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <!-- FontAwesome CSS for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- Load Leaflet JS only if map exists -->
+    <script>
+        // Check if the map container exists and load map.js only if it does
+        window.addEventListener('load', function() {
+            const mapContainer = document.getElementById('map');
+            if (mapContainer) {
+                const script = document.createElement('script');
+                script.src = "{{ url_for('static', filename='js/map.js') }}";
+                document.head.appendChild(script);
+                console.log('map.js loaded successfully for map page.');
+            }
+        });
+    </script>
     <!-- Inline CSS Styles for Additional Styling -->
     <style>
         /* Navigation Bar Styles */
@@ -170,7 +183,6 @@
             {% for line in line_colors.keys() %}
                 <option value="{{ line }}">{{ line }}</option>
             {% endfor %}
-            <!-- Add more lines as needed -->
         </select>
         <button id="clear-search" aria-label="Clear search filters">Clear Search</button>
     </div>
@@ -182,7 +194,7 @@
                     <!-- Display circles for each metro line -->
                     {% for line in station.station_line.split(',') %}
                         {% set line_color = line_colors.get(line.strip(), '#808080') %}
-                        <span class="line-circle" style="background-color: {{ line_color }};" title="{{ line.strip() }}"></span>
+                        <span class="line-circle" style="background-color: {{ line_color }};" title="{{ line.strip().upper() }}"></span>
                     {% endfor %}
                     <strong>{{ station.station_name }}</strong>
                 </div>
@@ -194,7 +206,7 @@
         {% endfor %}
     </ul>
 
-    <!-- JavaScript to Handle Search and Fetching Amenities -->
+    <!-- JavaScript to Handle Search, Fetching Amenities, and Filtering Transit Routes -->
     <script>
         // Debounce function to limit the rate of function execution
         function debounce(func, delay) {
@@ -214,7 +226,8 @@
         function getSearchParams() {
             const stationQuery = localStorage.getItem('stationQuery') || '';
             const lineQuery = localStorage.getItem('lineQuery') || '';
-            return { stationQuery, lineQuery };
+            console.log('Search Parameters:', { stationQuery, lineQuery }); // Debugging log
+            return { stationQuery, lineQuery: lineQuery.toUpperCase() }; // Convert lineQuery to uppercase
         }
 
         /**
@@ -223,6 +236,7 @@
          * @param {string} lineQuery - The transit line query.
          */
         function setSearchParams(stationQuery, lineQuery) {
+            console.log('Setting Search Params:', { stationQuery, lineQuery }); // Debugging log
             localStorage.setItem('stationQuery', stationQuery);
             localStorage.setItem('lineQuery', lineQuery);
         }
@@ -231,6 +245,7 @@
          * Clears search parameters from localStorage.
          */
         function clearSearchParams() {
+            console.log('Clearing search parameters.'); // Debugging log
             localStorage.removeItem('stationQuery');
             localStorage.removeItem('lineQuery');
         }
@@ -241,7 +256,7 @@
         function initializeSearchInputs() {
             const { stationQuery, lineQuery } = getSearchParams();
             document.getElementById('station-search').value = stationQuery;
-            document.getElementById('line-search').value = lineQuery;
+            document.getElementById('line-search').value = lineQuery.toLowerCase(); // Display line query in lowercase in UI
         }
 
         /**
@@ -250,6 +265,8 @@
         function handleSearchChange() {
             const stationQuery = document.getElementById('station-search').value.trim();
             const lineQuery = document.getElementById('line-search').value;
+
+            console.log('Search changed. Station Query:', stationQuery, 'Line Query:', lineQuery); // Debugging log
 
             setSearchParams(stationQuery, lineQuery);
 
@@ -261,6 +278,7 @@
          * Handles the clear search button click.
          */
         function handleClearSearch() {
+            console.log('Clear search clicked.'); // Debugging log
             document.getElementById('station-search').value = '';
             document.getElementById('line-search').value = '';
             clearSearchParams();
@@ -278,6 +296,7 @@
         window.addEventListener('storage', (event) => {
             if (event.key === 'stationQuery' || event.key === 'lineQuery') {
                 initializeSearchInputs();
+                console.log('Storage event triggered.'); // Debugging log
                 // Dispatch a custom event to notify other scripts/pages
                 window.dispatchEvent(new Event('searchUpdated'));
             }
@@ -287,6 +306,55 @@
         window.addEventListener('load', () => {
             initializeSearchInputs();
             filterStations();
+        });
+
+        /**
+         * Filters the station list based on search parameters.
+         */
+        function filterStations() {
+            const { stationQuery, lineQuery } = getSearchParams();
+
+            console.log('Filtering stations. Line Query:', lineQuery); // Debugging log
+
+            const stationItems = document.querySelectorAll('.station-item');
+
+            stationItems.forEach(item => {
+                const stationHeader = item.querySelector('.station-header');
+                const stationName = stationHeader.querySelector('strong').innerText.toLowerCase();
+                const stationLines = Array.from(stationHeader.querySelectorAll('.line-circle')).map(span => span.title.toUpperCase());
+
+                const matchesStation = stationName.includes(stationQuery.toLowerCase());
+                const matchesLine = lineQuery === '' || stationLines.includes(lineQuery);
+
+                console.log('Checking station:', stationName, 'Matches:', matchesStation, matchesLine); // Debugging log
+
+                if (matchesStation && matchesLine) {
+                    item.style.display = 'block';
+                    item.classList.add('match');
+                } else {
+                    item.style.display = 'none';
+                    item.classList.remove('match');
+                }
+            });
+
+            // If amenities are open for hidden stations, hide them
+            stationItems.forEach(item => {
+                if (item.style.display === 'none') {
+                    const amenitiesList = item.querySelector('.amenities-list');
+                    if (amenitiesList) {
+                        amenitiesList.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Listen for custom 'searchUpdated' event to filter stations and transit routes
+        window.addEventListener('searchUpdated', () => {
+            console.log('searchUpdated event triggered.'); // Debugging log
+            filterStations();
+            const { lineQuery } = getSearchParams();
+            console.log(`Line Query after searchUpdated: ${lineQuery}`);  // Log line query value
+            filterTransitRoutes(lineQuery); // Add transit route filtering based on the selected line
         });
 
         /**
@@ -302,6 +370,8 @@
                     try {
                         // Display loading message
                         amenitiesList.innerHTML = '<li class="loading">Loading amenities...</li>';
+
+                        console.log('Fetching amenities for station:', stationId); // Debugging log
 
                         // Fetch hotels, coffee shops, bars, and pharmacies concurrently
                         const [hotelsResponse, coffeeResponse, barsResponse, pharmaciesResponse] = await Promise.all([
@@ -401,52 +471,6 @@
                 amenitiesList.style.display = 'none';
             }
         }
-
-        /**
-         * Filters the station list based on search parameters.
-         */
-        function filterStations() {
-            const { stationQuery, lineQuery } = getSearchParams();
-
-            const stationItems = document.querySelectorAll('.station-item');
-
-            stationItems.forEach(item => {
-                const stationHeader = item.querySelector('.station-header');
-                const stationName = stationHeader.querySelector('strong').innerText.toLowerCase();
-                const stationLines = Array.from(stationHeader.querySelectorAll('.line-circle')).map(span => span.title);
-
-                const matchesStation = stationName.includes(stationQuery.toLowerCase());
-                const matchesLine = lineQuery === '' || stationLines.includes(lineQuery);
-
-                if (matchesStation && matchesLine) {
-                    item.style.display = 'block';
-                    item.classList.add('match');
-                } else {
-                    item.style.display = 'none';
-                    item.classList.remove('match');
-                }
-            });
-
-            // If amenities are open for hidden stations, hide them
-            stationItems.forEach(item => {
-                if (item.style.display === 'none') {
-                    const amenitiesList = item.querySelector('.amenities-list');
-                    if (amenitiesList) {
-                        amenitiesList.style.display = 'none';
-                    }
-                }
-            });
-        }
-
-        // Listen for custom 'searchUpdated' event to filter stations
-        window.addEventListener('searchUpdated', () => {
-            filterStations();
-        });
     </script>
 </body>
 </html>
-
-
-
-
-

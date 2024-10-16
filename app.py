@@ -129,6 +129,36 @@ def api_hotels_by_station(station_id):
         logging.error(f"Error fetching hotels for station {station_id}: {e}")
         return jsonify({"message": "An error occurred while fetching hotels."}), 500
 
+# New API route to get transit routes filtered by line
+@app.route('/api/routes/<line_query>')
+def api_routes_by_line(line_query):
+    try:
+        logging.info(f"Fetching routes for line {line_query}")
+        geojson_data = load_data('reduced_routes_data.geojson')  # Load the full GeoJSON file
+        if not geojson_data:
+            logging.error("No GeoJSON data found.")
+            return jsonify({"message": "No routes found."}), 200
+
+        # Filter the GeoJSON data based on the selected line
+        filtered_features = [
+            feature for feature in geojson_data['features'] 
+            if feature['properties']['route_id'].lower() == line_query.lower()
+        ]
+
+        filtered_geojson = {
+            "type": "FeatureCollection",
+            "features": filtered_features
+        }
+
+        if not filtered_features:
+            logging.info(f"No routes found for line {line_query}")
+            return jsonify({"message": "No routes found for this line."}), 200
+
+        return jsonify(filtered_geojson)
+    except Exception as e:
+        logging.error(f"Error fetching routes for line {line_query}: {e}")
+        return jsonify({"message": "An error occurred while fetching routes."}), 500
+
 # Home route
 @app.route('/')
 def home():
@@ -148,9 +178,8 @@ def stations_page():
         'Green': '#008000',
         'Orange': '#FFA500',
         'Silver': '#C0C0C0',
-        'MARC': '#800080',
-        'VRE': '#00FFFF'
-        # Add more lines and colors as needed
+        'MARC': '#8B4513',  # Brown for MARC
+        'VRE': '#800080'     # Purple for VRE
     }
     return render_template('stations.html', stations=stations, line_colors=line_colors)
 
@@ -159,14 +188,5 @@ def stations_page():
 def page_not_found(e):
     return render_template('error.html', message="Page not found.", status_code=404), 404
 
-# Remove or comment out the explicit favicon route
-# @app.route('/favicon.ico')
-# def favicon():
-#     """
-#     Serves the favicon.ico file.
-#     """
-#     return app.send_static_file('favicon.ico'), 200
-
 if __name__ == '__main__':
     app.run(debug=True)
-
