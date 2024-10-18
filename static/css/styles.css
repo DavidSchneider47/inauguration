@@ -3,11 +3,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    margin-top: 50px; /* Ensures content starts below the navbar */
 }
 
 header {
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
     position: sticky; /* Make the header sticky */
     top: 0;
@@ -27,6 +28,35 @@ header p {
     font-size: 16px;
 }
 
+/* Navigation Bar Styles */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    height: 50px; /* Fixed height for navbar */
+}
+
+.navbar a {
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 16px;
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: #ddd;
+    color: black;
+}
+
 /* Map container */
 #map {
     height: 600px; /* Default height for desktop */
@@ -34,19 +64,6 @@ header p {
     border: 2px solid #2c3e50;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
-}
-
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-    #map {
-        height: 400px;
-    }
-}
-
-@media (max-width: 480px) {
-    #map {
-        height: 300px;
-    }
 }
 
 /* Loading spinner styling */
@@ -71,4 +88,193 @@ header p {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* Mobile Enhancements */
+@media (max-width: 768px) {
+    /* Full-screen map on smaller screens */
+    #map {
+        height: calc(100vh - 120px); /* Make map full-screen minus header */
+        width: 100%;
+        position: relative;
+        border: none; /* Remove borders for a cleaner mobile look */
+    }
+
+    header {
+        padding: 12px;
+        font-size: 16px; /* Slightly smaller header for mobile */
+    }
+
+    header h1 {
+        font-size: 22px; /* Adjust title size for mobile */
+    }
+
+    /* Increase button and icon sizes for touch interaction */
+    .leaflet-control-zoom-in, .leaflet-control-zoom-out {
+        font-size: 22px !important; /* Larger zoom buttons */
+        padding: 12px !important;
+    }
+
+    /* Increase icon sizes for better touch interaction */
+    .leaflet-marker-icon {
+        width: 40px !important;  /* Larger icons */
+        height: 40px !important;
+    }
+
+    /* Layer control adjustments for mobile */
+    .leaflet-control-layers {
+        font-size: 16px; /* Larger font size for easier reading */
+        padding: 8px; /* More padding for touchscreens */
+    }
+
+    .leaflet-control-layers-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 20px; /* Larger toggle button for easier interaction */
+    }
+
+    /* Make buttons and input fields more touch-friendly */
+    .search-container input,
+    .search-container select,
+    .search-container button {
+        font-size: 18px !important;  /* Slightly larger font size for touch */
+        padding: 10px !important;     /* More padding for easier tapping */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    #map {
+        height: calc(100vh - 100px) !important; /* Allow more space for the map */
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 20px; /* Further adjust title size for smaller devices */
+    }
+
+    /* Further increase icon sizes for very small screens */
+    .leaflet-marker-icon {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    /* Even larger zoom buttons */
+    .leaflet-control-zoom-in, .leaflet-control-zoom-out {
+        font-size: 24px !important;
+        padding: 14px !important;
+    }
+
+    /* Increase Layer control box size for small screens */
+    .leaflet-control-layers {
+        font-size: 18px !important; /* Larger font size for better usability */
+        padding: 10px !important; /* Larger padding for touch screens */
+    }
+
+    /* Larger layer control toggle button */
+    .leaflet-control-layers-toggle {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 24px !important; /* Larger toggle button */
+    }
+
+    /* Make buttons and input fields even more touch-friendly */
+    .search-container input,
+    .search-container select,
+    .search-container button {
+        font-size: 16px !important;  /* Adjusted for very small devices */
+        padding: 8px !important;
+    }
+}
+
+/* Styles for the Itineraries page */
+.itineraries-header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.itineraries-main {
+    padding: 20px;
+}
+
+.itineraries-main h2 {
+    color: #333;
+}
+
+.itineraries-main p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.itineraries-main img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer for Itineraries page */
+.itineraries-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Mobile-specific adjustments for Itineraries */
+@media (max-width: 768px) {
+    .itineraries-main {
+        padding: 15px;
+    }
+
+    .itineraries-main h2 {
+        font-size: 22px;
+    }
+
+    .itineraries-main p {
+        font-size: 16px;
+    }
+
+    .itineraries-main img {
+        width: 100%;
+        height: auto;
+    }
+
+    .itineraries-footer {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .itineraries-main {
+        padding: 10px;
+    }
+
+    .itineraries-main h2 {
+        font-size: 20px;
+    }
+
+    .itineraries-main p {
+        font-size: 14px;
+    }
+
+    .itineraries-main img {
+        width: 100%;
+    }
+
+    .itineraries-footer {
+        padding: 10px;
+    }
+}
+
+/* Add margin to prevent the navbar from overlapping content */
+body {
+    margin-top: 50px; /* Ensures content starts below the navbar */
 }
