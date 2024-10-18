@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itineraries</title>
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <!-- FontAwesome CSS for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        /* Color-coded headers */
+        .red-line { color: red; }
+        .green-line { color: green; }
+        .yellow-line { color: yellow; }
+        .blue-line { color: blue; }
+        .orange-line { color: orange; }
+        .silver-line { color: silver; }
+
+        /* Collapsible section styling */
+        .collapsible {
+            cursor: pointer;
+            text-align: center;
+            font-size: 24px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .collapsible:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Collapsed content */
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Ensure all headers are centered */
+        .content img {
+            width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        /* Arrow symbol */
+        .collapsible:after {
+            content: '\002B'; /* Unicode for + symbol */
+            font-size: 24px;
+            float: right;
+        }
+
+        .active:after {
+            content: "\2212"; /* Unicode for - symbol */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
+            <i class="fas fa-map-marker-alt"></i> Home (Map)
+        </a>
+        <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
+            <i class="fas fa-list"></i> Stations List
+        </a>
+        <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
+            <i class="fas fa-route"></i> Itineraries
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <h1 style="text-align: center;">Popular Transit Itineraries</h1>
+
+    <main>
+        <!-- Collapsible sections for each itinerary -->
+        <button class="collapsible red-line">A Day on the Red Line (From Shady Grove to Glenmont)</button>
+        <div class="content">
+            <p>Details about the Red Line from Shady Grove to Glenmont itinerary.</p>
+            <img src="{{ url_for('static', filename='images/red_line_itinerary.jpg') }}" alt="Red Line Itinerary">
+        </div>
+
+        <button class="collapsible red-line">A Day on the Red Line (From Glenmont to Shady Grove)</button>
+        <div class="content">
+            <p>Details about the Red Line from Glenmont to Shady Grove itinerary.</p>
+            <img src="{{ url_for('static', filename='images/red_line_itinerary.jpg') }}" alt="Red Line Itinerary">
+        </div>
+
+        <button class="collapsible green-line">A Day on the Green Line (From Branch Avenue to Greenbelt)</button>
+        <div class="content">
+            <p>Details about the Green Line from Branch Avenue to Greenbelt itinerary.</p>
+            <img src="{{ url_for('static', filename='images/green_line_itinerary.jpg') }}" alt="Green Line Itinerary">
+        </div>
+
+        <button class="collapsible green-line">A Half Day on the Green Line (From Greenbelt to Branch Avenue)</button>
+        <div class="content">
+            <p>Details about a half day on the Green Line from Greenbelt to Branch Avenue.</p>
+            <img src="{{ url_for('static', filename='images/green_line_itinerary.jpg') }}" alt="Green Line Itinerary">
+        </div>
+
+        <button class="collapsible yellow-line">A Half Day on the Yellow Line (From Huntington to Mt. Vernon Square)</button>
+        <div class="content">
+            <p>Details about the Yellow Line from Huntington to Mt. Vernon Square.</p>
+            <img src="{{ url_for('static', filename='images/yellow_line_itinerary.jpg') }}" alt="Yellow Line Itinerary">
+        </div>
+
+        <button class="collapsible yellow-line">A Half Day on the Yellow Line (From Mt. Vernon Square to Huntington)</button>
+        <div class="content">
+            <p>Details about the Yellow Line from Mt. Vernon Square to Huntington.</p>
+            <img src="{{ url_for('static', filename='images/yellow_line_itinerary.jpg') }}" alt="Yellow Line Itinerary">
+        </div>
+
+        <button class="collapsible blue-line">A Day on the Blue Line (From Franconia Springfield to Downtown Largo)</button>
+        <div class="content">
+            <p>Details about the Blue Line from Franconia Springfield to Downtown Largo.</p>
+            <img src="{{ url_for('static', filename='images/blue_line_itinerary.jpg') }}" alt="Blue Line Itinerary">
+        </div>
+
+        <button class="collapsible"><span class="blue-line">A Day on the Blue</span>, <span class="orange-line">Orange</span>, <span class="silver-line">Silver</span> Lines (Traveling from East to West)</button>
+        <div class="content">
+            <p>Details about traveling from East to West on the Blue, Orange, or Silver Lines.</p>
+            <img src="{{ url_for('static', filename='images/multi_line_itinerary.jpg') }}" alt="Multi Line Itinerary">
+        </div>
+
+        <button class="collapsible"><span class="blue-line">A Day on the Blue</span>, <span class="orange-line">Orange</span>, <span class="silver-line">Silver</span> Lines (Traveling from West to East)</button>
+        <div class="content">
+            <p>Details about traveling from West to East on the Blue, Orange, or Silver Lines.</p>
+            <img src="{{ url_for('static', filename='images/multi_line_itinerary.jpg') }}" alt="Multi Line Itinerary">
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="itineraries-footer">
+        <p>&copy; 2024 Transit Inauguration. All rights reserved.</p>
+    </footer>
+
+    <!-- Collapsible Sections JavaScript -->
+    <script>
+        const coll = document.getElementsByClassName("collapsible");
+
+        for (let i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
