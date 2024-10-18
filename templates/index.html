@@ -164,6 +164,9 @@
         <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
             <i class="fas fa-list"></i> Stations List
         </a>
+        <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
+            <i class="fas fa-route"></i> Itineraries
+        </a>
     </div>
 
     <h1>Map of Stations and Amenities</h1>
@@ -181,7 +184,6 @@
             <option value="Silver">Silver</option>
             <option value="MARC">MARC</option>
             <option value="VRE">VRE</option>
-            <!-- Add more lines as needed -->
         </select>
         <button id="clear-search" aria-label="Clear search filters">Clear Search</button>
     </div>
