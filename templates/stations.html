@@ -171,6 +171,9 @@
         <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
             <i class="fas fa-list"></i> Stations List
         </a>
+        <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
+            <i class="fas fa-route"></i> Itineraries
+        </a>
     </div>
 
     <h1 style="text-align: center; margin-top: 80px;">Search Destinations by Station</h1>
@@ -205,6 +208,11 @@
             </li>
         {% endfor %}
     </ul>
+
+    <!-- Footer -->
+    <footer class="stations-footer">
+        <p>&copy; 2024 Transit Inauguration. All rights reserved.</p>
+    </footer>
 
     <!-- JavaScript to Handle Search, Fetching Amenities, and Filtering Transit Routes -->
     <script>
@@ -474,3 +482,5 @@
     </script>
 </body>
 </html>
+
+
