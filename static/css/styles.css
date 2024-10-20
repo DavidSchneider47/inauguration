@@ -204,6 +204,7 @@ header p {
 
 .itineraries-main h2 {
     color: #333;
+    font-size: 18px; /* Set the desired font size for all h2 headers */
 }
 
 .itineraries-main p {
@@ -220,8 +221,50 @@ header p {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer for Itineraries page */
-.itineraries-footer {
+/* Collapsible styling (added to center the collapsible headers) */
+.collapsible {
+    text-align: center;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.collapsible:hover {
+    background-color: #e0e0e0;
+}
+
+.active:after {
+    content: "\2212"; /* Minus sign when active */
+}
+
+.collapsible:after {
+    content: '\002B'; /* Unicode for + symbol */
+    font-size: 24px;
+    float: right;
+}
+
+/* Collapsible content */
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Color-coded headers */
+.red-line { color: red; }
+.green-line { color: green; }
+.yellow-line { color: #FFD700; } /* Updated to a darker yellow */
+.blue-line { color: blue; }
+.orange-line { color: orange; }
+.silver-line { color: silver; }
+
+/* Footer for both Itineraries and Stations pages */
+.itineraries-footer, .stations-footer {
     text-align: center;
     padding: 20px;
     background-color: #333;
@@ -230,46 +273,46 @@ header p {
 
 /* Mobile-specific adjustments for Itineraries */
 @media (max-width: 768px) {
-    .itineraries-main {
+    .itineraries-main, .stations-main {
         padding: 15px;
     }
 
-    .itineraries-main h2 {
+    .itineraries-main h2, .stations-main h2 {
         font-size: 22px;
     }
 
-    .itineraries-main p {
+    .itineraries-main p, .stations-main p {
         font-size: 16px;
     }
 
-    .itineraries-main img {
+    .itineraries-main img, .stations-main img {
         width: 100%;
         height: auto;
     }
 
-    .itineraries-footer {
+    .itineraries-footer, .stations-footer {
         padding: 15px;
     }
 }
 
 @media (max-width: 480px) {
-    .itineraries-main {
+    .itineraries-main, .stations-main {
         padding: 10px;
     }
 
-    .itineraries-main h2 {
+    .itineraries-main h2, .stations-main h2 {
         font-size: 20px;
     }
 
-    .itineraries-main p {
+    .itineraries-main p, .stations-main p {
         font-size: 14px;
     }
 
-    .itineraries-main img {
+    .itineraries-main img, .stations-main img {
         width: 100%;
     }
 
-    .itineraries-footer {
+    .itineraries-footer, .stations-footer {
         padding: 10px;
     }
 }
