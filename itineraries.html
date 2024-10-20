@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itineraries</title>
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <!-- FontAwesome CSS for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        /* Color-coded headers */
+        .red-line { color: red; }
+        .green-line { color: green; }
+        .yellow-line { color: yellow; }
+        .blue-line { color: blue; }
+        .orange-line { color: orange; }
+        .silver-line { color: silver; }
+
+        /* Collapsible section styling */
+        .collapsible {
+            cursor: pointer;
+            text-align: center; /* Ensure the collapsible headers are centered */
+            font-size: 24px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .collapsible:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Collapsed content */
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Ensure all headers are centered */
+        .content img {
+            width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        /* Arrow symbol */
+        .collapsible:after {
+            content: '\002B'; /* Unicode for + symbol */
+            font-size: 24px;
+            float: right;
+        }
+
+        .active:after {
+            content: "\2212"; /* Unicode for - symbol */
+        }
+    </style>
+</head>
+<body>
+
+   <!-- Navigation Bar -->
+<div class="navbar">
+    <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
+        <i class="fas fa-map-marker-alt"></i> Home (Map)
+    </a>
+    <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
+        <i class="fas fa-list"></i> Stations List
+    </a>
+    <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
+        <i class="fas fa-route"></i> Itineraries
+    </a>
+</div>
+
+    <!-- Main Content -->
+    <h1 style="text-align: center;">Popular Transit Itineraries</h1>
+
+    <main>
+        <!-- Collapsible sections for each itinerary -->
+        <!-- Red Line: Shady Grove to Glenmont -->
+        <button class="collapsible red-line">A Day on the Red Line (From Shady Grove to Glenmont)</button>
+        <div class="content" id="red-line-content">
+            <!-- Static Content Embedded Here -->
+            <div class="itinerary-content">
+                <h2>Breakfast: Van-Ness UDC</h2>
+                <p>
+                    Walk north on Connecticut Avenue for 0.25 miles to <a href="https://breadfurst.com/" target="_blank">Bread Furst</a>, founded by Mark Furstenberg, 86, a longtime Washingtonian who received a James Beard Award for Outstanding Baker in 2017. Bread Furst bakes handcrafted breads, pastries, and other baked goods made with high-quality ingredients. “Some 800 baguettes a day fly out of the bakery on weekends” according to the Washington Post. 
+                </p>
+
+                <h2>Morning: Woodley Park-Zoo</h2>
+                <p>
+                    Giant Pandas returned to Washington DC in October when Bao Li [BOW-lee] and Qing Bao [ching-BOW] traveled from China aboard a dedicated “FedEx Panda Express” Boeing 777F aircraft. They are not scheduled to make their Zoo debut until January 24 but there are more than 1,500 animals to admire in the meantime. The National Zoo is free and there are plenty of indoor spaces to warm up on a cold day. Walk North on Connecticut Avenue for 0.25 to the main entrance
+                </p>
+
+                <h2>Lunch: Gallery Place Chinatown</h2>
+                <p>
+                    Spanish-American chef Jose Andres is celebrated for his culinary achievements and  his extensive humanitarian work. His non-profit organization, World Central Kitchen (WCK), has provided millions of meals to people in disaster-stricken areas worldwide. His relief efforts include responses to major hurricanes in Puerto Rico, the Bahamas, and the U.S., as well as feeding refugees and displaced individuals during the COVID-19 pandemic and the conflict in Ukraine and Gaza. Try some small plates from the man with a big heart at Jaleo or Zaytina, both located a few blocks from the Metro station. 
+                </p>
+
+                <h2>Afternoon: NoMa Gallaudet-U</h2>
+                <p>
+                    Union Market, a food hall and marketplace located [XXX] from the NoMa Metro center originally opened as a wholesale market in the 1930s. It was revitalized and reopened in 2012, evolving into a contemporary food and community hub. It is known for supporting small businesses, local farmers, and up-and-coming chefs. In addition to food, the market features unique retail shops selling locally made products, home goods, and crafts.  Check out the witching hour candle from Salt and Sundry, hand crafted knives from District Cutlery or look into renting a plant from Jungle and Loom.
+                </p>
+
+                <h2>Dinner: Silver Spring</h2>
+                <p>
+                    More Ethiopians live in the Washington, D.C., region than any other urban area outside of Addis Ababa, the Ethiopian capital, according to the Migration Policy Institute, a non-partisan think tank. Historically, most Ethiopian immigrants lived in the District, but more recently Downtown Silver Spring has become a “little Ethiopia” filled with Ethiopian and Eritrean-owned restaurants, coffee stores, markets, and nightclubs. You can find some of them by walking east on Wayne Avenue and making a right on Georgia Avenue. Grab dinner at Lucy, Lasaac, Abol, or Betseb. Afterwards, head over to the Quarry House Tavern, a local institution since 1936 with a laid back vibe and a vast beer menu. 
+                </p>
+            </div>
+        </div>
+
+        <!-- Red Line: Glenmont to Shady Grove -->
+        <button class="collapsible red-line">A Day on the Red Line (From Glenmont to Shady Grove)</button>
+        <div class="content">
+            <p>Details about the Red Line from Glenmont to Shady Grove itinerary.</p>
+            <img src="{{ url_for('static', filename='images/red_line_itinerary.jpg') }}" alt="Red Line Itinerary">
+        </div>
+
+        <!-- Green Line Itineraries -->
+        <button class="collapsible green-line">A Day on the Green Line (From Branch Avenue to Greenbelt)</button>
+        <div class="content">
+            <p>Details about the Green Line from Branch Avenue to Greenbelt itinerary.</p>
+            <img src="{{ url_for('static', filename='images/green_line_itinerary.jpg') }}" alt="Green Line Itinerary">
+        </div>
+
+        <button class="collapsible green-line">A Half Day on the Green Line (From Greenbelt to Branch Avenue)</button>
+        <div class="content">
+            <p>Details about a half day on the Green Line from Greenbelt to Branch Avenue.</p>
+            <img src="{{ url_for('static', filename='images/green_line_itinerary.jpg') }}" alt="Green Line Itinerary">
+        </div>
+
+        <!-- Yellow Line Itineraries -->
+        <button class="collapsible yellow-line">A Half Day on the Yellow Line (From Huntington to Mt. Vernon Square)</button>
+        <div class="content">
+            <p>Details about the Yellow Line from Huntington to Mt. Vernon Square.</p>
+            <img src="{{ url_for('static', filename='images/yellow_line_itinerary.jpg') }}" alt="Yellow Line Itinerary">
+        </div>
+
+        <button class="collapsible yellow-line">A Half Day on the Yellow Line (From Mt. Vernon Square to Huntington)</button>
+        <div class="content">
+            <p>Details about the Yellow Line from Mt. Vernon Square to Huntington.</p>
+            <img src="{{ url_for('static', filename='images/yellow_line_itinerary.jpg') }}" alt="Yellow Line Itinerary">
+        </div>
+
+        <!-- Blue Line Itineraries -->
+        <button class="collapsible blue-line">A Day on the Blue Line (From Franconia Springfield to Downtown Largo)</button>
+        <div class="content">
+            <p>Details about the Blue Line from Franconia Springfield to Downtown Largo.</p>
+            <img src="{{ url_for('static', filename='images/blue_line_itinerary.jpg') }}" alt="Blue Line Itinerary">
+        </div>
+
+        <button class="collapsible">
+            <span class="blue-line">A Day on the Blue</span>, 
+            <span class="orange-line">Orange</span>, 
+            <span class="silver-line">Silver</span> Lines (Traveling from East to West)
+        </button>
+        <div class="content">
+            <p>Details about traveling from East to West on the Blue, Orange, or Silver Lines.</p>
+            <img src="{{ url_for('static', filename='images/multi_line_itinerary.jpg') }}" alt="Multi Line Itinerary">
+        </div>
+
+        <button class="collapsible">
+            <span class="blue-line">A Day on the Blue</span>, 
+            <span class="orange-line">Orange</span>, 
+            <span class="silver-line">Silver</span> Lines (Traveling from West to East)
+        </button>
+        <div class="content">
+            <p>Details about traveling from West to East on the Blue, Orange, or Silver Lines.</p>
+            <img src="{{ url_for('static', filename='images/multi_line_itinerary.jpg') }}" alt="Multi Line Itinerary">
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="itineraries-footer">
+        <p>&copy; 2024 Transit Inauguration. All rights reserved.</p>
+    </footer>
+
+    <!-- Collapsible Sections JavaScript -->
+    <script>
+        const coll = document.getElementsByClassName("collapsible");
+
+        for (let i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
