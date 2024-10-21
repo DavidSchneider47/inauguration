@@ -1,8 +1,9 @@
 // Debugging message to ensure map.js is loaded
 console.log("map.js loaded successfully");
 
-// Initialize the map, centered on Washington, DC with zoom level 11
-const map = L.map('map').setView([38.9072, -77.0369], 11);
+// Initialize the map, centered on Washington, DC with zoom level 16
+const map = L.map('map').setView([38.898327
+,-77.027777], 16);
 
 // Add OpenStreetMap Carto tile layer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -20,11 +21,11 @@ if (typeof L.control.fullscreen === 'function') {
 // Function to adjust icon sizes based on window width
 function getIconSize() {
     if (window.innerWidth <= 480) {
-        return 9;
+        return 28; // Increase size for very small screens
     } else if (window.innerWidth <= 768) {
-        return 12;
+        return 34; // Increase size for medium screens
     }
-    return 15;
+    return 30; // Larger icons for desktop
 }
 
 // Function to create a FontAwesome icon marker
@@ -306,7 +307,7 @@ function addStationMarkers(filteredStations) {
         }
     });
 
-    // Adjust map view to fit markers with maxZoom set to 11
+    // Adjust map view to fit markers with maxZoom set to 16
     if (filteredStations.length > 0) {
         const group = new L.featureGroup(filteredStations.map(station => {
             return L.circleMarker([station.station_lat, station.station_lon], {
@@ -316,10 +317,10 @@ function addStationMarkers(filteredStations) {
                 radius: getIconSize()
             });
         }));
-        map.fitBounds(group.getBounds().pad(0.2), { maxZoom: 11 }); // Changed maxZoom to 11
+        map.fitBounds(group.getBounds().pad(0.2), { maxZoom: 16 }); // Changed maxZoom to 16
     } else {
         // If no stations match, center back to default view
-        map.setView([38.9072, -77.0369], 11); // Changed zoom level to 11
+        map.setView([38.898327,-77.027777], 16); // Changed zoom level to 16
     }
 }
 
@@ -449,6 +450,11 @@ function filterAndDisplayMarkers() {
 
     addStationMarkers(filteredStations);
     addAmenitiesMarkers(filteredStations);
+
+    // If no search query, set the zoom to 16 by default on initial load
+    if (!stationQuery && !lineQuery) {
+        map.setView([38.898327, -77.027777], 16); // Force zoom to 16 on initial load
+    }
 }
 
 // ================================
@@ -507,13 +513,13 @@ window.addEventListener('load', () => {
 // ================================
 
 /**
- * Centers the map on the specified station and sets the zoom level to 11.
+ * Centers the map on the specified station and sets the zoom level to 16.
  * @param {string} stationId - The unique ID of the station.
  */
 function centerMapOnStation(stationId) {
     const station = stationsData.find(s => String(s.station_id) === String(stationId));
     if (station) {
-        map.setView([station.station_lat, station.station_lon], 11); // Changed zoom level to 11
+        map.setView([station.station_lat, station.station_lon], 16); // Changed zoom level to 16
         console.log(`Map centered on station: ${station.station_name}`);
     } else {
         console.warn(`Station with ID ${stationId} not found.`);
