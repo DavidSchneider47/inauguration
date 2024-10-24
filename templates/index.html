@@ -178,6 +178,9 @@
         <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
             <i class="fas fa-route"></i> Itineraries
         </a>
+        <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
+            <i class="fas fa-info-circle"></i> About
+        </a>
     </div>
 
     <h1>Map of Stations and Amenities</h1>
@@ -294,3 +297,4 @@
     </script>
 </body>
 </html>
+
