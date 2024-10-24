@@ -75,6 +75,9 @@
     <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
         <i class="fas fa-route"></i> Itineraries
     </a>
+    <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
+        <i class="fas fa-info-circle"></i> About
+    </a>
 </div>
 
     <!-- Main Content -->
@@ -94,22 +97,22 @@
 
                 <h2>Morning: Woodley Park-Zoo</h2>
                 <p>
-                    Giant Pandas returned to Washington DC in October when Bao Li [BOW-lee] and Qing Bao [ching-BOW] traveled from China aboard a dedicated “FedEx Panda Express” Boeing 777F aircraft. They are not scheduled to make their Zoo debut until January 24 but there are more than 1,500 animals to admire in the meantime. The National Zoo is free and there are plenty of indoor spaces to warm up on a cold day. Walk North on Connecticut Avenue for 0.25 to the main entrance
+                    Giant Pandas returned to Washington DC in October when Bao Li [BOW-lee] and Qing Bao [ching-BOW] traveled from China aboard a dedicated “FedEx Panda Express” Boeing 777F aircraft. They are not scheduled to make their zoo debut until January 24 but there are more than 1,500 animals to admire in the meantime. The <a href="https://www.si.edu/museums/national-zoo" target="_blank">National Zoo</a> is free and there are plenty of indoor spaces to warm up on a cold day. Walk north on Connecticut Avenue for 0.25 to the main entrance
                 </p>
 
                 <h2>Lunch: Gallery Place Chinatown</h2>
                 <p>
-                    Spanish-American chef Jose Andres is celebrated for his culinary achievements and  his extensive humanitarian work. His non-profit organization, World Central Kitchen (WCK), has provided millions of meals to people in disaster-stricken areas worldwide. His relief efforts include responses to major hurricanes in Puerto Rico, the Bahamas, and the U.S., as well as feeding refugees and displaced individuals during the COVID-19 pandemic and the conflict in Ukraine and Gaza. Try some small plates from the man with a big heart at Jaleo or Zaytina, both located a few blocks from the Metro station. 
+                    Spanish-American chef Jose Andres is celebrated for his culinary achievements and  his extensive humanitarian work. His non-profit organization, World Central Kitchen (WCK), has provided millions of meals to people in disaster-stricken areas worldwide. His relief efforts include responses to major hurricanes in Puerto Rico, the Bahamas, and the U.S., as well as feeding refugees and displaced individuals during the COVID-19 pandemic and the conflicts in Ukraine and Gaza. Try some small plates from the man with a big heart at <a href="https://www.jaleo.com/location/washington-dc/" target="_blank">Jaleo </a> or<a href="https://www.zaytinya.com/location/washington-dc/" target="_blank"> Zaytinya</a> , both located a few blocks from the Metro station. 
                 </p>
 
                 <h2>Afternoon: NoMa Gallaudet-U</h2>
                 <p>
-                    Union Market, a food hall and marketplace located [XXX] from the NoMa Metro center originally opened as a wholesale market in the 1930s. It was revitalized and reopened in 2012, evolving into a contemporary food and community hub. It is known for supporting small businesses, local farmers, and up-and-coming chefs. In addition to food, the market features unique retail shops selling locally made products, home goods, and crafts.  Check out the witching hour candle from Salt and Sundry, hand crafted knives from District Cutlery or look into renting a plant from Jungle and Loom.
+                    <a href="https://unionmarketdc.com/" target="_blank"> Union Market</a>, a ten minute walk from the NoMa Metro center originally opened as a wholesale market in the 1930s. It was revitalized and reopened in 2012, evolving into a contemporary food and community hub. It is known for supporting small businesses, local farmers, and up-and-coming chefs. In addition to food, the market features unique retail shops selling locally made products, home goods, and crafts.  Check out the witching hour candle from <a href="https://www.shopsaltandsundry.com/" target="_blank">Salt and Sundry </a> , hand crafted knives from <a href="https://districtcutlery.com/" target="_blank">District Cutlery </a> or look into renting a plant from <a href="https://jungleandloom.com/" target="_blank">Jungle and Loom </a>.
                 </p>
 
                 <h2>Dinner: Silver Spring</h2>
                 <p>
-                    More Ethiopians live in the Washington, D.C., region than any other urban area outside of Addis Ababa, the Ethiopian capital, according to the Migration Policy Institute, a non-partisan think tank. Historically, most Ethiopian immigrants lived in the District, but more recently Downtown Silver Spring has become a “little Ethiopia” filled with Ethiopian and Eritrean-owned restaurants, coffee stores, markets, and nightclubs. You can find some of them by walking east on Wayne Avenue and making a right on Georgia Avenue. Grab dinner at Lucy, Lasaac, Abol, or Betseb. Afterwards, head over to the Quarry House Tavern, a local institution since 1936 with a laid back vibe and a vast beer menu. 
+                    More Ethiopians live in the Washington, D.C., region than any other urban area outside of Addis Ababa, according to the Migration Policy Institute, a non-partisan think tank. Historically, most Ethiopian immigrants lived in the District, but more recently Downtown Silver Spring has become a “little Ethiopia” filled with Ethiopian and Eritrean-owned restaurants, coffee stores, markets, and nightclubs. From the station, head east on Wayne Avenue, cross Georgia Avenue and walk south to grab dinner at<a href="https://www.langanorestaurants.com/" target="_blank">Langano </a> or <a href="https://www.betesebrestaurant.com/" target="_blank">Betesub </a>. On your way back to the station, head downstairs to the <a href="https://www.quarryhousetavern.com/" target="_blank">Quarry House Tavern </a>, a hometown favorite with a laid back vibe and a vast beer menu. 
                 </p>
             </div>
         </div>
@@ -117,27 +120,113 @@
         <!-- Red Line: Glenmont to Shady Grove -->
         <button class="collapsible red-line">A Day on the Red Line (From Glenmont to Shady Grove)</button>
         <div class="content">
-            <p>Details about the Red Line from Glenmont to Shady Grove itinerary.</p>
+                <!-- Static Content Embedded Here -->
+    <div class="itinerary-content">
+        <h2>Breakfast: Takoma</h2>
+        <p>
+            Beginning in the 1970s, DC became a major hub for the American punk rock scene, known for its distinctive sound, DIY ethos, and political activism. These days when some punk rockers aren’t performing or rehearsing, you can find them baking treats at <a href="https://www.donutrundc.com/" target="_blank">Donut Run </a>. Walk under the railroad overpass and down 4th Street to the brightly lit, pink building for vegan donuts that come in classic flavors, like chocolate glazed and cinnamon sugar, but also non-traditional flavors, such as matcha, french toast, and mango coconut.
+        </p>
+
+        <h2>Morning: NoMa Gallaudet-U</h2>
+        <p>
+            The neighborhood around the NoMa Metro station has a flourishing public art scene with over 100 murals, sculptures, and art installations. You can explore using <a href="https://www.nomabid.org/wp-content/uploads/2022/03/NoMa-Mural-Map-Mar-2022.pdf" target="_blank">this map </a> or head directly to <a href="https://nomabid.org/noma-parks-public-spaces/alethia-tanner-park/" target="_blank">Aletha Tanner Park </a> to check out 14 vibrant murals from local artists and a three-story piece paying tribute to the workers who built the Lincoln Memorial. (From the station, cross M Street and walk up the entrance to the Metropolitan Branch Trail, which leads to Aletha Tanner Park).
+        </p>
+
+        <h2>Lunch: Metro Center</h2>
+        <p>
+            Warm up with pho, Hong Kong-style egg noodles, curry with vermicelli, and tom yum soup at <a href="http://www.noodleson11.com/" target="_blank">Noodles on 11 </a>. Then visit the <a href="https://nmwa.org/" target="_blank">National Museum of Women in the Arts </a>, which is dedicated to celebrating the achievements of women artists. The collection features a wide range of art, including painting, sculpture, photography, and decorative arts, from the Renaissance to contemporary works.
+        </p>
+
+        <h2>Afternoon: Dupont Circle</h2>
+        <p>
+            Spend an hour or two in one of the city’s most iconic and walkable neighborhoods. From the Metro station’s north exit, head west to Massachusetts Avenue, also known as "Embassy Row," for a tour of diplomatic mansions. Or walk north on Connecticut to <a href="https://www.kramers.com/" target="_blank">Kramers </a>, one of the city’s oldest independent bookstores.
+        </p>
+
+        <h2>Dinner: Bethesda</h2>
+        <p>
+             <a href="https://www.bethesdarow.com/" target="_blank">Bethesda Row </a>was developed in the 1990s in order to create a mixed-use area that embraced both the convenience of the suburbs and the vibrancy of an urban environment. This vision has been realized as the area has become a major destination for shopping, dining, and entertainment. Choose from dozens of restaurants in the area or find something for everyone at the <a href="https://www.yelp.com/biz/tastee-diner-bethesda" target="_blank">Tastee Diner </a>, a beloved local chain.
+        </p>
+    </div>
+
             <img src="{{ url_for('static', filename='images/red_line_itinerary.jpg') }}" alt="Red Line Itinerary">
         </div>
 
         <!-- Green Line Itineraries -->
         <button class="collapsible green-line">A Day on the Green Line (From Branch Avenue to Greenbelt)</button>
         <div class="content">
-            <p>Details about the Green Line from Branch Avenue to Greenbelt itinerary.</p>
+            <!-- Static Content Embedded Here -->
+	<div class="itinerary-content">
+    <h2>Breakfast: Anacostia</h2>
+    <p>
+        From the Metro station, walk a block to Martin Luther King Junior Avenue and then walk 0.5 miles to Busboys and Poets. Founded by activist, artist, and entrepreneur Andy Shallal, the restaurant serves comfort food and includes a bookstore featuring a wide selection of titles with a focus on social justice, activism, African American history, women's rights, LGBTQ+ issues, and more.
+    </p>
+
+    <h2>Morning: Navy Yard</h2>
+    <p>
+        Take the New Jersey Avenue exit and then walk south to Yards Park. The park opened in 2010 as part of a broader revitalization effort in the area and offers green spaces, recreational activities, and beautiful views of the Anacostia River. Stroll along the Anacostia River Trail which connects parks and neighborhoods along the river.
+    </p>
+
+    <h2>Lunch: Archives</h2>
+    <p>
+        Head north on Seventh Street to Hill Country Barbecue Market. Founded by Washington native Marc Glosserman, Hill Country serves central Texas barbecue favorites in a casual setting. Once your bellies are full, continue north on Seventh Street to the National Portrait Gallery and visit the nation’s only complete collection of presidential portraits outside the White House.
+    </p>
+
+    <h2>Afternoon: Shaw/Howard University</h2>
+    <p>
+        Howard University has educated luminaries such as Thurgood Marshall, Toni Morrison, Vernon Jordan, Chadwick Boseman, and now President-elect Kamala Harris. Walk north on Seventh Street to visit the Howard campus. On your way back to the Metro, stop off for a happy hour microbrew at the Right Proper Brewing Company.
+    </p>
+
+    <h2>Dinner: U Street</h2>
+    <p>
+        In the early 20th century, U Street was the center of African American culture and nightlife in Washington, DC, earning the nickname “Black Broadway”. It was home to some of the most famous Black-owned businesses, theaters, and nightclubs in the country and is one of the city’s most vibrant neighborhoods today. U Street was heavily affected by the riots that followed the assassination of Martin Luther King Jr., and Metro construction in the 1980s also hampered local businesses. Through it all, Ben’s Chili Bowl continued to serve loyal customers and has become a regional icon. From the Metro, head west on U Street to Ben’s for a half-smoke or dine at one of the numerous other restaurants nearby.
+    </p>
+</div>
+
             <img src="{{ url_for('static', filename='images/green_line_itinerary.jpg') }}" alt="Green Line Itinerary">
         </div>
 
         <button class="collapsible green-line">A Half Day on the Green Line (From Greenbelt to Branch Avenue)</button>
         <div class="content">
-            <p>Details about a half day on the Green Line from Greenbelt to Branch Avenue.</p>
+            <div class="itinerary-content">
+    <h2>Lunch: Columbia Heights</h2>
+    <p>
+        The neighborhood around the Columbia Heights metro has a rich history of immigration, particularly from El Salvador, Guatemala, Honduras, and Nicaragua. Immigrants from these countries sought refuge from civil strife and opportunities in the United States. Today, Latin American restaurants, shops, and festivals are integral parts of the local culture, especially around 14th Street and Park Road. Follow your nose to a Latin American lunch at such places as Corado's Restaurant, Los Hermanos, or Don Julio.
+    </p>
+
+    <h2>Afternoon: Archives</h2>
+    <p>
+        Cross Pennsylvania Avenue and walk a few blocks towards the National Gallery of Art’s East Wing. Designed by I. M. Pei and completed in 1978, the East Wing is famous for its sharp angles, open atriums, and the extensive use of glass and marble. It houses works by artists like Mark Rothko, Alexander Calder, and Roy Lichtenstein, showcasing pieces from the 20th century onwards. Be sure to take a selfie with the “blue chicken,” the informal name given to the sculpture titled "Hahn/Cock" by the German artist Katharina Fritsch.
+    </p>
+
+    <h2>Dinner: Waterfront</h2>
+    <p>
+        From M Street, walk two blocks west toward The Wharf, a major mixed-use redevelopment project that has transformed the city's waterfront along the Potomac River. Spanning more than 3.5 million square feet, The Wharf revitalizes what was once a largely industrial and underutilized area into a neighborhood filled with dining, entertainment, residential, and recreational spaces. It also includes the Maine Avenue Fish Market, the oldest continuously operating open-air fish market in the U.S. Grab some seafood for dinner at Hank’s Oyster Bar or one of the many other eateries nearby.
+    </p>
+</div>
+
             <img src="{{ url_for('static', filename='images/green_line_itinerary.jpg') }}" alt="Green Line Itinerary">
         </div>
 
         <!-- Yellow Line Itineraries -->
         <button class="collapsible yellow-line">A Half Day on the Yellow Line (From Huntington to Mt. Vernon Square)</button>
         <div class="content">
-            <p>Details about the Yellow Line from Huntington to Mt. Vernon Square.</p>
+            <div class="itinerary-content">
+    <h2>Breakfast: Huntington</h2>
+    <p>
+        Fuel up for your day on the Metro at Bob and Edith’s Diner, which is located two blocks south from the Huntington Station and has been family-owned and operated for the past 54 years. Grab a seat in the bright and lively interior for breakfast offered 24 hours a day.
+    </p>
+
+    <h2>Morning: L’Enfant Plaza</h2>
+    <p>
+        Washington’s Metro Stations were designed in the “brutalist” style, known for its stark aesthetic and heavy, exposed concrete. This style was in vogue in the decades after the Cold War and gave rise to buildings such as the headquarters of the Department of Housing and Urban Development (HUD), located on 7th Street across from the Metro. Two different HUD Secretaries, one Democrat, one Republican, have compared it to “ten floors of basement.” From L’Enfant Plaza, head north to Independence Avenue for two additional Brutalist buildings: the Department of Energy and the Hirshhorn Museum of Art.
+    </p>
+
+    <h2>Lunch: Mt. Vernon Square</h2>
+    <p>
+        2016 was a dark year for Democratic politics but a bright one for DC pizza when All Purpose made its debut as the city’s best restaurant, according to the Washington Post. It is still going strong serving Jersey-style pizza and Italian-American antipasti. (From the Metro, head west on M Street then north on 9th Street). After lunch, walk south to the Carnegie Library, across from the Convention Center which is home to the DC History Center. Exhibits include “DC Home Rule 50,” which “explores urgent themes of self-governance, full citizenship, free elections, and DC statehood."
+    </p>
+</div>
+
             <img src="{{ url_for('static', filename='images/yellow_line_itinerary.jpg') }}" alt="Yellow Line Itinerary">
         </div>
 
