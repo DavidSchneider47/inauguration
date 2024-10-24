@@ -164,6 +164,16 @@ def api_routes_by_line(line_query):
 def home():
     return render_template('index.html')
 
+# Itineraries page route
+@app.route('/itineraries')
+def itineraries_page():
+    return render_template('itineraries.html')
+
+# Route to serve the "Red Line from Shady Grove to Glenmont" itinerary
+@app.route('/itineraries/red-line-shady-grove-glenmont')
+def red_line_shady_grove_glenmont():
+    return render_template('itineraries/red_line_shady_grove_glenmont.html')
+
 # Stations page route
 @app.route('/stations')
 def stations_page():
@@ -183,10 +193,18 @@ def stations_page():
     }
     return render_template('stations.html', stations=stations, line_colors=line_colors)
 
+# About page route
+@app.route('/about')
+def about_page():
+    return render_template('about.html')
+
 # Error handling routes
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error.html', message="Page not found.", status_code=404), 404
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Dynamically set the port, defaulting to 5000 if not specified
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
+
