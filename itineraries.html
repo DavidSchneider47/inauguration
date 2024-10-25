@@ -14,7 +14,7 @@
         /* Color-coded headers */
         .red-line { color: red; }
         .green-line { color: green; }
-        .yellow-line { color: yellow; }
+        .yellow-line { color: #DAA520 }
         .blue-line { color: blue; }
         .orange-line { color: orange; }
         .silver-line { color: silver; }
@@ -81,14 +81,21 @@
 </div>
 
     <!-- Main Content -->
-    <h1 style="text-align: center;">Popular Transit Itineraries</h1>
+    <h1 style="text-align: center;">A Day on the Metro: Plan Less, Do More</h1>
+
+<div style="text-align: center; margin: 0 auto;">
+    <p>Your time is valuable so leave the travel planning and logistics to us. Our curated itineraries celebrate the District’s African American heritage and the region’s immigrant culture, independent businesses, historic districts, and new neighborhoods. Purchase a Metro day pass and experience the sights, sounds, smells, and tastes of the Washington Region. Spend your time on a single line or feel free to mix and match. All rails lead to discovery from wherever you start your day.</p>
+</div>
 
     <main>
         <!-- Collapsible sections for each itinerary -->
         <!-- Red Line: Shady Grove to Glenmont -->
-        <button class="collapsible red-line">A Day on the Red Line (From Shady Grove to Glenmont)</button>
+        <button class="collapsible red-line" style="text-align: center;">A Day on the Red Line (From Shady Grove to Glenmont)</button>
         <div class="content" id="red-line-content">
             <!-- Static Content Embedded Here -->
+
+<img src="{{ url_for('static', filename='images/zoo.jpg') }}" alt="National Zoo" style="display: block; margin: 20px auto; width: 80%; max-width: 600px; height: auto;">
+
             <div class="itinerary-content">
                 <h2>Breakfast: Van-Ness UDC</h2>
                 <p>
@@ -121,6 +128,9 @@
         <button class="collapsible red-line">A Day on the Red Line (From Glenmont to Shady Grove)</button>
         <div class="content">
                 <!-- Static Content Embedded Here -->
+
+<img src="{{ url_for('static', filename='images/kramerbooks.jpg') }}" alt="Kramerbooks" style="display: block; margin: 20px auto; width: 80%; max-width: 600px; height: auto;">
+
     <div class="itinerary-content">
         <h2>Breakfast: Takoma</h2>
         <p>
@@ -155,61 +165,66 @@
         <button class="collapsible green-line">A Day on the Green Line (From Branch Avenue to Greenbelt)</button>
         <div class="content">
             <!-- Static Content Embedded Here -->
+
+<img src="{{ url_for('static', filename='images/bens.jpg') }}" alt="Ben's Chili Bowl" style="display: block; margin: 20px auto; width: 80%; max-width: 600px; height: auto; max-height: 400px;">
+
 	<div class="itinerary-content">
-    <h2>Breakfast: Anacostia</h2>
+   <h2>Breakfast: Anacostia</h2>
     <p>
-        From the Metro station, walk a block to Martin Luther King Junior Avenue and then walk 0.5 miles to Busboys and Poets. Founded by activist, artist, and entrepreneur Andy Shallal, the restaurant serves comfort food and includes a bookstore featuring a wide selection of titles with a focus on social justice, activism, African American history, women's rights, LGBTQ+ issues, and more.
+        From the Metro station, walk a block to Martin Luther King Junior Avenue and then walk 0.5 miles to <a href="https://www.busboysandpoets.com/venues/anacostia/" target="_blank">Busboys and Poets.</a> Founded by activist, artist, and entrepreneur Andy Shallal, the restaurant serves comfort food and includes a bookstore featuring a wide selection of titles with a focus on social justice, activism, African American history, women's rights, LGBTQ+ issues, and more.
     </p>
 
     <h2>Morning: Navy Yard</h2>
     <p>
-        Take the New Jersey Avenue exit and then walk south to Yards Park. The park opened in 2010 as part of a broader revitalization effort in the area and offers green spaces, recreational activities, and beautiful views of the Anacostia River. Stroll along the Anacostia River Trail which connects parks and neighborhoods along the river.
+        Take the New Jersey Avenue exit and then walk south to <a href="https://www.capitolriverfront.org/yards-park" target="_blank">Yards Park.</a>. The park opened in 2010 as part of a broader revitalization effort in the area and offers green spaces, recreational activities, and beautiful views of the Anacostia River. Stroll along the <a href="https://www.capitolriverfront.org/go/anacostia-riverwalk-trail" target="_blank">Anacostia Riverwalk Trail</a> which connects parks and neighborhoods along the river.
     </p>
 
     <h2>Lunch: Archives</h2>
     <p>
-        Head north on Seventh Street to Hill Country Barbecue Market. Founded by Washington native Marc Glosserman, Hill Country serves central Texas barbecue favorites in a casual setting. Once your bellies are full, continue north on Seventh Street to the National Portrait Gallery and visit the nation’s only complete collection of presidential portraits outside the White House.
+        Head north on Seventh Street to  <a href="https://www.hillcountry.com/location/hill-country-washington-dc/" target="_blank">Hill Country Barbecue Market.</a> Founded by Washington native Marc Glosserman, Hill Country serves central Texas barbecue favorites in a casual setting. Once your bellies are full, continue north on Seventh Street to the <a href="https://npg.si.edu/exhibition/americas-presidents-reopened" target="_blank">National Portrait Gallery</a> and visit the nation’s only complete collection of presidential portraits outside the White House.
     </p>
 
     <h2>Afternoon: Shaw/Howard University</h2>
     <p>
-        Howard University has educated luminaries such as Thurgood Marshall, Toni Morrison, Vernon Jordan, Chadwick Boseman, and now President-elect Kamala Harris. Walk north on Seventh Street to visit the Howard campus. On your way back to the Metro, stop off for a happy hour microbrew at the Right Proper Brewing Company.
+        <a href="https://howard.edu/" target="_blank">Howard University</a> has educated luminaries such as Thurgood Marshall, Toni Morrison, Vernon Jordan, Chadwick Boseman, and now President-elect Kamala Harris. Walk north on Seventh Street to visit the Howard campus. On your way back to the Metro, stop off for a happy hour microbrew at the <a href="https://www.rightproperbrewing.com/shaw" target="_blank">Right Proper Brewing Company</a>
     </p>
 
     <h2>Dinner: U Street</h2>
     <p>
-        In the early 20th century, U Street was the center of African American culture and nightlife in Washington, DC, earning the nickname “Black Broadway”. It was home to some of the most famous Black-owned businesses, theaters, and nightclubs in the country and is one of the city’s most vibrant neighborhoods today. U Street was heavily affected by the riots that followed the assassination of Martin Luther King Jr., and Metro construction in the 1980s also hampered local businesses. Through it all, Ben’s Chili Bowl continued to serve loyal customers and has become a regional icon. From the Metro, head west on U Street to Ben’s for a half-smoke or dine at one of the numerous other restaurants nearby.
+        In the early 20th century, U Street was the center of African American culture and nightlife in Washington, DC, earning the nickname “Black Broadway”. It was home to some of the most famous Black-owned businesses, theaters, and nightclubs in the country and remains of the city’s most vibrant neighborhoods today. U Street was heavily affected by the riots that followed the assassination of Martin Luther King Jr. Metro construction in the 1980s also hampered local businesses. Through it all, <a href="https://benschilibowl.com/" target="_blank">Ben's Chili Bowl</a> continued to serve loyal customers and has become a regional icon. From the Metro, head west on U Street to Ben’s for a half-smoke or dine at one of the numerous other restaurants nearby.
     </p>
 </div>
-
-            <img src="{{ url_for('static', filename='images/green_line_itinerary.jpg') }}" alt="Green Line Itinerary">
-        </div>
-
+</div>
+            
         <button class="collapsible green-line">A Half Day on the Green Line (From Greenbelt to Branch Avenue)</button>
         <div class="content">
+
+<img src="{{ url_for('static', filename='images/east.jpg') }}" alt="National Gallery East Wing" style="display: block; margin: 20px auto; width: 80%; max-width: 600px; height: auto;">
+
             <div class="itinerary-content">
-    <h2>Lunch: Columbia Heights</h2>
+     <h2>Lunch: Columbia Heights</h2>
     <p>
-        The neighborhood around the Columbia Heights metro has a rich history of immigration, particularly from El Salvador, Guatemala, Honduras, and Nicaragua. Immigrants from these countries sought refuge from civil strife and opportunities in the United States. Today, Latin American restaurants, shops, and festivals are integral parts of the local culture, especially around 14th Street and Park Road. Follow your nose to a Latin American lunch at such places as Corado's Restaurant, Los Hermanos, or Don Julio.
+        The neighborhood around the Columbia Heights Metro station has a rich history of immigration, particularly from El Salvador, Guatemala, Honduras, and Nicaragua. Immigrants from these countries sought refuge from civil strife and opportunities in the United States. Today, Latin American restaurants, shops, and festivals are integral parts of the local culture, especially around 14th Street and Park Road. Follow your nose for lunch at <a href="https://www.coradosrestaurant.com/" target="_blank">Corado's Restaurant</a> a neighborhood staple since 1983, or pick up pupusas from <a href="http://orderdonjuliogrocerypupuseria.com/" target="_blank">Don Julio Grocery</a>
     </p>
 
     <h2>Afternoon: Archives</h2>
     <p>
-        Cross Pennsylvania Avenue and walk a few blocks towards the National Gallery of Art’s East Wing. Designed by I. M. Pei and completed in 1978, the East Wing is famous for its sharp angles, open atriums, and the extensive use of glass and marble. It houses works by artists like Mark Rothko, Alexander Calder, and Roy Lichtenstein, showcasing pieces from the 20th century onwards. Be sure to take a selfie with the “blue chicken,” the informal name given to the sculpture titled "Hahn/Cock" by the German artist Katharina Fritsch.
+        Cross Pennsylvania Avenue and walk a few blocks towards the <a href="https://www.nga.gov/" target="_blank">National Gallery of Art</a> East Wing. Designed by I. M. Pei and completed in 1978, the East Wing is famous for its sharp angles, open atriums, and the extensive use of glass and marble. It houses works by artists like Mark Rothko, Alexander Calder, and Roy Lichtenstein, showcasing pieces from the 20th century onwards. Be sure to take a selfie with the <a href="https://www.flickr.com/photos/57440551@N03/36269548025" target="_blank">"Blue Chicken"</a>  the informal name given to the sculpture titled "Hahn/Cock" by the German artist Katharina Fritsch.
     </p>
 
     <h2>Dinner: Waterfront</h2>
     <p>
-        From M Street, walk two blocks west toward The Wharf, a major mixed-use redevelopment project that has transformed the city's waterfront along the Potomac River. Spanning more than 3.5 million square feet, The Wharf revitalizes what was once a largely industrial and underutilized area into a neighborhood filled with dining, entertainment, residential, and recreational spaces. It also includes the Maine Avenue Fish Market, the oldest continuously operating open-air fish market in the U.S. Grab some seafood for dinner at Hank’s Oyster Bar or one of the many other eateries nearby.
+        From M Street, walk two blocks west toward <a href="https://www.wharfdc.com/" target="_blank">The Wharf</a> , a major mixed-use redevelopment project that has transformed the city's waterfront along the Potomac River. Spanning more than 3.5 million square feet, The Wharf revitalizes what was once a largely industrial and underutilized area into a neighborhood filled with dining, entertainment, residential, and recreational spaces. It also includes the<a href="https://www.wharfdc.com/fish-market/" target="_blank">Maine Avenue Fish Market</a>, the oldest continuously operating open-air fish market in the U.S. Grab some seafood for dinner at <a href="https://hanksoysterbar.com/the-wharf/" target="_blank">Hank's Oyster Bar</a> or one of the many other eateries nearby.
     </p>
+
 </div>
-
-            <img src="{{ url_for('static', filename='images/green_line_itinerary.jpg') }}" alt="Green Line Itinerary">
-        </div>
-
+</div>   
         <!-- Yellow Line Itineraries -->
         <button class="collapsible yellow-line">A Half Day on the Yellow Line (From Huntington to Mt. Vernon Square)</button>
         <div class="content">
+
+<img src="{{ url_for('static', filename='images/brutalist.jpg') }}" alt="Hirshhorn Museum" style="display: block; margin: 20px auto; width: 80%; max-width: 600px; height: auto;">
+
             <div class="itinerary-content">
     <h2>Breakfast: Huntington</h2>
     <p>
@@ -226,30 +241,104 @@
         2016 was a dark year for Democratic politics but a bright one for DC pizza when All Purpose made its debut as the city’s best restaurant, according to the Washington Post. It is still going strong serving Jersey-style pizza and Italian-American antipasti. (From the Metro, head west on M Street then north on 9th Street). After lunch, walk south to the Carnegie Library, across from the Convention Center which is home to the DC History Center. Exhibits include “DC Home Rule 50,” which “explores urgent themes of self-governance, full citizenship, free elections, and DC statehood."
     </p>
 </div>
-
-            <img src="{{ url_for('static', filename='images/yellow_line_itinerary.jpg') }}" alt="Yellow Line Itinerary">
-        </div>
+</div>
 
         <button class="collapsible yellow-line">A Half Day on the Yellow Line (From Mt. Vernon Square to Huntington)</button>
         <div class="content">
-            <p>Details about the Yellow Line from Mt. Vernon Square to Huntington.</p>
+
+<img src="{{ url_for('static', filename='images/arch.jpg') }}" alt="Freedom Arch" style="display: block; margin: 20px auto; width: 80%; max-width: 600px; height: auto;">
+
+            <h2>Lunch: Gallery Place</h2>
+<p>
+    The Friendship Archway at 7th and H Streets NW was designed by Architect Alfred Liu and is one of the largest Chinese-style ceremonial arches in the world. The archway was a gift from the city of Beijing and features traditional Chinese designs, including intricate carvings and vibrant colors. While much of Chinatown’s original character has faded, there are still a few key institutions that continue to maintain its cultural heritage. These include several long-standing Chinese restaurants, such as Tony Cheng’s Seafood Restaurant with food served family style on white tablecloths.
+</p>
+
+<h2>Afternoon: Pentagon City</h2>
+<p>
+    In September 2017, Amazon announced plans to build a second headquarters, dubbed HQ2, that would be equivalent in scale to its original headquarters in Seattle. More than 200 cities submitted proposals and ultimately, Amazon selected Crystal City, Virginia, in part due to the neighborhood’s well-connected public transportation. To make the area more appealing, local officials rebranded the Crystal City, Pentagon City, and Potomac Yard areas as "National Landing." This larger district will be home to new infrastructure, office space, housing, and amenities aimed at creating a tech and business hub. For now, skip the Amazon website and do some in-person shopping at Fashion Center or several other nearby malls.
+</p>
+
+<h2>Dinner: King Street</h2>
+<p>
+    Alexandria’s King Street stretches for about a mile, from the King Street Metro Station to the Alexandria waterfront at the Potomac River. It is lined with hundreds of shops, restaurants, galleries, and historic sites. The King Street Trolley, a free service, runs along King Street from the Metro station to the waterfront, making it easy to explore the entire corridor. Head over to the waterfront to visit the Torpedo Factory Art Center, a former munitions factory turned into an art hub with working studios for artists. It’s one of the largest visual arts centers in the U.S. and offers a chance to see artists at work and buy original pieces.
+</p>
             <img src="{{ url_for('static', filename='images/yellow_line_itinerary.jpg') }}" alt="Yellow Line Itinerary">
         </div>
+	<div>
 
         <!-- Blue Line Itineraries -->
         <button class="collapsible blue-line">A Day on the Blue Line (From Franconia Springfield to Downtown Largo)</button>
         <div class="content">
-            <p>Details about the Blue Line from Franconia Springfield to Downtown Largo.</p>
+
+<img src="{{ url_for('static', filename='images/arlington.jpg') }}" alt="Arlington National Cemetary" style="display: block; margin: 20px auto; width: 80%; max-width: 600px; height: auto;">
+            <h2>Morning: Arlington Cemetery</h2>
+<p>
+    A visit to Arlington National Cemetery gives us a chance to “take increased devotion to that cause for which they gave the last full measure of devotion” in the words of Lincoln’s Gettysburg Address. The Arlington National Cemetery tram tour makes multiple stops at key locations, including the Kennedy gravesites, the Tomb of the Unknown Soldier, Arlington House, and other notable memorials.
+</p>
+
+<h2>Lunch: Rosslyn</h2>
+<p>
+    Grab a bite at District Taco, which started as a food truck in Arlington and has expanded to a local chain. After lunch, walk back towards the station and then across the Francis Scott Key bridge for beautiful views of the Potomac River and downtown Washington. Then head west on M Street to the base of the “Exorcist Steps” which have attracted horror fans and movie buffs from around the world. (A round-trip walk from the Rosslyn station to the Exorcist Steps is about two miles).
+</p>
+
+<h2>Afternoon: Smithsonian</h2>
+<p>
+    Take the exit to the mall for the quintessential view of the Federal City: the Washington Monument in one direction and the Capitol dome in the other. After taking the obligatory photos, head over to the National Museum of Natural History. Popular exhibits include the hall of dinosaurs, the hall of rocks and gems, and the insect zoo.
+</p>
+
+<h2>Dinner: Capitol South</h2>
+<p>
+    From the station, walk east on C Street and turn right on Pennsylvania Avenue to the Hawk n’ Dove, a Capitol Hill institution. Founded during the Vietnam War, the bar became a favorite of Hill staffers, journalists, and members of Congress. The spot has gone through its share of new owners, closures, and renovations. It’s no longer a dive bar but serves traditional pub fare along with new American cuisine.
+</p>
             <img src="{{ url_for('static', filename='images/blue_line_itinerary.jpg') }}" alt="Blue Line Itinerary">
         </div>
-
+	</div>
         <button class="collapsible">
             <span class="blue-line">A Day on the Blue</span>, 
             <span class="orange-line">Orange</span>, 
             <span class="silver-line">Silver</span> Lines (Traveling from East to West)
         </button>
         <div class="content">
-            <p>Details about traveling from East to West on the Blue, Orange, or Silver Lines.</p>
+
+
+<img src="{{ url_for('static', filename='images/eastern.jpg') }}" alt="Eastern Market" style="display: block; margin: 20px auto; width: 80%; max-width: 600px; height: auto;">
+
+            <p> <h2>Breakfast: Eastern Market</h2>
+    <p>
+        From the Metro, cross Pennsylvania Avenue to Eastern Market, which celebrated its 150th anniversary in 2024. 
+        Head to the South Hall where indoor merchants offer meats, produce, pasta, baked goods, and cheeses from around the world. 
+        Vendors include the Fine Sweet Shop which serves breads, strudels, and rolls. (You can even have a cannoli for breakfast—we won’t tell).
+    </p>
+
+    <h2>Morning: McPherson Square</h2>
+    <p>
+        On June 5, 2020, DC’s Mayor Muriel Bowser commissioned the painting of the phrase “Black Lives Matter” in massive yellow letters on a two-block stretch of 16th Street NW leading directly to the White House. 
+        The plaza has become an enduring marker of activism and a place of reflection, dialogue, and action. 
+        After visiting Black Lives Matter Plaza, you can walk three blocks west, then head across Lafayette Park to take your picture in front of the White House.
+    </p>
+
+    <h2>Lunch: Foggy Bottom</h2>
+    <p>
+        Tourists everywhere have giggled at this station’s name. In the 19th century, the neighborhood was prone to heavy fog, which often lingered due to the marshy conditions of the land. 
+        You won’t find much marsh these days, but you can grab a tasty bite to eat at Chef Geoff’s. 
+        Afterwards, walk south on 23rd Street to the Lincoln Memorial and Vietnam Veterans Memorial. 
+        (A round trip walk from the Metro station to the memorials is about 1.6 miles).
+    </p>
+
+    <h2>Afternoon: Clarendon</h2>
+    <p>
+        “This is the part of Arlington where the young folks are. This is the place to be when you're 28 and find the city too intimidating, but are not yet ready to move outside the Beltway,” 
+        wrote Jamie Greene, in her 2002 essay “Clarendon Envy” on the trendy neighborhood’s high housing prices. 
+        You might not be able to afford to live here, but it can be a fun place to stop for an afternoon drink or snack. 
+        Visit Wilson Hardware which provides a stylish ambiance and creative cocktails.
+    </p>
+
+    <h2>Dinner: Tysons</h2>
+    <p>
+        If you traveled to President Obama’s 2009 inauguration and stayed around Tysons Corner, you would have found a suburban shopping center designed for cars. 
+        No longer. The 2014 Metro Silver Line extension led to high-rise residential towers, hotels, and improvements to make the area more pedestrian-friendly and cohesive. From Clarendon, make sure you are traveling on a Silver Line station towards Ashburn. Get off at Tysons and, from the station, take the north entrance to Tysons Corner Center and follow the pedestrian bridge to the plaza. 
+        There you will find dinner options such as Barrel and Bushel which offers comfort food and local beers from around the region.
+    </p></p>
             <img src="{{ url_for('static', filename='images/multi_line_itinerary.jpg') }}" alt="Multi Line Itinerary">
         </div>
 
@@ -259,7 +348,34 @@
             <span class="silver-line">Silver</span> Lines (Traveling from West to East)
         </button>
         <div class="content">
-            <p>Details about traveling from West to East on the Blue, Orange, or Silver Lines.</p>
+
+<img src="{{ url_for('static', filename='images/ballston.jpg') }}" alt="Ballston" style="display: block; margin: 20px auto; width: 80%; max-width: 600px; height: auto;">
+
+            <p>
+<h2>Breakfast: Ballston</h2>
+<p>
+    Ballston has evolved from a suburban neighborhood into a bustling center, thanks to urban planning that prioritized growth around Arlington County’s transit stations. Walk east on Wilson Boulevard to Northside Social for lattes, hand-made granola, and the quiche of the day.
+</p>
+
+<h2>Morning: Federal Triangle</h2>
+<p>
+    Head down 12th Street and over to Constitution Avenue for a visit to the National Museum of American History which houses a vast collection of artifacts that tell the story of America’s evolution. You can see the flag that inspired the “Star Spangled Banner,” the Greensboro lunch counter where four African American college students staged a sit-in in 1960, a pivotal event in the Civil Rights Movement, and the top hat worn by President Lincoln on the night of his assassination at Ford’s Theatre.
+</p>
+
+<h2>Lunch: Federal Center</h2>
+<p>
+    The Mitsitam Native Foods Café at the National Museum of the American Indian reopened in May 2024 with a new chef and a revamped menu. It offers Native-inspired food from across the Western Hemisphere, including traditional fry bread, corn totopos, and buffalo burgers. After lunch, visit the museum for a comprehensive and immersive experience that highlights the diversity and contributions of Native peoples from the Arctic to South America. Learn from permanent exhibitions “Our Universes,” “Our Lives,” and “Nation to Nation” as well as rotating exhibits on indigenous art, music, activism, and environmental stewardship.
+</p>
+
+<h2>Afternoon: Potomac Avenue</h2>
+<p>
+    Unwind with a snack from the Pretzel Bakery which serves “Philly Inspired Soft Pretzels with a Twist.” The shop earned The Washington City Paper’s “best pretzel” award for several years. It also offers coffee, tea, and a variety of mustards.
+</p>
+
+<h2>Dinner: Downtown Largo</h2>
+<p>
+    Downtown Largo is an emerging urban center with the comfort and familiarity of the suburbs located on the former site of the Washington Bullets basketball stadium. Close out the end of a long day of transit tourism at Longhorn Steakhouse or TGI Fridays. And if you’ve had your fill of experiential learning and just need some pop culture, there’s an AMC Magic Johnson movie theater a few steps away.
+</p></p>
             <img src="{{ url_for('static', filename='images/multi_line_itinerary.jpg') }}" alt="Multi Line Itinerary">
         </div>
     </main>
