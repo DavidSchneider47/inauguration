@@ -178,9 +178,18 @@
         <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
             <i class="fas fa-route"></i> Itineraries
         </a>
+        <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
+            <i class="fas fa-info-circle"></i> About
+        </a>
     </div>
 
-    <h1>Map of Stations and Amenities</h1>
+    <h1>Transit Inauguration: Have a Rail Good Time!</h1>
+
+<div style=margin: 20px auto; width: 80%; max-width: 800px;">
+        <p>
+            Find a place to stay in one of 242 hotels located a short walk from a transit station. If hotels downtown are fully booked or too expensive, look for lodging in the suburbs or along the Maryland Area Rail Commuter (MARC) or Virginia Railway Express (VRE) Lines. Once you’re in town, use this platform’s extensive list of places to eat, drink, shop, and celebrate to discover DC car-free, and travel through the region with the mobile app (coming soon).
+        </p>
+</div>
 
     <!-- Search Container -->
     <div class="search-container">
@@ -294,3 +303,4 @@
     </script>
 </body>
 </html>
+
