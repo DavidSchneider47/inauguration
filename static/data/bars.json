@@ -2548,5 +2548,383 @@
         "bar_lat": 38.9229305,
         "bar_lon": -77.0540902,
         "bar_distance_miles": 0.17
+    },
+ {
+        "bar_id": "256",
+        "bar_name": "World of Beer",
+        "station_id": "55",
+        "bar_website": "https://worldofbeer.com/Locations/Bethesda",
+        "bar_lat": 38.9813189,
+        "bar_lon": -77.0936619,
+        "bar_distance_miles": 0.22
+    },
+    {
+        "bar_id": "257",
+        "bar_name": "Tune Inn",
+        "station_id": "10",
+        "bar_website": "https://tuneinndc.com/",
+        "bar_lat": 38.8863674,
+        "bar_lon": -77.0010395,
+        "bar_distance_miles": 0.27
+    },
+    {
+        "bar_id": "258",
+        "bar_name": "Wilson Hardware",
+        "station_id": "71",
+        "bar_website": "https://wilsonhardwareva.com/",
+        "bar_lat": 38.8885324,
+        "bar_lon": -77.0937376,
+        "bar_distance_miles": 0.12
+    },
+    {
+        "bar_id": "259",
+        "bar_name": "B Live",
+        "station_id": "71",
+        "bar_website": "https://www.opentable.com/r/b-live-arlington",
+        "bar_lat": 38.8886228,
+        "bar_lon": -77.0928983,
+        "bar_distance_miles": 0.15
+    },
+    {
+        "bar_id": "260",
+        "bar_name": "Screwtop",
+        "station_id": "71",
+        "bar_website": "https://screwtopwinebar.com/",
+        "bar_lat": 38.8854493,
+        "bar_lon": -77.0927166,
+        "bar_distance_miles": 0.17
+    },
+    {
+        "bar_id": "261",
+        "bar_name": "Big Tony's Pizzeria & Dive Bar",
+        "station_id": "71",
+        "bar_website": "https://bigtonyspizzabar.com/",
+        "bar_lat": 38.8865894,
+        "bar_lon": -77.0952972,
+        "bar_distance_miles": 0.04
+    },
+    {
+        "bar_id": "262",
+        "bar_name": "Cleveland Park Bar & Grill",
+        "station_id": "17",
+        "bar_website": "https://cpbargrill.com/",
+        "bar_lat": 38.9345294,
+        "bar_lon": -77.0574542,
+        "bar_distance_miles": 0.11
+    },
+    {
+        "bar_id": "263",
+        "bar_name": "El Chucho",
+        "station_id": "21",
+        "bar_website": "https://www.elchuchodc.com",
+        "bar_lat": 38.9310878,
+        "bar_lon": -77.0278139,
+        "bar_distance_miles": 0.3
+    },
+    {
+        "bar_id": "264",
+        "bar_name": "McNamara's Pub and Restaurant",
+        "station_id": "74",
+        "bar_website": "https://www.facebook.com/mcnamaraspubarlington/",
+        "bar_lat": 38.8535606,
+        "bar_lon": -77.0551088,
+        "bar_distance_miles": 0.39
+    },
+    {
+        "bar_id": "265",
+        "bar_name": "Freddie's Beach Bar",
+        "station_id": "74",
+        "bar_website": "https://www.freddiesbeachbar.com/",
+        "bar_lat": 38.8535647,
+        "bar_lon": -77.0549093,
+        "bar_distance_miles": 0.38
+    },
+    {
+        "bar_id": "266",
+        "bar_name": "Crystal City Sports Pub",
+        "station_id": "74",
+        "bar_website": "http://www.ccsportspub.com/",
+        "bar_lat": 38.8535786,
+        "bar_lon": -77.0543147,
+        "bar_distance_miles": 0.36
+    },
+    {
+        "bar_id": "267",
+        "bar_name": "Potomac Social Tavern",
+        "station_id": "74",
+        "bar_website": "https://www.potomacsocialtavern.com/",
+        "bar_lat": 38.8606032,
+        "bar_lon": -77.0507283,
+        "bar_distance_miles": 0.16
+    },
+    {
+        "bar_id": "268",
+        "bar_name": "Across The Pond",
+        "station_id": "37",
+        "bar_website": "https://www.acrosstheponddc.com",
+        "bar_lat": 38.9136169,
+        "bar_lon": -77.0461128,
+        "bar_distance_miles": 0.19
+    },
+    {
+        "bar_id": "269",
+        "bar_name": "Cafe Citron",
+        "station_id": "37",
+        "bar_website": "https://www.cafecitrondc.com/",
+        "bar_lat": 38.9083502,
+        "bar_lon": -77.0423666,
+        "bar_distance_miles": 0.22
+    },
+    {
+        "bar_id": "270",
+        "bar_name": "City Tap House",
+        "station_id": "37",
+        "bar_website": "https://www.citytap.com/location/dupont/",
+        "bar_lat": 38.9070664,
+        "bar_lon": -77.0422858,
+        "bar_distance_miles": 0.3
+    },
+    {
+        "bar_id": "271",
+        "bar_name": "Jack Rose Dining Saloon",
+        "station_id": "37",
+        "bar_website": "https://jackrosediningsaloon.com/",
+        "bar_lat": 38.9173962,
+        "bar_lon": -77.0413168,
+        "bar_distance_miles": 0.46
+    },
+    {
+        "bar_id": "272",
+        "bar_name": "Mr. Henry's",
+        "station_id": "8",
+        "bar_website": "https://www.mrhenrysdc.com/",
+        "bar_lat": 38.8851718,
+        "bar_lon": -76.9982684,
+        "bar_distance_miles": 0.19
+    },
+    {
+        "bar_id": "273",
+        "bar_name": "Ginza BBQ Lounge & Karaoke",
+        "station_id": "8",
+        "bar_website": "https://www.ginzaktv.com/",
+        "bar_lat": 38.881838,
+        "bar_lon": -76.9945744,
+        "bar_distance_miles": 0.16
+    },
+    {
+        "bar_id": "274",
+        "bar_name": "Duke's Grocery",
+        "station_id": "39",
+        "bar_website": "https://www.dukesgrocery.com/",
+        "bar_lat": 38.9005101,
+        "bar_lon": -77.0457822,
+        "bar_distance_miles": 0.23
+    },
+    {
+        "bar_id": "275",
+        "bar_name": "Marshall's",
+        "station_id": "39",
+        "bar_website": "https://marshallsbar.wordpress.com/",
+        "bar_lat": 38.9035492,
+        "bar_lon": -77.0543245,
+        "bar_distance_miles": 0.3
+    },
+    {
+        "bar_id": "276",
+        "bar_name": "Capital Ale House",
+        "station_id": "113",
+        "bar_website": "https://www.capitalalehouse.com/",
+        "bar_lat": 38.3034568,
+        "bar_lon": -77.4588351,
+        "bar_distance_miles": 0.35
+    },
+    {
+        "bar_id": "277",
+        "bar_name": "The Smith",
+        "station_id": "5",
+        "bar_website": "https://thesmithrestaurant.com/location/penn-quarter/",
+        "bar_lat": 38.8975159,
+        "bar_lon": -77.0242722,
+        "bar_distance_miles": 0.16
+    },
+    {
+        "bar_id": "278",
+        "bar_name": "Tom's Watch Bar",
+        "station_id": "5",
+        "bar_website": "https://tomswatchbar.com/location/dc-chinatown/",
+        "bar_lat": 38.8995056,
+        "bar_lon": -77.0216825,
+        "bar_distance_miles": 0.08
+    },
+    {
+        "bar_id": "279",
+        "bar_name": "Present Company Public House",
+        "station_id": "5",
+        "bar_website": "https://presentcompanydc.com/",
+        "bar_lat": 38.9002294,
+        "bar_lon": -77.017269,
+        "bar_distance_miles": 0.26
+    },
+    {
+        "bar_id": "280",
+        "bar_name": "Saint Vincent Wine",
+        "station_id": "22",
+        "bar_website": "https://www.stvincentwine.com/",
+        "bar_lat": 38.9304437,
+        "bar_lon": -77.0236512,
+        "bar_distance_miles": 0.4
+    },
+    {
+        "bar_id": "281",
+        "bar_name": "The Artemis",
+        "station_id": "22",
+        "bar_website": "https://theartemisdc.com/",
+        "bar_lat": 38.9364195,
+        "bar_lon": -77.0324099,
+        "bar_distance_miles": 0.44
+    },
+    {
+        "bar_id": "282",
+        "bar_name": "Miller's Ale House",
+        "station_id": "50",
+        "bar_website": "https://millersalehouse.com/",
+        "bar_lat": 38.9673315,
+        "bar_lon": -76.9602622,
+        "bar_distance_miles": 0.27
+    },
+    {
+        "bar_id": "283",
+        "bar_name": "Hamilton's Bar and Grill",
+        "station_id": "4",
+        "bar_website": "https://www.hamiltonsdc.com/",
+        "bar_lat": 38.893256,
+        "bar_lon": -77.0134424,
+        "bar_distance_miles": 0.25
+    },
+    {
+        "bar_id": "284",
+        "bar_name": "Olde Towne Sports Pub",
+        "station_id": "100",
+        "bar_website": "https://oldtownesportspub.com/",
+        "bar_lat": 38.7511331,
+        "bar_lon": -77.4677547,
+        "bar_distance_miles": 0.28
+    },
+    {
+        "bar_id": "285",
+        "bar_name": "Solace Outpost Navy Yard",
+        "station_id": "9",
+        "bar_website": "https://solacebrewing.com/",
+        "bar_lat": 38.8704844,
+        "bar_lon": -77.0070829,
+        "bar_distance_miles": 0.43
+    },
+    {
+        "bar_id": "286",
+        "bar_name": "The Big Stick",
+        "station_id": "9",
+        "bar_website": "https://thebigstick.com/",
+        "bar_lat": 38.8766654,
+        "bar_lon": -77.0076304,
+        "bar_distance_miles": 0.16
+    },
+    {
+        "bar_id": "287",
+        "bar_name": "Pub and the People",
+        "station_id": "6",
+        "bar_website": "https://thepubandthepeople.com/",
+        "bar_lat": 38.9124266,
+        "bar_lon": -77.009312,
+        "bar_distance_miles": 0.49
+    },
+    {
+        "bar_id": "288",
+        "bar_name": "Brewer's Art",
+        "station_id": "148",
+        "bar_website": "https://www.thebrewersart.com/",
+        "bar_lat": 39.3027444,
+        "bar_lon": -76.6162082,
+        "bar_distance_miles": 0.3
+    },
+    {
+        "bar_id": "289",
+        "bar_name": "Nighthawk Pizza & Brewery",
+        "station_id": "76",
+        "bar_website": "https://www.nighthawkbrewery.co/",
+        "bar_lat": 38.8631151,
+        "bar_lon": -77.0624715,
+        "bar_distance_miles": 0.18
+    },
+    {
+        "bar_id": "290",
+        "bar_name": "Barcelona",
+        "station_id": "92",
+        "bar_website": "https://barcelonawinebar.com/location/reston/",
+        "bar_lat": 38.9580722,
+        "bar_lon": -77.3607943,
+        "bar_distance_miles": 0.37
+    },
+    {
+        "bar_id": "291",
+        "bar_name": "Vibes Hookah Lounge",
+        "station_id": "58",
+        "bar_website": "https://www.yelp.com/biz/vibes-hookah-lounge-rockville-4",
+        "bar_lat": 39.0888847,
+        "bar_lon": -77.1538761,
+        "bar_distance_miles": 0.45
+    },
+    {
+        "bar_id": "292",
+        "bar_name": "Finnegan's Wake Irish Pub",
+        "station_id": "58",
+        "bar_website": "http://www.finneganswakerockville.com/",
+        "bar_lat": 39.0856145,
+        "bar_lon": -77.1521144,
+        "bar_distance_miles": 0.29
+    },
+    {
+        "bar_id": "293",
+        "bar_name": "Takoda",
+        "station_id": "2",
+        "bar_website": "http://www.takodadc.com",
+        "bar_lat": 38.9167467,
+        "bar_lon": -77.0226273,
+        "bar_distance_miles": 0.16
+    },
+    {
+        "bar_id": "294",
+        "bar_name": "Maxwell",
+        "station_id": "2",
+        "bar_website": "https://www.maxwellparkdc.com/",
+        "bar_lat": 38.9084206,
+        "bar_lon": -77.0241595,
+        "bar_distance_miles": 0.44
+    },
+    {
+        "bar_id": "295",
+        "bar_name": "Sir Sandwich Co",
+        "station_id": "94",
+        "bar_website": "https://sirsandwichco.com/",
+        "bar_lat": 38.9317841,
+        "bar_lon": -77.238352,
+        "bar_distance_miles": 0.26
+    },
+    {
+        "bar_id": "296",
+        "bar_name": "Flair restaurant & Lounge",
+        "station_id": "20",
+        "bar_website": "https://www.flairdc14.com/",
+        "bar_lat": 38.9195867,
+        "bar_lon": -77.0321836,
+        "bar_distance_miles": 0.24
+    },
+    {
+        "bar_id": "297",
+        "bar_name": "Darna",
+        "station_id": "78",
+        "bar_website": "https://www.darnava.com/",
+        "bar_lat": 38.8840473,
+        "bar_lon": -77.0996057,
+        "bar_distance_miles": 0.24
     }
 ]
