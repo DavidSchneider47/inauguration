@@ -2320,7 +2320,7 @@
         "coffee_lon": -77.0523658,
         "coffee_distance_miles": 0.09
     },
-    {
+{
         "coffee_id": "212",
         "station_name": "WOODLEY PARK-ZOO METRO STATION",
         "station_id": "19",
@@ -2330,5 +2330,293 @@
         "coffee_lat": 38.9245432,
         "coffee_lon": -77.0517705,
         "coffee_distance_miles": 0.04
+    },
+    {
+        "coffee_id": "213",
+        "coffee_name": "IHOP",
+        "station_id": "77",
+        "coffee_website": "http://restaurants.ihop.com/va/arlington/504/",
+        "coffee_lat": 38.8820809,
+        "coffee_lon": -77.110051,
+        "coffee_distance_miles": 0.08
+    },
+    {
+        "coffee_id": "214",
+        "coffee_name": "Silver Diner",
+        "station_id": "77",
+        "coffee_website": "https://www.silverdiner.com/",
+        "coffee_lat": 38.8796718,
+        "coffee_lon": -77.1139745,
+        "coffee_distance_miles": 0.22
+    },
+    {
+        "coffee_id": "215",
+        "coffee_name": "The Original Pancake House",
+        "station_id": "55",
+        "coffee_website": "https://www.ophrestaurants.com/",
+        "coffee_lat": 38.9866468,
+        "coffee_lon": -77.0955539,
+        "coffee_distance_miles": 0.17
+    },
+    {
+        "coffee_id": "216",
+        "coffee_name": "Jimmy T's",
+        "station_id": "10",
+        "coffee_website": "https://www.yelp.com/biz/jimmy-ts-place-washington-2",
+        "coffee_lat": 38.8895062,
+        "coffee_lon": -76.999307,
+        "coffee_distance_miles": 0.44
+    },
+    {
+        "coffee_id": "217",
+        "coffee_name": "IHOP",
+        "station_id": "21",
+        "coffee_website": "https://restaurants.ihop.com/en-us/dc/washington/breakfast-3100-14th-st-nw-3332",
+        "coffee_lat": 38.9288994,
+        "coffee_lon": -77.0336861,
+        "coffee_distance_miles": 0.07
+    },
+    {
+        "coffee_id": "218",
+        "coffee_name": "Bob & Edith's Diner",
+        "station_id": "74",
+        "coffee_website": "https://www.bobandedithsdiner.com/",
+        "coffee_lat": 38.8535614,
+        "coffee_lon": -77.0544852,
+        "coffee_distance_miles": 0.37
+    },
+    {
+        "coffee_id": "219",
+        "coffee_name": "Bullfrog Bagels",
+        "station_id": "8",
+        "coffee_website": "https://www.bullfrogbagels.com/",
+        "coffee_lat": 38.8855934,
+        "coffee_lon": -76.996384,
+        "coffee_distance_miles": 0.12
+    },
+    {
+        "coffee_id": "220",
+        "coffee_name": "Market Lunch",
+        "station_id": "8",
+        "coffee_website": "https://www.marketlunchdc.com/",
+        "coffee_lat": 38.8866354,
+        "coffee_lon": -76.9963985,
+        "coffee_distance_miles": 0.19
+    },
+    {
+        "coffee_id": "221",
+        "coffee_name": "The Green Bee",
+        "station_id": "38",
+        "coffee_website": "https://www.thegreenbeecafe.com/",
+        "coffee_lat": 38.9046242,
+        "coffee_lon": -77.0446612,
+        "coffee_distance_miles": 0.29
+    },
+    {
+        "coffee_id": "222",
+        "coffee_name": "Captain Cookie",
+        "station_id": "39",
+        "coffee_website": "https://www.captaincookiedc.com/",
+        "coffee_lat": 38.9005524,
+        "coffee_lon": -77.0463645,
+        "coffee_distance_miles": 0.2
+    },
+    {
+        "coffee_id": "223",
+        "coffee_name": "The Coupe",
+        "station_id": "22",
+        "coffee_website": "https://www.thecoupedc.com/",
+        "coffee_lat": 38.9327327,
+        "coffee_lon": -77.0282624,
+        "coffee_distance_miles": 0.33
+    },
+    {
+        "coffee_id": "224",
+        "coffee_name": "Call Your Mother",
+        "station_id": "22",
+        "coffee_website": "https://www.callyourmotherdeli.com/",
+        "coffee_lat": 38.931364,
+        "coffee_lon": -77.023315,
+        "coffee_distance_miles": 0.34
+    },
+    {
+        "coffee_id": "225",
+        "coffee_name": "Cane & Coconut",
+        "station_id": "22",
+        "coffee_website": "http://www.caneandcoconut.com/",
+        "coffee_lat": 38.9329352,
+        "coffee_lon": -77.0236,
+        "coffee_distance_miles": 0.23
+    },
+    {
+        "coffee_id": "226",
+        "coffee_name": "Table Talk",
+        "station_id": "86",
+        "coffee_website": "https://www.tabletalkdiner.co/",
+        "coffee_lat": 38.8044815,
+        "coffee_lon": -77.0594308,
+        "coffee_distance_miles": 0.16
+    },
+    {
+        "coffee_id": "227",
+        "coffee_name": "Bob and Edith's Diner",
+        "station_id": "86",
+        "coffee_website": "https://www.bobandedithsdiner.com/",
+        "coffee_lat": 38.8068285,
+        "coffee_lon": -77.0589918,
+        "coffee_distance_miles": 0.1
+    },
+    {
+        "coffee_id": "228",
+        "coffee_name": "Tastee Diner",
+        "station_id": "140",
+        "coffee_website": "https://www.yelp.com/biz/tastee-diner-laurel",
+        "coffee_lat": 39.1031543,
+        "coffee_lon": -76.8438948,
+        "coffee_distance_miles": 0.13
+    },
+    {
+        "coffee_id": "229",
+        "coffee_name": "Bistro du Jour",
+        "station_id": "36",
+        "coffee_website": "https://bistro-dujour.com/",
+        "coffee_lat": 38.8795506,
+        "coffee_lon": -77.025414,
+        "coffee_distance_miles": 0.42
+    },
+    {
+        "coffee_id": "230",
+        "coffee_name": "Silver Diner",
+        "station_id": "9",
+        "coffee_website": "https://www.silverdiner.com/navyyard",
+        "coffee_lat": 38.8748339,
+        "coffee_lon": -77.0072681,
+        "coffee_distance_miles": 0.18
+    },
+    {
+        "coffee_id": "231",
+        "coffee_name": "Aunteaboba",
+        "station_id": "6",
+        "coffee_website": "https://www.aunteaboba.com/dc",
+        "coffee_lat": 38.9108327,
+        "coffee_lon": -77.0087382,
+        "coffee_distance_miles": 0.39
+    },
+    {
+        "coffee_id": "232",
+        "coffee_name": "Belvedere Bagels and Grill",
+        "station_id": "148",
+        "coffee_website": "http://www.belvederebagelsandgrill.com/",
+        "coffee_lat": 39.3019346,
+        "coffee_lon": -76.6158009,
+        "coffee_distance_miles": 0.36
+    },
+    {
+        "coffee_id": "233",
+        "coffee_name": "Baby's On Fire",
+        "station_id": "148",
+        "coffee_website": "https://www.babysonfire.com/",
+        "coffee_lat": 39.301527,
+        "coffee_lon": -76.6169291,
+        "coffee_distance_miles": 0.39
+    },
+    {
+        "coffee_id": "234",
+        "coffee_name": "Bullfrog Bagels",
+        "station_id": "27",
+        "coffee_website": "https://www.bullfrogbagels.com/",
+        "coffee_lat": 38.9257341,
+        "coffee_lon": -76.9926788,
+        "coffee_distance_miles": 0.38
+    },
+    {
+        "coffee_id": "235",
+        "coffee_name": "First Watch",
+        "station_id": "58",
+        "coffee_website": "https://www.firstwatch.com/locations/rockville",
+        "coffee_lat": 39.0854531,
+        "coffee_lon": -77.1521105,
+        "coffee_distance_miles": 0.29
+    },
+    {
+        "coffee_id": "236",
+        "coffee_name": "Classic Bakery",
+        "station_id": "94",
+        "coffee_website": "https://www.classicbakery.com/",
+        "coffee_lat": 38.9288833,
+        "coffee_lon": -77.2449903,
+        "coffee_distance_miles": 0.17
+    },
+    {
+        "coffee_id": "237",
+        "coffee_name": "Silver Diner",
+        "station_id": "60",
+        "coffee_website": "https://www.silverdiner.com/",
+        "coffee_lat": 39.0580897,
+        "coffee_lon": -77.1217644,
+        "coffee_distance_miles": 0.3
+    },
+    {
+        "coffee_id": "238",
+        "coffee_name": "The Original Pancake House",
+        "station_id": "60",
+        "coffee_website": "https://www.ophrestaurants.com/",
+        "coffee_lat": 39.0556891,
+        "coffee_lon": -77.1192985,
+        "coffee_distance_miles": 0.47
+    },
+    {
+        "coffee_id": "239",
+        "coffee_name": "Silver Diner",
+        "station_id": "96",
+        "coffee_website": "https://www.silverdiner.com/locations/tysons-corner",
+        "coffee_lat": 38.9168251,
+        "coffee_lon": -77.2261004,
+        "coffee_distance_miles": 0.36
+    },
+    {
+        "coffee_id": "240",
+        "coffee_name": "Charlotte Artisanal",
+        "station_id": "96",
+        "coffee_website": "https://www.facebook.com/Charlotteartisanal/",
+        "coffee_lat": 38.91798,
+        "coffee_lon": -77.2200982,
+        "coffee_distance_miles": 0.2
+    },
+    {
+        "coffee_id": "241",
+        "coffee_name": "butter me up",
+        "station_id": "20",
+        "coffee_website": "https://buttermeupdc.com/",
+        "coffee_lat": 38.9157294,
+        "coffee_lon": -77.0325266,
+        "coffee_distance_miles": 0.2
+    },
+    {
+        "coffee_id": "242",
+        "coffee_name": "Pan American Bakery & Grill",
+        "station_id": "83",
+        "coffee_website": "https://panamericanbakery.com/",
+        "coffee_lat": 38.8041515,
+        "coffee_lon": -77.1320639,
+        "coffee_distance_miles": 0.37
+    },
+    {
+        "coffee_id": "243",
+        "coffee_name": "Nick's Diner",
+        "station_id": "63",
+        "coffee_website": "https://nicksdiner.square.site/",
+        "coffee_lat": 39.0404717,
+        "coffee_lon": -77.0551312,
+        "coffee_distance_miles": 0.27
+    },
+    {
+        "coffee_id": "244",
+        "coffee_name": "Petit Monde Cafe",
+        "station_id": "19",
+        "coffee_website": "https://petitmondedc.com/",
+        "coffee_lat": 38.9250943,
+        "coffee_lon": -77.0520582,
+        "coffee_distance_miles": 0.02
     }
 ]
