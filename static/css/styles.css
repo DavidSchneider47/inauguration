@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    margin-top: 50px; /* Ensures content starts below the navbar */
+    margin-top: 45px; /* Reduced the margin-top to 45px from 50px */
 }
 
 header {
@@ -18,7 +18,7 @@ header {
 
 /* Styling for the title */
 header h1 {
-    margin: 0;
+    margin: 5px auto 0 auto; /* Reduced top margin to 5px to move the heading closer to the navbar */
     font-size: 24px;
 }
 
@@ -88,6 +88,14 @@ header p {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* Styling for the text container */
+.text-container {
+    width: 95%; /* Adjusted width to reduce padding */
+    max-width: 800px; /* Limit maximum width */
+    margin: 20px auto; /* Center the container */
+    text-align: center; /* Center the text inside */
 }
 
 /* Mobile Enhancements */
@@ -384,6 +392,29 @@ header p {
         padding: 10px;
     }
 }
+
+/* Station Header Styles */
+.station-header {
+    cursor: pointer;
+    display: flex;
+    align-items: center;      /* Centers items vertically */
+    justify-content: center;  /* Centers items horizontally */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+/* Amenities List Styles */
+.amenities-list {
+    list-style-type: none;
+    padding-left: 0;          /* Remove left padding to eliminate right-alignment */
+    margin-top: 10px;
+    display: none;            /* Hidden by default */
+    text-align: center;       /* Center-align text within the list */
+}
+
 
 /* Add margin to prevent the navbar from overlapping content */
 body {
