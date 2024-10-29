@@ -2,8 +2,7 @@
 console.log("map.js loaded successfully");
 
 // Initialize the map, centered on Washington, DC with zoom level 16
-const map = L.map('map').setView([38.898327
-,-77.027777], 16);
+const map = L.map('map').setView([38.898327, -77.027777], 16);
 
 // Add OpenStreetMap Carto tile layer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -68,12 +67,23 @@ function createPharmacyIcon() {
     });
 }
 
+// **New Function: Create a restaurant icon**
+function createRestaurantIcon() {
+    return L.divIcon({
+        html: `<i class="fas fa-utensils" style="font-size:${getIconSize()}px; color:orange;"></i>`,
+        className: 'fa-icon',
+        iconSize: [getIconSize(), getIconSize()],
+        iconAnchor: [getIconSize() / 2, getIconSize() / 2]
+    });
+}
+
 // Create Layer Groups for stations and amenities
 const markerGroup = L.layerGroup().addTo(map); // Layer for station markers
 const hotelLayer = L.layerGroup().addTo(map);
 const coffeeLayer = L.layerGroup().addTo(map);
 const barsLayer = L.layerGroup().addTo(map);
 const pharmacyLayer = L.layerGroup().addTo(map); // Layer for pharmacies
+const restaurantsLayer = L.layerGroup().addTo(map); // **New Layer for Restaurants**
 
 // Create a Layer Group for transit routes
 const transitLayer = L.layerGroup().addTo(map);
@@ -87,6 +97,7 @@ const overlayLayers = {
     "Coffee Shops": coffeeLayer,
     "Bars": barsLayer,
     "Pharmacies": pharmacyLayer, // Added Pharmacies to overlay layers
+    "Restaurants": restaurantsLayer, // **Added Restaurants to overlay layers**
     "Transit Routes": transitLayer // Added Transit Routes to overlay layers
 };
 
@@ -102,6 +113,7 @@ let hotelsData = [];        // To store all hotels
 let coffeeData = [];        // To store all coffee shops
 let barsData = [];          // To store all bars
 let pharmaciesData = [];    // To store all pharmacies
+let restaurantsData = [];   // **To store all restaurants**
 
 // ================================
 // Fetch and store stations
@@ -187,6 +199,23 @@ fetch('/api/pharmacies')
         filterAndDisplayAmenities(); // Initial display based on any existing search
     })
     .catch(error => console.error("Error fetching pharmacies:", error));
+
+// ================================
+// **New Section** Fetch and store restaurants
+// ================================
+fetch('/api/restaurants')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Network response was not ok (${response.statusText})`);
+        }
+        return response.json();
+    })
+    .then(restaurants => {
+        console.log("Fetched Restaurants:", restaurants); // Debugging
+        restaurantsData = restaurants; // Store restaurants data
+        filterAndDisplayAmenities(); // Initial display based on any existing search
+    })
+    .catch(error => console.error("Error fetching restaurants:", error));
 
 // ================================
 // Fetch and add transit routes GeoJSON
@@ -320,7 +349,7 @@ function addStationMarkers(filteredStations) {
         map.fitBounds(group.getBounds().pad(0.2), { maxZoom: 16 }); // Changed maxZoom to 16
     } else {
         // If no stations match, center back to default view
-        map.setView([38.898327,-77.027777], 16); // Changed zoom level to 16
+        map.setView([38.898327, -77.027777], 16); // Changed zoom level to 16
     }
 }
 
@@ -333,6 +362,7 @@ function addAmenitiesMarkers(filteredStations) {
     coffeeLayer.clearLayers();
     barsLayer.clearLayers();
     pharmacyLayer.clearLayers(); // Clear pharmacies layer
+    restaurantsLayer.clearLayers(); // **Clear restaurants layer**
 
     // Helper function to get amenities for a station
     function getAmenitiesByStation(stationId, dataArray) {
@@ -433,6 +463,29 @@ function addAmenitiesMarkers(filteredStations) {
                 console.warn(`Invalid coordinates for Pharmacy: ${name}`, pharmacy);
             }
         });
+
+        // **Add Restaurants**
+        const associatedRestaurants = getAmenitiesByStation(stationId, restaurantsData);
+        associatedRestaurants.forEach(restaurant => {
+            const lat = restaurant.restaurant_lat;
+            const lon = restaurant.restaurant_lon;
+            const name = restaurant.restaurant_name;
+            const website = restaurant.restaurant_website;
+
+            // Debugging: Log each restaurant's coordinates
+            console.log(`Restaurant: ${name} at (${lat}, ${lon})`);
+
+            // Check if lat and lon are valid numbers
+            if (typeof lat === 'number' && typeof lon === 'number') {
+                L.marker([lat, lon], {
+                    icon: createRestaurantIcon()
+                })
+                .addTo(restaurantsLayer)
+                .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`);
+            } else {
+                console.warn(`Invalid coordinates for Restaurant: ${name}`, restaurant);
+            }
+        });
     });
 }
 
@@ -528,4 +581,5 @@ function centerMapOnStation(stationId) {
 
 // Make the function globally accessible
 window.centerMapOnStation = centerMapOnStation;
+
 
