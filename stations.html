@@ -2,167 +2,165 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Heading Out on the Town? Make Your First Stop a Transit Station</title>
-    <div style="text-align: center; font-size: 0.9em; margin-top: -10px;">
-        <!-- Link to your custom CSS -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-        <!-- FontAwesome CSS for icons -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-        <!-- Load Leaflet JS only if map exists -->
-        <script>
-            // Check if the map container exists and load map.js only if it does
-            window.addEventListener('load', function() {
-                const mapContainer = document.getElementById('map');
-                if (mapContainer) {
-                    const script = document.createElement('script');
-                    script.src = "{{ url_for('static', filename='js/map.js') }}";
-                    document.head.appendChild(script);
-                    console.log('map.js loaded successfully for map page.');
-                }
-            });
-        </script>
-        <!-- Inline CSS Styles for Additional Styling -->
-        <style>
-            /* Navigation Bar Styles */
-            .navbar {
-                overflow: hidden;
-                background-color: #333;
-                font-family: Arial, Helvetica, sans-serif;
-                position: fixed;
-                top: 0;
-                width: 100%;
-                z-index: 1000;
-                display: flex;
-                align-items: center;
+    <title>Heading Out on the Town? Make Your First Stop a Station</title>
+    <!-- Link to your custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- FontAwesome CSS for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- Load Leaflet JS only if map exists -->
+    <script>
+        // Check if the map container exists and load map.js only if it does
+        window.addEventListener('load', function() {
+            const mapContainer = document.getElementById('map');
+            if (mapContainer) {
+                const script = document.createElement('script');
+                script.src = "{{ url_for('static', filename='js/map.js') }}";
+                document.head.appendChild(script);
+                console.log('map.js loaded successfully for map page.');
             }
+        });
+    </script>
+    <!-- Inline CSS Styles for Additional Styling -->
+    <style>
+        /* Navigation Bar Styles */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
 
-            .navbar a {
-                font-size: 16px;
-                color: white;
-                text-align: center;
-                padding: 14px 20px;
-                text-decoration: none;
-            }
+        .navbar a {
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
 
-            .navbar a:hover, .navbar a.active {
-                background-color: #ddd;
-                color: black;
-            }
+        .navbar a:hover, .navbar a.active {
+            background-color: #ddd;
+            color: black;
+        }
 
-            /* Search Container Styles */
+        /* Search Container Styles */
+        .search-container {
+            max-width: 800px;
+            margin: 80px auto 20px auto; /* Adjust top margin to account for navbar */
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-container input,
+        .search-container select,
+        .search-container button {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #clear-search {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #clear-search:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Line Circle Styles */
+        .line-circle {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 2px;
+            border: 1px solid #000; /* Optional border for better visibility */
+        }
+
+        /* Station Header Styles */
+        .station-header {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .station-header:hover {
+            background-color: #f1f1f1;
+        }
+
+        .station-header span.line-circle {
+            margin-right: 10px;
+        }
+
+        /* Station List Styles */
+        .station-list {
+            list-style-type: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .station-item {
+            margin-bottom: 15px;
+        }
+
+        /* Amenities List Styles */
+        .amenities-list {
+            list-style-type: none;
+            padding-left: 30px;
+            margin-top: 10px;
+            display: none; /* Hidden by default */
+        }
+
+        .amenities-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Loading and Error Messages */
+        .loading, .error {
+            font-style: italic;
+            color: #555;
+        }
+
+        /* Highlight Matching Stations */
+        .station-item.match {
+            background-color: #e0f7fa; /* Light cyan background */
+            transition: background-color 0.3s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
             .search-container {
-                max-width: 800px;
-                margin: 80px auto 20px auto; /* Adjust top margin to account for navbar */
-                display: flex;
-                gap: 10px;
-                justify-content: center;
-                align-items: center;
+                flex-direction: column;
+                align-items: stretch;
             }
 
-            .search-container input,
-            .search-container select,
-            .search-container button {
-                padding: 8px;
-                font-size: 16px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-            }
-
-            #clear-search {
-                background-color: #f44336;
-                color: white;
-                border: none;
-                cursor: pointer;
-            }
-
-            #clear-search:hover {
-                background-color: #d32f2f;
-            }
-
-            /* Line Circle Styles */
-            .line-circle {
-                display: inline-block;
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                margin-right: 2px;
-                border: 1px solid #000; /* Optional border for better visibility */
-            }
-
-            /* Station Header Styles */
             .station-header {
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                padding: 10px;
-                background-color: #f9f9f9;
-                border: 1px solid #ddd;
-                border-radius: 4px;
-                transition: background-color 0.3s;
-            }
-
-            .station-header:hover {
-                background-color: #f1f1f1;
+                flex-direction: column;
+                align-items: flex-start;
             }
 
             .station-header span.line-circle {
-                margin-right: 10px;
+                margin-bottom: 5px;
             }
-
-            /* Station List Styles */
-            .station-list {
-                list-style-type: none;
-                padding: 0;
-                max-width: 800px;
-                margin: 20px auto;
-            }
-
-            .station-item {
-                margin-bottom: 15px;
-            }
-
-            /* Amenities List Styles */
-            .amenities-list {
-                list-style-type: none;
-                padding-left: 30px;
-                margin-top: 10px;
-                display: none; /* Hidden by default */
-            }
-
-            .amenities-list li {
-                margin-bottom: 8px;
-            }
-
-            /* Loading and Error Messages */
-            .loading, .error {
-                font-style: italic;
-                color: #555;
-            }
-
-            /* Highlight Matching Stations */
-            .station-item.match {
-                background-color: #e0f7fa; /* Light cyan background */
-                transition: background-color 0.3s;
-            }
-
-            /* Responsive Design */
-            @media (max-width: 600px) {
-                .search-container {
-                    flex-direction: column;
-                    align-items: stretch;
-                }
-
-                .station-header {
-                    flex-direction: column;
-                    align-items: flex-start;
-                }
-
-                .station-header span.line-circle {
-                    margin-bottom: 5px;
-                }
-            }
-        </style>
-    </div>
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -176,17 +174,18 @@
         <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
             <i class="fas fa-route"></i> Itineraries
         </a>
-        <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
-            <i class="fas fa-info-circle"></i> About
-        </a>
     </div>
 
-    <h1 style="text-align: center; margin-top: 80px;">Heading Out on the Town? Make Your First Stop a Transit Station</h1>
-    <!-- New descriptive text -->
-    <p style="font-size: 1.1em; max-width: 800px; margin: 20px auto;">
-        What if there was a “highway exit sign” for transit stations that identified places to stay, eat, drink, and shop near the station? Now there is. Click the stations below or search by station or line for destinations a short walk from transit.
-    </p>
+    <h1 style="text-align: center; margin-top: 80px;">Heading Out on the Town? Make Your First Stop a Transit Sation</h1>
 
+<img src="{{ url_for('static', filename='images/sign.jpg') }}" alt="Exit Sign" style="display: block; margin: 20px auto; width: 60%; max-width: 450px; height: auto;">
+
+
+<div class="text-container">
+        <p>
+        What if there were the equivalent of highway exit signs that direct you to places to stay, eat, drink, and shop near transit stations? Now there are! Use this page to explore neighborhoods near transit, plan your outing, and find places to meet up with friends. Click a station to see what's nearby or enter a station or line in the filter and head over to the map page for a visual.
+    </p>
+<div>
     <!-- Search Container -->
     <div class="search-container">
         <input type="text" id="station-search" placeholder="Search for a station..." aria-label="Search for a station" />
@@ -396,22 +395,20 @@
                             fetch(`/api/stations/${stationId}/coffee`),
                             fetch(`/api/stations/${stationId}/bars`),
                             fetch(`/api/stations/${stationId}/pharmacies`),
-                            fetch(`/api/stations/${stationId}/restaurants`) // **Fetch restaurants**
+                            fetch(`/api/stations/${stationId}/restaurants`) // New fetch for restaurants
                         ]);
 
                         // Check if all fetches were successful
                         if (!hotelsResponse.ok || !coffeeResponse.ok || !barsResponse.ok || !pharmaciesResponse.ok || !restaurantsResponse.ok) {
-                            throw new Error('Failed to fetch one or more amenities data.');
+                            throw new Error('Failed to fetch amenities data.');
                         }
 
                         // Parse JSON responses
-                        const [hotels, coffeeShops, bars, pharmacies, restaurants] = await Promise.all([
-                            hotelsResponse.json(),
-                            coffeeResponse.json(),
-                            barsResponse.json(),
-                            pharmaciesResponse.json(),
-                            restaurantsResponse.json() // **Parse restaurants**
-                        ]);
+                        const hotels = await hotelsResponse.json();
+                        const coffeeShops = await coffeeResponse.json();
+                        const bars = await barsResponse.json();
+                        const pharmacies = await pharmaciesResponse.json();
+                        const restaurants = await restaurantsResponse.json(); // Parse restaurants data
 
                         // Clear the amenities list
                         amenitiesList.innerHTML = '';
@@ -422,7 +419,7 @@
                             hotels.forEach(hotel => {
                                 amenitiesList.innerHTML += `
                                     <li>
-                                        <i class="fas fa-bed" style="color: blue;"></i>
+                                        <i class="fas fa-bed" style="color: black;"></i>
                                         <a href="${hotel.hotel_website}" target="_blank">${hotel.hotel_name}</a>
                                         - ${hotel.hotel_distance_miles} miles
                                     </li>
@@ -438,7 +435,7 @@
                             coffeeShops.forEach(shop => {
                                 amenitiesList.innerHTML += `
                                     <li>
-                                        <i class="fas fa-coffee" style="color: brown;"></i>
+                                        <i class="fas fa-coffee" style="color: black;"></i>
                                         <a href="${shop.coffee_website}" target="_blank">${shop.coffee_name}</a>
                                         - ${shop.coffee_distance_miles} miles
                                     </li>
@@ -454,7 +451,7 @@
                             bars.forEach(bar => {
                                 amenitiesList.innerHTML += `
                                     <li>
-                                        <i class="fas fa-beer" style="color: purple;"></i>
+                                        <i class="fas fa-beer" style="color: black;"></i>
                                         <a href="${bar.bar_website}" target="_blank">${bar.bar_name}</a>
                                         - ${bar.bar_distance_miles} miles
                                     </li>
@@ -470,7 +467,7 @@
                             pharmacies.forEach(pharmacy => {
                                 amenitiesList.innerHTML += `
                                     <li>
-                                        <i class="fas fa-pills" style="color: red;"></i>
+                                        <i class="fas fa-pills" style="color: black;"></i>
                                         <a href="${pharmacy.pharmacy_website}" target="_blank">${pharmacy.pharmacy_name}</a>
                                         - ${pharmacy.pharmacy_distance_miles} miles
                                     </li>
@@ -480,19 +477,19 @@
                             amenitiesList.innerHTML += '<li>No pharmacies found nearby.</li>';
                         }
 
-                        // **Populate Restaurants**
+                        // Populate Restaurants
                         if (restaurants.length > 0) {
                             amenitiesList.innerHTML += '<li><strong>Restaurants:</strong></li>';
                             restaurants.forEach(restaurant => {
                                 amenitiesList.innerHTML += `
                                     <li>
-                                        <i class="fas fa-utensils" style="color: orange;"></i>
+                                        <i class="fas fa-utensils" style="color: black;"></i>
                                         <a href="${restaurant.restaurant_website}" target="_blank">${restaurant.restaurant_name}</a>
                                         - ${restaurant.restaurant_distance_miles} miles
                                         <br>
-                                        <span style="margin-left: 20px;">Cuisine: ${restaurant.restaurant_cuisine_type}</span>
+                                        <span style="margin-left: 24px;">Cuisine: ${restaurant.restaurant_cuisine_type}</span>
                                         <br>
-                                        <span style="margin-left: 20px;">Price: ${restaurant.restaurant_price}</span>
+                                        <span style="margin-left: 24px;">Price: ${restaurant.restaurant_price}</span>
                                     </li>
                                 `;
                             });
@@ -515,5 +512,9 @@
     </script>
 </body>
 </html>
+
+
+
+
 
 
