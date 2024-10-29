@@ -381,16 +381,17 @@
 
                         console.log('Fetching amenities for station:', stationId); // Debugging log
 
-                        // Fetch hotels, coffee shops, bars, and pharmacies concurrently
-                        const [hotelsResponse, coffeeResponse, barsResponse, pharmaciesResponse] = await Promise.all([
+                        // Fetch hotels, coffee shops, bars, pharmacies, and restaurants concurrently
+                        const [hotelsResponse, coffeeResponse, barsResponse, pharmaciesResponse, restaurantsResponse] = await Promise.all([
                             fetch(`/api/stations/${stationId}/hotels`),
                             fetch(`/api/stations/${stationId}/coffee`),
                             fetch(`/api/stations/${stationId}/bars`),
-                            fetch(`/api/stations/${stationId}/pharmacies`)
+                            fetch(`/api/stations/${stationId}/pharmacies`),
+                            fetch(`/api/stations/${stationId}/restaurants`) // New fetch for restaurants
                         ]);
 
                         // Check if all fetches were successful
-                        if (!hotelsResponse.ok || !coffeeResponse.ok || !barsResponse.ok || !pharmaciesResponse.ok) {
+                        if (!hotelsResponse.ok || !coffeeResponse.ok || !barsResponse.ok || !pharmaciesResponse.ok || !restaurantsResponse.ok) {
                             throw new Error('Failed to fetch amenities data.');
                         }
 
@@ -399,6 +400,7 @@
                         const coffeeShops = await coffeeResponse.json();
                         const bars = await barsResponse.json();
                         const pharmacies = await pharmaciesResponse.json();
+                        const restaurants = await restaurantsResponse.json(); // Parse restaurants data
 
                         // Clear the amenities list
                         amenitiesList.innerHTML = '';
@@ -467,6 +469,26 @@
                             amenitiesList.innerHTML += '<li>No pharmacies found nearby.</li>';
                         }
 
+                        // Populate Restaurants
+                        if (restaurants.length > 0) {
+                            amenitiesList.innerHTML += '<li><strong>Restaurants:</strong></li>';
+                            restaurants.forEach(restaurant => {
+                                amenitiesList.innerHTML += `
+                                    <li>
+                                        <i class="fas fa-utensils" style="color: black;"></i>
+                                        <a href="${restaurant.restaurant_website}" target="_blank">${restaurant.restaurant_name}</a>
+                                        - ${restaurant.restaurant_distance_miles} miles
+                                        <br>
+                                        <span style="margin-left: 24px;">Cuisine: ${restaurant.restaurant_cuisine_type}</span>
+                                        <br>
+                                        <span style="margin-left: 24px;">Price: ${restaurant.restaurant_price}</span>
+                                    </li>
+                                `;
+                            });
+                        } else {
+                            amenitiesList.innerHTML += '<li>No restaurants found nearby.</li>';
+                        }
+
                         // Mark as loaded to prevent future fetches
                         amenitiesList.dataset.loaded = 'true';
                     } catch (error) {
@@ -482,5 +504,9 @@
     </script>
 </body>
 </html>
+
+
+
+
 
 
