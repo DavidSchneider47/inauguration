@@ -193,7 +193,8 @@
 
     <!-- Search Container -->
     <div class="search-container">
-        <input type="text" id="station-search" placeholder="Search for a station..." aria-label="Search for a station" />
+        <input type="text" id="station-search" placeholder="Search for a station..." aria-label="Search for a station" list="station-list" />
+        <datalist id="station-list"></datalist>
         <select id="line-search" aria-label="Filter by transit line">
             <option value="">All Lines</option>
             <option value="Red">Red</option>
@@ -205,7 +206,6 @@
             <option value="MARC">MARC</option>
             <option value="VRE">VRE</option>
         </select>
-        <!-- New Clear Search Button with Clear Search Function -->
         <button id="clearButton" onclick="clearSearch()">Clear Search</button>
     </div>
 
@@ -285,7 +285,7 @@
         // Event Listeners for Search Inputs
         document.getElementById('station-search').addEventListener('input', debounce(handleSearchChange, 300));
         document.getElementById('line-search').addEventListener('change', handleSearchChange);
-        document.getElementById('clear-search').addEventListener('click', handleClearSearch);
+        document.getElementById('clearButton').addEventListener('click', handleClearSearch);
 
         // Listen for storage events to synchronize search across pages
         window.addEventListener('storage', (event) => {
@@ -304,4 +304,5 @@
     </script>
 </body>
 </html>
+
 
