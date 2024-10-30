@@ -582,4 +582,26 @@ function centerMapOnStation(stationId) {
 // Make the function globally accessible
 window.centerMapOnStation = centerMapOnStation;
 
+// ================================
+// Function to clear search and reset map view
+// ================================
+function clearSearch() {
+    // Remove station and line queries from local storage
+    localStorage.removeItem('stationQuery');
+    localStorage.removeItem('lineQuery');
+    
+    // Reset map view to center on Washington DC with zoom level 16
+    map.setView([38.898327, -77.027777], 16);
+
+    // Call the functions to reset markers and transit routes
+    filterAndDisplayMarkers();
+    filterTransitRoutes(''); // Pass an empty string to show all routes
+}
+
+// ================================
+// Event listeners for various actions
+// ================================
+document.getElementById('clearButton').addEventListener('click', clearSearch);
+
+
 
