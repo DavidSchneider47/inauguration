@@ -603,5 +603,56 @@ function clearSearch() {
 // ================================
 document.getElementById('clearButton').addEventListener('click', clearSearch);
 
+// ================================
+// Function to filter station drop-down based on input
+// ================================
+function updateStationDropdown() {
+    const stationSearchInput = document.getElementById('station-search').value.toLowerCase();
+    const dataList = document.getElementById('station-list');
+    
+    // Clear existing options
+    dataList.innerHTML = '';
 
+    // Filter stations based on input
+    const matchingStations = stationsData.filter(station => 
+        station.station_name.toLowerCase().includes(stationSearchInput)
+    );
+
+    // Create new options for matching stations
+    matchingStations.forEach(station => {
+        const option = document.createElement('option');
+        option.value = station.station_name;
+        dataList.appendChild(option);
+    });
+}
+
+// ================================
+// Function to handle station selection from drop-down
+// ================================
+function handleStationSelection() {
+    const selectedStationName = document.getElementById('station-search').value;
+    
+    // Find the station that matches the selected name
+    const selectedStation = stationsData.find(station => 
+        station.station_name.toLowerCase() === selectedStationName.toLowerCase()
+    );
+
+    if (selectedStation) {
+        // Center map on selected station
+        centerMapOnStation(selectedStation.station_id);
+    } else {
+        // If no match found, clear the map view
+        map.setView([38.898327, -77.027777], 16);
+    }
+}
+
+// Event Listener to Update Station Dropdown as User Types
+document.getElementById('station-search').addEventListener('input', () => {
+    updateStationDropdown();
+});
+
+// Event Listener to Handle Station Selection from the List
+document.getElementById('station-search').addEventListener('change', () => {
+    handleStationSelection();
+});
 
