@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Search Destinations by Station</title>
+    <title>Heading Out on the Town? Make Your First Stop a Station</title>
     <!-- Link to your custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <!-- FontAwesome CSS for icons -->
@@ -174,10 +174,21 @@
         <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
             <i class="fas fa-route"></i> Itineraries
         </a>
-    </div>
+  <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
+            <i class="fas fa-info-circle"></i> About
+<a/>
+     </div>
 
-    <h1 style="text-align: center; margin-top: 80px;">Search Destinations by Station</h1>
+    <h1 style="text-align: center; margin-top: 80px;">Heading Out on the Town? Make Your First Stop a Transit Station</h1>
 
+<img src="{{ url_for('static', filename='images/sign.jpg') }}" alt="Exit Sign" style="display: block; margin: 20px auto; width: 60%; max-width: 450px; height: auto;">
+
+
+<div class="text-container">
+        <p>
+        What if there were the equivalent of highway exit signs that direct you to places to stay, eat, drink, and shop near transit stations? Now there are! Use this page to explore neighborhoods near transit, plan your outing, and find places to meet up with friends. Click a station to see what's nearby or enter a station or line in the filter and head over to the map page for a visual.
+    </p>
+<div>
     <!-- Search Container -->
     <div class="search-container">
         <input type="text" id="station-search" placeholder="Search for a station..." aria-label="Search for a station" />
