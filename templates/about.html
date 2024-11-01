@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <!-- FontAwesome CSS for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
+            <i class="fas fa-map-marker-alt"></i> Home (Map)
+        </a>
+        <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
+            <i class="fas fa-list"></i> Stations List
+        </a>
+        <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
+            <i class="fas fa-route"></i> Itineraries
+        </a>
+        <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
+            <i class="fas fa-info-circle"></i> About
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="about-main">
+
+<img src="{{ url_for('static', filename='images/escalator.jpg') }}" alt="Escalators" style="display: block; margin: 20px auto; width: 80%; max-width: 600px; height: auto;">
+
+        <h1>Visit DC Car-Free</h1>
+        <p>
+        Are you coming to Washington DC to watch President-Elect Kamala Harris make history? Do you need a place to stay? Are you searching for destinations to eat, drink, shop, and celebrate? <strong>Transit Inauguration</strong> has you covered. Browse our database of hundreds of hotels, restaurants, cafes, and nightlife within walking distance from Metro, MARC, and VRE. Lower your carbon footprint, save money, time, and hassle, and experience the region like a local for an Inauguration weekend to remember.
+    </p>
+
+        <h2>Data by the People, for the People</h2>
+        <p><strong>Transit Inauguration</strong> is built on information from OpenStreetMap (OSM) is a collaborative project that creates a free, editable map of the world, powered by a global community of contributors. OSM provides detailed, up-to-date geographic data contributed and maintained by people like you. This open-data initiative aims to empower individuals, organizations, and communities by making geographic information accessible to all.</p>
+
+        <h2>About the Content Creator</h2>
+
+<img src="{{ url_for('static', filename='images/content_creator.jpg') }}" alt="Photo of David Schneider" style="display: block; margin: 20px auto; width: 200px; height: auto;">
+
+        
+<p><strong>David Schneider </strong> (he/him/his) is a data scientist, storyteller, activist, teacher, and founder of Schneider Analytics, which builds digital tools for the public good. Prior to starting his own business, he worked for over twenty years as a career civil servant with the Federal Transit Administration. David grew up in Washington DC and lives near the Silver Spring Metro station.</p>
+
+     <h2>Bring Transit Tourism to Your Hometown </h2>
+<p> If you are intrigued by what you see on this platform and would like to develop something similar for your community, please reach out for a consultation by emailing connect@transitdiscoveries.com or visit <a href="https://www.transitorienteddiscoveries.com/" target="_blank">Transit-Oriented Discoveries</a><p> 
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="about-footer">
+        <p>&copy; 2024 Transit Inauguration. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
