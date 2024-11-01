@@ -65,6 +65,14 @@ def api_pharmacies():
         return jsonify({"message": "No pharmacies found."}), 200
     return jsonify(pharmacies)
 
+# **New API route to get all restaurants**
+@app.route('/api/restaurants')
+def api_restaurants():
+    restaurants = load_data('restaurants.json')
+    if not restaurants:
+        return jsonify({"message": "No restaurants found."}), 200
+    return jsonify(restaurants)
+
 # API route to get pharmacies by station_id
 @app.route('/api/stations/<station_id>/pharmacies')
 def api_pharmacies_by_station(station_id):
@@ -112,6 +120,22 @@ def api_bars_by_station(station_id):
     except Exception as e:
         logging.error(f"Error fetching bars for station {station_id}: {e}")
         return jsonify({"message": "An error occurred while fetching bars."}), 500
+
+# **New API route to get restaurants by station_id**
+@app.route('/api/stations/<station_id>/restaurants')
+def api_restaurants_by_station(station_id):
+    try:
+        logging.info(f"Fetching restaurants for station {station_id}")
+        restaurants = load_data('restaurants.json')
+        filtered_restaurants = [restaurant for restaurant in restaurants if str(restaurant.get('station_id')) == str(station_id)]
+        if not filtered_restaurants:
+            logging.info(f"No restaurants found for station {station_id}")
+            return jsonify({"message": "No restaurants found for this station."}), 200
+        logging.info(f"Found {len(filtered_restaurants)} restaurants for station {station_id}")
+        return jsonify(filtered_restaurants)
+    except Exception as e:
+        logging.error(f"Error fetching restaurants for station {station_id}: {e}")
+        return jsonify({"message": "An error occurred while fetching restaurants."}), 500
 
 # API route to get hotels by station_id
 @app.route('/api/stations/<station_id>/hotels')
@@ -207,4 +231,3 @@ if __name__ == '__main__':
     # Dynamically set the port, defaulting to 5000 if not specified
     port = int(os.environ.get('PORT', 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
-
