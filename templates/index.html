@@ -5,6 +5,17 @@
     <title>Map and Amenities</title>
     <!-- Favicon (Ensure this file exists in your static directory) -->
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MKPPWRVZ5R"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MKPPWRVZ5R');
+</script>
+
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <!-- FontAwesome CSS for icons -->
@@ -183,11 +194,11 @@
         </a>
     </div>
 
-    <h1>Transit Inauguration: Have a Rail Good Time!</h1>
+    <h1>DMV Transit Tourism: Have a Rail Good Time!</h1>
 
     <div class="text-container">
         <p>
-            Find a place to stay in one of 242 hotels located a short walk from a transit station. If hotels downtown are fully booked or too expensive, look for lodging in the suburbs or along the Maryland Area Rail Commuter (MARC) or Virginia Railway Express (VRE) Lines. Once you’re in town, use this platform’s extensive list of places to eat, drink, shop, and celebrate to discover DC car-free, and travel through the region. Mobile app coming soon!
+           Travel sustaiably and save money, time, and hassle by visitng DC car-fee. Book a place to stay in one of 244 hotels near a transit station in the District, Maryland, or Virginia. Once you’re in town, use this platform to explore places to eat, drink, shop a short walk from a station. Mobile app coming soon!
         </p>
     </div>
 
@@ -214,7 +225,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 Transit Inauguration. All rights reserved.</p>
+        <p>&copy; 2024 Schneider Analytics LLC. All rights reserved.</p>
     </footer>
 
     <!-- Include Leaflet JS -->
