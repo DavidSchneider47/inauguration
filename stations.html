@@ -174,9 +174,12 @@
         <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
             <i class="fas fa-route"></i> Itineraries
         </a>
-    </div>
+  <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
+            <i class="fas fa-info-circle"></i> About
+<a/>
+     </div>
 
-    <h1 style="text-align: center; margin-top: 80px;">Heading Out on the Town? Make Your First Stop a Transit Sation</h1>
+    <h1 style="text-align: center; margin-top: 80px;">Heading Out on the Town? Make Your First Stop a Transit Station</h1>
 
 <img src="{{ url_for('static', filename='images/sign.jpg') }}" alt="Exit Sign" style="display: block; margin: 20px auto; width: 60%; max-width: 450px; height: auto;">
 
@@ -219,7 +222,7 @@
 
     <!-- Footer -->
     <footer class="stations-footer">
-        <p>&copy; 2024 Transit Inauguration. All rights reserved.</p>
+        <p>&copy; 2024 Schneider Analytics LLC. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript to Handle Search, Fetching Amenities, and Filtering Transit Routes -->
