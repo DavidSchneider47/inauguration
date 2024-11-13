@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Map and Amenities</title>
-    <!-- Favicon (Ensure this file exists in your static directory) -->
+    <!-- Favicon -->
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKPPWRVZ5R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MKPPWRVZ5R');
+    </script>
+
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <!-- FontAwesome CSS for icons -->
@@ -24,7 +35,7 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: #f4f4f4;
-            padding-top: 60px; /* Space for fixed navbar */
+            padding-top: 50px; /* Reduced space for fixed navbar */
         }
 
         /* Navigation Bar Styles */
@@ -38,6 +49,7 @@
             display: flex;
             align-items: center;
             height: 50px; /* Fixed height for navbar */
+            justify-content: space-between; /* Space out elements */
         }
 
         .navbar a {
@@ -45,9 +57,6 @@
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            height: 100%;
             font-size: 16px;
         }
 
@@ -56,9 +65,39 @@
             color: black;
         }
 
+        /* Link container for desktop view */
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Hamburger Menu Icon Styling (Visible on Mobile Only) */
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            padding: 0 15px;
+        }
+
+        /* Mobile Menu Styling */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background-color: #333;
+            width: 100%;
+        }
+
+        .mobile-menu a {
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+        }
+
         /* Page Title */
         h1 {
-            margin: 20px auto;
+            margin: 10px auto;
             text-align: center;
             max-width: 800px;
             font-size: 2em;
@@ -68,7 +107,7 @@
         /* Search Container Styles */
         .search-container {
             max-width: 800px;
-            margin: 20px auto 20px auto; /* Reduced top margin from 80px to 20px */
+            margin: 20px auto;
             display: flex;
             gap: 10px;
             justify-content: center;
@@ -78,7 +117,7 @@
         .search-container input,
         .search-container select,
         .search-container button {
-            padding: 8px;
+            padding: 10px;
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -92,7 +131,7 @@
 
         .search-container button {
             flex: none;
-            width: 150px; /* Fixed width for clear button */
+            width: 150px;
             background-color: #f44336;
             color: white;
             border: none;
@@ -106,10 +145,10 @@
 
         /* Map Container */
         #map {
-            height: calc(100vh - 180px); /* Adjusted based on navbar and search container height */
+            height: calc(100vh - 180px);
             width: 100%;
             max-width: 1200px;
-            margin: 0 auto; /* Center the map */
+            margin: 0 auto;
             border: 2px solid #ccc;
             border-radius: 8px;
             overflow: hidden;
@@ -132,7 +171,17 @@
             }
 
             #map {
-                height: calc(100vh - 220px); /* Adjusted for increased vertical space on smaller screens */
+                height: calc(100vh - 220px);
+            }
+
+            /* Show Hamburger Icon */
+            .hamburger {
+                display: block;
+            }
+
+            /* Hide Desktop Navigation Links */
+            .nav-links {
+                display: none;
             }
         }
 
@@ -150,7 +199,7 @@
             }
 
             #map {
-                height: calc(100vh - 250px); /* Further adjustment for very small screens */
+                height: calc(100vh - 250px);
             }
         }
 
@@ -168,32 +217,58 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <div class="navbar">
-        <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
-            <i class="fas fa-map-marker-alt"></i> Home (Map)
-        </a>
-        <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
-            <i class="fas fa-list"></i> Stations List
-        </a>
-        <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
-            <i class="fas fa-route"></i> Itineraries
-        </a>
-        <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
-            <i class="fas fa-info-circle"></i> About
-        </a>
-    </div>
+    <header>
+        <div class="navbar">
+            <h1>DMV Transit Tourism</h1>
+            <!-- Hamburger Icon for Mobile -->
+            <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+            
+            <!-- Navigation Links for Desktop and Mobile -->
+            <nav class="nav-links">
+                <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
+                    <i class="fas fa-map-marker-alt"></i> Home (Map)
+                </a>
+                <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
+                    <i class="fas fa-list"></i> Stations List
+                </a>
+                <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
+                    <i class="fas fa-route"></i> Itineraries
+                </a>
+                <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
+                    <i class="fas fa-info-circle"></i> About
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by Default) -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
+                <i class="fas fa-map-marker-alt"></i> Home (Map)
+            </a>
+            <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
+                <i class="fas fa-list"></i> Stations List
+            </a>
+            <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
+                <i class="fas fa-route"></i> Itineraries
+            </a>
+            <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
+                <i class="fas fa-info-circle"></i> About
+            </a>
+        </div>
+    </header>
 
-    <h1>Transit Inauguration: Have a Rail Good Time!</h1>
+  <h1 style="text-align: center; margin-top: 20px;">DMV Transit Tourism: Have a Rail Good Time!</h1>
 
-<div style=margin: 20px auto; width: 80%; max-width: 800px;">
-        <p>
-            Find a place to stay in one of 242 hotels located a short walk from a transit station. If hotels downtown are fully booked or too expensive, look for lodging in the suburbs or along the Maryland Area Rail Commuter (MARC) or Virginia Railway Express (VRE) Lines. Once you’re in town, use this platform’s extensive list of places to eat, drink, shop, and celebrate to discover DC car-free, and travel through the region with the mobile app (coming soon).
-        </p>
+<div class="text-container" style="max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center;">
+    <p>
+        Travel sustainably and save money, time, and hassle by visiting DC car-free. Book a place to stay in one of 244 hotels near a transit station in the District, Maryland, or Virginia. Once you’re in town, use this platform to explore places to eat, drink, and shop a short walk from a station. Mobile app coming soon!
+    </p>
 </div>
 
     <!-- Search Container -->
     <div class="search-container">
-        <input type="text" id="station-search" placeholder="Search for a station..." aria-label="Search for a station" />
+        <input type="text" id="station-search" placeholder="Search for a station..." aria-label="Search for a station" list="station-list" />
+        <datalist id="station-list"></datalist>
         <select id="line-search" aria-label="Filter by transit line">
             <option value="">All Lines</option>
             <option value="Red">Red</option>
@@ -205,7 +280,7 @@
             <option value="MARC">MARC</option>
             <option value="VRE">VRE</option>
         </select>
-        <button id="clear-search" aria-label="Clear search filters">Clear Search</button>
+        <button id="clearButton" onclick="clearSearch()">Clear Search</button>
     </div>
 
     <!-- Map Container -->
@@ -213,7 +288,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 Transit Inauguration. All rights reserved.</p>
+        <p>&copy; 2024 Schneider Analytics LLC. All rights reserved.</p>
     </footer>
 
     <!-- Include Leaflet JS -->
@@ -223,7 +298,6 @@
 
     <!-- Inline JavaScript for Search Functionality -->
     <script>
-        // Debounce function to limit the rate of function execution
         function debounce(func, delay) {
             let debounceTimer;
             return function() {
@@ -234,73 +308,68 @@
             }
         }
 
-        // Function to retrieve search parameters from localStorage
         function getSearchParams() {
             const stationQuery = localStorage.getItem('stationQuery') || '';
             const lineQuery = localStorage.getItem('lineQuery') || '';
             return { stationQuery, lineQuery };
         }
 
-        // Function to set search parameters in localStorage
         function setSearchParams(stationQuery, lineQuery) {
             localStorage.setItem('stationQuery', stationQuery);
             localStorage.setItem('lineQuery', lineQuery);
         }
 
-        // Function to clear search parameters from localStorage
         function clearSearchParams() {
             localStorage.removeItem('stationQuery');
             localStorage.removeItem('lineQuery');
         }
 
-        // Initialize search inputs based on localStorage
         function initializeSearchInputs() {
             const { stationQuery, lineQuery } = getSearchParams();
             document.getElementById('station-search').value = stationQuery;
             document.getElementById('line-search').value = lineQuery;
         }
 
-        // Function to handle search input changes
         function handleSearchChange() {
             const stationQuery = document.getElementById('station-search').value.trim();
             const lineQuery = document.getElementById('line-search').value;
-
             setSearchParams(stationQuery, lineQuery);
-
-            // Dispatch a custom event to notify other scripts/pages
             window.dispatchEvent(new Event('searchUpdated'));
         }
 
-        // Function to handle clear search
         function handleClearSearch() {
             document.getElementById('station-search').value = '';
             document.getElementById('line-search').value = '';
             clearSearchParams();
-
-            // Dispatch a custom event to notify other scripts/pages
             window.dispatchEvent(new Event('searchUpdated'));
         }
 
-        // Event Listeners for Search Inputs
         document.getElementById('station-search').addEventListener('input', debounce(handleSearchChange, 300));
         document.getElementById('line-search').addEventListener('change', handleSearchChange);
-        document.getElementById('clear-search').addEventListener('click', handleClearSearch);
+        document.getElementById('clearButton').addEventListener('click', handleClearSearch);
 
-        // Listen for storage events to synchronize search across pages
         window.addEventListener('storage', (event) => {
             if (event.key === 'stationQuery' || event.key === 'lineQuery') {
                 initializeSearchInputs();
-                // Dispatch a custom event to notify other scripts/pages
                 window.dispatchEvent(new Event('searchUpdated'));
             }
         });
 
-        // Initialize search inputs on page load
         window.addEventListener('load', () => {
             initializeSearchInputs();
-            // Optionally, you can trigger a search update here if needed
         });
+    </script>
+
+    <!-- JavaScript to Toggle the Mobile Menu -->
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("mobileMenu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
     </script>
 </body>
 </html>
-
