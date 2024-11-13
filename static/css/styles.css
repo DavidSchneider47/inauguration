@@ -28,33 +28,189 @@ header p {
     font-size: 16px;
 }
 
-/* Navigation Bar Styles */
+/* General Navigation Bar Styles */
 .navbar {
-    overflow: hidden;
+    display: flex;
+    align-items: center;
     background-color: #333;
     position: fixed;
     top: 0;
     width: 100%;
+    height: 50px;
     z-index: 1000;
-    display: flex;
-    align-items: center;
-    height: 50px; /* Fixed height for navbar */
+    padding: 0 15px;
+    justify-content: flex-start; /* Align links to the left on desktop */
+    overflow: hidden;
 }
 
-.navbar a {
-    color: white;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
+/* General Navigation Bar Styles */
+.navbar {
     display: flex;
     align-items: center;
-    height: 100%;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1000;
+    padding: 0 15px;
+    justify-content: flex-start; /* Align links to the left on desktop */
+    overflow: hidden;
+}
+
+/* Navbar Links Styling */
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
     font-size: 16px;
 }
 
 .navbar a:hover, .navbar a.active {
     background-color: #ddd;
     color: black;
+}
+
+/* Navbar Title (Hidden on Desktop, Visible on Mobile) */
+.navbar h1 {
+    display: none; /* Hide on desktop */
+    color: white;
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* Hamburger Menu Icon (Visible on Mobile Only) */
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 0 15px;
+}
+
+/* Mobile Menu (Hidden by Default) */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    width: 100%;
+}
+
+.mobile-menu a {
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%; /* Full-width links */
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    /* Show the Title and Hamburger Icon, Hide Regular Links */
+    .navbar h1 {
+        display: block; /* Show title on mobile */
+    }
+
+    .navbar a {
+        display: none; /* Hide desktop links */
+    }
+    
+    .hamburger {
+        display: block; /* Show hamburger icon on mobile */
+    }
+    
+    .mobile-menu {
+        display: flex; /* Show mobile menu on toggle */
+    }
+}
+
+/* Center Main Content */
+main, .about-main, .stations-main, .itineraries-main {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 60px; /* Offset content to avoid overlap with navbar */
+    max-width: 800px; /* Limit content width */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    /* Show the Title and Hamburger Icon, Hide Regular Links */
+    .navbar h1 {
+        display: block; /* Show title on mobile */
+    }
+
+    .navbar a {
+        display: none; /* Hide desktop links */
+    }
+    
+    .hamburger {
+        display: block; /* Show hamburger icon on mobile */
+    }
+    
+    .mobile-menu {
+        display: flex; /* Show mobile menu on toggle */
+    }
+
+/* Link Styling for Desktop */
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Hamburger Menu Icon Styling */
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile Menu Styling */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    width: 100%;
+}
+
+.mobile-menu a {
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide regular links */
+    }
+    
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
 }
 
 /* Map container */
