@@ -14,54 +14,84 @@
 <body>
 
     <!-- Navigation Bar -->
-    <div class="navbar">
-        <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
-            <i class="fas fa-map-marker-alt"></i> Home (Map)
-        </a>
-        <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
-            <i class="fas fa-list"></i> Stations List
-        </a>
-        <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
-            <i class="fas fa-route"></i> Itineraries
-        </a>
-        <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
-            <i class="fas fa-info-circle"></i> About
-        </a>
-    </div>
+    <header>
+        <div class="navbar">
+            <h1>DMV Transit Tourism</h1>
+            <!-- Hamburger Icon for Mobile -->
+            <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+            
+            <!-- Navigation Links for Desktop and Mobile -->
+            <nav class="nav-links">
+                <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
+                    <i class="fas fa-map-marker-alt"></i> Home (Map)
+                </a>
+                <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
+                    <i class="fas fa-list"></i> Stations List
+                </a>
+                <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
+                    <i class="fas fa-route"></i> Itineraries
+                </a>
+                <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
+                    <i class="fas fa-info-circle"></i> About
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by Default) -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
+                <i class="fas fa-map-marker-alt"></i> Home (Map)
+            </a>
+            <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
+                <i class="fas fa-list"></i> Stations List
+            </a>
+            <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
+                <i class="fas fa-route"></i> Itineraries
+            </a>
+            <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
+                <i class="fas fa-info-circle"></i> About
+            </a>
+        </div>
+    </header>
 
     <!-- Main Content -->
     <main class="about-main">
-
-<img src="{{ url_for('static', filename='images/escalator.jpg') }}" alt="Escalators" style="display: block; margin: 20px auto; width: 80%; max-width: 600px; height: auto;">
+        <img src="{{ url_for('static', filename='images/escalator.jpg') }}" alt="Escalators" style="display: block; margin: 20px auto; width: 80%; max-width: 600px; height: auto;">
 
         <h1>Visit DC Car-Free</h1>
         <p>
-        Are you coming to Washington DC for work or on vacation? Do you need a place to stay? Are you searching for destinations to eat, drink, shop, and celebrate? <strong>DMV Transit Tourism</strong> has you covered. Browse our database of hundreds of hotels, restaurants, cafes, and nightlife within walking distance from Metro, MARC, and VRE. Lower your carbon footprint, save money, time, and hassle, and experience the region like a local for a visit to remember.
-    </p>
+            Are you coming to Washington DC for work or on vacation?? Do you need a place to stay? Are you searching for destinations to eat, drink, shop, and celebrate? <strong>DMV Transit Tourism</strong> has you covered. Browse our database of hundreds of hotels, restaurants, cafes, and nightlife within walking distance from Metro, MARC, and VRE. Lower your carbon footprint, save money, time, and hassle, and experience the region like a local for an Inauguration weekend to remember.
+        </p>
 
         <h2>Data by the People, for the People</h2>
-        <p><strong>DMV Transit Tourism </strong> is built on information from OpenStreetMap (OSM) is a collaborative project that creates a free, editable map of the world, powered by a global community of contributors. OSM provides detailed, up-to-date geographic data contributed and maintained by people like you. This open-data initiative aims to empower individuals, organizations, and communities by making geographic information accessible to all.</p>
+        
+<p><strong>DMV Transit Tourism</strong> is built on information from OpenStreetMap (OSM) is a collaborative project that creates a free, editable map of the world, powered by a global community of contributors. OSM provides detailed, up-to-date geographic data contributed and maintained by people like you. This open-data initiative aims to empower individuals, organizations, and communities by making geographic information accessible to all.</p>
 
         <h2>About the Content Creator</h2>
+        <img src="{{ url_for('static', filename='images/content_creator.jpg') }}" alt="Photo of David Schneider" style="display: block; margin: 20px auto; width: 200px; height: auto;">
 
-<img src="{{ url_for('static', filename='images/content_creator.jpg') }}" alt="Photo of David Schneider" style="display: block; margin: 20px auto; width: 200px; height: auto;">
+        <p><strong>David Schneider</strong> (he/him/his) is a data scientist, storyteller, activist, teacher, and founder of Schneider Analytics, which builds digital tools for the public good. Prior to starting his own business, he worked for over twenty years as a career civil servant with the Federal Transit Administration. David grew up in Washington DC and lives near the Silver Spring Metro station.</p>
 
-        
-<p><strong>David Schneider </strong> (he/him/his) is a data scientist, storyteller, activist, teacher, and founder of Schneider Analytics, which builds digital tools for the public good. Prior to starting his own business, he worked for over twenty years as a career civil servant with the Federal Transit Administration. David grew up in Washington DC and lives near the Silver Spring Metro station.</p>
+        <h2>Bring Transit Tourism to Your Hometown</h2>
 
-     <h2>Bring Transit Tourism to Your Hometown </h2>
-<p> If you are intrigued by what you see on this platform and would like to develop something similar for your community, please reach out for a consultation by emailing connect@transitdiscoveries.com or visit <a href="https://www.transitorienteddiscoveries.com/" target="_blank">Transit-Oriented Discoveries</a><p> 
-
-	<h3>Photo Credits</h3>
-<p>This website uses images from photo sharing sites that may be published with attribution. National Zoo: Maarja via Flick; Kramerbooks: Bill Couch via Flickr; Ben's Chili Bowl: Kevin Harker via Flickr; National Gallery: Michael Jones via Flickr; Hirshorn: Washingtonnydc via Flickr; Friendship Arch: Larry Syverson via Flickr; Arlington Cemetary: Lyndsey Flynn via Pixels;   Eastern Market: Pinderbrand via Flickr    Ballston: Neil Cooler via Flickr;  Metro Escalator: Kaique Rocha via Pexels. <p>
-
+        <p>If you are intrigued by what you see on this platform and would like to develop something similar for your community, please reach out for a consultation by emailing connect@transitdiscoveries.com or visit <a href="https://www.transitorienteddiscoveries.com/" target="_blank">Transit-Oriented Discoveries</a>.</p>
     </main>
 
-    <!-- Footer -->
+   <!-- Footer -->
     <footer class="about-footer">
-        <p>&copy; 2024 Schneider Analytics LLC. All rights reserved.</p>
+        <p>&copy; 2024 DMV Transit Tourism. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript to Toggle the Mobile Menu -->
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("mobileMenu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
-
