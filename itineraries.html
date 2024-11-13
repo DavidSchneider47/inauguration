@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Custom Styles -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
     <style>
         /* Color-coded headers */
         .red-line { color: red; }
         .green-line { color: green; }
-        .yellow-line { color: #DAA520 }
+        .yellow-line { color: #DAA520; }
         .blue-line { color: blue; }
         .orange-line { color: orange; }
         .silver-line { color: silver; }
@@ -64,28 +65,57 @@
 </head>
 <body>
 
-   <!-- Navigation Bar -->
-<div class="navbar">
-    <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
-        <i class="fas fa-map-marker-alt"></i> Home (Map)
-    </a>
-    <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
-        <i class="fas fa-list"></i> Stations List
-    </a>
-    <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
-        <i class="fas fa-route"></i> Itineraries
-    </a>
-    <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
-        <i class="fas fa-info-circle"></i> About
-    </a>
-</div>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="navbar">
+            <h1>DMV Transit Tourism</h1>
+            <!-- Hamburger Icon for Mobile -->
+            <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+            
+            <!-- Navigation Links for Desktop and Mobile -->
+            <nav class="nav-links">
+                <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
+                    <i class="fas fa-map-marker-alt"></i> Home (Map)
+                </a>
+                <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
+                    <i class="fas fa-list"></i> Stations List
+                </a>
+                <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
+                    <i class="fas fa-route"></i> Itineraries
+                </a>
+                <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
+                    <i class="fas fa-info-circle"></i> About
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by Default) -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
+                <i class="fas fa-map-marker-alt"></i> Home (Map)
+            </a>
+            <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
+                <i class="fas fa-list"></i> Stations List
+            </a>
+            <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
+                <i class="fas fa-route"></i> Itineraries
+            </a>
+            <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
+                <i class="fas fa-info-circle"></i> About
+            </a>
+        </div>
+    </header>
 
     <!-- Main Content -->
-    <h1 style="text-align: center;">A Day on the Metro: Plan Less, Do More</h1>
+    <h1 style="text-align: center; margin-top: 20px;">A Day on the Metro: Plan Less, Do More</h1>
 
-<div style="text-align: center; margin: 0 auto;">
-    <p>Your time is valuable so leave the travel planning and logistics to us. Our curated itineraries celebrate the District’s African American heritage and the region’s immigrant culture, independent businesses, historic districts, and new neighborhoods. Purchase a <a href="https://www.wmata.com/fares/farecard-options.cfm"> Metro day pass </a> and experience the sights, sounds, smells, and tastes of the Washington Region. Spend your time on a single line or feel free to mix and match. All rails lead to discovery from wherever you start your day.</p>
+<div style="max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center;">
+    <p>
+        Your time is valuable, so leave the travel planning and logistics to us. Our curated itineraries celebrate the District’s African American heritage and the region’s immigrant culture, independent businesses, historic districts, and new neighborhoods. Purchase a 
+        <a href="https://www.wmata.com/fares/farecard-options.cfm">Metro day pass</a> and experience the sights, sounds, smells, and tastes of the Washington Region. Spend your time on a single line or feel free to mix and match. All rails lead to discovery from wherever you start your day.
+    </p>
 </div>
+
 
     <main>
         <!-- Collapsible sections for each itinerary -->
@@ -104,7 +134,7 @@
 
                 <h2>Morning: Woodley Park-Zoo</h2>
                 <p>
-                    Giant Pandas returned to Washington DC in October when Bao Li [BOW-lee] and Qing Bao [ching-BOW] traveled from China aboard a dedicated “FedEx Panda Express” Boeing 777F aircraft. They are scheduled to make their zoo debut on January 24 and there are more than 1,500 animals to admire as well. The <a href="https://www.si.edu/museums/national-zoo" target="_blank">National Zoo</a> is free with plenty of indoor spaces to warm up on a cold day. Walk north on Connecticut Avenue for 0.25 to the main entrance
+                    Giant Pandas returned to Washington DC in October when Bao Li [BOW-lee] and Qing Bao [ching-BOW] traveled from China aboard a dedicated “FedEx Panda Express” Boeing 777F aircraft. They are not scheduled to make their zoo debut until January 24 but there are more than 1,500 animals to admire in the meantime. The <a href="https://www.si.edu/museums/national-zoo" target="_blank">National Zoo</a> is free with plenty of indoor spaces to warm up on a cold day. Walk north on Connecticut Avenue for 0.25 to the main entrance
                 </p>
 
                 <h2>Lunch: Gallery Place Chinatown</h2>
@@ -238,7 +268,7 @@
 
     <h2>Lunch: Mt. Vernon Square</h2>
     <p>
-        2016 was a bright year for DC pizza when <a href="https://allpurposedc.com/locations/shaw/" target="_blank">All Purpose</a> made its debut as the city’s best restaurant, according to the Washington Post. It is still going strong serving Jersey-style pizza and Italian-American antipasti. (From the Metro, head west on M Street then north on 9th Street). After lunch, walk south to the Carnegie Library, across from the Convention Center which is home to the <a href="https://dchistory.org/" target="_blank">DC History Center</a>. Exhibits include “DC Home Rule 50,” which “explores urgent themes of self-governance, full citizenship, free elections, and DC statehood."
+        2016 was a bright one for DC pizza when <a href="https://allpurposedc.com/locations/shaw/" target="_blank">All Purpose</a> made its debut as the city’s best restaurant, according to the Washington Post. It is still going strong serving Jersey-style pizza and Italian-American antipasti. (From the Metro, head west on M Street then north on 9th Street). After lunch, walk south to the Carnegie Library, across from the Convention Center which is home to the <a href="https://dchistory.org/" target="_blank">DC History Center</a>. Exhibits include “DC Home Rule 50,” which “explores urgent themes of self-governance, full citizenship, free elections, and DC statehood."
     </p>
 </div>
 </div>
@@ -336,7 +366,8 @@
 
     <h2>Dinner: Tysons</h2>
     <p>
-        Tyson's Corner used to be a non-discript suburb oriented around car travel. No longer. The 2014 Metro Silver Line extension led to high-rise residential towers, hotels, and improvements to make the area more pedestrian-friendly and cohesive. From Clarendon, make sure you are traveling on a Silver Line station towards Ashburn. Get off at Tysons and, from the station, take the north entrance to Tysons Corner Center and follow the pedestrian bridge to the plaza. 
+        If you traveled to Tysons Corner ten years ago, you would have found a suburban shopping center designed for cars. 
+        No longer. The 2014 Metro Silver Line extension led to high-rise residential towers, hotels, and improvements to make the area more pedestrian-friendly and cohesive. From Clarendon, make sure you are traveling on a Silver Line station towards Ashburn. Get off at Tysons and, from the station, take the north entrance to Tysons Corner Center and follow the pedestrian bridge to the plaza. 
         There you will find dinner options such as <a href="https://www.barrelandbushel.com/" target="_blank"> Barrel and Bushel</a> which offers comfort food and local beers from around the region.
     </p></p>
             <img src="{{ url_for('static', filename='images/multi_line_itinerary.jpg') }}" alt="Multi Line Itinerary">
@@ -383,8 +414,21 @@
 
     <!-- Footer -->
     <footer class="itineraries-footer">
-        <p>&copy; 2024 Schneider Analytics LLC. All rights reserved.</p>
+        <p>&copy; 2024 Transit Inauguration. All rights reserved.</p>
     </footer>
+
+ <!-- JavaScript to Toggle the Mobile Menu -->
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("mobileMenu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+</body>
 
     <!-- Collapsible Sections JavaScript -->
     <script>
