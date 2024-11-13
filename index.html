@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map and Amenities</title>
     <!-- Favicon -->
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
@@ -38,63 +39,7 @@
             padding-top: 50px; /* Reduced space for fixed navbar */
         }
 
-        /* Navigation Bar Styles */
-        .navbar {
-            overflow: hidden;
-            background-color: #333;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            height: 50px; /* Fixed height for navbar */
-            justify-content: space-between; /* Space out elements */
-        }
-
-        .navbar a {
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        .navbar a:hover, .navbar a.active {
-            background-color: #ddd;
-            color: black;
-        }
-
-        /* Link container for desktop view */
-        .nav-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        /* Hamburger Menu Icon Styling (Visible on Mobile Only) */
-        .hamburger {
-            display: none;
-            font-size: 30px;
-            color: white;
-            cursor: pointer;
-            padding: 0 15px;
-        }
-
-        /* Mobile Menu Styling */
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            background-color: #333;
-            width: 100%;
-        }
-
-        .mobile-menu a {
-            color: white;
-            padding: 10px;
-            text-align: center;
-            text-decoration: none;
-        }
-
+        
         /* Page Title */
         h1 {
             margin: 10px auto;
