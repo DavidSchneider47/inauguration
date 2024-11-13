@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heading Out on the Town? Make Your First Stop a Station</title>
     <!-- Link to your custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
@@ -22,32 +23,7 @@
     </script>
     <!-- Inline CSS Styles for Additional Styling -->
     <style>
-        /* Navigation Bar Styles */
-        .navbar {
-            overflow: hidden;
-            background-color: #333;
-            font-family: Arial, Helvetica, sans-serif;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar a {
-            font-size: 16px;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-
-        .navbar a:hover, .navbar a.active {
-            background-color: #ddd;
-            color: black;
-        }
-
+        
         /* Search Container Styles */
         .search-container {
             max-width: 800px;
@@ -163,32 +139,58 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
-            <i class="fas fa-map-marker-alt"></i> Home (Map)
-        </a>
-        <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
-            <i class="fas fa-list"></i> Stations List
-        </a>
-        <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
-            <i class="fas fa-route"></i> Itineraries
-        </a>
-  <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
-            <i class="fas fa-info-circle"></i> About
-<a/>
-     </div>
 
-    <h1 style="text-align: center; margin-top: 80px;">Heading Out on the Town? Make Your First Stop a Transit Station</h1>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="navbar">
+            <h1>DMV Transit Tourism</h1>
+            <!-- Hamburger Icon for Mobile -->
+            <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+            
+            <!-- Navigation Links for Desktop and Mobile -->
+            <nav class="nav-links">
+                <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
+                    <i class="fas fa-map-marker-alt"></i> Home (Map)
+                </a>
+                <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
+                    <i class="fas fa-list"></i> Stations List
+                </a>
+                <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
+                    <i class="fas fa-route"></i> Itineraries
+                </a>
+                <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
+                    <i class="fas fa-info-circle"></i> About
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by Default) -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
+                <i class="fas fa-map-marker-alt"></i> Home (Map)
+            </a>
+            <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}">
+                <i class="fas fa-list"></i> Stations List
+            </a>
+            <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
+                <i class="fas fa-route"></i> Itineraries
+            </a>
+            <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
+                <i class="fas fa-info-circle"></i> About
+            </a>
+        </div>
+    </header>
+  <h1 style="text-align: center; margin-top: 80px;">Heading Out on the Town? Make Your First Stop a Transit Station</h1>
 
 <img src="{{ url_for('static', filename='images/sign.jpg') }}" alt="Exit Sign" style="display: block; margin: 20px auto; width: 60%; max-width: 450px; height: auto;">
 
-
-<div class="text-container">
-        <p>
+<!-- Updated text-container styles -->
+<div class="text-container" style="max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center;">
+    <p>
         What if there were the equivalent of highway exit signs that direct you to places to stay, eat, drink, and shop near transit stations? Now there are! Use this page to explore neighborhoods near transit, plan your outing, and find places to meet up with friends. Click a station to see what's nearby or enter a station or line in the filter and head over to the map page for a visual.
     </p>
-<div>
+</div>
+ 
     <!-- Search Container -->
     <div class="search-container">
         <input type="text" id="station-search" placeholder="Search for a station..." aria-label="Search for a station" />
@@ -222,7 +224,7 @@
 
     <!-- Footer -->
     <footer class="stations-footer">
-        <p>&copy; 2024 Schneider Analytics LLC. All rights reserved.</p>
+        <p>&copy; 2024 Transit Inauguration. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript to Handle Search, Fetching Amenities, and Filtering Transit Routes -->
@@ -512,10 +514,20 @@
                 amenitiesList.style.display = 'none';
             }
         }
-    </script>
+   
+</script>
 </body>
 </html>
 
+<!-- JavaScript to Toggle the Mobile Menu -->
+<script>
+   function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("mobile-menu-active");
+}
+</script>
+</body>
+</html>
 
 
 
