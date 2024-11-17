@@ -88,15 +88,11 @@
     </footer>
 
     <!-- JavaScript to Toggle the Mobile Menu -->
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("mobileMenu");
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
-        }
-    </script>
+   <script>
+    function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("mobile-menu-active");
+    }
+</script>
 </body>
 </html>
