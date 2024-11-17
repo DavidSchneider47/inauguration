@@ -229,7 +229,8 @@
     </div>
 
     <!-- Map Container -->
-    <div id="map"></div>
+    <div id="map"></div>	
+    <button id="toggleLayerControl" class="toggle-btn">☰ Layers</button>
 
     <!-- Footer -->
     <footer class="footer">
@@ -304,17 +305,12 @@
             initializeSearchInputs();
         });
     </script>
-
-    <!-- JavaScript to Toggle the Mobile Menu -->
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("mobileMenu");
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
-        }
+     <!-- JavaScript to Toggle the Mobile Menu -->
+   <script>
+    function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("mobile-menu-active");
+    }
     </script>
 </body>
 </html>
