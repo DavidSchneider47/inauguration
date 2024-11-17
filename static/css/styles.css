@@ -66,15 +66,23 @@ header p {
     flex-grow: 1;
 }
 
-/* Hamburger Menu Icon */
 .hamburger {
-    display: none; /* Hidden by default */
-    font-size: 30px;
+    position: absolute; /* Position relative to the navigation bar */
+    top: 10px; /* Ensure it aligns vertically */
+    right: 50px; /* Adjust this value to move it fully into the screen */
+    z-index: 1000; /* Keep it above other elements */
+    font-size: 30px; /* Ensure it's large enough for touch interaction */
     color: white;
     cursor: pointer;
-    padding: 0 15px;
+    display: none; /* Hide by default for desktop view */
 }
 
+/* Show the hamburger menu for mobile views */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show the hamburger menu on smaller screens */
+    }
+}
 /* Mobile Menu */
 .mobile-menu {
     display: none;
