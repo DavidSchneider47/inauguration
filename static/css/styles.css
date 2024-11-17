@@ -191,6 +191,31 @@ footer {
     100% { transform: rotate(360deg); }
 }
 
+#toggleLayerControl {
+    position: absolute;
+    top: 60px; /* Moves it below the hamburger menu */
+    right: 10px; /* Keep it aligned with the right edge */
+    z-index: 1000; /* Ensure it remains clickable above other elements */
+}
+
+/* Align the toggle button above the layer control box */
+.leaflet-control-layers {
+    position: relative; /* Make the layer control the reference point */
+}
+
+#toggleLayerControl {
+    right: 10px; /* Align it to the same right margin as the layer control box */
+    top: calc(10px + 50px); /* Adjust height so it appears just above the layer box */
+}
+
+.leaflet-control-layers {
+    transition: all 0.3s ease;
+}
+
+.hidden {
+    display: none !important;
+}
+
 /* Styling for the text container */
 .text-container {
     width: 95%; /* Adjusted width to reduce padding */
