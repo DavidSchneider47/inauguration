@@ -2041,8 +2041,8 @@
         "station_line": "Red",
         "coffee_name": "Busboys and Poets",
         "coffee_website": "https://www.busboysandpoets.com/",
-        "coffee_lat": 38.97656,
-        "coffee_lon": -77.0151,
+        "coffee_lat": 38.975250,
+        "coffee_lon": -77.015190,
         "coffee_distance_miles": 0.2
     },
     {
@@ -2618,5 +2618,71 @@
         "coffee_lat": 38.9250943,
         "coffee_lon": -77.0520582,
         "coffee_distance_miles": 0.02
+    },
+    {
+        "coffee_id": "245",
+        "coffee_name": "Sweet Hut Cafe",
+        "station_id": "142",
+        "coffee_website": "https://wvsweethut.com/",
+        "coffee_lat": 39.4592684,
+        "coffee_lon": -77.9632692,
+        "coffee_distance_miles": 0.14
+    },
+    {
+        "coffee_id": "246",
+        "coffee_name": "West Wing Cafe",
+        "station_id": "1",
+        "coffee_website": "https://www.westwingcafeone.com/",
+        "coffee_lat": 38.9030819,
+        "coffee_lon": -77.0254008,
+        "coffee_distance_miles": 0.23
+    },
+    {
+        "coffee_id": "247",
+        "coffee_name": "Busboys and Poets",
+        "station_id": "1",
+        "coffee_website": "https://www.busboysandpoets.com/locations/?location=450k&venue=5th-k",
+        "coffee_lat": 38.9023202,
+        "coffee_lon": -77.0179932,
+        "coffee_distance_miles": 0.23
+    },
+    {
+        "coffee_id": "248",
+        "coffee_name": "Bread & Me",
+        "station_id": "106",
+        "coffee_website": "www.breadnme.com",
+        "coffee_lat": 38.5215555,
+        "coffee_lon": -77.292499,
+        "coffee_distance_miles": 0.05
+    },
+    {
+        "coffee_id": "249",
+        "coffee_name": "S & G Restaurant",
+        "station_id": "106",
+        "coffee_website": "https://www.yelp.com/biz/s-and-g-restaurant-quantico",
+        "coffee_lat": 38.5223147,
+        "coffee_lon": -77.2921377,
+        "coffee_distance_miles": 0.05
+    },
+
+{
+        "coffee_id": "250",
+        "coffee_name": "Starbucks",
+        "station_id": "160",
+        "coffee_website": "https://www.starbucks.com/store-locator?map=38.834379,-77.049426,15z",
+        "coffee_lat": 38.8378572,
+        "coffee_lon": -77.0499957,
+        "coffee_distance_miles": 0.37
+    },
+
+{
+        "coffee_id": "251",
+        "coffee_name": "IHOP",
+        "station_id": "160",
+        "coffee_website": "https://restaurants.ihop.com/en-us/va/alexandria/breakfast-3425-a-jefferson-davis-hwy-578",
+        "coffee_lat": 38.8359165,
+        "coffee_lon": -77.0511187,
+        "coffee_distance_miles": 0.31
     }
+
 ]
