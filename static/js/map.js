@@ -83,6 +83,18 @@ function createUserLocationIcon() {
     });
 }
 
+// Function to toggle location tracking
+function toggleTracking() {
+    isTracking = !isTracking;
+    console.log(`Tracking is now ${isTracking ? "enabled" : "disabled"}.`);
+}
+
+// Add a button to toggle location tracking
+L.easyButton('fas fa-crosshairs', function() {
+    toggleTracking();
+}, 'Toggle Location Tracking').addTo(map);
+
+
 // Call the geolocation function
 trackUserLocation(map);
 
