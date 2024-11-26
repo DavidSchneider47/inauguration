@@ -696,3 +696,90 @@ footer {
 body {
     margin-top: 50px; /* Ensures content starts below the navbar */
 }
+
+/* User Location Marker Styles */
+.user-location-icon {
+    border: 2px solid white; /* White border for contrast */
+    border-radius: 50%; /* Circular shape */
+    background-color: rgba(0, 122, 255, 0.7); /* Semi-transparent blue */
+    width: 24px;
+    height: 24px;
+    box-shadow: 0px 0px 10px rgba(0, 122, 255, 0.5); /* Glow effect */
+}
+
+/* Location Accuracy Circle */
+.location-circle {
+    position: absolute;
+    border: 2px dashed rgba(0, 122, 255, 0.5);
+    border-radius: 50%;
+    background-color: rgba(0, 122, 255, 0.2); /* Transparent fill */
+    width: 100px;
+    height: 100px;
+    z-index: 100; /* Ensure it stays above the map */
+    pointer-events: none; /* Allow interactions with map beneath */
+    animation: pulse 2s infinite ease-in-out; /* Pulsing animation */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}
+
+/* Location Tracker Toggle Button */
+.location-toggle {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 1000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.location-toggle:hover {
+    background-color: #1c2833;
+}
+
+/* Responsive Adjustments for Location Tracking */
+@media (max-width: 768px) {
+    #map {
+        height: calc(100vh - 120px); /* Full-screen map minus header */
+        border: none;
+    }
+
+    .leaflet-marker-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .location-toggle {
+        font-size: 16px; /* Larger toggle for touch devices */
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    #map {
+        height: calc(100vh - 100px);
+    }
+
+    .location-toggle {
+        font-size: 18px;
+        padding: 14px;
+    }
+}
+
