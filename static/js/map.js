@@ -104,6 +104,22 @@ const overlayLayers = {
 // Add Layer Control to the map
 L.control.layers(baseLayers, overlayLayers, { collapsed: false }).addTo(map);
 
+// Get references to the layer control and toggle button
+const layerControlElement = document.querySelector('.leaflet-control-layers');
+const toggleButton = document.getElementById('toggleLayerControl');
+
+// Add an event listener to the toggle button
+toggleButton.addEventListener('click', () => {
+    // Toggle the 'hidden' class on the layer control
+    if (layerControlElement.classList.contains('hidden')) {
+        layerControlElement.classList.remove('hidden');
+        toggleButton.textContent = '☰ Layers'; // Update button text when showing
+    } else {
+        layerControlElement.classList.add('hidden');
+        toggleButton.textContent = '☰ Show Layers'; // Update button text when hiding
+    }
+});
+
 // ================================
 // Initialize Data Structures
 // ================================
