@@ -17,7 +17,79 @@ if (typeof L.control.fullscreen === 'function') {
     console.warn("Fullscreen control not available. Ensure the Leaflet Fullscreen plugin is included.");
 }
 
+// ================================
+// Geolocation Feature Setup
+// ================================
+
+// Function to initialize geolocation tracking
+function trackUserLocation(map) {
+    if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(
+            (position) => {
+                console.log("Position retrieved:", position); // Debugging
+                const userLat = position.coords.latitude;
+                const userLng = position.coords.longitude;
+
+                // Add or update the user's location marker
+                if (!window.userMarker) {
+                    console.log("Creating a new location marker.");
+                    window.userMarker = L.marker([userLat, userLng], {
+                        icon: createUserLocationIcon()
+                    }).addTo(map);
+                } else {
+                    console.log("Updating location marker position.");
+                    window.userMarker.setLatLng([userLat, userLng]);
+                }
+
+                // Optionally center the map on the user's location
+                console.log(`Centering map on: Latitude ${userLat}, Longitude ${userLng}`);
+                map.setView([userLat, userLng], 16); // Adjust zoom level as desired
+            },
+            (error) => {
+                console.error("Geolocation position error:", error); // Debugging
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        console.error("User denied the request for Geolocation.");
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        console.error("Location information is unavailable.");
+                        break;
+                    case error.TIMEOUT:
+                        console.error("The request to get user location timed out.");
+                        break;
+                    default:
+                        console.error("An unknown error occurred.");
+                        break;
+                }
+            },
+            {
+                enableHighAccuracy: true, // Improves accuracy, may use more battery
+                maximumAge: 0,          // Prevents using cached location data
+            }
+        );
+    } else {
+        console.warn("Geolocation is not supported by this browser.");
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+// Custom icon for user location
+function createUserLocationIcon() {
+    return L.divIcon({
+        html: `<i class="fas fa-map-marker-alt" style="font-size:24px; color:blue;"></i>`,
+        className: 'user-location-icon',
+        iconSize: [24, 24],
+        iconAnchor: [12, 24], // Anchor to the bottom center of the icon
+    });
+}
+
+// Call the geolocation function
+trackUserLocation(map);
+
+// ================================
 // Function to adjust icon sizes based on window width
+// ================================
+
 function getIconSize() {
     if (window.innerWidth <= 480) {
         return 28; // Increase size for very small screens
