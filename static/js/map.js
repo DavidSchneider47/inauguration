@@ -21,20 +21,6 @@ if (typeof L.control.fullscreen === 'function') {
 // Geolocation Feature Setup
 // ================================
 
-// Declare the isTracking variable globally to control location tracking
-let isTracking = true;
-
-// Function to toggle location tracking
-function toggleTracking() {
-    isTracking = !isTracking;
-    console.log(`Tracking is now ${isTracking ? "enabled" : "disabled"}.`);
-}
-
-// Add a button to toggle location tracking
-L.easyButton('fas fa-crosshairs', function() {
-    toggleTracking();
-}, 'Toggle Location Tracking').addTo(map);
-
 // Function to initialize geolocation tracking
 function trackUserLocation(map) {
     if (navigator.geolocation) {
@@ -55,11 +41,8 @@ function trackUserLocation(map) {
                     window.userMarker.setLatLng([userLat, userLng]);
                 }
 
-                // Center the map on the user's location only if tracking is enabled
-                if (isTracking) {
-                    console.log(`Centering map on: Latitude ${userLat}, Longitude ${userLng}`);
-                    map.setView([userLat, userLng], 16); // Adjust zoom level as desired
-                }
+                // Note: The map view will not center automatically on the user's location.
+                // You can manually scroll or zoom out to find your location marker.
             },
             (error) => {
                 console.error("Geolocation position error:", error); // Debugging
@@ -101,18 +84,7 @@ function createUserLocationIcon() {
 
 // Call the geolocation function to start tracking
 trackUserLocation(map);
-// Custom icon for user location
-function createUserLocationIcon() {
-    return L.divIcon({
-        html: `<i class="fas fa-map-marker-alt" style="font-size:24px; color:blue;"></i>`,
-        className: 'user-location-icon',
-        iconSize: [24, 24],
-        iconAnchor: [12, 24], // Anchor to the bottom center of the icon
-    });
-}
 
-// Call the geolocation function after defining toggleTracking
-trackUserLocation(map);
 
 // ================================
 // Function to adjust icon sizes based on window width
