@@ -21,12 +21,41 @@ if (typeof L.control.fullscreen === 'function') {
 // Geolocation Feature Setup
 // ================================
 
-// Function to initialize geolocation tracking
+// Function to initialize geolocation tracking with explicit Android handling
 function trackUserLocation(map) {
+    // First, check if we're on Android by checking the user agent
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    
     if (navigator.geolocation) {
+        // For Android, we'll first request permissions explicitly
+        if (isAndroid && navigator.permissions) {
+            navigator.permissions.query({ name: 'geolocation' })
+                .then(permissionStatus => {
+                    if (permissionStatus.state === 'granted') {
+                        startTracking();
+                    } else if (permissionStatus.state === 'prompt') {
+                        // Show a more user-friendly prompt
+                        if (confirm('This app needs your location to show where you are on the map. Allow access?')) {
+                            startTracking();
+                        }
+                    } else {
+                        console.error("Geolocation permission denied");
+                        alert("Location access is denied. Please enable location services for this app in your device settings.");
+                    }
+                });
+        } else {
+            // For non-Android or older devices, proceed with standard tracking
+            startTracking();
+        }
+    } else {
+        console.warn("Geolocation is not supported by this browser.");
+        alert("Geolocation is not supported by this browser.");
+    }
+
+    function startTracking() {
         navigator.geolocation.watchPosition(
             (position) => {
-                console.log("Position retrieved:", position); // Debugging
+                console.log("Position retrieved:", position);
                 const userLat = position.coords.latitude;
                 const userLng = position.coords.longitude;
 
@@ -40,35 +69,30 @@ function trackUserLocation(map) {
                     console.log("Updating location marker position.");
                     window.userMarker.setLatLng([userLat, userLng]);
                 }
-
-                // Note: The map view will not center automatically on the user's location.
-                // You can manually scroll or zoom out to find your location marker.
             },
             (error) => {
-                console.error("Geolocation position error:", error); // Debugging
-                switch (error.code) {
-                    case error.PERMISSION_DENIED:
-                        console.error("User denied the request for Geolocation.");
-                        break;
-                    case error.POSITION_UNAVAILABLE:
-                        console.error("Location information is unavailable.");
-                        break;
-                    case error.TIMEOUT:
-                        console.error("The request to get user location timed out.");
-                        break;
-                    default:
-                        console.error("An unknown error occurred.");
-                        break;
+                console.error("Geolocation error:", error);
+                // More detailed error handling for Android
+                if (isAndroid) {
+                    switch (error.code) {
+                        case error.PERMISSION_DENIED:
+                            alert("Please enable location services for this app in your device settings.");
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            alert("Location service is not available. Please check your device's location settings.");
+                            break;
+                        case error.TIMEOUT:
+                            alert("Location request timed out. Please check your internet connection.");
+                            break;
+                    }
                 }
             },
             {
-                enableHighAccuracy: true, // Improves accuracy, may use more battery
-                maximumAge: 0,          // Prevents using cached location data
+                enableHighAccuracy: true,
+                maximumAge: 0,
+                timeout: 5000 // Added timeout for Android
             }
         );
-    } else {
-        console.warn("Geolocation is not supported by this browser.");
-        alert("Geolocation is not supported by this browser.");
     }
 }
 
