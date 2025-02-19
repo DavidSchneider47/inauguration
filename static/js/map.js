@@ -42,6 +42,11 @@ function trackUserLocation(map) {
                         console.error("Geolocation permission denied");
                         alert("Location access is denied. Please enable location services for this app in your device settings.");
                     }
+                })
+                .catch(error => {
+                    console.error("Permission query error:", error);
+                    // Fallback to standard tracking if permission query fails
+                    startTracking();
                 });
         } else {
             // For non-Android or older devices, proceed with standard tracking
@@ -53,6 +58,12 @@ function trackUserLocation(map) {
     }
 
     function startTracking() {
+        const options = {
+            enableHighAccuracy: true,
+            maximumAge: 0,
+            timeout: 10000 // Increased timeout to 10 seconds
+        };
+
         navigator.geolocation.watchPosition(
             (position) => {
                 console.log("Position retrieved:", position);
@@ -84,14 +95,13 @@ function trackUserLocation(map) {
                         case error.TIMEOUT:
                             alert("Location request timed out. Please check your internet connection.");
                             break;
+                        default:
+                            alert("An unknown error occurred while trying to get your location.");
+                            break;
                     }
                 }
             },
-            {
-                enableHighAccuracy: true,
-                maximumAge: 0,
-                timeout: 5000 // Added timeout for Android
-            }
+            options
         );
     }
 }
@@ -108,7 +118,6 @@ function createUserLocationIcon() {
 
 // Call the geolocation function to start tracking
 trackUserLocation(map);
-
 
 // ================================
 // Function to adjust icon sizes based on window width
