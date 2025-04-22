@@ -19,10 +19,16 @@
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Leaflet-EasyButton CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2.4.0/src/easy-button.css">
+
     <!-- FontAwesome CSS for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
     <!-- Inline Styles for Layout Adjustments -->
     <style>
         /* Reset default margins and paddings */
@@ -39,7 +45,6 @@
             padding-top: 50px; /* Reduced space for fixed navbar */
         }
 
-        
         /* Page Title */
         h1 {
             margin: 10px auto;
@@ -202,13 +207,11 @@
         </div>
     </header>
 
-  <h1 style="text-align: center; margin-top: 20px;">DMV Transit Tourism: Have a Rail Good Time!</h1>
+    <h1 style="text-align: center; margin-top: 20px;">DMV Transit Tourism: Have a Rail Good Time!</h1>
 
-<div class="text-container" style="max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center;">
-    <p>
-        Travel sustainably and save money, time, and hassle by visiting DC car-free. Book a place to stay in one of 244 hotels near a transit station in the District, Maryland, or Virginia. Once you’re in town, use this platform to explore places to eat, drink, and shop a short walk from a station. Mobile app coming soon!
-    </p>
-</div>
+    <div class="text-container" style="max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center;">
+            
+    </div>
 
     <!-- Search Container -->
     <div class="search-container">
@@ -229,7 +232,8 @@
     </div>
 
     <!-- Map Container -->
-    <div id="map"></div>
+    <div id="map"></div>	
+    <button id="toggleLayerControl" class="toggle-btn">☰ Layers</button>
 
     <!-- Footer -->
     <footer class="footer">
@@ -238,6 +242,10 @@
 
     <!-- Include Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Include Leaflet-EasyButton JS -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2.4.0/src/easy-button.js"></script>
+
     <!-- Include map.js -->
     <script src="{{ url_for('static', filename='js/map.js') }}"></script>
 
@@ -304,16 +312,11 @@
             initializeSearchInputs();
         });
     </script>
-
     <!-- JavaScript to Toggle the Mobile Menu -->
     <script>
         function toggleMenu() {
-            var menu = document.getElementById("mobileMenu");
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("mobile-menu-active");
         }
     </script>
 </body>
