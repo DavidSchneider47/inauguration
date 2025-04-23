@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, request, redirect, jsonify
 import json
 import os
 import logging
@@ -226,6 +226,30 @@ def about_page():
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error.html', message="Page not found.", status_code=404), 404
+
+
+import csv
+
+@app.route('/submit_feedback', methods=['POST'])
+def submit_feedback():
+    first_name = request.form.get("first_name")
+    last_name = request.form.get("last_name")
+    email = request.form.get("email")
+    phone = request.form.get("phone", "")  # Optional field
+
+    # Define path for private CSV (outside static/templates)
+    feedback_file = os.path.join(os.getcwd(), 'feedback_submissions.csv')
+
+    # Write to CSV
+    write_header = not os.path.exists(feedback_file)
+    with open(feedback_file, mode='a', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        if write_header:
+            writer.writerow(["First Name", "Last Name", "Email", "Phone"])
+        writer.writerow([first_name, last_name, email, phone])
+
+    return redirect('/')
+
 
 if __name__ == '__main__':
     # Dynamically set the port, defaulting to 5000 if not specified
