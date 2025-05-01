@@ -232,23 +232,20 @@ import csv
 
 @app.route('/submit_feedback', methods=['POST'])
 def submit_feedback():
-    first_name = request.form.get("first_name")
-    last_name = request.form.get("last_name")
-    email = request.form.get("email")
-    phone = request.form.get("phone", "")  # Optional field
-
-    # Define path for private CSV (outside static/templates)
-    feedback_file = os.path.join(os.getcwd(), 'feedback_submissions.csv')
-
-    # Write to CSV
-    write_header = not os.path.exists(feedback_file)
-    with open(feedback_file, mode='a', newline='', encoding='utf-8') as f:
-        writer = csv.writer(f)
-        if write_header:
-            writer.writerow(["First Name", "Last Name", "Email", "Phone"])
-        writer.writerow([first_name, last_name, email, phone])
-
-    return redirect('/')
+    try:
+        first_name = request.form.get("first_name")
+        last_name = request.form.get("last_name")
+        email = request.form.get("email")
+        phone = request.form.get("phone", "")
+        
+        # Log the submission (visible in Heroku logs)
+        app.logger.info(f"FEEDBACK SUBMISSION: {first_name} {last_name}, {email}, {phone}")
+        
+        # Still return success to the client
+        return jsonify({"success": True})
+    except Exception as e:
+        app.logger.error(f"Error in feedback submission: {e}")
+        return jsonify({"success": False, "error": str(e)}), 500
 
 
 if __name__ == '__main__':
