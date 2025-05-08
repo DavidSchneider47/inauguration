@@ -199,21 +199,25 @@ footer {
     100% { transform: rotate(360deg); }
 }
 
-#toggleLayerControl {
-    position: absolute;
-    top: 60px; /* Moves it below the hamburger menu */
-    right: 10px; /* Keep it aligned with the right edge */
-    z-index: 1000; /* Ensure it remains clickable above other elements */
+.layers-toggle-btn {
+  position: absolute;
+  top: 458px; /* Position it at the same level as the Clear Search button */
+  right: 10px;
+  z-index: 1000;
+  background: white;
+  border: 2px solid rgba(0,0,0,0.2);
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.4);
 }
 
-/* Align the toggle button above the layer control box */
-.leaflet-control-layers {
-    position: relative; /* Make the layer control the reference point */
-}
-
-#toggleLayerControl {
-    right: 10px; /* Align it to the same right margin as the layer control box */
-    top: calc(10px + 50px); /* Adjust height so it appears just above the layer box */
+/* Make toggle button only visible on mobile */
+@media (min-width: 769px) {
+  .layers-toggle-btn {
+    display: none;
+  }
 }
 
 .leaflet-control-layers {
@@ -736,18 +740,18 @@ body {
 }
 
 /* Location Tracker Toggle Button */
-.location-toggle {
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    background-color: #2c3e50;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    z-index: 1000;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+.layers-toggle-btn {
+  position: absolute;
+  top: 300px; /* Position it at the top of the map */
+  right: 1px; /* Position it to the left of the layer control box */
+  z-index: 1000;
+  background: white;
+  border: 2px solid rgba(0,0,0,0.2);
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.4);
 }
 
 .location-toggle:hover {
@@ -906,15 +910,69 @@ body {
     width: 30px !important;
     height: 30px !important;
   }
+
+
+/* Custom Layer Control Styles */
+#layers-control-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.toggle-btn {
+  background-color: white;
+  border: 2px solid rgba(0,0,0,0.2);
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+}
+
+.custom-layer-panel {
+  display: none;
+  background-color: white;
+  border-radius: 4px;
+  border: 2px solid rgba(0,0,0,0.2);
+  padding: 10px;
+  margin-top: 5px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+  max-width: 200px;
+}
+
+.layer-option {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.layer-option input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Show panel when active */
+.custom-layer-panel.active {
+  display: block;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  #layers-control-container {
+    top: 60px;
+  }
   
-  /* Fix layers button position */
-  #toggleLayerControl {
-    top: 80px;
-    right: 10px;
-    padding: 8px;
+  .toggle-btn {
     font-size: 14px;
+    padding: 8px;
+  }
+  
+  .custom-layer-panel {
+    right: 0;
+    width: 180px;
   }
 }
+  
 
 /* Additional fixes for very small screens */
 @media (max-width: 480px) {
@@ -940,4 +998,19 @@ body {
   }
 }
 
+/* Custom Layer Control Positioning */
+#layers-control-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1001;  /* Higher than other map controls */
+}
+
+/* Make sure the panel appears below the button */
+.custom-layer-panel {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 200px;
+}
 
