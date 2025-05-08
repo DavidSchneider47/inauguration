@@ -2,8 +2,47 @@ from flask import Flask, render_template, request, redirect, jsonify
 import json
 import os
 import logging
+import psycopg2
+from datetime import datetime
 
 app = Flask(__name__)
+
+# Database connection function
+def get_db_connection():
+    DATABASE_URL = os.environ['DATABASE_URL']
+    # Handle potential 'postgres://' vs 'postgresql://' prefix issue in Heroku
+    if DATABASE_URL.startswith("postgres://"):
+        DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+    return psycopg2.connect(DATABASE_URL)
+
+# Initialize the database
+def init_db():
+    conn = get_db_connection()
+    cur = conn.cursor()
+    
+    # Create feedback table if it doesn't exist
+    cur.execute('''
+    CREATE TABLE IF NOT EXISTS feedback (
+        id SERIAL PRIMARY KEY,
+        first_name TEXT,
+        last_name TEXT,
+        email TEXT,
+        phone TEXT,
+        submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+    ''')
+    
+    conn.commit()
+    cur.close()
+    conn.close()
+    logging.info("Database initialized")
+
+# Call init_db when the app starts
+try:
+    init_db()
+except Exception as e:
+    logging.error(f"Failed to initialize database: {e}")
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -238,14 +277,67 @@ def submit_feedback():
         email = request.form.get("email")
         phone = request.form.get("phone", "")
         
-        # Log the submission (visible in Heroku logs)
+        # Log the submission (still useful for immediate visibility)
         app.logger.info(f"FEEDBACK SUBMISSION: {first_name} {last_name}, {email}, {phone}")
         
-        # Still return success to the client
+        # Save to database
+        conn = get_db_connection()
+        cur = conn.cursor()
+        
+        cur.execute(
+            "INSERT INTO feedback (first_name, last_name, email, phone) VALUES (%s, %s, %s, %s)",
+            (first_name, last_name, email, phone)
+        )
+        
+        conn.commit()
+        cur.close()
+        conn.close()
+        
+        logging.info(f"Feedback from {first_name} {last_name} saved to database")
+        
+        # Return success to the client
         return jsonify({"success": True})
     except Exception as e:
         app.logger.error(f"Error in feedback submission: {e}")
         return jsonify({"success": False, "error": str(e)}), 500
+
+
+@app.route('/admin/feedback', methods=['GET'])
+def view_feedback():
+    # Very simple password protection - you should use a more secure method in production
+    password = request.args.get('key')
+    if password != os.environ.get('ADMIN_PASSWORD', 'Wintersnow2040!'):
+        return "Unauthorized", 401
+    
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor()
+        
+        cur.execute("SELECT * FROM feedback ORDER BY submitted_at DESC")
+        rows = cur.fetchall()
+        
+        # Get column names
+        columns = [desc[0] for desc in cur.description]
+        
+        # Create a list of dictionaries
+        feedback_data = []
+        for row in rows:
+            row_dict = {}
+            for i, col in enumerate(columns):
+                # Format timestamp if needed
+                if col == 'submitted_at' and row[i] is not None:
+                    row_dict[col] = row[i].strftime("%Y-%m-%d %H:%M:%S UTC")
+                else:
+                    row_dict[col] = row[i]
+            feedback_data.append(row_dict)
+        
+        cur.close()
+        conn.close()
+        
+        return render_template('admin_feedback.html', feedback=feedback_data)
+    except Exception as e:
+        logging.error(f"Error viewing feedback: {e}")
+        return f"Error: {str(e)}", 500
 
 
 if __name__ == '__main__':
