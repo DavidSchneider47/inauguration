@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map and Amenities</title>
+    <title>Have a Rail Good Time</title>
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 
     <!-- Google Analytics -->
@@ -137,7 +137,7 @@
         </div>
     </header>
 
-    <h1 style="text-align: center; margin-top: 20px;">DMV Transit Tourism: Have a Rail Good Time!</h1>
+    <h1 style="text-align: center; margin-top: 20px;">MetroMatch: Have a Rail Good Time!</h1>
     <div class="text-container" style="max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center;"></div>
 
     <!-- Search Container -->
@@ -159,8 +159,9 @@
     </div>
 
     <div id="map"></div>
-    <button id="toggleLayerControl" class="toggle-btn">☰ Layers</button>
-
+    <!-- Add this right after the map div -->  
+    <button id="toggleLayerControl" class="layers-toggle-btn">☰ Layers</button>
+   
     <footer class="footer">
         <p>&copy; 2024 Schneider Analytics LLC. All rights reserved.</p>
     </footer>
@@ -169,7 +170,7 @@
     <div id="metromatch-modal" class="modal">
         <div class="modal-content">
             <h2>Welcome to MetroMatch!</h2>
-            <p>We’re building a transit tourism platform and would love your feedback as an early user!</p>
+            <p>We’re building a transit tourism platform and would love your feedback as an early user! We won't share your contact information with anyone else</p>
             <form id="metromatch-form" method="POST" action="/submit_feedback">
                 <input type="text" name="first_name" placeholder="First Name" required>
                 <input type="text" name="last_name" placeholder="Last Name" required>
@@ -279,7 +280,7 @@
             }).then(() => {
                 localStorage.setItem('metromatchDismissed', 'true');
                 form.innerHTML = `<p style="margin-top: 20px; font-size: 1.1em; color: green;">
-                    Thanks for your input! You're helping us shape a better transit experience.
+                    Thanks for your input! We'll be in touch to learn more about your experience with out platform.
                 </p>`;
                 setTimeout(() => {
                     window.location.href = "/";
