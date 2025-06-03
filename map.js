@@ -188,7 +188,7 @@ function createPharmacyIcon() {
     });
 }
 
-// **New Function: Create a restaurant icon**
+// Function to create a restaurant icon
 function createRestaurantIcon() {
     return L.divIcon({
         html: `<i class="fas fa-utensils" style="font-size:${getIconSize()}px; color:orange;"></i>`,
@@ -204,10 +204,8 @@ const hotelLayer = L.layerGroup().addTo(map);
 const coffeeLayer = L.layerGroup().addTo(map);
 const barsLayer = L.layerGroup().addTo(map);
 const pharmacyLayer = L.layerGroup().addTo(map); // Layer for pharmacies
-const restaurantsLayer = L.layerGroup().addTo(map); // **New Layer for Restaurants**
-
-// Create a Layer Group for transit routes
-const transitLayer = L.layerGroup().addTo(map);
+const restaurantsLayer = L.layerGroup().addTo(map); // Layer for Restaurants
+const transitLayer = L.layerGroup().addTo(map); // Layer for transit routes
 
 // Base layers (we have only one)
 const baseLayers = {};
@@ -217,29 +215,55 @@ const overlayLayers = {
     "Hotels": hotelLayer,
     "Coffee Shops": coffeeLayer,
     "Bars": barsLayer,
-    "Pharmacies": pharmacyLayer, // Added Pharmacies to overlay layers
-    "Restaurants": restaurantsLayer, // **Added Restaurants to overlay layers**
-    "Transit Routes": transitLayer // Added Transit Routes to overlay layers
+    "Pharmacies": pharmacyLayer,
+    "Restaurants": restaurantsLayer,
+    "Transit Routes": transitLayer
 };
 
-// Add Layer Control to the map
-L.control.layers(baseLayers, overlayLayers, { collapsed: false }).addTo(map);
+// Add Layer Control to the map (positioned in top right)
+const layerControl = L.control.layers(baseLayers, overlayLayers, { 
+    collapsed: false,
+    position: 'topright'
+}).addTo(map);
 
-// Get references to the layer control and toggle button
-const layerControlElement = document.querySelector('.leaflet-control-layers');
-const toggleButton = document.getElementById('toggleLayerControl');
+// Get a reference to the layer control element
+let layerControlElement;
 
-// Add an event listener to the toggle button
-toggleButton.addEventListener('click', () => {
-    // Toggle the 'hidden' class on the layer control
-    if (layerControlElement.classList.contains('hidden')) {
-        layerControlElement.classList.remove('hidden');
-        toggleButton.textContent = '☰ Layers'; // Update button text when showing
+// We need to wait for the layer control to be added to the DOM
+setTimeout(() => {
+    layerControlElement = document.querySelector('.leaflet-control-layers');
+    
+    // Add event listener to the toggle button
+    document.getElementById('toggleLayerControl').addEventListener('click', () => {
+        // Toggle the 'hidden' class on the layer control
+        if (layerControlElement.classList.contains('hidden')) {
+            layerControlElement.classList.remove('hidden');
+            document.getElementById('toggleLayerControl').textContent = '☰ Hide Layers';
+        } else {
+            layerControlElement.classList.add('hidden');
+            document.getElementById('toggleLayerControl').textContent = '☰ Show Layers';
+        }
+    });
+    
+    // Set initial button text
+    document.getElementById('toggleLayerControl').textContent = '☰ Hide Layers';
+}, 500); // Short delay to ensure the control has been added
+
+// Add responsive behavior - only show toggle on mobile
+function updateToggleButtonVisibility() {
+    const toggleButton = document.getElementById('toggleLayerControl');
+    if (window.innerWidth <= 768) { // Mobile breakpoint
+        toggleButton.style.display = 'block';
     } else {
-        layerControlElement.classList.add('hidden');
-        toggleButton.textContent = '☰ Show Layers'; // Update button text when hiding
+        toggleButton.style.display = 'none';
     }
-});
+}
+
+// Call on page load and when window resizes
+window.addEventListener('load', updateToggleButtonVisibility);
+window.addEventListener('resize', updateToggleButtonVisibility);
+
+
 
 // ================================
 // Initialize Data Structures
@@ -250,7 +274,7 @@ let hotelsData = [];        // To store all hotels
 let coffeeData = [];        // To store all coffee shops
 let barsData = [];          // To store all bars
 let pharmaciesData = [];    // To store all pharmacies
-let restaurantsData = [];   // **To store all restaurants**
+let restaurantsData = [];   // To store all restaurants
 
 // ================================
 // Fetch and store stations
@@ -338,7 +362,7 @@ fetch('/api/pharmacies')
     .catch(error => console.error("Error fetching pharmacies:", error));
 
 // ================================
-// **New Section** Fetch and store restaurants
+// Fetch and store restaurants
 // ================================
 fetch('/api/restaurants')
     .then(response => {
@@ -468,7 +492,7 @@ function addStationMarkers(filteredStations) {
                         color: 'gray',
                         fillColor: 'gray',
                         fillOpacity: 1.0,
-                        radius: getIconSize()
+                        radius: getIconSize() / 2
                     })
                     .addTo(markerGroup)
                     .bindPopup(`<b>${name}</b>`);
@@ -502,8 +526,8 @@ function addAmenitiesMarkers(filteredStations) {
     hotelLayer.clearLayers();
     coffeeLayer.clearLayers();
     barsLayer.clearLayers();
-    pharmacyLayer.clearLayers(); // Clear pharmacies layer
-    restaurantsLayer.clearLayers(); // **Clear restaurants layer**
+    pharmacyLayer.clearLayers();
+    restaurantsLayer.clearLayers();
 
     // Helper function to get amenities for a station
     function getAmenitiesByStation(stationId, dataArray) {
@@ -521,18 +545,12 @@ function addAmenitiesMarkers(filteredStations) {
             const name = hotel.hotel_name;
             const website = hotel.hotel_website;
 
-            // Debugging: Log each hotel's coordinates
-            console.log(`Hotel: ${name} at (${lat}, ${lon})`);
-
-            // Check if lat and lon are valid numbers
             if (typeof lat === 'number' && typeof lon === 'number') {
                 L.marker([lat, lon], {
-                    icon: createFontAwesomeIcon('fas fa-bed', 'blue') // Customize color as needed
+                    icon: createFontAwesomeIcon('fas fa-bed', 'blue')
                 })
                 .addTo(hotelLayer)
                 .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`);
-            } else {
-                console.warn(`Invalid coordinates for Hotel: ${name}`, hotel);
             }
         });
 
@@ -544,18 +562,12 @@ function addAmenitiesMarkers(filteredStations) {
             const name = shop.coffee_name;
             const website = shop.coffee_website;
 
-            // Debugging: Log each coffee shop's coordinates
-            console.log(`Coffee Shop: ${name} at (${lat}, ${lon})`);
-
-            // Check if lat and lon are valid numbers
             if (typeof lat === 'number' && typeof lon === 'number') {
                 L.marker([lat, lon], {
                     icon: createCoffeeIcon()
                 })
                 .addTo(coffeeLayer)
                 .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`);
-            } else {
-                console.warn(`Invalid coordinates for Coffee Shop: ${name}`, shop);
             }
         });
 
@@ -567,18 +579,12 @@ function addAmenitiesMarkers(filteredStations) {
             const name = bar.bar_name;
             const website = bar.bar_website;
 
-            // Debugging: Log each bar's coordinates
-            console.log(`Bar: ${name} at (${lat}, ${lon})`);
-
-            // Check if lat and lon are valid numbers
             if (typeof lat === 'number' && typeof lon === 'number') {
                 L.marker([lat, lon], {
                     icon: createBarIcon()
                 })
                 .addTo(barsLayer)
                 .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`);
-            } else {
-                console.warn(`Invalid coordinates for Bar: ${name}`, bar);
             }
         });
 
@@ -590,22 +596,16 @@ function addAmenitiesMarkers(filteredStations) {
             const name = pharmacy.pharmacy_name;
             const website = pharmacy.pharmacy_website;
 
-            // Debugging: Log each pharmacy's coordinates
-            console.log(`Pharmacy: ${name} at (${lat}, ${lon})`);
-
-            // Check if lat and lon are valid numbers
             if (typeof lat === 'number' && typeof lon === 'number') {
                 L.marker([lat, lon], {
                     icon: createPharmacyIcon()
                 })
                 .addTo(pharmacyLayer)
                 .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`);
-            } else {
-                console.warn(`Invalid coordinates for Pharmacy: ${name}`, pharmacy);
             }
         });
 
-        // **Add Restaurants**
+        // Add Restaurants
         const associatedRestaurants = getAmenitiesByStation(stationId, restaurantsData);
         associatedRestaurants.forEach(restaurant => {
             const lat = restaurant.restaurant_lat;
@@ -613,18 +613,12 @@ function addAmenitiesMarkers(filteredStations) {
             const name = restaurant.restaurant_name;
             const website = restaurant.restaurant_website;
 
-            // Debugging: Log each restaurant's coordinates
-            console.log(`Restaurant: ${name} at (${lat}, ${lon})`);
-
-            // Check if lat and lon are valid numbers
             if (typeof lat === 'number' && typeof lon === 'number') {
                 L.marker([lat, lon], {
                     icon: createRestaurantIcon()
                 })
                 .addTo(restaurantsLayer)
                 .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`);
-            } else {
-                console.warn(`Invalid coordinates for Restaurant: ${name}`, restaurant);
             }
         });
     });
@@ -654,26 +648,23 @@ function filterAndDisplayMarkers() {
 // ================================
 // Function to filter and display amenities based on search
 // (Called after fetching amenities data)
+// ================================
 function filterAndDisplayAmenities() {
     filterAndDisplayMarkers();
 }
 
-/**
- * Retrieves search parameters from localStorage.
- * @returns {Object} - An object containing stationQuery and lineQuery.
- */
+// ================================
+// Retrieve search parameters from localStorage
+// ================================
 function getSearchParams() {
     const stationQuery = localStorage.getItem('stationQuery') || '';
     const lineQuery = localStorage.getItem('lineQuery') || '';
     return { stationQuery, lineQuery };
 }
 
-/**
- * Debounce function to limit the rate of function execution
- * @param {Function} func - The function to debounce
- * @param {number} delay - The delay in milliseconds
- * @returns {Function}
- */
+// ================================
+// Debounce function to limit function execution rate
+// ================================
 function debounce(func, delay) {
     let debounceTimer;
     return function() {
@@ -703,17 +694,12 @@ window.addEventListener('load', () => {
 });
 
 // ================================
-// New Function: Center and Zoom Map on a Selected Station
+// Function to center map on a selected station
 // ================================
-
-/**
- * Centers the map on the specified station and sets the zoom level to 16.
- * @param {string} stationId - The unique ID of the station.
- */
 function centerMapOnStation(stationId) {
     const station = stationsData.find(s => String(s.station_id) === String(stationId));
     if (station) {
-        map.setView([station.station_lat, station.station_lon], 16); // Changed zoom level to 16
+        map.setView([station.station_lat, station.station_lon], 16);
         console.log(`Map centered on station: ${station.station_name}`);
     } else {
         console.warn(`Station with ID ${stationId} not found.`);
@@ -809,4 +795,3 @@ document.getElementById('station-search').addEventListener('input', () => {
 document.getElementById('station-search').addEventListener('change', () => {
     handleStationSelection();
 });
-
