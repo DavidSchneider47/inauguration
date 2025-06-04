@@ -136,65 +136,70 @@ function createUserLocationIcon() {
 trackUserLocation(map);
 
 // ================================
-// Function to adjust icon sizes based on window width
+// Function to adjust icon sizes based on window width (REVISED FOR SMALLER ICONS)
 // ================================
 
 function getIconSize() {
     if (window.innerWidth <= 480) {
-        return 28; // Increase size for very small screens
+        return 18; // Reduced from 28
     } else if (window.innerWidth <= 768) {
-        return 34; // Increase size for medium screens
+        return 20; // Reduced from 34
     }
-    return 30; // Larger icons for desktop
+    return 22; // Reduced from 30 for desktop
 }
 
-// Function to create a FontAwesome icon marker
+// Function to create a FontAwesome icon marker (REVISED FOR SMALLER ICONS)
 function createFontAwesomeIcon(iconClass, color = 'green') {
+    const iconSize = getIconSize();
     return L.divIcon({
-        html: `<i class="${iconClass}" style="font-size:${getIconSize()}px; color:${color};"></i>`,
+        html: `<i class="${iconClass}" style="font-size:${iconSize}px; color:${color};"></i>`,
         className: 'fa-icon',
-        iconSize: [getIconSize(), getIconSize()],
-        iconAnchor: [getIconSize() / 2, getIconSize() / 2]
+        iconSize: [iconSize, iconSize],
+        iconAnchor: [iconSize / 2, iconSize / 2]
     });
 }
 
-// Function to create a coffee mug icon
+// Function to create a coffee mug icon (REVISED FOR SMALLER ICONS)
 function createCoffeeIcon() {
+    const iconSize = getIconSize();
     return L.divIcon({
-        html: `<i class="fas fa-coffee" style="font-size:${getIconSize()}px; color:brown;"></i>`,
+        html: `<i class="fas fa-coffee" style="font-size:${iconSize}px; color:brown;"></i>`,
         className: 'fa-icon',
-        iconSize: [getIconSize(), getIconSize()],
-        iconAnchor: [getIconSize() / 2, getIconSize() / 2]
+        iconSize: [iconSize, iconSize],
+        iconAnchor: [iconSize / 2, iconSize / 2]
     });
 }
 
-// Function to create a beer/bar icon
+// Function to create a beer/bar icon (REVISED FOR SMALLER ICONS)
 function createBarIcon() {
+    const iconSize = getIconSize();
     return L.divIcon({
-        html: `<i class="fas fa-beer" style="font-size:${getIconSize()}px; color:purple;"></i>`,
+        html: `<i class="fas fa-beer" style="font-size:${iconSize}px; color:purple;"></i>`,
         className: 'fa-icon',
-        iconSize: [getIconSize(), getIconSize()],
-        iconAnchor: [getIconSize() / 2, getIconSize() / 2]
+        iconSize: [iconSize, iconSize],
+        iconAnchor: [iconSize / 2, iconSize / 2]
     });
 }
 
-// Function to create a pharmacy icon
+// Function to create a pharmacy icon (REVISED FOR SMALLER ICONS)
 function createPharmacyIcon() {
+    const iconSize = getIconSize();
     return L.divIcon({
-        html: `<i class="fas fa-pills" style="font-size:${getIconSize()}px; color:red;"></i>`,
+        html: `<i class="fas fa-pills" style="font-size:${iconSize}px; color:red;"></i>`,
         className: 'fa-icon',
-        iconSize: [getIconSize(), getIconSize()],
-        iconAnchor: [getIconSize() / 2, getIconSize() / 2]
+        iconSize: [iconSize, iconSize],
+        iconAnchor: [iconSize / 2, iconSize / 2]
     });
 }
 
-// Function to create a restaurant icon
+// Function to create a restaurant icon (REVISED FOR SMALLER ICONS)
 function createRestaurantIcon() {
+    const iconSize = getIconSize();
     return L.divIcon({
-        html: `<i class="fas fa-utensils" style="font-size:${getIconSize()}px; color:orange;"></i>`,
+        html: `<i class="fas fa-utensils" style="font-size:${iconSize}px; color:orange;"></i>`,
         className: 'fa-icon',
-        iconSize: [getIconSize(), getIconSize()],
-        iconAnchor: [getIconSize() / 2, getIconSize() / 2]
+        iconSize: [iconSize, iconSize],
+        iconAnchor: [iconSize / 2, iconSize / 2]
     });
 }
 
