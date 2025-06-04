@@ -742,7 +742,7 @@ body {
 /* Location Tracker Toggle Button */
 .layers-toggle-btn {
   position: absolute;
-  top: 300px; /* Position it at the top of the map */
+  top: 450px; /* Position it at the top of the map */
   right: 1px; /* Position it to the left of the layer control box */
   z-index: 1000;
   background: white;
