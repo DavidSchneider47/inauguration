@@ -16,7 +16,7 @@
     <!-- Navigation Bar -->
     <header>
         <div class="navbar">
-            <h1>DMV Transit Tourism</h1>
+            <h1>MetroMatch</h1>
             <!-- Hamburger Icon for Mobile -->
             <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
             
@@ -60,12 +60,12 @@
 
         <h1>Visit DC Car-Free</h1>
         <p>
-            Are you coming to Washington DC for work or on vacation?? Do you need a place to stay? Are you searching for destinations to eat, drink, shop, and celebrate? <strong>DMV Transit Tourism</strong> has you covered. Browse our database of hundreds of hotels, restaurants, cafes, and nightlife within walking distance from Metro, MARC, and VRE. Lower your carbon footprint, save money, time, and hassle, and experience the region like a local for an Inauguration weekend to remember.
+            Are you coming to Washington DC for work or on vacation? Do you need a place to stay? Are you searching for destinations to eat, drink, shop, and celebrate? <strong>MetoMatch</strong> has you covered. Browse our database of hundreds of hotels, restaurants, cafes, and nightlife within walking distance from Metro, MARC, and VRE. Lower your carbon footprint, save money, time, and hassle, and experience the region like a local for a trip to remember.
         </p>
 
         <h2>Data by the People, for the People</h2>
         
-<p><strong>DMV Transit Tourism</strong> is built on information from OpenStreetMap (OSM) is a collaborative project that creates a free, editable map of the world, powered by a global community of contributors. OSM provides detailed, up-to-date geographic data contributed and maintained by people like you. This open-data initiative aims to empower individuals, organizations, and communities by making geographic information accessible to all.</p>
+<p><strong>MetroMatch</strong> is built on information from OpenStreetMap (OSM) is a collaborative project that creates a free, editable map of the world, powered by a global community of contributors. OSM provides detailed, up-to-date geographic data contributed and maintained by people like you. This open-data initiative aims to empower individuals, organizations, and communities by making geographic information accessible to all.</p>
 
         <h2>About the Content Creator</h2>
         <img src="{{ url_for('static', filename='images/content_creator.jpg') }}" alt="Photo of David Schneider" style="display: block; margin: 20px auto; width: 200px; height: auto;">
@@ -75,23 +75,28 @@
         <h2>Bring Transit Tourism to Your Hometown</h2>
 
         <p>If you are intrigued by what you see on this platform and would like to develop something similar for your community, please reach out for a consultation by emailing connect@transitdiscoveries.com or visit <a href="https://www.transitorienteddiscoveries.com/" target="_blank">Transit-Oriented Discoveries</a>.</p>
-    </main>
+   
 
+ <h2>Photo Credits</h2>
+
+   <p>This site uses images from photo sharing sites that may be re-published with attribution: National Zoo: Marja via Flickr; Kramerbooks: Bill Couch via Flickr; Ben's Chili Bowl: Kevin Harber via Flickr; National Gallery: Michael Jones via Flickr; Hershorn Museum: Washingtonnydc via Flickr; Friendship Arch: Tim Evenson via Flickr; Arlington Cemetary: Lindsey Flynn via Flickr, Eastern Market: Panderband via Flickr, Ballston: Neil Cooler via Flickr; Metro Escalators: Kaique Rocha via Pexels.</p>
+
+<h2>Privacy Statement</h2>
+
+<p><strong>MetroMatch</strong> does not share personal data or location information about users. Our website and app uses your device's location solely to display your current position on the map and to enhance your experience by showing nearby transit stations and amenities. Location data is processed locally on your device and is not transmitted to our servers or any third-party services. The MetroMatch team reserves the right to use emails for limited promotional use.</p>
+
+ </main>
    <!-- Footer -->
     <footer class="about-footer">
-        <p>&copy; 2024 DMV Transit Tourism. All rights reserved.</p>
+        <p>&copy; Schneider Analytics LLC. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript to Toggle the Mobile Menu -->
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("mobileMenu");
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
-        }
-    </script>
+   <script>
+    function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("mobile-menu-active");
+    }
+</script>
 </body>
 </html>
