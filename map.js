@@ -185,7 +185,7 @@ function createBarIcon() {
 function createPharmacyIcon() {
     const iconSize = getIconSize();
     return L.divIcon({
-        html: `<i class="fas fa-pills" style="font-size:${iconSize}px; color:red;"></i>`,
+        html: `<i class="fas fa-notes-medical" style="font-size:${iconSize}px; color:red;"></i>`,
         className: 'fa-icon',
         iconSize: [iconSize, iconSize],
         iconAnchor: [iconSize / 2, iconSize / 2]
