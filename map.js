@@ -25,7 +25,8 @@ function batchClearLayers() {
         coffeeLayer,
         barsLayer,
         pharmacyLayer,
-        restaurantsLayer
+        restaurantsLayer,
+        museumsLayer // Added museums layer to batch clearing
     ];
     
     requestAnimationFrame(() => {
@@ -203,6 +204,17 @@ function createRestaurantIcon() {
     });
 }
 
+// Function to create a museum icon (NEW)
+function createMuseumIcon() {
+    const iconSize = getIconSize();
+    return L.divIcon({
+        html: `<i class="fas fa-university" style="font-size:${iconSize}px; color:darkgreen;"></i>`,
+        className: 'fa-icon',
+        iconSize: [iconSize, iconSize],
+        iconAnchor: [iconSize / 2, iconSize / 2]
+    });
+}
+
 // Create Layer Groups for stations and amenities
 const markerGroup = L.layerGroup().addTo(map); // Layer for station markers
 const hotelLayer = L.layerGroup().addTo(map);
@@ -211,6 +223,7 @@ const barsLayer = L.layerGroup().addTo(map);
 const pharmacyLayer = L.layerGroup().addTo(map); // Layer for pharmacies
 const restaurantsLayer = L.layerGroup().addTo(map); // Layer for Restaurants
 const transitLayer = L.layerGroup().addTo(map); // Layer for transit routes
+const museumsLayer = L.layerGroup().addTo(map); // Layer for museums (always visible)
 
 // Base layers (we have only one)
 const baseLayers = {};
@@ -280,6 +293,7 @@ let coffeeData = [];        // To store all coffee shops
 let barsData = [];          // To store all bars
 let pharmaciesData = [];    // To store all pharmacies
 let restaurantsData = [];   // To store all restaurants
+let museumsData = [];       // To store all museums
 
 // ================================
 // Fetch and store stations
@@ -384,6 +398,23 @@ fetch('/api/restaurants')
     .catch(error => console.error("Error fetching restaurants:", error));
 
 // ================================
+// Fetch and store museums (NEW)
+// ================================
+fetch('/static/data/museums.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Network response was not ok (${response.statusText})`);
+        }
+        return response.json();
+    })
+    .then(museums => {
+        console.log("Fetched Museums:", museums); // Debugging
+        museumsData = museums; // Store museums data
+        addMuseumMarkers(); // Add museums to map immediately (always visible)
+    })
+    .catch(error => console.error("Error fetching museums:", error));
+
+// ================================
 // Fetch and add transit routes GeoJSON
 // ================================
 fetch('/static/data/reduced_routes_data.geojson')
@@ -422,6 +453,49 @@ fetch('/static/data/reduced_routes_data.geojson')
         }).addTo(transitLayer);
     })
     .catch(error => console.error("Error loading transit routes GeoJSON:", error));
+
+// ================================
+// Function to add museum markers (NEW)
+// ================================
+function addMuseumMarkers() {
+    museumsLayer.clearLayers();
+    
+    const BATCH_SIZE = 10;
+    let currentIndex = 0;
+    
+    function processBatch() {
+        const endIndex = Math.min(currentIndex + BATCH_SIZE, museumsData.length);
+        const batch = museumsData.slice(currentIndex, endIndex);
+        
+        requestAnimationFrame(() => {
+            batch.forEach(museum => {
+                const lat = museum.latitude;  // Updated to match your JSON
+                const lon = museum.longitude; // Updated to match your JSON
+                const name = museum.museum_name; // Updated to match your JSON
+                const website = museum.website;
+                
+                if (typeof lat === 'number' && typeof lon === 'number') {
+                    const popupContent = website 
+                        ? `<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`
+                        : `<b>${name}</b>`;
+                    
+                    L.marker([lat, lon], {
+                        icon: createMuseumIcon()
+                    })
+                    .addTo(museumsLayer)
+                    .bindPopup(popupContent);
+                }
+            });
+            
+            currentIndex += BATCH_SIZE;
+            if (currentIndex < museumsData.length) {
+                processBatch();
+            }
+        });
+    }
+    
+    processBatch();
+}
 
 // ================================
 // Function to filter and display only the selected line
@@ -738,6 +812,7 @@ function clearSearch() {
     const debouncedReset = debounce(() => {
         filterAndDisplayMarkers();
         filterTransitRoutes('');
+        addMuseumMarkers(); // Re-add museums after clearing
     }, 100);
     
     debouncedReset();
