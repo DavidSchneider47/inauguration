@@ -1288,5 +1288,29 @@
         "pharmacy_lat": 38.9238258,
         "pharmacy_lon": -77.0512391,
         "pharmacy_distance_miles": 0.1
+    },
+
+   {
+        "pharmacy_id": "131",
+        "station_name": "POTOMAC YARD METRO STATION",
+        "station_id": "160",
+        "pharmacy_name": "Target",
+        "pharmacy_website": "https://www.target.com/sl/alexandria/1076",
+        "pharmacy_lat": 38.833984,
+        "pharmacy_lon": -77.0498548,
+        "pharmacy_distance_miles": 0.19
+    },
+
+
+{
+        "pharmacy_id": "132",
+        "station_name": "POTOMAC YARD METRO STATION",
+        "station_id": "160",
+        "pharmacy_name": "Giant",
+        "pharmacy_website": "https://stores.giantfood.com/va/alexandria/621-east-glebe-road",
+        "pharmacy_lat": 38.8323091,
+        "pharmacy_lon": -77.0503433,
+        "pharmacy_distance_miles": 0.22
     }
+
 ]
