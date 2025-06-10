@@ -1,0 +1,772 @@
+[
+  {
+    "supermarket_id": 1,
+    "station_name": "BALLSTON METRO STATION",
+    "station_id": 77,
+    "supermarket_name": "Harris Teeter",
+    "supermarket_website": "https://www.harristeeter.com/stores/grocery/va/arlington/arlington/097/00486?cid=loc_09700486_gmb",
+    "supermarket_lat": 38.8768407,
+    "supermarket_lon": -77.1098822,
+    "supermarket_distance_miles": 0.38
+  },
+  {
+    "supermarket_id": 2,
+    "station_name": "BETHESDA METRO STATION",
+    "station_id": 55,
+    "supermarket_name": "Trader Joe's",
+    "supermarket_website": "https://locations.traderjoes.com/md/bethesda/645/?utm_source=gmb&utm_medium=organic&utm_campaign=local",
+    "supermarket_lat": 38.9784491,
+    "supermarket_lon": -77.090808,
+    "supermarket_distance_miles": 0.45
+  },
+  {
+    "supermarket_id": 3,
+    "station_name": "BETHESDA METRO STATION",
+    "station_id": 55,
+    "supermarket_name": "Trader Joe's",
+    "supermarket_website": "https://locations.traderjoes.com/md/bethesda/623/?utm_source=gmb&utm_medium=organic&utm_campaign=local",
+    "supermarket_lat": 38.9896194,
+    "supermarket_lon": -77.0957017,
+    "supermarket_distance_miles": 0.37
+  },
+  {
+    "supermarket_id": 4,
+    "station_name": "BETHESDA METRO STATION",
+    "station_id": 55,
+    "supermarket_name": "Giant Food",
+    "supermarket_website": "https://stores.giantfood.com/md/bethesda/7142-arlington-road?y_source=1_NDE5NTEwNC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "supermarket_lat": 38.981248,
+    "supermarket_lon": -77.0989277,
+    "supermarket_distance_miles": 0.34
+  },
+  {
+    "supermarket_id": 5,
+    "station_name": "BRADDOCK ROAD METRO STATION",
+    "station_id": 84,
+    "supermarket_name": "ALDI",
+    "supermarket_website": "https://stores.aldi.us/va/alexandria/425-e-monroe-ave?utm_source=google&utm_medium=local&utm_campaign=brand&utm_content=storepage_webclick",
+    "supermarket_lat": 38.8206705,
+    "supermarket_lon": -77.0534545,
+    "supermarket_distance_miles": 0.46
+  },
+  {
+    "supermarket_id": 6,
+    "station_name": "CLARENDON METRO STATION",
+    "station_id": 71,
+    "supermarket_name": "Whole Foods Market",
+    "supermarket_website": "https://www.wholefoodsmarket.com/stores/arlington-va?utm_source=google&utm_medium=organic&utm_campaign=listings",
+    "supermarket_lat": 38.8889866,
+    "supermarket_lon": -77.0910095,
+    "supermarket_distance_miles": 0.25
+  },
+  {
+    "supermarket_id": 7,
+    "station_name": "CLARENDON METRO STATION",
+    "station_id": 71,
+    "supermarket_name": "Trader Joe's",
+    "supermarket_website": "https://locations.traderjoes.com/va/arlington/640/?utm_source=gmb&utm_medium=organic&utm_campaign=local",
+    "supermarket_lat": 38.886684,
+    "supermarket_lon": -77.094641,
+    "supermarket_distance_miles": 0.04
+  },
+  {
+    "supermarket_id": 8,
+    "station_name": "COLUMBIA HEIGHTS METRO STATION",
+    "station_id": 21,
+    "supermarket_name": "Giant Food",
+    "supermarket_website": "https://stores.giantfood.com/dc/washington/1345-park-road,-nw?y_source=1_NDE5NTI1My03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "supermarket_lat": 38.930805,
+    "supermarket_lon": -77.031962,
+    "supermarket_distance_miles": 0.15
+  },
+  {
+    "supermarket_id": 9,
+    "station_name": "CONGRESS HEIGHTS METRO STATION",
+    "station_id": 32,
+    "supermarket_name": "Giant Food",
+    "supermarket_website": "https://stores.giantfood.com/dc/washington/1535-alabama-avenue-se?y_source=1_NDE5NTM4OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "supermarket_lat": 38.8448649,
+    "supermarket_lon": -76.9812147,
+    "supermarket_distance_miles": 0.36
+  },
+  {
+    "supermarket_id": 10,
+    "station_name": "COURTHOUSE METRO STATION",
+    "station_id": 72,
+    "supermarket_name": "MOM's Organic Market",
+    "supermarket_website": "https://momsorganicmarket.com/",
+    "supermarket_lat": 38.8962353,
+    "supermarket_lon": -77.0863091,
+    "supermarket_distance_miles": 0.35
+  },
+  {
+    "supermarket_id": 11,
+    "station_name": "DUNN LORING MERRIFIELD METRO STATION",
+    "station_id": 67,
+    "supermarket_name": "Harris Teeter",
+    "supermarket_website": "https://www.harristeeter.com/stores/grocery/va/vienna/dunn-loring/097/00308?cid=loc_09700308_gmb",
+    "supermarket_lat": 38.8813707,
+    "supermarket_lon": -77.2286663,
+    "supermarket_distance_miles": 0.12
+  },
+  {
+    "supermarket_id": 12,
+    "station_name": "DUPONT CIRCLE METRO STATION",
+    "station_id": 37,
+    "supermarket_name": "Safeway",
+    "supermarket_website": "https://local.safeway.com/safeway/dc/washington/1701-corcoran-st-nw.html",
+    "supermarket_lat": 38.9119596,
+    "supermarket_lon": -77.0386738,
+    "supermarket_distance_miles": 0.32
+  },
+  {
+    "supermarket_id": 13,
+    "station_name": "EASTERN MARKET METRO STATION",
+    "station_id": 8,
+    "supermarket_name": "Yes! Organic Market - Capitol Hill",
+    "supermarket_website": "http://www.yesorganicmarket.com/",
+    "supermarket_lat": 38.8833979,
+    "supermarket_lon": -76.9947667,
+    "supermarket_distance_miles": 0.05
+  },
+  {
+    "supermarket_id": 14,
+    "station_name": "EASTERN MARKET METRO STATION",
+    "station_id": 8,
+    "supermarket_name": "Trader Joe's",
+    "supermarket_website": "https://locations.traderjoes.com/dc/washington/622/?utm_source=gmb&utm_medium=organic&utm_campaign=local",
+    "supermarket_lat": 38.8847716,
+    "supermarket_lon": -76.9954627,
+    "supermarket_distance_miles": 0.05
+  },
+  {
+    "supermarket_id": 15,
+    "station_name": "EISENHOWER AVE METRO STATION",
+    "station_id": 85,
+    "supermarket_name": "Wegmans",
+    "supermarket_website": "https://www.wegmans.com/stores/carlyle-va/?cid=GMB_Wegmans_2024:aw:ow:gb:gb:ao::",
+    "supermarket_lat": 38.8039991,
+    "supermarket_lon": -77.0728698,
+    "supermarket_distance_miles": 0.28
+  },
+  {
+    "supermarket_id": 16,
+    "station_name": "FOGGY BOTTOM METRO STATION",
+    "station_id": 39,
+    "supermarket_name": "Trader Joe's",
+    "supermarket_website": "https://locations.traderjoes.com/dc/washington/653/?utm_source=gmb&utm_medium=organic&utm_campaign=local",
+    "supermarket_lat": 38.9041139,
+    "supermarket_lon": -77.053005,
+    "supermarket_distance_miles": 0.28
+  },
+  {
+    "supermarket_id": 17,
+    "station_name": "FOGGY BOTTOM METRO STATION",
+    "station_id": 39,
+    "supermarket_name": "Whole Foods Market",
+    "supermarket_website": "https://www.wholefoodsmarket.com/stores/foggybottom?utm_source=google&utm_medium=organic&utm_campaign=listings",
+    "supermarket_lat": 38.9008273,
+    "supermarket_lon": -77.0491667,
+    "supermarket_distance_miles": 0.05
+  },
+  {
+    "supermarket_id": 18,
+    "station_name": "FOREST GLEN METRO STATION",
+    "station_id": 65,
+    "supermarket_name": "Snider's Super Foods",
+    "supermarket_website": "http://snidersfoods.net/",
+    "supermarket_lat": 39.0091815,
+    "supermarket_lon": -77.0417368,
+    "supermarket_distance_miles": 0.44
+  },
+  {
+    "supermarket_id": 19,
+    "station_name": "FOREST GLEN METRO STATION",
+    "station_id": 65,
+    "supermarket_name": "ALDI",
+    "supermarket_website": "https://stores.aldi.us/md/silver-spring/9440-georgia-avenue?utm_source=google&utm_medium=local&utm_campaign=brand&utm_content=storepage_webclick",
+    "supermarket_lat": 39.0098128,
+    "supermarket_lon": -77.0417842,
+    "supermarket_distance_miles": 0.39
+  },
+  {
+    "supermarket_id": 20,
+    "station_name": "FORT TOTTEN METRO STATION",
+    "station_id": 23,
+    "supermarket_name": "ALDI",
+    "supermarket_website": "https://stores.aldi.us/dc/washington/5300-south-dakota-ave-ne?utm_source=google&utm_medium=local&utm_campaign=brand&utm_content=storepage_webclick",
+    "supermarket_lat": 38.954761,
+    "supermarket_lon": -77.0000689,
+    "supermarket_distance_miles": 0.23
+  },
+  {
+    "supermarket_id": 21,
+    "station_name": "FRIENDSHIP HEIGHTS METRO STATION",
+    "station_id": 57,
+    "supermarket_name": "Rodman's",
+    "supermarket_website": "https://www.rodmans.com/",
+    "supermarket_lat": 38.9562995,
+    "supermarket_lon": -77.0838907,
+    "supermarket_distance_miles": 0.34
+  },
+  {
+    "supermarket_id": 22,
+    "station_name": "FRIENDSHIP HEIGHTS METRO STATION",
+    "station_id": 57,
+    "supermarket_name": "Amazon Fresh",
+    "supermarket_website": "https://amzn.to/3cE3z9X",
+    "supermarket_lat": 38.9624134,
+    "supermarket_lon": -77.0845902,
+    "supermarket_distance_miles": 0.12
+  },
+  {
+    "supermarket_id": 23,
+    "station_name": "FRIENDSHIP HEIGHTS METRO STATION",
+    "station_id": 57,
+    "supermarket_name": "Whole Foods Market",
+    "supermarket_website": "https://www.wholefoodsmarket.com/stores/friendshipheights?utm_source=google&utm_medium=organic&utm_campaign=listings",
+    "supermarket_lat": 38.9613149,
+    "supermarket_lon": -77.0867545,
+    "supermarket_distance_miles": 0.06
+  },
+  {
+    "supermarket_id": 24,
+    "station_name": "GEORGIA AVE PETWORTH METRO STATION",
+    "station_id": 22,
+    "supermarket_name": "Safeway",
+    "supermarket_website": "https://local.safeway.com/safeway/dc/washington/3830-georgia-ave-nw.html",
+    "supermarket_lat": 38.9384858,
+    "supermarket_lon": -77.0249913,
+    "supermarket_distance_miles": 0.16
+  },
+  {
+    "supermarket_id": 25,
+    "station_name": "GREENBELT MARC",
+    "station_id": 134,
+    "supermarket_name": "MOM's Organic Market",
+    "supermarket_website": "https://momsorganicmarket.com/",
+    "supermarket_lat": 39.0140121,
+    "supermarket_lon": -76.9200559,
+    "supermarket_distance_miles": 0.5
+  },
+  {
+    "supermarket_id": 26,
+    "station_name": "GREENSBORO METRO STATION",
+    "station_id": 95,
+    "supermarket_name": "Whole Foods Market",
+    "supermarket_website": "https://www.wholefoodsmarket.com/stores/tysonscorner?utm_source=google&utm_medium=organic&utm_campaign=listings",
+    "supermarket_lat": 38.924755,
+    "supermarket_lon": -77.2334584,
+    "supermarket_distance_miles": 0.24
+  },
+  {
+    "supermarket_id": 27,
+    "station_name": "HYATTSVILLE CROSSING METRO STATION",
+    "station_id": 50,
+    "supermarket_name": "Safeway",
+    "supermarket_website": "https://local.safeway.com/safeway/md/hyattsville/3702-east-west-hwy.html",
+    "supermarket_lat": 38.9670541,
+    "supermarket_lon": -76.9513133,
+    "supermarket_distance_miles": 0.28
+  },
+  {
+    "supermarket_id": 28,
+    "station_name": "HYATTSVILLE CROSSING METRO STATION",
+    "station_id": 50,
+    "supermarket_name": "Giant Food",
+    "supermarket_website": "https://stores.giantfood.com/md/hyattsville/3521-east-west-highway?y_source=1_NDE5NTE2Ny03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "supermarket_lat": 38.9656613,
+    "supermarket_lon": -76.9585097,
+    "supermarket_distance_miles": 0.14
+  },
+  {
+    "supermarket_id": 29,
+    "station_name": "KENSINGTON MARC",
+    "station_id": 138,
+    "supermarket_name": "Safeway",
+    "supermarket_website": "https://local.safeway.com/safeway/md/kensington/10541-connecticut-ave.html",
+    "supermarket_lat": 39.0279918,
+    "supermarket_lon": -77.0753271,
+    "supermarket_distance_miles": 0.21
+  },
+  {
+    "supermarket_id": 30,
+    "station_name": "KING STREET METRO STATION",
+    "station_id": 86,
+    "supermarket_name": "Whole Foods Market",
+    "supermarket_website": "https://www.wholefoodsmarket.com/stores/alexandria?utm_source=google&utm_medium=organic&utm_campaign=listings",
+    "supermarket_lat": 38.8039989,
+    "supermarket_lon": -77.0597977,
+    "supermarket_distance_miles": 0.18
+  },
+  {
+    "supermarket_id": 31,
+    "station_name": "MCLEAN METRO STATION",
+    "station_id": 97,
+    "supermarket_name": "Safeway",
+    "supermarket_website": "https://local.safeway.com/safeway/va/mclean/1688-anderson-rd.html",
+    "supermarket_lat": 38.9223553,
+    "supermarket_lon": -77.202503,
+    "supermarket_distance_miles": 0.45
+  },
+  {
+    "supermarket_id": 32,
+    "station_name": "MCLEAN METRO STATION",
+    "station_id": 97,
+    "supermarket_name": "Wegmans",
+    "supermarket_website": "https://www.wegmans.com/stores/tysons-va/?cid=GMB_Wegmans_2024:aw:ow:gb:gb:ao::",
+    "supermarket_lat": 38.925605,
+    "supermarket_lon": -77.210107,
+    "supermarket_distance_miles": 0.09
+  },
+  {
+    "supermarket_id": 33,
+    "station_name": "MEDICAL CENTER METRO STATION",
+    "station_id": 56,
+    "supermarket_name": "Harris Teeter",
+    "supermarket_website": "https://www.harristeeter.com/stores/grocery/md/bethesda/downtown-bethesda/097/00404?cid=loc_09700404_gmb",
+    "supermarket_lat": 38.9929214,
+    "supermarket_lon": -77.0968278,
+    "supermarket_distance_miles": 0.49
+  },
+  {
+    "supermarket_id": 34,
+    "station_name": "MINNESOTA AVE METRO STATION",
+    "station_id": 30,
+    "supermarket_name": "Safeway",
+    "supermarket_website": "https://local.safeway.com/safeway/dc/washington/322-40th-st-ne.html",
+    "supermarket_lat": 38.893274,
+    "supermarket_lon": -76.947732,
+    "supermarket_distance_miles": 0.35
+  },
+  {
+    "supermarket_id": 35,
+    "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+    "station_id": 1,
+    "supermarket_name": "Safeway",
+    "supermarket_website": "https://local.safeway.com/safeway/dc/washington/490-l-st-nw.html",
+    "supermarket_lat": 38.9035684,
+    "supermarket_lon": -77.0186955,
+    "supermarket_distance_miles": 0.25
+  },
+  {
+    "supermarket_id": 36,
+    "station_name": "NAVY YARD METRO STATION",
+    "station_id": 9,
+    "supermarket_name": "Whole Foods Market",
+    "supermarket_website": "https://www.wholefoodsmarket.com/stores/southcapitolhill?utm_source=google&utm_medium=organic&utm_campaign=listings",
+    "supermarket_lat": 38.880298,
+    "supermarket_lon": -77.0046873,
+    "supermarket_distance_miles": 0.26
+  },
+  {
+    "supermarket_id": 37,
+    "station_name": "NAVY YARD METRO STATION",
+    "station_id": 9,
+    "supermarket_name": "Harris Teeter",
+    "supermarket_website": "https://www.harristeeter.com/stores/grocery/dc/washington/the-yards/097/00383?cid=loc_09700383_gmb",
+    "supermarket_lat": 38.8756768,
+    "supermarket_lon": -77.0002986,
+    "supermarket_distance_miles": 0.25
+  },
+  {
+    "supermarket_id": 38,
+    "station_name": "NEW CARROLLTON METRO STATION",
+    "station_id": 54,
+    "supermarket_name": "Giant Food",
+    "supermarket_website": "http://www.giantfood.com/",
+    "supermarket_lat": 38.9493522,
+    "supermarket_lon": -76.8639297,
+    "supermarket_distance_miles": 0.39
+  },
+  {
+    "supermarket_id": 39,
+    "station_name": "NOMA-GALLAUDET U METRO STATION",
+    "station_id": 6,
+    "supermarket_name": "Harris Teeter",
+    "supermarket_website": "https://www.harristeeter.com/stores/grocery/dc/washington/constitution-square/097/00352?cid=loc_09700352_gmb",
+    "supermarket_lat": 38.9058807,
+    "supermarket_lon": -77.0056597,
+    "supermarket_distance_miles": 0.18
+  },
+  {
+    "supermarket_id": 40,
+    "station_name": "NOMA-GALLAUDET U METRO STATION",
+    "station_id": 6,
+    "supermarket_name": "Trader Joe's",
+    "supermarket_website": "https://locations.traderjoes.com/dc/washington/621/?utm_source=gmb&utm_medium=organic&utm_campaign=local",
+    "supermarket_lat": 38.9075894,
+    "supermarket_lon": -77.000811,
+    "supermarket_distance_miles": 0.12
+  },
+  {
+    "supermarket_id": 41,
+    "station_name": "NORTH BETHESDA METRO STATION",
+    "station_id": 61,
+    "supermarket_name": "Rodman's Discount Store",
+    "supermarket_website": "http://www.rodmans.com/",
+    "supermarket_lat": 39.043825,
+    "supermarket_lon": -77.1048726,
+    "supermarket_distance_miles": 0.48
+  },
+  {
+    "supermarket_id": 42,
+    "station_name": "NORTH BETHESDA METRO STATION",
+    "station_id": 61,
+    "supermarket_name": "ALDI",
+    "supermarket_website": "https://stores.aldi.us/md/kensington/5110-nicholson-ln?utm_source=google&utm_medium=local&utm_campaign=brand&utm_content=storepage_webclick",
+    "supermarket_lat": 39.0443213,
+    "supermarket_lon": -77.1048951,
+    "supermarket_distance_miles": 0.47
+  },
+  {
+    "supermarket_id": 43,
+    "station_name": "NORTH BETHESDA METRO STATION",
+    "station_id": 61,
+    "supermarket_name": "MOM's Organic Market",
+    "supermarket_website": "http://momsorganicmarket.com/",
+    "supermarket_lat": 39.0530188,
+    "supermarket_lon": -77.1122533,
+    "supermarket_distance_miles": 0.41
+  },
+  {
+    "supermarket_id": 45,
+    "station_name": "NORTH BETHESDA METRO STATION",
+    "station_id": 61,
+    "supermarket_name": "Asadur's Market",
+    "supermarket_website": "http://www.asadurmarket.com/",
+    "supermarket_lat": 39.0520596,
+    "supermarket_lon": -77.1119762,
+    "supermarket_distance_miles": 0.34
+  },
+  {
+    "supermarket_id": 46,
+    "station_name": "NORTH BETHESDA METRO STATION",
+    "station_id": 61,
+    "supermarket_name": "Whole Foods Market",
+    "supermarket_website": "https://www.wholefoodsmarket.com/stores/rockville?utm_source=google&utm_medium=organic&utm_campaign=listings",
+    "supermarket_lat": 39.043174,
+    "supermarket_lon": -77.1131366,
+    "supermarket_distance_miles": 0.28
+  },
+  {
+    "supermarket_id": 47,
+    "station_name": "NORTH BETHESDA METRO STATION",
+    "station_id": 61,
+    "supermarket_name": "Harris Teeter",
+    "supermarket_website": "https://www.harristeeter.com/stores/grocery/md/rockville/north-bethesda-center/097/00328?cid=loc_09700328_gmb",
+    "supermarket_lat": 39.0494245,
+    "supermarket_lon": -77.1089048,
+    "supermarket_distance_miles": 0.26
+  },
+  {
+    "supermarket_id": 48,
+    "station_name": "PENTAGON CITY METRO STATION",
+    "station_id": 76,
+    "supermarket_name": "Whole Foods Market",
+    "supermarket_website": "https://www.wholefoodsmarket.com/stores/pentagoncity?utm_source=google&utm_medium=organic&utm_campaign=listings",
+    "supermarket_lat": 38.8626628,
+    "supermarket_lon": -77.0546995,
+    "supermarket_distance_miles": 0.24
+  },
+  {
+    "supermarket_id": 49,
+    "station_name": "PENTAGON CITY METRO STATION",
+    "station_id": 76,
+    "supermarket_name": "Target Grocery",
+    "supermarket_website": "https://www.target.com/c/order-pickup/-/N-ng0a0?aisles_cid=5xt1a%2CGrocery%2C%2Fc%2Fgrocery%2F-%2FN-5xt1a",
+    "supermarket_lat": 38.8654416,
+    "supermarket_lon": -77.0623722,
+    "supermarket_distance_miles": 0.24
+  },
+  {
+    "supermarket_id": 50,
+    "station_name": "PENTAGON CITY METRO STATION",
+    "station_id": 76,
+    "supermarket_name": "Harris Teeter",
+    "supermarket_website": "https://www.harristeeter.com/stores/grocery/va/arlington/pentagon-row/097/00083?cid=loc_09700083_gmb",
+    "supermarket_lat": 38.8652871,
+    "supermarket_lon": -77.061861,
+    "supermarket_distance_miles": 0.22
+  },
+  {
+    "supermarket_id": 51,
+    "station_name": "POTOMAC AVE METRO STATION",
+    "station_id": 11,
+    "supermarket_name": "Safeway",
+    "supermarket_website": "https://local.safeway.com/safeway/dc/washington/415-14th-st-se.html",
+    "supermarket_lat": 38.8835563,
+    "supermarket_lon": -76.9865178,
+    "supermarket_distance_miles": 0.19
+  },
+  {
+    "supermarket_id": 52,
+    "station_name": "POTOMAC YARD METRO STATION",
+    "station_id": 160,
+    "supermarket_name": "Amazon Fresh",
+    "supermarket_website": "https://amzn.to/3cE3z9X",
+    "supermarket_lat": 38.8386079,
+    "supermarket_lon": -77.0497901,
+    "supermarket_distance_miles": 0.41
+  },
+  {
+    "supermarket_id": 53,
+    "station_name": "POTOMAC YARD METRO STATION",
+    "station_id": 160,
+    "supermarket_name": "Giant Food",
+    "supermarket_website": "https://stores.giantfood.com/va/alexandria/621-east-glebe-road?y_source=1_NDE5NTc1NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "supermarket_lat": 38.831971,
+    "supermarket_lon": -77.0503981,
+    "supermarket_distance_miles": 0.23
+  },
+  {
+    "supermarket_id": 54,
+    "station_name": "RESTON TOWN CENTER METRO STATION",
+    "station_id": 92,
+    "supermarket_name": "Wegmans",
+    "supermarket_website": "https://www.wegmans.com/stores/reston-va/?cid=GMB_Wegmans_2024:aw:ow:gb:gb:ao::",
+    "supermarket_lat": 38.948956,
+    "supermarket_lon": -77.359107,
+    "supermarket_distance_miles": 0.27
+  },
+  {
+    "supermarket_id": 55,
+    "station_name": "RHODE ISLAND AVE METRO STATION",
+    "station_id": 27,
+    "supermarket_name": "Giant Food",
+    "supermarket_website": "https://stores.giantfood.com/dc/washington/1050-brentwood-road?y_source=1_NDE5NTEwOC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "supermarket_lat": 38.9194422,
+    "supermarket_lon": -76.9922606,
+    "supermarket_distance_miles": 0.21
+  },
+  {
+    "supermarket_id": 56,
+    "station_name": "RIVERDALE MARC",
+    "station_id": 151,
+    "supermarket_name": "Whole Foods Market",
+    "supermarket_website": "https://www.wholefoodsmarket.com/stores/riverdalepark?utm_source=google&utm_medium=organic&utm_campaign=listings",
+    "supermarket_lat": 38.9691578,
+    "supermarket_lon": -76.936877,
+    "supermarket_distance_miles": 0.44
+  },
+  {
+    "supermarket_id": 57,
+    "station_name": "ROSSLYN METRO STATION",
+    "station_id": 80,
+    "supermarket_name": "Safeway",
+    "supermarket_website": "https://local.safeway.com/safeway/va/arlington/1525-wilson-blvd.html",
+    "supermarket_lat": 38.8951512,
+    "supermarket_lon": -77.0747313,
+    "supermarket_distance_miles": 0.15
+  },
+  {
+    "supermarket_id": 58,
+    "station_name": "SHAW METRO STATION",
+    "station_id": 2,
+    "supermarket_name": "Giant Food",
+    "supermarket_website": "https://stores.giantfood.com/dc/washington/1400-7th-street-nw?y_source=1_NDE5NTM3MS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "supermarket_lat": 38.909034,
+    "supermarket_lon": -77.022241,
+    "supermarket_distance_miles": 0.38
+  },
+  {
+    "supermarket_id": 59,
+    "station_name": "SILVER SPRING METRO STATION",
+    "station_id": 66,
+    "supermarket_name": "Whole Foods Market",
+    "supermarket_website": "https://www.wholefoodsmarket.com/stores/silverspring?utm_source=google&utm_medium=organic&utm_campaign=listings",
+    "supermarket_lat": 38.9961273,
+    "supermarket_lon": -77.0241512,
+    "supermarket_distance_miles": 0.42
+  },
+  {
+    "supermarket_id": 60,
+    "station_name": "SILVER SPRING METRO STATION",
+    "station_id": 66,
+    "supermarket_name": "Safeway",
+    "supermarket_website": "https://local.safeway.com/safeway/md/silver-spring/909-thayer-ave.html",
+    "supermarket_lat": 38.9933906,
+    "supermarket_lon": -77.0246461,
+    "supermarket_distance_miles": 0.3
+  },
+  {
+    "supermarket_id": 61,
+    "station_name": "SILVER SPRING METRO STATION",
+    "station_id": 66,
+    "supermarket_name": "Giant Food",
+    "supermarket_website": "https://stores.giantfood.com/md/silver-spring/1280-east-west-hwy?y_source=1_NDE5NTEwNS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "supermarket_lat": 38.9919206,
+    "supermarket_lon": -77.0315346,
+    "supermarket_distance_miles": 0.08
+  },
+  {
+    "supermarket_id": 62,
+    "station_name": "SILVER SPRING METRO STATION",
+    "station_id": 66,
+    "supermarket_name": "MOM's Organic Market",
+    "supermarket_website": "https://momsorganicmarket.com/",
+    "supermarket_lat": 38.9995277,
+    "supermarket_lon": -77.0315259,
+    "supermarket_distance_miles": 0.41
+  },
+  {
+    "supermarket_id": 63,
+    "station_name": "TENLEYTOWN METRO STATION",
+    "station_id": 25,
+    "supermarket_name": "Whole Foods Market",
+    "supermarket_website": "https://www.wholefoodsmarket.com/stores/tenley?utm_source=google&utm_medium=organic&utm_campaign=listings",
+    "supermarket_lat": 38.9490789,
+    "supermarket_lon": -77.0792007,
+    "supermarket_distance_miles": 0.09
+  },
+  {
+    "supermarket_id": 64,
+    "station_name": "TWINBROOK METRO STATION",
+    "station_id": 60,
+    "supermarket_name": "ALDI",
+    "supermarket_website": "https://stores.aldi.us/md/rockville/1501-rockville-pike?utm_source=google&utm_medium=local&utm_campaign=brand&utm_content=storepage_webclick",
+    "supermarket_lat": 39.0651067,
+    "supermarket_lon": -77.1281749,
+    "supermarket_distance_miles": 0.44
+  },
+  {
+    "supermarket_id": 65,
+    "station_name": "TWINBROOK METRO STATION",
+    "station_id": 60,
+    "supermarket_name": "Trader Joe's",
+    "supermarket_website": "https://locations.traderjoes.com/md/rockville/642/?utm_source=gmb&utm_medium=organic&utm_campaign=local",
+    "supermarket_lat": 39.0570117,
+    "supermarket_lon": -77.1232321,
+    "supermarket_distance_miles": 0.39
+  },
+  {
+    "supermarket_id": 66,
+    "station_name": "U STREET METRO STATION",
+    "station_id": 20,
+    "supermarket_name": "Whole Foods Market",
+    "supermarket_website": "https://www.wholefoodsmarket.com/stores/floridaavenue?utm_source=google&utm_medium=organic&utm_campaign=listings",
+    "supermarket_lat": 38.9197731,
+    "supermarket_lon": -77.0248812,
+    "supermarket_distance_miles": 0.3
+  },
+  {
+    "supermarket_id": 67,
+    "station_name": "U STREET METRO STATION",
+    "station_id": 20,
+    "supermarket_name": "Trader Joe's",
+    "supermarket_website": "https://locations.traderjoes.com/dc/washington/662/?utm_source=gmb&utm_medium=organic&utm_campaign=local",
+    "supermarket_lat": 38.9160454,
+    "supermarket_lon": -77.0321896,
+    "supermarket_distance_miles": 0.18
+  },
+  {
+    "supermarket_id": 68,
+    "station_name": "UNION STATION MARC",
+    "station_id": 157,
+    "supermarket_name": "Giant Food",
+    "supermarket_website": "https://stores.giantfood.com/dc/washington/300-h-street-ne?y_source=1_NDE5NTU3MC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "supermarket_lat": 38.9004205,
+    "supermarket_lon": -77.0016906,
+    "supermarket_distance_miles": 0.29
+  },
+  {
+    "supermarket_id": 69,
+    "station_name": "UNION STATION VRE",
+    "station_id": 98,
+    "supermarket_name": "Whole Foods Market",
+    "supermarket_website": "https://www.wholefoodsmarket.com/stores/hstreet?utm_source=google&utm_medium=organic&utm_campaign=listings",
+    "supermarket_lat": 38.9005142,
+    "supermarket_lon": -76.9976267,
+    "supermarket_distance_miles": 0.5
+  },
+  {
+    "supermarket_id": 70,
+    "station_name": "VAN NESS-UDC METRO STATION",
+    "station_id": 18,
+    "supermarket_name": "Giant Food",
+    "supermarket_website": "https://stores.giantfood.com/dc/washington/4303-conn-ave-nw?y_source=1_NDE5NTI2MC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "supermarket_lat": 38.9445665,
+    "supermarket_lon": -77.0632579,
+    "supermarket_distance_miles": 0.02
+  },
+  {
+    "supermarket_id": 71,
+    "station_name": "VIRGINIA SQUARE METRO STATION",
+    "station_id": 78,
+    "supermarket_name": "Giant Food",
+    "supermarket_website": "https://stores.giantfood.com/va/arlington/3450-washington-blvd?y_source=1_NDE5NTI2NS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "supermarket_lat": 38.885603,
+    "supermarket_lon": -77.1029807,
+    "supermarket_distance_miles": 0.18
+  },
+  {
+    "supermarket_id": 72,
+    "station_name": "WATERFRONT METRO STATION",
+    "station_id": 33,
+    "supermarket_name": "Safeway",
+    "supermarket_website": "https://local.safeway.com/safeway/dc/washington/1100-4th-st-sw.html",
+    "supermarket_lat": 38.8776081,
+    "supermarket_lon": -77.0171562,
+    "supermarket_distance_miles": 0.08
+  },
+  {
+    "supermarket_id": 73,
+    "station_name": "WEST FALLS CHURCH METRO STATION",
+    "station_id": 69,
+    "supermarket_name": "Giant Food",
+    "supermarket_website": "https://stores.giantfood.com/va/falls-church/1230-w-broad-st?y_source=1_NDE5NTE0Mi03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "supermarket_lat": 38.8949712,
+    "supermarket_lon": -77.188856,
+    "supermarket_distance_miles": 0.4
+  },
+  {
+    "supermarket_id": 74,
+    "station_name": "WEST HYATTSVILLE METRO STATION",
+    "station_id": 49,
+    "supermarket_name": "ALDI",
+    "supermarket_website": "https://stores.aldi.us/md/hyattsville/3025-hamilton-street?utm_source=google&utm_medium=local&utm_campaign=brand&utm_content=storepage_webclick",
+    "supermarket_lat": 38.9555959,
+    "supermarket_lon": -76.9640495,
+    "supermarket_distance_miles": 0.3
+  },
+  {
+    "supermarket_id": 75,
+    "station_name": "WHEATON METRO STATION",
+    "station_id": 63,
+    "supermarket_name": "Giant Food",
+    "supermarket_website": "https://stores.giantfood.com/md/wheaton/2900-university-boulevard-west?y_source=1_NDE5NTI2OC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "supermarket_lat": 39.0375113,
+    "supermarket_lon": -77.0585749,
+    "supermarket_distance_miles": 0.43
+  },
+  {
+    "supermarket_id": 76,
+    "station_name": "WHEATON METRO STATION",
+    "station_id": 63,
+    "supermarket_name": "Safeway",
+    "supermarket_website": "https://local.safeway.com/safeway/md/wheaton/11201-georgia-ave.html",
+    "supermarket_lat": 39.03917,
+    "supermarket_lon": -77.0501581,
+    "supermarket_distance_miles": 0.05
+  },
+  {
+    "supermarket_id": 77,
+    "station_name": "WOODBRIDGE VRE",
+    "station_id": 110,
+    "supermarket_name": "ALDI",
+    "supermarket_website": "https://stores.aldi.us/va/woodbridge/13291-gordon-blvd?utm_source=google&utm_medium=local&utm_campaign=brand&utm_content=storepage_webclick",
+    "supermarket_lat": 38.6640168,
+    "supermarket_lon": -77.2482204,
+    "supermarket_distance_miles": 0.34
+  },
+  {
+    "supermarket_id": 79,
+    "station_name": "WOODBRIDGE VRE",
+    "station_id": 110,
+    "supermarket_name": "Food Lion",
+    "supermarket_website": "https://stores.foodlion.com/va/woodbridge/13414-jefferson-davis-hwy?y_source=1_NTA0NjU4OC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "supermarket_lat": 38.6611768,
+    "supermarket_lon": -77.2498164,
+    "supermarket_distance_miles": 0.18
+  }
+]
