@@ -1,15 +1,5 @@
 [
-    {
-        "pharmacy_id": "1",
-        "station_name": "ASHBURN METRO STATION",
-        "station_id": "87",
-        "pharmacy_name": "Giant",
-        "pharmacy_website": "https://stores.giantfood.com/va/ashburn/43670-greenway-corp-drive",
-        "pharmacy_lat": 39.0095897,
-        "pharmacy_lon": -77.4914024,
-        "pharmacy_distance_miles": 0.3
-    },
-    {
+       {
         "pharmacy_id": "2",
         "station_name": "BALLSTON METRO STATION",
         "station_id": "77",
@@ -29,16 +19,7 @@
         "pharmacy_lon": -77.1135125,
         "pharmacy_distance_miles": 0.21
     },
-    {
-        "pharmacy_id": "4",
-        "station_name": "BALLSTON METRO STATION",
-        "station_id": "77",
-        "pharmacy_name": "Harris Teeter",
-        "pharmacy_website": "https://www.harristeeter.com/stores/grocery/va/arlington/arlington/097/00486",
-        "pharmacy_lat": 38.8770965,
-        "pharmacy_lon": -77.1102105,
-        "pharmacy_distance_miles": 0.36
-    },
+    
     {
         "pharmacy_id": "5",
         "station_name": "BETHESDA METRO STATION",
@@ -59,16 +40,7 @@
         "pharmacy_lon": -77.0906623,
         "pharmacy_distance_miles": 0.46
     },
-    {
-        "pharmacy_id": "7",
-        "station_name": "BETHESDA METRO STATION",
-        "station_id": "55",
-        "pharmacy_name": "Giant",
-        "pharmacy_website": "https://stores.giantfood.com/md/bethesda/7142-arlington-road",
-        "pharmacy_lat": 38.981218,
-        "pharmacy_lon": -77.0990183,
-        "pharmacy_distance_miles": 0.34
-    },
+    
     {
         "pharmacy_id": "8",
         "station_name": "BETHESDA METRO STATION",
@@ -169,16 +141,7 @@
         "pharmacy_lon": -77.0573234,
         "pharmacy_distance_miles": 0.13
     },
-    {
-        "pharmacy_id": "18",
-        "station_name": "COLUMBIA HEIGHTS METRO STATION",
-        "station_id": "21",
-        "pharmacy_name": "Giant",
-        "pharmacy_website": "https://stores.giantfood.com/dc/washington/1345-park-road,-nw",
-        "pharmacy_lat": 38.9308461,
-        "pharmacy_lon": -77.0318599,
-        "pharmacy_distance_miles": 0.15
-    },
+    
     {
         "pharmacy_id": "19",
         "station_name": "COLUMBIA HEIGHTS METRO STATION",
@@ -189,26 +152,8 @@
         "pharmacy_lon": -77.0331711,
         "pharmacy_distance_miles": 0.07
     },
-    {
-        "pharmacy_id": "20",
-        "station_name": "CONGRESS HEIGHTS METRO STATION",
-        "station_id": "32",
-        "pharmacy_name": "Giant",
-        "pharmacy_website": "https://stores.giantfood.com/dc/washington/1535-alabama-avenue-se",
-        "pharmacy_lat": 38.8450821,
-        "pharmacy_lon": -76.9810368,
-        "pharmacy_distance_miles": 0.37
-    },
-    {
-        "pharmacy_id": "21",
-        "station_name": "CONGRESS HEIGHTS METRO STATION",
-        "station_id": "32",
-        "pharmacy_name": "Giant",
-        "pharmacy_website": "https://pharmacy.giantfood.com/dc/washington/1535-alabama-avenue-se",
-        "pharmacy_lat": 38.8448036,
-        "pharmacy_lon": -76.9825046,
-        "pharmacy_distance_miles": 0.29
-    },
+   
+   
     {
         "pharmacy_id": "22",
         "station_name": "COURTHOUSE METRO STATION",
@@ -229,16 +174,7 @@
         "pharmacy_lon": -77.049385,
         "pharmacy_distance_miles": 0.05
     },
-    {
-        "pharmacy_id": "24",
-        "station_name": "DUNN LORING MERRIFIELD METRO STATION",
-        "station_id": "67",
-        "pharmacy_name": "Harris Teeter",
-        "pharmacy_website": "https://www.harristeeter.com/stores/grocery/va/vienna/dunn-loring/097/00308",
-        "pharmacy_lat": 38.8813647,
-        "pharmacy_lon": -77.2285315,
-        "pharmacy_distance_miles": 0.12
-    },
+   
     {
         "pharmacy_id": "25",
         "station_name": "DUPONT CIRCLE METRO STATION",
@@ -289,16 +225,7 @@
         "pharmacy_lon": -77.0382484,
         "pharmacy_distance_miles": 0.34
     },
-    {
-        "pharmacy_id": "30",
-        "station_name": "DUPONT CIRCLE METRO STATION",
-        "station_id": "37",
-        "pharmacy_name": "Safeway",
-        "pharmacy_website": "https://local.safeway.com/safeway/dc/washington/1701-corcoran-st-nw.html",
-        "pharmacy_lat": 38.9120538,
-        "pharmacy_lon": -77.038953,
-        "pharmacy_distance_miles": 0.3
-    },
+    
     {
         "pharmacy_id": "31",
         "station_name": "EASTERN MARKET METRO STATION",
@@ -429,16 +356,7 @@
         "pharmacy_lon": -77.0244781,
         "pharmacy_distance_miles": 0.05
     },
-    {
-        "pharmacy_id": "44",
-        "station_name": "GEORGIA AVE PETWORTH METRO STATION",
-        "station_id": "22",
-        "pharmacy_name": "Safeway",
-        "pharmacy_website": "https://local.safeway.com/safeway/dc/washington/3830-georgia-ave-nw.html",
-        "pharmacy_lat": 38.9383742,
-        "pharmacy_lon": -77.0249072,
-        "pharmacy_distance_miles": 0.15
-    },
+    
     {
         "pharmacy_id": "45",
         "station_name": "GERMANTOWN MARC",
@@ -469,16 +387,7 @@
         "pharmacy_lon": -76.9550577,
         "pharmacy_distance_miles": 0.25
     },
-    {
-        "pharmacy_id": "49",
-        "station_name": "HYATTSVILLE CROSSING METRO STATION",
-        "station_id": "50",
-        "pharmacy_name": "Safeway",
-        "pharmacy_website": "https://local.safeway.com/safeway/md/hyattsville/3702-east-west-hwy.html",
-        "pharmacy_lat": 38.9670494,
-        "pharmacy_lon": -76.9515119,
-        "pharmacy_distance_miles": 0.27
-    },
+    
     {
         "pharmacy_id": "50",
         "station_name": "HYATTSVILLE CROSSING METRO STATION",
@@ -489,16 +398,7 @@
         "pharmacy_lon": -76.9527152,
         "pharmacy_distance_miles": 0.18
     },
-    {
-        "pharmacy_id": "51",
-        "station_name": "HYATTSVILLE CROSSING METRO STATION",
-        "station_id": "50",
-        "pharmacy_name": "Giant",
-        "pharmacy_website": "https://stores.giantfood.com/md/hyattsville/3521-east-west-highway",
-        "pharmacy_lat": 38.9656587,
-        "pharmacy_lon": -76.9585422,
-        "pharmacy_distance_miles": 0.14
-    },
+    
     {
         "pharmacy_id": "52",
         "station_name": "KENSINGTON MARC",
@@ -509,16 +409,7 @@
         "pharmacy_lon": -77.073454,
         "pharmacy_distance_miles": 0.48
     },
-    {
-        "pharmacy_id": "53",
-        "station_name": "KENSINGTON MARC",
-        "station_id": "138",
-        "pharmacy_name": "Safeway",
-        "pharmacy_website": "https://local.pharmacy.safeway.com/safeway/md/kensington/10541-connecticut-ave.html",
-        "pharmacy_lat": 39.0275528,
-        "pharmacy_lon": -77.0750011,
-        "pharmacy_distance_miles": 0.18
-    },
+    
     {
         "pharmacy_id": "54",
         "station_name": "KING STREET METRO STATION",
@@ -559,16 +450,7 @@
         "pharmacy_lon": -77.4668483,
         "pharmacy_distance_miles": 0.48
     },
-    {
-        "pharmacy_id": "58",
-        "station_name": "MCLEAN METRO STATION",
-        "station_id": "97",
-        "pharmacy_name": "Safeway",
-        "pharmacy_website": "https://local.safeway.com/safeway/va/mclean/1688-anderson-rd.html",
-        "pharmacy_lat": 38.922556,
-        "pharmacy_lon": -77.2021967,
-        "pharmacy_distance_miles": 0.47
-    },
+   
     {
         "pharmacy_id": "59",
         "station_name": "MCPHERSON SQ METRO STATION",
@@ -589,16 +471,7 @@
         "pharmacy_lon": -77.03167,
         "pharmacy_distance_miles": 0.17
     },
-    {
-        "pharmacy_id": "61",
-        "station_name": "MEDICAL CENTER METRO STATION",
-        "station_id": "56",
-        "pharmacy_name": "Harris Teeter",
-        "pharmacy_website": "https://www.harristeeter.com/stores/grocery/md/bethesda/downtown-bethesda/097/00404",
-        "pharmacy_lat": 38.9928729,
-        "pharmacy_lon": -77.0968915,
-        "pharmacy_distance_miles": 0.5
-    },
+    
     {
         "pharmacy_id": "62",
         "station_name": "METRO CENTER METRO STATION",
@@ -619,16 +492,7 @@
         "pharmacy_lon": -77.0272619,
         "pharmacy_distance_miles": 0.22
     },
-    {
-        "pharmacy_id": "64",
-        "station_name": "MINNESOTA AVE METRO STATION",
-        "station_id": "30",
-        "pharmacy_name": "Safeway",
-        "pharmacy_website": "https://local.safeway.com/safeway/dc/washington/322-40th-st-ne.html",
-        "pharmacy_lat": 38.8933254,
-        "pharmacy_lon": -76.9477203,
-        "pharmacy_distance_miles": 0.34
-    },
+   
     {
         "pharmacy_id": "65",
         "station_name": "MONOCACY MARC",
@@ -649,16 +513,7 @@
         "pharmacy_lon": -77.0217001,
         "pharmacy_distance_miles": 0.08
     },
-    {
-        "pharmacy_id": "67",
-        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
-        "station_id": "1",
-        "pharmacy_name": "Safeway",
-        "pharmacy_website": "https://local.safeway.com/safeway/dc/washington/490-l-st-nw.html",
-        "pharmacy_lat": 38.9035899,
-        "pharmacy_lon": -77.0187533,
-        "pharmacy_distance_miles": 0.25
-    },
+    
     {
         "pharmacy_id": "68",
         "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
@@ -689,16 +544,7 @@
         "pharmacy_lon": -77.0038744,
         "pharmacy_distance_miles": 0.05
     },
-    {
-        "pharmacy_id": "71",
-        "station_name": "NAVY YARD METRO STATION",
-        "station_id": "9",
-        "pharmacy_name": "Harris Teeter",
-        "pharmacy_website": "https://www.harristeeter.com/stores/grocery/dc/washington/the-yards/097/00383",
-        "pharmacy_lat": 38.8760895,
-        "pharmacy_lon": -77.0002448,
-        "pharmacy_distance_miles": 0.24
-    },
+   
     {
         "pharmacy_id": "72",
         "station_name": "NEW CARROLLTON MARC",
@@ -719,26 +565,8 @@
         "pharmacy_lon": -77.0062287,
         "pharmacy_distance_miles": 0.21
     },
-    {
-        "pharmacy_id": "74",
-        "station_name": "NOMA-GALLAUDET U METRO STATION",
-        "station_id": "6",
-        "pharmacy_name": "Harris Teeter",
-        "pharmacy_website": "https://www.harristeeter.com/stores/grocery/dc/washington/constitution-square/097/00352",
-        "pharmacy_lat": 38.9058621,
-        "pharmacy_lon": -77.0056211,
-        "pharmacy_distance_miles": 0.18
-    },
-    {
-        "pharmacy_id": "75",
-        "station_name": "NORTH BETHESDA METRO STATION",
-        "station_id": "61",
-        "pharmacy_name": "Harris Teeter",
-        "pharmacy_website": "https://www.harristeeter.com/stores/grocery/md/rockville/north-bethesda-center/097/00328",
-        "pharmacy_lat": 39.0495732,
-        "pharmacy_lon": -77.1091078,
-        "pharmacy_distance_miles": 0.26
-    },
+   
+    
     {
         "pharmacy_id": "76",
         "station_name": "NORTH BETHESDA METRO STATION",
@@ -789,16 +617,7 @@
         "pharmacy_lon": -77.0624317,
         "pharmacy_distance_miles": 0.24
     },
-    {
-        "pharmacy_id": "81",
-        "station_name": "PENTAGON CITY METRO STATION",
-        "station_id": "76",
-        "pharmacy_name": "Harris Teeter",
-        "pharmacy_website": "https://www.harristeeter.com/stores/grocery/va/arlington/pentagon-row/097/00083",
-        "pharmacy_lat": 38.865068,
-        "pharmacy_lon": -77.0616321,
-        "pharmacy_distance_miles": 0.2
-    },
+    
     {
         "pharmacy_id": "82",
         "station_name": "PENTAGON CITY METRO STATION",
@@ -809,16 +628,7 @@
         "pharmacy_lon": -77.0588243,
         "pharmacy_distance_miles": 0.05
     },
-    {
-        "pharmacy_id": "83",
-        "station_name": "POTOMAC AVE METRO STATION",
-        "station_id": "11",
-        "pharmacy_name": "Safeway",
-        "pharmacy_website": "https://local.safeway.com/safeway/dc/washington/415-14th-st-se.html",
-        "pharmacy_lat": 38.8838325,
-        "pharmacy_lon": -76.9858314,
-        "pharmacy_distance_miles": 0.21
-    },
+    
     {
         "pharmacy_id": "84",
         "station_name": "POTOMAC AVE METRO STATION",
@@ -839,16 +649,7 @@
         "pharmacy_lon": -77.3615547,
         "pharmacy_distance_miles": 0.37
     },
-    {
-        "pharmacy_id": "86",
-        "station_name": "RHODE ISLAND AVE METRO STATION",
-        "station_id": "27",
-        "pharmacy_name": "Giant",
-        "pharmacy_website": "https://stores.giantfood.com/dc/washington/1050-brentwood-road",
-        "pharmacy_lat": 38.919222,
-        "pharmacy_lon": -76.9924287,
-        "pharmacy_distance_miles": 0.21
-    },
+    
     {
         "pharmacy_id": "87",
         "station_name": "RHODE ISLAND AVE METRO STATION",
@@ -909,16 +710,7 @@
         "pharmacy_lon": -77.0741766,
         "pharmacy_distance_miles": 0.13
     },
-    {
-        "pharmacy_id": "93",
-        "station_name": "ROSSLYN METRO STATION",
-        "station_id": "80",
-        "pharmacy_name": "Safeway",
-        "pharmacy_website": "https://local.safeway.com/safeway/va/arlington/1525-wilson-blvd.html",
-        "pharmacy_lat": 38.8950475,
-        "pharmacy_lon": -77.0749943,
-        "pharmacy_distance_miles": 0.17
-    },
+    
     {
         "pharmacy_id": "94",
         "station_name": "SHADY GROVE METRO STATION",
@@ -929,16 +721,7 @@
         "pharmacy_lon": -77.1646676,
         "pharmacy_distance_miles": 0.31
     },
-    {
-        "pharmacy_id": "95",
-        "station_name": "SHAW METRO STATION",
-        "station_id": "2",
-        "pharmacy_name": "Giant",
-        "pharmacy_website": "https://stores.giantfood.com/dc/washington/1400-7th-street-nw",
-        "pharmacy_lat": 38.9090968,
-        "pharmacy_lon": -77.0226834,
-        "pharmacy_distance_miles": 0.38
-    },
+    
     {
         "pharmacy_id": "96",
         "station_name": "SHAW METRO STATION",
@@ -949,26 +732,8 @@
         "pharmacy_lon": -77.0227755,
         "pharmacy_distance_miles": 0.18
     },
-    {
-        "pharmacy_id": "97",
-        "station_name": "SILVER SPRING METRO STATION",
-        "station_id": "66",
-        "pharmacy_name": "Giant",
-        "pharmacy_website": "https://stores.giantfood.com/md/silver-spring/1280-east-west-hwy",
-        "pharmacy_lat": 38.991893,
-        "pharmacy_lon": -77.031655,
-        "pharmacy_distance_miles": 0.09
-    },
-    {
-        "pharmacy_id": "98",
-        "station_name": "SILVER SPRING METRO STATION",
-        "station_id": "66",
-        "pharmacy_name": "Safeway",
-        "pharmacy_website": "https://local.safeway.com/safeway/md/silver-spring/909-thayer-ave.html",
-        "pharmacy_lat": 38.9933627,
-        "pharmacy_lon": -77.024375,
-        "pharmacy_distance_miles": 0.32
-    },
+    
+    
     {
         "pharmacy_id": "99",
         "station_name": "SILVER SPRING METRO STATION",
@@ -1039,16 +804,7 @@
         "pharmacy_lon": -77.125445,
         "pharmacy_distance_miles": 0.28
     },
-    {
-        "pharmacy_id": "106",
-        "station_name": "TWINBROOK METRO STATION",
-        "station_id": "60",
-        "pharmacy_name": "Safeway",
-        "pharmacy_website": "https://local.safeway.com/safeway/md/rockville/1800-rockville-pike.html",
-        "pharmacy_lat": 39.0604288,
-        "pharmacy_lon": -77.1219769,
-        "pharmacy_distance_miles": 0.15
-    },
+    
     {
         "pharmacy_id": "107",
         "station_name": "TWINBROOK METRO STATION",
@@ -1099,16 +855,7 @@
         "pharmacy_lon": -77.0317177,
         "pharmacy_distance_miles": 0.19
     },
-    {
-        "pharmacy_id": "112",
-        "station_name": "UNION STATION MARC",
-        "station_id": "157",
-        "pharmacy_name": "Giant",
-        "pharmacy_website": "https://stores.giantfood.com/dc/washington/300-h-street-ne",
-        "pharmacy_lat": 38.9006223,
-        "pharmacy_lon": -77.0015231,
-        "pharmacy_distance_miles": 0.3
-    },
+    
     {
         "pharmacy_id": "113",
         "station_name": "UNION STATION VRE",
@@ -1119,16 +866,7 @@
         "pharmacy_lon": -77.0058994,
         "pharmacy_distance_miles": 0.02
     },
-    {
-        "pharmacy_id": "114",
-        "station_name": "VAN NESS-UDC METRO STATION",
-        "station_id": "18",
-        "pharmacy_name": "Giant",
-        "pharmacy_website": "https://stores.giantfood.com/dc/washington/4303-conn-ave-nw",
-        "pharmacy_lat": 38.944499,
-        "pharmacy_lon": -77.0631702,
-        "pharmacy_distance_miles": 0.03
-    },
+    
     {
         "pharmacy_id": "115",
         "station_name": "VAN NESS-UDC METRO STATION",
@@ -1139,16 +877,7 @@
         "pharmacy_lon": -77.0636184,
         "pharmacy_distance_miles": 0.02
     },
-    {
-        "pharmacy_id": "116",
-        "station_name": "VIRGINIA SQUARE METRO STATION",
-        "station_id": "78",
-        "pharmacy_name": "Giant",
-        "pharmacy_website": "https://stores.giantfood.com/va/arlington/3450-washington-blvd",
-        "pharmacy_lat": 38.8856573,
-        "pharmacy_lon": -77.1029518,
-        "pharmacy_distance_miles": 0.18
-    },
+    
     {
         "pharmacy_id": "117",
         "station_name": "VIRGINIA SQUARE METRO STATION",
@@ -1169,36 +898,7 @@
         "pharmacy_lon": -77.0173577,
         "pharmacy_distance_miles": 0.1
     },
-    {
-        "pharmacy_id": "119",
-        "station_name": "WATERFRONT METRO STATION",
-        "station_id": "33",
-        "pharmacy_name": "Safeway",
-        "pharmacy_website": "https://local.safeway.com/safeway/dc/washington/1100-4th-st-sw.html",
-        "pharmacy_lat": 38.8774173,
-        "pharmacy_lon": -77.0172181,
-        "pharmacy_distance_miles": 0.06
-    },
-    {
-        "pharmacy_id": "120",
-        "station_name": "WEST BALTIMORE MARC",
-        "station_id": "159",
-        "pharmacy_name": "CVS Pharmacy",
-        "pharmacy_website": "https://www.cvs.com/store-locator/baltimore-md-pharmacies/2560-west-franklin-street-baltimore-md-21223/storeid=5764",
-        "pharmacy_lat": 39.293739,
-        "pharmacy_lon": -76.6589382,
-        "pharmacy_distance_miles": 0.31
-    },
-    {
-        "pharmacy_id": "121",
-        "station_name": "WEST FALLS CHURCH METRO STATION",
-        "station_id": "69",
-        "pharmacy_name": "Giant",
-        "pharmacy_website": "https://stores.giantfood.com/va/falls-church/1230-w-broad-st",
-        "pharmacy_lat": 38.8950203,
-        "pharmacy_lon": -77.189078,
-        "pharmacy_distance_miles": 0.39
-    },
+          
     {
         "pharmacy_id": "122",
         "station_name": "WEST FALLS CHURCH METRO STATION",
@@ -1219,16 +919,7 @@
         "pharmacy_lon": -76.9678652,
         "pharmacy_distance_miles": 0.27
     },
-    {
-        "pharmacy_id": "124",
-        "station_name": "WHEATON METRO STATION",
-        "station_id": "63",
-        "pharmacy_name": "Safeway",
-        "pharmacy_website": "https://local.safeway.com/safeway/md/wheaton/11201-georgia-ave.html",
-        "pharmacy_lat": 39.0388892,
-        "pharmacy_lon": -77.0506057,
-        "pharmacy_distance_miles": 0.02
-    },
+   
     {
         "pharmacy_id": "125",
         "station_name": "WHEATON METRO STATION",
@@ -1239,16 +930,7 @@
         "pharmacy_lon": -77.05678,
         "pharmacy_distance_miles": 0.35
     },
-    {
-        "pharmacy_id": "126",
-        "station_name": "WHEATON METRO STATION",
-        "station_id": "63",
-        "pharmacy_name": "Giant",
-        "pharmacy_website": "https://stores.giantfood.com/md/wheaton/2900-university-boulevard-west",
-        "pharmacy_lat": 39.0375316,
-        "pharmacy_lon": -77.0584056,
-        "pharmacy_distance_miles": 0.42
-    },
+    
     {
         "pharmacy_id": "127",
         "station_name": "WHEATON METRO STATION",
@@ -1299,18 +981,6 @@
         "pharmacy_lat": 38.833984,
         "pharmacy_lon": -77.0498548,
         "pharmacy_distance_miles": 0.19
-    },
-
-
-{
-        "pharmacy_id": "132",
-        "station_name": "POTOMAC YARD METRO STATION",
-        "station_id": "160",
-        "pharmacy_name": "Giant",
-        "pharmacy_website": "https://stores.giantfood.com/va/alexandria/621-east-glebe-road",
-        "pharmacy_lat": 38.8323091,
-        "pharmacy_lon": -77.0503433,
-        "pharmacy_distance_miles": 0.22
     }
 
 ]
