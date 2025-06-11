@@ -26,6 +26,7 @@ function batchClearLayers() {
         barsLayer,
         pharmacyLayer,
         restaurantsLayer,
+        supermarketsLayer, // Added supermarkets layer to batch clearing
         museumsLayer // Added museums layer to batch clearing
     ];
     
@@ -204,6 +205,17 @@ function createRestaurantIcon() {
     });
 }
 
+// Function to create a supermarket icon (NEW)
+function createSupermarketIcon() {
+    const iconSize = getIconSize();
+    return L.divIcon({
+        html: `<i class="fas fa-shopping-cart" style="font-size:${iconSize}px; color:limegreen;"></i>`,
+        className: 'fa-icon',
+        iconSize: [iconSize, iconSize],
+        iconAnchor: [iconSize / 2, iconSize / 2]
+    });
+}
+
 // Function to create a museum icon (NEW)
 function createMuseumIcon() {
     const iconSize = getIconSize();
@@ -222,6 +234,7 @@ const coffeeLayer = L.layerGroup().addTo(map);
 const barsLayer = L.layerGroup().addTo(map);
 const pharmacyLayer = L.layerGroup().addTo(map); // Layer for pharmacies
 const restaurantsLayer = L.layerGroup().addTo(map); // Layer for Restaurants
+const supermarketsLayer = L.layerGroup().addTo(map); // Layer for Supermarkets (NEW)
 const transitLayer = L.layerGroup().addTo(map); // Layer for transit routes
 const museumsLayer = L.layerGroup().addTo(map); // Layer for museums (always visible)
 
@@ -235,6 +248,7 @@ const overlayLayers = {
     "Bars": barsLayer,
     "Pharmacies": pharmacyLayer,
     "Restaurants": restaurantsLayer,
+    "Supermarkets": supermarketsLayer, // Added to layer control
     "Transit Routes": transitLayer
 };
 
@@ -293,6 +307,7 @@ let coffeeData = [];        // To store all coffee shops
 let barsData = [];          // To store all bars
 let pharmaciesData = [];    // To store all pharmacies
 let restaurantsData = [];   // To store all restaurants
+let supermarketsData = [];  // To store all supermarkets (NEW)
 let museumsData = [];       // To store all museums
 
 // ================================
@@ -324,10 +339,14 @@ fetch('/api/hotels')
     })
     .then(hotels => {
         console.log("Fetched Hotels:", hotels); // Debugging
-        hotelsData = hotels; // Store hotels data
+        // Ensure we have an array, not an object with a message
+        hotelsData = Array.isArray(hotels) ? hotels : [];
         filterAndDisplayAmenities(); // Initial display based on any existing search
     })
-    .catch(error => console.error("Error fetching hotels:", error));
+    .catch(error => {
+        console.error("Error fetching hotels:", error);
+        hotelsData = []; // Ensure it's an empty array on error
+    });
 
 // ================================
 // Fetch and store coffee shops
@@ -341,10 +360,14 @@ fetch('/api/coffee')
     })
     .then(coffeeShops => {
         console.log("Fetched Coffee Shops:", coffeeShops); // Debugging
-        coffeeData = coffeeShops; // Store coffee shops data
+        // Ensure we have an array, not an object with a message
+        coffeeData = Array.isArray(coffeeShops) ? coffeeShops : [];
         filterAndDisplayAmenities(); // Initial display based on any existing search
     })
-    .catch(error => console.error("Error fetching coffee shops:", error));
+    .catch(error => {
+        console.error("Error fetching coffee shops:", error);
+        coffeeData = []; // Ensure it's an empty array on error
+    });
 
 // ================================
 // Fetch and store bars
@@ -358,10 +381,14 @@ fetch('/api/bars')
     })
     .then(bars => {
         console.log("Fetched Bars:", bars); // Debugging
-        barsData = bars; // Store bars data
+        // Ensure we have an array, not an object with a message
+        barsData = Array.isArray(bars) ? bars : [];
         filterAndDisplayAmenities(); // Initial display based on any existing search
     })
-    .catch(error => console.error("Error fetching bars:", error));
+    .catch(error => {
+        console.error("Error fetching bars:", error);
+        barsData = []; // Ensure it's an empty array on error
+    });
 
 // ================================
 // Fetch and store pharmacies
@@ -375,10 +402,14 @@ fetch('/api/pharmacies')
     })
     .then(pharmacies => {
         console.log("Fetched Pharmacies:", pharmacies); // Debugging
-        pharmaciesData = pharmacies; // Store pharmacies data
+        // Ensure we have an array, not an object with a message
+        pharmaciesData = Array.isArray(pharmacies) ? pharmacies : [];
         filterAndDisplayAmenities(); // Initial display based on any existing search
     })
-    .catch(error => console.error("Error fetching pharmacies:", error));
+    .catch(error => {
+        console.error("Error fetching pharmacies:", error);
+        pharmaciesData = []; // Ensure it's an empty array on error
+    });
 
 // ================================
 // Fetch and store restaurants
@@ -392,10 +423,38 @@ fetch('/api/restaurants')
     })
     .then(restaurants => {
         console.log("Fetched Restaurants:", restaurants); // Debugging
-        restaurantsData = restaurants; // Store restaurants data
+        // Ensure we have an array, not an object with a message
+        restaurantsData = Array.isArray(restaurants) ? restaurants : [];
         filterAndDisplayAmenities(); // Initial display based on any existing search
     })
-    .catch(error => console.error("Error fetching restaurants:", error));
+    .catch(error => {
+        console.error("Error fetching restaurants:", error);
+        restaurantsData = []; // Ensure it's an empty array on error
+    });
+
+// ================================
+// Fetch and store supermarkets (NEW)
+// ================================
+fetch('/api/supermarkets')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Network response was not ok (${response.statusText})`);
+        }
+        return response.text(); // Get as text first to handle invalid JSON
+    })
+    .then(text => {
+        // Clean up any NaN values before parsing
+        const cleanedText = text.replace(/:\s*NaN/g, ': null');
+        const supermarkets = JSON.parse(cleanedText);
+        console.log("Fetched Supermarkets:", supermarkets); // Debugging
+        // Ensure we have an array, not an object with a message
+        supermarketsData = Array.isArray(supermarkets) ? supermarkets : [];
+        filterAndDisplayAmenities(); // Initial display based on any existing search
+    })
+    .catch(error => {
+        console.error("Error fetching supermarkets:", error);
+        supermarketsData = []; // Ensure it's an empty array on error
+    });
 
 // ================================
 // Fetch and store museums (NEW)
@@ -607,9 +666,15 @@ function addAmenitiesMarkers(filteredStations) {
     barsLayer.clearLayers();
     pharmacyLayer.clearLayers();
     restaurantsLayer.clearLayers();
+    supermarketsLayer.clearLayers(); // Added supermarkets clearing
 
     // Helper function to get amenities for a station
     function getAmenitiesByStation(stationId, dataArray) {
+        // Safety check: ensure dataArray is actually an array
+        if (!Array.isArray(dataArray)) {
+            console.warn("getAmenitiesByStation received non-array data:", dataArray);
+            return [];
+        }
         return dataArray.filter(item => String(item.station_id) === String(stationId));
     }
 
@@ -698,6 +763,28 @@ function addAmenitiesMarkers(filteredStations) {
                 })
                 .addTo(restaurantsLayer)
                 .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`);
+            }
+        });
+
+        // Add Supermarkets (NEW)
+        const associatedSupermarkets = getAmenitiesByStation(stationId, supermarketsData);
+        associatedSupermarkets.forEach(supermarket => {
+            // Handle your actual field names
+            const lat = supermarket.supermarket_lat;
+            const lon = supermarket.supermarket_lon;
+            const name = supermarket.supermarket_name;
+            const website = supermarket.supermaret_website || supermarket.supermarket_website; // Handle the typo
+
+            if (typeof lat === 'number' && typeof lon === 'number') {
+                const popupContent = website 
+                    ? `<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`
+                    : `<b>${name}</b>`;
+
+                L.marker([lat, lon], {
+                    icon: createSupermarketIcon()
+                })
+                .addTo(supermarketsLayer)
+                .bindPopup(popupContent);
             }
         });
     });
