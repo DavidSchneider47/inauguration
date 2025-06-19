@@ -59,29 +59,27 @@ function trackUserLocation(map) {
                             startTracking();
                         }
                     } else {
-                        console.error("Geolocation permission denied");
-                        alert("Location access is denied. Please enable location services for this app in your device settings.");
+                        console.log("Geolocation permission denied - continuing without location tracking");
                     }
                 })
                 .catch(error => {
-                    console.error("Permission query error:", error);
-                    // Fallback to standard tracking if permission query fails
-                    startTracking();
+                    console.warn("Permission query error:", error);
+                    // Continue without geolocation instead of trying to start tracking
+                    console.log("Continuing without geolocation");
                 });
         } else {
             // For non-Android or older devices, proceed with standard tracking
             startTracking();
         }
     } else {
-        console.warn("Geolocation is not supported by this browser.");
-        alert("Geolocation is not supported by this browser.");
+        console.warn("Geolocation is not supported by this browser - continuing without location tracking");
     }
 
     function startTracking() {
         const options = {
             enableHighAccuracy: true,
-            maximumAge: 0,
-            timeout: 10000 // Increased timeout to 10 seconds
+            maximumAge: 30000, // Allow cached position up to 30 seconds old
+            timeout: 5000 // Reduced timeout to 5 seconds
         };
 
         navigator.geolocation.watchPosition(
@@ -102,23 +100,21 @@ function trackUserLocation(map) {
                 }
             },
             (error) => {
-                console.error("Geolocation error:", error);
-                // More detailed error handling for Android
-                if (isAndroid) {
-                    switch (error.code) {
-                        case error.PERMISSION_DENIED:
-                            alert("Please enable location services for this app in your device settings.");
-                            break;
-                        case error.POSITION_UNAVAILABLE:
-                            alert("Location service is not available. Please check your device's location settings.");
-                            break;
-                        case error.TIMEOUT:
-                            alert("Location request timed out. Please check your internet connection.");
-                            break;
-                        default:
-                            alert("An unknown error occurred while trying to get your location.");
-                            break;
-                    }
+                console.warn("Geolocation error (non-blocking):", error.message);
+                // Don't show alerts or stop execution - just log the error and continue
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        console.log("User denied geolocation permission");
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        console.log("Position unavailable");
+                        break;
+                    case error.TIMEOUT:
+                        console.log("Geolocation request timed out");
+                        break;
+                    default:
+                        console.log("Unknown geolocation error");
+                        break;
                 }
             },
             options
@@ -139,7 +135,6 @@ function createUserLocationIcon() {
 // Call the geolocation function to start tracking
 trackUserLocation(map);
 
-// ================================
 // Function to adjust icon sizes based on window width (REVISED FOR SMALLER ICONS)
 // ================================
 
@@ -262,23 +257,126 @@ const layerControl = L.control.layers(baseLayers, overlayLayers, {
 // Get a reference to the layer control element
 let layerControlElement;
 
-// We need to wait for the layer control to be added to the DOM
-setTimeout(() => {
+// Function to find the layer control with multiple attempts
+function findLayerControl() {
     layerControlElement = document.querySelector('.leaflet-control-layers');
+    console.log("Searching for layer control...", layerControlElement);
     
-    // REMOVED: Toggle button functionality for layer control since we no longer need it
-    // Users can now directly use the layer control panel to toggle amenities
-    
-}, 500); // Short delay to ensure the control has been added
+    if (layerControlElement) {
+        console.log("Layer control found!", layerControlElement);
+        createToggleButton();
+        updateToggleButtonVisibility();
+        return true;
+    }
+    return false;
+}
 
-// Add responsive behavior - only show toggle on mobile
+// Try multiple times to find the layer control
+let attempts = 0;
+const maxAttempts = 10;
+
+function attemptToFindLayerControl() {
+    attempts++;
+    console.log(`Attempt ${attempts} to find layer control`);
+    
+    if (findLayerControl()) {
+        console.log("Layer control setup complete!");
+        return;
+    }
+    
+    if (attempts < maxAttempts) {
+        setTimeout(attemptToFindLayerControl, 500);
+    } else {
+        console.error("Failed to find layer control after", maxAttempts, "attempts");
+    }
+}
+
+// Start looking for the layer control
+setTimeout(attemptToFindLayerControl, 100);
+
+// Function to create and manage the toggle button
+function createToggleButton() {
+    console.log("Creating toggle button...");
+    
+    // Remove existing toggle button if it exists
+    const existingButton = document.getElementById('toggleLayerControl');
+    if (existingButton) {
+        existingButton.remove();
+        console.log("Removed existing toggle button");
+    }
+    
+    if (!layerControlElement) {
+        console.error("Cannot create toggle button - layer control not found");
+        return;
+    }
+    
+    // Create toggle button
+    const toggleButton = document.createElement('button');
+    toggleButton.id = 'toggleLayerControl';
+    toggleButton.innerHTML = '☰ Layers';
+    
+    // Add styling
+    toggleButton.style.cssText = `
+        position: fixed;
+        top: 60px;
+        right: 10px;
+        z-index: 1001;
+        background: white;
+        border: 2px solid rgba(0,0,0,0.2);
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+        display: none;
+    `;
+    
+    // Add click event listener
+    toggleButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        console.log("Toggle button clicked!");
+        
+        if (layerControlElement) {
+            const isCurrentlyVisible = window.getComputedStyle(layerControlElement).display !== 'none';
+            console.log("Layer control currently visible:", isCurrentlyVisible);
+            
+            if (isCurrentlyVisible) {
+                layerControlElement.style.display = 'none';
+                toggleButton.innerHTML = '☰ Layers';
+                console.log("Hid layer control");
+            } else {
+                layerControlElement.style.display = 'block';
+                toggleButton.innerHTML = '✕ Close';
+                console.log("Showed layer control");
+            }
+        }
+    });
+    
+    // Add to document body
+    document.body.appendChild(toggleButton);
+    console.log("Toggle button added to document body");
+}
+
+// Add responsive behavior - show/hide toggle button and layer control based on screen size
 function updateToggleButtonVisibility() {
     const toggleButton = document.getElementById('toggleLayerControl');
-    if (toggleButton) { // Check if button exists
+    
+    console.log("Updating visibility for screen width:", window.innerWidth);
+    console.log("Toggle button exists:", !!toggleButton);
+    console.log("Layer control exists:", !!layerControlElement);
+    
+    if (toggleButton && layerControlElement) {
         if (window.innerWidth <= 768) { // Mobile breakpoint
+            console.log("Setting mobile view");
             toggleButton.style.display = 'block';
+            layerControlElement.style.display = 'none';
+            toggleButton.innerHTML = '☰ Layers';
         } else {
+            console.log("Setting desktop view");
             toggleButton.style.display = 'none';
+            layerControlElement.style.display = 'block';
         }
     }
 }
@@ -637,13 +735,25 @@ function addStationMarkers(filteredStations) {
     
     processBatch();
     
+    // Only auto-fit bounds if we have a search query, otherwise preserve current view
     if (filteredStations.length > 0) {
-        const bounds = L.latLngBounds(
-            filteredStations.map(station => [station.station_lat, station.station_lon])
-        );
-        map.fitBounds(bounds.pad(0.2), { maxZoom: 16 });
+        const { stationQuery, lineQuery } = getSearchParams();
+        // Only fit bounds if there's an active search
+        if (stationQuery || lineQuery) {
+            const bounds = L.latLngBounds(
+                filteredStations.map(station => [station.station_lat, station.station_lon])
+            );
+            map.fitBounds(bounds.pad(0.2), { maxZoom: 16 });
+        }
+        // If no search query, don't change the map view - stay where user is currently looking
     } else {
-        map.setView([38.898327, -77.027777], 16);
+        // Only reset to default view if there are no stations and no current user position
+        const currentCenter = map.getCenter();
+        const defaultCenter = L.latLng(38.889484, -77.035278);
+        // Only reset if we're not already positioned somewhere specific
+        if (currentCenter.equals(defaultCenter, 0.001)) {
+            map.setView([38.889484, -77.035278], 14);
+        }
     }
 }
 
@@ -797,6 +907,10 @@ function addAmenitiesMarkers(filteredStations) {
 // Function to filter and display markers and amenities based on search
 // ================================
 function filterAndDisplayMarkers() {
+    // Store current map view to preserve it
+    const currentCenter = map.getCenter();
+    const currentZoom = map.getZoom();
+    
     const { stationQuery, lineQuery } = getSearchParams();
 
     const filteredStations = stationsData.filter(station => {
@@ -808,10 +922,20 @@ function filterAndDisplayMarkers() {
     addStationMarkers(filteredStations);
     addAmenitiesMarkers(filteredStations);
 
-    // If no search query, set the zoom to 14 by default on initial load to show National Mall
+    // Only change the view if this is the initial load with no search query
+    // Otherwise preserve the current map position
     if (!stationQuery && !lineQuery) {
-        map.setView([38.889484, -77.035278], 14); // Force zoom to 14 on initial load, centered on Washington Monument
+        // Check if this is the initial page load (map is at default position)
+        const defaultCenter = L.latLng(38.889484, -77.035278);
+        if (currentCenter.equals(defaultCenter, 0.001) && currentZoom === 14) {
+            // This appears to be initial load, keep the default view
+            map.setView([38.889484, -77.035278], 14);
+        } else {
+            // User has moved the map, preserve their current view
+            map.setView(currentCenter, currentZoom);
+        }
     }
+    // If there is a search query, addStationMarkers will handle the view change
 }
 
 // ================================
@@ -819,9 +943,16 @@ function filterAndDisplayMarkers() {
 // (Called after fetching amenities data) - MODIFIED
 // ================================
 function filterAndDisplayAmenities() {
+    // Store current map view to preserve it
+    const currentCenter = map.getCenter();
+    const currentZoom = map.getZoom();
+    
     // This function is now called when users toggle layers on/off
     // It will only display amenities for layers that are currently enabled
     filterAndDisplayMarkers();
+    
+    // Restore the map view after filtering
+    map.setView(currentCenter, currentZoom);
 }
 
 // ================================
