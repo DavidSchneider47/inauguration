@@ -4,8 +4,8 @@ console.log("map.js loaded successfully");
 // Initialize the map, centered on Washington Monument with zoom level 14 to show National Mall
 const map = L.map('map').setView([38.889484, -77.035278], 14);
 
-// 1. CartoDB Positron (Light) - RECOMMENDED
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+// 2. CartoDB Voyager (Clean with more detail than Positron)
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
     subdomains: 'abcd',
     maxZoom: 20
