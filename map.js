@@ -623,7 +623,7 @@ function addMuseumMarkers() {
                 
                 if (typeof lat === 'number' && typeof lon === 'number') {
                     const popupContent = website 
-                        ? `<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`
+                        ? `<b>${name}</b><br><a href="${website}" target="_blank" rel="noopener noreferrer">Visit Website</a>`
                         : `<b>${name}</b>`;
                     
                     L.marker([lat, lon], {
@@ -796,7 +796,7 @@ function addAmenitiesMarkers(filteredStations) {
                         icon: createFontAwesomeIcon('fas fa-bed', 'blue')
                     })
                     .addTo(hotelLayer)
-                    .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`);
+                    .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank" rel="noopener noreferrer">Visit Website</a>`);
                 }
             });
         }
@@ -815,7 +815,7 @@ function addAmenitiesMarkers(filteredStations) {
                         icon: createCoffeeIcon()
                     })
                     .addTo(coffeeLayer)
-                    .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`);
+                    .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank" rel="noopener noreferrer">Visit Website</a>`);
                 }
             });
         }
@@ -834,7 +834,7 @@ function addAmenitiesMarkers(filteredStations) {
                         icon: createBarIcon()
                     })
                     .addTo(barsLayer)
-                    .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`);
+                    .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank" rel="noopener noreferrer">Visit Website</a>`);
                 }
             });
         }
@@ -853,7 +853,7 @@ function addAmenitiesMarkers(filteredStations) {
                         icon: createPharmacyIcon()
                     })
                     .addTo(pharmacyLayer)
-                    .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`);
+                    .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank" rel="noopener noreferrer">Visit Website</a>`);
                 }
             });
         }
@@ -872,7 +872,7 @@ function addAmenitiesMarkers(filteredStations) {
                         icon: createRestaurantIcon()
                     })
                     .addTo(restaurantsLayer)
-                    .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`);
+                    .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank" rel="noopener noreferrer">Visit Website</a>`);
                 }
             });
         }
@@ -889,8 +889,8 @@ function addAmenitiesMarkers(filteredStations) {
 
                 if (typeof lat === 'number' && typeof lon === 'number') {
                     const popupContent = website 
-                        ? `<b>${name}</b><br><a href="${website}" target="_blank">Website</a>`
-                        : `<b>${name}</b>`;
+                        ? `<b>${name}</b><br><a href="${website}" target="_blank" rel="noopener noreferrer">Visit Website</a>`
+    			: `<b>${name}</b>`;
 
                     L.marker([lat, lon], {
                         icon: createSupermarketIcon()
