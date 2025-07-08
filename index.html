@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
-    <!-- MetroMatch Modal Styles & Search Container Styles -->
+    <!-- Enhanced Styles with TypeAhead Components -->
     <style>
         .modal {
             position: fixed;
@@ -85,42 +85,140 @@
             background-color: #ccc;
         }
 
+        /* Enhanced Search Container with TypeAhead Support */
         .search-container {
             max-width: 800px;
             margin: 20px auto;
             display: flex;
             gap: 10px;
             justify-content: center;
-            align-items: center;
-        }
-
-        .search-container input,
-        .search-container select,
-        .search-container button {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .search-container input,
-        .search-container select {
-            flex: 1;
-            min-width: 150px;
+            align-items: flex-end;
+            position: relative;
         }
 
         .search-container button {
             flex: none;
             width: 150px;
+            padding: 10px;
+            font-size: 16px;
             background-color: #f44336;
             color: white;
             border: none;
+            border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
         .search-container button:hover {
             background-color: #d32f2f;
+        }
+
+        /* TypeAhead Styles */
+        .typeahead-wrapper {
+            position: relative;
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .typeahead-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .typeahead-input-wrapper {
+            position: relative;
+            display: flex;
+            width: 100%;
+        }
+        
+        .typeahead-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        .typeahead-input:focus {
+            outline: none;
+            border-color: #2196F3;
+            box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+        }
+        
+        .typeahead-clear {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            cursor: pointer;
+            color: #999;
+            display: none;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+        }
+        
+        .typeahead-clear:hover {
+            color: #f44336;
+        }
+        
+        .typeahead-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            max-height: 300px;
+            overflow-y: auto;
+            background: white;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .typeahead-result-item {
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .typeahead-result-item:hover, .typeahead-result-item.active {
+            background-color: #f5f5f5;
+        }
+        
+        .typeahead-result-highlight {
+            font-weight: bold;
+            background-color: rgba(33, 150, 243, 0.2);
+        }
+        
+        .typeahead-message {
+            padding: 10px 15px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .typeahead-selected .typeahead-input {
+            background-color: #f9f9f9;
+        }
+
+        .typeahead-results.show-all {
+            max-height: 400px;
+        }
+        
+        .typeahead-status-message {
+            padding: 8px;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+            border-bottom: 1px solid #eee;
         }
 
         .description-text {
@@ -137,6 +235,20 @@
             .description-text {
                 padding: 0 30px;
                 font-size: 16px;
+            }
+            
+            .search-container {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 15px;
+            }
+            
+            .typeahead-wrapper {
+                min-width: auto;
+            }
+            
+            .search-container button {
+                width: 100%;
             }
         }
     </style>
@@ -171,23 +283,16 @@
 
     <div class="text-container" style="max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center;"></div>
 
-    <!-- Search Container -->
+    <!-- Enhanced Search Container with TypeAhead -->
     <div class="search-container">
-        <input type="text" id="station-search" placeholder="Search for a station..." list="station-list" />
-        <datalist id="station-list"></datalist>
-        <select id="line-search">
-            <option value="">All Lines</option>
-            <option value="Red">Red</option>
-            <option value="Blue">Blue</option>
-            <option value="Yellow">Yellow</option>
-            <option value="Green">Green</option>
-            <option value="Orange">Orange</option>
-            <option value="Silver">Silver</option>
-            <option value="MARC">MARC</option>
-            <option value="VRE">VRE</option>
-        </select>
+        <div id="station-typeahead" class="typeahead-wrapper"></div>
+        <div id="line-typeahead" class="typeahead-wrapper"></div>
         <button id="clearButton">Clear Search</button>
     </div>
+
+    <!-- Hidden elements for backward compatibility -->
+    <input type="text" id="station-search" style="display: none;" />
+    <select id="line-search" style="display: none;"></select>
 
     <div id="map"></div>
     <!-- Add this right after the map div -->  
@@ -218,111 +323,637 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2.4.0/src/easy-button.js"></script>
+    <!-- Add PapaParse for robust CSV parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="{{ url_for('static', filename='js/map.js') }}"></script>
-  <script>
-    function toggleMenu() {
-        document.getElementById("mobileMenu").classList.toggle("mobile-menu-active");
-    }
 
-    function debounce(func, delay) {
-        let debounceTimer;
-        return function() {
-            const context = this;
-            const args = arguments;
-            clearTimeout(debounceTimer);
-            debounceTimer = setTimeout(() => func.apply(context, args), delay);
+    <!-- TypeAhead Implementation -->
+    <script>
+        /**
+         * MetroMatchTypeahead - Custom type-ahead search component for MetroMatch
+         */
+        class MetroMatchTypeahead {
+            constructor(options) {
+                this.containerId = options.containerId;
+                this.placeholder = options.placeholder || 'Search...';
+                this.data = options.data || [];
+                this.onSelect = options.onSelect || function() {};
+                this.minChars = options.minChars || 1;
+                this.maxResults = options.maxResults || 10;
+                this.label = options.label || options.placeholder;
+                this.debounceTime = options.debounceTime || 300;
+                this.currentInputValue = '';
+                this.selectedItem = null;
+                this.debounceTimeout = null;
+                this.showAllOnFocus = options.showAllOnFocus !== false; // Default to true
+                this.compatibilityId = options.compatibilityId || null;
+                
+                this.init();
+            }
+            
+            init() {
+                this.container = document.getElementById(this.containerId);
+                if (!this.container) {
+                    console.error(`Container ${this.containerId} not found`);
+                    return;
+                }
+                
+                this.container.innerHTML = `
+                    <div class="typeahead-wrapper">
+                        <label for="${this.containerId}-input" class="typeahead-label">${this.label}</label>
+                        <div class="typeahead-input-wrapper">
+                            <input 
+                                type="text" 
+                                id="${this.containerId}-input" 
+                                class="typeahead-input" 
+                                placeholder="${this.placeholder}" 
+                                autocomplete="off"
+                            />
+                            <div class="typeahead-clear" title="Clear selection">×</div>
+                        </div>
+                        <div class="typeahead-results" id="${this.containerId}-results"></div>
+                    </div>
+                `;
+                
+                this.input = document.getElementById(`${this.containerId}-input`);
+                this.clearButton = this.container.querySelector('.typeahead-clear');
+                this.resultsContainer = document.getElementById(`${this.containerId}-results`);
+                
+                this.input.addEventListener('input', this.handleInput.bind(this));
+                this.input.addEventListener('focus', this.handleFocus.bind(this));
+                this.input.addEventListener('blur', this.handleBlur.bind(this));
+                this.input.addEventListener('keydown', this.handleKeyDown.bind(this));
+                this.clearButton.addEventListener('click', this.handleClear.bind(this));
+                
+                if (this.compatibilityId) {
+                    this.createCompatibilityElement();
+                }
+                
+                this.updateClearButton();
+            }
+            
+            createCompatibilityElement() {
+                let compatElement = document.getElementById(this.compatibilityId);
+                if (!compatElement) {
+                    if (this.compatibilityId.includes('select') || this.compatibilityId.includes('line')) {
+                        compatElement = document.createElement("select");
+                    } else {
+                        compatElement = document.createElement("input");
+                        compatElement.type = "text";
+                    }
+                    compatElement.id = this.compatibilityId;
+                    compatElement.style.display = "none";
+                    document.body.appendChild(compatElement);
+                }
+                this.compatibilityElement = compatElement;
+            }
+            
+            updateCompatibilityElement(value) {
+                if (!this.compatibilityElement) return;
+                
+                if (this.compatibilityElement.tagName === 'SELECT') {
+                    let option = this.compatibilityElement.querySelector(`option[value="${value}"]`);
+                    if (!option) {
+                        option = document.createElement("option");
+                        option.value = value;
+                        option.textContent = value;
+                        this.compatibilityElement.appendChild(option);
+                    }
+                }
+                
+                this.compatibilityElement.value = value;
+                this.compatibilityElement.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+            
+            showAllOptions() {
+                if (this.data.length <= 200) {
+                    this.renderResults(this.data, '');
+                    this.showResults();
+                    
+                    const statusMessage = document.createElement('div');
+                    statusMessage.className = 'typeahead-status-message';
+                    statusMessage.textContent = `Click an option or type to filter ${this.data.length} choices`;
+                    this.resultsContainer.insertBefore(statusMessage, this.resultsContainer.firstChild);
+                    this.resultsContainer.classList.add('show-all');
+                }
+            }
+            
+            handleInput(event) {
+                const value = event.target.value.trim();
+                this.currentInputValue = value;
+                
+                if (this.debounceTimeout) {
+                    clearTimeout(this.debounceTimeout);
+                }
+                
+                this.debounceTimeout = setTimeout(() => {
+                    if (value.length < this.minChars) {
+                        if (this.showAllOnFocus) {
+                            this.showAllOptions();
+                        } else {
+                            this.hideResults();
+                        }
+                        return;
+                    }
+                    
+                    this.performSearch(value);
+                }, this.debounceTime);
+                
+                this.updateClearButton();
+            }
+            
+            performSearch(query) {
+                const results = this.data
+                    .filter(item => {
+                        return item.toLowerCase().includes(query.toLowerCase());
+                    })
+                    .slice(0, this.maxResults);
+                
+                this.renderResults(results, query);
+            }
+            
+            renderResults(results, query) {
+                this.resultsContainer.innerHTML = '';
+                this.resultsContainer.classList.remove('show-all');
+                
+                if (results.length === 0) {
+                    this.resultsContainer.innerHTML = `
+                        <div class="typeahead-message">No results found</div>
+                    `;
+                    this.showResults();
+                    return;
+                }
+                
+                results.forEach(item => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'typeahead-result-item';
+                    
+                    const itemText = query ? this.highlightMatch(item, query) : item;
+                    resultItem.innerHTML = itemText;
+                    
+                    resultItem.addEventListener('click', () => {
+                        this.selectItem(item);
+                    });
+                    
+                    this.resultsContainer.appendChild(resultItem);
+                });
+                
+                this.showResults();
+            }
+            
+            highlightMatch(text, query) {
+                if (!query) return text;
+                
+                const queryLower = query.toLowerCase();
+                const index = text.toLowerCase().indexOf(queryLower);
+                
+                if (index >= 0) {
+                    const matchingPart = text.substring(index, index + query.length);
+                    return text.substring(0, index) + 
+                           `<span class="typeahead-result-highlight">${matchingPart}</span>` + 
+                           text.substring(index + query.length);
+                }
+                
+                return text;
+            }
+            
+            selectItem(item) {
+                this.selectedItem = item;
+                this.input.value = item;
+                this.currentInputValue = item;
+                this.hideResults();
+                this.updateClearButton();
+                this.container.classList.add('typeahead-selected');
+                
+                if (this.compatibilityId) {
+                    this.updateCompatibilityElement(item);
+                }
+                
+                if (typeof this.onSelect === 'function') {
+                    this.onSelect(item);
+                }
+                
+                const changeEvent = new CustomEvent('typeahead-change', {
+                    detail: { value: item }
+                });
+                this.container.dispatchEvent(changeEvent);
+            }
+            
+            handleFocus() {
+                if (this.showAllOnFocus && !this.currentInputValue) {
+                    this.showAllOptions();
+                    return;
+                }
+                
+                if (this.currentInputValue.length >= this.minChars) {
+                    this.performSearch(this.currentInputValue);
+                }
+            }
+            
+            handleBlur(event) {
+                setTimeout(() => {
+                    this.hideResults();
+                    
+                    if (this.selectedItem && this.input.value !== this.selectedItem && this.input.value.trim() !== '') {
+                        this.input.value = this.selectedItem;
+                    }
+                }, 200);
+            }
+            
+            handleKeyDown(event) {
+                if (this.resultsContainer.style.display === 'block') {
+                    const items = this.resultsContainer.querySelectorAll('.typeahead-result-item');
+                    const activeItem = this.resultsContainer.querySelector('.typeahead-result-item.active');
+                    let activeIndex = Array.from(items).indexOf(activeItem);
+                    
+                    switch(event.key) {
+                        case 'ArrowDown':
+                            event.preventDefault();
+                            activeIndex = activeIndex < 0 ? 0 : (activeIndex + 1) % items.length;
+                            this.setActiveItem(items, activeIndex);
+                            break;
+                            
+                        case 'ArrowUp':
+                            event.preventDefault();
+                            activeIndex = activeIndex < 0 ? items.length - 1 : (activeIndex - 1 + items.length) % items.length;
+                            this.setActiveItem(items, activeIndex);
+                            break;
+                            
+                        case 'Enter':
+                            if (activeItem) {
+                                event.preventDefault();
+                                this.selectItem(activeItem.textContent.replace(/(<([^>]+)>)/gi, ""));
+                            }
+                            break;
+                            
+                        case 'Escape':
+                            event.preventDefault();
+                            this.hideResults();
+                            if (this.selectedItem) {
+                                this.input.value = this.selectedItem;
+                            }
+                            break;
+                    }
+                }
+            }
+            
+            setActiveItem(items, index) {
+                items.forEach(item => item.classList.remove('active'));
+                
+                if (items[index]) {
+                    items[index].classList.add('active');
+                    
+                    const itemTop = items[index].offsetTop;
+                    const itemBottom = itemTop + items[index].offsetHeight;
+                    const containerTop = this.resultsContainer.scrollTop;
+                    const containerBottom = containerTop + this.resultsContainer.offsetHeight;
+                    
+                    if (itemBottom > containerBottom) {
+                        this.resultsContainer.scrollTop = itemBottom - this.resultsContainer.offsetHeight;
+                    } else if (itemTop < containerTop) {
+                        this.resultsContainer.scrollTop = itemTop;
+                    }
+                }
+            }
+            
+            handleClear() {
+                this.input.value = '';
+                this.currentInputValue = '';
+                this.selectedItem = null;
+                this.hideResults();
+                this.updateClearButton();
+                this.container.classList.remove('typeahead-selected');
+                
+                if (this.compatibilityId) {
+                    this.updateCompatibilityElement('');
+                }
+                
+                this.input.focus();
+                
+                if (typeof this.onSelect === 'function') {
+                    this.onSelect(null);
+                }
+            }
+            
+            showResults() {
+                this.resultsContainer.style.display = 'block';
+            }
+            
+            hideResults() {
+                this.resultsContainer.style.display = 'none';
+                this.resultsContainer.classList.remove('show-all');
+            }
+            
+            updateClearButton() {
+                if (this.input.value) {
+                    this.clearButton.style.display = 'block';
+                } else {
+                    this.clearButton.style.display = 'none';
+                }
+            }
+            
+            // Public methods
+            getValue() {
+                return this.selectedItem;
+            }
+            
+            setValue(value) {
+                if (value) {
+                    this.selectItem(value);
+                } else {
+                    this.handleClear();
+                }
+            }
+            
+            updateData(data) {
+                this.data = data || [];
+                
+                if (this.resultsContainer.style.display === 'block' && this.showAllOnFocus && !this.currentInputValue) {
+                    this.showAllOptions();
+                    return;
+                }
+                
+                if (this.currentInputValue.length >= this.minChars) {
+                    this.performSearch(this.currentInputValue);
+                }
+            }
         }
-    }
 
-    function getSearchParams() {
-        return {
-            stationQuery: localStorage.getItem('stationQuery') || '',
-            lineQuery: localStorage.getItem('lineQuery') || ''
-        };
-    }
+        // Enhanced initialization with TypeAhead components
+        let stationTypeahead, lineTypeahead;
+        
+        function debounce(func, delay) {
+            let debounceTimer;
+            return function() {
+                const context = this;
+                const args = arguments;
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => func.apply(context, args), delay);
+            }
+        }
 
-    function setSearchParams(stationQuery, lineQuery) {
-        localStorage.setItem('stationQuery', stationQuery);
-        localStorage.setItem('lineQuery', lineQuery);
-    }
+        function getSearchParams() {
+            return {
+                stationQuery: localStorage.getItem('stationQuery') || '',
+                lineQuery: localStorage.getItem('lineQuery') || ''
+            };
+        }
 
-    function clearSearchParams() {
-        localStorage.removeItem('stationQuery');
-        localStorage.removeItem('lineQuery');
-    }
+        function setSearchParams(stationQuery, lineQuery) {
+            localStorage.setItem('stationQuery', stationQuery);
+            localStorage.setItem('lineQuery', lineQuery);
+        }
 
-    function initializeSearchInputs() {
-        const { stationQuery, lineQuery } = getSearchParams();
-        document.getElementById('station-search').value = stationQuery;
-        document.getElementById('line-search').value = lineQuery;
-    }
+        function clearSearchParams() {
+            localStorage.removeItem('stationQuery');
+            localStorage.removeItem('lineQuery');
+        }
 
-    function handleSearchChange() {
-        const stationQuery = document.getElementById('station-search').value.trim();
-        const lineQuery = document.getElementById('line-search').value;
-        setSearchParams(stationQuery, lineQuery);
-        window.dispatchEvent(new Event('searchUpdated'));
-    }
+        function initializeSearchInputs() {
+            const { stationQuery, lineQuery } = getSearchParams();
+            if (stationTypeahead && stationQuery) {
+                stationTypeahead.setValue(stationQuery);
+            }
+            if (lineTypeahead && lineQuery) {
+                lineTypeahead.setValue(lineQuery);
+            }
+        }
 
-    function handleClearSearch() {
-        document.getElementById('station-search').value = '';
-        document.getElementById('line-search').value = '';
-        clearSearchParams();
-        window.dispatchEvent(new Event('searchUpdated'));
-    }
-
-    document.getElementById('station-search').addEventListener('input', debounce(handleSearchChange, 300));
-    document.getElementById('line-search').addEventListener('change', handleSearchChange);
-    document.getElementById('clearButton').addEventListener('click', handleClearSearch);
-
-    window.addEventListener('storage', (event) => {
-        if (event.key === 'stationQuery' || event.key === 'lineQuery') {
-            initializeSearchInputs();
+        function handleSearchChange() {
+            const stationQuery = stationTypeahead ? stationTypeahead.getValue() || '' : '';
+            const lineQuery = lineTypeahead ? lineTypeahead.getValue() || '' : '';
+            setSearchParams(stationQuery, lineQuery);
             window.dispatchEvent(new Event('searchUpdated'));
         }
-    });
 
-    // MetroMatch Modal Logic (show once per user)
-    window.addEventListener('load', function () {
-        initializeSearchInputs();
-
-        const modal = document.getElementById('metromatch-modal');
-        const skipBtn = document.getElementById('skip-button');
-        const form = document.getElementById('metromatch-form');
-
-	if (!localStorage.getItem('metromatchDismissed')) {
-            modal.style.display = 'flex';
+        function handleClearSearch() {
+            if (stationTypeahead) stationTypeahead.setValue(null);
+            if (lineTypeahead) lineTypeahead.setValue(null);
+            clearSearchParams();
+            window.dispatchEvent(new Event('searchUpdated'));
         }
 
-        skipBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-            localStorage.setItem('metromatchDismissed', 'true');
-        });
+        function toggleMenu() {
+            document.getElementById("mobileMenu").classList.toggle("mobile-menu-active");
+        }
 
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
+        // Load station data from your actual data sources
+        async function loadStationData() {
+            let stationData = [];
+            let lineData = ['All Lines', 'Red', 'Blue', 'Yellow', 'Green', 'Orange', 'Silver', 'MARC', 'VRE'];
+            
+            try {
+                // Method 1: Try to load from stations.json if it exists
+                try {
+                    const stationsResponse = await fetch('/static/data/stations.json');
+                    if (stationsResponse.ok) {
+                        const stationsJson = await stationsResponse.json();
+                        console.log('Loaded stations from JSON:', stationsJson);
+                        
+                        // Extract unique station names from JSON
+                        const stationNames = new Set();
+                        if (Array.isArray(stationsJson)) {
+                            stationsJson.forEach(station => {
+                                if (station.name) {
+                                    stationNames.add(station.name.trim());
+                                }
+                                // Also check for other possible name fields
+                                if (station.station_name) {
+                                    stationNames.add(station.station_name.trim());
+                                }
+                                if (station.Station) {
+                                    stationNames.add(station.Station.trim());
+                                }
+                            });
+                        } else if (typeof stationsJson === 'object') {
+                            // Handle case where it's an object with station data
+                            Object.values(stationsJson).forEach(station => {
+                                if (typeof station === 'string') {
+                                    stationNames.add(station.trim());
+                                } else if (station && station.name) {
+                                    stationNames.add(station.name.trim());
+                                }
+                            });
+                        }
+                        
+                        stationData = Array.from(stationNames).sort();
+                        console.log('Extracted station names:', stationData);
+                    }
+                } catch (jsonError) {
+                    console.log('stations.json not found, trying CSV...');
+                }
+                
+                // Method 2: If JSON didn't work or was empty, load from CSV
+                if (stationData.length === 0) {
+                    const csvResponse = await fetch('/static/data/Final_Data_December_2024.csv');
+                    if (csvResponse.ok) {
+                        const csvText = await csvResponse.text();
+                        console.log('CSV loaded, parsing...');
+                        
+                        // Use PapaParse if available, otherwise manual parsing
+                        if (typeof Papa !== 'undefined') {
+                            const parseResult = Papa.parse(csvText, {
+                                header: true,
+                                skipEmptyLines: true,
+                                dynamicTyping: true
+                            });
+                            
+                            const stationNames = new Set();
+                            parseResult.data.forEach(row => {
+                                // Check multiple possible column names for stations
+                                const possibleNames = [
+                                    row.station_name, row.Station, row.name, 
+                                    row.station, row.STATION, row.station_id
+                                ];
+                                
+                                possibleNames.forEach(name => {
+                                    if (name && typeof name === 'string' && name.trim()) {
+                                        stationNames.add(name.trim());
+                                    }
+                                });
+                            });
+                            
+                            stationData = Array.from(stationNames).sort();
+                            console.log('Extracted stations from CSV:', stationData.length, 'stations');
+                        } else {
+                            // Manual CSV parsing fallback
+                            const lines = csvText.split('\n');
+                            const headers = lines[0].split(',').map(h => h.trim());
+                            const stationColumnIndex = headers.findIndex(h => 
+                                h.toLowerCase().includes('station') || h.toLowerCase() === 'name'
+                            );
+                            
+                            if (stationColumnIndex !== -1) {
+                                const stationNames = new Set();
+                                for (let i = 1; i < lines.length; i++) {
+                                    const columns = lines[i].split(',');
+                                    if (columns[stationColumnIndex] && columns[stationColumnIndex].trim()) {
+                                        stationNames.add(columns[stationColumnIndex].trim());
+                                    }
+                                }
+                                stationData = Array.from(stationNames).sort();
+                            }
+                        }
+                    }
+                }
+                
+                // Method 3: Fallback to getting station names from the map data if available
+                if (stationData.length === 0 && window.stationData) {
+                    console.log('Using fallback station data from window.stationData');
+                    const stationNames = new Set();
+                    window.stationData.forEach(station => {
+                        if (station.station_name) {
+                            stationNames.add(station.station_name.trim());
+                        }
+                    });
+                    stationData = Array.from(stationNames).sort();
+                }
+                
+            } catch (error) {
+                console.error('Error loading station data:', error);
+                // Ultimate fallback - minimal station list
+                stationData = [
+                    'Union Station', 'Gallery Pl-Chinatown', 'Metro Center', 'Dupont Circle',
+                    'Foggy Bottom-GWU', 'Pentagon', 'Crystal City', 'King St-Old Town'
+                ].sort();
+            }
+            
+            // Remove duplicates and ensure clean data
+            stationData = [...new Set(stationData)].filter(name => name && name.length > 0).sort();
+            
+            console.log('Final station data:', stationData);
+            return { stationData, lineData };
+        }
 
-            const formData = new FormData(form);
+        // Initialize TypeAhead components when page loads
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('Loading station data...');
+            const { stationData, lineData } = await loadStationData();
+            
+            // Initialize Station TypeAhead with real data
+            stationTypeahead = new MetroMatchTypeahead({
+                containerId: 'station-typeahead',
+                compatibilityId: 'station-search',
+                placeholder: stationData.length > 0 ? 
+                    'Click to see all stations or type to search...' : 
+                    'Loading stations...',
+                label: 'Metro Station',
+                data: stationData,
+                minChars: 1,
+                showAllOnFocus: true,
+                onSelect: function(station) {
+                    console.log('Station selected:', station);
+                    handleSearchChange();
+                }
+            });
 
-            fetch("/submit_feedback", {
-                method: "POST",
-                body: formData
-            }).then(() => {
+            // Initialize Line TypeAhead
+            lineTypeahead = new MetroMatchTypeahead({
+                containerId: 'line-typeahead',
+                compatibilityId: 'line-search',
+                placeholder: 'Click to see all lines or type to search...',
+                label: 'Metro Line',
+                data: lineData,
+                minChars: 1,
+                showAllOnFocus: true,
+                onSelect: function(line) {
+                    console.log('Line selected:', line);
+                    handleSearchChange();
+                }
+            });
+
+            // Set up clear button
+            document.getElementById('clearButton').addEventListener('click', handleClearSearch);
+
+            // Initialize with saved values
+            initializeSearchInputs();
+
+            // Handle storage events for cross-tab synchronization
+            window.addEventListener('storage', (event) => {
+                if (event.key === 'stationQuery' || event.key === 'lineQuery') {
+                    initializeSearchInputs();
+                    window.dispatchEvent(new Event('searchUpdated'));
+                }
+            });
+
+            // MetroMatch Modal Logic (show once per user)
+            const modal = document.getElementById('metromatch-modal');
+            const skipBtn = document.getElementById('skip-button');
+            const form = document.getElementById('metromatch-form');
+
+            if (!localStorage.getItem('metromatchDismissed')) {
+                modal.style.display = 'flex';
+            }
+
+            skipBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
                 localStorage.setItem('metromatchDismissed', 'true');
-                form.innerHTML = `<p style="margin-top: 20px; font-size: 1.1em; color: green;">
-                    Thanks for your input! We'll be in touch to learn more about your experience with out platform.
-                </p>`;
-                setTimeout(() => {
-                    window.location.href = "/";
-                }, 2000);
-            }).catch((err) => {
-                console.error("Submission failed:", err);
-                form.innerHTML = `<p style="margin-top: 20px; font-size: 1.1em; color: red;">
-                    Something went wrong. Please refresh the page and try again.
-                </p>`;
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+
+                fetch("/submit_feedback", {
+                    method: "POST",
+                    body: formData
+                }).then(() => {
+                    localStorage.setItem('metromatchDismissed', 'true');
+                    form.innerHTML = `<p style="margin-top: 20px; font-size: 1.1em; color: green;">
+                        Thanks for your input! We'll be in touch to learn more about your experience with our platform.
+                    </p>`;
+                    setTimeout(() => {
+                        modal.style.display = 'none';
+                    }, 2000);
+                }).catch((err) => {
+                    console.error("Submission failed:", err);
+                    form.innerHTML = `<p style="margin-top: 20px; font-size: 1.1em; color: red;">
+                        Something went wrong. Please refresh the page and try again.
+                    </p>`;
+                });
             });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
