@@ -1,0 +1,2472 @@
+[
+    {
+        "hotel_id": 1,
+        "hotel_name": "Hilton Arlington",
+        "hotel_lat": 38.8815374,
+        "hotel_lon": -77.111159,
+        "station_name": "BALLSTON METRO STATION",
+        "station_id": 77,
+        "hotel_distance_miles": 0.12,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hilton-arlington.owtU0T1"
+    },
+    {
+        "hotel_id": 2,
+        "hotel_name": "The Westin Arlington",
+        "hotel_lat": 38.8806466,
+        "hotel_lon": -77.1142986,
+        "station_name": "BALLSTON METRO STATION",
+        "station_id": 77,
+        "hotel_distance_miles": 0.13,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-westin-arlington-gateway.DdoQWsW"
+    },
+    {
+        "hotel_id": 3,
+        "hotel_name": "Holiday Inn Arlington at Ballston by IHG",
+        "hotel_lat": 38.8816144,
+        "hotel_lon": -77.1173749,
+        "station_name": "BALLSTON METRO STATION",
+        "station_id": 77,
+        "hotel_distance_miles": 0.23,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-holiday-inn-arlington-at-ballston.rqT6VAl"
+    },
+    {
+        "hotel_id": 4,
+        "hotel_name": "Comfort Inn Ballston",
+        "hotel_lat": 38.8859812,
+        "hotel_lon": -77.1171372,
+        "station_name": "BALLSTON METRO STATION",
+        "station_id": 77,
+        "hotel_distance_miles": 0.33,
+        "hotel_website": "expedia.com/affiliates/washington-hotels-comfort-inn-ballston.8OBaMvy"
+    },
+    {
+        "hotel_id": 5,
+        "hotel_name": "Residence Inn Arlington Ballston",
+        "hotel_lat": 38.8786811,
+        "hotel_lon": -77.1079436,
+        "station_name": "BALLSTON METRO STATION",
+        "station_id": 77,
+        "hotel_distance_miles": 0.38,
+        "hotel_website": "expedia.com/affiliates/washington-hotels-residence-inn-arlington-ballston.tByxobW"
+    },
+    {
+        "hotel_id": 6,
+        "hotel_name": "Hyatt Regency Bethesda",
+        "hotel_lat": 38.9841065,
+        "hotel_lon": -77.094747,
+        "station_name": "BETHESDA METRO STATION",
+        "station_id": 55,
+        "hotel_distance_miles": 0.04,
+        "hotel_website": "expedia.com/affiliates/bethesda-hotels-hyatt-regency-bethesda.cSGisaC"
+    },
+    {
+        "hotel_id": 7,
+        "hotel_name": "AC Hotel Bethesda Downtown",
+        "hotel_lat": 38.983489,
+        "hotel_lon": -77.0927504,
+        "station_name": "BETHESDA STATION",
+        "station_id": 55,
+        "hotel_distance_miles": 0.09,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-ac-hotel-by-marriott-bethesda-downtown.6fv7zps"
+    },
+    {
+        "hotel_id": 8,
+        "hotel_name": "Residence Inn Bethesda Downtown",
+        "hotel_lat": 38.9830556,
+        "hotel_lon": -77.0928866,
+        "station_name": "BETHESDA STATION",
+        "station_id": 55,
+        "hotel_distance_miles": 0.11,
+        "hotel_website": "https://expedia.com/affiliates/bethesda-hotels-residence-inn-by-marriott-bethesda-downtown.pxL81bS"
+    },
+    {
+        "hotel_id": 9,
+        "hotel_name": "Hilton Garden Inn Bethesda Downtown",
+        "hotel_lat": 38.9833127,
+        "hotel_lon": -77.0915955,
+        "station_name": "BETHESDA STATION",
+        "station_id": 55,
+        "hotel_distance_miles": 0.15,
+        "hotel_website": "https://expedia.com/affiliates/bethesda-hotels-hilton-garden-inn-bethesda.pxygrzZ"
+    },
+    {
+        "hotel_id": 10,
+        "hotel_name": "Marriott Bethesda Downtown",
+        "hotel_lat": 38.9871859,
+        "hotel_lon": -77.095918,
+        "station_name": "BETHESDA STATION",
+        "station_id": 55,
+        "hotel_distance_miles": 0.22,
+        "hotel_website": "https://expedia.com/affiliates/bethesda-hotels-marriott-bethesda-downtown-at-marriott-hq.Jh2LF5z"
+    },
+    {
+        "hotel_id": 11,
+        "hotel_name": "Country Inn & Suites by Radisson, Camp Springs (Andrews Air Force Base), MD",
+        "hotel_lat": 38.8220221,
+        "hotel_lon": -76.915852,
+        "station_name": "BRANCH AVE METRO STATION",
+        "station_id": 43,
+        "hotel_distance_miles": 0.39,
+        "hotel_website": "https://expedia.com/affiliates/college-park-hotels-country-inn-suites-by-radisson.KdRnr25"
+    },
+    {
+        "hotel_id": 12,
+        "hotel_name": "Hampton Inn & Suites Camp Springs/Andrews AFB",
+        "hotel_lat": 38.8214787,
+        "hotel_lon": -76.9149674,
+        "station_name": "BRANCH AVE METRO STATION",
+        "station_id": 43,
+        "hotel_distance_miles": 0.4,
+        "hotel_website": "https://expedia.com/affiliates/college-park-hotels-hampton-inn-suites-camp-springs-andrews-afb.TogVU2E"
+    },
+    {
+        "hotel_id": 13,
+        "hotel_name": "Holiday Inn Express Washington DC East-Andrews Afb by IHG",
+        "hotel_lat": 38.820757,
+        "hotel_lon": -76.91637,
+        "station_name": "BRANCH AVE  METRO STATION",
+        "station_id": 43,
+        "hotel_distance_miles": 0.48,
+        "hotel_website": "https://expedia.com/affiliates/college-park-hotels-holiday-inn-express-washington-dc-east-andrews-afb.9V9GQhI"
+    },
+    {
+        "hotel_id": 14,
+        "hotel_name": "Capitol Hill Hotel",
+        "hotel_lat": 38.8862533,
+        "hotel_lon": -77.003139,
+        "station_name": "CAPITOL SOUTH METRO STATION",
+        "station_id": 10,
+        "hotel_distance_miles": 0.18,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-capitol-hill-hotel.9XZgMH1"
+    },
+    {
+        "hotel_id": 15,
+        "hotel_name": "Hyatt Place Arlington/Courthouse Plaza",
+        "hotel_lat": 38.8911049,
+        "hotel_lon": -77.0875357,
+        "station_name": "COURTHOUSE METRO STATION",
+        "station_id": 72,
+        "hotel_distance_miles": 0.11,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hyatt-place-arlingtoncourthouse-plaza.SafDxW7"
+    },
+    {
+        "hotel_id": 16,
+        "hotel_name": "Residence Inn Arlington Courthouse",
+        "hotel_lat": 38.8895227,
+        "hotel_lon": -77.0873207,
+        "station_name": "COURTHOUSE METRO STATION",
+        "station_id": 72,
+        "hotel_distance_miles": 0.12,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-residence-inn-by-marriott-arlington-courthouse.K1RF4xi"
+    },
+    {
+        "hotel_id": 17,
+        "hotel_name": "Hilton Garden Inn Arlington/Courthouse Plaza",
+        "hotel_lat": 38.8889775,
+        "hotel_lon": -77.0833091,
+        "station_name": "COURTHOUSE METRO STATION",
+        "station_id": 72,
+        "hotel_distance_miles": 0.17,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hilton-garden-inn-arlington-courthouse-plaza.LlsmvNw"
+    },
+    {
+        "hotel_id": 18,
+        "hotel_name": "Clarion Collection Hotel Arlington Court Suites",
+        "hotel_lat": 38.887694,
+        "hotel_lon": -77.084086,
+        "station_name": "COURTHOUSE METRO STATION",
+        "station_id": 72,
+        "hotel_distance_miles": 0.22,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-arlington-court-suites.MQe3lqh"
+    },
+    {
+        "hotel_id": 19,
+        "hotel_name": "Crystal Gateway Marriott",
+        "hotel_lat": 38.858602,
+        "hotel_lon": -77.052663,
+        "station_name": "CRYSTAL CITY METRO STATION",
+        "station_id": 74,
+        "hotel_distance_miles": 0.12,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-crystal-gateway-marriott.lxmGFxJ"
+    },
+    {
+        "hotel_id": 20,
+        "hotel_name": "The Westin Crystal City Reagan National Airport",
+        "hotel_lat": 38.8572547,
+        "hotel_lon": -77.0525769,
+        "station_name": "CRYSTAL CITY METRO STATION",
+        "station_id": 74,
+        "hotel_distance_miles": 0.12,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-westin-crystal-city-reagan-national-airport.A66v9ZL"
+    },
+    {
+        "hotel_id": 21,
+        "hotel_name": "Crowne Plaza Crystal City-Washington, D.C. by IHG",
+        "hotel_lat": 38.860565,
+        "hotel_lon": -77.050201,
+        "station_name": "CRYSTAL CITY METRO STATION",
+        "station_id": 74,
+        "hotel_distance_miles": 0.19,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-crowne-plaza-crystal-city-washington.cRJfz0V"
+    },
+    {
+        "hotel_id": 22,
+        "hotel_name": "Hampton Inn & Suites Arlington Crystal City DCA",
+        "hotel_lat": 38.8554583,
+        "hotel_lon": -77.0528591,
+        "station_name": "CRYSTAL CITY METRO STATION",
+        "station_id": 74,
+        "hotel_distance_miles": 0.21,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hampton-inn-suites-reagan-national-airport-crystal-city.8PWYafq"
+    },
+    {
+        "hotel_id": 23,
+        "hotel_name": "Hilton Garden Inn Reagan National Airport",
+        "hotel_lat": 38.8550823,
+        "hotel_lon": -77.0528644,
+        "station_name": "CRYSTAL CITY METRO STATION",
+        "station_id": 74,
+        "hotel_distance_miles": 0.23,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hilton-garden-inn-reagan-national-airport.Gio0tXI"
+    },
+    {
+        "hotel_id": 24,
+        "hotel_name": "The Normandy",
+        "hotel_lat": 38.91738,
+        "hotel_lon": -77.0475,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.31,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-normandy-hotel.ciMmVvF"
+    },
+    {
+        "hotel_id": 25,
+        "hotel_name": "Hilton Arlington National Landing",
+        "hotel_lat": 38.8522763,
+        "hotel_lon": -77.0520389,
+        "station_name": "CRYSTAL CITY METRO STATION",
+        "station_id": 74,
+        "hotel_distance_miles": 0.39,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hilton-crystal-city-at-washington-reagan-national-airport.gMtRvqD"
+    },
+    {
+        "hotel_id": 26,
+        "hotel_name": "Comfort Inn Largo-Washington DC East",
+        "hotel_lat": 38.894485,
+        "hotel_lon": -76.8422658,
+        "station_name": "DOWNTOWN LARGO METRO STATION",
+        "station_id": 48,
+        "hotel_distance_miles": 0.44,
+        "hotel_website": "https://expedia.com/affiliates/upper-marlboro-hotels-comfort-inn.ENJDJCb"
+    },
+    {
+        "hotel_id": 27,
+        "hotel_name": "Residence Inn",
+        "hotel_lat": 38.8941063,
+        "hotel_lon": -76.8433383,
+        "station_name": "DOWNTOWN LARGO METRO STATION",
+        "station_id": 48,
+        "hotel_distance_miles": 0.45,
+        "hotel_website": "https://expedia.com/affiliates/college-park-hotels-residence-inn-by-marriott-upper-marlboro-joint-base-andrews.op0azTm"
+    },
+    {
+        "hotel_id": 28,
+        "hotel_name": "Courtyard Largo Medical Center Drive",
+        "hotel_lat": 38.9069213,
+        "hotel_lon": -76.8469238,
+        "station_name": "DOWNTOWN LARGO METRO STATION",
+        "station_id": 48,
+        "hotel_distance_miles": 0.46,
+        "hotel_website": "https://expedia.com/affiliates/waldorf-hotels-courtyard-by-marriott-largo-capital-beltway.tUrLOJ8"
+    },
+    {
+        "hotel_id": 29,
+        "hotel_name": "Staybridge Suites Washington DC East - Largo by IHG",
+        "hotel_lat": 38.9069819,
+        "hotel_lon": -76.8405717,
+        "station_name": "DOWNTOWN LARGO METRO STATION",
+        "station_id": 48,
+        "hotel_distance_miles": 0.5,
+        "hotel_website": "https://expedia.com/affiliates/college-park-hotels-staybridge-suites-washington-dc-east-largo.PyIpJle"
+    },
+    {
+        "hotel_id": 30,
+        "hotel_name": "Courtyard Dunn Loring Fairfax",
+        "hotel_lat": 38.880222,
+        "hotel_lon": -77.2282353,
+        "station_name": "DUNN LORING METRO STATION",
+        "station_id": 67,
+        "hotel_distance_miles": 0.24,
+        "hotel_website": "https://expedia.com/affiliates/vienna-hotels-courtyard-by-marriott-dunn-loring-fairfax.oQCIFM5"
+    },
+    {
+        "hotel_id": 31,
+        "hotel_name": "The Dupont Circle Hotel",
+        "hotel_lat": 38.9105439,
+        "hotel_lon": -77.0429082,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.06,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-dupont-circle-hotel.P8FUvMD"
+    },
+    {
+        "hotel_id": 32,
+        "hotel_name": "Placemakr Dupont Circle",
+        "hotel_lat": 38.9099211,
+        "hotel_lon": -77.0423689,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.07,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-oakwood-suites-studios-dupont-circle-washington-dc.rkklHwT"
+    },
+    {
+        "hotel_id": 33,
+        "hotel_name": "The Ven at Embassy Row, Washington, D.C., a Tribute Portfolio Hotel",
+        "hotel_lat": 38.9106467,
+        "hotel_lon": -77.0455332,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.12,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-ven-at-embassy-row.8t0Vttj"
+    },
+    {
+        "hotel_id": 34,
+        "hotel_name": "SIXTY DC",
+        "hotel_lat": 38.9082939,
+        "hotel_lon": -77.0423251,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.13,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-sixty-dc.77e6hEv"
+    },
+    {
+        "hotel_id": 35,
+        "hotel_name": "Hotel Madera",
+        "hotel_lat": 38.907631,
+        "hotel_lon": -77.0456037,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.19,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hotel-madera.vUgE5pn"
+    },
+    {
+        "hotel_id": 36,
+        "hotel_name": "The Royal Sonesta Washington DC Dupont Circle",
+        "hotel_lat": 38.909845,
+        "hotel_lon": -77.0473779,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.2,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-royal-sonesta-washington-dc-dupont-circle.rhaEm1P"
+    },
+    {
+        "hotel_id": 37,
+        "hotel_name": "Residence Inn Washington, DC/Dupont Circle",
+        "hotel_lat": 38.9094396,
+        "hotel_lon": -77.0472774,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.2,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-residence-inn-by-marriott-washington.lBYNHvt"
+    },
+    {
+        "hotel_id": 38,
+        "hotel_name": "Tabard Inn",
+        "hotel_lat": 38.9073798,
+        "hotel_lon": -77.0400344,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.26,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-tabard-inn.QPVUrha"
+    },
+    {
+        "hotel_id": 39,
+        "hotel_name": "The Baron Hotel",
+        "hotel_lat": 38.910262,
+        "hotel_lon": -77.0485791,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.27,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-baron-hotel.wuNeKJ9"
+    },
+    {
+        "hotel_id": 40,
+        "hotel_name": "Courtyard Washington, DC Dupont Circle",
+        "hotel_lat": 38.9073783,
+        "hotel_lon": -77.0395428,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.28,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-courtyard-by-marriott-washington.zvSxuPE"
+    },
+    {
+        "hotel_id": 41,
+        "hotel_name": "The St. Gregory Hotel Dupont Circle | Georgetown",
+        "hotel_lat": 38.9059663,
+        "hotel_lon": -77.0463658,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.31,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-st-gregory-hotel.56JdxCh"
+    },
+    {
+        "hotel_id": 42,
+        "hotel_name": "Lyle Washington DC",
+        "hotel_lat": 38.9133664,
+        "hotel_lon": -77.0395143,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.32,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-lyle-washington-dc.AexdXSO"
+    },
+    {
+        "hotel_id": 43,
+        "hotel_name": "Embassy Suites by Hilton Washington DC Georgetown",
+        "hotel_lat": 38.9068931,
+        "hotel_lon": -77.0493753,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.37,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-embassy-suites-by-hilton-washington-dc-georgetown.LuKZ24i"
+    },
+    {
+        "hotel_id": 44,
+        "hotel_name": "Washington Marriott Georgetown",
+        "hotel_lat": 38.9059999,
+        "hotel_lon": -77.0483181,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.37,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-washington-marriott-georgetown.UHXPDKV"
+    },
+    {
+        "hotel_id": 45,
+        "hotel_name": "Hilton Club The District Washington D.C.",
+        "hotel_lat": 38.9068784,
+        "hotel_lon": -77.049412,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.38,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-district-by-hilton-club.qdwlVmH"
+    },
+    {
+        "hotel_id": 46,
+        "hotel_name": "Swann House",
+        "hotel_lat": 38.914482,
+        "hotel_lon": -77.039172,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.4,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-swann-house-historic-dupont-circle-inn.eFLe6rx"
+    },
+    {
+        "hotel_id": 47,
+        "hotel_name": "Dupont Circle Embassy Inn by FOUND",
+        "hotel_lat": 38.9122491,
+        "hotel_lon": -77.0360482,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.44,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-sonder-at-found-dupont-circle.2ii0Kvz"
+    },
+    {
+        "hotel_id": 48,
+        "hotel_name": "Washington Hilton",
+        "hotel_lat": 38.9165712,
+        "hotel_lon": -77.0454106,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.47,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-washington-hilton.U1jSO2F"
+    },
+    {
+        "hotel_id": 49,
+        "hotel_name": "The Churchill Hotel Near Embassy Row",
+        "hotel_lat": 38.9163855,
+        "hotel_lon": -77.0470466,
+        "station_name": "DUPONT CIRCLE METRO STATION",
+        "station_id": 37,
+        "hotel_distance_miles": 0.48,
+        "hotel_website": "https://expedia.com/affiliates/hotel-search-the-churchill-hotel-near-embassy-row.9gEiSb0"
+    },
+    {
+        "hotel_id": 50,
+        "hotel_name": "Econo Lodge Metro",
+        "hotel_lat": 38.8867864,
+        "hotel_lon": -77.1620421,
+        "station_name": "EAST FALLS CHURCH METRO STATION",
+        "station_id": 79,
+        "hotel_distance_miles": 0.28,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-econo-lodge-metro.7s2tGIM"
+    },
+    {
+        "hotel_id": 51,
+        "hotel_name": "Duo Nomad",
+        "hotel_lat": 38.8833206,
+        "hotel_lon": -76.9921982,
+        "station_name": "EASTERN MARKET METRO STATION",
+        "station_id": 8,
+        "hotel_distance_miles": 0.23,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-duo-nomad.jzGJKgA"
+    },
+    {
+        "hotel_id": 52,
+        "hotel_name": "Holiday Inn Alexandria - Carlyle by IHG",
+        "hotel_lat": 38.801034,
+        "hotel_lon": -77.074086,
+        "station_name": "EISENHOWER AVE METRO STATION",
+        "station_id": 85,
+        "hotel_distance_miles": 0.16,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-holiday-inn-alexandria-at-carlyle.oHrpGgk"
+    },
+    {
+        "hotel_id": 53,
+        "hotel_name": "Residence Inn Alexandria Old Town South at Carlyle",
+        "hotel_lat": 38.8027195,
+        "hotel_lon": -77.0677201,
+        "station_name": "EISENHOWER AVE METRO STATION",
+        "station_id": 85,
+        "hotel_distance_miles": 0.25,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-residence-inn-alexandria-old-town-south-at-carlyle.XGpcGJ5"
+    },
+    {
+        "hotel_id": 54,
+        "hotel_name": "Courtyard Alexandria Old Town/Southwest",
+        "hotel_lat": 38.8019141,
+        "hotel_lon": -77.0792617,
+        "station_name": "EISENHOWER AVE METRO STATION",
+        "station_id": 85,
+        "hotel_distance_miles": 0.45,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-courtyard-by-marriott-alexandria-old-townsouthwest.LmAvD0g"
+    },
+    {
+        "hotel_id": 55,
+        "hotel_name": "The Mayflower Hotel",
+        "hotel_lat": 38.9046238,
+        "hotel_lon": -77.0398995,
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": 38,
+        "hotel_distance_miles": 0.1,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-mayflower-hotel.q2XxGbS"
+    },
+    {
+        "hotel_id": 56,
+        "hotel_name": "The Quincy, Ascend Hotel Collection",
+        "hotel_lat": 38.9040125,
+        "hotel_lon": -77.0426388,
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": 38,
+        "hotel_distance_miles": 0.17,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-sonder-1823-l-street-northwest.2K7l3gp"
+    },
+    {
+        "hotel_id": 57,
+        "hotel_name": "Capital Hilton",
+        "hotel_lat": 38.9031747,
+        "hotel_lon": -77.0363595,
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": 38,
+        "hotel_distance_miles": 0.18,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-capital-hilton.BR3aCQM"
+    },
+    {
+        "hotel_id": 58,
+        "hotel_name": "The St. Regis Washington, D.C.",
+        "hotel_lat": 38.9021897,
+        "hotel_lon": -77.036168,
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": 38,
+        "hotel_distance_miles": 0.2,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-st-regis-washington.yLiuaFl"
+    },
+    {
+        "hotel_id": 59,
+        "hotel_name": "AC Hotel Washington DC Downtown",
+        "hotel_lat": 38.9043053,
+        "hotel_lon": -77.0438859,
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": 38,
+        "hotel_distance_miles": 0.24,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-ac-hotel-by-marriott-washington-dc-downtown.WmErtEG"
+    },
+    {
+        "hotel_id": 60,
+        "hotel_name": "The Jefferson, Washington, DC",
+        "hotel_lat": 38.9059541,
+        "hotel_lon": -77.0368303,
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": 38,
+        "hotel_distance_miles": 0.25,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-jefferson.lZBIJLR"
+    },
+    {
+        "hotel_id": 61,
+        "hotel_name": "Beacon Hotel & Corporate Quarters",
+        "hotel_lat": 38.9070287,
+        "hotel_lon": -77.0380809,
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": 38,
+        "hotel_distance_miles": 0.28,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-beacon-hotel-corporate-quarters.HAgidFc"
+    },
+    {
+        "hotel_id": 62,
+        "hotel_name": "Canopy by Hilton Washington DC Embassy Row",
+        "hotel_lat": 38.9068125,
+        "hotel_lon": -77.0369177,
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": 38,
+        "hotel_distance_miles": 0.29,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-canopy-by-hilton-washington-embassy-row.Sad4GEA"
+    },
+    {
+        "hotel_id": 63,
+        "hotel_name": "The Darcy",
+        "hotel_lat": 38.9078331,
+        "hotel_lon": -77.0356237,
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": 38,
+        "hotel_distance_miles": 0.39,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-darcy-hotel.Y8mITVb"
+    },
+    {
+        "hotel_id": 64,
+        "hotel_name": "Kimpton Banneker Hotel",
+        "hotel_lat": 38.9082411,
+        "hotel_lon": -77.0361862,
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": 38,
+        "hotel_distance_miles": 0.4,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-kimpton-banneker-hotel.hqU2HT0"
+    },
+    {
+        "hotel_id": 65,
+        "hotel_name": "Holiday Inn Washington-Central/White House, an IHG Hotel",
+        "hotel_lat": 38.9080569,
+        "hotel_lon": -77.0349449,
+        "station_name": "FARRAGUT NORTH METRO STATION",
+        "station_id": 38,
+        "hotel_distance_miles": 0.42,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-holiday-inn-washington-centralwhite-house.8Iglk9j"
+    },
+    {
+        "hotel_id": 66,
+        "hotel_name": "Hampton Inn Washington, D.C./White House",
+        "hotel_lat": 38.9004706,
+        "hotel_lon": -77.041119,
+        "station_name": "FARRAGUT WEST METRO STATION",
+        "station_id": 16,
+        "hotel_distance_miles": 0.07,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hampton-inn-washington.qni2dQI"
+    },
+    {
+        "hotel_id": 67,
+        "hotel_name": "Club Quarters Hotel White House, Washington DC",
+        "hotel_lat": 38.9010596,
+        "hotel_lon": -77.0391674,
+        "station_name": "FARRAGUT WEST METRO STATION",
+        "station_id": 16,
+        "hotel_distance_miles": 0.07,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-oakwood-suites-studios-dupont-circle-washington-dc.5DZ4ehK"
+    },
+    {
+        "hotel_id": 68,
+        "hotel_name": "AKA White House",
+        "hotel_lat": 38.9000628,
+        "hotel_lon": -77.0404004,
+        "station_name": "FARRAGUT WEST METRO STATION",
+        "station_id": 16,
+        "hotel_distance_miles": 0.09,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-aka-white-house.S1NhhJl"
+    },
+    {
+        "hotel_id": 69,
+        "hotel_name": "The Hay-Adams",
+        "hotel_lat": 38.9004014,
+        "hotel_lon": -77.0369333,
+        "station_name": "FARRAGUT WEST METRO STATION",
+        "station_id": 16,
+        "hotel_distance_miles": 0.2,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-moxy-washington.A1miuVq"
+    },
+    {
+        "hotel_id": 70,
+        "hotel_name": "Courtyard Washington, DC/Foggy Bottom",
+        "hotel_lat": 38.8964498,
+        "hotel_lon": -77.0444557,
+        "station_name": "FARRAGUT WEST METRO STATION",
+        "station_id": 16,
+        "hotel_distance_miles": 0.4,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-courtyard-by-marriott-washington.iHD10fr"
+    },
+    {
+        "hotel_id": 71,
+        "hotel_name": "Residence Inn Washington, DC National Mall",
+        "hotel_lat": 38.8834186,
+        "hotel_lon": -77.0159601,
+        "station_name": "FEDERAL CENTER METRO STATION",
+        "station_id": 34,
+        "hotel_distance_miles": 0.11,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-residence-inn-washington.jt0BLJN"
+    },
+    {
+        "hotel_id": 72,
+        "hotel_name": "Hyatt Place Washington DC/National Mall",
+        "hotel_lat": 38.8829288,
+        "hotel_lon": -77.0179748,
+        "station_name": "FEDERAL CENTER METRO STATION",
+        "station_id": 34,
+        "hotel_distance_miles": 0.18,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hyatt-place-washington-dcnational-mall.o9oA9f9"
+    },
+    {
+        "hotel_id": 73,
+        "hotel_name": "Waldorf Astoria Washington DC",
+        "hotel_lat": 38.894108,
+        "hotel_lon": -77.027582,
+        "station_name": "FEDERAL TRIANGLE METRO STATION",
+        "station_id": 13,
+        "hotel_distance_miles": 0.04,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-waldorf-astoria-washington-dc.rAtU8nz"
+    },
+    {
+        "hotel_id": 74,
+        "hotel_name": "Residence Inn Washington, DC/Foggy Bottom",
+        "hotel_lat": 38.8999348,
+        "hotel_lon": -77.0521492,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.12,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-residence-inn-washington.MClqdLU"
+    },
+    {
+        "hotel_id": 75,
+        "hotel_name": "ARC HOTEL Washington DC, Georgetown",
+        "hotel_lat": 38.9001994,
+        "hotel_lon": -77.0526547,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.14,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-arc-thehotel.lh6OyFV"
+    },
+    {
+        "hotel_id": 76,
+        "hotel_name": "Hotel AKA Washington Circle",
+        "hotel_lat": 38.9034054,
+        "hotel_lon": -77.0497749,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.19,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-one-washington-circle-hotel.Hq8uRic"
+    },
+    {
+        "hotel_id": 77,
+        "hotel_name": "The River Inn",
+        "hotel_lat": 38.9013728,
+        "hotel_lon": -77.0535173,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.19,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-river-inn.24R6jac"
+    },
+    {
+        "hotel_id": 78,
+        "hotel_name": "Melrose Georgetown Hotel",
+        "hotel_lat": 38.9031737,
+        "hotel_lon": -77.0525597,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.22,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-melrose-georgetown-hotel.Tyl8cz9"
+    },
+    {
+        "hotel_id": 79,
+        "hotel_name": "Hotel Lombardy",
+        "hotel_lat": 38.9014862,
+        "hotel_lon": -77.0459339,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.23,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hotel-lombardy.ELtLiaz"
+    },
+    {
+        "hotel_id": 80,
+        "hotel_name": "Hotel Hive",
+        "hotel_lat": 38.8971481,
+        "hotel_lon": -77.0496138,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.25,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hotel-hive.ch3OT90"
+    },
+    {
+        "hotel_id": 81,
+        "hotel_name": "2500 Penn, a Placemakr Experience",
+        "hotel_lat": 38.9034123,
+        "hotel_lon": -77.0536006,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.27,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-2500-penn.8S66zrH"
+    },
+    {
+        "hotel_id": 82,
+        "hotel_name": "West End Washington DC, Tapestry Collection by Hilton",
+        "hotel_lat": 38.9043556,
+        "hotel_lon": -77.0479142,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.28,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-west-end-washington-dc.00r6Fd9"
+    },
+    {
+        "hotel_id": 83,
+        "hotel_name": "The Ritz-Carlton, Washington, D.C.",
+        "hotel_lat": 38.9046966,
+        "hotel_lon": -77.0490792,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.28,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-ritz-carlton.OF2XyZE"
+    },
+    {
+        "hotel_id": 84,
+        "hotel_name": "The Watergate Hotel",
+        "hotel_lat": 38.8994851,
+        "hotel_lon": -77.0556711,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.31,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-watergate-hotel.HqqNTKT"
+    },
+    {
+        "hotel_id": 85,
+        "hotel_name": "The Westin Georgetown, Washington D.C.",
+        "hotel_lat": 38.9050757,
+        "hotel_lon": -77.05109,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.31,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-westin-georgetown.LOfKdci"
+    },
+    {
+        "hotel_id": 86,
+        "hotel_name": "Yours Truly DC Hotel - Vignette Collection by IHG",
+        "hotel_lat": 38.9048095,
+        "hotel_lon": -77.0475863,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.31,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-yours-truly-dc.DShv3nO"
+    },
+    {
+        "hotel_id": 87,
+        "hotel_name": "State Plaza Hotel",
+        "hotel_lat": 38.8963856,
+        "hotel_lon": -77.0474987,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.33,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-state-plaza-hotel.sSQ37GJ"
+    },
+    {
+        "hotel_id": 88,
+        "hotel_name": "Hilton Garden Inn Washington DC/Georgetown Area",
+        "hotel_lat": 38.9055456,
+        "hotel_lon": -77.0491558,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.34,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hilton-garden-inn-washington-dcgeorgetown-area.nGdIfN0"
+    },
+    {
+        "hotel_id": 89,
+        "hotel_name": "Hyatt Place Washington DC/Georgetown/West End",
+        "hotel_lat": 38.9055927,
+        "hotel_lon": -77.0481256,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.35,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hyatt-place-washington-dcgeorgetownwest-end.Cr3pWn1"
+    },
+    {
+        "hotel_id": 90,
+        "hotel_name": "Fairmont Washington D.C. Georgetown",
+        "hotel_lat": 38.9058213,
+        "hotel_lon": -77.0517041,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.36,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-fairmont-washington.DNI2qSx"
+    },
+    {
+        "hotel_id": 91,
+        "hotel_name": "Park Hyatt Washington D.C.",
+        "hotel_lat": 38.9060866,
+        "hotel_lon": -77.0510944,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.38,
+        "hotel_website": "https://expedia.com/affiliates/hotel-search-park-hyatt-washington.64JytSz"
+    },
+    {
+        "hotel_id": 92,
+        "hotel_name": "Four Seasons Hotel Washington, DC",
+        "hotel_lat": 38.9048185,
+        "hotel_lon": -77.0572948,
+        "station_name": "FOGGY BOTTOM METRO STATION",
+        "station_id": 39,
+        "hotel_distance_miles": 0.48,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-four-seasons-hotel-washington-dc.SFHanxF"
+    },
+    {
+        "hotel_id": 93,
+        "hotel_name": "Visitation Hotel Frederick, a Tribute Portfolio Hotel",
+        "hotel_lat": 39.4152042,
+        "hotel_lon": -77.4067196,
+        "station_name": "FREDERICK MARC",
+        "station_id": 130,
+        "hotel_distance_miles": 0.24,
+        "hotel_website": "https://expedia.com/affiliates/frederick-hotels-visitation-htl-frederick-tribute-portfol.OoVDyuP"
+    },
+    {
+        "hotel_id": 94,
+        "hotel_name": "10 Clarke",
+        "hotel_lat": 39.4075232,
+        "hotel_lon": -77.4110129,
+        "station_name": "FREDERICK MARC",
+        "station_id": 130,
+        "hotel_distance_miles": 0.42,
+        "hotel_website": "https://expedia.com/affiliates/hotels.zpEc18y"
+    },
+    {
+        "hotel_id": 95,
+        "hotel_name": "Hollerstown Hill Bed and Breakfast",
+        "hotel_lat": 39.4075979,
+        "hotel_lon": -77.4114517,
+        "station_name": "FREDERICK MARC",
+        "station_id": 130,
+        "hotel_distance_miles": 0.44,
+        "hotel_website": "https://expedia.com/affiliates/frederick-hotels-hollerstown-hill-bed-and-breakfast.S7hhERo"
+    },
+    {
+        "hotel_id": 96,
+        "hotel_name": "The Wedgewood Inn",
+        "hotel_lat": 39.4167259,
+        "hotel_lon": -77.4111524,
+        "station_name": "FREDERICK MARC",
+        "station_id": 130,
+        "hotel_distance_miles": 0.45,
+        "hotel_website": "https://expedia.com/affiliates/frederick-hotels-the-wedgewood-inn-historic-frederick-maryland.WmkuwmB"
+    },
+    {
+        "hotel_id": 97,
+        "hotel_name": "Embassy Suites by Hilton Washington DC Chevy Chase Pavilion",
+        "hotel_lat": 38.960533,
+        "hotel_lon": -77.0847465,
+        "station_name": "FRIENDSHIP HEIGHTS METRO STATION",
+        "station_id": 57,
+        "hotel_distance_miles": 0.08,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-embassy-suites-by-hilton-washington-dc-chevy-chase-pavilion.oh3L3nq"
+    },
+    {
+        "hotel_id": 98,
+        "hotel_name": "Courtyard Bethesda Chevy Chase",
+        "hotel_lat": 38.964332,
+        "hotel_lon": -77.087845,
+        "station_name": "FRIENDSHIP HEIGHTS METRO STATION",
+        "station_id": 57,
+        "hotel_distance_miles": 0.37,
+        "hotel_website": "https://expedia.com/affiliates/bethesda-hotels-courtyard-by-marriott-bethesdachevy-chase.fQotCgG"
+    },
+    {
+        "hotel_id": 99,
+        "hotel_name": "Inn on Fox Meadow",
+        "hotel_lat": 39.1446996,
+        "hotel_lon": -77.1972649,
+        "station_name": "GAITHERSBURG MARC",
+        "station_id": 131,
+        "hotel_distance_miles": 0.33,
+        "hotel_website": "https://expedia.com/affiliates/gaithersburg-hotels-inn-on-fox-meadow.XRvFDGE"
+    },
+    {
+        "hotel_id": 100,
+        "hotel_name": "Kimpton Hotel Monaco",
+        "hotel_lat": 38.8970339,
+        "hotel_lon": -77.022408,
+        "station_name": "GALLERY PLACE CHINATOWN METRO STATION",
+        "station_id": 5,
+        "hotel_distance_miles": 0.1,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-kimpton-hotel-monaco-washington-dc.b6whoOV"
+    },
+    {
+        "hotel_id": 101,
+        "hotel_name": "Riggs Washington DC",
+        "hotel_lat": 38.8971091,
+        "hotel_lon": -77.0244208,
+        "station_name": "GALLERY PLACE CHINATOWN METRO STATION",
+        "station_id": 5,
+        "hotel_distance_miles": 0.12,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-riggs-washington-dc.kKOyJP2"
+    },
+    {
+        "hotel_id": 102,
+        "hotel_name": "Motto by Hilton Washington DC City Center",
+        "hotel_lat": 38.8999528,
+        "hotel_lon": -77.0212023,
+        "station_name": "GALLERY PLACE CHINATOWN METRO STATION",
+        "station_id": 5,
+        "hotel_distance_miles": 0.14,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-motto-by-hilton-washington-dc-city-center.G5UjkJL"
+    },
+    {
+        "hotel_id": 103,
+        "hotel_name": "Fairfield Inn & Suites Washington, DC/Downtown",
+        "hotel_lat": 38.899616,
+        "hotel_lon": -77.0191649,
+        "station_name": "GALLERY PLACE CHINATOWN METRO STATION",
+        "station_id": 5,
+        "hotel_distance_miles": 0.21,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-fairfield-inn-suites-by-marriott-washington.Gp2puhc"
+    },
+    {
+        "hotel_id": 104,
+        "hotel_name": "The Westin DC Downtown",
+        "hotel_lat": 38.9015187,
+        "hotel_lon": -77.0238089,
+        "station_name": "GALLERY PLACE CHINATOWN METRO STATION",
+        "station_id": 5,
+        "hotel_distance_miles": 0.22,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-renaissance-washington-dc-downtown-hotel.HckhY2v"
+    },
+    {
+        "hotel_id": 105,
+        "hotel_name": "I Street Hostel",
+        "hotel_lat": 38.9006467,
+        "hotel_lon": -77.0196615,
+        "station_name": "GALLERY PLACE CHINATOWN METRO STATION",
+        "station_id": 5,
+        "hotel_distance_miles": 0.23,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-i-street-capsule-hostel.grTacM2"
+    },
+    {
+        "hotel_id": 106,
+        "hotel_name": "Conrad Washington, DC",
+        "hotel_lat": 38.9011645,
+        "hotel_lon": -77.0251908,
+        "station_name": "GALLERY PLACE CHINATOWN METRO STATION",
+        "station_id": 5,
+        "hotel_distance_miles": 0.23,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-conrad-washington-dc.giLfO1B"
+    },
+    {
+        "hotel_id": 107,
+        "hotel_name": "Hilton Garden Inn Tysons Corner",
+        "hotel_lat": 38.9164874,
+        "hotel_lon": -77.2328807,
+        "station_name": "GREENSBORO METRO STATION",
+        "station_id": 95,
+        "hotel_distance_miles": 0.34,
+        "hotel_website": "https://expedia.com/affiliates/vienna-hotels-hilton-garden-inn-tysons-corner.Q07z81s"
+    },
+    {
+        "hotel_id": 108,
+        "hotel_name": "Residence Inn Tysons",
+        "hotel_lat": 38.9157758,
+        "hotel_lon": -77.2353192,
+        "station_name": "GREENSBORO METRO STATION",
+        "station_id": 95,
+        "hotel_distance_miles": 0.38,
+        "hotel_website": "https://expedia.com/affiliates/vienna-hotels-residence-inn-by-marriott-tysons.otfP4hP"
+    },
+    {
+        "hotel_id": 109,
+        "hotel_name": "Courtyard Dulles Airport Herndon/Reston",
+        "hotel_lat": 38.9539469,
+        "hotel_lon": -77.3792115,
+        "station_name": "HERNDON METRO STATION",
+        "station_id": 91,
+        "hotel_distance_miles": 0.33,
+        "hotel_website": "https://expedia.com/affiliates/herndon-hotels-courtyard-by-marriott-dulles-airport-herndonreston.E5q8KTZ"
+    },
+    {
+        "hotel_id": 110,
+        "hotel_name": "Homewood Suites by Hilton Dulles Int'l Airport",
+        "hotel_lat": 38.9578486,
+        "hotel_lon": -77.4111457,
+        "station_name": "INNOVATION CENTER METRO STATION",
+        "station_id": 90,
+        "hotel_distance_miles": 0.3,
+        "hotel_website": "https://expedia.com/affiliates/herndon-hotels-homewood-suites-by-hilton-dulles-international-airport.JVxjtrg"
+    },
+    {
+        "hotel_id": 111,
+        "hotel_name": "Hyatt Place Herndon/Dulles Airport-East",
+        "hotel_lat": 38.9574687,
+        "hotel_lon": -77.4202277,
+        "station_name": "INNOVATION CENTER METRO STATION",
+        "station_id": 90,
+        "hotel_distance_miles": 0.35,
+        "hotel_website": "https://expedia.com/affiliates/herndon-hotels-hyatt-place-herndon-dulles-airport-east.lqPW1eK"
+    },
+    {
+        "hotel_id": 112,
+        "hotel_name": "Courtyard Dulles Airport Herndon",
+        "hotel_lat": 38.958343,
+        "hotel_lon": -77.4215341,
+        "station_name": "INNOVATION CENTER METRO STATION",
+        "station_id": 90,
+        "hotel_distance_miles": 0.38,
+        "hotel_website": "https://expedia.com/affiliates/herndon-hotels-courtyard-by-marriott-dulles-airport-herndon.PizHB6X"
+    },
+    {
+        "hotel_id": 113,
+        "hotel_name": "Hyatt Regency Dulles",
+        "hotel_lat": 38.9605941,
+        "hotel_lon": -77.4234005,
+        "station_name": "INNOVATION CENTER METRO STATION",
+        "station_id": 90,
+        "hotel_distance_miles": 0.44,
+        "hotel_website": "https://expedia.com/affiliates/herndon-hotels-hyatt-regency-dulles.HAItjL0"
+    },
+    {
+        "hotel_id": 114,
+        "hotel_name": "Arlo Washington DC",
+        "hotel_lat": 38.8984889,
+        "hotel_lon": -77.0158718,
+        "station_name": "JUDICIARY SQUARE METRO STATION",
+        "station_id": 4,
+        "hotel_distance_miles": 0.16,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-arlo-washington-dc.OT80gMb"
+    },
+    {
+        "hotel_id": 115,
+        "hotel_name": "Hilton Alexandria Old Town",
+        "hotel_lat": 38.8069166,
+        "hotel_lon": -77.0594949,
+        "station_name": "KING STREET METRO STATION",
+        "station_id": 86,
+        "hotel_distance_miles": 0.08,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hilton-alexandria-old-town.omt07ep"
+    },
+    {
+        "hotel_id": 116,
+        "hotel_name": "Embassy Suites by Hilton Alexandria Old Town",
+        "hotel_lat": 38.8055328,
+        "hotel_lon": -77.061239,
+        "station_name": "KING STREET METRO STATION",
+        "station_id": 86,
+        "hotel_distance_miles": 0.08,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-embassy-suites-hotel-alexandria-old-town.AQzaFLp"
+    },
+    {
+        "hotel_id": 117,
+        "hotel_name": "Club Wyndham Old Town Alexandria",
+        "hotel_lat": 38.8075407,
+        "hotel_lon": -77.0587358,
+        "station_name": "KING STREET METRO STATION",
+        "station_id": 86,
+        "hotel_distance_miles": 0.14,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-club-wyndham-old-town-alexandria.1gCdQlZ"
+    },
+    {
+        "hotel_id": 118,
+        "hotel_name": "Hilton Garden Inn Alexandria Old Town National Harbor",
+        "hotel_lat": 38.8052364,
+        "hotel_lon": -77.0583914,
+        "station_name": "KING STREET METRO STATION",
+        "station_id": 86,
+        "hotel_distance_miles": 0.17,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hilton-garden-inn-alexandria-old-town-national-harbor.CBffoF8"
+    },
+    {
+        "hotel_id": 119,
+        "hotel_name": "Hyatt Centric Old Town Alexandria",
+        "hotel_lat": 38.8065371,
+        "hotel_lon": -77.0576588,
+        "station_name": "KING STREET METRO STATION",
+        "station_id": 86,
+        "hotel_distance_miles": 0.18,
+        "hotel_website": "https://expedia.com/affiliates/alexandria-hotels-hyatt-centric-old-town-alexandria.xJVhubb"
+    },
+    {
+        "hotel_id": 120,
+        "hotel_name": "Hampton Inn Alexandria-Old Town/King St. Metro",
+        "hotel_lat": 38.8060879,
+        "hotel_lon": -77.0576026,
+        "station_name": "KING STREET METRO STATION",
+        "station_id": 86,
+        "hotel_distance_miles": 0.19,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hampton-inn-alexandria-old-townking-st-metro.K2jUvMy"
+    },
+    {
+        "hotel_id": 121,
+        "hotel_name": "Archer Hotel Old Town Alexandria",
+        "hotel_lat": 38.8061413,
+        "hotel_lon": -77.0567005,
+        "station_name": "KING STREET METRO STATION",
+        "station_id": 86,
+        "hotel_distance_miles": 0.23,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-lorien-hotel-spa.RVnM8r7"
+    },
+    {
+        "hotel_id": 122,
+        "hotel_name": "Residence Inn Alexandria Old Town/Duke Street",
+        "hotel_lat": 38.8034393,
+        "hotel_lon": -77.0577207,
+        "station_name": "KING STREET METRO STATION",
+        "station_id": 86,
+        "hotel_distance_miles": 0.28,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-residence-inn-alexandria-old-townduke-street-by-marriott.yXPzrM9"
+    },
+    {
+        "hotel_id": 123,
+        "hotel_name": "The Westin Alexandria Old Town",
+        "hotel_lat": 38.8031375,
+        "hotel_lon": -77.065393,
+        "station_name": "KING STREET METRO STATION",
+        "station_id": 86,
+        "hotel_distance_miles": 0.34,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-westin-alexandria-old-town.ty1L3wj"
+    },
+    {
+        "hotel_id": 124,
+        "hotel_name": "Best Western Laurel",
+        "hotel_lat": 39.104396,
+        "hotel_lon": -76.8421223,
+        "station_name": "LAUREL MARC",
+        "station_id": 140,
+        "hotel_distance_miles": 0.14,
+        "hotel_website": "https://expedia.com/affiliates/baltimore-hotels-best-western-laurel.OUHqo4v"
+    },
+    {
+        "hotel_id": 125,
+        "hotel_name": "Sleep Inn & Suites",
+        "hotel_lat": 39.1061768,
+        "hotel_lon": -76.8386203,
+        "station_name": "LAUREL RACETRACK MARC",
+        "station_id": 145,
+        "hotel_distance_miles": 0.23,
+        "hotel_website": "https://expedia.com/affiliates/baltimore-hotels-sleep-inn-and-suites-laurel.BkYlfJk"
+    },
+    {
+        "hotel_id": 126,
+        "hotel_name": "Hilton Washington DC National Mall The Wharf",
+        "hotel_lat": 38.8839197,
+        "hotel_lon": -77.0239952,
+        "station_name": "L'ENFANT PLAZA METRO STATION",
+        "station_id": 36,
+        "hotel_distance_miles": 0.13,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hilton-washington-dc-national-mall-the-wharf.lB4j0SK"
+    },
+    {
+        "hotel_id": 127,
+        "hotel_name": "Holiday Inn Washington Capitol - Natl Mall by IHG",
+        "hotel_lat": 38.885564,
+        "hotel_lon": -77.0196989,
+        "station_name": "L'ENFANT PLAZA METRO STATION",
+        "station_id": 36,
+        "hotel_distance_miles": 0.13,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-holiday-inn-washington-capitol-natl-mall.GuTfOHT"
+    },
+    {
+        "hotel_id": 128,
+        "hotel_name": "citizenM Washington DC Capitol hotel",
+        "hotel_lat": 38.8837394,
+        "hotel_lon": -77.019488,
+        "station_name": "L'ENFANT PLAZA METRO STATION",
+        "station_id": 36,
+        "hotel_distance_miles": 0.15,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-citizenm-washington-dc-capitol.G5WZIhr"
+    },
+    {
+        "hotel_id": 129,
+        "hotel_name": "InterContinental Washington D.C. - The Wharf, an IHG Hotel",
+        "hotel_lat": 38.8793637,
+        "hotel_lon": -77.0249025,
+        "station_name": "L'ENFANT PLAZA METRO STATION",
+        "station_id": 36,
+        "hotel_distance_miles": 0.41,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-intercontinental-washington-dc-the-wharf.JSsBuTP"
+    },
+    {
+        "hotel_id": 130,
+        "hotel_name": "The Watermark Hotel",
+        "hotel_lat": 38.9254498,
+        "hotel_lon": -77.2105945,
+        "station_name": "MCLEAN METRO STATION",
+        "station_id": 97,
+        "hotel_distance_miles": 0.08,
+        "hotel_website": "https://expedia.com/affiliates/mclean-hotels-the-watermark-hotel.r6UmYJm"
+    },
+    {
+        "hotel_id": 131,
+        "hotel_name": "Archer Hotel Tysons",
+        "hotel_lat": 38.9239258,
+        "hotel_lon": -77.2073306,
+        "station_name": "MCLEAN METRO STATION",
+        "station_id": 97,
+        "hotel_distance_miles": 0.17,
+        "hotel_website": "https://expedia.com/affiliates/mclean-hotels-archer-hotel-tysons.qwv3BQk"
+    },
+    {
+        "hotel_id": 132,
+        "hotel_name": "Hilton McLean Tysons Corner",
+        "hotel_lat": 38.9265061,
+        "hotel_lon": -77.2159642,
+        "station_name": "MCLEAN METRO STATION",
+        "station_id": 97,
+        "hotel_distance_miles": 0.33,
+        "hotel_website": "https://expedia.com/affiliates/mclean-hotels-hilton-mclean-tysons-corner.WdZoCBO"
+    },
+    {
+        "hotel_id": 133,
+        "hotel_name": "Hilton Garden Inn Washington DC Downtown",
+        "hotel_lat": 38.9006021,
+        "hotel_lon": -77.031455,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.06,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hilton-garden-inn-washington-dc-downtown.WrjyDuG"
+    },
+    {
+        "hotel_id": 134,
+        "hotel_name": "Hamilton Hotel",
+        "hotel_lat": 38.9029145,
+        "hotel_lon": -77.0316104,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.11,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hamilton-hotel-washington-dc.c6nxIQy"
+    },
+    {
+        "hotel_id": 135,
+        "hotel_name": "Global Luxury Suites at The White House",
+        "hotel_lat": 38.899862,
+        "hotel_lon": -77.0330295,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.11,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-global-luxury-suites-at-the-white-house.U65JtTW"
+    },
+    {
+        "hotel_id": 136,
+        "hotel_name": "Sofitel Washington DC Lafayette Square",
+        "hotel_lat": 38.9004782,
+        "hotel_lon": -77.034006,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.12,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-sofitel-washington-dc-lafayette-square.QHsI8Xm"
+    },
+    {
+        "hotel_id": 137,
+        "hotel_name": "Mint House Washington, D.C.",
+        "hotel_lat": 38.9030145,
+        "hotel_lon": -77.0337953,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.15,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-mint-house-washington-dc-downtown.5bDP0vV"
+    },
+    {
+        "hotel_id": 138,
+        "hotel_name": "Architect Hotel",
+        "hotel_lat": 38.9035806,
+        "hotel_lon": -77.0342257,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.2,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-architect.bNR0tTa"
+    },
+    {
+        "hotel_id": 139,
+        "hotel_name": "Hyatt Place Washington DC/White House",
+        "hotel_lat": 38.9021092,
+        "hotel_lon": -77.0356776,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.21,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hyatt-place-washington-dcwhite-house.R3uSHag"
+    },
+    {
+        "hotel_id": 140,
+        "hotel_name": "Eaton DC",
+        "hotel_lat": 38.9027989,
+        "hotel_lon": -77.0284588,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.22,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-eaton-dc.92IS8s9"
+    },
+    {
+        "hotel_id": 141,
+        "hotel_name": "Residence Inn Washington, DC Downtown",
+        "hotel_lat": 38.9045265,
+        "hotel_lon": -77.0323671,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.22,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-residence-inn-by-marriott-washington.z0dAGIM"
+    },
+    {
+        "hotel_id": 142,
+        "hotel_name": "Hotel Zena Washington DC",
+        "hotel_lat": 38.9050701,
+        "hotel_lon": -77.0315871,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.26,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hotel-zena.4C74kB7"
+    },
+    {
+        "hotel_id": 143,
+        "hotel_name": "The Westin Washington, D.C. City Center",
+        "hotel_lat": 38.9052525,
+        "hotel_lon": -77.0333279,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.28,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-westin-washington.vqTfrMj"
+    },
+    {
+        "hotel_id": 144,
+        "hotel_name": "Le Meridian Washington, D.C., The Madison",
+        "hotel_lat": 38.9052359,
+        "hotel_lon": -77.0340823,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.29,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-madison-washington-dc.AvYUD1S"
+    },
+    {
+        "hotel_id": 145,
+        "hotel_name": "Comfort Inn Downtown DC/Convention Center",
+        "hotel_lat": 38.9059244,
+        "hotel_lon": -77.0292425,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.35,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-comfort-inn-downtown-dcconvention-center.BbKnTjj"
+    },
+    {
+        "hotel_id": 146,
+        "hotel_name": "Washington Plaza Hotel",
+        "hotel_lat": 38.9062476,
+        "hotel_lon": -77.0308788,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.35,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-washington-plaza.s7QvapZ"
+    },
+    {
+        "hotel_id": 147,
+        "hotel_name": "Homewood Suites by Hilton Washington, D.C. Downtown",
+        "hotel_lat": 38.90653,
+        "hotel_lon": -77.0334506,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.37,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-homewood-suites-by-hilton-washington.3IKuP9V"
+    },
+    {
+        "hotel_id": 148,
+        "hotel_name": "District hotel",
+        "hotel_lat": 38.9080059,
+        "hotel_lon": -77.0332307,
+        "station_name": "MCPHERSON SQ METRO STATION",
+        "station_id": 15,
+        "hotel_distance_miles": 0.47,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-district-hotel.HT3FUjX"
+    },
+    {
+        "hotel_id": 149,
+        "hotel_name": "Global Luxury Suites in Downtown Bethesda",
+        "hotel_lat": 38.9933135,
+        "hotel_lon": -77.0964632,
+        "station_name": "MEDICAL CENTER METRO STATION",
+        "station_id": 56,
+        "hotel_distance_miles": 0.34,
+        "hotel_website": "https://expedia.com/affiliates/bethesda-hotels-global-luxury-suites-bethesda-chevy-chase.QZfhkQO"
+    },
+    {
+        "hotel_id": 150,
+        "hotel_name": "American Inn of Bethesda",
+        "hotel_lat": 38.9916274,
+        "hotel_lon": -77.0963046,
+        "station_name": "MEDICAL CENTER METRO STATION",
+        "station_id": 56,
+        "hotel_distance_miles": 0.46,
+        "hotel_website": "https://expedia.com/affiliates/bethesda-hotels-american-inn-of-bethesda.SEsyzsC"
+    },
+    {
+        "hotel_id": 151,
+        "hotel_name": "The Bethesdan Hotel",
+        "hotel_lat": 38.9912798,
+        "hotel_lon": -77.0961507,
+        "station_name": "MEDICAL CENTER METRO STATION",
+        "station_id": 56,
+        "hotel_distance_miles": 0.48,
+        "hotel_website": "https://expedia.com/affiliates/bethesda-hotels-the-bethesdan-hotel.HInModH"
+    },
+    {
+        "hotel_id": 152,
+        "hotel_name": "Washington Marriott at Metro Center",
+        "hotel_lat": 38.8993141,
+        "hotel_lon": -77.0280352,
+        "station_name": "METRO CENTER METRO STATION",
+        "station_id": 3,
+        "hotel_distance_miles": 0.07,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-washington-marriott-at-metro-center.teH6MSC"
+    },
+    {
+        "hotel_id": 153,
+        "hotel_name": "Grand Hyatt Washington",
+        "hotel_lat": 38.8993973,
+        "hotel_lon": -77.0265437,
+        "station_name": "METRO CENTER METRO STATION",
+        "station_id": 3,
+        "hotel_distance_miles": 0.11,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-grand-hyatt-washington.Swfi37M"
+    },
+    {
+        "hotel_id": 154,
+        "hotel_name": "JW Marriott Washington, DC",
+        "hotel_lat": 38.89659,
+        "hotel_lon": -77.031471,
+        "station_name": "METRO CENTER METRO STATION",
+        "station_id": 3,
+        "hotel_distance_miles": 0.22,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-jw-marriott-washington-dc.B2QBdSX"
+    },
+    {
+        "hotel_id": 155,
+        "hotel_name": "InterContinental the Willard Washington D.C.",
+        "hotel_lat": 38.8968125,
+        "hotel_lon": -77.0322812,
+        "station_name": "METRO CENTER METRO STATION",
+        "station_id": 3,
+        "hotel_distance_miles": 0.25,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-willard-intercontinental-washington.2Ld47S2"
+    },
+    {
+        "hotel_id": 156,
+        "hotel_name": "Embassy Suites by Hilton Washington DC Convention Center",
+        "hotel_lat": 38.9019456,
+        "hotel_lon": -77.0262179,
+        "station_name": "METRO CENTER METRO STATION",
+        "station_id": 3,
+        "hotel_distance_miles": 0.27,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-embassy-suites-by-hilton-washington-dc-convention-center.laDDN3E"
+    },
+    {
+        "hotel_id": 157,
+        "hotel_name": "Hotel Washington",
+        "hotel_lat": 38.8969586,
+        "hotel_lon": -77.0332137,
+        "station_name": "METRO CENTER METRO STATION",
+        "station_id": 3,
+        "hotel_distance_miles": 0.29,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-w-washington-dc.HkVoDWJ"
+    },
+    {
+        "hotel_id": 158,
+        "hotel_name": "Sleep Inn",
+        "hotel_lat": 39.380506,
+        "hotel_lon": -77.401336,
+        "station_name": "MONOCACY MARC",
+        "station_id": 144,
+        "hotel_distance_miles": 0.38,
+        "hotel_website": "https://expedia.com/affiliates/frederick-hotels-sleep-inn-frederick.bPs2U5V"
+    },
+    {
+        "hotel_id": 159,
+        "hotel_name": "Residence Inn Washington Downtown/Convention Center",
+        "hotel_lat": 38.9043693,
+        "hotel_lon": -77.0242258,
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": 1,
+        "hotel_distance_miles": 0.14,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-residence-inn-by-marriott-washington-downtownconvention-center.JUgDOYv"
+    },
+    {
+        "hotel_id": 160,
+        "hotel_name": "Courtyard Washington Downtown/Convention Center",
+        "hotel_lat": 38.9043739,
+        "hotel_lon": -77.0245939,
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": 1,
+        "hotel_distance_miles": 0.16,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-courtyard-by-marriott-washington-downtownconvention-center.4H6VwA6"
+    },
+    {
+        "hotel_id": 161,
+        "hotel_name": "Eldon Luxury Suites",
+        "hotel_lat": 38.9043657,
+        "hotel_lon": -77.0253806,
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": 1,
+        "hotel_distance_miles": 0.2,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-eldon-luxury-suites.i2o9hhD"
+    },
+    {
+        "hotel_id": 162,
+        "hotel_name": "Marriott Marquis Washington, DC",
+        "hotel_lat": 38.9039084,
+        "hotel_lon": -77.0249614,
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": 1,
+        "hotel_distance_miles": 0.2,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-marriott-marquis-washington.cA8GSTG"
+    },
+    {
+        "hotel_id": 163,
+        "hotel_name": "Homewood Suites by Hilton Washington DC Convention Center",
+        "hotel_lat": 38.9043739,
+        "hotel_lon": -77.0184061,
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": 1,
+        "hotel_distance_miles": 0.2,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-homewood-suites-washington-dc-convention-center.QLlAxoD"
+    },
+    {
+        "hotel_id": 164,
+        "hotel_name": "AC Hotel Washington DC Convention Center",
+        "hotel_lat": 38.9027937,
+        "hotel_lon": -77.0201478,
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": 1,
+        "hotel_distance_miles": 0.21,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-ac-hotel-by-marriott-washington-dc-convention-center.Fta834H"
+    },
+    {
+        "hotel_id": 165,
+        "hotel_name": "Hyatt Washington DC / Convention Center",
+        "hotel_lat": 38.9087091,
+        "hotel_lon": -77.0237353,
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": 1,
+        "hotel_distance_miles": 0.25,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-cambria-hotel-washington.RaznV7J"
+    },
+    {
+        "hotel_id": 166,
+        "hotel_name": "The Henley Park Hotel",
+        "hotel_lat": 38.9031712,
+        "hotel_lon": -77.0257143,
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": 1,
+        "hotel_distance_miles": 0.26,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-henley-park-hotel.XJ7YBdR"
+    },
+    {
+        "hotel_id": 167,
+        "hotel_name": "Morrison-Clark Historic Inn & Restaurant",
+        "hotel_lat": 38.9043915,
+        "hotel_lon": -77.0267287,
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": 1,
+        "hotel_distance_miles": 0.27,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-morrison-clark-historic-inn.MKFcFJe"
+    },
+    {
+        "hotel_id": 168,
+        "hotel_name": "Duo Housing",
+        "hotel_lat": 38.9064643,
+        "hotel_lon": -77.0267513,
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": 1,
+        "hotel_distance_miles": 0.27,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-duo-housing-hostel.iEGcveR"
+    },
+    {
+        "hotel_id": 169,
+        "hotel_name": "Hampton Inn Washington-Downtown-Convention Center",
+        "hotel_lat": 38.901784,
+        "hotel_lon": -77.019465,
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": 1,
+        "hotel_distance_miles": 0.28,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hampton-inn-washington-downtown-convention-center.CEpjLry"
+    },
+    {
+        "hotel_id": 170,
+        "hotel_name": "Dc International Hostel 2",
+        "hotel_lat": 38.909244,
+        "hotel_lon": -77.0243,
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": 1,
+        "hotel_distance_miles": 0.29,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-dc-international-hostel-2.ou5FYmW"
+    },
+    {
+        "hotel_id": 171,
+        "hotel_name": "Moxy Washington, DC Downtown",
+        "hotel_lat": 38.9028672,
+        "hotel_lon": -77.0264925,
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": 1,
+        "hotel_distance_miles": 0.3,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-moxy-washington.oOwz4bM"
+    },
+    {
+        "hotel_id": 172,
+        "hotel_name": "Holiday Inn Express Washington DC Downtown by IHG",
+        "hotel_lat": 38.9028519,
+        "hotel_lon": -77.0160109,
+        "station_name": "MT VERNON SQ/7TH ST-CONVENTION CENTER METRO STATION",
+        "station_id": 1,
+        "hotel_distance_miles": 0.37,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-holiday-inn-express-washington-dc-downtown.GH59l8P"
+    },
+    {
+        "hotel_id": 173,
+        "hotel_name": "Homewood Suites by Hilton Washington DC Capitol-Navy Yard",
+        "hotel_lat": 38.8766785,
+        "hotel_lon": -77.0072048,
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": 9,
+        "hotel_distance_miles": 0.07,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-homewood-suites-by-hilton-washington-dc-capitol-navy-yard.cN6ZPdh"
+    },
+    {
+        "hotel_id": 174,
+        "hotel_name": "Residence Inn Washington Capitol Hill/Navy Yard",
+        "hotel_lat": 38.8755117,
+        "hotel_lon": -77.0063737,
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": 9,
+        "hotel_distance_miles": 0.07,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-residence-inn-washington-capitol-hillnavy-yard.DlEM9T1"
+    },
+    {
+        "hotel_id": 175,
+        "hotel_name": "Coda on Half, a Placemakr Experience",
+        "hotel_lat": 38.8774285,
+        "hotel_lon": -77.0075807,
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": 9,
+        "hotel_distance_miles": 0.11,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-coda-on-half-a-placemakr-experience.W0vqacY"
+    },
+    {
+        "hotel_id": 176,
+        "hotel_name": "Hampton Inn & Suites Washington DC-Navy Yard",
+        "hotel_lat": 38.8749497,
+        "hotel_lon": -77.0062396,
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": 9,
+        "hotel_distance_miles": 0.11,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hampton-inn-suites-washington-dc-navy-yard.f1nzt2F"
+    },
+    {
+        "hotel_id": 177,
+        "hotel_name": "Courtyard Washington Capitol Hill/Navy Yard",
+        "hotel_lat": 38.8777723,
+        "hotel_lon": -77.0040947,
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": 9,
+        "hotel_distance_miles": 0.13,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-courtyard-by-marriott-washington-capitol-hillnavy-yard.BavUZMJ"
+    },
+    {
+        "hotel_id": 178,
+        "hotel_name": "Thompson Washington D.C., by Hyatt",
+        "hotel_lat": 38.874712,
+        "hotel_lon": -77.002753,
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": 9,
+        "hotel_distance_miles": 0.21,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-thompson-washington-dc.5RSapP3"
+    },
+    {
+        "hotel_id": 179,
+        "hotel_name": "AC Hotel Washington DC Capitol Hill Navy Yard",
+        "hotel_lat": 38.8804135,
+        "hotel_lon": -77.0057123,
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": 9,
+        "hotel_distance_miles": 0.27,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-ac-hotel-by-marriott-washington-dc-capitol-hill.CrZKTwf"
+    },
+    {
+        "hotel_id": 180,
+        "hotel_name": "Cambria Hotel Washington D.C. Navy Yard Riverfront",
+        "hotel_lat": 38.8708695,
+        "hotel_lon": -77.0113346,
+        "station_name": "NAVY YARD METRO STATION",
+        "station_id": 9,
+        "hotel_distance_miles": 0.49,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-cambria-hotel-washington-dc-capitol-riverfront.QeEoKyy"
+    },
+    {
+        "hotel_id": 181,
+        "hotel_name": "Courtyard New Carrollton Landover",
+        "hotel_lat": 38.9477108,
+        "hotel_lon": -76.8633127,
+        "station_name": "NEW CARROLTON METRO STATION",
+        "station_id": 54,
+        "hotel_distance_miles": 0.46,
+        "hotel_website": "https://expedia.com/affiliates/college-park-hotels-courtyard-by-marriott-new-carrollton.0nV2zlS"
+    },
+    {
+        "hotel_id": 182,
+        "hotel_name": "The Morrow Washington DC,",
+        "hotel_lat": 38.9057527,
+        "hotel_lon": -77.0026172,
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": 6,
+        "hotel_distance_miles": 0.07,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-morrow-washington-dc.Mpiy5ua"
+    },
+    {
+        "hotel_id": 183,
+        "hotel_name": "Courtyard Washington, DC/U.S. Capitol",
+        "hotel_lat": 38.9078867,
+        "hotel_lon": -77.0032167,
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": 6,
+        "hotel_distance_miles": 0.09,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-courtyard-washington.OSzSFWx"
+    },
+    {
+        "hotel_id": 184,
+        "hotel_name": "Hilton Garden Inn Washington DC/U.S. Capitol",
+        "hotel_lat": 38.9062586,
+        "hotel_lon": -77.0056282,
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": 6,
+        "hotel_distance_miles": 0.13,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hilton-garden-inn-washington-dcus-capitol.WR55BJJ"
+    },
+    {
+        "hotel_id": 185,
+        "hotel_name": "citizenM Washington DC NoMa hotel",
+        "hotel_lat": 38.9066585,
+        "hotel_lon": -77.0062694,
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": 6,
+        "hotel_distance_miles": 0.16,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-citizenm-washington-dc-noma.X7RXgto"
+    },
+    {
+        "hotel_id": 186,
+        "hotel_name": "Washington Marriott Capitol Hill",
+        "hotel_lat": 38.9036072,
+        "hotel_lon": -77.0049576,
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": 6,
+        "hotel_distance_miles": 0.23,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-washington-marriott-capitol-hill.ojeUcp2"
+    },
+    {
+        "hotel_id": 187,
+        "hotel_name": "Hyatt Place Washington DC/US Capitol",
+        "hotel_lat": 38.9075901,
+        "hotel_lon": -77.0077352,
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": 6,
+        "hotel_distance_miles": 0.25,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hyatt-place-washington-dcus-capitol.FjkJuHE"
+    },
+    {
+        "hotel_id": 188,
+        "hotel_name": "Global Luxury Suites at Capitol Hill",
+        "hotel_lat": 38.90345,
+        "hotel_lon": -77.005571,
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": 6,
+        "hotel_distance_miles": 0.25,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-global-luxury-suites-at-revel.Iv6pzdG"
+    },
+    {
+        "hotel_id": 189,
+        "hotel_name": "Reside NoMa, a Wyndham Residence",
+        "hotel_lat": 38.9081023,
+        "hotel_lon": -77.0092718,
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": 6,
+        "hotel_distance_miles": 0.34,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-placemakr-noma.RBBn2jA"
+    },
+    {
+        "hotel_id": 190,
+        "hotel_name": "Motel 6 Washington, DC - Convention Center",
+        "hotel_lat": 38.9101877,
+        "hotel_lon": -76.9978995,
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": 6,
+        "hotel_distance_miles": 0.38,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-motel-6-washington.q4lWKli"
+    },
+    {
+        "hotel_id": 191,
+        "hotel_name": "Hotel Nell - Union Market",
+        "hotel_lat": 38.9111946,
+        "hotel_lon": -76.9976061,
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": 6,
+        "hotel_distance_miles": 0.44,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-selina-union-market.5lBeYhT"
+    },
+    {
+        "hotel_id": 192,
+        "hotel_name": "Hampton Inn Washington DC NoMa Union Station",
+        "hotel_lat": 38.9113159,
+        "hotel_lon": -76.9969645,
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": 6,
+        "hotel_distance_miles": 0.47,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hampton-inn-washington-dc-noma-union-station.XEPsfKD"
+    },
+    {
+        "hotel_id": 193,
+        "hotel_name": "Homewood Suites by Hilton Washington DC NoMa Union Station",
+        "hotel_lat": 38.9112096,
+        "hotel_lon": -76.9967062,
+        "station_name": "NOMA-GALLAUDET U METRO STATION",
+        "station_id": 6,
+        "hotel_distance_miles": 0.48,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-homewood-suites-by-hilton-washington-dc-noma-union-station.P95ehNA"
+    },
+    {
+        "hotel_id": 194,
+        "hotel_name": "Bethesda North Marriott Hotel & Conference Center",
+        "hotel_lat": 39.0470986,
+        "hotel_lon": -77.1157165,
+        "station_name": "NORTH BETHESDA METRO STATION",
+        "station_id": 61,
+        "hotel_distance_miles": 0.17,
+        "hotel_website": "https://expedia.com/affiliates/bethesda-hotels-bethesda-north-marriott-hotel-conference-center.9YzCfiA"
+    },
+    {
+        "hotel_id": 195,
+        "hotel_name": "Canopy by Hilton Washington DC Bethesda North",
+        "hotel_lat": 39.0508967,
+        "hotel_lon": -77.1169494,
+        "station_name": "NORTH BETHESDA METRO STATION",
+        "station_id": 61,
+        "hotel_distance_miles": 0.26,
+        "hotel_website": "https://expedia.com/affiliates/bethesda-hotels-canopy-by-hilton-washington-dc-bethesda-north.p7s2wvJ"
+    },
+    {
+        "hotel_id": 196,
+        "hotel_name": "The Ritz-Carlton, Pentagon City",
+        "hotel_lat": 38.8625791,
+        "hotel_lon": -77.0605463,
+        "station_name": "PENTAGON CITY METRO STATION",
+        "station_id": 76,
+        "hotel_distance_miles": 0.07,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-the-ritz-carlton.kz2SbBu"
+    },
+    {
+        "hotel_id": 197,
+        "hotel_name": "DoubleTree by Hilton Hotel Washington DC - Crystal City",
+        "hotel_lat": 38.8639088,
+        "hotel_lon": -77.0526928,
+        "station_name": "PENTAGON CITY METRO STATION",
+        "station_id": 76,
+        "hotel_distance_miles": 0.36,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-doubletree-by-hilton-washington-dc-crystal-city.D8ZgGQQ"
+    },
+    {
+        "hotel_id": 198,
+        "hotel_name": "AC Hotel Reston",
+        "hotel_lat": 38.954542,
+        "hotel_lon": -77.361255,
+        "station_name": "RESTON TOWN CENTER METRO STATION",
+        "station_id": 92,
+        "hotel_distance_miles": 0.14,
+        "hotel_website": "https://expedia.com/affiliates/reston-hotels-ac-hotel-reston.E1LRNh3"
+    },
+    {
+        "hotel_id": 199,
+        "hotel_name": "Residence Inn Reston",
+        "hotel_lat": 38.954542,
+        "hotel_lon": -77.361255,
+        "station_name": "RESTON TOWN CENTER METRO STATION",
+        "station_id": 92,
+        "hotel_distance_miles": 0.14,
+        "hotel_website": "https://expedia.com/affiliates/reston-hotels-residence-inn-by-marriott-reston.GPUjzis"
+    },
+    {
+        "hotel_id": 200,
+        "hotel_name": "Sheraton Reston Hotel",
+        "hotel_lat": 38.9500195,
+        "hotel_lon": -77.3545008,
+        "station_name": "RESTON TOWN CENTER METRO STATION",
+        "station_id": 92,
+        "hotel_distance_miles": 0.36,
+        "hotel_website": "https://expedia.com/affiliates/reston-hotels-sheraton-reston-hotel.U4SgRLQ"
+    },
+    {
+        "hotel_id": 201,
+        "hotel_name": "Extended Stay America - Washington, D.C. - Reston",
+        "hotel_lat": 38.9554796,
+        "hotel_lon": -77.3665053,
+        "station_name": "RESTON TOWN CENTER METRO STATION",
+        "station_id": 92,
+        "hotel_distance_miles": 0.39,
+        "hotel_website": "https://expedia.com/affiliates/reston-hotels-extended-stay-america-suites-washington-dc-reston.7gENxJu"
+    },
+    {
+        "hotel_id": 202,
+        "hotel_name": "Hyatt Regency Reston",
+        "hotel_lat": 38.9581336,
+        "hotel_lon": -77.3560819,
+        "station_name": "RESTON TOWN CENTER METRO STATION",
+        "station_id": 92,
+        "hotel_distance_miles": 0.43,
+        "hotel_website": "https://expedia.com/affiliates/reston-hotels-hyatt-regency-reston.So9ljtq"
+    },
+    {
+        "hotel_id": 203,
+        "hotel_name": "The Westin Reston Heights",
+        "hotel_lat": 38.9503416,
+        "hotel_lon": -77.3521561,
+        "station_name": "RESTON TOWN CENTER METRO STATION",
+        "station_id": 92,
+        "hotel_distance_miles": 0.46,
+        "hotel_website": "https://expedia.com/affiliates/reston-hotels-the-westin-reston-heights.b4THknP"
+    },
+    {
+        "hotel_id": 204,
+        "hotel_name": "Cambria Hotel Rockville",
+        "hotel_lat": 39.084633,
+        "hotel_lon": -77.1502179,
+        "station_name": "ROCKVILLE METRO STATION",
+        "station_id": 58,
+        "hotel_distance_miles": 0.22,
+        "hotel_website": "https://expedia.com/affiliates/bethesda-hotels-cambria-hotel-rockville.1nFFxJa"
+    },
+    {
+        "hotel_id": 205,
+        "hotel_name": "Le Meridian Arlington",
+        "hotel_lat": 38.897275,
+        "hotel_lon": -77.0700761,
+        "station_name": "ROSSLYN METRO STATION",
+        "station_id": 80,
+        "hotel_distance_miles": 0.09,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-le-meridien-arlington.qIsixOS"
+    },
+    {
+        "hotel_id": 206,
+        "hotel_name": "Hyatt Centric Arlington",
+        "hotel_lat": 38.8952058,
+        "hotel_lon": -77.0727105,
+        "station_name": "ROSSLYN METRO STATION",
+        "station_id": 80,
+        "hotel_distance_miles": 0.12,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hyatt-centric-arlington.xvrSWWp"
+    },
+    {
+        "hotel_id": 207,
+        "hotel_name": "National at Rosslyn Towers",
+        "hotel_lat": 38.8975102,
+        "hotel_lon": -77.0733017,
+        "station_name": "ROSSLYN METRO STATION",
+        "station_id": 80,
+        "hotel_distance_miles": 0.17,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-national-at-rosslyn-towers.cpDz955"
+    },
+    {
+        "hotel_id": 208,
+        "hotel_name": "Residence Inn Arlington Rosslyn",
+        "hotel_lat": 38.8937136,
+        "hotel_lon": -77.073344,
+        "station_name": "ROSSLYN METRO STATION",
+        "station_id": 80,
+        "hotel_distance_miles": 0.21,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-residence-inn-by-marriott-arlington-at-rosslyn.9cZf5M5"
+    },
+    {
+        "hotel_id": 209,
+        "hotel_name": "Sonesta Select Arlington Rosslyn",
+        "hotel_lat": 38.8939319,
+        "hotel_lon": -77.075875,
+        "station_name": "ROSSLYN METRO STATION",
+        "station_id": 80,
+        "hotel_distance_miles": 0.31,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-sonesta-select-arlington.uGbaP4K"
+    },
+    {
+        "hotel_id": 210,
+        "hotel_name": "Homewood Suites by Hilton Arlington Rosslyn Key Bridge",
+        "hotel_lat": 38.8973373,
+        "hotel_lon": -77.079056,
+        "station_name": "ROSSLYN METRO STATION",
+        "station_id": 80,
+        "hotel_distance_miles": 0.45,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-homewood-suites-by-hilton-arlington-rosslyn-key-bridge.1zgBbTN"
+    },
+    {
+        "hotel_id": 211,
+        "hotel_name": "DC International Hostel 1",
+        "hotel_lat": 38.9115586,
+        "hotel_lon": -77.0220976,
+        "station_name": "SHAW METRO STATION",
+        "station_id": 2,
+        "hotel_distance_miles": 0.14,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-dc-international-hostel-1.eztW4vq"
+    },
+    {
+        "hotel_id": 212,
+        "hotel_name": "Days Inn by Wyndham Silver Spring",
+        "hotel_lat": 38.9875432,
+        "hotel_lon": -77.0290617,
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": 66,
+        "hotel_distance_miles": 0.33,
+        "hotel_website": "https://expedia.com/affiliates/college-park-hotels-days-inn-by-wyndham-silver-spring.hQS0ek0"
+    },
+    {
+        "hotel_id": 213,
+        "hotel_name": "Travelodge by Wyndham Silver Spring",
+        "hotel_lat": 38.9875029,
+        "hotel_lon": -77.0297567,
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": 66,
+        "hotel_distance_miles": 0.33,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-travelodge-by-wyndham-silver-spring.ZBrLgnU"
+    },
+    {
+        "hotel_id": 214,
+        "hotel_name": "Courtyard Silver Spring Downtown",
+        "hotel_lat": 38.9955778,
+        "hotel_lon": -77.0248007,
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": 66,
+        "hotel_distance_miles": 0.36,
+        "hotel_website": "https://expedia.com/affiliates/college-park-hotels-courtyard-silver-spring-downtown.9teNUpu"
+    },
+    {
+        "hotel_id": 215,
+        "hotel_name": "Holiday Inn Express Washington DC N-Silver Spring by IHG",
+        "hotel_lat": 38.986728,
+        "hotel_lon": -77.027112,
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": 66,
+        "hotel_distance_miles": 0.42,
+        "hotel_website": "https://expedia.com/affiliates/college-park-hotels-holiday-inn-express-washington-dc-n-silver-spring.0Pe2AOS"
+    },
+    {
+        "hotel_id": 216,
+        "hotel_name": "DoubleTree by Hilton Washington DC Silver Spring",
+        "hotel_lat": 38.9987151,
+        "hotel_lon": -77.030404,
+        "station_name": "SILVER SPRING METRO STATION",
+        "station_id": 66,
+        "hotel_distance_miles": 0.34,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-doubletree-by-hilton-washington-dc-silver-spring.KROkChf"
+    },
+    {
+        "hotel_id": 217,
+        "hotel_name": "Salamander Washington DC",
+        "hotel_lat": 38.8837381,
+        "hotel_lon": -77.0300988,
+        "station_name": "SMITHSONIAN  METRO STATION",
+        "station_id": 35,
+        "hotel_distance_miles": 0.34,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-salamander-washington-dc.kkMHmOG"
+    },
+    {
+        "hotel_id": 218,
+        "hotel_name": "Quality Inn Vienna - Tysons Corner",
+        "hotel_lat": 38.9262915,
+        "hotel_lon": -77.2437932,
+        "station_name": "SPRING HILL METRO STATION",
+        "station_id": 94,
+        "hotel_distance_miles": 0.23,
+        "hotel_website": "https://expedia.com/affiliates/vienna-hotels-quality-inn-tysons-corner.AHqBW7M"
+    },
+    {
+        "hotel_id": 219,
+        "hotel_name": "Suburban Studios Tysons Corner",
+        "hotel_lat": 38.9262915,
+        "hotel_lon": -77.2437932,
+        "station_name": "SPRING HILL METRO STATION",
+        "station_id": 94,
+        "hotel_distance_miles": 0.23,
+        "hotel_website": "https://expedia.com/affiliates/vienna-hotels-suburban-studios-tysons-corner.JeP9Acv"
+    },
+    {
+        "hotel_id": 220,
+        "hotel_name": "Embassy Suites by Hilton Tysons Corner",
+        "hotel_lat": 38.9255282,
+        "hotel_lon": -77.2401441,
+        "station_name": "SPRING HILL METRO STATION",
+        "station_id": 94,
+        "hotel_distance_miles": 0.27,
+        "hotel_website": "https://expedia.com/affiliates/vienna-hotels-embassy-suites-by-hilton-tysons-corner.R2OflF3"
+    },
+    {
+        "hotel_id": 221,
+        "hotel_name": "Tysons Corner Suites, A Baymont by Wyndham",
+        "hotel_lat": 38.9292569,
+        "hotel_lon": -77.2481038,
+        "station_name": "SPRING HILL METRO STATION",
+        "station_id": 94,
+        "hotel_distance_miles": 0.33,
+        "hotel_website": "https://expedia.com/affiliates/vienna-hotels-tysons-corner-suites.cTHNJQ1"
+    },
+    {
+        "hotel_id": 222,
+        "hotel_name": "Eden Park Guest House",
+        "hotel_lat": 38.9752557,
+        "hotel_lon": -77.0094809,
+        "station_name": "TAKOMA STATION",
+        "station_id": 24,
+        "hotel_distance_miles": 0.47,
+        "hotel_website": "https://expedia.com/affiliates/college-park-hotels-eden-park-guest-house.6VwXVbb"
+    },
+    {
+        "hotel_id": 223,
+        "hotel_name": "Hilton Washington DC/Rockville ",
+        "hotel_lat": 39.0612428,
+        "hotel_lon": -77.1221634,
+        "station_name": "TWINBROOK METRO STATION",
+        "station_id": 60,
+        "hotel_distance_miles": 0.11,
+        "hotel_website": "https://expedia.com/affiliates/bethesda-hotels-hilton-washington-dcrockville-executive-meeting-center.L1xSnWR"
+    },
+    {
+        "hotel_id": 224,
+        "hotel_name": "EVEN Hotel Rockville - Washington DC Area, an IHG Hotel",
+        "hotel_lat": 39.059979,
+        "hotel_lon": -77.123517,
+        "station_name": "TWINBROOK METRO STATION",
+        "station_id": 60,
+        "hotel_distance_miles": 0.22,
+        "hotel_website": "https://expedia.com/affiliates/bethesda-hotels-even-hotel-rockville-washington-dc-area.o2lPKfn"
+    },
+    {
+        "hotel_id": 225,
+        "hotel_name": "Hyatt Regency Tysons Corner Center",
+        "hotel_lat": 38.9188686,
+        "hotel_lon": -77.2200195,
+        "station_name": "TYSONS METRO STATION",
+        "station_id": 96,
+        "hotel_distance_miles": 0.15,
+        "hotel_website": "https://expedia.com/affiliates/mclean-hotels-hyatt-regency-tysons-corner-center.urSBRn9"
+    },
+    {
+        "hotel_id": 226,
+        "hotel_name": "The Ritz-Carlton, Tysons Corner",
+        "hotel_lat": 38.9243797,
+        "hotel_lon": -77.2235439,
+        "station_name": "TYSONS METRO STATION",
+        "station_id": 96,
+        "hotel_distance_miles": 0.28,
+        "hotel_website": "https://expedia.com/affiliates/mclean-hotels-the-ritz-carlton.gOMSKEv"
+    },
+    {
+        "hotel_id": 227,
+        "hotel_name": "National Tysons Corner",
+        "hotel_lat": 38.92438,
+        "hotel_lon": -77.21896,
+        "station_name": "TYSONS METRO STATION",
+        "station_id": 96,
+        "hotel_distance_miles": 0.29,
+        "hotel_website": "https://expedia.com/affiliates/mclean-hotels-national-tysons-corner.XUD6pDL"
+    },
+    {
+        "hotel_id": 228,
+        "hotel_name": "Courtyard Tysons McLean",
+        "hotel_lat": 38.9202759,
+        "hotel_lon": -77.2271294,
+        "station_name": "TYSONS METRO STATION",
+        "station_id": 96,
+        "hotel_distance_miles": 0.3,
+        "hotel_website": "https://expedia.com/affiliates/mclean-hotels-courtyard-by-marriott-tysons-mclean.C4U8Ei5"
+    },
+    {
+        "hotel_id": 229,
+        "hotel_name": "Oakwood at NOUVELLE",
+        "hotel_lat": 38.9248,
+        "hotel_lon": -77.2191,
+        "station_name": "TYSONS METRO STATION",
+        "station_id": 96,
+        "hotel_distance_miles": 0.31,
+        "hotel_website": "https://expedia.com/affiliates/mclean-hotels-oakwood-at-nouvelle.hcdWTxB"
+    },
+    {
+        "hotel_id": 230,
+        "hotel_name": "DoubleTree by Hilton McLean Tysons",
+        "hotel_lat": 38.9209213,
+        "hotel_lon": -77.2274627,
+        "station_name": "TYSONS METRO STATION",
+        "station_id": 96,
+        "hotel_distance_miles": 0.32,
+        "hotel_website": "https://expedia.com/affiliates/mclean-hotels-doubletree-by-hilton-mclean-tysons.saoo7en"
+    },
+    {
+        "hotel_id": 231,
+        "hotel_name": "Tysons Corner Marriott",
+        "hotel_lat": 38.913846,
+        "hotel_lon": -77.221193,
+        "station_name": "TYSONS METRO STATION",
+        "station_id": 96,
+        "hotel_distance_miles": 0.47,
+        "hotel_website": "https://expedia.com/affiliates/vienna-hotels-tysons-corner-marriott.4Lygx9G"
+    },
+    {
+        "hotel_id": 232,
+        "hotel_name": "U Street Hostel",
+        "hotel_lat": 38.9166612,
+        "hotel_lon": -77.0293469,
+        "station_name": "U STREET METRO STATION",
+        "station_id": 20,
+        "hotel_distance_miles": 0.18,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-u-street-hostel.Cb6skl5"
+    },
+    {
+        "hotel_id": 233,
+        "hotel_name": "Phoenix Park Hotel",
+        "hotel_lat": 38.8971319,
+        "hotel_lon": -77.009338,
+        "station_name": "UNION STATION METRO STATION",
+        "station_id": 7,
+        "hotel_distance_miles": 0.1,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-phoenix-park-hotel.XiSFt0f"
+    },
+    {
+        "hotel_id": 234,
+        "hotel_name": "Kimpton George Hotel",
+        "hotel_lat": 38.8963312,
+        "hotel_lon": -77.0098888,
+        "station_name": "UNION STATION METRO STATION",
+        "station_id": 7,
+        "hotel_distance_miles": 0.15,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-kimpton-george-hotel.CX1APz9"
+    },
+    {
+        "hotel_id": 235,
+        "hotel_name": "The Royal Sonesta Washington, DC Capitol Hill",
+        "hotel_lat": 38.8978798,
+        "hotel_lon": -77.0107108,
+        "station_name": "UNION STATION METRO STATION",
+        "station_id": 7,
+        "hotel_distance_miles": 0.18,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-royal-sonesta-washington-dc-capitol-hill.RAIKkFu"
+    },
+    {
+        "hotel_id": 236,
+        "hotel_name": "Hilton Washington DC Capitol Hill",
+        "hotel_lat": 38.89685,
+        "hotel_lon": -77.010906,
+        "station_name": "UNION STATION METRO STATION",
+        "station_id": 7,
+        "hotel_distance_miles": 0.19,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hilton-washington-dc-capitol-hill.lgr0gN8"
+    },
+    {
+        "hotel_id": 237,
+        "hotel_name": "YOTEL Washington DC",
+        "hotel_lat": 38.8953091,
+        "hotel_lon": -77.0108512,
+        "station_name": "UNION STATION METRO STATION",
+        "station_id": 7,
+        "hotel_distance_miles": 0.24,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-yotel-washington-dc-formerly-liaison.QMFGRf7"
+    },
+    {
+        "hotel_id": 238,
+        "hotel_name": "Hyatt Regency Washington on Capitol Hill",
+        "hotel_lat": 38.8954399,
+        "hotel_lon": -77.01168,
+        "station_name": "UNION STATION METRO STATION",
+        "station_id": 7,
+        "hotel_distance_miles": 0.27,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hyatt-regency-washington-on-capitol-hill.ZiUXNYo"
+    },
+    {
+        "hotel_id": 239,
+        "hotel_name": "Days Inn by Wyndham Washington DC/Connecticut Avenue",
+        "hotel_lat": 38.9469316,
+        "hotel_lon": -77.0654825,
+        "station_name": "VAN NESS-UDC METRO STATION",
+        "station_id": 18,
+        "hotel_distance_miles": 0.29,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-days-inn-by-wyndham-washington-dcconnecticut-avenue.yYzAPUY"
+    },
+    {
+        "hotel_id": 240,
+        "hotel_name": "National at Virginia Square",
+        "hotel_lat": 38.8836,
+        "hotel_lon": -77.1019,
+        "station_name": "VIRGINIA SQ-GMU METRO STATION",
+        "station_id": 78,
+        "hotel_distance_miles": 0.06,
+        "hotel_website": "https://expedia.com/affiliates/arlington-hotels-national-at-virginia-square.OuhZjJA"
+    },
+    {
+        "hotel_id": 241,
+        "hotel_name": "Washington Dulles Airport Marriott",
+        "hotel_lat": 38.9593087,
+        "hotel_lon": -77.4484205,
+        "station_name": "WASHINGTON DULLES INTERNATIONAL AIRPORT METRO STATION",
+        "station_id": 89,
+        "hotel_distance_miles": 0.24,
+        "hotel_website": "https://expedia.com/affiliates/sterling-hotels-washington-dulles-airport-marriott.lt4h9JO"
+    },
+    {
+        "hotel_id": 242,
+        "hotel_name": "Pendry Washington DC - The Wharf",
+        "hotel_lat": 38.8773113,
+        "hotel_lon": -77.0220859,
+        "station_name": "WATERFRONT METRO STATION",
+        "station_id": 33,
+        "hotel_distance_miles": 0.25,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-pendry-washington-dc-the-wharf.yWL79Ie"
+    },
+    {
+        "hotel_id": 243,
+        "hotel_name": "Hyatt House Washington DC / The Wharf",
+        "hotel_lat": 38.8788154,
+        "hotel_lon": -77.0233634,
+        "station_name": "WATERFRONT METRO STATION",
+        "station_id": 33,
+        "hotel_distance_miles": 0.35,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-hyatt-house-washington-dcthe-wharf.Po35LMq"
+    },
+    {
+        "hotel_id": 244,
+        "hotel_name": "Canopy by Hilton Washington DC The Wharf",
+        "hotel_lat": 38.8788649,
+        "hotel_lon": -77.0235015,
+        "station_name": "WATERFRONT METRO STATION",
+        "station_id": 33,
+        "hotel_distance_miles": 0.36,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-canopy-by-hilton-washington-dc-the-wharf.oaNAtJ0"
+    },
+    {
+        "hotel_id": 245,
+        "hotel_name": "Home2 Suites by Hilton Falls Church",
+        "hotel_lat": 38.8964103,
+        "hotel_lon": -77.1914209,
+        "station_name": "WEST FALLS CHURCH METRO STATION",
+        "station_id": 69,
+        "hotel_distance_miles": 0.32,
+        "hotel_website": "https://expedia.com/affiliates/falls-church-hotels-home2-suites-by-hilton-falls-church.oSZNVAA"
+    },
+    {
+        "hotel_id": 246,
+        "hotel_name": "Woodley Park Guest House",
+        "hotel_lat": 38.9258532,
+        "hotel_lon": -77.0537362,
+        "station_name": "WOODLEY PARK-ZOO METRO STATION",
+        "station_id": 19,
+        "hotel_distance_miles": 0.06,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-woodley-park-guest-house.4PgUDpi"
+    },
+    {
+        "hotel_id": 247,
+        "hotel_name": "Omni Shoreham Hotel",
+        "hotel_lat": 38.9229631,
+        "hotel_lon": -77.0537011,
+        "station_name": "WOODLEY PARK-ZOO METRO STATION",
+        "station_id": 19,
+        "hotel_distance_miles": 0.19,
+        "hotel_website": "https://expedia.com/affiliates/washington-hotels-omni-shoreham-hotel.oI86Rph"
+    }
+]
