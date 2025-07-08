@@ -1,0 +1,536 @@
+[
+    {
+        "museum_name":"African American Civil War Museum",
+        "latitude":38.9163229,
+        "longitude":-77.0253116,
+        "website":"http:\/\/www.afroamcivilwar.org\/"
+    },
+    {
+        "museum_name":"Alexandria Archaeology Museum",
+        "latitude":38.8046657,
+        "longitude":-77.0400525,
+        "website":"http:\/\/alexandriava.gov\/Archaeology"
+    },
+    {
+        "museum_name":"Alexandria Black History Museum",
+        "latitude":38.8120943,
+        "longitude":-77.0481486,
+        "website":"https:\/\/www.alexandriava.gov\/BlackHistory"
+    },
+    {
+        "museum_name":"Alexandria History Museum at the Lyceum",
+        "latitude":38.8037444,
+        "longitude":-77.0475806,
+        "website":"http:\/\/alexandriava.gov\/Lyceum"
+    },
+    {
+        "museum_name":"Arlington Historical Museum (Hume School)",
+        "latitude":38.858719,
+        "longitude":-77.067572,
+        "website":"https:\/\/arlhist.org\/visit\/"
+    },
+    {
+        "museum_name":"Arlington House",
+        "latitude":38.8811673,
+        "longitude":-77.0726163,
+        "website":"https:\/\/www.nps.gov\/arho\/index.htm"
+    },
+    {
+        "museum_name":"Art Museum of the Americas",
+        "latitude":38.8928167,
+        "longitude":-77.0415472,
+        "website":"http:\/\/museum.oas.org\/"
+    },
+    {
+        "museum_name":"Beall-Dawson Museum",
+        "latitude":39.0847278,
+        "longitude":-77.1552694,
+        "website":"https:\/\/www.rockvillemd.gov\/2199\/Beall-Dawson-House"
+    },
+    
+    {
+        "museum_name":"Belmont-Paul Women's Equality National Monument",
+        "latitude":38.8922228,
+        "longitude":-77.0037642,
+        "website":"https:\/\/www.nps.gov\/bepa\/index.htm"
+    },
+    
+    {
+        "museum_name":"Brahma Kumaris Meditation Museums",
+        "latitude":39.0111293,
+        "longitude":-77.0406803,
+        "website":"http:\/\/www.meditationmuseum.org\/"
+    },
+    
+    {
+        "museum_name":"Carlyle House Historic Park",
+        "latitude":38.8052194,
+        "longitude":-77.0419645,
+        "website":"https:\/\/www.novaparks.com\/parks\/carlyle-house-historic-park"
+    },
+    {
+        "museum_name":"Charles Sumner School",
+        "latitude":38.9059129,
+        "longitude":-77.038286,
+        "website":"https:\/\/sumnerschoolmuseum.org\/"
+    },
+   
+    
+   
+    {
+        "museum_name":"College Park Aviation Museum",
+        "latitude":38.9788889,
+        "longitude":-76.9222222,
+        "website":"https:\/\/www.pgparks.com\/facilities\/college-park-aviation-museum"
+    },
+    
+   
+    {
+        "museum_name":"DC History Center",
+        "latitude":38.9025684,
+        "longitude":-77.0227185,
+        "website":"http:\/\/www.dchistory.org\/"
+    },
+    {
+        "museum_name":"DEA Museum & Visitors Center",
+        "latitude":38.8646417,
+        "longitude":-77.0581199,
+        "website":"https:\/\/www.deamuseum.org\/"
+    },
+    {
+        "museum_name":"Dumbarton House",
+        "latitude":38.9108454,
+        "longitude":-77.0558632,
+        "website":"http:\/\/www.dumbartonhouse.org\/"
+    },
+    {
+        "museum_name":"Fire Museum",
+        "latitude":39.1417022,
+        "longitude":-77.196594,
+        "website":"https:\/\/www.gwgvfd.org\/content\/museum\/"
+    },
+    {
+        "museum_name":"Ford's Theatre",
+        "latitude":38.8966765,
+        "longitude":-77.0255908,
+        "website":"https:\/\/fords.org\/"
+    },
+    
+    {
+        "museum_name":"Freedom House Museum",
+        "latitude":38.803921,
+        "longitude":-77.054481,
+        "website":"http:\/\/alexandriava.gov\/FreedomHouse"
+    },
+    {
+        "museum_name":"Friendship Firehouse",
+        "latitude":38.8049555,
+        "longitude":-77.0494322,
+        "website":"https:\/\/www.alexandriava.gov\/FriendshipFirehouse"
+    },
+    {
+        "museum_name":"Gadsby's Tavern Museum",
+        "latitude":38.8055556,
+        "longitude":-77.0436111,
+        "website":"https:\/\/alexandriava.gov\/GadsbysTavern"
+    },
+    {
+        "museum_name":"Gaithersburg Community Museum",
+        "latitude":39.1416891,
+        "longitude":-77.1927504,
+        "website":"http:\/\/www.gaithersburgmd.gov\/about-us\/city-facilities\/gaithersburg-community-museum"
+    },
+    {
+        "museum_name":"German-American Heritage Museum of the USA",
+        "latitude":38.8992128,
+        "longitude":-77.0195974,
+        "website":"http:\/\/www.gahmusa.org\/"
+    },
+   
+      
+    {
+        "museum_name":"Heurich House Museum",
+        "latitude":38.9080382,
+        "longitude":-77.0446303,
+        "website":"http:\/\/heurichhouse.org\/"
+    },
+    {
+        "museum_name":"Hillwood Estate, Museum & Gardens",
+        "latitude":38.9436362,
+        "longitude":-77.0526363,
+        "website":"http:\/\/www.hillwoodmuseum.org\/"
+    },
+    {
+        "museum_name":"Hirshhorn Museum",
+        "latitude":38.8881608,
+        "longitude":-77.0229682,
+        "website":"https:\/\/hirshhorn.si.edu\/"
+    },
+      
+    
+    {
+        "museum_name":"International Spy Museum",
+        "latitude":38.8841419,
+        "longitude":-77.0255748,
+        "website":"https:\/\/www.spymuseum.org\/"
+    },
+    {
+        "museum_name":"Josiah Henson Museum & Park",
+        "latitude":39.0435633,
+        "longitude":-77.121595,
+        "website":"https:\/\/www.montgomeryparks.org\/parks-and-trails\/josiah-henson-park\/"
+    },
+    {
+        "museum_name":"KID Museum Bethesda Metro Center",
+        "latitude":38.9845409,
+        "longitude":-77.0958081,
+        "website":"http:\/\/www.kid-museum.org\/"
+    },
+    {
+        "museum_name":"Kids Play Gallery",
+        "latitude":39.1282587,
+        "longitude":-77.2050007,
+        "website":"http:\/\/www.kidsplaygallery.com\/"
+    },
+    
+    {
+        "museum_name":"Lee-Fendall House Museum & Garden",
+        "latitude":38.8094207,
+        "longitude":-77.0457271,
+        "website":"http:\/\/www.leefendallhouse.org\/"
+    },
+    
+    
+    {
+        "museum_name":"Maryland Milestones\/Anacostia Trails Heritage Area",
+        "latitude":38.9527049,
+        "longitude":-76.9410421,
+        "website":"http:\/\/www.anacostiatrails.org\/"
+    },
+    {
+        "museum_name":"Museum of Contemporary Art Arlington",
+        "latitude":38.881727,
+        "longitude":-77.1020796,
+        "website":"https:\/\/mocaarlington.org\/"
+    },
+    
+    {
+        "museum_name":"National Building Museum",
+        "latitude":38.8977516,
+        "longitude":-77.0176188,
+        "website":"https:\/\/www.nbm.org\/"
+    },
+   
+    {
+        "museum_name":"National Children's Museum",
+        "latitude":38.8942921,
+        "longitude":-77.0297917,
+        "website":"https:\/\/nationalchildrensmuseum.org\/"
+    },
+    {
+        "museum_name":"National Gallery of Art",
+        "latitude":38.891298,
+        "longitude":-77.019965,
+        "website":"https:\/\/www.nga.gov\/"
+    },
+    {
+        "museum_name":"National Geographic Museum of Exploration",
+        "latitude":38.9051153,
+        "longitude":-77.0381169,
+        "website":"https:\/\/www.nationalgeographic.org\/society\/museum-of-exploration\/"
+    },
+    {
+        "museum_name":"National Inventors Hall of Fame Museum",
+        "latitude":38.8015595,
+        "longitude":-77.0641949,
+        "website":"http:\/\/invent.org\/museum"
+    },
+    {
+        "museum_name":"National Museum and Center for Service",
+        "latitude":38.816544,
+        "longitude":-77.0396838,
+        "website":"https:\/\/www.nmcfs.org\/"
+    },
+    {
+        "museum_name":"National Museum of Asian Art",
+        "latitude":38.8881665,
+        "longitude":-77.027384,
+        "website":"http:\/\/asia.si.edu\/"
+    },
+    {
+        "museum_name":"National Museum of Health and Medicine",
+        "latitude":39.0087504,
+        "longitude":-77.0531492,
+        "website":"https:\/\/medicalmuseum.health.mil\/"
+    },
+    {
+        "museum_name":"National Museum of the American Indian",
+        "latitude":38.8883484,
+        "longitude":-77.0165034,
+        "website":"https:\/\/americanindian.si.edu\/"
+    },
+    {
+        "museum_name":"National Museum of the United States Navy",
+        "latitude":38.8730194,
+        "longitude":-76.995327,
+        "website":"http:\/\/www.history.navy.mil\/museums\/NationalMuseum\/org8-1.htm"
+    },
+    {
+        "museum_name":"National Portrait Gallery",
+        "latitude":38.8978267,
+        "longitude":-77.023019,
+        "website":"https:\/\/npg.si.edu\/"
+    },
+    
+    {
+        "museum_name":"O Museum in The Mansion",
+        "latitude":38.9084119,
+        "longitude":-77.0458278,
+        "website":"https:\/\/www.omuseum.org\/"
+    },
+    
+    {
+        "museum_name":"Office of Historic Alexandria",
+        "latitude":38.8072144,
+        "longitude":-77.0467507,
+        "website":"https:\/\/www.alexandriava.gov\/Historic"
+    },
+    {
+        "museum_name":"Old Presbyterian Meeting House",
+        "latitude":38.8013732,
+        "longitude":-77.0433877,
+        "website":"http:\/\/www.opmh.org\/"
+    },
+   
+    {
+        "museum_name":"Peerless Rockville",
+        "latitude":39.0835849,
+        "longitude":-77.1515272,
+        "website":"http:\/\/peerlessrockville.org\/"
+    },
+   
+    
+    {
+        "museum_name":"Ratner Museum",
+        "latitude":39.0199806,
+        "longitude":-77.1212283,
+        "website":"http:\/\/www.ratnermuseum.com\/"
+    },
+    
+   
+    {
+        "museum_name":"Rockville Science Center Storefront",
+        "latitude":39.0857709,
+        "longitude":-77.1507266,
+        "website":"http:\/\/www.rockvillesciencecenter.org\/"
+    },
+    {
+        "museum_name":"S. Dillon Ripley Center",
+        "latitude":38.8885631,
+        "longitude":-77.026866,
+        "website":"http:\/\/www.si.edu\/Museums\/ripley-center"
+    },
+    {
+        "museum_name":"Saint John Paul II National Shrine",
+        "latitude":38.9376325,
+        "longitude":-77.0048534,
+        "website":"http:\/\/www.jp2shrine.org\/"
+    },
+   
+    {
+        "museum_name":"Sebrof Forbes Cultural Arts Center",
+        "latitude":39.0342677,
+        "longitude":-77.0722325,
+        "website":"http:\/\/www.sebrofforbesculturalartscenter.org\/"
+    },
+    {
+        "museum_name":"Smithsonian American Art Museum",
+        "latitude":38.8978934,
+        "longitude":-77.0230688,
+        "website":"https:\/\/americanart.si.edu\/visit\/saam"
+    },
+    {
+        "museum_name":"Smithsonian Institution Archives",
+        "latitude": 38.8926,
+        "longitude": -77.02304,
+        "website":"https:\/\/siarchives.si.edu\/"
+    },
+
+
+    {
+        "museum_name":"National Museum of African American History and Culture",
+        "latitude": 38.89121,
+        "longitude": -77.03258,
+        "website":"https://nmaahc.si.edu/"
+    },
+
+    {
+        "museum_name":"United States Holocaust Memorial Museum",
+        "latitude": 38.88715,
+        "longitude": -77.0326,
+        "website":"https://www.ushmm.org/"
+    },
+
+
+    {
+        "museum_name":"Smithsonian National Museum of African Art",
+        "latitude":38.887988,
+        "longitude":-77.025513,
+        "website":"http:\/\/africa.si.edu\/"
+    },
+    {
+        "museum_name":"Smithsonian National Museum of American History",
+        "latitude":38.8912793,
+        "longitude":-77.0300509,
+        "website":"https:\/\/americanhistory.si.edu\/"
+    },
+    {
+        "museum_name":"Smithsonian National Museum of Natural History",
+        "latitude":38.8912662,
+        "longitude":-77.0260654,
+        "website":"https:\/\/naturalhistory.si.edu\/"
+    },
+    {
+        "museum_name":"Smithsonian National Postal Museum",
+        "latitude":38.8982326,
+        "longitude":-77.0081764,
+        "website":"https:\/\/postalmuseum.si.edu\/"
+    },
+    {
+        "museum_name":"Smithsonian's National Air and Space Museum",
+        "latitude":38.8878604,
+        "longitude":-77.0202017,
+        "website":"https:\/\/airandspace.si.edu\/"
+    },
+    {
+        "museum_name":"Stabler-Leadbeater Apothecary Museum",
+        "latitude":38.8042309,
+        "longitude":-77.0427898,
+        "website":"http:\/\/alexandriava.gov\/Apothecary"
+    },
+    {
+        "museum_name":"Stonestreet Museum",
+        "latitude":39.0847279,
+        "longitude":-77.1552694,
+        "website":"https:\/\/montgomeryhistory.org\/stonestreet-museum-of-19th-century-medicine\/"
+    },
+   
+    {
+        "museum_name":"The George Washington Masonic National Memorial",
+        "latitude":38.8075089,
+        "longitude":-77.0659397,
+        "website":"http:\/\/gwmemorial.org\/"
+    },
+    
+    {
+        "museum_name":"The Latvian Museum",
+        "latitude":39.0862583,
+        "longitude":-77.1790269,
+        "website":"https:\/\/alausa.org\/en\/our-work\/latvian-museums-in-the-u-s\/"
+    },
+    {
+        "museum_name":"The Little Towns Children's Museum",
+        "latitude":39.0453884,
+        "longitude":-77.0988462,
+        "website":"http:\/\/www.thelittletowns.com\/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=407090356855519472"
+    },
+    {
+        "museum_name":"The Museum at Dumbarton Oaks",
+        "latitude":38.914148,
+        "longitude":-77.0640129,
+        "website":"https:\/\/www.doaks.org\/visit\/plan"
+    },
+    {
+        "museum_name":"The Octagon Museum",
+        "latitude":38.8963424,
+        "longitude":-77.04141,
+        "website":"https:\/\/architectsfoundation.org\/octagon-museum\/"
+    },
+    {
+        "museum_name":"The Phillips Collection",
+        "latitude":38.9118575,
+        "longitude":-77.0469689,
+        "website":"https:\/\/www.phillipscollection.org\/"
+    },
+    {
+        "museum_name":"The President Woodrow Wilson House",
+        "latitude":38.91391,
+        "longitude":-77.0516802,
+        "website":"http:\/\/www.woodrowwilsonhouse.org\/"
+    },
+    {
+        "museum_name":"The Society of the Cincinnati",
+        "latitude":38.9106747,
+        "longitude":-77.0476547,
+        "website":"http:\/\/www.societyofthecincinnati.org\/"
+    },
+    
+    {
+        "museum_name":"Touchstone Gallery",
+        "latitude":38.9020081,
+        "longitude":-77.0250488,
+        "website":"http:\/\/www.touchstonegallery.com\/"
+    },
+    {
+        "museum_name":"Tudor Place",
+        "latitude":38.9114894,
+        "longitude":-77.0629465,
+        "website":"https:\/\/www.tudorplace.org\/"
+    },
+    {
+        "museum_name":"U.S. Department of the Interior Museum",
+        "latitude":38.8947025,
+        "longitude":-77.0425396,
+        "website":"http:\/\/www.doi.gov\/interiormuseum"
+    },
+
+    {
+        "museum_name": "The White House",
+        "latitude": 38.8977,
+        "longitude": -77.0365,
+        "website": "https://www.whitehouse.gov/"
+    },
+    {
+        "museum_name": "Washington Monument",
+        "latitude": 38.8895,
+        "longitude": -77.0353,
+        "website": "https://www.nps.gov/wamo/"
+    },
+    {
+        "museum_name": "Lincoln Memorial",
+        "latitude": 38.8893,
+        "longitude": -77.0502,
+        "website": "https://www.nps.gov/linc/index.htm"
+    },
+    {
+        "museum_name": "Jefferson Memorial",
+        "latitude": 38.8814,
+        "longitude": -77.0365,
+        "website": "https://www.nps.gov/thje/index.htm"
+    },
+    {
+        "museum_name": "Martin Luther King Jr. Memorial",
+        "latitude": 38.8859,
+        "longitude": -77.0441,
+        "website": "https://www.nps.gov/mlkm/index.htm"
+    },
+    {
+        "museum_name": "U.S. Capitol",
+        "latitude": 38.8899,
+        "longitude": -77.0091,
+        "website": "https://www.visitthecapitol.gov/"
+    },
+    {
+        "museum_name": "Supreme Court",
+        "latitude": 38.8906,
+        "longitude": -77.0047,
+        "website": "https://www.supremecourt.gov/"
+    },
+    {
+        "museum_name": "Kennedy Center",
+        "latitude": 38.8956,
+        "longitude": -77.0567,
+        "website": "https://www.kennedy-center.org/"
+    }
+        
+]
