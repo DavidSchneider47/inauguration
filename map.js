@@ -1,6 +1,89 @@
 // Debugging message to ensure map.js is loaded
 console.log("map.js loaded successfully");
 
+// Ensure web pages open in seperate screen from app
+
+function openExternalLink(url) {
+    try {
+        // Method 1: Try window.open with parameters that work better in WebViews
+        const newWindow = window.open(url, '_blank', 'location=yes,scrollbars=yes,status=yes,resizable=yes');
+        
+        // Method 2: If window opened, try to focus it
+        if (newWindow && !newWindow.closed) {
+            newWindow.focus();
+            return; // Success! Exit the function
+        }
+        
+        // Method 3: Try window.open with different parameters for Thunkable
+        const thunkableWindow = window.open(url, '_system');
+        if (thunkableWindow && !thunkableWindow.closed) {
+            thunkableWindow.focus();
+            return; // Success! Exit the function
+        }
+        
+        // Method 4: Try a simple window.open without parameters
+        const simpleWindow = window.open(url);
+        if (simpleWindow && !simpleWindow.closed) {
+            simpleWindow.focus();
+            return; // Success! Exit the function
+        }
+        
+        // If we get here, window.open is completely blocked
+        console.log('All window.open methods failed - WebView blocks external links');
+        alert('To visit this website, please copy this link and open it in your browser: ' + url);
+        
+    } catch (error) {
+        console.log('Error opening external link:', error);
+        alert('To visit this website, please copy this link and open it in your browser: ' + url);
+    }
+}
+
+// ALTERNATIVE APPROACH: Add a "Copy Link" option
+function createWebViewFriendlyPopup(name, website) {
+    if (website) {
+        return `<b>${name}</b><br>
+                <button onclick="openExternalLink('${website}')" style="background: #007cba; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 14px; margin: 2px;">
+                    Visit Website
+                </button><br>
+                <button onclick="copyToClipboard('${website}')" style="background: #6c757d; color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; margin: 2px;">
+                    Copy Link
+                </button>`;
+    } else {
+        return `<b>${name}</b>`;
+    }
+}
+
+// Function to copy link to clipboard as backup
+function copyToClipboard(text) {
+    try {
+        navigator.clipboard.writeText(text).then(() => {
+            alert('Link copied! You can paste it in your browser.');
+        }).catch(() => {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('Link copied! You can paste it in your browser.');
+        });
+    } catch (error) {
+        console.log('Copy failed:', error);
+        prompt('Copy this link:', text);
+    }
+}
+
+// EXAMPLE: Updated Hotels section with better popup
+if (typeof lat === 'number' && typeof lon === 'number') {
+    L.marker([lat, lon], {
+        icon: createFontAwesomeIcon('fas fa-bed', 'blue')
+    })
+    .addTo(hotelLayer)
+    .bindPopup(createWebViewFriendlyPopup(name, website));
+}
+
+
 // Initialize the map, centered on Washington Monument with zoom level 14 to show National Mall
 const map = L.map('map').setView([38.889484, -77.035278], 14);
 
@@ -604,44 +687,27 @@ fetch('/static/data/reduced_routes_data.geojson')
 // ================================
 // Function to add museum markers (NEW)
 // ================================
+
 function addMuseumMarkers() {
     museumsLayer.clearLayers();
     
-    const BATCH_SIZE = 10;
-    let currentIndex = 0;
-    
-    function processBatch() {
-        const endIndex = Math.min(currentIndex + BATCH_SIZE, museumsData.length);
-        const batch = museumsData.slice(currentIndex, endIndex);
+    // Process all museums at once
+    museumsData.forEach(museum => {
+        const lat = museum.latitude;
+        const lon = museum.longitude;
+        const name = museum.museum_name;
+        const website = museum.website;
         
-        requestAnimationFrame(() => {
-            batch.forEach(museum => {
-                const lat = museum.latitude;  // Updated to match your JSON
-                const lon = museum.longitude; // Updated to match your JSON
-                const name = museum.museum_name; // Updated to match your JSON
-                const website = museum.website;
-                
-                if (typeof lat === 'number' && typeof lon === 'number') {
-                    const popupContent = website 
-                        ? `<b>${name}</b><br><a href="${website}" target="_blank" rel="noopener noreferrer">Visit Website</a>`
-                        : `<b>${name}</b>`;
-                    
-                    L.marker([lat, lon], {
-                        icon: createMuseumIcon()
-                    })
-                    .addTo(museumsLayer)
-                    .bindPopup(popupContent);
-                }
-            });
+        if (typeof lat === 'number' && typeof lon === 'number') {
+            const popupContent = createWebViewFriendlyPopup(name, website);
             
-            currentIndex += BATCH_SIZE;
-            if (currentIndex < museumsData.length) {
-                processBatch();
-            }
-        });
-    }
-    
-    processBatch();
+            L.marker([lat, lon], {
+                icon: createMuseumIcon()
+            })
+            .addTo(museumsLayer)
+            .bindPopup(popupContent);
+        }
+    });
 }
 
 // ================================
@@ -701,39 +767,23 @@ function filterTransitRoutes(lineQuery) {
 function addStationMarkers(filteredStations) {
     markerGroup.clearLayers();
     
-    const BATCH_SIZE = 10;
-    let currentIndex = 0;
-    
-    function processBatch() {
-        const endIndex = Math.min(currentIndex + BATCH_SIZE, filteredStations.length);
-        const batch = filteredStations.slice(currentIndex, endIndex);
+    // Process all stations at once instead of batching
+    filteredStations.forEach(station => {
+        const lat = station.station_lat;
+        const lon = station.station_lon;
+        const name = station.station_name;
         
-        requestAnimationFrame(() => {
-            batch.forEach(station => {
-                const lat = station.station_lat;
-                const lon = station.station_lon;
-                const name = station.station_name;
-                
-                if (typeof lat === 'number' && typeof lon === 'number') {
-                    L.circleMarker([lat, lon], {
-                        color: 'gray',
-                        fillColor: 'gray',
-                        fillOpacity: 1.0,
-                        radius: getIconSize() / 2
-                    })
-                    .addTo(markerGroup)
-                    .bindPopup(`<b>${name}</b>`);
-                }
-            });
-            
-            currentIndex += BATCH_SIZE;
-            if (currentIndex < filteredStations.length) {
-                processBatch();
-            }
-        });
-    }
-    
-    processBatch();
+        if (typeof lat === 'number' && typeof lon === 'number') {
+            L.circleMarker([lat, lon], {
+                color: 'gray',
+                fillColor: 'gray',
+                fillOpacity: 1.0,
+                radius: getIconSize() / 2
+            })
+            .addTo(markerGroup)
+            .bindPopup(`<b>${name}</b>`);
+        }
+    });
     
     // Only auto-fit bounds if we have a search query, otherwise preserve current view
     if (filteredStations.length > 0) {
@@ -756,7 +806,6 @@ function addStationMarkers(filteredStations) {
         }
     }
 }
-
 // ================================
 // Function to add amenities markers - MODIFIED to handle layer visibility
 // ================================
@@ -796,7 +845,7 @@ function addAmenitiesMarkers(filteredStations) {
                         icon: createFontAwesomeIcon('fas fa-bed', 'blue')
                     })
                     .addTo(hotelLayer)
-                    .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank" rel="noopener noreferrer">Visit Website</a>`);
+                    .bindPopup(createWebViewFriendlyPopup(name, website));
                 }
             });
         }
@@ -815,7 +864,7 @@ function addAmenitiesMarkers(filteredStations) {
                         icon: createCoffeeIcon()
                     })
                     .addTo(coffeeLayer)
-                    .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank" rel="noopener noreferrer">Visit Website</a>`);
+                    .bindPopup(createWebViewFriendlyPopup(name, website));
                 }
             });
         }
@@ -834,7 +883,7 @@ function addAmenitiesMarkers(filteredStations) {
                         icon: createBarIcon()
                     })
                     .addTo(barsLayer)
-                    .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank" rel="noopener noreferrer">Visit Website</a>`);
+                    .bindPopup(createWebViewFriendlyPopup(name, website));
                 }
             });
         }
@@ -853,7 +902,7 @@ function addAmenitiesMarkers(filteredStations) {
                         icon: createPharmacyIcon()
                     })
                     .addTo(pharmacyLayer)
-                    .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank" rel="noopener noreferrer">Visit Website</a>`);
+                    .bindPopup(createWebViewFriendlyPopup(name, website));
                 }
             });
         }
@@ -872,7 +921,7 @@ function addAmenitiesMarkers(filteredStations) {
                         icon: createRestaurantIcon()
                     })
                     .addTo(restaurantsLayer)
-                    .bindPopup(`<b>${name}</b><br><a href="${website}" target="_blank" rel="noopener noreferrer">Visit Website</a>`);
+                    .bindPopup(createWebViewFriendlyPopup(name, website));
                 }
             });
         }
@@ -888,9 +937,7 @@ function addAmenitiesMarkers(filteredStations) {
                 const website = supermarket.supermaret_website || supermarket.supermarket_website; // Handle the typo
 
                 if (typeof lat === 'number' && typeof lon === 'number') {
-                    const popupContent = website 
-                        ? `<b>${name}</b><br><a href="${website}" target="_blank" rel="noopener noreferrer">Visit Website</a>`
-    			: `<b>${name}</b>`;
+                   const popupContent = createWebViewFriendlyPopup(name, website);
 
                     L.marker([lat, lon], {
                         icon: createSupermarketIcon()
