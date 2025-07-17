@@ -2,20 +2,16 @@
 console.log("map.js loaded successfully");
 
 // Initialize the map, centered on Washington, DC with zoom level 16
-const map = L.map('map').setView([38.898327, -77.027777], 16);
+mapboxgl.accessToken = 'pk.eyJ1Ijoic3RhbWVuIiwiYSI6IlpkZEtuS1EifQ.jiH_c9ShtBwtqH9RdG40mw';
 
-// Add OpenStreetMap Carto tile layer
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
+const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/stamen/cmd7pl9cl00yf01qncnjggdld', // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+    center: [38.889484, -77.035278], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+    zoom: 14 // starting zoom
+    });addTo(map);
 
 // Add fullscreen control (Optional: Ensure you have Leaflet Fullscreen plugin included if you intend to use this)
-if (typeof L.control.fullscreen === 'function') {
-    L.control.fullscreen().addTo(map);
-    console.log("Fullscreen control added.");
-} else {
-    console.warn("Fullscreen control not available. Ensure the Leaflet Fullscreen plugin is included.");
-}
 
 // ================================
 // Geolocation Feature Setup
