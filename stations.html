@@ -238,10 +238,36 @@
         {% endfor %}
     </ul>
 
-    <!-- Footer -->
-    <footer class="stations-footer">
-        <p>&copy; Schneider Analytics LLC. All rights reserved.</p>
-    </footer>
+ <!-- Updated Footer HTML Structure with Flask Paths -->
+    <footer class="about-footer" style="text-align: center;">
+        <div class="footer-content" style="text-align: center;">
+            <!-- App Download Section -->
+            <div class="app-download-section" style="text-align: center;">
+                <h3 style="text-align: center;">Download Our App</h3>
+                <div class="app-buttons" style="display: flex; justify-content: center; align-items: center;">
+                    <a href="#" class="app-button" aria-label="Download on the App Store">
+                        <img src="{{ url_for('static', filename='images/App.svg') }}" alt="Download on the App Store">
+                    </a>
+                    <a href="#" class="app-button" aria-label="Get it on Google Play">
+                        <img src="{{ url_for('static', filename='images/Google.png') }}" alt="Get it on Google Play">
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Partner Section -->
+            <div class="partner-section" style="text-align: center;">
+                <h3 style="text-align: center;">Booking powered by our travel partner</h3>
+                <div class="partner-logos" style="display: flex; justify-content: center; align-items: center;">
+                    <a href="#" class="partner-logo" aria-label="Book with Expedia">
+                        <img src="{{ url_for('static', filename='images/Expedia.png') }}" alt="Expedia">
+                    </a>
+                </div>
+            </div>
+            
+
+   
+
+
 
     <!-- JavaScript to Handle Search, Fetching Amenities, and Filtering Transit Routes -->
     <script>
