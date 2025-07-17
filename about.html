@@ -55,65 +55,96 @@
     </header>
 
     <!-- Main Content -->
-    <main class="about-main">
+    <main class="about-main" style="text-align: left; line-height: 2.0;">
         <img src="{{ url_for('static', filename='images/escalator.jpg') }}" alt="Escalators" style="display: block; margin: 20px auto; width: 80%; max-width: 600px; height: auto;">
 
-        <h2>Visit DC Car-Free</h2>
-        <p>
+        <h2 style="text-align: left; margin-top: 40px; margin-bottom: 20px;">Visit DC Car-Free</h2>
+        <p style="text-align: left; line-height: 2.0; margin-bottom: 2em;">
             Are you coming to Washington DC for work or on vacation? Do you need a place to stay? Are you searching for destinations to eat, drink, shop, and celebrate? <strong>MetroMatch</strong> has you covered. Browse our database of hundreds of hotels, restaurants, museums, cafes, and nightlife within walking distance from Metro, MARC, and VRE. Lower your carbon footprint, save money, time, and hassle, and experience the region like a local for a trip to remember.
         </p>
 
-        <h2>Why Metro Match?</h2>
+        <h2 style="text-align: left; margin-top: 40px; margin-bottom: 20px;">Why Metro Match?</h2>
         
-<p>The MetroMatch platform guides travelers – vacationers as well as hometown tourists – looking to take transit where they want to go. A leap beyond what you'll find in Google maps, MetroMatch provides a more curated experience, displaying all the places you can be as you plan your travel by train.</p>
+        <p style="text-align: left; line-height: 2.0; margin-bottom: 2em;">The MetroMatch platform guides travelers – vacationers as well as hometown tourists – looking to take transit where they want to go. A leap beyond what you'll find in Google maps, MetroMatch provides a more curated experience, displaying all the places you can be as you plan your travel by train.</p>
 
-<ul>
-    <li>Seeking downtown's hottest experiences? MetroMatch is ideal for finding hotels and restaurants in the buzziest parts of town.</li>
-    <li>Traveling on a budget? See what's available to eat and drink and where to stay in the close-in suburbs, just a few stops from DC's famed museums.</li>
-    <li>Looking for a city adventure? MetroMatch helps you travel to neighborhoods that locals love and tourists often miss. And no more worries about parking fees!</li>
-</ul>
+        <ul style="text-align: left; line-height: 2.0; margin-bottom: 2em; list-style-position: outside;">
+            <li style="text-align: left; line-height: 2.0; margin-bottom: 1em;">Seeking downtown's hottest experiences? MetroMatch is ideal for finding hotels and restaurants in the buzziest parts of town.</li>
+            <li style="text-align: left; line-height: 2.0; margin-bottom: 1em;">Traveling on a budget? See what's available to eat and drink and where to stay in the close-in suburbs, just a few stops from DC's famed museums.</li>
+            <li style="text-align: left; line-height: 2.0; margin-bottom: 1em;">Looking for a city adventure? MetroMatch helps you travel to neighborhoods that locals love and tourists often miss. And no more worries about parking fees!</li>
+        </ul>
 
-<p>Beyond those benefits, by using MetroMatch, you contribute to a more sustainable region by helping lower carbon emissions, reduce congestion and support local businesses.</p>
+        <p style="text-align: left; line-height: 2.0; margin-bottom: 2em;">Beyond those benefits, by using MetroMatch, you contribute to a more sustainable region by helping lower carbon emissions, reduce congestion and support local businesses.</p>
 
-<h2>About the Team</h2>
+        <h2 style="text-align: left; margin-top: 40px; margin-bottom: 20px;">About the Team</h2>
 
-<div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
 
-  <!-- David Schneider -->
-  <div style="text-align: center; max-width: 300px;">
-    <img src="{{ url_for('static', filename='images/content_creator.jpg') }}" 
-         alt="Photo of David Schneider" 
-         style="width: 200px; height: 260px; object-fit: cover; border-radius: 8px;">
-    <p><strong>David Schneider</strong> is a data scientist, storyteller, activist, teacher, and founder of Schneider Analytics, which builds digital tools for the public good. Prior to starting his own business, he worked for over twenty years as a career civil servant with the Federal Transit Administration. David grew up in Washington DC and lives near the Silver Spring Metro station.</p>
-  </div>
+          <!-- David Schneider -->
+          <div style="text-align: center; max-width: 300px;">
+            <img src="{{ url_for('static', filename='images/content_creator.jpg') }}" 
+                 alt="Photo of David Schneider" 
+                 style="width: 200px; height: 260px; object-fit: cover; border-radius: 8px;">
+            <p style="text-align: center; line-height: 1.6;"><strong>David Schneider</strong> is a data scientist, storyteller, activist, teacher, and founder of Schneider Analytics, which builds digital tools for the public good. Prior to starting his own business, he worked for over twenty years as a career civil servant with the Federal Transit Administration. David grew up in Washington DC and lives near the Silver Spring Metro station.</p>
+          </div>
 
-  <!-- Valerie Berton -->
-  <div style="text-align: center; max-width: 300px;">
-    <img src="{{ url_for('static', filename='images/valerie_berton.jpg') }}" 
-         alt="Photo of Valerie Berton" 
-         style="width: 200px; height: 260px; object-fit: cover; border-radius: 8px;">
-    <p style="margin-top: 20px;"><strong>Valerie Berton</strong> has worked in the communications field for more than three decades, most recently directing a public affairs team at the Federal Transit Administration. Now she provides writing, editing and marketing support to organizations to help develop messages and stories that resonate, including promoting the many benefits of taking transit. She lives in Silver Spring, MD, less than two miles from the Metro station and 600 yards from a bus stop.</p>
-  </div>
+          <!-- Valerie Berton -->
+          <div style="text-align: center; max-width: 300px;">
+            <img src="{{ url_for('static', filename='images/valerie_berton.jpg') }}" 
+                 alt="Photo of Valerie Berton" 
+                 style="width: 200px; height: 260px; object-fit: cover; border-radius: 8px;">
+            <p style="margin-top: 20px; text-align: center; line-height: 1.6;"><strong>Valerie Berton</strong> has worked in the communications field for more than three decades, most recently directing a public affairs team at the Federal Transit Administration. Now she provides writing, editing and marketing support to organizations to help develop messages and stories that resonate, including promoting the many benefits of taking transit. She lives in Silver Spring, MD, less than two miles from the Metro station and 600 yards from a bus stop.</p>
+          </div>
 
-</div>
-       <h2>Bring Transit Tourism to Your Hometown</h2>
+        </div>
 
-        <p>If you are intrigued by what you see on this platform and would like to develop something similar for your community, please reach out for a consultation by emailing connect@transitdiscoveries.com or visit <a href="https://www.transitorienteddiscoveries.com/" target="_blank">Transit-Oriented Discoveries</a>.</p>
+        <h2 style="text-align: left; margin-top: 40px; margin-bottom: 20px;">Bring Transit Tourism to Your Hometown</h2>
+
+        <p style="text-align: left; line-height: 2.0; margin-bottom: 2em;">If you are intrigued by what you see on this platform and would like to develop something similar for your community, please reach out for a consultation by emailing connect@transitdiscoveries.com or visit <a href="https://www.transitorienteddiscoveries.com/" target="_blank">Transit-Oriented Discoveries</a>.</p>
    
+        <h2 style="text-align: left; margin-top: 40px; margin-bottom: 20px;">Photo Credits</h2>
 
- <h2>Photo Credits</h2>
+        <p style="text-align: left; line-height: 2.0; margin-bottom: 2em;">This site uses images from photo sharing sites that may be re-published with attribution: National Zoo: Marja via Flickr; Kramerbooks: Bill Couch via Flickr; Ben's Chili Bowl: Kevin Harber via Flickr; National Gallery: Michael Jones via Flickr; Hershorn Museum: Washingtonnydc via Flickr; Friendship Arch: Tim Evenson via Flickr; Arlington Cemetary: Lindsey Flynn via Flickr, Eastern Market: Panderband via Flickr, Ballston: Neil Cooler via Flickr; Metro Escalators: Kaique Rocha via Pexels.</p>
 
-   <p>This site uses images from photo sharing sites that may be re-published with attribution: National Zoo: Marja via Flickr; Kramerbooks: Bill Couch via Flickr; Ben's Chili Bowl: Kevin Harber via Flickr; National Gallery: Michael Jones via Flickr; Hershorn Museum: Washingtonnydc via Flickr; Friendship Arch: Tim Evenson via Flickr; Arlington Cemetary: Lindsey Flynn via Flickr, Eastern Market: Panderband via Flickr, Ballston: Neil Cooler via Flickr; Metro Escalators: Kaique Rocha via Pexels.</p>
+        <h2 style="text-align: left; margin-top: 40px; margin-bottom: 20px;">Privacy Statement</h2>
 
-<h2>Privacy Statement</h2>
+        <p style="text-align: left; line-height: 2.0; margin-bottom: 2em;"><strong>MetroMatch</strong> does not share personal data or location information about users. Our website and app uses your device's location solely to display your current position on the map and to enhance your experience by showing nearby transit stations and amenities. Location data is processed locally on your device and is not transmitted to our servers or any third-party services. The MetroMatch team reserves the right to use emails for limited promotional use.</p>
 
-<p><strong>MetroMatch</strong> does not share personal data or location information about users. Our website and app uses your device's location solely to display your current position on the map and to enhance your experience by showing nearby transit stations and amenities. Location data is processed locally on your device and is not transmitted to our servers or any third-party services. The MetroMatch team reserves the right to use emails for limited promotional use.</p>
+    </main>
 
- </main>
-   <!-- Footer -->
-    <footer class="about-footer">
-        <p>&copy; Schneider Analytics LLC. All rights reserved.</p>
+              
+             <!-- Updated Footer HTML Structure with Flask Paths -->
+    <footer class="about-footer" style="text-align: center;">
+        <div class="footer-content" style="text-align: center;">
+            <!-- App Download Section -->
+            <div class="app-download-section" style="text-align: center;">
+                <h3 style="text-align: center;">Download Our App</h3>
+                <div class="app-buttons" style="display: flex; justify-content: center; align-items: center;">
+                    <a href="#" class="app-button" aria-label="Download on the App Store">
+                        <img src="{{ url_for('static', filename='images/App.svg') }}" alt="Download on the App Store">
+                    </a>
+                    <a href="#" class="app-button" aria-label="Get it on Google Play">
+                        <img src="{{ url_for('static', filename='images/Google.png') }}" alt="Get it on Google Play">
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Partner Section -->
+            <div class="partner-section" style="text-align: center;">
+                <h3 style="text-align: center;">Booking powered by our travel partner</h3>
+                <div class="partner-logos" style="display: flex; justify-content: center; align-items: center;">
+                    <a href="#" class="partner-logo" aria-label="Book with Expedia">
+                        <img src="{{ url_for('static', filename='images/Expedia.png') }}" alt="Expedia">
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Original footer content -->
+            <div class="footer-info" style="text-align: center;">
+                <p style="text-align: center;">&copy; 2025 Schneider Analytics LLC. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
+
 
     <!-- JavaScript to Toggle the Mobile Menu -->
    <script>
