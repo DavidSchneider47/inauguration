@@ -85,7 +85,6 @@
             background-color: #ccc;
         }
 
-        /* Enhanced Search Container with TypeAhead Support */
         .search-container {
             max-width: 800px;
             margin: 20px auto;
@@ -113,7 +112,6 @@
             background-color: #d32f2f;
         }
 
-        /* TypeAhead Styles */
         .typeahead-wrapper {
             position: relative;
             flex: 1;
@@ -254,7 +252,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
     <header>
         <div class="navbar">
             <h1>MetroMatch</h1>
@@ -276,33 +273,54 @@
 
     <h1 style="text-align: center; margin-top: 20px;">MetroMatch: Go Car-Free in DC</h1>
     
-    <!-- Description Text -->
     <div class="description-text">
         MetroMatch is a dynamic, easy-to-use platform to search for places to stay, eat, drink, and play. Our database displays hundreds of destinations within walking distance of Washington subway and commuter rail stations so visitors and locals can better plan a trip or outing and go car-free in DC.
     </div>
 
     <div class="text-container" style="max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center;"></div>
 
-    <!-- Enhanced Search Container with TypeAhead -->
     <div class="search-container">
         <div id="station-typeahead" class="typeahead-wrapper"></div>
         <div id="line-typeahead" class="typeahead-wrapper"></div>
         <button id="clearButton">Clear Search</button>
     </div>
 
-    <!-- Hidden elements for backward compatibility -->
     <input type="text" id="station-search" style="display: none;" />
     <select id="line-search" style="display: none;"></select>
 
     <div id="map"></div>
-    <!-- Add this right after the map div -->  
     <button id="toggleLayerControl" class="layers-toggle-btn">☰ Layers</button>
+
+ <!-- Updated Footer HTML Structure with Flask Paths -->
+    <footer class="about-footer" style="text-align: center;">
+        <div class="footer-content" style="text-align: center;">
+            <!-- App Download Section -->
+            <div class="app-download-section" style="text-align: center;">
+                <h3 style="text-align: center;">Download Our App</h3>
+                <div class="app-buttons" style="display: flex; justify-content: center; align-items: center;">
+                    <a href="#" class="app-button" aria-label="Download on the App Store">
+                        <img src="{{ url_for('static', filename='images/App.svg') }}" alt="Download on the App Store">
+                    </a>
+                    <a href="#" class="app-button" aria-label="Get it on Google Play">
+                        <img src="{{ url_for('static', filename='images/Google.png') }}" alt="Get it on Google Play">
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Partner Section -->
+            <div class="partner-section" style="text-align: center;">
+                <h3 style="text-align: center;">Booking powered by our travel partner</h3>
+                <div class="partner-logos" style="display: flex; justify-content: center; align-items: center;">
+                    <a href="#" class="partner-logo" aria-label="Book with Expedia">
+                        <img src="{{ url_for('static', filename='images/Expedia.png') }}" alt="Expedia">
+                    </a>
+                </div>
+            </div>
    
     <footer class="footer">
         <p>&copy; 2024 Schneider Analytics LLC. All rights reserved.</p>
     </footer>
 
-    <!-- MetroMatch Modal -->
     <div id="metromatch-modal" class="modal">
         <div class="modal-content">
             <h2>Welcome to MetroMatch!</h2>
@@ -320,18 +338,12 @@
         </div>
     </div>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2.4.0/src/easy-button.js"></script>
-    <!-- Add PapaParse for robust CSV parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="{{ url_for('static', filename='js/map.js') }}"></script>
 
-    <!-- TypeAhead Implementation -->
     <script>
-        /**
-         * MetroMatchTypeahead - Custom type-ahead search component for MetroMatch
-         */
         class MetroMatchTypeahead {
             constructor(options) {
                 this.containerId = options.containerId;
@@ -345,7 +357,7 @@
                 this.currentInputValue = '';
                 this.selectedItem = null;
                 this.debounceTimeout = null;
-                this.showAllOnFocus = options.showAllOnFocus !== false; // Default to true
+                this.showAllOnFocus = options.showAllOnFocus !== false;
                 this.compatibilityId = options.compatibilityId || null;
                 
                 this.init();
@@ -354,36 +366,27 @@
             init() {
                 this.container = document.getElementById(this.containerId);
                 if (!this.container) {
-                    console.error(`Container ${this.containerId} not found`);
+                    console.error('Container ' + this.containerId + ' not found');
                     return;
                 }
                 
-                this.container.innerHTML = `
-                    <div class="typeahead-wrapper">
-                        <label for="${this.containerId}-input" class="typeahead-label">${this.label}</label>
-                        <div class="typeahead-input-wrapper">
-                            <input 
-                                type="text" 
-                                id="${this.containerId}-input" 
-                                class="typeahead-input" 
-                                placeholder="${this.placeholder}" 
-                                autocomplete="off"
-                            />
-                            <div class="typeahead-clear" title="Clear selection">×</div>
-                        </div>
-                        <div class="typeahead-results" id="${this.containerId}-results"></div>
-                    </div>
-                `;
+                this.container.innerHTML = '<label for="' + this.containerId + '-input" class="typeahead-label">' + this.label + '</label>' +
+                    '<div class="typeahead-input-wrapper">' +
+                    '<input type="text" id="' + this.containerId + '-input" class="typeahead-input" placeholder="' + this.placeholder + '" autocomplete="off" />' +
+                    '<div class="typeahead-clear" title="Clear selection">×</div>' +
+                    '</div>' +
+                    '<div class="typeahead-results" id="' + this.containerId + '-results"></div>';
                 
-                this.input = document.getElementById(`${this.containerId}-input`);
+                this.input = document.getElementById(this.containerId + '-input');
                 this.clearButton = this.container.querySelector('.typeahead-clear');
-                this.resultsContainer = document.getElementById(`${this.containerId}-results`);
+                this.resultsContainer = document.getElementById(this.containerId + '-results');
                 
-                this.input.addEventListener('input', this.handleInput.bind(this));
-                this.input.addEventListener('focus', this.handleFocus.bind(this));
-                this.input.addEventListener('blur', this.handleBlur.bind(this));
-                this.input.addEventListener('keydown', this.handleKeyDown.bind(this));
-                this.clearButton.addEventListener('click', this.handleClear.bind(this));
+                var self = this;
+                this.input.addEventListener('input', function(e) { self.handleInput(e); });
+                this.input.addEventListener('focus', function() { self.handleFocus(); });
+                this.input.addEventListener('blur', function(e) { self.handleBlur(e); });
+                this.input.addEventListener('keydown', function(e) { self.handleKeyDown(e); });
+                this.clearButton.addEventListener('click', function() { self.handleClear(false); });
                 
                 if (this.compatibilityId) {
                     this.createCompatibilityElement();
@@ -393,16 +396,16 @@
             }
             
             createCompatibilityElement() {
-                let compatElement = document.getElementById(this.compatibilityId);
+                var compatElement = document.getElementById(this.compatibilityId);
                 if (!compatElement) {
                     if (this.compatibilityId.includes('select') || this.compatibilityId.includes('line')) {
-                        compatElement = document.createElement("select");
+                        compatElement = document.createElement('select');
                     } else {
-                        compatElement = document.createElement("input");
-                        compatElement.type = "text";
+                        compatElement = document.createElement('input');
+                        compatElement.type = 'text';
                     }
                     compatElement.id = this.compatibilityId;
-                    compatElement.style.display = "none";
+                    compatElement.style.display = 'none';
                     document.body.appendChild(compatElement);
                 }
                 this.compatibilityElement = compatElement;
@@ -412,9 +415,9 @@
                 if (!this.compatibilityElement) return;
                 
                 if (this.compatibilityElement.tagName === 'SELECT') {
-                    let option = this.compatibilityElement.querySelector(`option[value="${value}"]`);
+                    var option = this.compatibilityElement.querySelector('option[value="' + value + '"]');
                     if (!option) {
-                        option = document.createElement("option");
+                        option = document.createElement('option');
                         option.value = value;
                         option.textContent = value;
                         this.compatibilityElement.appendChild(option);
@@ -422,7 +425,8 @@
                 }
                 
                 this.compatibilityElement.value = value;
-                this.compatibilityElement.dispatchEvent(new Event('change', { bubbles: true }));
+                var event = new Event('change', { bubbles: true });
+                this.compatibilityElement.dispatchEvent(event);
             }
             
             showAllOptions() {
@@ -430,44 +434,43 @@
                     this.renderResults(this.data, '');
                     this.showResults();
                     
-                    const statusMessage = document.createElement('div');
+                    var statusMessage = document.createElement('div');
                     statusMessage.className = 'typeahead-status-message';
-                    statusMessage.textContent = `Click an option or type to filter ${this.data.length} choices`;
+                    statusMessage.textContent = 'Click an option or type to filter ' + this.data.length + ' choices';
                     this.resultsContainer.insertBefore(statusMessage, this.resultsContainer.firstChild);
                     this.resultsContainer.classList.add('show-all');
                 }
             }
             
             handleInput(event) {
-                const value = event.target.value.trim();
+                var value = event.target.value.trim();
                 this.currentInputValue = value;
                 
                 if (this.debounceTimeout) {
                     clearTimeout(this.debounceTimeout);
                 }
                 
-                this.debounceTimeout = setTimeout(() => {
-                    if (value.length < this.minChars) {
-                        if (this.showAllOnFocus) {
-                            this.showAllOptions();
+                var self = this;
+                this.debounceTimeout = setTimeout(function() {
+                    if (value.length < self.minChars) {
+                        if (self.showAllOnFocus) {
+                            self.showAllOptions();
                         } else {
-                            this.hideResults();
+                            self.hideResults();
                         }
                         return;
                     }
                     
-                    this.performSearch(value);
+                    self.performSearch(value);
                 }, this.debounceTime);
                 
                 this.updateClearButton();
             }
             
             performSearch(query) {
-                const results = this.data
-                    .filter(item => {
-                        return item.toLowerCase().includes(query.toLowerCase());
-                    })
-                    .slice(0, this.maxResults);
+                var results = this.data.filter(function(item) {
+                    return item.toLowerCase().includes(query.toLowerCase());
+                }).slice(0, this.maxResults);
                 
                 this.renderResults(results, query);
             }
@@ -477,25 +480,24 @@
                 this.resultsContainer.classList.remove('show-all');
                 
                 if (results.length === 0) {
-                    this.resultsContainer.innerHTML = `
-                        <div class="typeahead-message">No results found</div>
-                    `;
+                    this.resultsContainer.innerHTML = '<div class="typeahead-message">No results found</div>';
                     this.showResults();
                     return;
                 }
                 
-                results.forEach(item => {
-                    const resultItem = document.createElement('div');
+                var self = this;
+                results.forEach(function(item) {
+                    var resultItem = document.createElement('div');
                     resultItem.className = 'typeahead-result-item';
                     
-                    const itemText = query ? this.highlightMatch(item, query) : item;
+                    var itemText = query ? self.highlightMatch(item, query) : item;
                     resultItem.innerHTML = itemText;
                     
-                    resultItem.addEventListener('click', () => {
-                        this.selectItem(item);
+                    resultItem.addEventListener('click', function() {
+                        self.selectItem(item);
                     });
                     
-                    this.resultsContainer.appendChild(resultItem);
+                    self.resultsContainer.appendChild(resultItem);
                 });
                 
                 this.showResults();
@@ -504,13 +506,13 @@
             highlightMatch(text, query) {
                 if (!query) return text;
                 
-                const queryLower = query.toLowerCase();
-                const index = text.toLowerCase().indexOf(queryLower);
+                var queryLower = query.toLowerCase();
+                var index = text.toLowerCase().indexOf(queryLower);
                 
                 if (index >= 0) {
-                    const matchingPart = text.substring(index, index + query.length);
+                    var matchingPart = text.substring(index, index + query.length);
                     return text.substring(0, index) + 
-                           `<span class="typeahead-result-highlight">${matchingPart}</span>` + 
+                           '<span class="typeahead-result-highlight">' + matchingPart + '</span>' + 
                            text.substring(index + query.length);
                 }
                 
@@ -533,7 +535,7 @@
                     this.onSelect(item);
                 }
                 
-                const changeEvent = new CustomEvent('typeahead-change', {
+                var changeEvent = new CustomEvent('typeahead-change', {
                     detail: { value: item }
                 });
                 this.container.dispatchEvent(changeEvent);
@@ -551,20 +553,21 @@
             }
             
             handleBlur(event) {
-                setTimeout(() => {
-                    this.hideResults();
+                var self = this;
+                setTimeout(function() {
+                    self.hideResults();
                     
-                    if (this.selectedItem && this.input.value !== this.selectedItem && this.input.value.trim() !== '') {
-                        this.input.value = this.selectedItem;
+                    if (self.selectedItem && self.input.value !== self.selectedItem && self.input.value.trim() !== '') {
+                        self.input.value = self.selectedItem;
                     }
                 }, 200);
             }
             
             handleKeyDown(event) {
                 if (this.resultsContainer.style.display === 'block') {
-                    const items = this.resultsContainer.querySelectorAll('.typeahead-result-item');
-                    const activeItem = this.resultsContainer.querySelector('.typeahead-result-item.active');
-                    let activeIndex = Array.from(items).indexOf(activeItem);
+                    var items = this.resultsContainer.querySelectorAll('.typeahead-result-item');
+                    var activeItem = this.resultsContainer.querySelector('.typeahead-result-item.active');
+                    var activeIndex = Array.from(items).indexOf(activeItem);
                     
                     switch(event.key) {
                         case 'ArrowDown':
@@ -598,15 +601,17 @@
             }
             
             setActiveItem(items, index) {
-                items.forEach(item => item.classList.remove('active'));
+                items.forEach(function(item) {
+                    item.classList.remove('active');
+                });
                 
                 if (items[index]) {
                     items[index].classList.add('active');
                     
-                    const itemTop = items[index].offsetTop;
-                    const itemBottom = itemTop + items[index].offsetHeight;
-                    const containerTop = this.resultsContainer.scrollTop;
-                    const containerBottom = containerTop + this.resultsContainer.offsetHeight;
+                    var itemTop = items[index].offsetTop;
+                    var itemBottom = itemTop + items[index].offsetHeight;
+                    var containerTop = this.resultsContainer.scrollTop;
+                    var containerBottom = containerTop + this.resultsContainer.offsetHeight;
                     
                     if (itemBottom > containerBottom) {
                         this.resultsContainer.scrollTop = itemBottom - this.resultsContainer.offsetHeight;
@@ -616,7 +621,8 @@
                 }
             }
             
-            handleClear() {
+            handleClear(preventFocus) {
+                preventFocus = preventFocus || false;
                 this.input.value = '';
                 this.currentInputValue = '';
                 this.selectedItem = null;
@@ -628,7 +634,9 @@
                     this.updateCompatibilityElement('');
                 }
                 
-                this.input.focus();
+                if (!preventFocus) {
+                    this.input.focus();
+                }
                 
                 if (typeof this.onSelect === 'function') {
                     this.onSelect(null);
@@ -652,16 +660,16 @@
                 }
             }
             
-            // Public methods
             getValue() {
                 return this.selectedItem;
             }
             
-            setValue(value) {
+            setValue(value, preventFocus) {
+                preventFocus = preventFocus || false;
                 if (value) {
                     this.selectItem(value);
                 } else {
-                    this.handleClear();
+                    this.handleClear(preventFocus);
                 }
             }
             
@@ -679,17 +687,18 @@
             }
         }
 
-        // Enhanced initialization with TypeAhead components
-        let stationTypeahead, lineTypeahead;
+        var stationTypeahead, lineTypeahead;
         
         function debounce(func, delay) {
-            let debounceTimer;
+            var debounceTimer;
             return function() {
-                const context = this;
-                const args = arguments;
+                var context = this;
+                var args = arguments;
                 clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(() => func.apply(context, args), delay);
-            }
+                debounceTimer = setTimeout(function() {
+                    func.apply(context, args);
+                }, delay);
+            };
         }
 
         function getSearchParams() {
@@ -710,25 +719,25 @@
         }
 
         function initializeSearchInputs() {
-            const { stationQuery, lineQuery } = getSearchParams();
-            if (stationTypeahead && stationQuery) {
-                stationTypeahead.setValue(stationQuery);
+            var params = getSearchParams();
+            if (stationTypeahead && params.stationQuery) {
+                stationTypeahead.setValue(params.stationQuery);
             }
-            if (lineTypeahead && lineQuery) {
-                lineTypeahead.setValue(lineQuery);
+            if (lineTypeahead && params.lineQuery) {
+                lineTypeahead.setValue(params.lineQuery);
             }
         }
 
         function handleSearchChange() {
-            const stationQuery = stationTypeahead ? stationTypeahead.getValue() || '' : '';
-            const lineQuery = lineTypeahead ? lineTypeahead.getValue() || '' : '';
+            var stationQuery = stationTypeahead ? stationTypeahead.getValue() || '' : '';
+            var lineQuery = lineTypeahead ? lineTypeahead.getValue() || '' : '';
             setSearchParams(stationQuery, lineQuery);
             window.dispatchEvent(new Event('searchUpdated'));
         }
 
         function handleClearSearch() {
-            if (stationTypeahead) stationTypeahead.setValue(null);
-            if (lineTypeahead) lineTypeahead.setValue(null);
+            if (stationTypeahead) stationTypeahead.setValue(null, true);
+            if (lineTypeahead) lineTypeahead.setValue(null, true);
             clearSearchParams();
             window.dispatchEvent(new Event('searchUpdated'));
         }
@@ -737,27 +746,27 @@
             document.getElementById("mobileMenu").classList.toggle("mobile-menu-active");
         }
 
-        // Load station data from your actual data sources
-        async function loadStationData() {
-            let stationData = [];
-            let lineData = ['All Lines', 'Red', 'Blue', 'Yellow', 'Green', 'Orange', 'Silver', 'MARC', 'VRE'];
-            
-            try {
-                // Method 1: Try to load from stations.json if it exists
-                try {
-                    const stationsResponse = await fetch('/static/data/stations.json');
-                    if (stationsResponse.ok) {
-                        const stationsJson = await stationsResponse.json();
+        function loadStationData() {
+            return new Promise(function(resolve) {
+                var stationData = [];
+                var lineData = ['All Lines', 'Red', 'Blue', 'Yellow', 'Green', 'Orange', 'Silver', 'MARC', 'VRE'];
+                
+                fetch('/static/data/stations.json')
+                    .then(function(response) {
+                        if (response.ok) {
+                            return response.json();
+                        }
+                        throw new Error('JSON not found');
+                    })
+                    .then(function(stationsJson) {
                         console.log('Loaded stations from JSON:', stationsJson);
                         
-                        // Extract unique station names from JSON
-                        const stationNames = new Set();
+                        var stationNames = new Set();
                         if (Array.isArray(stationsJson)) {
-                            stationsJson.forEach(station => {
+                            stationsJson.forEach(function(station) {
                                 if (station.name) {
                                     stationNames.add(station.name.trim());
                                 }
-                                // Also check for other possible name fields
                                 if (station.station_name) {
                                     stationNames.add(station.station_name.trim());
                                 }
@@ -765,192 +774,145 @@
                                     stationNames.add(station.Station.trim());
                                 }
                             });
-                        } else if (typeof stationsJson === 'object') {
-                            // Handle case where it's an object with station data
-                            Object.values(stationsJson).forEach(station => {
-                                if (typeof station === 'string') {
-                                    stationNames.add(station.trim());
-                                } else if (station && station.name) {
-                                    stationNames.add(station.name.trim());
-                                }
-                            });
                         }
                         
                         stationData = Array.from(stationNames).sort();
-                        console.log('Extracted station names:', stationData);
-                    }
-                } catch (jsonError) {
-                    console.log('stations.json not found, trying CSV...');
-                }
-                
-                // Method 2: If JSON didn't work or was empty, load from CSV
-                if (stationData.length === 0) {
-                    const csvResponse = await fetch('/static/data/Final_Data_December_2024.csv');
-                    if (csvResponse.ok) {
-                        const csvText = await csvResponse.text();
-                        console.log('CSV loaded, parsing...');
+                        resolve({ stationData: stationData, lineData: lineData });
+                    })
+                    .catch(function() {
+                        console.log('stations.json not found, trying CSV...');
                         
-                        // Use PapaParse if available, otherwise manual parsing
-                        if (typeof Papa !== 'undefined') {
-                            const parseResult = Papa.parse(csvText, {
-                                header: true,
-                                skipEmptyLines: true,
-                                dynamicTyping: true
-                            });
-                            
-                            const stationNames = new Set();
-                            parseResult.data.forEach(row => {
-                                // Check multiple possible column names for stations
-                                const possibleNames = [
-                                    row.station_name, row.Station, row.name, 
-                                    row.station, row.STATION, row.station_id
-                                ];
-                                
-                                possibleNames.forEach(name => {
-                                    if (name && typeof name === 'string' && name.trim()) {
-                                        stationNames.add(name.trim());
-                                    }
-                                });
-                            });
-                            
-                            stationData = Array.from(stationNames).sort();
-                            console.log('Extracted stations from CSV:', stationData.length, 'stations');
-                        } else {
-                            // Manual CSV parsing fallback
-                            const lines = csvText.split('\n');
-                            const headers = lines[0].split(',').map(h => h.trim());
-                            const stationColumnIndex = headers.findIndex(h => 
-                                h.toLowerCase().includes('station') || h.toLowerCase() === 'name'
-                            );
-                            
-                            if (stationColumnIndex !== -1) {
-                                const stationNames = new Set();
-                                for (let i = 1; i < lines.length; i++) {
-                                    const columns = lines[i].split(',');
-                                    if (columns[stationColumnIndex] && columns[stationColumnIndex].trim()) {
-                                        stationNames.add(columns[stationColumnIndex].trim());
-                                    }
+                        fetch('/static/data/Final_Data_December_2024.csv')
+                            .then(function(response) {
+                                if (response.ok) {
+                                    return response.text();
                                 }
-                                stationData = Array.from(stationNames).sort();
-                            }
-                        }
-                    }
-                }
-                
-                // Method 3: Fallback to getting station names from the map data if available
-                if (stationData.length === 0 && window.stationData) {
-                    console.log('Using fallback station data from window.stationData');
-                    const stationNames = new Set();
-                    window.stationData.forEach(station => {
-                        if (station.station_name) {
-                            stationNames.add(station.station_name.trim());
-                        }
+                                throw new Error('CSV not found');
+                            })
+                            .then(function(csvText) {
+                                console.log('CSV loaded, parsing...');
+                                
+                                if (typeof Papa !== 'undefined') {
+                                    var parseResult = Papa.parse(csvText, {
+                                        header: true,
+                                        skipEmptyLines: true,
+                                        dynamicTyping: true
+                                    });
+                                    
+                                    var stationNames = new Set();
+                                    parseResult.data.forEach(function(row) {
+                                        var possibleNames = [
+                                            row.station_name, row.Station, row.name, 
+                                            row.station, row.STATION, row.station_id
+                                        ];
+                                        
+                                        possibleNames.forEach(function(name) {
+                                            if (name && typeof name === 'string' && name.trim()) {
+                                                stationNames.add(name.trim());
+                                            }
+                                        });
+                                    });
+                                    
+                                    stationData = Array.from(stationNames).sort();
+                                    console.log('Extracted stations from CSV:', stationData.length, 'stations');
+                                }
+                                
+                                resolve({ stationData: stationData, lineData: lineData });
+                            })
+                            .catch(function(error) {
+                                console.error('Error loading data:', error);
+                                stationData = [
+                                    'Union Station', 'Gallery Pl-Chinatown', 'Metro Center', 'Dupont Circle',
+                                    'Foggy Bottom-GWU', 'Pentagon', 'Crystal City', 'King St-Old Town'
+                                ].sort();
+                                resolve({ stationData: stationData, lineData: lineData });
+                            });
                     });
-                    stationData = Array.from(stationNames).sort();
-                }
-                
-            } catch (error) {
-                console.error('Error loading station data:', error);
-                // Ultimate fallback - minimal station list
-                stationData = [
-                    'Union Station', 'Gallery Pl-Chinatown', 'Metro Center', 'Dupont Circle',
-                    'Foggy Bottom-GWU', 'Pentagon', 'Crystal City', 'King St-Old Town'
-                ].sort();
-            }
-            
-            // Remove duplicates and ensure clean data
-            stationData = [...new Set(stationData)].filter(name => name && name.length > 0).sort();
-            
-            console.log('Final station data:', stationData);
-            return { stationData, lineData };
+            });
         }
 
-        // Initialize TypeAhead components when page loads
-        document.addEventListener('DOMContentLoaded', async function() {
+        document.addEventListener('DOMContentLoaded', function() {
             console.log('Loading station data...');
-            const { stationData, lineData } = await loadStationData();
-            
-            // Initialize Station TypeAhead with real data
-            stationTypeahead = new MetroMatchTypeahead({
-                containerId: 'station-typeahead',
-                compatibilityId: 'station-search',
-                placeholder: stationData.length > 0 ? 
-                    'Click to see all stations or type to search...' : 
-                    'Loading stations...',
-                label: 'Metro Station',
-                data: stationData,
-                minChars: 1,
-                showAllOnFocus: true,
-                onSelect: function(station) {
-                    console.log('Station selected:', station);
-                    handleSearchChange();
+            loadStationData().then(function(data) {
+                var stationData = data.stationData;
+                var lineData = data.lineData;
+                
+                stationTypeahead = new MetroMatchTypeahead({
+                    containerId: 'station-typeahead',
+                    compatibilityId: 'station-search',
+                    placeholder: stationData.length > 0 ? 
+                        'Click to see all stations or type to search...' : 
+                        'Loading stations...',
+                    label: 'Metro Station',
+                    data: stationData,
+                    minChars: 1,
+                    showAllOnFocus: true,
+                    onSelect: function(station) {
+                        console.log('Station selected:', station);
+                        handleSearchChange();
+                    }
+                });
+
+                lineTypeahead = new MetroMatchTypeahead({
+                    containerId: 'line-typeahead',
+                    compatibilityId: 'line-search',
+                    placeholder: 'Click to see all lines or type to search...',
+                    label: 'Metro Line',
+                    data: lineData,
+                    minChars: 1,
+                    showAllOnFocus: true,
+                    onSelect: function(line) {
+                        console.log('Line selected:', line);
+                        handleSearchChange();
+                    }
+                });
+
+                document.getElementById('clearButton').addEventListener('click', handleClearSearch);
+
+                initializeSearchInputs();
+
+                window.addEventListener('storage', function(event) {
+                    if (event.key === 'stationQuery' || event.key === 'lineQuery') {
+                        initializeSearchInputs();
+                        window.dispatchEvent(new Event('searchUpdated'));
+                    }
+                });
+
+                var modal = document.getElementById('metromatch-modal');
+                var skipBtn = document.getElementById('skip-button');
+                var form = document.getElementById('metromatch-form');
+
+                if (!localStorage.getItem('metromatchDismissed')) {
+                    modal.style.display = 'flex';
                 }
-            });
 
-            // Initialize Line TypeAhead
-            lineTypeahead = new MetroMatchTypeahead({
-                containerId: 'line-typeahead',
-                compatibilityId: 'line-search',
-                placeholder: 'Click to see all lines or type to search...',
-                label: 'Metro Line',
-                data: lineData,
-                minChars: 1,
-                showAllOnFocus: true,
-                onSelect: function(line) {
-                    console.log('Line selected:', line);
-                    handleSearchChange();
-                }
-            });
-
-            // Set up clear button
-            document.getElementById('clearButton').addEventListener('click', handleClearSearch);
-
-            // Initialize with saved values
-            initializeSearchInputs();
-
-            // Handle storage events for cross-tab synchronization
-            window.addEventListener('storage', (event) => {
-                if (event.key === 'stationQuery' || event.key === 'lineQuery') {
-                    initializeSearchInputs();
-                    window.dispatchEvent(new Event('searchUpdated'));
-                }
-            });
-
-            // MetroMatch Modal Logic (show once per user)
-            const modal = document.getElementById('metromatch-modal');
-            const skipBtn = document.getElementById('skip-button');
-            const form = document.getElementById('metromatch-form');
-
-            if (!localStorage.getItem('metromatchDismissed')) {
-                modal.style.display = 'flex';
-            }
-
-            skipBtn.addEventListener('click', () => {
-                modal.style.display = 'none';
-                localStorage.setItem('metromatchDismissed', 'true');
-            });
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                const formData = new FormData(form);
-
-                fetch("/submit_feedback", {
-                    method: "POST",
-                    body: formData
-                }).then(() => {
+                skipBtn.addEventListener('click', function() {
+                    modal.style.display = 'none';
                     localStorage.setItem('metromatchDismissed', 'true');
-                    form.innerHTML = `<p style="margin-top: 20px; font-size: 1.1em; color: green;">
-                        Thanks for your input! We'll be in touch to learn more about your experience with our platform.
-                    </p>`;
-                    setTimeout(() => {
-                        modal.style.display = 'none';
-                    }, 2000);
-                }).catch((err) => {
-                    console.error("Submission failed:", err);
-                    form.innerHTML = `<p style="margin-top: 20px; font-size: 1.1em; color: red;">
-                        Something went wrong. Please refresh the page and try again.
-                    </p>`;
+                });
+
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    var formData = new FormData(form);
+
+                    fetch("/submit_feedback", {
+                        method: "POST",
+                        body: formData
+                    }).then(function() {
+                        localStorage.setItem('metromatchDismissed', 'true');
+                        form.innerHTML = '<p style="margin-top: 20px; font-size: 1.1em; color: green;">' +
+                            'Thanks for your input! We will be in touch to learn more about your experience with our platform.' +
+                            '</p>';
+                        setTimeout(function() {
+                            modal.style.display = 'none';
+                        }, 2000);
+                    }).catch(function(err) {
+                        console.error("Submission failed:", err);
+                        form.innerHTML = '<p style="margin-top: 20px; font-size: 1.1em; color: red;">' +
+                            'Something went wrong. Please refresh the page and try again.' +
+                            '</p>';
+                    });
                 });
             });
         });
