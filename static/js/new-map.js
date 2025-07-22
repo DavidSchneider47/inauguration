@@ -12,7 +12,7 @@ const map = new mapboxgl.Map({
     attributionControl: false
     })
     .addControl(new mapboxgl.AttributionControl({
-        customAttribution: '© <a href="https://www.stamen.com">Stamen Design | </a>'
+        customAttribution: '© <a href="https://www.stamen.com">Stamen Design </a>'
     }));
 
 map.on('idle', () => {
