@@ -8,8 +8,12 @@ const map = new mapboxgl.Map({
     container: 'map-inner', // container ID
     style: 'mapbox://styles/stamen/cmd7pl9cl00yf01qncnjggdld/draft', // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
     center: [-77.0219, 38.8989], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-    zoom: 14 // starting zoom
-    });
+    zoom: 14, // starting zoom
+    attributionControl: false
+    })
+    .addControl(new mapboxgl.AttributionControl({
+        customAttribution: '© <a href="https://www.stamen.com">Stamen Design | </a>'
+    }));
 
 map.on('idle', () => {
 
