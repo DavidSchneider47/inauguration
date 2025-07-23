@@ -311,16 +311,232 @@ function filterAndDisplayMarkers() {
     }));
 }
 
-// Placeholder function for filtering transit routes  
 function filterTransitRoutes(lineQuery) {
     console.log('filterTransitRoutes called with:', lineQuery);
-    // This should eventually filter Mapbox transit route layers
-    // For now, just dispatch an event
-    window.dispatchEvent(new CustomEvent('filterTransitRoutes', {
-        detail: { lineQuery: lineQuery }
-    }));
+    
+    // Wait for map to be loaded
+    if (!map.loaded()) {
+        map.on('load', () => filterTransitRoutes(lineQuery));
+        return;
+    }
+    
+    // Define which layers belong to each line based on your actual style.json
+    const lineLayerMap = {
+        'Red': ['composite', 'routes-casing'],
+        'Silver': ['composite', 'routes-casing'], 
+        'Yellow': ['composite', 'routes-casing'],
+        'Blue': ['routes-blue', 'routes-blue-casing'],
+        'Green': ['routes-blue', 'routes-blue-casing'],
+        'Orange': ['routes-orange', 'routes-orange-casing'],
+        'MARC': ['routes-rail'],
+        'VRE': ['routes-rail']
+    };
+    
+    // All metro/rail layers
+    const allTransitLayers = [
+        'routes-rail',
+        'routes-casing',
+        'routes-blue-casing',
+        'routes-orange-casing', 
+        'routes-orange',
+        'routes-blue',
+        'composite'
+    ];
+    
+    // If no line selected or "All Lines" selected, show all metro lines
+    if (!lineQuery || lineQuery === '' || lineQuery === 'All Lines') {
+        console.log('Showing all metro lines');
+        
+        // Show all layers and restore their original filters from the style
+        allTransitLayers.forEach(layerId => {
+            if (map.getLayer(layerId)) {
+                map.setLayoutProperty(layerId, 'visibility', 'visible');
+                
+                // Restore original filters from your style.json
+                try {
+                    if (layerId === 'routes-rail') {
+                        // Original filter: exclude the 6 main metro lines
+                        const originalFilter = [
+                            "match",
+                            ["get", "route_name"],
+                            ["Blue", "Green", "Orange", "Yellow", "Silver", "Red"],
+                            false,
+                            true
+                        ];
+                        map.setFilter(layerId, originalFilter);
+                    } else if (layerId === 'routes-casing') {
+                        // Original filter: Red, Silver, Yellow only
+                        const originalFilter = [
+                            "match",
+                            ["get", "route_name"],
+                            ["Red", "Silver", "Yellow"],
+                            true,
+                            false
+                        ];
+                        map.setFilter(layerId, originalFilter);
+                    } else if (layerId === 'routes-blue-casing' || layerId === 'routes-blue') {
+                        // Original filter: Blue, Green only
+                        const originalFilter = [
+                            "match",
+                            ["get", "route_name"],
+                            ["Blue", "Green"],
+                            true,
+                            false
+                        ];
+                        map.setFilter(layerId, originalFilter);
+                    } else if (layerId === 'routes-orange-casing' || layerId === 'routes-orange') {
+                        // Original filter: Orange only
+                        const originalFilter = [
+                            "match",
+                            ["get", "route_name"],
+                            ["Orange"],
+                            true,
+                            false
+                        ];
+                        map.setFilter(layerId, originalFilter);
+                    } else if (layerId === 'composite') {
+                        // Original filter: Yellow, Silver, Red only
+                        const originalFilter = [
+                            "match",
+                            ["get", "route_name"],
+                            ["Yellow", "Silver", "Red"],
+                            true,
+                            false
+                        ];
+                        map.setFilter(layerId, originalFilter);
+                    }
+                    console.log(`✓ Restored original filter for ${layerId}`);
+                } catch (error) {
+                    console.warn(`Could not restore filter for ${layerId}:`, error);
+                }
+            }
+        });
+        
+        // FIXED: Restore original station filter to prevent duplication
+        if (map.getLayer('stations')) {
+            try {
+                // Instead of clearing the filter completely, restore a sensible default
+                // This filter should only show stations that have actual station data
+                const defaultStationFilter = [
+                    "all",
+                    ["has", "station_name"],           // Must have a station name
+                    ["!=", ["get", "station_name"], ""], // Station name can't be empty
+                    ["has", "station_line"]            // Must have a line designation
+                ];
+                
+                map.setFilter('stations', defaultStationFilter);
+                map.setLayoutProperty('stations', 'visibility', 'visible');
+                console.log('✓ Applied default station filter to prevent duplication');
+            } catch (error) {
+                console.warn('Could not apply default station filter:', error);
+                // If the default filter fails, try removing the filter but this might cause duplication
+                map.setFilter('stations', null);
+                map.setLayoutProperty('stations', 'visibility', 'visible');
+            }
+        }
+        return;
+    }
+    
+    console.log('Filtering for line:', lineQuery);
+    
+    // Get the layers for the selected line
+    const selectedLineLayers = lineLayerMap[lineQuery] || [];
+    
+    if (selectedLineLayers.length === 0) {
+        console.warn(`No layers defined for line: ${lineQuery}`);
+        return;
+    }
+    
+    // MARC/VRE DEBUG: Add extra logging for these lines
+    if (lineQuery === 'MARC' || lineQuery === 'VRE') {
+        console.log(`🚂 Debugging ${lineQuery} line:`);
+        console.log('Selected layers:', selectedLineLayers);
+        
+        // Check if routes-rail layer exists and has data
+        if (map.getLayer('routes-rail')) {
+            const features = map.querySourceFeatures('composite', {
+                sourceLayer: 'routes-d6fbbz'
+            });
+            console.log('Total route features found:', features.length);
+            
+            const marcVreFeatures = features.filter(f => 
+                f.properties.route_name === 'MARC' || f.properties.route_name === 'VRE'
+            );
+            console.log('MARC/VRE features found:', marcVreFeatures.length);
+            
+            if (marcVreFeatures.length > 0) {
+                console.log('Sample MARC/VRE feature:', marcVreFeatures[0].properties);
+            }
+        }
+    }
+    
+    // Show/hide layers based on selection
+    allTransitLayers.forEach(layerId => {
+        if (map.getLayer(layerId)) {
+            
+            // Show selected line layers, hide others
+            if (selectedLineLayers.includes(layerId)) {
+                map.setLayoutProperty(layerId, 'visibility', 'visible');
+                console.log(`✓ Showing ${layerId} for ${lineQuery}`);
+                
+                // Apply data filter to show only the selected line
+                try {
+                    const filter = ['==', ['get', 'route_name'], lineQuery];
+                    map.setFilter(layerId, filter);
+                    console.log(`✓ Applied filter to ${layerId}:`, filter);
+                } catch (error) {
+                    console.warn(`Could not filter ${layerId}:`, error);
+                }
+                
+            } else {
+                map.setLayoutProperty(layerId, 'visibility', 'none');
+                console.log(`✓ Hiding ${layerId}`);
+            }
+        }
+    });
+    
+    // Filter stations to show those that serve the selected line (including multi-line stations)
+    if (map.getLayer('stations')) {
+        console.log('Filtering stations for line:', lineQuery);
+        try {
+            // Use "in" operator to check if the line appears anywhere in the station_line field
+            const stationFilter = [
+                "all",
+                ["has", "station_name"],                                    // Must have station name
+                ["!=", ["get", "station_name"], ""],                       // Station name can't be empty
+                ["has", "station_line"],                                   // Must have line designation
+                [
+                    "any",
+                    ["in", lineQuery, ["get", "station_line"]],           // Check if line name is in the field
+                    ["==", ["get", "station_line"], lineQuery],           // Exact match for single-line stations
+                    ["in", lineQuery.toLowerCase(), ["downcase", ["get", "station_line"]]] // Case-insensitive check
+                ]
+            ];
+            
+            map.setFilter('stations', stationFilter);
+            map.setLayoutProperty('stations', 'visibility', 'visible');
+            console.log('✓ Applied station filter for', lineQuery);
+            
+        } catch (error) {
+            console.warn('✗ Station filtering failed:', error);
+            
+            // Fallback: try simple exact match with basic validation
+            try {
+                const simpleFilter = [
+                    "all",
+                    ["has", "station_name"],
+                    ["==", ["get", "station_line"], lineQuery]
+                ];
+                map.setFilter('stations', simpleFilter);
+                map.setLayoutProperty('stations', 'visibility', 'visible');
+                console.log('✓ Applied simple station filter for', lineQuery);
+            } catch (fallbackError) {
+                console.warn('✗ All station filtering failed:', fallbackError);
+            }
+        }
+    }
 }
-
+ 
 // Keep only these data variables for search functionality
 let stationsData = [];      // Still needed for search
 let museumsData = [];       // Keep if you want museums
@@ -736,4 +952,49 @@ document.getElementById('station-search').addEventListener('input', () => {
 // Event Listener to Handle Station Selection from the List
 document.getElementById('station-search').addEventListener('change', () => {
     handleStationSelection();
+});
+
+// ================================
+// LINE DROPDOWN EVENT LISTENERS (ADD THIS TO THE END)
+// ================================
+
+// Function to handle line selection from dropdown
+function handleLineSelection() {
+    const selectedLine = document.getElementById('line-search').value;
+    console.log('Line selected:', selectedLine);
+    
+    // Save the selection to localStorage (so it persists on refresh)
+    localStorage.setItem('lineQuery', selectedLine);
+    
+    // Apply the filtering immediately
+    filterTransitRoutes(selectedLine);
+}
+
+// Event Listener for Line Selection
+document.addEventListener('DOMContentLoaded', () => {
+    const lineDropdown = document.getElementById('line-search');
+    
+    if (lineDropdown) {
+        // Listen for changes to the line dropdown
+        lineDropdown.addEventListener('change', handleLineSelection);
+        
+        // Also listen for input events (in case it's a text input with datalist)
+        lineDropdown.addEventListener('input', handleLineSelection);
+        
+        console.log('✅ Line dropdown event listeners added');
+    } else {
+        console.warn('⚠️ Line dropdown element not found. Make sure element has id="line-search"');
+    }
+});
+
+// Alternative approach if DOMContentLoaded already fired
+window.addEventListener('load', () => {
+    const lineDropdown = document.getElementById('line-search');
+    
+    if (lineDropdown && !lineDropdown.hasAttribute('data-listener-added')) {
+        lineDropdown.addEventListener('change', handleLineSelection);
+        lineDropdown.addEventListener('input', handleLineSelection);
+        lineDropdown.setAttribute('data-listener-added', 'true');
+        console.log('✅ Line dropdown event listeners added (on window load)');
+    }
 });
