@@ -1,49 +1,76 @@
 // Debugging message to ensure map.js is loaded
 console.log("map.js loaded successfully");
 
-// Ensure web pages open in seperate screen from app
-
+// iOS-specific external link handler with multiple fallback methods
 function openExternalLink(url) {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isSafari = /Safari/.test(navigator.userAgent) && !/CriOS|FxiOS|OPiOS|mercury/.test(navigator.userAgent);
+    
+    console.log('Opening external link:', url);
+    console.log('Is iOS:', isIOS);
+    console.log('Is Safari:', isSafari);
+    
+    if (isIOS && !isSafari) {
+        // We're in an iOS WebView (like your app)
+        tryIOSDeepLinks(url);
+    } else {
+        // Regular browser behavior
+        tryRegularOpen(url);
+    }
+}
+window.openExternalLink = openExternalLink;
+
+function tryIOSDeepLinks(url) {
+    console.log('Attempting iOS deep link methods...');
+    
+    // Method 1: Try Safari deep link
+    setTimeout(() => {
+        console.log('Trying Safari deep link...');
+        window.location.href = `x-web-search://?${encodeURIComponent(url)}`;
+    }, 100);
+    
+    // Method 2: Try direct Safari URL scheme after short delay
+    setTimeout(() => {
+        console.log('Trying direct Safari scheme...');
+        window.location.href = `safari-${url}`;
+    }, 500);
+    
+    // Method 3: Try the universal HTTP scheme
+    setTimeout(() => {
+        console.log('Trying HTTP scheme...');
+        window.location.href = url;
+    }, 1000);
+    
+    // Method 4: Fallback to copy after all attempts
+    setTimeout(() => {
+        console.log('All deep link methods attempted, falling back to copy...');
+        copyToClipboard(url);
+        showIOSCopyMessage(url);
+    }, 2000);
+}
+
+function tryRegularOpen(url) {
     try {
-        // Method 1: Try window.open with parameters that work better in WebViews
-        const newWindow = window.open(url, '_blank', 'location=yes,scrollbars=yes,status=yes,resizable=yes');
-        
-        // Method 2: If window opened, try to focus it
-        if (newWindow && !newWindow.closed) {
-            newWindow.focus();
-            return; // Success! Exit the function
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+        if (!newWindow || newWindow.closed) {
+            copyToClipboard(url);
+            alert('Pop-ups blocked. Link copied to clipboard!');
         }
-        
-        // Method 3: Try window.open with different parameters for Thunkable
-        const thunkableWindow = window.open(url, '_system');
-        if (thunkableWindow && !thunkableWindow.closed) {
-            thunkableWindow.focus();
-            return; // Success! Exit the function
-        }
-        
-        // Method 4: Try a simple window.open without parameters
-        const simpleWindow = window.open(url);
-        if (simpleWindow && !simpleWindow.closed) {
-            simpleWindow.focus();
-            return; // Success! Exit the function
-        }
-        
-        // If we get here, window.open is completely blocked
-        console.log('All window.open methods failed - WebView blocks external links');
-        alert('To visit this website, please copy this link and open it in your browser: ' + url);
-        
     } catch (error) {
-        console.log('Error opening external link:', error);
-        alert('To visit this website, please copy this link and open it in your browser: ' + url);
+        copyToClipboard(url);
+        alert('Unable to open link. Copied to clipboard!');
     }
 }
 
-// ALTERNATIVE APPROACH: Add a "Copy Link" option
+// Enhanced popup creation with iOS-optimized messaging
 function createWebViewFriendlyPopup(name, website) {
     if (website) {
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        const buttonText = isIOS ? 'Open in Safari' : 'Visit Website';
+        
         return `<b>${name}</b><br>
                 <button onclick="openExternalLink('${website}')" style="background: #007cba; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 14px; margin: 2px;">
-                    Visit Website
+                    ${buttonText}
                 </button><br>
                 <button onclick="copyToClipboard('${website}')" style="background: #6c757d; color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; margin: 2px;">
                     Copy Link
@@ -53,78 +80,119 @@ function createWebViewFriendlyPopup(name, website) {
     }
 }
 
-// Function to copy link to clipboard as backup
+// iOS-specific copy success message
+function showIOSCopyMessage(url) {
+    const messageDiv = document.createElement('div');
+    messageDiv.innerHTML = `
+        <div style="text-align: center;">
+            <div style="font-size: 18px; margin-bottom: 10px;">📋</div>
+            <div style="font-weight: bold; margin-bottom: 5px;">Link Copied!</div>
+            <div style="font-size: 12px; color: #666;">Open Safari and paste to visit:</div>
+            <div style="font-size: 11px; color: #007cba; word-break: break-all; margin-top: 5px;">${url}</div>
+        </div>
+    `;
+    
+    messageDiv.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        color: black;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 10000;
+        font-size: 14px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        border: 1px solid #ddd;
+        max-width: 300px;
+        text-align: center;
+    `;
+    
+    document.body.appendChild(messageDiv);
+    
+    // Remove after 4 seconds
+    setTimeout(() => {
+        if (document.body.contains(messageDiv)) {
+            document.body.removeChild(messageDiv);
+        }
+    }, 4000);
+    
+    // Also allow tap to dismiss
+    messageDiv.addEventListener('click', () => {
+        if (document.body.contains(messageDiv)) {
+            document.body.removeChild(messageDiv);
+        }
+    });
+}
+
+// Enhanced clipboard function with better error handling
 function copyToClipboard(text) {
     try {
-        navigator.clipboard.writeText(text).then(() => {
-            alert('Link copied! You can paste it in your browser.');
-        }).catch(() => {
-            // Fallback for older browsers
-            const textArea = document.createElement('textarea');
-            textArea.value = text;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            alert('Link copied! You can paste it in your browser.');
-        });
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(() => {
+                console.log('Clipboard write successful');
+            }).catch((err) => {
+                console.log('Clipboard write failed, trying fallback...', err);
+                fallbackCopy(text);
+            });
+        } else {
+            fallbackCopy(text);
+        }
     } catch (error) {
-        console.log('Copy failed:', error);
+        console.log('Clipboard error:', error);
+        fallbackCopy(text);
+    }
+}
+window.copyToClipboard = copyToClipboard;
+
+function fallbackCopy(text) {
+    try {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        const successful = document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        if (successful) {
+            console.log('Fallback copy successful');
+        } else {
+            console.log('Fallback copy failed');
+            // Last resort - show the URL in a prompt
+            prompt('Copy this link:', text);
+        }
+    } catch (err) {
+        console.log('Fallback copy error:', err);
         prompt('Copy this link:', text);
     }
 }
 
-// EXAMPLE: Updated Hotels section with better popup
-if (typeof lat === 'number' && typeof lon === 'number') {
-    L.marker([lat, lon], {
-        icon: createFontAwesomeIcon('fas fa-bed', 'blue')
-    })
-    .addTo(hotelLayer)
-    .bindPopup(createWebViewFriendlyPopup(name, website));
-}
-
-
-// Initialize the map, centered on Washington Monument with zoom level 14 to show National Mall
-const map = L.map('map').setView([38.889484, -77.035278], 14);
-
-// 2. CartoDB Voyager (Clean with more detail than Positron)
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 20
-}).addTo(map);
-
-// Add fullscreen control (Optional: Ensure you have Leaflet Fullscreen plugin included if you intend to use this)
-if (typeof L.control.fullscreen === 'function') {
-    L.control.fullscreen().addTo(map);
-    console.log("Fullscreen control added.");
-} else {
-    console.warn("Fullscreen control not available. Ensure the Leaflet Fullscreen plugin is included.");
-}
-
-// Add this batch clearing function at the top with your other function definitions
-function batchClearLayers() {
-    const layersToClean = [
-        markerGroup,
-        hotelLayer,
-        coffeeLayer,
-        barsLayer,
-        pharmacyLayer,
-        restaurantsLayer,
-        supermarketsLayer, // Added supermarkets layer to batch clearing
-        museumsLayer // Added museums layer to batch clearing
-    ];
-    
-    requestAnimationFrame(() => {
-        layersToClean.forEach(layer => layer.clearLayers());
-    });
-}
 
 // ================================
-// Geolocation Feature Setup
+// MAPBOX GL JS MAP INITIALIZATION (UPDATED)
 // ================================
 
-// Function to initialize geolocation tracking with explicit Android handling
+// Initialize the Mapbox GL JS map
+mapboxgl.accessToken = 'pk.eyJ1Ijoic3RhbWVuIiwiYSI6IlpkZEtuS1EifQ.jiH_c9ShtBwtqH9RdG40mw';
+
+const map = new mapboxgl.Map({
+    container: 'map-inner', // container ID
+    style: 'mapbox://styles/stamen/cmd7pl9cl00yf01qncnjggdld/draft', // Your consultant's style
+    center: [-77.0219, 38.8989], // starting position [lng, lat]
+    zoom: 14 // starting zoom
+});
+
+// ================================
+// Geolocation Feature Setup (UPDATED FOR MAPBOX GL JS)
+// ================================
+
+// Function to initialize geolocation tracking with Mapbox GL JS
 function trackUserLocation(map) {
     // First, check if we're on Android by checking the user agent
     const isAndroid = /Android/i.test(navigator.userAgent);
@@ -168,18 +236,24 @@ function trackUserLocation(map) {
         navigator.geolocation.watchPosition(
             (position) => {
                 console.log("Position retrieved:", position);
-                const userLat = position.coords.latitude;
                 const userLng = position.coords.longitude;
+                const userLat = position.coords.latitude;
 
-                // Add or update the user's location marker
+                // Add or update the user's location marker using Mapbox GL JS
                 if (!window.userMarker) {
                     console.log("Creating a new location marker.");
-                    window.userMarker = L.marker([userLat, userLng], {
-                        icon: createUserLocationIcon()
-                    }).addTo(map);
+                    // Create a Mapbox GL JS marker
+                    const el = document.createElement('div');
+                    el.innerHTML = '<i class="fas fa-map-marker-alt" style="font-size:24px; color:blue;"></i>';
+                    el.style.width = '24px';
+                    el.style.height = '24px';
+                    
+                    window.userMarker = new mapboxgl.Marker(el)
+                        .setLngLat([userLng, userLat])
+                        .addTo(map);
                 } else {
                     console.log("Updating location marker position.");
-                    window.userMarker.setLatLng([userLat, userLng]);
+                    window.userMarker.setLngLat([userLng, userLat]);
                 }
             },
             (error) => {
@@ -205,18 +279,12 @@ function trackUserLocation(map) {
     }
 }
 
-// Custom icon for user location
-function createUserLocationIcon() {
-    return L.divIcon({
-        html: `<i class="fas fa-map-marker-alt" style="font-size:24px; color:blue;"></i>`,
-        className: 'user-location-icon',
-        iconSize: [24, 24],
-        iconAnchor: [12, 24], // Anchor to the bottom center of the icon
-    });
-}
+// Call the geolocation function to start tracking after map loads
+map.on('load', () => {
+    trackUserLocation(map);
+    initializeEnhancedPOIClicks(); // Add this line
+});
 
-// Call the geolocation function to start tracking
-trackUserLocation(map);
 
 // Function to adjust icon sizes based on window width (REVISED FOR SMALLER ICONS)
 // ================================
@@ -229,260 +297,36 @@ function getIconSize() {
     }
     return 22; // Reduced from 30 for desktop
 }
-
-// Function to create a FontAwesome icon marker (REVISED FOR SMALLER ICONS)
-function createFontAwesomeIcon(iconClass, color = 'green') {
-    const iconSize = getIconSize();
-    return L.divIcon({
-        html: `<i class="${iconClass}" style="font-size:${iconSize}px; color:${color};"></i>`,
-        className: 'fa-icon',
-        iconSize: [iconSize, iconSize],
-        iconAnchor: [iconSize / 2, iconSize / 2]
-    });
-}
-
-// Function to create a coffee mug icon (REVISED FOR SMALLER ICONS)
-function createCoffeeIcon() {
-    const iconSize = getIconSize();
-    return L.divIcon({
-        html: `<i class="fas fa-coffee" style="font-size:${iconSize}px; color:brown;"></i>`,
-        className: 'fa-icon',
-        iconSize: [iconSize, iconSize],
-        iconAnchor: [iconSize / 2, iconSize / 2]
-    });
-}
-
-// Function to create a beer/bar icon (REVISED FOR SMALLER ICONS)
-function createBarIcon() {
-    const iconSize = getIconSize();
-    return L.divIcon({
-        html: `<i class="fas fa-beer" style="font-size:${iconSize}px; color:purple;"></i>`,
-        className: 'fa-icon',
-        iconSize: [iconSize, iconSize],
-        iconAnchor: [iconSize / 2, iconSize / 2]
-    });
-}
-
-// Function to create a pharmacy icon (REVISED FOR SMALLER ICONS)
-function createPharmacyIcon() {
-    const iconSize = getIconSize();
-    return L.divIcon({
-        html: `<i class="fas fa-notes-medical" style="font-size:${iconSize}px; color:red;"></i>`,
-        className: 'fa-icon',
-        iconSize: [iconSize, iconSize],
-        iconAnchor: [iconSize / 2, iconSize / 2]
-    });
-}
-
-// Function to create a restaurant icon (REVISED FOR SMALLER ICONS)
-function createRestaurantIcon() {
-    const iconSize = getIconSize();
-    return L.divIcon({
-        html: `<i class="fas fa-utensils" style="font-size:${iconSize}px; color:orange;"></i>`,
-        className: 'fa-icon',
-        iconSize: [iconSize, iconSize],
-        iconAnchor: [iconSize / 2, iconSize / 2]
-    });
-}
-
-// Function to create a supermarket icon (NEW)
-function createSupermarketIcon() {
-    const iconSize = getIconSize();
-    return L.divIcon({
-        html: `<i class="fas fa-shopping-cart" style="font-size:${iconSize}px; color:limegreen;"></i>`,
-        className: 'fa-icon',
-        iconSize: [iconSize, iconSize],
-        iconAnchor: [iconSize / 2, iconSize / 2]
-    });
-}
-
-// Function to create a museum icon (NEW)
-function createMuseumIcon() {
-    const iconSize = getIconSize();
-    return L.divIcon({
-        html: `<i class="fas fa-university" style="font-size:${iconSize}px; color:darkgreen;"></i>`,
-        className: 'fa-icon',
-        iconSize: [iconSize, iconSize],
-        iconAnchor: [iconSize / 2, iconSize / 2]
-    });
-}
-
-// Create Layer Groups for stations and amenities
-const markerGroup = L.layerGroup().addTo(map); // Layer for station markers
-const hotelLayer = L.layerGroup(); // Changed: NOT added to map by default
-const coffeeLayer = L.layerGroup(); // Changed: NOT added to map by default
-const barsLayer = L.layerGroup(); // Changed: NOT added to map by default
-const pharmacyLayer = L.layerGroup(); // Changed: NOT added to map by default
-const restaurantsLayer = L.layerGroup(); // Changed: NOT added to map by default
-const supermarketsLayer = L.layerGroup(); // Changed: NOT added to map by default
-const transitLayer = L.layerGroup().addTo(map); // Transit routes - always visible
-const museumsLayer = L.layerGroup().addTo(map); // Museums - always visible
-
-// Base layers (we have only one)
-const baseLayers = {};
-
-// Overlay layers - REMOVED "Transit Routes" from control since it's always visible
-const overlayLayers = {
-    "Hotels": hotelLayer,
-    "Coffee Shops": coffeeLayer,
-    "Bars": barsLayer,
-    "Pharmacies": pharmacyLayer,
-    "Restaurants": restaurantsLayer,
-    "Supermarkets": supermarketsLayer
-};
-
-// Add Layer Control to the map (positioned in top right)
-const layerControl = L.control.layers(baseLayers, overlayLayers, { 
-    collapsed: false,
-    position: 'topright'
-}).addTo(map);
-
-// Get a reference to the layer control element
-let layerControlElement;
-
-// Function to find the layer control with multiple attempts
-function findLayerControl() {
-    layerControlElement = document.querySelector('.leaflet-control-layers');
-    console.log("Searching for layer control...", layerControlElement);
-    
-    if (layerControlElement) {
-        console.log("Layer control found!", layerControlElement);
-        createToggleButton();
-        updateToggleButtonVisibility();
-        return true;
-    }
-    return false;
-}
-
-// Try multiple times to find the layer control
-let attempts = 0;
-const maxAttempts = 10;
-
-function attemptToFindLayerControl() {
-    attempts++;
-    console.log(`Attempt ${attempts} to find layer control`);
-    
-    if (findLayerControl()) {
-        console.log("Layer control setup complete!");
-        return;
-    }
-    
-    if (attempts < maxAttempts) {
-        setTimeout(attemptToFindLayerControl, 500);
-    } else {
-        console.error("Failed to find layer control after", maxAttempts, "attempts");
-    }
-}
-
-// Start looking for the layer control
-setTimeout(attemptToFindLayerControl, 100);
-
-// Function to create and manage the toggle button
-function createToggleButton() {
-    console.log("Creating toggle button...");
-    
-    // Remove existing toggle button if it exists
-    const existingButton = document.getElementById('toggleLayerControl');
-    if (existingButton) {
-        existingButton.remove();
-        console.log("Removed existing toggle button");
-    }
-    
-    if (!layerControlElement) {
-        console.error("Cannot create toggle button - layer control not found");
-        return;
-    }
-    
-    // Create toggle button
-    const toggleButton = document.createElement('button');
-    toggleButton.id = 'toggleLayerControl';
-    toggleButton.innerHTML = '☰ Layers';
-    
-    // Add styling
-    toggleButton.style.cssText = `
-        position: fixed;
-        top: 60px;
-        right: 10px;
-        z-index: 1001;
-        background: white;
-        border: 2px solid rgba(0,0,0,0.2);
-        padding: 8px 12px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 14px;
-        box-shadow: 0 1px 5px rgba(0,0,0,0.2);
-        display: none;
-    `;
-    
-    // Add click event listener
-    toggleButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        console.log("Toggle button clicked!");
-        
-        if (layerControlElement) {
-            const isCurrentlyVisible = window.getComputedStyle(layerControlElement).display !== 'none';
-            console.log("Layer control currently visible:", isCurrentlyVisible);
-            
-            if (isCurrentlyVisible) {
-                layerControlElement.style.display = 'none';
-                toggleButton.innerHTML = '☰ Layers';
-                console.log("Hid layer control");
-            } else {
-                layerControlElement.style.display = 'block';
-                toggleButton.innerHTML = '✕ Close';
-                console.log("Showed layer control");
-            }
-        }
-    });
-    
-    // Add to document body
-    document.body.appendChild(toggleButton);
-    console.log("Toggle button added to document body");
-}
-
-// Add responsive behavior - show/hide toggle button and layer control based on screen size
-function updateToggleButtonVisibility() {
-    const toggleButton = document.getElementById('toggleLayerControl');
-    
-    console.log("Updating visibility for screen width:", window.innerWidth);
-    console.log("Toggle button exists:", !!toggleButton);
-    console.log("Layer control exists:", !!layerControlElement);
-    
-    if (toggleButton && layerControlElement) {
-        if (window.innerWidth <= 768) { // Mobile breakpoint
-            console.log("Setting mobile view");
-            toggleButton.style.display = 'block';
-            layerControlElement.style.display = 'none';
-            toggleButton.innerHTML = '☰ Layers';
-        } else {
-            console.log("Setting desktop view");
-            toggleButton.style.display = 'none';
-            layerControlElement.style.display = 'block';
-        }
-    }
-}
-
-// Call on page load and when window resizes
-window.addEventListener('load', updateToggleButtonVisibility);
-window.addEventListener('resize', updateToggleButtonVisibility);
-
 // ================================
-// Initialize Data Structures
+// Missing Functions - UPDATED FOR MAPBOX GL JS
 // ================================
 
-let stationsData = [];      // To store all stations
-let hotelsData = [];        // To store all hotels
-let coffeeData = [];        // To store all coffee shops
-let barsData = [];          // To store all bars
-let pharmaciesData = [];    // To store all pharmacies
-let restaurantsData = [];   // To store all restaurants
-let supermarketsData = [];  // To store all supermarkets (NEW)
-let museumsData = [];       // To store all museums
+// Placeholder function for filtering and displaying markers
+function filterAndDisplayMarkers() {
+    console.log('filterAndDisplayMarkers called - integrate with Mapbox layers');
+    // This should eventually interact with your consultant's Mapbox layers
+    // For now, just dispatch an event that Mapbox code might listen for
+    window.dispatchEvent(new CustomEvent('filterMarkers', {
+        detail: getSearchParams()
+    }));
+}
+
+// Placeholder function for filtering transit routes  
+function filterTransitRoutes(lineQuery) {
+    console.log('filterTransitRoutes called with:', lineQuery);
+    // This should eventually filter Mapbox transit route layers
+    // For now, just dispatch an event
+    window.dispatchEvent(new CustomEvent('filterTransitRoutes', {
+        detail: { lineQuery: lineQuery }
+    }));
+}
+
+// Keep only these data variables for search functionality
+let stationsData = [];      // Still needed for search
+let museumsData = [];       // Keep if you want museums
 
 // ================================
-// Fetch and store stations
+// Fetch and store stations (NEEDED FOR SEARCH)
 // ================================
 fetch('/api/stations')
     .then(response => {
@@ -492,502 +336,248 @@ fetch('/api/stations')
         return response.json();
     })
     .then(stations => {
-        console.log("Fetched Stations:", stations); // Debugging
-        stationsData = stations; // Store stations data
-        filterAndDisplayMarkers(); // Initial display based on any existing search
+        console.log("Fetched Stations:", stations);
+        stationsData = stations; // Store stations data for search
+        // Don't call filterAndDisplayMarkers() - let Mapbox handle display
     })
     .catch(error => console.error("Error fetching stations:", error));
 
 // ================================
-// Fetch and store hotels
+// MAPBOX LAYER TOGGLE CONTROLS - WORKING VERSION
 // ================================
-fetch('/api/hotels')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Network response was not ok (${response.statusText})`);
-        }
-        return response.json();
-    })
-    .then(hotels => {
-        console.log("Fetched Hotels:", hotels); // Debugging
-        // Ensure we have an array, not an object with a message
-        hotelsData = Array.isArray(hotels) ? hotels : [];
-        // REMOVED: filterAndDisplayAmenities() call - amenities start hidden
-    })
-    .catch(error => {
-        console.error("Error fetching hotels:", error);
-        hotelsData = []; // Ensure it's an empty array on error
-    });
 
-// ================================
-// Fetch and store coffee shops
-// ================================
-fetch('/api/coffee')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Network response was not ok (${response.statusText})`);
-        }
-        return response.json();
-    })
-    .then(coffeeShops => {
-        console.log("Fetched Coffee Shops:", coffeeShops); // Debugging
-        // Ensure we have an array, not an object with a message
-        coffeeData = Array.isArray(coffeeShops) ? coffeeShops : [];
-        // REMOVED: filterAndDisplayAmenities() call - amenities start hidden
-    })
-    .catch(error => {
-        console.error("Error fetching coffee shops:", error);
-        coffeeData = []; // Ensure it's an empty array on error
-    });
+function initializeMapboxLayerToggles() {
+    map.on('idle', () => {
+        // Enumerate ids of the layers.
+        const toggleableLayerIds = [
+            'pharmacy', 'supermarkets', 'nightlife',
+            'coffee', 'restaurant', 'hotels'
+        ];
 
-// ================================
-// Fetch and store bars
-// ================================
-fetch('/api/bars')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Network response was not ok (${response.statusText})`);
-        }
-        return response.json();
-    })
-    .then(bars => {
-        console.log("Fetched Bars:", bars); // Debugging
-        // Ensure we have an array, not an object with a message
-        barsData = Array.isArray(bars) ? bars : [];
-        // REMOVED: filterAndDisplayAmenities() call - amenities start hidden
-    })
-    .catch(error => {
-        console.error("Error fetching bars:", error);
-        barsData = []; // Ensure it's an empty array on error
-    });
-
-// ================================
-// Fetch and store pharmacies
-// ================================
-fetch('/api/pharmacies')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Network response was not ok (${response.statusText})`);
-        }
-        return response.json();
-    })
-    .then(pharmacies => {
-        console.log("Fetched Pharmacies:", pharmacies); // Debugging
-        // Ensure we have an array, not an object with a message
-        pharmaciesData = Array.isArray(pharmacies) ? pharmacies : [];
-        // REMOVED: filterAndDisplayAmenities() call - amenities start hidden
-    })
-    .catch(error => {
-        console.error("Error fetching pharmacies:", error);
-        pharmaciesData = []; // Ensure it's an empty array on error
-    });
-
-// ================================
-// Fetch and store restaurants
-// ================================
-fetch('/api/restaurants')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Network response was not ok (${response.statusText})`);
-        }
-        return response.json();
-    })
-    .then(restaurants => {
-        console.log("Fetched Restaurants:", restaurants); // Debugging
-        // Ensure we have an array, not an object with a message
-        restaurantsData = Array.isArray(restaurants) ? restaurants : [];
-        // REMOVED: filterAndDisplayAmenities() call - amenities start hidden
-    })
-    .catch(error => {
-        console.error("Error fetching restaurants:", error);
-        restaurantsData = []; // Ensure it's an empty array on error
-    });
-
-// ================================
-// Fetch and store supermarkets (NEW)
-// ================================
-fetch('/api/supermarkets')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Network response was not ok (${response.statusText})`);
-        }
-        return response.text(); // Get as text first to handle invalid JSON
-    })
-    .then(text => {
-        // Clean up any NaN values before parsing
-        const cleanedText = text.replace(/:\s*NaN/g, ': null');
-        const supermarkets = JSON.parse(cleanedText);
-        console.log("Fetched Supermarkets:", supermarkets); // Debugging
-        // Ensure we have an array, not an object with a message
-        supermarketsData = Array.isArray(supermarkets) ? supermarkets : [];
-        // REMOVED: filterAndDisplayAmenities() call - amenities start hidden
-    })
-    .catch(error => {
-        console.error("Error fetching supermarkets:", error);
-        supermarketsData = []; // Ensure it's an empty array on error
-    });
-
-// ================================
-// Fetch and store museums (NEW)
-// ================================
-fetch('/static/data/museums.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Network response was not ok (${response.statusText})`);
-        }
-        return response.json();
-    })
-    .then(museums => {
-        console.log("Fetched Museums:", museums); // Debugging
-        museumsData = museums; // Store museums data
-        addMuseumMarkers(); // Add museums to map immediately (always visible)
-    })
-    .catch(error => console.error("Error fetching museums:", error));
-
-// ================================
-// Fetch and add transit routes GeoJSON - ALWAYS LOAD
-// ================================
-fetch('/static/data/reduced_routes_data.geojson')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Failed to fetch GeoJSON data: ${response.statusText}`);
-        }
-        return response.json();
-    })
-    .then(geojsonData => {
-        console.log("Fetched Transit Routes GeoJSON:", geojsonData); // Debugging
-        L.geoJSON(geojsonData, {
-            style: function(feature) {
-                let routeColor;
-                const routeId = feature.properties.route_id;
-
-                if (routeId === 'VRE') {
-                    routeColor = '#800080'; // Purple for VRE
-                } else if (routeId === 'MARC') {
-                    routeColor = '#8B4513'; // Brown for MARC
-                } else {
-                    routeColor = feature.properties.route_color || '#000000'; // Default to black if no route color
-                }
-
-                return {
-                    color: routeColor,
-                    weight: 4,
-                    opacity: 0.7
-                };
-            },
-            onEachFeature: function(feature, layer) {
-                if (feature.properties && feature.properties.route_short_name) {
-                    layer.bindPopup(`<strong>Route: ${feature.properties.route_short_name}</strong>`);
-                }
+        // Set up the corresponding toggle button for each layer.
+        for (const id of toggleableLayerIds) {
+            // Skip layers that already have a button set up.
+            if (document.getElementById(id)) {
+                continue;
             }
-        }).addTo(transitLayer);
-    })
-    .catch(error => console.error("Error loading transit routes GeoJSON:", error));
 
-// ================================
-// Function to add museum markers (NEW)
-// ================================
+            // Create a link.
+            const link = document.createElement('a');
+            link.id = id;
+            link.href = '#';
+            link.textContent = id;
+            link.className = 'active';
 
-function addMuseumMarkers() {
-    museumsLayer.clearLayers();
-    
-    // Process all museums at once
-    museumsData.forEach(museum => {
-        const lat = museum.latitude;
-        const lon = museum.longitude;
-        const name = museum.museum_name;
-        const website = museum.website;
-        
-        if (typeof lat === 'number' && typeof lon === 'number') {
-            const popupContent = createWebViewFriendlyPopup(name, website);
-            
-            L.marker([lat, lon], {
-                icon: createMuseumIcon()
-            })
-            .addTo(museumsLayer)
-            .bindPopup(popupContent);
-        }
-    });
-}
+            // Show or hide layer when the toggle is clicked.
+            link.onclick = function (e) {
+                const clickedLayer = this.textContent;
+                e.preventDefault();
+                e.stopPropagation();
 
-// ================================
-// Function to filter and display only the selected line - MODIFIED
-// ================================
-function filterTransitRoutes(lineQuery) {
-    // Since transit routes are always visible, we still need this function
-    // but we'll handle the filtering differently
-    const normalizedLineQuery = lineQuery.toUpperCase();
+                const visibility = map.getLayoutProperty(
+                    clickedLayer,
+                    'visibility'
+                );
 
-    // Clear the current transit routes
-    transitLayer.clearLayers();
-
-    fetch('/static/data/reduced_routes_data.geojson')
-        .then(response => response.json())
-        .then(geojsonData => {
-            const filteredData = {
-                ...geojsonData,
-                features: geojsonData.features.filter(feature => {
-                    const routeId = feature.properties.route_id;
-                    return normalizedLineQuery === '' || routeId === normalizedLineQuery; // Match selected line or show all
-                })
+                // Toggle layer visibility by changing the layout object's visibility property.
+                if (visibility === 'visible') {
+                    map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                    this.className = '';
+                } else {
+                    this.className = 'active';
+                    map.setLayoutProperty(
+                        clickedLayer,
+                        'visibility',
+                        'visible'
+                    );
+                }
             };
 
-            L.geoJSON(filteredData, {
-                style: function(feature) {
-                    let routeColor;
-                    const routeId = feature.properties.route_id;
-
-                    if (routeId === 'VRE') {
-                        routeColor = '#800080'; // Purple for VRE
-                    } else if (routeId === 'MARC') {
-                        routeColor = '#8B4513'; // Brown for MARC
-                    } else {
-                        routeColor = feature.properties.route_color || '#000000'; // Default to black
-                    }
-
-                    return {
-                        color: routeColor,
-                        weight: 4,
-                        opacity: 0.7
-                    };
-                },
-                onEachFeature: function(feature, layer) {
-                    if (feature.properties && feature.properties.route_short_name) {
-                        layer.bindPopup(`<strong>Route: ${feature.properties.route_short_name}</strong>`);
-                    }
-                }
-            }).addTo(transitLayer);
-        })
-        .catch(error => console.error("Error fetching transit routes:", error));
+            const layers = document.getElementById('map-menu');
+            if (layers) {
+                layers.appendChild(link);
+            }
+        }
+        console.log('Layer toggles initialized');
+    });
 }
 
+// Initialize the toggles
+initializeMapboxLayerToggles();
+
+// Add this section to your existing map.js file, after the map initialization
 // ================================
-// Function to add station markers
+// ENHANCED POI POPUP FUNCTIONALITY WITH WEBSITE LINKS
 // ================================
-function addStationMarkers(filteredStations) {
-    markerGroup.clearLayers();
+
+// Function to create enhanced popups with clickable POI names
+function createEnhancedPopup(layer, properties) {
+    let popupContent = '<div style="max-width: 250px;">';
     
-    // Process all stations at once instead of batching
-    filteredStations.forEach(station => {
-        const lat = station.station_lat;
-        const lon = station.station_lon;
-        const name = station.station_name;
-        
-        if (typeof lat === 'number' && typeof lon === 'number') {
-            L.circleMarker([lat, lon], {
-                color: 'gray',
-                fillColor: 'gray',
-                fillOpacity: 1.0,
-                radius: getIconSize() / 2
-            })
-            .addTo(markerGroup)
-            .bindPopup(`<b>${name}</b>`);
-        }
-    });
+    // Determine the correct field names for each POI type
+    let nameField, websiteField, distanceField;
     
-    // Only auto-fit bounds if we have a search query, otherwise preserve current view
-    if (filteredStations.length > 0) {
-        const { stationQuery, lineQuery } = getSearchParams();
-        // Only fit bounds if there's an active search
-        if (stationQuery || lineQuery) {
-            const bounds = L.latLngBounds(
-                filteredStations.map(station => [station.station_lat, station.station_lon])
-            );
-            map.fitBounds(bounds.pad(0.2), { maxZoom: 16 });
-        }
-        // If no search query, don't change the map view - stay where user is currently looking
+    if (layer === 'hotels') {
+        nameField = 'hotel_name';
+        websiteField = 'hotel_website';
+        distanceField = 'hotel_distance_miles';
+    } else if (layer === 'restaurant') {
+        nameField = 'restaurant_name';
+        websiteField = 'restaurant_website';
+        distanceField = 'restaurant_distance_miles';
+    } else if (layer === 'coffee') {
+        nameField = 'coffee_name';
+        websiteField = 'coffee_website';
+        distanceField = 'coffee_distance_miles';
+    } else if (layer === 'nightlife') {
+        nameField = 'bar_name';
+        websiteField = 'bar_website';
+        distanceField = 'bar_distance_miles';
+    } else if (layer === 'pharmacy') {
+        nameField = 'pharmacy_name';
+        websiteField = 'pharmacy_website';
+        distanceField = 'pharmacy_distance_miles';
+    } else if (layer === 'supermarkets') {
+        nameField = 'supermarket_name';
+        websiteField = 'supermarket_website';
+        distanceField = 'supermarket_distance_miles';
+    } else if (layer === 'museums') {
+        nameField = 'museum_name';
+        websiteField = 'museum_website';
+        distanceField = 'museum_distance_miles';
     } else {
-        // Only reset to default view if there are no stations and no current user position
-        const currentCenter = map.getCenter();
-        const defaultCenter = L.latLng(38.889484, -77.035278);
-        // Only reset if we're not already positioned somewhere specific
-        if (currentCenter.equals(defaultCenter, 0.001)) {
-            map.setView([38.889484, -77.035278], 14);
-        }
+        // Fallback for any other POI types
+        nameField = 'name';
+        websiteField = 'website';
+        distanceField = 'distance_miles';
     }
-}
-// ================================
-// Function to add amenities markers - MODIFIED to handle layer visibility
-// ================================
-function addAmenitiesMarkers(filteredStations) {
-    // Clear existing amenities layers
-    hotelLayer.clearLayers();
-    coffeeLayer.clearLayers();
-    barsLayer.clearLayers();
-    pharmacyLayer.clearLayers();
-    restaurantsLayer.clearLayers();
-    supermarketsLayer.clearLayers();
-
-    // Helper function to get amenities for a station
-    function getAmenitiesByStation(stationId, dataArray) {
-        // Safety check: ensure dataArray is actually an array
-        if (!Array.isArray(dataArray)) {
-            console.warn("getAmenitiesByStation received non-array data:", dataArray);
-            return [];
-        }
-        return dataArray.filter(item => String(item.station_id) === String(stationId));
-    }
-
-    filteredStations.forEach(station => {
-        const stationId = station.station_id;
-
-        // Add Hotels (only if layer is currently enabled)
-        if (map.hasLayer(hotelLayer)) {
-            const associatedHotels = getAmenitiesByStation(stationId, hotelsData);
-            associatedHotels.forEach(hotel => {
-                const lat = hotel.hotel_lat;
-                const lon = hotel.hotel_lon;
-                const name = hotel.hotel_name;
-                const website = hotel.hotel_website;
-
-                if (typeof lat === 'number' && typeof lon === 'number') {
-                    L.marker([lat, lon], {
-                        icon: createFontAwesomeIcon('fas fa-bed', 'blue')
-                    })
-                    .addTo(hotelLayer)
-                    .bindPopup(createWebViewFriendlyPopup(name, website));
-                }
-            });
-        }
-
-        // Add Coffee Shops (only if layer is currently enabled)
-        if (map.hasLayer(coffeeLayer)) {
-            const associatedCoffee = getAmenitiesByStation(stationId, coffeeData);
-            associatedCoffee.forEach(shop => {
-                const lat = shop.coffee_lat;
-                const lon = shop.coffee_lon;
-                const name = shop.coffee_name;
-                const website = shop.coffee_website;
-
-                if (typeof lat === 'number' && typeof lon === 'number') {
-                    L.marker([lat, lon], {
-                        icon: createCoffeeIcon()
-                    })
-                    .addTo(coffeeLayer)
-                    .bindPopup(createWebViewFriendlyPopup(name, website));
-                }
-            });
-        }
-
-        // Add Bars (only if layer is currently enabled)
-        if (map.hasLayer(barsLayer)) {
-            const associatedBars = getAmenitiesByStation(stationId, barsData);
-            associatedBars.forEach(bar => {
-                const lat = bar.bar_lat;
-                const lon = bar.bar_lon;
-                const name = bar.bar_name;
-                const website = bar.bar_website;
-
-                if (typeof lat === 'number' && typeof lon === 'number') {
-                    L.marker([lat, lon], {
-                        icon: createBarIcon()
-                    })
-                    .addTo(barsLayer)
-                    .bindPopup(createWebViewFriendlyPopup(name, website));
-                }
-            });
-        }
-
-        // Add Pharmacies (only if layer is currently enabled)
-        if (map.hasLayer(pharmacyLayer)) {
-            const associatedPharmacies = getAmenitiesByStation(stationId, pharmaciesData);
-            associatedPharmacies.forEach(pharmacy => {
-                const lat = pharmacy.pharmacy_lat;
-                const lon = pharmacy.pharmacy_lon;
-                const name = pharmacy.pharmacy_name;
-                const website = pharmacy.pharmacy_website;
-
-                if (typeof lat === 'number' && typeof lon === 'number') {
-                    L.marker([lat, lon], {
-                        icon: createPharmacyIcon()
-                    })
-                    .addTo(pharmacyLayer)
-                    .bindPopup(createWebViewFriendlyPopup(name, website));
-                }
-            });
-        }
-
-        // Add Restaurants (only if layer is currently enabled)
-        if (map.hasLayer(restaurantsLayer)) {
-            const associatedRestaurants = getAmenitiesByStation(stationId, restaurantsData);
-            associatedRestaurants.forEach(restaurant => {
-                const lat = restaurant.restaurant_lat;
-                const lon = restaurant.restaurant_lon;
-                const name = restaurant.restaurant_name;
-                const website = restaurant.restaurant_website;
-
-                if (typeof lat === 'number' && typeof lon === 'number') {
-                    L.marker([lat, lon], {
-                        icon: createRestaurantIcon()
-                    })
-                    .addTo(restaurantsLayer)
-                    .bindPopup(createWebViewFriendlyPopup(name, website));
-                }
-            });
-        }
-
-        // Add Supermarkets (only if layer is currently enabled)
-        if (map.hasLayer(supermarketsLayer)) {
-            const associatedSupermarkets = getAmenitiesByStation(stationId, supermarketsData);
-            associatedSupermarkets.forEach(supermarket => {
-                // Handle your actual field names
-                const lat = supermarket.supermarket_lat;
-                const lon = supermarket.supermarket_lon;
-                const name = supermarket.supermarket_name;
-                const website = supermarket.supermaret_website || supermarket.supermarket_website; // Handle the typo
-
-                if (typeof lat === 'number' && typeof lon === 'number') {
-                   const popupContent = createWebViewFriendlyPopup(name, website);
-
-                    L.marker([lat, lon], {
-                        icon: createSupermarketIcon()
-                    })
-                    .addTo(supermarketsLayer)
-                    .bindPopup(popupContent);
-                }
-            });
-        }
-    });
-}
-
-// ================================
-// Function to filter and display markers and amenities based on search
-// ================================
-function filterAndDisplayMarkers() {
-    // Store current map view to preserve it
-    const currentCenter = map.getCenter();
-    const currentZoom = map.getZoom();
     
-    const { stationQuery, lineQuery } = getSearchParams();
-
-    const filteredStations = stationsData.filter(station => {
-        const matchesStation = station.station_name.toLowerCase().includes(stationQuery.toLowerCase());
-        const matchesLine = lineQuery === '' || station.station_line.split(',').map(l => l.trim()).includes(lineQuery);
-        return matchesStation && matchesLine;
-    });
-
-    addStationMarkers(filteredStations);
-    addAmenitiesMarkers(filteredStations);
-
-    // Only change the view if this is the initial load with no search query
-    // Otherwise preserve the current map position
-    if (!stationQuery && !lineQuery) {
-        // Check if this is the initial page load (map is at default position)
-        const defaultCenter = L.latLng(38.889484, -77.035278);
-        if (currentCenter.equals(defaultCenter, 0.001) && currentZoom === 14) {
-            // This appears to be initial load, keep the default view
-            map.setView([38.889484, -77.035278], 14);
+    // Add the establishment name as clickable title (if website exists) or regular title
+    if (properties[nameField]) {
+        if (properties[websiteField]) {
+            // Make the name clickable if website exists
+            let websiteUrl = properties[websiteField];
+            
+            // Ensure the URL has a protocol (add https:// if missing)
+            if (!websiteUrl.startsWith('http://') && !websiteUrl.startsWith('https://')) {
+                websiteUrl = 'https://' + websiteUrl;
+            }
+            
+            popupContent += `<h3 style="margin: 0 0 8px 0; color: #333; font-size: 16px;">
+                <a href="#" onclick="openExternalLink('${websiteUrl}'); return false;" 
+                   style="color: #007cba; text-decoration: none; cursor: pointer;">
+                    ${properties[nameField]}
+                </a>
+            </h3>`;
         } else {
-            // User has moved the map, preserve their current view
-            map.setView(currentCenter, currentZoom);
+            // Regular title if no website
+            popupContent += `<h3 style="margin: 0 0 8px 0; color: #333; font-size: 16px;">
+                ${properties[nameField]}
+            </h3>`;
         }
     }
-    // If there is a search query, addStationMarkers will handle the view change
+    
+    // Show distance from nearest metro station
+    if (properties[distanceField]) {
+        const distance = parseFloat(properties[distanceField]);
+        popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
+            <strong>Distance:</strong> ${distance} miles from metro
+        </p>`;
+    }
+    
+    // Show which metro station this POI is closest to
+    if (properties.station_name) {
+        popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
+            <strong>Nearest Metro:</strong> ${properties.station_name}
+        </p>`;
+    }
+    
+    popupContent += '</div>';
+    return popupContent;
 }
+
+// Function to initialize enhanced POI click events
+function initializeEnhancedPOIClicks() {
+    map.on('idle', () => {
+        const poiLayers = ['pharmacy', 'supermarkets', 'nightlife', 'coffee', 'restaurant', 'hotels', 'museums'];
+        
+        poiLayers.forEach(function(layer) {
+            // Remove any existing click handlers to avoid duplicates
+            map.off('click', layer);
+            
+            // Add enhanced click event handler
+            map.on('click', layer, function(e) {
+                const properties = e.features[0].properties;
+                const popupContent = createEnhancedPopup(layer, properties);
+                
+                new mapboxgl.Popup()
+                    .setLngLat(e.lngLat)
+                    .setHTML(popupContent)
+                    .addTo(map);
+            });
+            
+            // Change cursor on hover
+            map.on('mouseenter', layer, function() {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+            
+            map.on('mouseleave', layer, function() {
+                map.getCanvas().style.cursor = '';
+            });
+        });
+        
+        console.log('Enhanced POI click events initialized');
+    });
+}
+
+
+// ================================
+// STATION CLICK EVENTS (Optional enhancement)
+// ================================
+
+// Function to add click events for metro stations
+function initializeStationClicks() {
+    map.on('idle', () => {
+        // Check if stations layer exists
+        if (map.getLayer('stations')) {
+            map.on('click', 'stations', function(e) {
+                const properties = e.features[0].properties;
+                const popupContent = `
+                    <div style="max-width: 200px;">
+                        <h3 style="margin: 0 0 8px 0; color: #333; font-size: 16px;">
+                            ${properties.station_name}
+                        </h3>
+                        <p style="margin: 4px 0; color: #666; font-size: 13px;">
+                            <strong>Line:</strong> ${properties.station_line || 'Metro Station'}
+                        </p>
+                    </div>
+                `;
+                
+                new mapboxgl.Popup()
+                    .setLngLat(e.lngLat)
+                    .setHTML(popupContent)
+                    .addTo(map);
+            });
+            
+            // Add hover effects for stations
+            map.on('mouseenter', 'stations', function() {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+            
+            map.on('mouseleave', 'stations', function() {
+                map.getCanvas().style.cursor = '';
+            });
+        }
+    });
+}
+
+// Initialize station clicks
+initializeStationClicks();
+
 
 // ================================
 // Function to filter and display amenities based on search
-// (Called after fetching amenities data) - MODIFIED
+// (Called after fetching amenities data) - UPDATED FOR MAPBOX
 // ================================
 function filterAndDisplayAmenities() {
     // Store current map view to preserve it
@@ -998,8 +588,9 @@ function filterAndDisplayAmenities() {
     // It will only display amenities for layers that are currently enabled
     filterAndDisplayMarkers();
     
-    // Restore the map view after filtering
-    map.setView(currentCenter, currentZoom);
+    // Restore the map view after filtering - Updated for Mapbox GL JS
+    map.setCenter(currentCenter);
+    map.setZoom(currentZoom);
 }
 
 // ================================
@@ -1028,22 +619,8 @@ function debounce(func, delay) {
 // Event listener for search updates
 // ================================
 window.addEventListener('searchUpdated', () => {
-    filterAndDisplayMarkers();
-    const { lineQuery } = getSearchParams();
-    filterTransitRoutes(lineQuery);
-});
-
-// ================================
-// Event listeners for layer control changes - NEW
-// ================================
-map.on('overlayadd', function(e) {
-    // When a user adds an overlay layer, refresh the amenities
-    filterAndDisplayAmenities();
-});
-
-map.on('overlayremove', function(e) {
-    // When a user removes an overlay layer, refresh the amenities
-    filterAndDisplayAmenities();
+    // Transit routes are handled by consultant's Mapbox map
+    console.log('Search updated - letting Mapbox handle display');
 });
 
 // ================================
@@ -1056,12 +633,16 @@ window.addEventListener('load', () => {
 });
 
 // ================================
-// Function to center map on a selected station
+// Function to center map on a selected station - UPDATED FOR MAPBOX GL JS
 // ================================
 function centerMapOnStation(stationId) {
     const station = stationsData.find(s => String(s.station_id) === String(stationId));
     if (station) {
-        map.setView([station.station_lat, station.station_lon], 16);
+        // Updated for Mapbox GL JS - uses flyTo method
+        map.flyTo({
+            center: [station.station_lon, station.station_lat], // Note: Mapbox uses [lng, lat]
+            zoom: 16
+        });
         console.log(`Map centered on station: ${station.station_name}`);
     } else {
         console.warn(`Station with ID ${stationId} not found.`);
@@ -1072,45 +653,28 @@ function centerMapOnStation(stationId) {
 window.centerMapOnStation = centerMapOnStation;
 
 // ================================
-// Function to clear search and reset map view
+// Function to clear search and reset map view - UPDATED FOR MAPBOX GL JS
 // ================================
 function clearSearch() {
     // Remove station and line queries from local storage
     localStorage.removeItem('stationQuery');
     localStorage.removeItem('lineQuery');
     
-    // Clear search inputs
-    document.getElementById('station-search').value = '';
-    document.getElementById('line-search').value = '';
+    // Clear search inputs (with safety checks)
+    const stationInput = document.getElementById('station-search');
+    const lineInput = document.getElementById('line-search');
     
-    // Batch clear all layers except transit and museums (which are always visible)
-    const layersToClean = [
-        markerGroup,
-        hotelLayer,
-        coffeeLayer,
-        barsLayer,
-        pharmacyLayer,
-        restaurantsLayer,
-        supermarketsLayer
-    ];
+    if (stationInput) stationInput.value = '';
+    if (lineInput) lineInput.value = '';
     
-    requestAnimationFrame(() => {
-        layersToClean.forEach(layer => layer.clearLayers());
+    // Reset map view - centered on Washington Monument - Updated for Mapbox GL JS
+    map.flyTo({
+        center: [-77.035278, 38.889484], // Note: Mapbox uses [lng, lat]
+        zoom: 14
     });
     
-    // Reset map view with smooth animation - centered on Washington Monument
-    requestAnimationFrame(() => {
-        map.setView([38.889484, -77.035278], 14);
-    });
-
-    // Use debounced functions for heavy operations
-    const debouncedReset = debounce(() => {
-        filterAndDisplayMarkers();
-        filterTransitRoutes(''); // This will show all transit routes
-        addMuseumMarkers(); // Re-add museums after clearing (they're always visible)
-    }, 100);
-    
-    debouncedReset();
+    // Reset transit routes to show all
+    filterTransitRoutes('');
 }
 
 // ================================
@@ -1157,7 +721,10 @@ function handleStationSelection() {
         centerMapOnStation(selectedStation.station_id);
     } else {
         // If no match found, reset to Washington Monument view
-        map.setView([38.889484, -77.035278], 14);
+        map.flyTo({
+            center: [-77.035278, 38.889484],
+            zoom: 14
+        });
     }
 }
 
