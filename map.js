@@ -998,3 +998,431 @@ window.addEventListener('load', () => {
         console.log('✅ Line dropdown event listeners added (on window load)');
     }
 });
+
+// ================================
+// ENHANCED LINE-BASED POI FILTERING
+// ================================
+
+// Function to get all stations that serve a particular line
+function getStationsForLine(lineQuery) {
+    if (!lineQuery || lineQuery === '' || lineQuery === 'All Lines') {
+        return []; // Return empty array to show all POIs
+    }
+    
+    // Filter stations that serve the selected line
+    // This handles both single-line and multi-line stations
+    return stationsData.filter(station => {
+        if (!station.station_line) return false;
+        
+        const stationLines = station.station_line.toLowerCase();
+        const searchLine = lineQuery.toLowerCase();
+        
+        // Check if the line appears in the station's line designation
+        return stationLines.includes(searchLine) || 
+               stationLines === searchLine;
+    });
+}
+
+// Function to create a combined filter that includes BOTH POI type AND line filtering
+function createCombinedPOIFilter(layerId, lineQuery) {
+    // Define the field name that identifies each POI type based on layer
+    const poiTypeFilters = {
+        'hotels': ['has', 'hotel_name'],
+        'restaurant': ['has', 'restaurant_name'], 
+        'coffee': ['has', 'coffee_name'],
+        'nightlife': ['has', 'bar_name'],
+        'pharmacy': ['has', 'pharmacy_name'],
+        'supermarkets': ['has', 'supermarket_name'],
+        'museums': ['has', 'museum_name']
+    };
+    
+    // Get the POI type filter for this layer
+    const typeFilter = poiTypeFilters[layerId];
+    if (!typeFilter) {
+        console.warn(`No POI type filter defined for layer: ${layerId}`);
+        return null;
+    }
+    
+    // If no line selected or "All Lines", just use the POI type filter
+    if (!lineQuery || lineQuery === '' || lineQuery === 'All Lines') {
+        return typeFilter;
+    }
+    
+    // Get stations that serve this line
+    const stationsForLine = getStationsForLine(lineQuery);
+    
+    if (stationsForLine.length === 0) {
+        console.warn(`No stations found for line: ${lineQuery}`);
+        // Return a filter that shows nothing but maintains POI type
+        return ['all', typeFilter, ['==', ['get', 'station_name'], 'NO_STATIONS_FOUND']];
+    }
+    
+    // Extract station names
+    const stationNames = stationsForLine.map(station => station.station_name);
+    
+    console.log(`Found ${stationNames.length} stations for ${lineQuery} line:`, stationNames);
+    
+    // Create station filter
+    let stationFilter;
+    if (stationNames.length === 1) {
+        stationFilter = ['==', ['get', 'station_name'], stationNames[0]];
+    } else {
+        stationFilter = ['in', ['get', 'station_name'], ['literal', stationNames]];
+    }
+    
+    // Combine POI type filter AND station filter using 'all' operator
+    return ['all', typeFilter, stationFilter];
+}
+
+// Enhanced version of filterTransitRoutes that also filters POIs
+function filterTransitRoutes(lineQuery) {
+    console.log('Enhanced filterTransitRoutes called with:', lineQuery);
+    
+    // Wait for map to be loaded
+    if (!map.loaded()) {
+        map.on('load', () => filterTransitRoutes(lineQuery));
+        return;
+    }
+    
+    // ================================
+    // EXISTING TRANSIT LINE FILTERING (unchanged)
+    // ================================
+    
+    // Define which layers belong to each line based on your actual style.json
+    const lineLayerMap = {
+        'Red': ['composite', 'routes-casing'],
+        'Silver': ['composite', 'routes-casing'], 
+        'Yellow': ['composite', 'routes-casing'],
+        'Blue': ['routes-blue', 'routes-blue-casing'],
+        'Green': ['routes-blue', 'routes-blue-casing'],
+        'Orange': ['routes-orange', 'routes-orange-casing'],
+        'MARC': ['routes-rail'],
+        'VRE': ['routes-rail']
+    };
+    
+    // All metro/rail layers
+    const allTransitLayers = [
+        'routes-rail',
+        'routes-casing',
+        'routes-blue-casing',
+        'routes-orange-casing', 
+        'routes-orange',
+        'routes-blue',
+        'composite'
+    ];
+    
+    // If no line selected or "All Lines" selected, show all metro lines
+    if (!lineQuery || lineQuery === '' || lineQuery === 'All Lines') {
+        console.log('Showing all metro lines and all POIs');
+        
+        // Show all transit layers and restore their original filters
+        allTransitLayers.forEach(layerId => {
+            if (map.getLayer(layerId)) {
+                map.setLayoutProperty(layerId, 'visibility', 'visible');
+                
+                // Restore original filters from your style.json
+                try {
+                    if (layerId === 'routes-rail') {
+                        const originalFilter = [
+                            "match",
+                            ["get", "route_name"],
+                            ["Blue", "Green", "Orange", "Yellow", "Silver", "Red"],
+                            false,
+                            true
+                        ];
+                        map.setFilter(layerId, originalFilter);
+                    } else if (layerId === 'routes-casing') {
+                        const originalFilter = [
+                            "match",
+                            ["get", "route_name"],
+                            ["Red", "Silver", "Yellow"],
+                            true,
+                            false
+                        ];
+                        map.setFilter(layerId, originalFilter);
+                    } else if (layerId === 'routes-blue-casing' || layerId === 'routes-blue') {
+                        const originalFilter = [
+                            "match",
+                            ["get", "route_name"],
+                            ["Blue", "Green"],
+                            true,
+                            false
+                        ];
+                        map.setFilter(layerId, originalFilter);
+                    } else if (layerId === 'routes-orange-casing' || layerId === 'routes-orange') {
+                        const originalFilter = [
+                            "match",
+                            ["get", "route_name"],
+                            ["Orange"],
+                            true,
+                            false
+                        ];
+                        map.setFilter(layerId, originalFilter);
+                    } else if (layerId === 'composite') {
+                        const originalFilter = [
+                            "match",
+                            ["get", "route_name"],
+                            ["Yellow", "Silver", "Red"],
+                            true,
+                            false
+                        ];
+                        map.setFilter(layerId, originalFilter);
+                    }
+                    console.log(`✓ Restored original filter for ${layerId}`);
+                } catch (error) {
+                    console.warn(`Could not restore filter for ${layerId}:`, error);
+                }
+            }
+        });
+        
+        // Restore original station filter
+        if (map.getLayer('stations')) {
+            try {
+                const defaultStationFilter = [
+                    "all",
+                    ["has", "station_name"],
+                    ["!=", ["get", "station_name"], ""],
+                    ["has", "station_line"]
+                ];
+                
+                map.setFilter('stations', defaultStationFilter);
+                map.setLayoutProperty('stations', 'visibility', 'visible');
+                console.log('✓ Applied default station filter');
+            } catch (error) {
+                console.warn('Could not apply default station filter:', error);
+                map.setFilter('stations', null);
+                map.setLayoutProperty('stations', 'visibility', 'visible');
+            }
+        }
+        
+        // ================================
+        // NEW: Remove POI filters to show all POIs with their type filters
+        // ================================
+        filterPOIsForLine(null);
+        return;
+    }
+    
+    console.log('Filtering for line:', lineQuery);
+    
+    // Get the layers for the selected line
+    const selectedLineLayers = lineLayerMap[lineQuery] || [];
+    
+    if (selectedLineLayers.length === 0) {
+        console.warn(`No layers defined for line: ${lineQuery}`);
+        return;
+    }
+    
+    // Show/hide transit layers based on selection
+    allTransitLayers.forEach(layerId => {
+        if (map.getLayer(layerId)) {
+            
+            // Show selected line layers, hide others
+            if (selectedLineLayers.includes(layerId)) {
+                map.setLayoutProperty(layerId, 'visibility', 'visible');
+                console.log(`✓ Showing ${layerId} for ${lineQuery}`);
+                
+                // Apply data filter to show only the selected line
+                try {
+                    const filter = ['==', ['get', 'route_name'], lineQuery];
+                    map.setFilter(layerId, filter);
+                    console.log(`✓ Applied filter to ${layerId}:`, filter);
+                } catch (error) {
+                    console.warn(`Could not filter ${layerId}:`, error);
+                }
+                
+            } else {
+                map.setLayoutProperty(layerId, 'visibility', 'none');
+                console.log(`✓ Hiding ${layerId}`);
+            }
+        }
+    });
+    
+    // Filter stations to show those that serve the selected line
+    if (map.getLayer('stations')) {
+        console.log('Filtering stations for line:', lineQuery);
+        try {
+            const stationFilter = [
+                "all",
+                ["has", "station_name"],
+                ["!=", ["get", "station_name"], ""],
+                ["has", "station_line"],
+                [
+                    "any",
+                    ["in", lineQuery, ["get", "station_line"]],
+                    ["==", ["get", "station_line"], lineQuery],
+                    ["in", lineQuery.toLowerCase(), ["downcase", ["get", "station_line"]]]
+                ]
+            ];
+            
+            map.setFilter('stations', stationFilter);
+            map.setLayoutProperty('stations', 'visibility', 'visible');
+            console.log('✓ Applied station filter for', lineQuery);
+            
+        } catch (error) {
+            console.warn('✗ Station filtering failed:', error);
+            
+            try {
+                const simpleFilter = [
+                    "all",
+                    ["has", "station_name"],
+                    ["==", ["get", "station_line"], lineQuery]
+                ];
+                map.setFilter('stations', simpleFilter);
+                map.setLayoutProperty('stations', 'visibility', 'visible');
+                console.log('✓ Applied simple station filter for', lineQuery);
+            } catch (fallbackError) {
+                console.warn('✗ All station filtering failed:', fallbackError);
+            }
+        }
+    }
+    
+    // ================================
+    // NEW: Filter POIs for the selected line
+    // ================================
+    filterPOIsForLine(lineQuery);
+}
+
+// Function to filter all POI layers based on selected transit line
+function filterPOIsForLine(lineQuery) {
+    console.log('Filtering POIs for line:', lineQuery || 'All Lines');
+    
+    // Define all POI layers
+    const poiLayers = ['pharmacy', 'supermarkets', 'nightlife', 'coffee', 'restaurant', 'hotels', 'museums'];
+    
+    // Apply the combined filter to each POI layer
+    poiLayers.forEach(layerId => {
+        if (map.getLayer(layerId)) {
+            try {
+                // Check if layer is currently visible (respects user's layer toggles)
+                const currentVisibility = map.getLayoutProperty(layerId, 'visibility');
+                
+                if (currentVisibility === 'visible' || currentVisibility === undefined) {
+                    // Create combined filter that includes BOTH POI type AND line filtering
+                    const combinedFilter = createCombinedPOIFilter(layerId, lineQuery);
+                    
+                    // Apply the combined filter
+                    map.setFilter(layerId, combinedFilter);
+                    
+                    if (!lineQuery || lineQuery === 'All Lines') {
+                        console.log(`✓ Showing all ${layerId} POIs with type filter`);
+                    } else {
+                        console.log(`✓ Applied combined filter to ${layerId} for line: ${lineQuery}`);
+                    }
+                } else {
+                    console.log(`⚪ Skipping ${layerId} (layer hidden by user)`);
+                }
+                
+            } catch (error) {
+                console.warn(`Could not filter ${layerId}:`, error);
+            }
+        } else {
+            console.log(`⚠️ Layer ${layerId} not found in map`);
+        }
+    });
+    
+    // Provide user feedback
+    if (lineQuery && lineQuery !== 'All Lines') {
+        const stationsForLine = getStationsForLine(lineQuery);
+        console.log(`🎯 Showing POIs near ${stationsForLine.length} stations on the ${lineQuery} line`);
+    } else {
+        console.log('🌍 Showing all POIs');
+    }
+}
+
+// Enhanced layer toggle function that preserves line filtering
+function enhancedLayerToggle() {
+    const toggleableLayerIds = [
+        'pharmacy', 'supermarkets', 'nightlife',
+        'coffee', 'restaurant', 'hotels', 'museums'
+    ];
+
+    // Set up the corresponding toggle button for each layer.
+    for (const id of toggleableLayerIds) {
+        // Skip layers that already have a button set up.
+        if (document.getElementById(id)) {
+            continue;
+        }
+
+        // Create a link.
+        const link = document.createElement('a');
+        link.id = id;
+        link.href = '#';
+        link.textContent = id;
+        link.className = 'active';
+
+        // Enhanced toggle that preserves line filtering
+        link.onclick = function (e) {
+            const clickedLayer = this.textContent;
+            e.preventDefault();
+            e.stopPropagation();
+
+            const visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+
+            // Toggle layer visibility
+            if (visibility === 'visible') {
+                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                this.className = '';
+            } else {
+                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+                this.className = 'active';
+                
+                // ================================
+                // NEW: Reapply combined filter when layer is turned back on
+                // ================================
+                const currentLineQuery = localStorage.getItem('lineQuery') || '';
+                const combinedFilter = createCombinedPOIFilter(clickedLayer, currentLineQuery);
+                
+                try {
+                    map.setFilter(clickedLayer, combinedFilter);
+                    console.log(`✓ Reapplied combined filter to ${clickedLayer}`);
+                } catch (error) {
+                    console.warn(`Could not reapply filter to ${clickedLayer}:`, error);
+                }
+            }
+        };
+
+        const layers = document.getElementById('map-menu');
+        if (layers) {
+            layers.appendChild(link);
+        }
+    }
+    console.log('Enhanced layer toggles initialized with line filtering preservation');
+}
+
+// Replace the original layer toggle initialization
+function initializeMapboxLayerToggles() {
+    map.on('idle', enhancedLayerToggle);
+}
+
+// Debug function to test the filtering
+function debugLineFiltering(testLine = 'Red') {
+    console.log(`🔍 DEBUG: Testing filtering for ${testLine} line`);
+    
+    const stationsForLine = getStationsForLine(testLine);
+    console.log(`Found ${stationsForLine.length} stations:`, stationsForLine.map(s => s.station_name));
+    
+    const combinedFilter = createCombinedPOIFilter('coffee', testLine);
+    console.log('Generated combined filter for coffee:', combinedFilter);
+    
+    // Test the filter on coffee shops
+    if (map.getLayer('coffee')) {
+        try {
+            map.setFilter('coffee', combinedFilter);
+            console.log('✓ Applied test combined filter to coffee layer');
+            
+            // Count visible features (this is approximate)
+            setTimeout(() => {
+                const visibleFeatures = map.queryRenderedFeatures({ layers: ['coffee'] });
+                console.log(`Visible coffee shops after filtering: ${visibleFeatures.length}`);
+            }, 1000);
+            
+        } catch (error) {
+            console.error('❌ Filter test failed:', error);
+        }
+    }
+}
+
+// Make debug function globally available
+window.debugLineFiltering = debugLineFiltering;
+
+
