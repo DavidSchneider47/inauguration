@@ -185,8 +185,12 @@ const map = new mapboxgl.Map({
     container: 'map-inner', // container ID
     style: 'mapbox://styles/stamen/cmd7pl9cl00yf01qncnjggdld/draft', // Your consultant's style
     center: [-77.0219, 38.8989], // starting position [lng, lat]
-    zoom: 14 // starting zoom
-});
+    zoom: 14, // starting zoom
+    attributionControl: false
+    })
+    .addControl(new mapboxgl.AttributionControl({
+        customAttribution: '© <a href="https://www.stamen.com">Stamen Design | </a>'
+    }));
 
 // ================================
 // Geolocation Feature Setup (UPDATED FOR MAPBOX GL JS)
