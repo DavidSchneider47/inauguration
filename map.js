@@ -179,14 +179,46 @@ function fallbackCopy(text) {
 // ================================
 
 // Initialize the Mapbox GL JS map
-mapboxgl.accessToken = 'pk.eyJ1Ijoic3RhbWVuIiwiYSI6IlpkZEtuS1EifQ.jiH_c9ShtBwtqH9RdG40mw';
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2NobmVpZGVyZDQxIiwiYSI6ImNtNmt4N3Q3ajAyeGsya3B5bzliYWp6Z2cifQ.bk-MyCYaco0t569bZog7cA';
 
 const map = new mapboxgl.Map({
     container: 'map-inner', // container ID
-    style: 'mapbox://styles/stamen/cmd7pl9cl00yf01qncnjggdld/draft', // Your consultant's style
+    style: 'mapbox://styles/schneiderd41/cmdf6hejb01jq01qnex6kg3v2', 
     center: [-77.0219, 38.8989], // starting position [lng, lat]
     zoom: 14 // starting zoom
 });
+
+
+// Custom attribution control for Stamen
+class StamenAttributionControl {
+    onAdd(map) {
+        this._map = map;
+        this._container = document.createElement('div');
+        this._container.className = 'mapboxgl-ctrl mapboxgl-ctrl-attrib stamen-attribution';
+        this._container.innerHTML = '© <a href="https://www.stamen.com">Stamen Design</a>';
+        
+        // Add some styling
+        this._container.style.cssText = `
+            background: rgba(255, 255, 255, 0.5);
+            margin: 0 0 10px 10px;
+            padding: 2px 8px;
+            font-size: 11px;
+            border-radius: 3px;
+            backdrop-filter: blur(10px);
+        `;
+        
+        return this._container;
+    }
+
+    onRemove() {
+        this._container.parentNode.removeChild(this._container);
+        this._map = undefined;
+    }
+}
+
+// Add the Stamen attribution control to the map
+map.addControl(new StamenAttributionControl(), 'bottom-right');
+
 
 // ================================
 // Geolocation Feature Setup (UPDATED FOR MAPBOX GL JS)
@@ -559,67 +591,283 @@ fetch('/api/stations')
     .catch(error => console.error("Error fetching stations:", error));
 
 // ================================
-// MAPBOX LAYER TOGGLE CONTROLS - WORKING VERSION
+// COMPACT MAPBOX LAYER TOGGLE CONTROLS - SPACE EFFICIENT
 // ================================
 
-function initializeMapboxLayerToggles() {
+function initializeCompactLayerToggles() {
+    // Add compact CSS styles first
+    addCompactToggleStyles();
+    
     map.on('idle', () => {
-        // Enumerate ids of the layers.
-        const toggleableLayerIds = [
-            'pharmacy', 'supermarkets', 'nightlife',
-            'coffee', 'restaurant', 'hotels'
-        ];
+        // Compact layer configuration
+        const layerConfigs = {
+            'pharmacy': { name: 'Pharmacy', icon: '💊', color: '#4CAF50' },
+            'supermarkets': { name: 'Grocery', icon: '🛒', color: '#FF9800' },
+            'nightlife': { name: 'Bars', icon: '🍺', color: '#9C27B0' },
+            'coffee': { name: 'Coffee', icon: '☕', color: '#8B4513' },
+            'restaurant': { name: 'Food', icon: '🍽️', color: '#FF6B35' },
+            'hotels': { name: 'Hotels', icon: '🏨', color: '#2196F3' }
+        };
 
-        // Set up the corresponding toggle button for each layer.
-        for (const id of toggleableLayerIds) {
-            // Skip layers that already have a button set up.
-            if (document.getElementById(id)) {
-                continue;
+        // Create or get the compact menu container
+        let menuContainer = document.getElementById('compact-map-menu');
+        if (!menuContainer) {
+            menuContainer = document.createElement('div');
+            menuContainer.id = 'compact-map-menu';
+            menuContainer.className = 'compact-layer-menu';
+            
+            // Find a good place to add it
+            const mapContainer = document.getElementById('map') || 
+                                document.getElementById('map-container') || 
+                                document.body;
+            mapContainer.appendChild(menuContainer);
+        }
+
+        // Set up compact toggle for each layer
+        Object.keys(layerConfigs).forEach(layerId => {
+            const config = layerConfigs[layerId];
+            
+            // Skip if button already exists
+            if (document.getElementById(`compact-${layerId}`)) {
+                return;
             }
 
-            // Create a link.
-            const link = document.createElement('a');
-            link.id = id;
-            link.href = '#';
-            link.textContent = id;
-            link.className = 'active';
+            // Check if layer exists in map
+            if (!map.getLayer || !map.getLayer(layerId)) {
+                console.warn(`⚠️ Layer ${layerId} not found in map`);
+                return;
+            }
 
-            // Show or hide layer when the toggle is clicked.
-            link.onclick = function (e) {
-                const clickedLayer = this.textContent;
+            // Create compact button element
+            const button = document.createElement('div');
+            button.id = `compact-${layerId}`;
+            button.className = 'compact-layer-button';
+            button.title = config.name; // Tooltip for hover
+            
+            // Get current visibility state
+            const currentVisibility = map.getLayoutProperty(layerId, 'visibility');
+            const isActive = currentVisibility === 'visible' || currentVisibility === undefined;
+            
+            if (isActive) {
+                button.classList.add('active');
+            }
+
+            // Create compact button content - just icon
+            button.innerHTML = `
+                <div class="compact-icon" style="background-color: ${config.color}">
+                    ${config.icon}
+                </div>
+            `;
+
+            // Enhanced click handler with visual feedback
+            button.onclick = function(e) {
                 e.preventDefault();
                 e.stopPropagation();
+                
+                // Add click animation
+                this.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 100);
 
-                const visibility = map.getLayoutProperty(
-                    clickedLayer,
-                    'visibility'
-                );
+                const visibility = map.getLayoutProperty(layerId, 'visibility');
+                const isCurrentlyVisible = visibility === 'visible' || visibility === undefined;
 
-                // Toggle layer visibility by changing the layout object's visibility property.
-                if (visibility === 'visible') {
-                    map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                    this.className = '';
+                // Toggle layer visibility
+                if (isCurrentlyVisible) {
+                    map.setLayoutProperty(layerId, 'visibility', 'none');
+                    this.classList.remove('active');
+                    console.log(`✅ Hidden layer: ${layerId}`);
                 } else {
-                    this.className = 'active';
-                    map.setLayoutProperty(
-                        clickedLayer,
-                        'visibility',
-                        'visible'
-                    );
+                    map.setLayoutProperty(layerId, 'visibility', 'visible');
+                    this.classList.add('active');
+                    
+                    // Reapply line filtering if needed
+                    const currentLineQuery = localStorage.getItem('lineQuery') || '';
+                    if (currentLineQuery && currentLineQuery !== 'All Lines') {
+                        if (typeof createCombinedPOIFilter === 'function') {
+                            try {
+                                const combinedFilter = createCombinedPOIFilter(layerId, currentLineQuery);
+                                map.setFilter(layerId, combinedFilter);
+                                console.log(`✅ Showed layer: ${layerId} with line filter`);
+                            } catch (error) {
+                                console.warn(`⚠️ Could not reapply filter to ${layerId}:`, error);
+                            }
+                        }
+                    }
+                    console.log(`✅ Showed layer: ${layerId}`);
                 }
             };
 
-            const layers = document.getElementById('map-menu');
-            if (layers) {
-                layers.appendChild(link);
-            }
-        }
-        console.log('Layer toggles initialized');
+            menuContainer.appendChild(button);
+        });
+
+        console.log('✅ Compact layer toggles initialized');
     });
 }
 
-// Initialize the toggles
-initializeMapboxLayerToggles();
+// Function to add compact CSS styles
+function addCompactToggleStyles() {
+    // Check if styles already added
+    if (document.getElementById('compact-toggle-styles')) {
+        return;
+    }
+
+    const styles = document.createElement('style');
+    styles.id = 'compact-toggle-styles';
+    styles.textContent = `
+        /* Compact Layer Menu Styles */
+        .compact-layer-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            padding: 8px;
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            max-width: 140px; /* Compact width */
+        }
+
+        .compact-layer-button {
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .compact-layer-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .compact-layer-button.active {
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 2px 10px rgba(0, 124, 186, 0.3);
+        }
+
+        .compact-layer-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 8px;
+            height: 8px;
+            background: #007cba;
+            border-radius: 50%;
+            border: 1px solid white;
+        }
+
+        .compact-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mobile responsive - even more compact */
+        @media (max-width: 768px) {
+            .compact-layer-menu {
+                top: 10px;
+                right: 10px;
+                padding: 6px;
+                gap: 4px;
+                max-width: 120px;
+            }
+
+            .compact-layer-button {
+                width: 32px;
+                height: 32px;
+            }
+
+            .compact-icon {
+                width: 24px;
+                height: 24px;
+                font-size: 12px;
+            }
+        }
+
+        /* Very small screens - single row */
+        @media (max-width: 480px) {
+            .compact-layer-menu {
+                max-width: 100%;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding: 4px 6px;
+            }
+
+            .compact-layer-button {
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+            }
+
+            .compact-icon {
+                width: 22px;
+                height: 22px;
+                font-size: 11px;
+            }
+        }
+
+        /* Smooth animations */
+        .compact-layer-menu {
+            animation: compactSlideIn 0.3s ease-out;
+        }
+
+        @keyframes compactSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Tooltip enhancement */
+        .compact-layer-button {
+            position: relative;
+        }
+
+        .compact-layer-button:hover::before {
+            content: attr(title);
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            white-space: nowrap;
+            z-index: 1001;
+            pointer-events: none;
+        }
+    `;
+
+    document.head.appendChild(styles);
+}
+
+// Initialize the compact toggles
+initializeCompactLayerToggles();
+
 
 // Add this section to your existing map.js file, after the map initialization
 // ================================
