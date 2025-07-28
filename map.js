@@ -185,41 +185,13 @@ const map = new mapboxgl.Map({
     container: 'map-inner', // container ID
     style: 'mapbox://styles/schneiderd41/cmdf6hejb01jq01qnex6kg3v2', 
     center: [-77.0219, 38.8989], // starting position [lng, lat]
-    zoom: 14 // starting zoom
-});
-
-
-// Custom attribution control for Stamen
-class StamenAttributionControl {
-    onAdd(map) {
-        this._map = map;
-        this._container = document.createElement('div');
-        this._container.className = 'mapboxgl-ctrl mapboxgl-ctrl-attrib stamen-attribution';
-        this._container.innerHTML = '© <a href="https://www.stamen.com">Stamen Design</a>';
-        
-        // Add some styling
-        this._container.style.cssText = `
-            background: rgba(255, 255, 255, 0.5);
-            margin: 0 0 10px 10px;
-            padding: 2px 8px;
-            font-size: 11px;
-            border-radius: 3px;
-            backdrop-filter: blur(10px);
-        `;
-        
-        return this._container;
-    }
-
-    onRemove() {
-        this._container.parentNode.removeChild(this._container);
-        this._map = undefined;
-    }
-}
-
-// Add the Stamen attribution control to the map
-map.addControl(new StamenAttributionControl(), 'bottom-right');
-
-
+    zoom: 14, // starting zoom
+    attributionControl: false
+    })
+    .addControl(new mapboxgl.AttributionControl({
+        customAttribution: '© <a href="https://www.stamen.com">Stamen Design | </a>'
+    }));
+    
 // ================================
 // Geolocation Feature Setup (UPDATED FOR MAPBOX GL JS)
 // ================================
