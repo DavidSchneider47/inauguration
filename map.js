@@ -861,8 +861,7 @@ function createEnhancedPopup(layer, properties) {
         nameField = 'restaurant_name';
         websiteField = 'restaurant_website';
         distanceField = 'restaurant_distance_miles';
-    } else if (layer === 'coffee') {
-        nameField = 'coffee_name';
+    } else if (layer === 'coffee') {        nameField = 'coffee_name';
         websiteField = 'coffee_website';
         distanceField = 'coffee_distance_miles';
     } else if (layer === 'nightlife') {
@@ -880,7 +879,8 @@ function createEnhancedPopup(layer, properties) {
     } else if (layer === 'museums') {
         nameField = 'museum_name';
         websiteField = 'museum_website';
-        distanceField = 'museum_distance_miles';
+        distanceField = 'museum_ distance_miles';
+	stationField = 'closest_station_name'; 
     } else {
         // Fallback for any other POI types
         nameField = 'name';
@@ -921,13 +921,13 @@ function createEnhancedPopup(layer, properties) {
         </p>`;
     }
     
-    // Show which metro station this POI is closest to
-    if (properties.station_name) {
-        popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
-            <strong>Nearest Metro:</strong> ${properties.station_name}
-        </p>`;
-    }
-    
+// Show which metro station this POI is closest to
+if (properties[stationField] || properties.station_name) {
+    const stationName = properties[stationField] || properties.station_name;
+    popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
+        <strong>Nearest Metro:</strong> ${stationName}
+    </p>`;
+}
     popupContent += '</div>';
     return popupContent;
 }
