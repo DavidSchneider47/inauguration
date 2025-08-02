@@ -174,6 +174,7 @@ function fallbackCopy(text) {
 }
 
 
+
 // ================================
 // MAPBOX GL JS MAP INITIALIZATION (UPDATED)
 // ================================
@@ -563,7 +564,7 @@ fetch('/api/stations')
     .catch(error => console.error("Error fetching stations:", error));
 
 // ================================
-// COMPACT MAPBOX LAYER TOGGLE CONTROLS - SPACE EFFICIENT
+// COMPACT MAPBOX LAYER TOGGLE CONTROLS - FINAL VERSION
 // ================================
 
 function initializeCompactLayerToggles() {
@@ -571,14 +572,38 @@ function initializeCompactLayerToggles() {
     addCompactToggleStyles();
     
     map.on('idle', () => {
-        // Compact layer configuration
+        // Compact layer configuration with working SVG paths
         const layerConfigs = {
-            'pharmacy': { name: 'Pharmacy', icon: '💊', color: '#4CAF50' },
-            'supermarkets': { name: 'Grocery', icon: '🛒', color: '#FF9800' },
-            'nightlife': { name: 'Bars', icon: '🍺', color: '#9C27B0' },
-            'coffee': { name: 'Coffee', icon: '☕', color: '#8B4513' },
-            'restaurant': { name: 'Food', icon: '🍽️', color: '#FF6B35' },
-            'hotels': { name: 'Hotels', icon: '🏨', color: '#2196F3' }
+            'pharmacy': { 
+                name: 'Pharmacy', 
+                icon: 'static/images/pharmacies.svg', 
+                color: '#4CAF50' 
+            },
+            'supermarkets': { 
+                name: 'Grocery', 
+                icon: 'static/images/supermarket.svg', 
+                color: '#FF9800' 
+            },
+            'nightlife': { 
+                name: 'Nightlife', 
+                icon: 'static/images/nightlife.svg', 
+                color: '#9C27B0' 
+            },
+            'coffee': { 
+                name: 'Coffee', 
+                icon: 'static/images/coffee.svg', 
+                color: '#8B4513' 
+            },
+            'restaurant': { 
+                name: 'Food', 
+                icon: 'static/images/restaurants.svg', 
+                color: '#FF6B35' 
+            },
+            'hotels': { 
+                name: 'Hotels', 
+                icon: 'static/images/hotel.svg', 
+                color: '#2196F3' 
+            }
         };
 
         // Create or get the compact menu container
@@ -624,10 +649,12 @@ function initializeCompactLayerToggles() {
                 button.classList.add('active');
             }
 
-            // Create compact button content - just icon
+            // Create compact button content with custom icon
             button.innerHTML = `
                 <div class="compact-icon" style="background-color: ${config.color}">
-                    ${config.icon}
+                    <img src="${config.icon}" alt="${config.name}" class="icon-image" 
+                         onload="this.style.opacity='1';" 
+                         onerror="this.style.display='none'; this.parentNode.innerHTML='${config.name.charAt(0)}';" />
                 </div>
             `;
 
@@ -703,7 +730,7 @@ function addCompactToggleStyles() {
             display: flex;
             gap: 6px;
             flex-wrap: wrap;
-            max-width: 140px; /* Compact width */
+            max-width: 140px;
         }
 
         .compact-layer-button {
@@ -750,6 +777,29 @@ function addCompactToggleStyles() {
             justify-content: center;
             font-size: 14px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Custom icon image styling */
+        .icon-image {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+            filter: brightness(1.1) contrast(1.1);
+            transition: all 0.2s ease;
+            opacity: 0; /* Start hidden, show on successful load */
+        }
+
+        /* Icon hover effects */
+        .compact-layer-button:hover .icon-image {
+            transform: scale(1.1);
+            filter: brightness(1.2) contrast(1.2);
+        }
+
+        /* Active state icon styling */
+        .compact-layer-button.active .icon-image {
+            filter: brightness(1.3) contrast(1.3);
         }
 
         /* Mobile responsive - even more compact */
@@ -772,6 +822,11 @@ function addCompactToggleStyles() {
                 height: 24px;
                 font-size: 12px;
             }
+
+            .icon-image {
+                width: 16px;
+                height: 16px;
+            }
         }
 
         /* Very small screens - single row */
@@ -792,7 +847,11 @@ function addCompactToggleStyles() {
             .compact-icon {
                 width: 22px;
                 height: 22px;
-                font-size: 11px;
+            }
+
+            .icon-image {
+                width: 14px;
+                height: 14px;
             }
         }
 
@@ -812,11 +871,12 @@ function addCompactToggleStyles() {
             }
         }
 
-        /* Tooltip enhancement */
+        /* Tooltip enhancement with smart positioning */
         .compact-layer-button {
             position: relative;
         }
 
+        /* Default tooltip (bottom row) - appears below */
         .compact-layer-button:hover::before {
             content: attr(title);
             position: absolute;
@@ -832,6 +892,23 @@ function addCompactToggleStyles() {
             z-index: 1001;
             pointer-events: none;
         }
+
+        /* Top row tooltips - appear above the icons */
+        .compact-layer-button:nth-child(1):hover::before,
+        .compact-layer-button:nth-child(2):hover::before,
+        .compact-layer-button:nth-child(3):hover::before {
+            bottom: auto;
+            top: -30px;
+        }
+
+        /* Mobile responsive tooltip positioning */
+        @media (max-width: 480px) {
+            /* On very small screens in single row, all tooltips go above */
+            .compact-layer-button:hover::before {
+                bottom: auto;
+                top: -28px;
+            }
+        }
     `;
 
     document.head.appendChild(styles);
@@ -839,7 +916,6 @@ function addCompactToggleStyles() {
 
 // Initialize the compact toggles
 initializeCompactLayerToggles();
-
 
 // Add this section to your existing map.js file, after the map initialization
 // ================================
@@ -1088,29 +1164,140 @@ function centerMapOnStation(stationId) {
 // Make the function globally accessible
 window.centerMapOnStation = centerMapOnStation;
 
-// ================================
-// Function to clear search and reset map view - UPDATED FOR MAPBOX GL JS
-// ================================
+// FINAL FIX: Replace your clearSearch function (around line 661) with this version
 function clearSearch() {
+    console.log('🧹 Starting clearSearch function...');
+    
     // Remove station and line queries from local storage
     localStorage.removeItem('stationQuery');
     localStorage.removeItem('lineQuery');
+    console.log('✓ Cleared localStorage');
     
     // Clear search inputs (with safety checks)
     const stationInput = document.getElementById('station-search');
     const lineInput = document.getElementById('line-search');
     
-    if (stationInput) stationInput.value = '';
-    if (lineInput) lineInput.value = '';
+    if (stationInput) {
+        stationInput.value = '';
+        console.log('✓ Cleared station input');
+    }
     
-    // Reset map view - centered on Washington Monument - Updated for Mapbox GL JS
+    if (lineInput) {
+        // IMPORTANT: Set to empty or your default "all lines" option
+        lineInput.value = ''; // or 'All Lines' if that's your default option text
+        console.log('✓ Cleared line input');
+    }
+    
+    // Reset map view - centered on Washington Monument
     map.flyTo({
-        center: [-77.035278, 38.889484], // Note: Mapbox uses [lng, lat]
+        center: [-77.035278, 38.889484],
         zoom: 14
     });
+    console.log('✓ Reset map view');
     
-    // Reset transit routes to show all
-    filterTransitRoutes('');
+    // CRITICAL FIX: Call the enhanced filterTransitRoutes with explicit null/empty
+    // This ensures it goes through the "show all lines" path
+    filterTransitRoutes(null);  // Try null first
+    
+    // Also explicitly reset POI filtering 
+    filterPOIsForLine(null);
+    
+    // Additional safety: Force trigger the "show all lines" logic
+    setTimeout(() => {
+        console.log('🔄 Safety reset - forcing show all lines...');
+        
+        // Define all transit layers (same as in your enhanced function)
+        const allTransitLayers = [
+            'routes-rail',
+            'routes-casing', 
+            'routes-blue-casing',
+            'routes-orange-casing',
+            'routes-orange',
+            'routes-blue',
+            'composite'
+        ];
+        
+        // Force all layers visible and restore original filters
+        allTransitLayers.forEach(layerId => {
+            if (map.getLayer && map.getLayer(layerId)) {
+                try {
+                    map.setLayoutProperty(layerId, 'visibility', 'visible');
+                    
+                    // Restore the original filters based on your enhanced function logic
+                    if (layerId === 'routes-rail') {
+                        const originalFilter = [
+                            "match",
+                            ["get", "route_name"], 
+                            ["Blue", "Green", "Orange", "Yellow", "Silver", "Red"],
+                            false,
+                            true
+                        ];
+                        map.setFilter(layerId, originalFilter);
+                    } else if (layerId === 'routes-casing') {
+                        const originalFilter = [
+                            "match",
+                            ["get", "route_name"],
+                            ["Red", "Silver", "Yellow"],
+                            true,
+                            false
+                        ];
+                        map.setFilter(layerId, originalFilter);
+                    } else if (layerId === 'routes-blue-casing' || layerId === 'routes-blue') {
+                        const originalFilter = [
+                            "match",
+                            ["get", "route_name"],
+                            ["Blue", "Green"],
+                            true,
+                            false
+                        ];
+                        map.setFilter(layerId, originalFilter);
+                    } else if (layerId === 'routes-orange-casing' || layerId === 'routes-orange') {
+                        const originalFilter = [
+                            "match",
+                            ["get", "route_name"],
+                            ["Orange"],
+                            true,
+                            false
+                        ];
+                        map.setFilter(layerId, originalFilter);
+                    } else if (layerId === 'composite') {
+                        const originalFilter = [
+                            "match", 
+                            ["get", "route_name"],
+                            ["Yellow", "Silver", "Red"],
+                            true,
+                            false
+                        ];
+                        map.setFilter(layerId, originalFilter);
+                    }
+                    
+                    console.log(`✓ Force-restored ${layerId}`);
+                } catch (error) {
+                    console.warn(`Could not force-restore ${layerId}:`, error);
+                }
+            }
+        });
+        
+        // Force restore stations
+        if (map.getLayer && map.getLayer('stations')) {
+            try {
+                const defaultStationFilter = [
+                    "all",
+                    ["has", "station_name"],
+                    ["!=", ["get", "station_name"], ""],
+                    ["has", "station_line"]
+                ];
+                map.setFilter('stations', defaultStationFilter);
+                map.setLayoutProperty('stations', 'visibility', 'visible');
+                console.log('✓ Force-restored stations');
+            } catch (error) {
+                console.warn('Could not force-restore stations:', error);
+            }
+        }
+        
+    }, 500); // Small delay to ensure map is ready
+    
+    console.log('🎯 clearSearch completed - map should show all lines');
 }
 
 // ================================
