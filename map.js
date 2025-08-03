@@ -284,11 +284,6 @@ function trackUserLocation(map) {
     }
 }
 
-// Call the geolocation function to start tracking after map loads
-map.on('load', () => {
-    trackUserLocation(map);
-    initializeEnhancedPOIClicks(); // Add this line
-});
 
 
 // Function to adjust icon sizes based on window width (REVISED FOR SMALLER ICONS)
@@ -917,9 +912,8 @@ function addCompactToggleStyles() {
 // Initialize the compact toggles
 initializeCompactLayerToggles();
 
-// Add this section to your existing map.js file, after the map initialization
 // ================================
-// ENHANCED POI POPUP FUNCTIONALITY WITH WEBSITE LINKS
+// ENHANCED POI POPUP FUNCTIONALITY WITH WEBSITE LINKS - CLEAN VERSION
 // ================================
 
 // Function to create enhanced popups with clickable POI names
@@ -927,41 +921,49 @@ function createEnhancedPopup(layer, properties) {
     let popupContent = '<div style="max-width: 250px;">';
     
     // Determine the correct field names for each POI type
-    let nameField, websiteField, distanceField;
+    let nameField, websiteField, distanceField, stationField;
     
     if (layer === 'hotels') {
         nameField = 'hotel_name';
         websiteField = 'hotel_website';
         distanceField = 'hotel_distance_miles';
+        stationField = 'closest_station_name';
     } else if (layer === 'restaurant') {
         nameField = 'restaurant_name';
         websiteField = 'restaurant_website';
         distanceField = 'restaurant_distance_miles';
-    } else if (layer === 'coffee') {        nameField = 'coffee_name';
+        stationField = 'closest_station_name';
+    } else if (layer === 'coffee') {        
+        nameField = 'coffee_name';
         websiteField = 'coffee_website';
         distanceField = 'coffee_distance_miles';
+        stationField = 'closest_station_name';
     } else if (layer === 'nightlife') {
         nameField = 'bar_name';
         websiteField = 'bar_website';
         distanceField = 'bar_distance_miles';
+        stationField = 'closest_station_name';
     } else if (layer === 'pharmacy') {
         nameField = 'pharmacy_name';
         websiteField = 'pharmacy_website';
         distanceField = 'pharmacy_distance_miles';
+        stationField = 'closest_station_name';
     } else if (layer === 'supermarkets') {
         nameField = 'supermarket_name';
         websiteField = 'supermarket_website';
         distanceField = 'supermarket_distance_miles';
+        stationField = 'closest_station_name';
     } else if (layer === 'museums') {
         nameField = 'museum_name';
         websiteField = 'museum_website';
         distanceField = 'museum_ distance_miles';
-	stationField = 'closest_station_name'; 
+        stationField = 'closest_station_name'; 
     } else {
         // Fallback for any other POI types
         nameField = 'name';
         websiteField = 'website';
         distanceField = 'distance_miles';
+        stationField = 'closest_station_name';
     }
     
     // Add the establishment name as clickable title (if website exists) or regular title
@@ -997,55 +999,212 @@ function createEnhancedPopup(layer, properties) {
         </p>`;
     }
     
-// Show which metro station this POI is closest to
-if (properties[stationField] || properties.station_name) {
-    const stationName = properties[stationField] || properties.station_name;
-    popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
-        <strong>Nearest Metro:</strong> ${stationName}
-    </p>`;
-}
+    // Show which metro station this POI is closest to
+    if (properties[stationField] || properties.station_name) {
+        const stationName = properties[stationField] || properties.station_name;
+        popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
+            <strong>Nearest Metro:</strong> ${stationName}
+        </p>`;
+    }
+    
     popupContent += '</div>';
     return popupContent;
 }
 
-// Function to initialize enhanced POI click events
+// MAIN POI CLICK HANDLER INITIALIZATION - COMPLETELY REWRITTEN
 function initializeEnhancedPOIClicks() {
-    map.on('idle', () => {
-        const poiLayers = ['pharmacy', 'supermarkets', 'nightlife', 'coffee', 'restaurant', 'hotels', 'museums'];
+    console.log('🎯 Initializing enhanced POI click events...');
+    
+    const poiLayers = ['pharmacy', 'supermarkets', 'nightlife', 'coffee', 'restaurant', 'hotels', 'museums'];
+    let successfulLayers = 0;
+    
+    poiLayers.forEach(layer => {
+        // Check if layer exists
+        if (!map.getLayer(layer)) {
+            console.warn(`⚠️ Layer ${layer} not found in map`);
+            return;
+        }
         
-        poiLayers.forEach(function(layer) {
-            // Remove any existing click handlers to avoid duplicates
-            map.off('click', layer);
-            
-            // Add enhanced click event handler
-            map.on('click', layer, function(e) {
+        console.log(`✅ Setting up handlers for layer: ${layer}`);
+        
+        // Remove any existing handlers to prevent duplicates
+        map.off('click', layer);
+        map.off('mouseenter', layer);
+        map.off('mouseleave', layer);
+        
+        // Add click handler
+        map.on('click', layer, function(e) {
+            if (e.features && e.features.length > 0) {
+                console.log(`🖱️ Clicked on ${layer}:`, e.features[0].properties);
+                
                 const properties = e.features[0].properties;
                 const popupContent = createEnhancedPopup(layer, properties);
                 
-                new mapboxgl.Popup()
+                // Remove any existing popups before showing new one
+                const existingPopups = document.getElementsByClassName('mapboxgl-popup');
+                for (let i = 0; i < existingPopups.length; i++) {
+                    existingPopups[i].remove();
+                }
+                
+                new mapboxgl.Popup({
+                    closeOnClick: true,
+                    closeOnMove: false
+                })
                     .setLngLat(e.lngLat)
                     .setHTML(popupContent)
                     .addTo(map);
+            }
+        });
+        
+        // Add hover effects
+        map.on('mouseenter', layer, function() {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+        
+        map.on('mouseleave', layer, function() {
+            map.getCanvas().style.cursor = '';
+        });
+        
+        successfulLayers++;
+    });
+    
+    console.log(`✅ Successfully initialized ${successfulLayers} of ${poiLayers.length} POI layers`);
+    
+    if (successfulLayers === poiLayers.length) {
+        console.log('🎉 All POI click handlers successfully initialized!');
+    } else {
+        console.warn(`⚠️ Only initialized ${successfulLayers} layers`);
+    }
+}
+
+// UPDATED MAP LOAD CALLBACK - SINGLE, CLEAN VERSION
+map.on('load', () => {
+    console.log('🗺️ Map loaded, starting initialization...');
+    
+    // Start location tracking
+    trackUserLocation(map);
+    
+    // Track load time
+    window.mapLoadTime = Date.now();
+    
+    // Wait for map to be fully idle before initializing POI clicks
+    // This ensures all layers and sources are fully loaded
+    const initializePOIs = () => {
+        if (!window.poiClicksInitialized) {
+            console.log('🎯 Map is idle, initializing POI handlers...');
+            initializeEnhancedPOIClicks();
+            window.poiClicksInitialized = true;
+        }
+    };
+    
+    // Try to initialize on idle
+    map.on('idle', initializePOIs);
+    
+    // Also try after a delay as backup
+    setTimeout(() => {
+        if (!window.poiClicksInitialized) {
+            console.log('⏰ Backup initialization triggered...');
+            initializePOIs();
+        }
+    }, 2000);
+    
+    console.log('🚀 Map initialization complete');
+});
+
+// TEST FUNCTION - Call this in browser console to debug
+function testPOIHandlers() {
+    const poiLayers = ['pharmacy', 'supermarkets', 'nightlife', 'coffee', 'restaurant', 'hotels', 'museums'];
+    
+    console.log('🧪 Testing POI handlers:');
+    console.log('Current map state:', {
+        loaded: map.loaded(),
+        style: map.getStyle() ? 'loaded' : 'not loaded'
+    });
+    
+    poiLayers.forEach(layer => {
+        const layerExists = map.getLayer(layer);
+        if (layerExists) {
+            const visibility = map.getLayoutProperty(layer, 'visibility');
+            const clickHandlers = map.listens('click').filter(h => h.layer === layer);
+            const hoverHandlers = map.listens('mouseenter').filter(h => h.layer === layer);
+            
+            console.log(`${layer}:`, {
+                exists: '✅',
+                visible: visibility === 'visible' || visibility === undefined ? '✅' : '❌',
+                clickHandler: clickHandlers.length > 0 ? '✅' : '❌',
+                hoverHandler: hoverHandlers.length > 0 ? '✅' : '❌'
+            });
+        } else {
+            console.log(`${layer}: ❌ Layer not found`);
+        }
+    });
+    
+    // Test if we can query features
+    const allFeatures = map.queryRenderedFeatures();
+    const poiFeatures = allFeatures.filter(f => 
+        poiLayers.includes(f.layer?.id || f.sourceLayer)
+    );
+    console.log(`Found ${poiFeatures.length} POI features currently rendered`);
+}
+
+// LAYER TOGGLE ENHANCEMENT - Update your compact layer toggle click handler
+// Replace the onclick function in your initializeCompactLayerToggles with this:
+function enhancedLayerToggleClick(layerId, buttonElement) {
+    const visibility = map.getLayoutProperty(layerId, 'visibility');
+    const isCurrentlyVisible = visibility === 'visible' || visibility === undefined;
+
+    if (isCurrentlyVisible) {
+        // Hide layer
+        map.setLayoutProperty(layerId, 'visibility', 'none');
+        buttonElement.classList.remove('active');
+        console.log(`✅ Hidden layer: ${layerId}`);
+    } else {
+        // Show layer
+        map.setLayoutProperty(layerId, 'visibility', 'visible');
+        buttonElement.classList.add('active');
+        
+        // CRITICAL: Re-initialize click handlers after showing layer
+        setTimeout(() => {
+            console.log(`🔄 Re-initializing handlers for ${layerId}...`);
+            
+            // Remove existing handlers
+            map.off('click', layerId);
+            map.off('mouseenter', layerId);
+            map.off('mouseleave', layerId);
+            
+            // Re-add handlers
+            map.on('click', layerId, function(e) {
+                if (e.features && e.features.length > 0) {
+                    const properties = e.features[0].properties;
+                    const popupContent = createEnhancedPopup(layerId, properties);
+                    
+                    new mapboxgl.Popup()
+                        .setLngLat(e.lngLat)
+                        .setHTML(popupContent)
+                        .addTo(map);
+                }
             });
             
-            // Change cursor on hover
-            map.on('mouseenter', layer, function() {
+            map.on('mouseenter', layerId, () => {
                 map.getCanvas().style.cursor = 'pointer';
             });
             
-            map.on('mouseleave', layer, function() {
+            map.on('mouseleave', layerId, () => {
                 map.getCanvas().style.cursor = '';
             });
-        });
+            
+        }, 100);
         
-        console.log('Enhanced POI click events initialized');
-    });
+        console.log(`✅ Showed layer: ${layerId}`);
+    }
 }
 
-
+// Make functions globally available for testing
+window.testPOIHandlers = testPOIHandlers;
+window.enhancedLayerToggleClick = enhancedLayerToggleClick;
 // ================================
 // STATION CLICK EVENTS (Optional enhancement)
-// ================================
+// =============================
 
 // Function to add click events for metro stations
 function initializeStationClicks() {
