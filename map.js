@@ -585,12 +585,12 @@ function initializeCompactLayerToggles() {
                 color: '#9C27B0' 
             },
             'coffee': { 
-                name: 'Coffee', 
+                name: 'Breakfast', 
                 icon: 'static/images/coffee.svg', 
                 color: '#8B4513' 
             },
             'restaurant': { 
-                name: 'Food', 
+                name: 'Lunch/Dinner', 
                 icon: 'static/images/restaurants.svg', 
                 color: '#FF6B35' 
             },
