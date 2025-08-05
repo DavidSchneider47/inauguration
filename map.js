@@ -1,76 +1,106 @@
 // Debugging message to ensure map.js is loaded
 console.log("map.js loaded successfully");
 
-// iOS-specific external link handler with multiple fallback methods
 function openExternalLink(url) {
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    const isSafari = /Safari/.test(navigator.userAgent) && !/CriOS|FxiOS|OPiOS|mercury/.test(navigator.userAgent);
-    
     console.log('Opening external link:', url);
-    console.log('Is iOS:', isIOS);
-    console.log('Is Safari:', isSafari);
     
-    if (isIOS && !isSafari) {
-        // We're in an iOS WebView (like your app)
-        tryIOSDeepLinks(url);
-    } else {
-        // Regular browser behavior
-        tryRegularOpen(url);
+    // Ensure URL has proper protocol
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        url = 'https://' + url;
     }
-}
-window.openExternalLink = openExternalLink;
-
-function tryIOSDeepLinks(url) {
-    console.log('Attempting iOS deep link methods...');
     
-    // Method 1: Try Safari deep link
-    setTimeout(() => {
-        console.log('Trying Safari deep link...');
-        window.location.href = `x-web-search://?${encodeURIComponent(url)}`;
-    }, 100);
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
-    // Method 2: Try direct Safari URL scheme after short delay
-    setTimeout(() => {
-        console.log('Trying direct Safari scheme...');
-        window.location.href = `safari-${url}`;
-    }, 500);
-    
-    // Method 3: Try the universal HTTP scheme
-    setTimeout(() => {
-        console.log('Trying HTTP scheme...');
-        window.location.href = url;
-    }, 1000);
-    
-    // Method 4: Fallback to copy after all attempts
-    setTimeout(() => {
-        console.log('All deep link methods attempted, falling back to copy...');
-        copyToClipboard(url);
-        showIOSCopyMessage(url);
-    }, 2000);
-}
-
-function tryRegularOpen(url) {
-    try {
-        const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
-        if (!newWindow || newWindow.closed) {
-            copyToClipboard(url);
-            alert('Pop-ups blocked. Link copied to clipboard!');
+    // OPTIMIZED: Different strategies for mobile vs desktop
+    if (isMobile) {
+        // Mobile-optimized approach - faster and more reliable
+        try {
+            // Try window.open with mobile-friendly parameters
+            const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+            
+            // Quick check if it worked (don't wait long)
+            if (newWindow && !newWindow.closed) {
+                console.log('Mobile: Link opened successfully');
+                return;
+            }
+            
+            // Immediate fallback for mobile
+            console.log('Mobile: Using direct navigation');
+            window.location.href = url;
+            
+        } catch (error) {
+            console.log('Mobile: Error, using direct navigation:', error);
+            window.location.href = url;
         }
-    } catch (error) {
-        copyToClipboard(url);
-        alert('Unable to open link. Copied to clipboard!');
+    } else {
+        // Desktop approach (more thorough checking)
+        try {
+            const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+            
+            if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                console.log('Desktop: Popup blocked, trying fallback...');
+                fallbackToDirectNavigation(url);
+            } else {
+                console.log('Desktop: Link opened successfully in new window');
+            }
+        } catch (error) {
+            console.log('Desktop: Window.open failed, trying fallback:', error);
+            fallbackToDirectNavigation(url);
+        }
     }
 }
 
-// Enhanced popup creation with iOS-optimized messaging
+
+function fallbackToDirectNavigation(url) {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+        // OPTIMIZED: Much faster mobile approach
+        // Skip confirmation for better UX and speed
+        try {
+            // Try modern mobile approach first
+            if (window.open) {
+                // Force new window/tab on mobile with minimal parameters
+                const newWindow = window.open(url, '_blank', 'noopener');
+                if (newWindow) {
+                    console.log('Mobile: Opened in new tab successfully');
+                    return;
+                }
+            }
+            
+            // Immediate fallback - no delay
+            console.log('Mobile: Direct navigation fallback');
+            window.location.href = url;
+            
+        } catch (error) {
+            console.log('Mobile navigation error:', error);
+            // Last resort with user choice
+            if (confirm('Open external link?')) {
+                window.location.href = url;
+            }
+        }
+    } else {
+        // Desktop behavior (unchanged)
+        const userChoice = confirm(
+            'Unable to open link in new window. Would you like to:\n\nOK = Go to the link now (you can use back button to return)\nCancel = Copy link to clipboard'
+        );
+        
+        if (userChoice) {
+            window.location.href = url;
+        } else {
+            copyToClipboard(url);
+            alert('Link copied to clipboard!');
+        }
+    }
+}
+
+
+// NEW: Simplified popup creation function
 function createWebViewFriendlyPopup(name, website) {
     if (website) {
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-        const buttonText = isIOS ? 'Open in Safari' : 'Visit Website';
-        
         return `<b>${name}</b><br>
                 <button onclick="openExternalLink('${website}')" style="background: #007cba; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 14px; margin: 2px;">
-                    ${buttonText}
+                    Visit Website
                 </button><br>
                 <button onclick="copyToClipboard('${website}')" style="background: #6c757d; color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; margin: 2px;">
                     Copy Link
@@ -80,60 +110,14 @@ function createWebViewFriendlyPopup(name, website) {
     }
 }
 
-// iOS-specific copy success message
-function showIOSCopyMessage(url) {
-    const messageDiv = document.createElement('div');
-    messageDiv.innerHTML = `
-        <div style="text-align: center;">
-            <div style="font-size: 18px; margin-bottom: 10px;">📋</div>
-            <div style="font-weight: bold; margin-bottom: 5px;">Link Copied!</div>
-            <div style="font-size: 12px; color: #666;">Open Safari and paste to visit:</div>
-            <div style="font-size: 11px; color: #007cba; word-break: break-all; margin-top: 5px;">${url}</div>
-        </div>
-    `;
-    
-    messageDiv.style.cssText = `
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: white;
-        color: black;
-        padding: 20px;
-        border-radius: 10px;
-        z-index: 10000;
-        font-size: 14px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        border: 1px solid #ddd;
-        max-width: 300px;
-        text-align: center;
-    `;
-    
-    document.body.appendChild(messageDiv);
-    
-    // Remove after 4 seconds
-    setTimeout(() => {
-        if (document.body.contains(messageDiv)) {
-            document.body.removeChild(messageDiv);
-        }
-    }, 4000);
-    
-    // Also allow tap to dismiss
-    messageDiv.addEventListener('click', () => {
-        if (document.body.contains(messageDiv)) {
-            document.body.removeChild(messageDiv);
-        }
-    });
-}
-
-// Enhanced clipboard function with better error handling
+// NEW: Simplified clipboard function
 function copyToClipboard(text) {
     try {
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(text).then(() => {
                 console.log('Clipboard write successful');
             }).catch((err) => {
-                console.log('Clipboard write failed, trying fallback...', err);
+                console.log('Clipboard write failed:', err);
                 fallbackCopy(text);
             });
         } else {
@@ -1291,9 +1275,10 @@ function enhancedLayerToggleClick(layerId, buttonElement) {
 // Make functions globally available for testing
 window.testPOIHandlers = testPOIHandlers;
 window.enhancedLayerToggleClick = enhancedLayerToggleClick;
+
 // ================================
 // STATION CLICK EVENTS (Optional enhancement)
-// =============================
+// ================================
 
 // Function to add click events for metro stations
 function initializeStationClicks() {
@@ -2079,5 +2064,3 @@ function debugLineFiltering(testLine = 'Red') {
 
 // Make debug function globally available
 window.debugLineFiltering = debugLineFiltering;
-
-
