@@ -909,6 +909,95 @@ function addCompactToggleStyles() {
     document.head.appendChild(styles);
 }
 
+
+// ================================
+// WMATA TRIP PLANNER LINK STYLES AND ELEMENT
+// ================================
+
+function addWMATATripPlannerLink() {
+    // Add CSS styles for the trip planner link
+    const tripPlannerStyles = document.createElement('style');
+    tripPlannerStyles.id = 'wmata-trip-planner-styles';
+    tripPlannerStyles.textContent = `
+        .wmata-trip-planner {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            padding: 12px 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .wmata-trip-planner a {
+            color: #007cba;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .wmata-trip-planner a:hover {
+            color: #005a87;
+            text-decoration: underline;
+        }
+
+        .wmata-trip-planner a::before {
+            content: '🚇';
+            font-size: 16px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .wmata-trip-planner {
+                top: 10px;
+                left: 10px;
+                padding: 10px 12px;
+            }
+            
+            .wmata-trip-planner a {
+                font-size: 13px;
+            }
+        }
+
+        /* Adjust for very small screens */
+        @media (max-width: 480px) {
+            .wmata-trip-planner a::before {
+                display: none; /* Hide emoji on very small screens */
+            }
+        }
+    `;
+    
+    document.head.appendChild(tripPlannerStyles);
+
+    // Create the trip planner link element
+    const tripPlannerContainer = document.createElement('div');
+    tripPlannerContainer.className = 'wmata-trip-planner';
+    tripPlannerContainer.innerHTML = `
+        <a href="#" onclick="openExternalLink('https://www.wmata.com/schedules/trip-planner/'); return false;">
+            WMATA Trip Planner
+        </a>
+    `;
+
+    // Add to map container
+    const mapContainer = document.getElementById('map') || 
+                        document.getElementById('map-container') || 
+                        document.body;
+    mapContainer.appendChild(tripPlannerContainer);
+
+    console.log('✅ WMATA Trip Planner link added');
+}
+
+// Initialize the WMATA Trip Planner link
+addWMATATripPlannerLink();
+
 // Initialize the compact toggles
 initializeCompactLayerToggles();
 
