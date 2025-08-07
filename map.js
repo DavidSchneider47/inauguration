@@ -1,6 +1,7 @@
 // Debugging message to ensure map.js is loaded
 console.log("map.js loaded successfully");
 
+// NEW: Simplified and more reliable external link handler
 function openExternalLink(url) {
     console.log('Opening external link:', url);
     
@@ -49,34 +50,58 @@ function openExternalLink(url) {
         }
     }
 }
+window.openExternalLink = openExternalLink;
 
+// Detect if running inside your published mobile app's WebView
+function isRunningInApp() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    
+    // Check for mobile app WebView indicators
+    return (
+        // Android app WebView
+        userAgent.includes('wv') ||
+        // iOS app WebView 
+        (userAgent.includes('mobile/') && !userAgent.includes('safari')) ||
+        // iOS standalone mode
+        window.navigator.standalone === true ||
+        // Missing typical browser features
+        typeof window.chrome === 'undefined' && typeof window.safari === 'undefined'
+    );
+}
 
+// NEW: User-friendly fallback navigation
 function fallbackToDirectNavigation(url) {
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
     if (isMobile) {
-        // OPTIMIZED: Much faster mobile approach
-        // Skip confirmation for better UX and speed
-        try {
-            // Try modern mobile approach first
-            if (window.open) {
-                // Force new window/tab on mobile with minimal parameters
-                const newWindow = window.open(url, '_blank', 'noopener');
-                if (newWindow) {
-                    console.log('Mobile: Opened in new tab successfully');
-                    return;
-                }
+        if (isRunningInApp()) {
+            // RUNNING IN YOUR PUBLISHED APP
+            const userWantsToLeave = confirm(
+                'This will open in your device browser. You can return to MetroMatch by switching back to the app.\n\nOpen website?'
+            );
+            
+            if (userWantsToLeave) {
+                // Try to force opening in system browser
+                window.open(url, '_system') || window.open(url, '_blank');
             }
-            
-            // Immediate fallback - no delay
-            console.log('Mobile: Direct navigation fallback');
-            window.location.href = url;
-            
-        } catch (error) {
-            console.log('Mobile navigation error:', error);
-            // Last resort with user choice
-            if (confirm('Open external link?')) {
+        } else {
+            // RUNNING IN MOBILE BROWSER (Safari/Chrome)
+            // Your existing fast code
+            try {
+                if (window.open) {
+                    const newWindow = window.open(url, '_blank', 'noopener');
+                    if (newWindow) {
+                        console.log('Mobile: Opened in new tab successfully');
+                        return;
+                    }
+                }
+                console.log('Mobile: Direct navigation fallback');
                 window.location.href = url;
+            } catch (error) {
+                console.log('Mobile navigation error:', error);
+                if (confirm('Open external link?')) {
+                    window.location.href = url;
+                }
             }
         }
     } else {
@@ -93,7 +118,6 @@ function fallbackToDirectNavigation(url) {
         }
     }
 }
-
 
 // NEW: Simplified popup creation function
 function createWebViewFriendlyPopup(name, website) {
@@ -156,7 +180,6 @@ function fallbackCopy(text) {
         prompt('Copy this link:', text);
     }
 }
-
 
 
 // ================================
@@ -2064,3 +2087,721 @@ function debugLineFiltering(testLine = 'Red') {
 
 // Make debug function globally available
 window.debugLineFiltering = debugLineFiltering;
+
+
+// ================================
+// FAVORITES SYSTEM - Add this to your existing map.js
+// ================================
+
+// Favorites storage and management
+class FavoritesManager {
+    constructor() {
+        this.favorites = this.loadFavorites();
+        this.isShowingOnlyFavorites = false;
+        this.initializeFavoritesUI();
+    }
+
+    // Load favorites from localStorage
+    loadFavorites() {
+        try {
+            const saved = localStorage.getItem('metroMapFavorites');
+            return saved ? JSON.parse(saved) : {};
+        } catch (error) {
+            console.warn('Could not load favorites:', error);
+            return {};
+        }
+    }
+
+    // Save favorites to localStorage
+    saveFavorites() {
+        try {
+            localStorage.setItem('metroMapFavorites', JSON.stringify(this.favorites));
+            console.log('Favorites saved successfully');
+        } catch (error) {
+            console.warn('Could not save favorites:', error);
+        }
+    }
+
+    // Generate unique key for a POI
+    generatePOIKey(layer, properties) {
+        // Use the POI name as the primary identifier
+        const nameFields = {
+            'hotels': 'hotel_name',
+            'restaurant': 'restaurant_name',
+            'coffee': 'coffee_name',
+            'nightlife': 'bar_name',
+            'pharmacy': 'pharmacy_name',
+            'supermarkets': 'supermarket_name',
+            'museums': 'museum_name'
+        };
+        
+        const nameField = nameFields[layer];
+        const poiName = properties[nameField];
+        
+        if (!poiName) {
+            console.warn('Could not generate POI key - no name found');
+            return null;
+        }
+        
+        // Create unique key: layer_name
+        return `${layer}_${poiName.replace(/\s+/g, '_').toLowerCase()}`;
+    }
+
+    // Check if POI is favorited
+    isFavorited(layer, properties) {
+        const key = this.generatePOIKey(layer, properties);
+        return key && this.favorites[key];
+    }
+
+    // Add POI to favorites
+    addFavorite(layer, properties) {
+        const key = this.generatePOIKey(layer, properties);
+        if (!key) return false;
+
+        // Store favorite with metadata
+        this.favorites[key] = {
+            layer: layer,
+            name: this.getPOIName(layer, properties),
+            properties: properties,
+            dateAdded: Date.now()
+        };
+
+        this.saveFavorites();
+        this.updateFavoritesToggle();
+        console.log(`Added favorite: ${this.getPOIName(layer, properties)}`);
+        return true;
+    }
+
+    // Remove POI from favorites
+    removeFavorite(layer, properties) {
+        const key = this.generatePOIKey(layer, properties);
+        if (!key || !this.favorites[key]) return false;
+
+        const name = this.getPOIName(layer, properties);
+        delete this.favorites[key];
+        
+        this.saveFavorites();
+        this.updateFavoritesToggle();
+        console.log(`Removed favorite: ${name}`);
+        return true;
+    }
+
+    // Toggle favorite status
+    toggleFavorite(layer, properties) {
+        if (this.isFavorited(layer, properties)) {
+            return this.removeFavorite(layer, properties);
+        } else {
+            return this.addFavorite(layer, properties);
+        }
+    }
+
+    // Get POI name from properties
+    getPOIName(layer, properties) {
+        const nameFields = {
+            'hotels': 'hotel_name',
+            'restaurant': 'restaurant_name',
+            'coffee': 'coffee_name',
+            'nightlife': 'bar_name',
+            'pharmacy': 'pharmacy_name',
+            'supermarkets': 'supermarket_name',
+            'museums': 'museum_name'
+        };
+        
+        return properties[nameFields[layer]] || 'Unknown POI';
+    }
+
+    // Get favorites count
+    getFavoritesCount() {
+        return Object.keys(this.favorites).length;
+    }
+
+    // Initialize favorites UI elements
+    initializeFavoritesUI() {
+        // Add favorites toggle to compact menu
+        this.addFavoritesToggle();
+    }
+
+    // Add favorites toggle button to compact menu
+    addFavoritesToggle() {
+        // Wait for compact menu to exist
+        const waitForMenu = () => {
+            let menuContainer = document.getElementById('compact-map-menu');
+            if (!menuContainer) {
+                setTimeout(waitForMenu, 100);
+                return;
+            }
+
+            // Don't add if already exists
+            if (document.getElementById('compact-favorites')) {
+                this.updateFavoritesToggle();
+                return;
+            }
+
+            // Create favorites button
+            const button = document.createElement('div');
+            button.id = 'compact-favorites';
+            button.className = 'compact-layer-button favorites-button';
+            button.title = 'Favorites';
+
+            const count = this.getFavoritesCount();
+            button.innerHTML = `
+                <div class="compact-icon favorites-icon" style="background-color: #FFD700">
+                    <span class="favorites-star">⭐</span>
+                    <span class="favorites-count ${count > 0 ? 'has-favorites' : ''}">${count}</span>
+                </div>
+            `;
+
+            // Click handler
+            button.onclick = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggleFavoritesDisplay();
+            };
+
+            // Add to menu (first position)
+            menuContainer.insertBefore(button, menuContainer.firstChild);
+            console.log('✅ Favorites toggle added to compact menu');
+        };
+
+        waitForMenu();
+    }
+
+    // Update the favorites toggle button
+    updateFavoritesToggle() {
+        const button = document.getElementById('compact-favorites');
+        if (!button) return;
+
+        const count = this.getFavoritesCount();
+        const countSpan = button.querySelector('.favorites-count');
+        
+        if (countSpan) {
+            countSpan.textContent = count;
+            countSpan.className = `favorites-count ${count > 0 ? 'has-favorites' : ''}`;
+        }
+
+        // Update active state based on display mode
+        if (this.isShowingOnlyFavorites) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    }
+
+    // Toggle favorites display
+    toggleFavoritesDisplay() {
+        this.isShowingOnlyFavorites = !this.isShowingOnlyFavorites;
+        
+        if (this.isShowingOnlyFavorites) {
+            this.showOnlyFavorites();
+        } else {
+            this.showAllPOIs();
+        }
+
+        this.updateFavoritesToggle();
+    }
+
+    // Show only favorited POIs
+    showOnlyFavorites() {
+        console.log('🌟 Showing only favorites');
+        
+        const poiLayers = ['pharmacy', 'supermarkets', 'nightlife', 'coffee', 'restaurant', 'hotels', 'museums'];
+        
+        poiLayers.forEach(layerId => {
+            if (!map.getLayer(layerId)) return;
+
+            // Get favorites for this layer
+            const layerFavorites = this.getFavoritesForLayer(layerId);
+            
+            if (layerFavorites.length === 0) {
+                // No favorites for this layer - hide it completely
+                map.setLayoutProperty(layerId, 'visibility', 'none');
+                console.log(`Hidden ${layerId} - no favorites`);
+                return;
+            }
+
+            // Show layer and apply favorites filter
+            map.setLayoutProperty(layerId, 'visibility', 'visible');
+            
+            // Create filter for favorites
+            const favoriteNames = layerFavorites.map(fav => fav.name);
+            const nameField = this.getLayerNameField(layerId);
+            
+            let favoritesFilter;
+            if (favoriteNames.length === 1) {
+                favoritesFilter = ['==', ['get', nameField], favoriteNames[0]];
+            } else {
+                favoritesFilter = ['in', ['get', nameField], ['literal', favoriteNames]];
+            }
+
+            try {
+                map.setFilter(layerId, favoritesFilter);
+                console.log(`Applied favorites filter to ${layerId}: ${favoriteNames.length} favorites`);
+            } catch (error) {
+                console.warn(`Could not apply favorites filter to ${layerId}:`, error);
+            }
+        });
+    }
+
+    // Show all POIs (restore normal filtering)
+    showAllPOIs() {
+        console.log('🌍 Showing all POIs');
+        
+        // Get current line filter
+        const currentLineQuery = localStorage.getItem('lineQuery') || '';
+        
+        // Reapply normal POI filtering
+        if (typeof filterPOIsForLine === 'function') {
+            filterPOIsForLine(currentLineQuery);
+        } else {
+            // Fallback: restore basic type filters
+            const poiLayers = ['pharmacy', 'supermarkets', 'nightlife', 'coffee', 'restaurant', 'hotels', 'museums'];
+            
+            poiLayers.forEach(layerId => {
+                if (!map.getLayer(layerId)) return;
+                
+                const nameField = this.getLayerNameField(layerId);
+                const typeFilter = ['has', nameField];
+                
+                try {
+                    map.setFilter(layerId, typeFilter);
+                    map.setLayoutProperty(layerId, 'visibility', 'visible');
+                } catch (error) {
+                    console.warn(`Could not restore filter for ${layerId}:`, error);
+                }
+            });
+        }
+    }
+
+    // Get favorites for a specific layer
+    getFavoritesForLayer(layer) {
+        return Object.values(this.favorites).filter(fav => fav.layer === layer);
+    }
+
+    // Get the name field for a layer
+    getLayerNameField(layer) {
+        const nameFields = {
+            'hotels': 'hotel_name',
+            'restaurant': 'restaurant_name',
+            'coffee': 'coffee_name',
+            'nightlife': 'bar_name',
+            'pharmacy': 'pharmacy_name',
+            'supermarkets': 'supermarket_name',
+            'museums': 'museum_name'
+        };
+        
+        return nameFields[layer] || 'name';
+    }
+}
+
+// ================================
+// ENHANCED POPUP WITH FAVORITES STAR
+// ================================
+
+// Enhanced version of createEnhancedPopup with favorites star
+function createEnhancedPopupWithFavorites(layer, properties) {
+    let popupContent = '<div style="max-width: 250px; position: relative;">';
+    
+    // Add favorites star in top-left corner
+    const isFavorited = window.favoritesManager.isFavorited(layer, properties);
+    const starClass = isFavorited ? 'favorited' : '';
+    const starColor = isFavorited ? '#FFD700' : '#ccc';
+    
+    popupContent += `
+        <div class="favorites-star-container" onclick="togglePopupFavorite('${layer}', event)" 
+             style="position: absolute; top: -5px; left: -5px; z-index: 10; cursor: pointer; background: white; border-radius: 50%; padding: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+            <span class="popup-star ${starClass}" style="font-size: 16px; color: ${starColor};" title="${isFavorited ? 'Remove from favorites' : 'Add to favorites'}">⭐</span>
+        </div>
+    `;
+    
+    // Determine the correct field names for each POI type
+    let nameField, websiteField, distanceField, stationField;
+    
+    if (layer === 'hotels') {
+        nameField = 'hotel_name';
+        websiteField = 'hotel_website';
+        distanceField = 'hotel_distance_miles';
+        stationField = 'closest_station_name';
+    } else if (layer === 'restaurant') {
+        nameField = 'restaurant_name';
+        websiteField = 'restaurant_website';
+        distanceField = 'restaurant_distance_miles';
+        stationField = 'closest_station_name';
+    } else if (layer === 'coffee') {        
+        nameField = 'coffee_name';
+        websiteField = 'coffee_website';
+        distanceField = 'coffee_distance_miles';
+        stationField = 'closest_station_name';
+    } else if (layer === 'nightlife') {
+        nameField = 'bar_name';
+        websiteField = 'bar_website';
+        distanceField = 'bar_distance_miles';
+        stationField = 'closest_station_name';
+    } else if (layer === 'pharmacy') {
+        nameField = 'pharmacy_name';
+        websiteField = 'pharmacy_website';
+        distanceField = 'pharmacy_distance_miles';
+        stationField = 'closest_station_name';
+    } else if (layer === 'supermarkets') {
+        nameField = 'supermarket_name';
+        websiteField = 'supermarket_website';
+        distanceField = 'supermarket_distance_miles';
+        stationField = 'closest_station_name';
+    } else if (layer === 'museums') {
+        nameField = 'museum_name';
+        websiteField = 'museum_website';
+        distanceField = 'museum_distance_miles';
+        stationField = 'closest_station_name'; 
+    } else {
+        // Fallback for any other POI types
+        nameField = 'name';
+        websiteField = 'website';
+        distanceField = 'distance_miles';
+        stationField = 'closest_station_name';
+    }
+    
+    // Add the establishment name as clickable title (if website exists) or regular title
+    if (properties[nameField]) {
+        if (properties[websiteField]) {
+            // Make the name clickable if website exists
+            let websiteUrl = properties[websiteField];
+            
+            // Ensure the URL has a protocol (add https:// if missing)
+            if (!websiteUrl.startsWith('http://') && !websiteUrl.startsWith('https://')) {
+                websiteUrl = 'https://' + websiteUrl;
+            }
+            
+            popupContent += `<h3 style="margin: 15px 0 8px 0; color: #333; font-size: 16px;">
+                <a href="#" onclick="openExternalLink('${websiteUrl}'); return false;" 
+                   style="color: #007cba; text-decoration: none; cursor: pointer;">
+                    ${properties[nameField]}
+                </a>
+            </h3>`;
+        } else {
+            // Regular title if no website
+            popupContent += `<h3 style="margin: 15px 0 8px 0; color: #333; font-size: 16px;">
+                ${properties[nameField]}
+            </h3>`;
+        }
+    }
+    
+    // Show distance from nearest metro station
+    if (properties[distanceField]) {
+        const distance = parseFloat(properties[distanceField]);
+        popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
+            <strong>Distance:</strong> ${distance} miles from metro
+        </p>`;
+    }
+    
+    // Show which metro station this POI is closest to
+    if (properties[stationField] || properties.station_name) {
+        const stationName = properties[stationField] || properties.station_name;
+        popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
+            <strong>Nearest Metro:</strong> ${stationName}
+        </p>`;
+    }
+    
+    popupContent += '</div>';
+    return popupContent;
+}
+
+// Global function to handle star clicks in popups
+function togglePopupFavorite(layer, event) {
+    event.stopPropagation();
+    
+    // Find the current popup to get properties
+    const popup = document.querySelector('.mapboxgl-popup');
+    if (!popup) return;
+    
+    // This is a bit tricky - we need to get the properties from the current popup
+    // We'll store them on the popup element when created
+    const properties = popup._favoritesProperties;
+    if (!properties) {
+        console.warn('Could not find properties for favorites toggle');
+        return;
+    }
+    
+    // Toggle favorite
+    const wasToggled = window.favoritesManager.toggleFavorite(layer, properties);
+    
+    if (wasToggled) {
+        // Update star appearance
+        const star = event.target;
+        const isFavorited = window.favoritesManager.isFavorited(layer, properties);
+        
+        star.style.color = isFavorited ? '#FFD700' : '#ccc';
+        star.className = `popup-star ${isFavorited ? 'favorited' : ''}`;
+        star.title = isFavorited ? 'Remove from favorites' : 'Add to favorites';
+        
+        // Add visual feedback
+        star.style.transform = 'scale(1.3)';
+        setTimeout(() => {
+            star.style.transform = 'scale(1)';
+        }, 150);
+    }
+}
+
+// ================================
+// ENHANCED POI CLICK HANDLER WITH FAVORITES
+// ================================
+
+function initializeEnhancedPOIClicksWithFavorites() {
+    console.log('🎯 Initializing enhanced POI click events with favorites...');
+    
+    const poiLayers = ['pharmacy', 'supermarkets', 'nightlife', 'coffee', 'restaurant', 'hotels', 'museums'];
+    let successfulLayers = 0;
+    
+    poiLayers.forEach(layer => {
+        // Check if layer exists
+        if (!map.getLayer(layer)) {
+            console.warn(`⚠️ Layer ${layer} not found in map`);
+            return;
+        }
+        
+        console.log(`✅ Setting up handlers for layer: ${layer}`);
+        
+        // Remove any existing handlers to prevent duplicates
+        map.off('click', layer);
+        map.off('mouseenter', layer);
+        map.off('mouseleave', layer);
+        
+        // Add click handler
+        map.on('click', layer, function(e) {
+            if (e.features && e.features.length > 0) {
+                console.log(`🖱️ Clicked on ${layer}:`, e.features[0].properties);
+                
+                const properties = e.features[0].properties;
+                const popupContent = createEnhancedPopupWithFavorites(layer, properties);
+                
+                // Remove any existing popups before showing new one
+                const existingPopups = document.getElementsByClassName('mapboxgl-popup');
+                for (let i = 0; i < existingPopups.length; i++) {
+                    existingPopups[i].remove();
+                }
+                
+                const popup = new mapboxgl.Popup({
+                    closeOnClick: true,
+                    closeOnMove: false
+                })
+                    .setLngLat(e.lngLat)
+                    .setHTML(popupContent)
+                    .addTo(map);
+                
+                // Store properties on popup element for favorites functionality
+                const popupElement = popup.getElement();
+                popupElement._favoritesProperties = properties;
+                popupElement._favoritesLayer = layer;
+            }
+        });
+        
+        // Add hover effects
+        map.on('mouseenter', layer, function() {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+        
+        map.on('mouseleave', layer, function() {
+            map.getCanvas().style.cursor = '';
+        });
+        
+        successfulLayers++;
+    });
+    
+    console.log(`✅ Successfully initialized ${successfulLayers} of ${poiLayers.length} POI layers with favorites`);
+}
+
+// ================================
+// FAVORITES CSS STYLES
+// ================================
+
+function addFavoritesStyles() {
+    const favoritesStyles = document.createElement('style');
+    favoritesStyles.id = 'favorites-styles';
+    favoritesStyles.textContent = `
+        /* Favorites button specific styles */
+        .favorites-button {
+            position: relative;
+        }
+        
+        .favorites-icon {
+            position: relative;
+            overflow: visible;
+        }
+        
+        .favorites-star {
+            font-size: 14px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .favorites-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #007cba;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 10px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.2s ease;
+        }
+        
+        .favorites-count.has-favorites {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .favorites-button.active .favorites-icon {
+            background-color: #007cba !important;
+        }
+        
+        .favorites-button.active .favorites-star {
+            color: white;
+        }
+        
+        .favorites-button.active .favorites-count {
+            background: #FFD700;
+            color: #333;
+        }
+        
+        /* Popup star styles */
+        .favorites-star-container:hover {
+            transform: scale(1.1);
+        }
+        
+        .popup-star {
+            transition: all 0.2s ease;
+            display: block;
+        }
+        
+        .popup-star:hover {
+            transform: scale(1.2);
+        }
+        
+        .popup-star.favorited {
+            filter: drop-shadow(0 0 2px rgba(255, 215, 0, 0.8));
+        }
+        
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .favorites-count {
+                width: 16px;
+                height: 16px;
+                font-size: 9px;
+                top: -6px;
+                right: -6px;
+            }
+        }
+        
+        /* Animation for favorites count changes */
+        @keyframes countPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        
+        .favorites-count.updated {
+            animation: countPulse 0.3s ease;
+        }
+    `;
+    
+    document.head.appendChild(favoritesStyles);
+}
+
+// ================================
+// INITIALIZATION
+// ================================
+
+// Initialize favorites system when map loads
+let favoritesInitialized = false;
+
+function initializeFavoritesSystem() {
+    if (favoritesInitialized) return;
+    
+    console.log('🌟 Initializing favorites system...');
+    
+    // Add CSS styles
+    addFavoritesStyles();
+    
+    // Create global favorites manager
+    window.favoritesManager = new FavoritesManager();
+    
+    // Replace the existing POI click handler with favorites-enabled version
+    initializeEnhancedPOIClicksWithFavorites();
+    
+    // Make toggle function globally available
+    window.togglePopupFavorite = togglePopupFavorite;
+    
+    favoritesInitialized = true;
+    console.log('✅ Favorites system initialized successfully');
+}
+
+// Replace the existing map load callback
+const originalMapLoadCallback = map._callbacks?.load?.[0];
+
+map.on('load', () => {
+    console.log('🗺️ Map loaded, starting initialization with favorites...');
+    
+    // Start location tracking
+    trackUserLocation(map);
+    
+    // Track load time
+    window.mapLoadTime = Date.now();
+    
+    // Wait for map to be fully idle before initializing
+    const initializeWithFavorites = () => {
+        if (!window.poiClicksInitialized) {
+            console.log('🎯 Map is idle, initializing POI handlers with favorites...');
+            initializeFavoritesSystem();
+            window.poiClicksInitialized = true;
+        }
+    };
+    
+    // Try to initialize on idle
+    map.on('idle', initializeWithFavorites);
+    
+    // Also try after a delay as backup
+    setTimeout(() => {
+        if (!window.poiClicksInitialized) {
+            console.log('⏰ Backup initialization triggered...');
+            initializeWithFavorites();
+        }
+    }, 2000);
+    
+    console.log('🚀 Map initialization complete with favorites');
+});
+
+// ================================
+// DEBUG AND TESTING FUNCTIONS
+// ================================
+
+function testFavoritesSystem() {
+    console.log('🧪 Testing favorites system:');
+    console.log('Favorites manager:', window.favoritesManager);
+    console.log('Current favorites:', window.favoritesManager?.favorites);
+    console.log('Favorites count:', window.favoritesManager?.getFavoritesCount());
+    console.log('Is showing only favorites:', window.favoritesManager?.isShowingOnlyFavorites);
+    
+    // Test adding a dummy favorite
+    const testPOI = {
+        coffee_name: 'Test Coffee Shop',
+        closest_station_name: 'Test Station',
+        coffee_distance_miles: 0.1
+    };
+    
+    console.log('Adding test favorite...');
+    window.favoritesManager?.addFavorite('coffee', testPOI);
+}
+
+// Make test function globally available
+window.testFavoritesSystem = testFavoritesSystem;
+
+console.log('🌟 Favorites enhancement loaded successfully');
