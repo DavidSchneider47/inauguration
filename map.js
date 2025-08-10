@@ -713,16 +713,23 @@ function createEnhancedPopup(layer, properties, lngLat) {
     let popupContent = '<div style="max-width: 250px;">';
     
     // Get field names for this POI type
-    const fieldMap = {
-        'hotels': { name: 'hotel_name', website: 'hotel_website', distance: 'hotel_distance_miles' },
-        'restaurant': { name: 'restaurant_name', website: 'restaurant_website', distance: 'restaurant_distance_miles' },
-        'coffee': { name: 'coffee_name', website: 'coffee_website', distance: 'coffee_distance_miles' },
-        'nightlife': { name: 'bar_name', website: 'bar_website', distance: 'bar_distance_miles' },
-        'pharmacy': { name: 'pharmacy_name', website: 'pharmacy_website', distance: 'pharmacy_distance_miles' },
-        'supermarkets': { name: 'supermarket_name', website: 'supermarket_website', distance: 'supermarket_distance_miles' },
-        'museums': { name: 'museum_name', website: 'museum_website', distance: 'museum_distance_miles' }
-    };
     
+const fieldMap = {
+    'hotels': { name: 'hotel_name', website: 'hotel_website', distance: 'hotel_distance_miles' },
+    'restaurant': { 
+        name: 'restaurant_name', 
+        website: 'restaurant_website', 
+        distance: 'restaurant_distance_miles',
+        price: 'restaurant_price',
+        cuisine: 'restaurant_cuisine_type'
+    },
+    'coffee': { name: 'coffee_name', website: 'coffee_website', distance: 'coffee_distance_miles' },
+    'nightlife': { name: 'bar_name', website: 'bar_website', distance: 'bar_distance_miles' },
+    'pharmacy': { name: 'pharmacy_name', website: 'pharmacy_website', distance: 'pharmacy_distance_miles' },
+    'supermarkets': { name: 'supermarket_name', website: 'supermarket_website', distance: 'supermarket_distance_miles' },
+    'museums': { name: 'museum_name', website: 'museum_website', distance: 'museum_distance_miles' }
+};
+
     const fields = fieldMap[layer] || { name: 'name', website: 'website', distance: 'distance_miles' };
     const stationField = 'closest_station_name';
     
@@ -777,21 +784,35 @@ function createEnhancedPopup(layer, properties, lngLat) {
         popupContent += `</div>`;
     }
     
-    // Distance info
-    if (properties[fields.distance]) {
-        const distance = parseFloat(properties[fields.distance]);
-        popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
-            <strong>Distance:</strong> ${distance} miles from metro
-        </p>`;
-    }
-    
-    // Nearest station
-    if (properties[stationField] || properties.station_name) {
-        const stationName = properties[stationField] || properties.station_name;
-        popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
-            <strong>Nearest Metro:</strong> ${stationName}
-        </p>`;
-    }
+  // NEW ORDER: Cuisine first (for restaurants only)
+if (layer === 'restaurant' && properties[fields.cuisine]) {
+    popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
+        <strong>Cuisine:</strong> ${properties[fields.cuisine]}
+    </p>`;
+}
+
+// Price second (for restaurants only)
+if (layer === 'restaurant' && properties[fields.price]) {
+    popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
+        <strong>Price:</strong> ${properties[fields.price]}
+    </p>`;
+}
+
+// Nearest station third
+if (properties[stationField] || properties.station_name) {
+    const stationName = properties[stationField] || properties.station_name;
+    popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
+        <strong>Nearest Metro:</strong> ${stationName}
+    </p>`;
+}
+
+// Distance fourth (last)
+if (properties[fields.distance]) {
+    const distance = parseFloat(properties[fields.distance]);
+    popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
+        <strong>Distance:</strong> ${distance} miles from metro
+    </p>`;
+}
     
     popupContent += '</div>';
     return popupContent;
