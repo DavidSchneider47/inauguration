@@ -566,20 +566,25 @@ fetch('/api/stations')
     .catch(error => console.error("Error fetching stations:", error));
 
 // ================================
-// POI FAVORITES SYSTEM
+// POI FAVORITES SYSTEM - FIXED VERSION
 // ================================
 
 // Favorites management functions
 const POIFavorites = {
     storageKey: 'poi_favorites',
     
-    // Create unique identifier for a POI - IMPROVED for consistency
+    // FIXED: More reliable ID creation using name + layer + rounded coordinates
     createId(layer, properties, lngLat) {
         const nameField = this.getNameField(layer);
         const name = properties[nameField] || 'Unknown';
-        // Use more precise coordinates and sanitize the name
-        const sanitizedName = name.replace(/[^a-zA-Z0-9]/g, '_');
-        return `${layer}_${sanitizedName}_${lngLat[0].toFixed(6)}_${lngLat[1].toFixed(6)}`;
+        
+        // Use the name as primary identifier + layer + rounded coordinates
+        // Round coordinates to 4 decimal places for consistency (~11m precision)
+        const sanitizedName = name.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_');
+        const roundedLng = Math.round(lngLat[0] * 10000) / 10000;
+        const roundedLat = Math.round(lngLat[1] * 10000) / 10000;
+        
+        return `${layer}_${sanitizedName}_${roundedLng}_${roundedLat}`;
     },
     
     // Get the correct name field for each layer
@@ -606,24 +611,54 @@ const POIFavorites = {
         }
     },
     
-    // Check if POI is favorited - IMPROVED with better logging
+    // FIXED: More robust favorite checking with fallback search
     isFavorited(layer, properties, lngLat) {
         const id = this.createId(layer, properties, lngLat);
         const favorites = this.getFavorites();
-        const isFav = favorites.hasOwnProperty(id);
         
-        console.log(`🔍 Checking if favorited - ID: ${id}, Result: ${isFav}`);
-        if (isFav) {
-            console.log(`⭐ Found in favorites:`, favorites[id]);
+        // Direct ID match
+        if (favorites.hasOwnProperty(id)) {
+            console.log(`✅ Direct match found for ID: ${id}`);
+            return true;
         }
         
-        return isFav;
+        // Fallback: search by name and layer (in case of coordinate differences)
+        const nameField = this.getNameField(layer);
+        const poiName = properties[nameField];
+        
+        if (poiName) {
+            const matchingFavorites = Object.values(favorites).filter(fav => 
+                fav.layer === layer && 
+                fav.name === poiName
+            );
+            
+            if (matchingFavorites.length > 0) {
+                console.log(`✅ Name-based match found for: ${poiName} in layer: ${layer}`);
+                return true;
+            }
+        }
+        
+        console.log(`❌ No match found for POI: ${poiName} in layer: ${layer}`);
+        return false;
     },
     
-    // Add POI to favorites - IMPROVED with better logging
+    // FIXED: Better add to favorites with name-based deduplication
     addToFavorites(layer, properties, lngLat) {
         const id = this.createId(layer, properties, lngLat);
+        const nameField = this.getNameField(layer);
+        const poiName = properties[nameField];
         const favorites = this.getFavorites();
+        
+        // Check if already exists by name to prevent duplicates
+        const existingFavorite = Object.keys(favorites).find(favId => {
+            const fav = favorites[favId];
+            return fav.layer === layer && fav.name === poiName;
+        });
+        
+        if (existingFavorite) {
+            console.log(`ℹ️ POI already favorited with different ID: ${existingFavorite}`);
+            return true; // Already favorited, no need to add again
+        }
         
         console.log(`➕ Adding to favorites with ID: ${id}`);
         
@@ -632,12 +667,12 @@ const POIFavorites = {
             properties: { ...properties },
             lngLat: [...lngLat],
             dateAdded: new Date().toISOString(),
-            name: properties[this.getNameField(layer)]
+            name: poiName
         };
         
         try {
             localStorage.setItem(this.storageKey, JSON.stringify(favorites));
-            console.log(`⭐ Successfully added to favorites: ${favorites[id].name}`);
+            console.log(`⭐ Successfully added to favorites: ${poiName}`);
             console.log(`📊 Total favorites: ${Object.keys(favorites).length}`);
             return true;
         } catch (error) {
@@ -646,56 +681,49 @@ const POIFavorites = {
         }
     },
     
-    // Remove POI from favorites - FIXED counter and consistency issues
+    // FIXED: More robust removal with name-based search
     removeFromFavorites(layer, properties, lngLat) {
         const id = this.createId(layer, properties, lngLat);
+        const nameField = this.getNameField(layer);
+        const poiName = properties[nameField];
         const favorites = this.getFavorites();
         
-        console.log(`➖ Trying to remove from favorites with ID: ${id}`);
-        console.log(`📋 Current favorites keys:`, Object.keys(favorites));
+        console.log(`➖ Trying to remove from favorites: ${poiName}`);
         
-        // Check if the exact ID exists
+        // Try direct ID match first
         if (favorites.hasOwnProperty(id)) {
-            const name = favorites[id].name;
             delete favorites[id];
-            
-            try {
-                localStorage.setItem(this.storageKey, JSON.stringify(favorites));
-                console.log(`☆ Successfully removed from favorites: ${name}`);
-                console.log(`📊 Remaining favorites: ${Object.keys(favorites).length}`);
-                return true;
-            } catch (error) {
-                console.warn('Error removing favorite:', error);
-                return false;
-            }
-        } else {
-            // Try to find a similar ID (in case of slight differences)
-            console.warn(`❌ Exact ID not found. Searching for similar IDs...`);
-            const nameField = this.getNameField(layer);
-            const poiName = properties[nameField];
-            
-            const similarIds = Object.keys(favorites).filter(favId => {
-                return favId.includes(layer) && favId.includes(poiName?.replace(/[^a-zA-Z0-9]/g, '_'));
-            });
-            
-            if (similarIds.length > 0) {
-                console.log(`🔍 Found similar ID(s):`, similarIds);
-                const exactId = similarIds[0]; // Use the first match
-                const name = favorites[exactId].name;
-                delete favorites[exactId];
-                
-                try {
-                    localStorage.setItem(this.storageKey, JSON.stringify(favorites));
-                    console.log(`☆ Successfully removed similar favorite: ${name}`);
-                    return true;
-                } catch (error) {
-                    console.warn('Error removing similar favorite:', error);
-                    return false;
-                }
-            } else {
-                console.warn(`❌ No similar POI found in favorites for removal.`);
-                return false;
-            }
+            this.saveFavorites(favorites);
+            console.log(`☆ Removed by direct ID: ${poiName}`);
+            return true;
+        }
+        
+        // Fallback: find by name and layer
+        const matchingIds = Object.keys(favorites).filter(favId => {
+            const fav = favorites[favId];
+            return fav.layer === layer && fav.name === poiName;
+        });
+        
+        if (matchingIds.length > 0) {
+            // Remove all matching entries (handles duplicates)
+            matchingIds.forEach(matchId => delete favorites[matchId]);
+            this.saveFavorites(favorites);
+            console.log(`☆ Removed by name match: ${poiName} (${matchingIds.length} entries)`);
+            return true;
+        }
+        
+        console.warn(`❌ Could not find favorite to remove: ${poiName}`);
+        return false;
+    },
+    
+    // Helper to save favorites
+    saveFavorites(favorites) {
+        try {
+            localStorage.setItem(this.storageKey, JSON.stringify(favorites));
+            return true;
+        } catch (error) {
+            console.warn('Error saving favorites:', error);
+            return false;
         }
     },
     
@@ -706,7 +734,7 @@ const POIFavorites = {
 };
 
 // ================================
-// ENHANCED POI POPUP WITH FAVORITES
+// ENHANCED POI POPUP WITH FAVORITES - FIXED VERSION
 // ================================
 
 function createEnhancedPopup(layer, properties, lngLat) {
@@ -733,11 +761,11 @@ const fieldMap = {
     const fields = fieldMap[layer] || { name: 'name', website: 'website', distance: 'distance_miles' };
     const stationField = 'closest_station_name';
     
-    // Create POI identifier for favorites - CONSISTENT ID generation
-    const poiId = POIFavorites.createId(layer, properties, lngLat);
+    // FIXED: Check favorite status more reliably
     const isFavorited = POIFavorites.isFavorited(layer, properties, lngLat);
+    const poiId = POIFavorites.createId(layer, properties, lngLat);
     
-    console.log(`🏷️ Creating popup for POI ID: ${poiId}, Favorited: ${isFavorited}`);
+    console.log(`🏷️ Creating popup - POI: ${properties[fields.name]}, Favorited: ${isFavorited}`);
     
     // Title with star button
     if (properties[fields.name]) {
@@ -762,12 +790,12 @@ const fieldMap = {
             </h3>`;
         }
         
-        // FIXED: Star button with consistent ID and simplified event handling
+        // FIXED: Star button with correct initial state
         const starIcon = isFavorited ? '⭐' : '☆';
         const starColor = isFavorited ? '#FFD700' : '#999';
-        const buttonId = `star_${poiId}`;
+        const buttonId = `star_${poiId.replace(/[^a-zA-Z0-9]/g, '_')}`;
         
-        // Create a global reference to this POI's data for the onclick handler
+        // Store POI data globally for the onclick handler
         window[`poi_data_${poiId}`] = {
             layer: layer,
             properties: properties,
@@ -775,7 +803,7 @@ const fieldMap = {
         };
             
         popupContent += `<button id="${buttonId}" 
-                                onclick="togglePOIFavoriteSimple('${poiId}')" 
+                                onclick="togglePOIFavoriteFixed('${poiId}')" 
                                 style="background: none; border: none; font-size: 20px; cursor: pointer; color: ${starColor}; padding: 0; margin-left: 8px;" 
                                 title="${isFavorited ? 'Remove from favorites' : 'Add to favorites'}">
             ${starIcon}
@@ -928,14 +956,13 @@ function applyCategoryFilter(layerId) {
 }
 
 // ================================
-// SIMPLIFIED TOGGLE FUNCTION - No complex JSON parsing
+// FIXED: New toggle function with better state management
 // ================================
 
-function togglePOIFavoriteSimple(poiId) {
-    console.log('\n🔄 === SIMPLIFIED TOGGLE FAVORITE ===');
+function togglePOIFavoriteFixed(poiId) {
+    console.log('\n🔄 === FIXED TOGGLE FAVORITE ===');
     console.log('POI ID:', poiId);
     
-    // Get the POI data from the global reference
     const poiData = window[`poi_data_${poiId}`];
     if (!poiData) {
         console.error('❌ POI data not found for ID:', poiId);
@@ -943,66 +970,79 @@ function togglePOIFavoriteSimple(poiId) {
     }
     
     const { layer, properties, lngLat } = poiData;
-    console.log('Layer:', layer);
-    console.log('Properties:', properties);
-    console.log('LngLat:', lngLat);
+    const nameField = POIFavorites.getNameField(layer);
+    const poiName = properties[nameField];
     
-    // Check current favorite status
+    console.log('POI Name:', poiName);
+    console.log('Layer:', layer);
+    
+    // Check current favorite status using the more robust method
     const isFavorited = POIFavorites.isFavorited(layer, properties, lngLat);
     console.log('Current favorite status:', isFavorited);
     
+    const buttonId = `star_${poiId.replace(/[^a-zA-Z0-9]/g, '_')}`;
+    const starButton = document.getElementById(buttonId);
+    
     if (isFavorited) {
-        console.log('🗑️ Attempting to remove from favorites...');
+        // Remove from favorites
+        console.log('🗑️ Removing from favorites...');
         const success = POIFavorites.removeFromFavorites(layer, properties, lngLat);
+        
+        if (success && starButton) {
+            starButton.innerHTML = '☆';
+            starButton.style.color = '#999';
+            starButton.title = 'Add to favorites';
+            console.log('✅ Updated star button to unfavorited state');
+        }
+        
         if (success) {
-            // Update the star button
-            const starButton = document.getElementById(`star_${poiId}`);
-            if (starButton) {
-                starButton.innerHTML = '☆';
-                starButton.style.color = '#999';
-                starButton.title = 'Add to favorites';
-                console.log('✅ Updated star button to unfavorited state');
-            }
-            
             updateFavoritesDisplay();
-            console.log(`☆ Successfully removed from favorites`);
+            console.log(`☆ Successfully removed from favorites: ${poiName}`);
+            
+            // If in favorites-only mode, hide this POI
+            if (window.favoritesOnlyMode) {
+                console.log('🔄 Updating favorites-only view...');
+                setTimeout(() => {
+                    applyFavoritesFilter(layer);
+                }, 100);
+            }
         } else {
             console.error('❌ Failed to remove from favorites');
         }
     } else {
-        console.log('➕ Attempting to add to favorites...');
+        // Add to favorites
+        console.log('➕ Adding to favorites...');
         const success = POIFavorites.addToFavorites(layer, properties, lngLat);
+        
+        if (success && starButton) {
+            starButton.innerHTML = '⭐';
+            starButton.style.color = '#FFD700';
+            starButton.title = 'Remove from favorites';
+            console.log('✅ Updated star button to favorited state');
+        }
+        
         if (success) {
-            // Update the star button
-            const starButton = document.getElementById(`star_${poiId}`);
-            if (starButton) {
-                starButton.innerHTML = '⭐';
-                starButton.style.color = '#FFD700';
-                starButton.title = 'Remove from favorites';
-                console.log('✅ Updated star button to favorited state');
-            }
-            
             updateFavoritesDisplay();
-            console.log(`⭐ Successfully added to favorites`);
+            console.log(`⭐ Successfully added to favorites: ${poiName}`);
         } else {
             console.error('❌ Failed to add to favorites');
         }
     }
     
-    console.log('=== END SIMPLIFIED TOGGLE ===\n');
+    console.log('=== END FIXED TOGGLE ===\n');
 }
 
-// Make it globally available
-window.togglePOIFavoriteSimple = togglePOIFavoriteSimple;
+// Make the fixed function globally available
+window.togglePOIFavoriteFixed = togglePOIFavoriteFixed;
 
 // ================================
 // KEEP THE OLD FUNCTION FOR BACKWARD COMPATIBILITY
 // ================================
 
 function togglePOIFavorite(layer, poiId, properties, lngLat) {
-    // Just redirect to the simplified version
+    // Just redirect to the fixed version
     window[`poi_data_${poiId}`] = { layer, properties, lngLat };
-    togglePOIFavoriteSimple(poiId);
+    togglePOIFavoriteFixed(poiId);
 }
 
 // Make it globally available
@@ -1237,11 +1277,11 @@ function updateFavoritesDisplay() {
 }
 
 // ================================
-// POI CLICK HANDLERS
+// POI CLICK HANDLERS - FIXED
 // ================================
 
 function initializeEnhancedPOIClicks() {
-    console.log('🎯 Initializing enhanced POI click events...');
+    console.log('🎯 Initializing FIXED POI click events...');
     
     const poiLayers = ['pharmacy', 'supermarkets', 'nightlife', 'coffee', 'restaurant', 'hotels', 'museums'];
     let successfulLayers = 0;
@@ -1252,28 +1292,26 @@ function initializeEnhancedPOIClicks() {
             return;
         }
         
-        console.log(`✅ Setting up handlers for layer: ${layer}`);
+        console.log(`✅ Setting up FIXED handlers for layer: ${layer}`);
         
         // Remove existing handlers
         map.off('click', layer);
         map.off('mouseenter', layer);
         map.off('mouseleave', layer);
         
-        // Add click handler with favorites support - IMPROVED for favorites mode
+        // Add click handler with improved favorites support
         map.on('click', layer, function(e) {
             if (e.features && e.features.length > 0) {
                 const properties = e.features[0].properties;
                 const lngLat = e.lngLat.toArray();
                 
-                // CRITICAL FIX: Always check actual favorite status, regardless of filtering mode
-                const actuallyFavorited = POIFavorites.isFavorited(layer, properties, lngLat);
-                console.log(`🔍 Clicked POI - Layer: ${layer}, Actually favorited: ${actuallyFavorited}`);
+                console.log(`🖱️ Clicked POI in layer: ${layer}`);
                 
                 const popupContent = createEnhancedPopup(layer, properties, lngLat);
                 
                 // Remove existing popups
                 const existingPopups = document.getElementsByClassName('mapboxgl-popup');
-                for (let i = 0; i < existingPopups.length; i++) {
+                for (let i = existingPopups.length - 1; i >= 0; i--) {
                     existingPopups[i].remove();
                 }
                 
@@ -1285,19 +1323,7 @@ function initializeEnhancedPOIClicks() {
                     .setHTML(popupContent)
                     .addTo(map);
                 
-                // CRITICAL FIX: After popup is added, ensure the star button shows correct state
-                setTimeout(() => {
-                    const poiId = POIFavorites.createId(layer, properties, lngLat);
-                    const starButton = document.getElementById(`star_${poiId}`);
-                    
-                    if (starButton && actuallyFavorited) {
-                        // Force the star to show as favorited if it actually is
-                        starButton.innerHTML = '⭐';
-                        starButton.style.color = '#FFD700';
-                        starButton.title = 'Remove from favorites';
-                        console.log(`✅ Corrected star button state to favorited`);
-                    }
-                }, 100);
+                console.log(`✅ Created popup for POI: ${properties[POIFavorites.getNameField(layer)]}`);
             }
         });
         
@@ -1308,7 +1334,7 @@ function initializeEnhancedPOIClicks() {
         successfulLayers++;
     });
     
-    console.log(`✅ Successfully initialized ${successfulLayers} POI layers with favorites support`);
+    console.log(`✅ FIXED POI click handlers initialized for ${successfulLayers} layers`);
 }
 
 // ================================
@@ -1591,7 +1617,7 @@ function ensureMuseumsAlwaysVisible() {
 window.ensureMuseumsAlwaysVisible = ensureMuseumsAlwaysVisible;
 
 // ================================
-// DEBUG FUNCTIONS
+// DEBUG FUNCTIONS - ENHANCED
 // ================================
 
 function testFavorites() {
@@ -1599,6 +1625,28 @@ function testFavorites() {
     console.log('📋 Current favorites:', favorites);
     console.log('📊 Favorites count:', POIFavorites.getCount());
     console.log('🔄 Favorites-only mode:', window.favoritesOnlyMode || false);
+}
+
+// Enhanced debug function for favorites
+function debugFavorites() {
+    console.log('\n=== FAVORITES DEBUG ===');
+    const favorites = POIFavorites.getFavorites();
+    console.log('Total favorites:', Object.keys(favorites).length);
+    console.log('Favorites list:');
+    Object.keys(favorites).forEach(id => {
+        const fav = favorites[id];
+        console.log(`  ${id}: ${fav.name} (${fav.layer})`);
+    });
+    console.log('=== END DEBUG ===\n');
+}
+
+// Test a specific POI's favorite status
+function testPOIFavoriteStatus(layer, name) {
+    const favorites = POIFavorites.getFavorites();
+    const matches = Object.values(favorites).filter(fav => 
+        fav.layer === layer && fav.name.includes(name)
+    );
+    console.log(`Found ${matches.length} matching favorites for "${name}" in ${layer}:`, matches);
 }
 
 // MISSING FUNCTION 3: Debug POI Filtering (to test the fix)
@@ -1645,9 +1693,10 @@ function debugPOIFiltering() {
 
 // Make functions globally available
 window.testFavorites = testFavorites;
+window.debugFavorites = debugFavorites;
+window.testPOIFavoriteStatus = testPOIFavoriteStatus;
 window.POIFavorites = POIFavorites;
 window.debugPOIFiltering = debugPOIFiltering;
-
 // ================================
 // STATION CLICK EVENTS (Optional enhancement)
 // =============================
