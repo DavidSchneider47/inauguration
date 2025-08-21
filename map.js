@@ -737,31 +737,41 @@ const POIFavorites = {
 // ENHANCED POI POPUP WITH FAVORITES - FIXED VERSION
 // ================================
 
+// ================================
+// ENHANCED POI POPUP WITH FAVORITES - FIXED VERSION
+// ================================
+
 function createEnhancedPopup(layer, properties, lngLat) {
     let popupContent = '<div style="max-width: 250px;">';
     
     // Get field names for this POI type
-    
-const fieldMap = {
-    'hotels': { name: 'hotel_name', website: 'hotel_website', distance: 'hotel_distance_miles' },
-    'restaurant': { 
-        name: 'restaurant_name', 
-        website: 'restaurant_website', 
-        distance: 'restaurant_distance_miles',
-        price: 'restaurant_price',
-        cuisine: 'restaurant_cuisine_type'
-    },
-    'coffee': { name: 'coffee_name', website: 'coffee_website', distance: 'coffee_distance_miles' },
-    'nightlife': { name: 'bar_name', website: 'bar_website', distance: 'bar_distance_miles' },
-    'pharmacy': { name: 'pharmacy_name', website: 'pharmacy_website', distance: 'pharmacy_distance_miles' },
-    'supermarkets': { name: 'supermarket_name', website: 'supermarket_website', distance: 'supermarket_distance_miles' },
-    'museums': { name: 'museum_name', website: 'museum_website', distance: 'museum_distance_miles' }
-};
+    const fieldMap = {
+        'hotels': { 
+            name: 'hotel_name', 
+            website: 'hotel_website', 
+            distance: 'hotel_distance_miles',
+            expedia_link: 'expedia_link ',  // Note the space at the end
+            booking_link: 'booking_link',
+            trip_link: 'trip_link'
+        },
+        'restaurant': { 
+            name: 'restaurant_name', 
+            website: 'restaurant_website', 
+            distance: 'restaurant_distance_miles',
+            price: 'restaurant_price',
+            cuisine: 'restaurant_cuisine_type'
+        },
+        'coffee': { name: 'coffee_name', website: 'coffee_website', distance: 'coffee_distance_miles' },
+        'nightlife': { name: 'bar_name', website: 'bar_website', distance: 'bar_distance_miles' },
+        'pharmacy': { name: 'pharmacy_name', website: 'pharmacy_website', distance: 'pharmacy_distance_miles' },
+        'supermarkets': { name: 'supermarket_name', website: 'supermarket_website', distance: 'supermarket_distance_miles' },
+        'museums': { name: 'museum_name', website: 'museum_website', distance: 'museum_distance_miles' }
+    };
 
     const fields = fieldMap[layer] || { name: 'name', website: 'website', distance: 'distance_miles' };
     const stationField = 'closest_station_name';
     
-    // FIXED: Check favorite status more reliably
+    // Check favorite status more reliably
     const isFavorited = POIFavorites.isFavorited(layer, properties, lngLat);
     const poiId = POIFavorites.createId(layer, properties, lngLat);
     
@@ -771,26 +781,34 @@ const fieldMap = {
     if (properties[fields.name]) {
         popupContent += `<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">`;
         
-        // POI name (with website link if available)
-        if (properties[fields.website]) {
-            let websiteUrl = properties[fields.website];
-            if (!websiteUrl.startsWith('http://') && !websiteUrl.startsWith('https://')) {
-                websiteUrl = 'https://' + websiteUrl;
-            }
-            
-            popupContent += `<h3 style="margin: 0; color: #333; font-size: 16px; flex: 1;">
-                <a href="#" onclick="openExternalLink('${websiteUrl}'); return false;" 
-                   style="color: #007cba; text-decoration: none; cursor: pointer;">
-                    ${properties[fields.name]}
-                </a>
-            </h3>`;
-        } else {
+        // POI name - SPECIAL HANDLING FOR HOTELS
+        if (layer === 'hotels') {
+            // For hotels, show name without hyperlink
             popupContent += `<h3 style="margin: 0; color: #333; font-size: 16px; flex: 1;">
                 ${properties[fields.name]}
             </h3>`;
+        } else {
+            // For other POI types, keep the original website link behavior
+            if (properties[fields.website]) {
+                let websiteUrl = properties[fields.website];
+                if (!websiteUrl.startsWith('http://') && !websiteUrl.startsWith('https://')) {
+                    websiteUrl = 'https://' + websiteUrl;
+                }
+                
+                popupContent += `<h3 style="margin: 0; color: #333; font-size: 16px; flex: 1;">
+                    <a href="#" onclick="openExternalLink('${websiteUrl}'); return false;" 
+                       style="color: #007cba; text-decoration: none; cursor: pointer;">
+                        ${properties[fields.name]}
+                    </a>
+                </h3>`;
+            } else {
+                popupContent += `<h3 style="margin: 0; color: #333; font-size: 16px; flex: 1;">
+                    ${properties[fields.name]}
+                </h3>`;
+            }
         }
         
-        // FIXED: Star button with correct initial state
+        // Star button with correct initial state
         const starIcon = isFavorited ? '⭐' : '☆';
         const starColor = isFavorited ? '#FFD700' : '#999';
         const buttonId = `star_${poiId.replace(/[^a-zA-Z0-9]/g, '_')}`;
@@ -812,35 +830,81 @@ const fieldMap = {
         popupContent += `</div>`;
     }
     
-  // NEW ORDER: Cuisine first (for restaurants only)
-if (layer === 'restaurant' && properties[fields.cuisine]) {
-    popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
-        <strong>Cuisine:</strong> ${properties[fields.cuisine]}
-    </p>`;
-}
+    // SPECIAL BOOKING LINKS FOR HOTELS
+    if (layer === 'hotels') {
+        const expediaLink = properties[fields.expedia_link];
+        const bookingLink = properties[fields.booking_link];
+        const tripLink = properties[fields.trip_link];
+        
+        // Debug logging to check if links are found
+        console.log('Hotel booking links debug:');
+        console.log('Expedia:', expediaLink);
+        console.log('Booking:', bookingLink);
+        console.log('Trip:', tripLink);
+        
+        // Only show booking links section if at least one link exists
+        if (expediaLink || bookingLink || tripLink) {
+            popupContent += `<div style="margin: 8px 0; padding: 8px; background: #f8f9fa; border-radius: 6px; border: 1px solid #e9ecef;">
+                <p style="margin: 0 0 6px 0; color: #666; font-size: 12px; font-weight: bold;">Book this hotel:</p>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">`;
+            
+            // Expedia link
+            if (expediaLink) {
+                popupContent += `<a href="#" onclick="openExternalLink('${expediaLink}'); return false;" 
+                                   style="background: #FFD700; color: #333; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-size: 11px; font-weight: bold; cursor: pointer; border: 1px solid #FFC107;">
+                    Expedia.com
+                </a>`;
+            }
+            
+            // Booking.com link
+            if (bookingLink) {
+                popupContent += `<a href="#" onclick="openExternalLink('${bookingLink}'); return false;" 
+                                   style="background: #003580; color: white; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-size: 11px; font-weight: bold; cursor: pointer; border: 1px solid #002147;">
+                    Booking.com
+                </a>`;
+            }
+            
+            // Trip.com link
+            if (tripLink) {
+                popupContent += `<a href="#" onclick="openExternalLink('${tripLink}'); return false;" 
+                                   style="background: #FF6B35; color: white; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-size: 11px; font-weight: bold; cursor: pointer; border: 1px solid #E55A2B;">
+                    Trip.com
+                </a>`;
+            }
+            
+            popupContent += `</div></div>`;
+        }
+    }
+    
+    // NEW ORDER: Cuisine first (for restaurants only)
+    if (layer === 'restaurant' && properties[fields.cuisine]) {
+        popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
+            <strong>Cuisine:</strong> ${properties[fields.cuisine]}
+        </p>`;
+    }
 
-// Price second (for restaurants only)
-if (layer === 'restaurant' && properties[fields.price]) {
-    popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
-        <strong>Price:</strong> ${properties[fields.price]}
-    </p>`;
-}
+    // Price second (for restaurants only)
+    if (layer === 'restaurant' && properties[fields.price]) {
+        popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
+            <strong>Price:</strong> ${properties[fields.price]}
+        </p>`;
+    }
 
-// Nearest station third
-if (properties[stationField] || properties.station_name) {
-    const stationName = properties[stationField] || properties.station_name;
-    popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
-        <strong>Nearest Metro:</strong> ${stationName}
-    </p>`;
-}
+    // Nearest station third
+    if (properties[stationField] || properties.station_name) {
+        const stationName = properties[stationField] || properties.station_name;
+        popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
+            <strong>Nearest Metro:</strong> ${stationName}
+        </p>`;
+    }
 
-// Distance fourth (last)
-if (properties[fields.distance]) {
-    const distance = parseFloat(properties[fields.distance]);
-    popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
-        <strong>Distance:</strong> ${distance} miles from metro
-    </p>`;
-}
+    // Distance fourth (last)
+    if (properties[fields.distance]) {
+        const distance = parseFloat(properties[fields.distance]);
+        popupContent += `<p style="margin: 4px 0; color: #666; font-size: 13px;">
+            <strong>Distance:</strong> ${distance} miles from metro
+        </p>`;
+    }
     
     popupContent += '</div>';
     return popupContent;
