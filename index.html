@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="fo-verify" content="85c1d85f-63f4-4904-9446-e562715438d3" />
 <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
   (function () {
       var script = document.createElement("script");
@@ -419,7 +420,7 @@
     <div id="map-menu"></div>
 </div>
 
-<!-- Compact Footer HTML Structure with Flask Paths -->
+  <!-- Compact Footer HTML Structure with Flask Paths -->
 <footer class="about-footer">
     <div class="footer-content">
         <!-- All buttons in one row -->
@@ -443,7 +444,21 @@
                aria-label="Book with Expedia"
                target="_blank" 
                rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='images/Expedia.png') }}" alt="Expedia">
+                <img src="{{ url_for('static', filename='images/expedia-icon.png') }}" alt="Expedia">
+            </a>
+            <a href="https://www.booking.com/" 
+               class="footer-button" 
+               aria-label="Book with Booking.com"
+               target="_blank" 
+               rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/booking-icon.png') }}" alt="Booking.com">
+            </a>
+            <a href="https://www.tripadvisor.com/" 
+               class="footer-button" 
+               aria-label="Explore on TripAdvisor"
+               target="_blank" 
+               rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/trip-icon.png') }}" alt="TripAdvisor">
             </a>
         </div>
         
@@ -453,6 +468,8 @@
         </div>
     </div>
 </footer>
+</body>
+</html>    
 
     <div id="metromatch-modal" class="modal">
         <div class="modal-content">
