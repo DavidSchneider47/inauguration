@@ -363,7 +363,7 @@
         {% endfor %}
     </ul>
 
-   <!-- Compact Footer HTML Structure with Flask Paths -->
+  <!-- Compact Footer HTML Structure with Flask Paths -->
 <footer class="about-footer">
     <div class="footer-content">
         <!-- All buttons in one row -->
@@ -387,7 +387,21 @@
                aria-label="Book with Expedia"
                target="_blank" 
                rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='images/Expedia.png') }}" alt="Expedia">
+                <img src="{{ url_for('static', filename='images/expedia-icon.png') }}" alt="Expedia">
+            </a>
+            <a href="https://www.booking.com/" 
+               class="footer-button" 
+               aria-label="Book with Booking.com"
+               target="_blank" 
+               rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/booking-icon.png') }}" alt="Booking.com">
+            </a>
+            <a href="https://www.tripadvisor.com/" 
+               class="footer-button" 
+               aria-label="Explore on TripAdvisor"
+               target="_blank" 
+               rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/trip-icon.png') }}" alt="TripAdvisor">
             </a>
         </div>
         
@@ -397,8 +411,8 @@
         </div>
     </div>
 </footer>
-
-
+</body>
+</html>    
     <!-- JavaScript to Handle Search, Fetching Amenities, and Filtering Transit Routes -->
     <script>
         // Debounce function to limit the rate of function execution
