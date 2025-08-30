@@ -97,6 +97,8 @@
             width: auto;
             max-width: 150px;
             min-width: 100px;
+	    object-fit: contain; /* Add this line */
+
         }
         
         /* Footer Info */
@@ -143,6 +145,8 @@
                 height: 35px;
                 min-width: 75px;
                 max-width: 110px;
+		object-fit: contain; /* Add this line */
+
             }
             
             .about-footer {
@@ -545,6 +549,13 @@
                rel="noopener noreferrer">
                 <img src="{{ url_for('static', filename='images/trip-icon.png') }}" alt="TripAdvisor">
             </a>
+            <a href="https://dcbyfoot.com/" 
+               class="footer-button" 
+               aria-label="DC by Foot Walking Tours"
+               target="_blank" 
+               rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/dcbyfoot.png') }}" alt="DC by Foot">
+            </a>
         </div>
         
         <!-- Copyright on next row -->
@@ -554,7 +565,7 @@
     </div>
 </footer>
 </body>
-</html>    
+</html>
 
  <!-- JavaScript to Toggle the Mobile Menu -->
    <script>
