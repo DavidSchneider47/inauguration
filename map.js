@@ -114,7 +114,6 @@ function fallbackToDirectNavigation(url) {
             window.location.href = url;
         } else {
             copyToClipboard(url);
-            alert('Link copied to clipboard!');
         }
     }
 }
