@@ -104,13 +104,21 @@ def api_pharmacies():
         return jsonify({"message": "No pharmacies found."}), 200
     return jsonify(pharmacies)
 
-# **New API route to get all restaurants**
+# API route to get all restaurants
 @app.route('/api/restaurants')
 def api_restaurants():
     restaurants = load_data('restaurants.json')
     if not restaurants:
         return jsonify({"message": "No restaurants found."}), 200
     return jsonify(restaurants)
+
+# **New API route to get all supermarkets**
+@app.route('/api/supermarkets')
+def api_supermarkets():
+    supermarkets = load_data('supermarkets.json')
+    if not supermarkets:
+        return jsonify({"message": "No supermarkets found."}), 200
+    return jsonify(supermarkets)
 
 # API route to get pharmacies by station_id
 @app.route('/api/stations/<station_id>/pharmacies')
@@ -160,7 +168,7 @@ def api_bars_by_station(station_id):
         logging.error(f"Error fetching bars for station {station_id}: {e}")
         return jsonify({"message": "An error occurred while fetching bars."}), 500
 
-# **New API route to get restaurants by station_id**
+# API route to get restaurants by station_id
 @app.route('/api/stations/<station_id>/restaurants')
 def api_restaurants_by_station(station_id):
     try:
@@ -175,6 +183,22 @@ def api_restaurants_by_station(station_id):
     except Exception as e:
         logging.error(f"Error fetching restaurants for station {station_id}: {e}")
         return jsonify({"message": "An error occurred while fetching restaurants."}), 500
+
+# **New API route to get supermarkets by station_id**
+@app.route('/api/stations/<station_id>/supermarkets')
+def api_supermarkets_by_station(station_id):
+    try:
+        logging.info(f"Fetching supermarkets for station {station_id}")
+        supermarkets = load_data('supermarkets.json')
+        filtered_supermarkets = [supermarket for supermarket in supermarkets if str(supermarket.get('station_id')) == str(station_id)]
+        if not filtered_supermarkets:
+            logging.info(f"No supermarkets found for station {station_id}")
+            return jsonify({"message": "No supermarkets found for this station."}), 200
+        logging.info(f"Found {len(filtered_supermarkets)} supermarkets for station {station_id}")
+        return jsonify(filtered_supermarkets)
+    except Exception as e:
+        logging.error(f"Error fetching supermarkets for station {station_id}: {e}")
+        return jsonify({"message": "An error occurred while fetching supermarkets."}), 500
 
 # API route to get hotels by station_id
 @app.route('/api/stations/<station_id>/hotels')
