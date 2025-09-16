@@ -85,7 +85,13 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             transition: background-color 0.3s;
-        }
+	    justify-content: space-between;
+	}
+	.station-header .toggle-icon {
+   	 transition: transform 0.3s;
+   	 user-select: none; /* Prevents text selection of the + symbol */
+	}
+        
         .station-header:hover {
             background-color: #f1f1f1;
         }
@@ -358,7 +364,8 @@
                         <span class="line-circle" style="background-color: {{ line_color }};" title="{{ line.strip().upper() }}"></span>
                     {% endfor %}
                     <strong>{{ station.station_name }}</strong>
-                </div>
+    		<span class="toggle-icon" id="toggle-{{ station.station_id }}" style="margin-left: auto; font-size: 18px; font-weight: bold;">+</span>
+		</div>
                 <ul class="amenities-list" id="amenities-{{ station.station_id }}">
                     <!-- Amenities will be dynamically loaded here -->
                     <li class="loading">Loading amenities...</li>
@@ -422,8 +429,6 @@
         </div>
     </div>
 </footer>
-</body>
-</html>
 
     <!-- JavaScript to Handle Search, Fetching Amenities, and Filtering Transit Routes -->
     <script>
@@ -678,210 +683,216 @@
             }
         }
 
-        /**
-         * Toggles the display of amenities for a given station.
-         * @param {string} stationId - The unique ID of the station.
-         */
-        async function toggleAmenities(stationId) {
-            const amenitiesList = document.getElementById('amenities-' + stationId);
-            if (amenitiesList.style.display === 'none' || amenitiesList.style.display === '') {
-                amenitiesList.style.display = 'block';
-                // Check if amenities are already loaded to prevent redundant fetches
-                if (!amenitiesList.dataset.loaded) {
-                    try {
-                        // Display loading message
-                        amenitiesList.innerHTML = '<li class="loading">Loading amenities...</li>';
+      /**
+ * Toggles the display of amenities for a given station.
+ * @param {string} stationId - The unique ID of the station.
+ */
+async function toggleAmenities(stationId) {
+    const amenitiesList = document.getElementById('amenities-' + stationId);
+    if (amenitiesList.style.display === 'none' || amenitiesList.style.display === '') {
+        amenitiesList.style.display = 'block';
+        const toggleIcon = document.getElementById('toggle-' + stationId);
+        if (toggleIcon) {
+            toggleIcon.textContent = '-';
+        }
+        // Check if amenities are already loaded to prevent redundant fetches
+        if (!amenitiesList.dataset.loaded) {
+            try {
+                // Display loading message
+                amenitiesList.innerHTML = '<li class="loading">Loading amenities...</li>';
 
-                        console.log('Fetching amenities for station:', stationId);
+                console.log('Fetching amenities for station:', stationId);
 
-                        // Fetch all amenities using the safer method
-                        const [hotels, coffeeShops, bars, pharmacies, restaurants,supermarkets] = await Promise.all([
-                            safeFetch(`/api/stations/${stationId}/hotels`),
-                            safeFetch(`/api/stations/${stationId}/coffee`),
-                            safeFetch(`/api/stations/${stationId}/bars`),
-                            safeFetch(`/api/stations/${stationId}/pharmacies`),
-                            safeFetch(`/api/stations/${stationId}/restaurants`),
-			    safeFetch(`/api/stations/${stationId}/supermarkets`) 
-                        ]);
+                // Fetch all amenities using the safer method
+                const [hotels, coffeeShops, bars, pharmacies, restaurants, supermarkets] = await Promise.all([
+                    safeFetch(`/api/stations/${stationId}/hotels`),
+                    safeFetch(`/api/stations/${stationId}/coffee`),
+                    safeFetch(`/api/stations/${stationId}/bars`),
+                    safeFetch(`/api/stations/${stationId}/pharmacies`),
+                    safeFetch(`/api/stations/${stationId}/restaurants`),
+                    safeFetch(`/api/stations/${stationId}/supermarkets`) 
+                ]);
 
-                        console.log('Fetched data counts:', {
-                            hotels: hotels.length,
-                            coffeeShops: coffeeShops.length,
-                            bars: bars.length,
-                            pharmacies: pharmacies.length,
-                            restaurants: restaurants.length,
-			    supermarkets:  supermarkets.length
-                        });
+                console.log('Fetched data counts:', {
+                    hotels: hotels.length,
+                    coffeeShops: coffeeShops.length,
+                    bars: bars.length,
+                    pharmacies: pharmacies.length,
+                    restaurants: restaurants.length,
+                    supermarkets: supermarkets.length
+                });
 
-                        // Sort all amenities alphabetically
-                        const sortedHotels = sortAmenities(hotels, 'hotel_name');
-                        const sortedCoffeeShops = sortAmenities(coffeeShops, 'coffee_name');
-                        const sortedBars = sortAmenities(bars, 'bar_name');
-                        const sortedPharmacies = sortAmenities(pharmacies, 'pharmacy_name');
-                        const sortedRestaurants = sortAmenities(restaurants, 'restaurant_name');
-			const sortedSupermarkets = sortAmenities(supermarkets, 'supermarket_name');
-			
+                // Sort all amenities alphabetically
+                const sortedHotels = sortAmenities(hotels, 'hotel_name');
+                const sortedCoffeeShops = sortAmenities(coffeeShops, 'coffee_name');
+                const sortedBars = sortAmenities(bars, 'bar_name');
+                const sortedPharmacies = sortAmenities(pharmacies, 'pharmacy_name');
+                const sortedRestaurants = sortAmenities(restaurants, 'restaurant_name');
+                const sortedSupermarkets = sortAmenities(supermarkets, 'supermarket_name');
 
-                        // Combine breakfast restaurants and coffee shops into one "Breakfast" category
-                        const breakfastRestaurants = sortedRestaurants.filter(r => 
-                            r.restaurant_cuisine_type && 
-                            (r.restaurant_cuisine_type.toLowerCase().includes('breakfast') || 
-                             r.restaurant_cuisine_type.toLowerCase().includes('brunch') ||
-                             r.restaurant_cuisine_type.toLowerCase().includes('cafe') ||
-                             r.restaurant_cuisine_type.toLowerCase().includes('bakery'))
-                        );
-                        
-                        // Combine coffee shops with breakfast restaurants for a unified "Breakfast" category
-                        const allBreakfastItems = [
-                            ...breakfastRestaurants.map(r => ({
-                                name: r.restaurant_name,
-                                website: r.restaurant_website,
-                                distance: r.restaurant_distance_miles,
-                                type: 'restaurant',
-                                cuisine: r.restaurant_cuisine_type,
-                                price: r.restaurant_price
-                            })),
-                            ...sortedCoffeeShops.map(c => ({
-                                name: c.coffee_name,
-                                website: c.coffee_website,
-                                distance: c.coffee_distance_miles,
-                                type: 'coffee'
-                            }))
-                        ].sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
-                        
-                        const lunchDinnerRestaurants = sortedRestaurants.filter(r => 
-                            !breakfastRestaurants.includes(r)
-                        );
+                // Combine breakfast restaurants and coffee shops into one "Breakfast" category
+                const breakfastRestaurants = sortedRestaurants.filter(r => 
+                    r.restaurant_cuisine_type && 
+                    (r.restaurant_cuisine_type.toLowerCase().includes('breakfast') || 
+                     r.restaurant_cuisine_type.toLowerCase().includes('brunch') ||
+                     r.restaurant_cuisine_type.toLowerCase().includes('cafe') ||
+                     r.restaurant_cuisine_type.toLowerCase().includes('bakery'))
+                );
+                
+                // Combine coffee shops with breakfast restaurants for a unified "Breakfast" category
+                const allBreakfastItems = [
+                    ...breakfastRestaurants.map(r => ({
+                        name: r.restaurant_name,
+                        website: r.restaurant_website,
+                        distance: r.restaurant_distance_miles,
+                        type: 'restaurant',
+                        cuisine: r.restaurant_cuisine_type,
+                        price: r.restaurant_price
+                    })),
+                    ...sortedCoffeeShops.map(c => ({
+                        name: c.coffee_name,
+                        website: c.coffee_website,
+                        distance: c.coffee_distance_miles,
+                        type: 'coffee'
+                    }))
+                ].sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+                
+                const lunchDinnerRestaurants = sortedRestaurants.filter(r => 
+                    !breakfastRestaurants.includes(r)
+                );
 
-                        // Clear the amenities list
-                        amenitiesList.innerHTML = '';
+                // Clear the amenities list
+                amenitiesList.innerHTML = '';
 
-                        // Create HTML for each category
-                        let categoriesHTML = '';
+                // Create HTML for each category
+                let categoriesHTML = '';
 
-                        // Hotels
-                        categoriesHTML += createCategoryHTML(
-                            stationId, 'hotels', 'Hotels', 'fas fa-bed', sortedHotels,
-                            hotel => `
-                                <li>
-                                    <i class="fas fa-bed" style="color: black;"></i>
-                                    <a href="${hotel.hotel_website}" target="_blank">${hotel.hotel_name}</a>
-                                    - ${hotel.hotel_distance_miles} miles
-                                </li>
-                            `
-                        );
+                // Hotels
+                categoriesHTML += createCategoryHTML(
+                    stationId, 'hotels', 'Hotels', 'fas fa-bed', sortedHotels,
+                    hotel => `
+                        <li>
+                            <i class="fas fa-bed" style="color: black;"></i>
+                            <a href="${hotel.hotel_website}" target="_blank">${hotel.hotel_name}</a>
+                            - ${hotel.hotel_distance_miles} miles
+                        </li>
+                    `
+                );
 
-                        // Unified Breakfast category (includes both breakfast restaurants and coffee shops)
-                        categoriesHTML += createCategoryHTML(
-                            stationId, 'breakfast', 'Breakfast', 'fas fa-coffee', allBreakfastItems,
-                            item => {
-                                if (item.type === 'restaurant') {
-                                    return `
-                                        <li>
-                                            <i class="fas fa-utensils" style="color: black;"></i>
-                                            <a href="${item.website}" target="_blank">${item.name}</a>
-                                            - ${item.distance} miles
-                                            <br>
-                                            <span style="margin-left: 24px;">Cuisine: ${item.cuisine}</span>
-                                            <br>
-                                            <span style="margin-left: 24px;">Price: ${item.price}</span>
-                                        </li>
-                                    `;
-                                } else {
-                                    return `
-                                        <li>
-                                            <i class="fas fa-coffee" style="color: black;"></i>
-                                            <a href="${item.website}" target="_blank">${item.name}</a>
-                                            - ${item.distance} miles
-                                        </li>
-                                    `;
-                                }
-                            }
-                        );
-
-                        // Lunch/Dinner
-                        categoriesHTML += createCategoryHTML(
-                            stationId, 'lunch-dinner', 'Lunch/Dinner', 'fas fa-utensils', lunchDinnerRestaurants,
-                            restaurant => `
+                // Unified Breakfast category (includes both breakfast restaurants and coffee shops)
+                categoriesHTML += createCategoryHTML(
+                    stationId, 'breakfast', 'Breakfast', 'fas fa-coffee', allBreakfastItems,
+                    item => {
+                        if (item.type === 'restaurant') {
+                            return `
                                 <li>
                                     <i class="fas fa-utensils" style="color: black;"></i>
-                                    <a href="${restaurant.restaurant_website}" target="_blank">${restaurant.restaurant_name}</a>
-                                    - ${restaurant.restaurant_distance_miles} miles
+                                    <a href="${item.website}" target="_blank">${item.name}</a>
+                                    - ${item.distance} miles
                                     <br>
-                                    <span style="margin-left: 24px;">Cuisine: ${restaurant.restaurant_cuisine_type}</span>
+                                    <span style="margin-left: 24px;">Cuisine: ${item.cuisine}</span>
                                     <br>
-                                    <span style="margin-left: 24px;">Price: ${restaurant.restaurant_price}</span>
+                                    <span style="margin-left: 24px;">Price: ${item.price}</span>
                                 </li>
-                            `
-                        );
-
-                        // Nightlife (Bars)
-                        categoriesHTML += createCategoryHTML(
-                            stationId, 'nightlife', 'Nightlife', 'fas fa-cocktail', sortedBars,
-                            bar => `
-                                <li>
-                                    <i class="fas fa-cocktail" style="color: black;"></i>
-                                    <a href="${bar.bar_website}" target="_blank">${bar.bar_name}</a>
-                                    - ${bar.bar_distance_miles} miles
-                                </li>
-                            `
-                        );
-
-                        // Pharmacies
-                        categoriesHTML += createCategoryHTML(
-                            stationId, 'pharmacies', 'Pharmacies', 'fas fa-pills', sortedPharmacies,
-                            pharmacy => `
-                                <li>
-                                    <i class="fas fa-pills" style="color: black;"></i>
-                                    <a href="${pharmacy.pharmacy_website}" target="_blank">${pharmacy.pharmacy_name}</a>
-                                    - ${pharmacy.pharmacy_distance_miles} miles
-                                </li>
-                            `
-                        );
-
-// Supermarkets 
-categoriesHTML += createCategoryHTML(
-    stationId, 'supermarkets', 'Supermarkets', 'fas fa-shopping-cart', sortedSupermarkets,
-    supermarket => `
-        <li>
-            <i class="fas fa-shopping-cart" style="color: black;"></i>
-            <a href="${supermarket.supermarket_website}" target="_blank">${supermarket.supermarket_name}</a>
-            - ${supermarket.supermarket_distance_miles} miles
-        </li>
-    `
-);
-
-                        // If no amenities found at all
-                        if (categoriesHTML === '') {
-                            amenitiesList.innerHTML = '<li>No amenities found nearby.</li>';
+                            `;
                         } else {
-                            amenitiesList.innerHTML = categoriesHTML;
+                            return `
+                                <li>
+                                    <i class="fas fa-coffee" style="color: black;"></i>
+                                    <a href="${item.website}" target="_blank">${item.name}</a>
+                                    - ${item.distance} miles
+                                </li>
+                            `;
                         }
-
-                        // Mark as loaded to prevent future fetches
-                        amenitiesList.dataset.loaded = 'true';
-                        
-                        console.log('Successfully loaded amenities for station:', stationId);
-                        
-                    } catch (error) {
-                        console.error('Error in toggleAmenities:', error);
-                        amenitiesList.innerHTML = '<li class="error">Error loading amenities. Please try again later.</li>';
-                        // Don't show alert for better user experience, just log the error
                     }
+                );
+
+                // Lunch/Dinner
+                categoriesHTML += createCategoryHTML(
+                    stationId, 'lunch-dinner', 'Lunch/Dinner', 'fas fa-utensils', lunchDinnerRestaurants,
+                    restaurant => `
+                        <li>
+                            <i class="fas fa-utensils" style="color: black;"></i>
+                            <a href="${restaurant.restaurant_website}" target="_blank">${restaurant.restaurant_name}</a>
+                            - ${restaurant.restaurant_distance_miles} miles
+                            <br>
+                            <span style="margin-left: 24px;">Cuisine: ${restaurant.restaurant_cuisine_type}</span>
+                            <br>
+                            <span style="margin-left: 24px;">Price: ${restaurant.restaurant_price}</span>
+                        </li>
+                    `
+                );
+
+                // Nightlife (Bars)
+                categoriesHTML += createCategoryHTML(
+                    stationId, 'nightlife', 'Nightlife', 'fas fa-cocktail', sortedBars,
+                    bar => `
+                        <li>
+                            <i class="fas fa-cocktail" style="color: black;"></i>
+                            <a href="${bar.bar_website}" target="_blank">${bar.bar_name}</a>
+                            - ${bar.bar_distance_miles} miles
+                        </li>
+                    `
+                );
+
+                // Pharmacies
+                categoriesHTML += createCategoryHTML(
+                    stationId, 'pharmacies', 'Pharmacies', 'fas fa-pills', sortedPharmacies,
+                    pharmacy => `
+                        <li>
+                            <i class="fas fa-pills" style="color: black;"></i>
+                            <a href="${pharmacy.pharmacy_website}" target="_blank">${pharmacy.pharmacy_name}</a>
+                            - ${pharmacy.pharmacy_distance_miles} miles
+                        </li>
+                    `
+                );
+
+                // Supermarkets 
+                categoriesHTML += createCategoryHTML(
+                    stationId, 'supermarkets', 'Supermarkets', 'fas fa-shopping-cart', sortedSupermarkets,
+                    supermarket => `
+                        <li>
+                            <i class="fas fa-shopping-cart" style="color: black;"></i>
+                            <a href="${supermarket.supermarket_website}" target="_blank">${supermarket.supermarket_name}</a>
+                            - ${supermarket.supermarket_distance_miles} miles
+                        </li>
+                    `
+                );
+
+                // If no amenities found at all
+                if (categoriesHTML === '') {
+                    amenitiesList.innerHTML = '<li>No amenities found nearby.</li>';
+                } else {
+                    amenitiesList.innerHTML = categoriesHTML;
                 }
-            } else {
-                amenitiesList.style.display = 'none';
+
+                // Mark as loaded to prevent future fetches
+                amenitiesList.dataset.loaded = 'true';
+                
+                console.log('Successfully loaded amenities for station:', stationId);
+                
+            } catch (error) {
+                console.error('Error in toggleAmenities:', error);
+                amenitiesList.innerHTML = '<li class="error">Error loading amenities. Please try again later.</li>';
             }
         }
-   
-</script>
-
-<!-- JavaScript to Toggle the Mobile Menu -->
-<script>
-   function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
-    menu.classList.toggle("mobile-menu-active");
+    } else {
+        amenitiesList.style.display = 'none';
+        const toggleIcon = document.getElementById('toggle-' + stationId);
+        if (toggleIcon) {
+            toggleIcon.textContent = '+';
+        }
+    }
 }
-</script>
+    </script>
+
+    <!-- JavaScript to Toggle the Mobile Menu -->
+    <script>
+       function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("mobile-menu-active");
+      }
+    </script>
+
 </body>
 </html>
