@@ -695,12 +695,13 @@
                         console.log('Fetching amenities for station:', stationId);
 
                         // Fetch all amenities using the safer method
-                        const [hotels, coffeeShops, bars, pharmacies, restaurants] = await Promise.all([
+                        const [hotels, coffeeShops, bars, pharmacies, restaurants,supermarkets] = await Promise.all([
                             safeFetch(`/api/stations/${stationId}/hotels`),
                             safeFetch(`/api/stations/${stationId}/coffee`),
                             safeFetch(`/api/stations/${stationId}/bars`),
                             safeFetch(`/api/stations/${stationId}/pharmacies`),
-                            safeFetch(`/api/stations/${stationId}/restaurants`)
+                            safeFetch(`/api/stations/${stationId}/restaurants`),
+			    safeFetch(`/api/stations/${stationId}/supermarkets`) 
                         ]);
 
                         console.log('Fetched data counts:', {
@@ -708,7 +709,8 @@
                             coffeeShops: coffeeShops.length,
                             bars: bars.length,
                             pharmacies: pharmacies.length,
-                            restaurants: restaurants.length
+                            restaurants: restaurants.length,
+			    supermarkets:  supermarkets.length
                         });
 
                         // Sort all amenities alphabetically
@@ -717,6 +719,8 @@
                         const sortedBars = sortAmenities(bars, 'bar_name');
                         const sortedPharmacies = sortAmenities(pharmacies, 'pharmacy_name');
                         const sortedRestaurants = sortAmenities(restaurants, 'restaurant_name');
+			const sortedSupermarkets = sortAmenities(supermarkets, 'supermarket_name');
+			
 
                         // Combine breakfast restaurants and coffee shops into one "Breakfast" category
                         const breakfastRestaurants = sortedRestaurants.filter(r => 
@@ -834,6 +838,18 @@
                                 </li>
                             `
                         );
+
+// Supermarkets 
+categoriesHTML += createCategoryHTML(
+    stationId, 'supermarkets', 'Supermarkets', 'fas fa-shopping-cart', sortedSupermarkets,
+    supermarket => `
+        <li>
+            <i class="fas fa-shopping-cart" style="color: black;"></i>
+            <a href="${supermarket.supermarket_website}" target="_blank">${supermarket.supermarket_name}</a>
+            - ${supermarket.supermarket_distance_miles} miles
+        </li>
+    `
+);
 
                         // If no amenities found at all
                         if (categoriesHTML === '') {
