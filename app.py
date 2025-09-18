@@ -265,8 +265,23 @@ def red_line_shady_grove_glenmont():
 @app.route('/stations')
 def stations_page():
     stations = load_data('stations.json')
+    hotels = load_data('hotels.json')
+    
     if not stations:
         logging.warning("No stations data available for rendering.")
+    
+    # Create a mapping of station_id to hotel count
+    hotel_counts = {}
+    for hotel in hotels:
+        station_id = str(hotel.get('station_id'))
+        hotel_counts[station_id] = hotel_counts.get(station_id, 0) + 1
+    
+    # Add hotel info to each station
+    for station in stations:
+        station_id = str(station.get('station_id'))
+        station['has_hotels'] = station_id in hotel_counts
+        station['hotel_count'] = hotel_counts.get(station_id, 0)
+    
     # Define line colors
     line_colors = {
         'Red': '#FF0000',
@@ -278,6 +293,7 @@ def stations_page():
         'MARC': '#8B4513',  # Brown for MARC
         'VRE': '#800080'     # Purple for VRE
     }
+    
     return render_template('stations.html', stations=stations, line_colors=line_colors)
 
 # About page route
