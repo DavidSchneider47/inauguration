@@ -30,6 +30,9 @@
                 </a>
                 <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
                     <i class="fas fa-route"></i> Itineraries
+ 		 </a>
+   		 <a href="{{ url_for('how_to_use_page') }}" class="{% if request.endpoint == 'how_to_use_page' %}active{% endif %}">
+      		  <i class="fas fa-question-circle"></i> How to Use
                 </a>
                 <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
                     <i class="fas fa-info-circle"></i> About
@@ -47,6 +50,9 @@
             </a>
             <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}">
                 <i class="fas fa-route"></i> Itineraries
+  	   </a>
+   	 <a href="{{ url_for('how_to_use_page') }}" class="{% if request.endpoint == 'how_to_use_page' %}active{% endif %}">
+        <i class="fas fa-question-circle"></i> How to Use
             </a>
             <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}">
                 <i class="fas fa-info-circle"></i> About
