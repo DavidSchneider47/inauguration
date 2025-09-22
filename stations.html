@@ -710,13 +710,14 @@ async function toggleAmenities(stationId) {
                 console.log('Fetching amenities for station:', stationId);
 
                 // Fetch all amenities using the safer method
-                const [hotels, coffeeShops, bars, pharmacies, restaurants, supermarkets] = await Promise.all([
+                const [hotels, coffeeShops, bars, pharmacies, restaurants, supermarkets, museums] = await Promise.all([
                     safeFetch(`/api/stations/${stationId}/hotels`),
                     safeFetch(`/api/stations/${stationId}/coffee`),
                     safeFetch(`/api/stations/${stationId}/bars`),
                     safeFetch(`/api/stations/${stationId}/pharmacies`),
                     safeFetch(`/api/stations/${stationId}/restaurants`),
-                    safeFetch(`/api/stations/${stationId}/supermarkets`) 
+                    safeFetch(`/api/stations/${stationId}/supermarkets`),
+		    safeFetch(`/api/stations/${stationId}/museums`) 
                 ]);
 
                 console.log('Fetched data counts:', {
@@ -725,7 +726,8 @@ async function toggleAmenities(stationId) {
                     bars: bars.length,
                     pharmacies: pharmacies.length,
                     restaurants: restaurants.length,
-                    supermarkets: supermarkets.length
+                    supermarkets: supermarkets.length,
+ 		    museums: museums.length
                 });
 
                 // Sort all amenities alphabetically
@@ -735,6 +737,7 @@ async function toggleAmenities(stationId) {
                 const sortedPharmacies = sortAmenities(pharmacies, 'pharmacy_name');
                 const sortedRestaurants = sortAmenities(restaurants, 'restaurant_name');
                 const sortedSupermarkets = sortAmenities(supermarkets, 'supermarket_name');
+		const sortedMuseums = sortAmenities(museums, 'museum_name');
 
                 // Combine breakfast restaurants and coffee shops into one "Breakfast" category
                 const breakfastRestaurants = sortedRestaurants.filter(r => 
@@ -864,6 +867,18 @@ async function toggleAmenities(stationId) {
                         </li>
                     `
                 );
+
+// Museums
+categoriesHTML += createCategoryHTML(
+    stationId, 'museums', 'Museums', 'fas fa-university', sortedMuseums,
+    museum => `
+        <li>
+            <i class="fas fa-university" style="color: black;"></i>
+            <a href="${museum.museum_website}" target="_blank">${museum.museum_name}</a>
+            - ${museum.museum_distance_miles} miles
+        </li>
+    `
+);
 
                 // If no amenities found at all
                 if (categoriesHTML === '') {
