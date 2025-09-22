@@ -354,25 +354,31 @@
         <button id="clear-search" aria-label="Clear search filters">Clear Search</button>
     </div>
 
-    <ul class="station-list">
-        {% for station in stations %}
-            <li class="station-item">
-                <div class="station-header" onclick="toggleAmenities('{{ station.station_id }}')">
-                    <!-- Display circles for each metro line -->
-                    {% for line in station.station_line.split(',') %}
-                        {% set line_color = line_colors.get(line.strip(), '#808080') %}
-                        <span class="line-circle" style="background-color: {{ line_color }};" title="{{ line.strip().upper() }}"></span>
-                    {% endfor %}
-                    <strong>{{ station.station_name }}</strong>
-    		<span class="toggle-icon" id="toggle-{{ station.station_id }}" style="margin-left: auto; font-size: 18px; font-weight: bold;">+</span>
-		</div>
-                <ul class="amenities-list" id="amenities-{{ station.station_id }}">
-                    <!-- Amenities will be dynamically loaded here -->
-                    <li class="loading">Loading amenities...</li>
-                </ul>
-            </li>
-        {% endfor %}
-    </ul>
+   <ul class="station-list">
+    {% for station in stations %}
+        <li class="station-item">
+            <div class="station-header" onclick="toggleAmenities('{{ station.station_id }}')">
+                <!-- Display circles for each metro line -->
+                {% for line in station.station_line.split(',') %}
+                    {% set line_color = line_colors.get(line.strip(), '#808080') %}
+                    <span class="line-circle" style="background-color: {{ line_color }};" title="{{ line.strip().upper() }}"></span>
+                {% endfor %}
+                <strong>{{ station.station_name }}</strong>
+                
+                <!-- Hotel icon if hotels are available -->
+                {% if station.has_hotels %}
+                    <i class="fas fa-bed" style="color: #4a90e2; margin-left: 10px;" title="Hotels nearby ({{ station.hotel_count }})"></i>
+                {% endif %}
+                
+                <span class="toggle-icon" id="toggle-{{ station.station_id }}" style="margin-left: auto; font-size: 18px; font-weight: bold;">+</span>
+            </div>
+            <ul class="amenities-list" id="amenities-{{ station.station_id }}">
+                <!-- Amenities will be dynamically loaded here -->
+                <li class="loading">Loading amenities...</li>
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
 
   <!-- Compact Footer HTML Structure with Flask Paths -->
 <footer class="about-footer">
