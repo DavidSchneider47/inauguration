@@ -112,13 +112,21 @@ def api_restaurants():
         return jsonify({"message": "No restaurants found."}), 200
     return jsonify(restaurants)
 
-# **New API route to get all supermarkets**
+# API route to get all supermarkets
 @app.route('/api/supermarkets')
 def api_supermarkets():
     supermarkets = load_data('supermarkets.json')
     if not supermarkets:
         return jsonify({"message": "No supermarkets found."}), 200
     return jsonify(supermarkets)
+
+# NEW: API route to get all museums
+@app.route('/api/museums')
+def api_museums():
+    museums = load_data('museums.json')
+    if not museums:
+        return jsonify({"message": "No museums found."}), 200
+    return jsonify(museums)
 
 # API route to get pharmacies by station_id
 @app.route('/api/stations/<station_id>/pharmacies')
@@ -184,7 +192,7 @@ def api_restaurants_by_station(station_id):
         logging.error(f"Error fetching restaurants for station {station_id}: {e}")
         return jsonify({"message": "An error occurred while fetching restaurants."}), 500
 
-# **New API route to get supermarkets by station_id**
+# API route to get supermarkets by station_id
 @app.route('/api/stations/<station_id>/supermarkets')
 def api_supermarkets_by_station(station_id):
     try:
@@ -215,6 +223,22 @@ def api_hotels_by_station(station_id):
     except Exception as e:
         logging.error(f"Error fetching hotels for station {station_id}: {e}")
         return jsonify({"message": "An error occurred while fetching hotels."}), 500
+
+# NEW: API route to get museums by station_id
+@app.route('/api/stations/<station_id>/museums')
+def api_museums_by_station(station_id):
+    try:
+        logging.info(f"Fetching museums for station {station_id}")
+        museums = load_data('museums.json')
+        filtered_museums = [museum for museum in museums if str(museum.get('station_id')) == str(station_id)]
+        if not filtered_museums:
+            logging.info(f"No museums found for station {station_id}")
+            return jsonify({"message": "No museums found for this station."}), 200
+        logging.info(f"Found {len(filtered_museums)} museums for station {station_id}")
+        return jsonify(filtered_museums)
+    except Exception as e:
+        logging.error(f"Error fetching museums for station {station_id}: {e}")
+        return jsonify({"message": "An error occurred while fetching museums."}), 500
 
 # New API route to get transit routes filtered by line
 @app.route('/api/routes/<line_query>')
@@ -277,6 +301,7 @@ def stations_page():
     bars = load_data('bars.json')
     pharmacies = load_data('pharmacy.json')
     supermarkets = load_data('supermarkets.json')
+    museums = load_data('museums.json')  # NEW: Load museums data
     
     # Create mappings of station_id to amenity counts
     hotel_counts = {}
@@ -285,6 +310,7 @@ def stations_page():
     bar_counts = {}
     pharmacy_counts = {}
     supermarket_counts = {}
+    museum_counts = {}  # NEW: Museum counts mapping
     
     # Count hotels by station
     for hotel in hotels:
@@ -316,6 +342,11 @@ def stations_page():
         station_id = str(supermarket.get('station_id'))
         supermarket_counts[station_id] = supermarket_counts.get(station_id, 0) + 1
     
+    # NEW: Count museums by station
+    for museum in museums:
+        station_id = str(museum.get('station_id'))
+        museum_counts[station_id] = museum_counts.get(station_id, 0) + 1
+    
     # Add amenity info to each station and filter out stations without amenities
     stations_with_amenities = []
     
@@ -341,14 +372,19 @@ def stations_page():
         station['has_supermarkets'] = station_id in supermarket_counts
         station['supermarket_count'] = supermarket_counts.get(station_id, 0)
         
-        # Check if station has ANY amenities
+        # NEW: Add museum flags and counts
+        station['has_museums'] = station_id in museum_counts
+        station['museum_count'] = museum_counts.get(station_id, 0)
+        
+        # Check if station has ANY amenities (UPDATED to include museums)
         station['has_any_amenities'] = (
             station['has_hotels'] or 
             station['has_restaurants'] or 
             station['has_coffee'] or 
             station['has_bars'] or 
             station['has_pharmacies'] or 
-            station['has_supermarkets']
+            station['has_supermarkets'] or
+            station['has_museums']  # NEW: Include museums in the check
         )
         
         # Only include stations that have at least one amenity
@@ -373,6 +409,7 @@ def stations_page():
     }
     
     return render_template('stations.html', stations=stations_with_amenities, line_colors=line_colors)
+
 # About page route
 @app.route('/about')
 def about_page():
