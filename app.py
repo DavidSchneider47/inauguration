@@ -265,22 +265,100 @@ def red_line_shady_grove_glenmont():
 @app.route('/stations')
 def stations_page():
     stations = load_data('stations.json')
-    hotels = load_data('hotels.json')
     
     if not stations:
         logging.warning("No stations data available for rendering.")
+        return render_template('stations.html', stations=[], line_colors={})
     
-    # Create a mapping of station_id to hotel count
+    # Load all amenity data
+    hotels = load_data('hotels.json')
+    restaurants = load_data('restaurants.json')
+    coffee_shops = load_data('coffee.json')
+    bars = load_data('bars.json')
+    pharmacies = load_data('pharmacy.json')
+    supermarkets = load_data('supermarkets.json')
+    
+    # Create mappings of station_id to amenity counts
     hotel_counts = {}
+    restaurant_counts = {}
+    coffee_counts = {}
+    bar_counts = {}
+    pharmacy_counts = {}
+    supermarket_counts = {}
+    
+    # Count hotels by station
     for hotel in hotels:
         station_id = str(hotel.get('station_id'))
         hotel_counts[station_id] = hotel_counts.get(station_id, 0) + 1
     
-    # Add hotel info to each station
+    # Count restaurants by station
+    for restaurant in restaurants:
+        station_id = str(restaurant.get('station_id'))
+        restaurant_counts[station_id] = restaurant_counts.get(station_id, 0) + 1
+    
+    # Count coffee shops by station
+    for coffee in coffee_shops:
+        station_id = str(coffee.get('station_id'))
+        coffee_counts[station_id] = coffee_counts.get(station_id, 0) + 1
+    
+    # Count bars by station
+    for bar in bars:
+        station_id = str(bar.get('station_id'))
+        bar_counts[station_id] = bar_counts.get(station_id, 0) + 1
+    
+    # Count pharmacies by station
+    for pharmacy in pharmacies:
+        station_id = str(pharmacy.get('station_id'))
+        pharmacy_counts[station_id] = pharmacy_counts.get(station_id, 0) + 1
+    
+    # Count supermarkets by station
+    for supermarket in supermarkets:
+        station_id = str(supermarket.get('station_id'))
+        supermarket_counts[station_id] = supermarket_counts.get(station_id, 0) + 1
+    
+    # Add amenity info to each station and filter out stations without amenities
+    stations_with_amenities = []
+    
     for station in stations:
         station_id = str(station.get('station_id'))
+        
+        # Add amenity flags and counts
         station['has_hotels'] = station_id in hotel_counts
         station['hotel_count'] = hotel_counts.get(station_id, 0)
+        
+        station['has_restaurants'] = station_id in restaurant_counts
+        station['restaurant_count'] = restaurant_counts.get(station_id, 0)
+        
+        station['has_coffee'] = station_id in coffee_counts
+        station['coffee_count'] = coffee_counts.get(station_id, 0)
+        
+        station['has_bars'] = station_id in bar_counts
+        station['bar_count'] = bar_counts.get(station_id, 0)
+        
+        station['has_pharmacies'] = station_id in pharmacy_counts
+        station['pharmacy_count'] = pharmacy_counts.get(station_id, 0)
+        
+        station['has_supermarkets'] = station_id in supermarket_counts
+        station['supermarket_count'] = supermarket_counts.get(station_id, 0)
+        
+        # Check if station has ANY amenities
+        station['has_any_amenities'] = (
+            station['has_hotels'] or 
+            station['has_restaurants'] or 
+            station['has_coffee'] or 
+            station['has_bars'] or 
+            station['has_pharmacies'] or 
+            station['has_supermarkets']
+        )
+        
+        # Only include stations that have at least one amenity
+        if station['has_any_amenities']:
+            stations_with_amenities.append(station)
+    
+    # Log the filtering results
+    original_count = len(stations)
+    filtered_count = len(stations_with_amenities)
+    logging.info(f"Filtered stations: {original_count} total, {filtered_count} with amenities, {original_count - filtered_count} hidden")
     
     # Define line colors
     line_colors = {
@@ -294,8 +372,7 @@ def stations_page():
         'VRE': '#800080'     # Purple for VRE
     }
     
-    return render_template('stations.html', stations=stations, line_colors=line_colors)
-
+    return render_template('stations.html', stations=stations_with_amenities, line_colors=line_colors)
 # About page route
 @app.route('/about')
 def about_page():
