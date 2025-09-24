@@ -12,6 +12,14 @@ function openExternalLink(url) {
     
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
+    // ENHANCED: Better detection for your published mobile app
+    if (isMobile && isRunningInApp()) {
+        console.log('Mobile app detected: Opening in same window to avoid iOS Safari issue');
+        // Open in same window - this keeps users in your app's WebView
+        window.location.href = url;
+        return;
+    }
+    
     // OPTIMIZED: Different strategies for mobile vs desktop
     if (isMobile) {
         // Mobile-optimized approach - faster and more reliable
@@ -50,6 +58,7 @@ function openExternalLink(url) {
         }
     }
 }
+
 window.openExternalLink = openExternalLink;
 
 // Detect if running inside your published mobile app's WebView
