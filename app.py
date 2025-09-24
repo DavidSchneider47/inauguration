@@ -415,6 +415,11 @@ def stations_page():
 def about_page():
     return render_template('about.html')
 
+# NEW: How to Use page route
+@app.route('/how-to-use')
+def how_to_use_page():
+    return render_template('howtouse.html')
+
 # Error handling routes
 @app.errorhandler(404)
 def page_not_found(e):
