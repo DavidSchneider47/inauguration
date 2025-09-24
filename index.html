@@ -387,7 +387,7 @@
             <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
             <nav class="nav-links">
                 <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}"><i class="fas fa-map-marker-alt"></i> Home (Map)</a>
-                <a href="{{ url_for('stations_page') }}" class="{% if request.endpoint == 'stations_page' %}active{% endif %}"><i class="fas fa-list"></i> Stations List</a>
+                <a href="{{ url_for('destinations_page') }}" class="{% if request.endpoint == 'destinations_page' %}active{% endif %}"><i class="fas fa-list"></i> Destinations</a>
                 <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}"><i class="fas fa-route"></i> Itineraries</a>
 <a href="{{ url_for('how_to_use_page') }}" class="{% if request.endpoint == 'how_to_use_page' %}active{% endif %}"><i class="fas fa-question-circle"></i> How to Use</a>
                 <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}"><i class="fas fa-info-circle"></i> About</a>
@@ -395,7 +395,7 @@
         </div>
         <div class="mobile-menu" id="mobileMenu">
             <a href="{{ url_for('home') }}">Home (Map)</a>
-            <a href="{{ url_for('stations_page') }}">Stations List</a>
+            <a href="{{ url_for('destinations_page') }}">Destinations List</a>
             <a href="{{ url_for('itineraries_page') }}">Itineraries</a>
 	    <a href="{{ url_for('how_to_use_page') }}">How to Use</a>
             <a href="{{ url_for('about_page') }}">About</a>
