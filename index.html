@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">    
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
-    <!-- Msppbox functionality -->
+    <!-- Mapbox functionality -->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
 
     <!-- Enhanced Styles with TypeAhead Components -->
@@ -88,7 +88,7 @@
         }
 
         .search-container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 20px auto;
             display: flex;
             gap: 10px;
@@ -241,6 +241,7 @@
                 flex-direction: column;
                 align-items: stretch;
                 gap: 15px;
+                max-width: 95%;
             }
             
             .typeahead-wrapper {
@@ -252,7 +253,22 @@
             }
         }
 
- /* Footer Styles - Add this to match about page */
+        @media (max-width: 480px) {
+            .search-container {
+                max-width: 90%;
+            }
+            
+            .typeahead-label {
+                font-size: 13px;
+            }
+            
+            .typeahead-input {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
+        /* Footer Styles */
         .about-footer {
             text-align: center;
             padding: 15px 20px;
@@ -264,7 +280,6 @@
             margin: 0 auto;
         }
         
-        /* Button Row */
         .footer-buttons {
             display: flex;
             justify-content: center;
@@ -279,10 +294,9 @@
             width: auto;
             max-width: 150px;
             min-width: 100px;
-	    object-fit: contain; /* Add this line */
+            object-fit: contain;
         }
         
-        /* Footer Info */
         .footer-info {
             margin: 0;
         }
@@ -293,14 +307,12 @@
             color: #666;
         }
         
-        /* Ensure images have good contrast */
         .footer-button img {
             background-color: transparent;
             border-radius: 4px;
             filter: drop-shadow(0 1px 3px rgba(0,0,0,0.1));
         }
         
-        /* Mobile Responsive */
         @media (max-width: 768px) {
             .footer-buttons {
                 gap: 15px;
@@ -326,7 +338,7 @@
                 height: 35px;
                 min-width: 75px;
                 max-width: 110px;
-		object-fit: contain; /* Add this line */
+                object-fit: contain;
             }
             
             .about-footer {
@@ -338,46 +350,45 @@
             }
         }
 
-#map-menu {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: white;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-    min-width: 120px;
-}
+        #map-menu {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            min-width: 120px;
+        }
 
-#map-menu a {
-    display: block;
-    margin: 5px 0;
-    padding: 8px 12px;
-    text-decoration: none;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    cursor: pointer;
-    text-align: center;
-    font-size: 14px;
-    background: #f9f9f9;
-}
+        #map-menu a {
+            display: block;
+            margin: 5px 0;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+            background: #f9f9f9;
+        }
 
-#map-menu a.active {
-    background: #007cba;
-    color: white;
-    border-color: #005c8a;
-}
+        #map-menu a.active {
+            background: #007cba;
+            color: white;
+            border-color: #005c8a;
+        }
 
-#map-menu a:hover {
-    background: #e9e9e9;
-}
+        #map-menu a:hover {
+            background: #e9e9e9;
+        }
 
-#map-menu a.active:hover {
-    background: #005c8a;
-}
-   
+        #map-menu a.active:hover {
+            background: #005c8a;
+        }
     </style>
 </head>
 <body>
@@ -389,7 +400,7 @@
                 <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}"><i class="fas fa-map-marker-alt"></i> Home (Map)</a>
                 <a href="{{ url_for('destinations_page') }}" class="{% if request.endpoint == 'destinations_page' %}active{% endif %}"><i class="fas fa-list"></i> Destinations</a>
                 <a href="{{ url_for('itineraries_page') }}" class="{% if request.endpoint == 'itineraries_page' %}active{% endif %}"><i class="fas fa-route"></i> Itineraries</a>
-<a href="{{ url_for('how_to_use_page') }}" class="{% if request.endpoint == 'how_to_use_page' %}active{% endif %}"><i class="fas fa-question-circle"></i> How to Use</a>
+                <a href="{{ url_for('how_to_use_page') }}" class="{% if request.endpoint == 'how_to_use_page' %}active{% endif %}"><i class="fas fa-question-circle"></i> How to Use</a>
                 <a href="{{ url_for('about_page') }}" class="{% if request.endpoint == 'about_page' %}active{% endif %}"><i class="fas fa-info-circle"></i> About</a>
             </nav>
         </div>
@@ -397,7 +408,7 @@
             <a href="{{ url_for('home') }}">Home (Map)</a>
             <a href="{{ url_for('destinations_page') }}">Destinations List</a>
             <a href="{{ url_for('itineraries_page') }}">Itineraries</a>
-	    <a href="{{ url_for('how_to_use_page') }}">How to Use</a>
+            <a href="{{ url_for('how_to_use_page') }}">How to Use</a>
             <a href="{{ url_for('about_page') }}">About</a>
         </div>
     </header>
@@ -413,76 +424,21 @@
     <div class="search-container">
         <div id="station-typeahead" class="typeahead-wrapper"></div>
         <div id="line-typeahead" class="typeahead-wrapper"></div>
+        <div id="attractions-typeahead" class="typeahead-wrapper"></div>
         <button id="clearButton">Clear Search</button>
     </div>
 
+    <!-- Hidden compatibility elements -->
     <input type="text" id="station-search" style="display: none;" />
     <select id="line-search" style="display: none;"></select>
+    <select id="attractions-search" style="display: none;"></select>
 
     <div id="map" style="position: relative; width: 100%; height: 750px;">
-    <div id="map-inner" style="width: 100%; height: 100%;"></div>
-    <div id="map-menu"></div>
-</div>
-
-<!-- Compact Footer HTML Structure with Flask Paths -->
-<footer class="about-footer">
-    <div class="footer-content">
-        <!-- All buttons in one row -->
-        <div class="footer-buttons">
-            <a href="https://apps.apple.com/us/app/metromatch/id6738965637" 
-               class="footer-button" 
-               aria-label="Download MetroMatch on the App Store"
-               target="_blank" 
-               rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='images/App.svg') }}" alt="Download on the App Store">
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.transitdiscoveries.dmvtour&hl=en_US" 
-               class="footer-button" 
-               aria-label="Get MetroMatch on Google Play"
-               target="_blank" 
-               rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='images/Google.png') }}" alt="Get it on Google Play">
-            </a>
-            <a href="https://www.expedia.com/" 
-               class="footer-button" 
-               aria-label="Book with Expedia"
-               target="_blank" 
-               rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='images/expedia-icon.png') }}" alt="Expedia">
-            </a>
-            <a href="https://www.booking.com/" 
-               class="footer-button" 
-               aria-label="Book with Booking.com"
-               target="_blank" 
-               rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='images/booking-icon.png') }}" alt="Booking.com">
-            </a>
-            <a href="https://www.tripadvisor.com/" 
-               class="footer-button" 
-               aria-label="Explore on TripAdvisor"
-               target="_blank" 
-               rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='images/trip-icon.png') }}" alt="TripAdvisor">
-            </a>
-            <a href="https://dcbyfoot.com/" 
-               class="footer-button" 
-               aria-label="DC by Foot Walking Tours"
-               target="_blank" 
-               rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='images/dcbyfoot.png') }}" alt="DC by Foot">
-            </a>
-        </div>
-        
-        <!-- Copyright on next row -->
-        <div class="footer-info">
-            <p>&copy; 2025 Schneider Analytics LLC. All rights reserved.</p>
-        </div>
+        <div id="map-inner" style="width: 100%; height: 100%;"></div>
+        <div id="map-menu"></div>
     </div>
-</footer>
-</body>
-</html>
 
-
+    <!-- Modal -->
     <div id="metromatch-modal" class="modal">
         <div class="modal-content">
             <h2>Welcome to MetroMatch!</h2>
@@ -500,9 +456,61 @@
         </div>
     </div>
 
-   
+    <!-- Footer -->
+    <footer class="about-footer">
+        <div class="footer-content">
+            <div class="footer-buttons">
+                <a href="https://apps.apple.com/us/app/metromatch/id6738965637" 
+                   class="footer-button" 
+                   aria-label="Download MetroMatch on the App Store"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/App.svg') }}" alt="Download on the App Store">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.transitdiscoveries.dmvtour&hl=en_US" 
+                   class="footer-button" 
+                   aria-label="Get MetroMatch on Google Play"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/Google.png') }}" alt="Get it on Google Play">
+                </a>
+                <a href="https://www.expedia.com/" 
+                   class="footer-button" 
+                   aria-label="Book with Expedia"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/expedia-icon.png') }}" alt="Expedia">
+                </a>
+                <a href="https://www.booking.com/" 
+                   class="footer-button" 
+                   aria-label="Book with Booking.com"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/booking-icon.png') }}" alt="Booking.com">
+                </a>
+                <a href="https://www.tripadvisor.com/" 
+                   class="footer-button" 
+                   aria-label="Explore on TripAdvisor"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/trip-icon.png') }}" alt="TripAdvisor">
+                </a>
+                <a href="https://dcbyfoot.com/" 
+                   class="footer-button" 
+                   aria-label="DC by Foot Walking Tours"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/dcbyfoot.png') }}" alt="DC by Foot">
+                </a>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 Schneider Analytics LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
- <!-- ADD THIS LINE -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
     <script src="{{ url_for('static', filename='js/map.js') }}"></script>
     
@@ -561,7 +569,7 @@
             createCompatibilityElement() {
                 var compatElement = document.getElementById(this.compatibilityId);
                 if (!compatElement) {
-                    if (this.compatibilityId.includes('select') || this.compatibilityId.includes('line')) {
+                    if (this.compatibilityId.includes('select') || this.compatibilityId.includes('line') || this.compatibilityId.includes('attractions')) {
                         compatElement = document.createElement('select');
                     } else {
                         compatElement = document.createElement('input');
@@ -850,7 +858,7 @@
             }
         }
 
-        var stationTypeahead, lineTypeahead;
+        var stationTypeahead, lineTypeahead, attractionsTypeahead;
         
         function debounce(func, delay) {
             var debounceTimer;
@@ -867,18 +875,21 @@
         function getSearchParams() {
             return {
                 stationQuery: localStorage.getItem('stationQuery') || '',
-                lineQuery: localStorage.getItem('lineQuery') || ''
+                lineQuery: localStorage.getItem('lineQuery') || '',
+                attractionsQuery: localStorage.getItem('attractionsQuery') || ''
             };
         }
 
-        function setSearchParams(stationQuery, lineQuery) {
-            localStorage.setItem('stationQuery', stationQuery);
-            localStorage.setItem('lineQuery', lineQuery);
+        function setSearchParams(stationQuery, lineQuery, attractionsQuery) {
+            localStorage.setItem('stationQuery', stationQuery || '');
+            localStorage.setItem('lineQuery', lineQuery || '');
+            localStorage.setItem('attractionsQuery', attractionsQuery || '');
         }
 
         function clearSearchParams() {
             localStorage.removeItem('stationQuery');
             localStorage.removeItem('lineQuery');
+            localStorage.removeItem('attractionsQuery');
         }
 
         function initializeSearchInputs() {
@@ -889,18 +900,23 @@
             if (lineTypeahead && params.lineQuery) {
                 lineTypeahead.setValue(params.lineQuery);
             }
+            if (attractionsTypeahead && params.attractionsQuery) {
+                attractionsTypeahead.setValue(params.attractionsQuery);
+            }
         }
 
         function handleSearchChange() {
             var stationQuery = stationTypeahead ? stationTypeahead.getValue() || '' : '';
             var lineQuery = lineTypeahead ? lineTypeahead.getValue() || '' : '';
-            setSearchParams(stationQuery, lineQuery);
+            var attractionsQuery = attractionsTypeahead ? attractionsTypeahead.getValue() || '' : '';
+            setSearchParams(stationQuery, lineQuery, attractionsQuery);
             window.dispatchEvent(new Event('searchUpdated'));
         }
 
         function handleClearSearch() {
             if (stationTypeahead) stationTypeahead.setValue(null, true);
             if (lineTypeahead) lineTypeahead.setValue(null, true);
+            if (attractionsTypeahead) attractionsTypeahead.setValue(null, true);
             clearSearchParams();
             window.dispatchEvent(new Event('searchUpdated'));
         }
@@ -913,7 +929,9 @@
             return new Promise(function(resolve) {
                 var stationData = [];
                 var lineData = ['All Lines', 'Red', 'Blue', 'Yellow', 'Green', 'Orange', 'Silver', 'MARC', 'VRE'];
+                var attractionsData = [];
                 
+                // First try to load stations from JSON
                 fetch('/static/data/stations.json')
                     .then(function(response) {
                         if (response.ok) {
@@ -940,11 +958,16 @@
                         }
                         
                         stationData = Array.from(stationNames).sort();
-                        resolve({ stationData: stationData, lineData: lineData });
+                        return loadAttractionsData();
+                    })
+                    .then(function(loadedAttractionsData) {
+                        attractionsData = loadedAttractionsData;
+                        resolve({ stationData: stationData, lineData: lineData, attractionsData: attractionsData });
                     })
                     .catch(function() {
                         console.log('stations.json not found, trying CSV...');
                         
+                        // Fallback to CSV
                         fetch('/static/data/Final_Data_December_2024.csv')
                             .then(function(response) {
                                 if (response.ok) {
@@ -963,43 +986,131 @@
                                     });
                                     
                                     var stationNames = new Set();
+                                    var attractionNames = new Set();
+                                    
                                     parseResult.data.forEach(function(row) {
-                                        var possibleNames = [
+                                        // Extract station names
+                                        var possibleStationNames = [
                                             row.station_name, row.Station, row.name, 
                                             row.station, row.STATION, row.station_id
                                         ];
                                         
-                                        possibleNames.forEach(function(name) {
+                                        possibleStationNames.forEach(function(name) {
                                             if (name && typeof name === 'string' && name.trim()) {
                                                 stationNames.add(name.trim());
+                                            }
+                                        });
+                                        
+                                        // Extract attraction names
+                                        var possibleAttractionNames = [
+                                            row.name, row.Name, row.business_name, row.Business_Name,
+                                            row.venue_name, row.Venue_Name, row.attraction_name,
+                                            row.place_name, row.Place_Name, row.destination_name,
+                                            row.business, row.Business
+                                        ];
+                                        
+                                        possibleAttractionNames.forEach(function(name) {
+                                            if (name && typeof name === 'string' && name.trim() && name.length > 2) {
+                                                attractionNames.add(name.trim());
                                             }
                                         });
                                     });
                                     
                                     stationData = Array.from(stationNames).sort();
-                                    console.log('Extracted stations from CSV:', stationData.length, 'stations');
+                                    attractionsData = Array.from(attractionNames).sort();
+                                    console.log('Extracted from CSV:', stationData.length, 'stations,', attractionsData.length, 'attractions');
                                 }
                                 
-                                resolve({ stationData: stationData, lineData: lineData });
+                                resolve({ stationData: stationData, lineData: lineData, attractionsData: attractionsData });
                             })
                             .catch(function(error) {
                                 console.error('Error loading data:', error);
+                                
+                                // Final fallback data
                                 stationData = [
                                     'Union Station', 'Gallery Pl-Chinatown', 'Metro Center', 'Dupont Circle',
-                                    'Foggy Bottom-GWU', 'Pentagon', 'Crystal City', 'King St-Old Town'
+                                    'Foggy Bottom-GWU', 'Pentagon', 'Crystal City', 'King St-Old Town',
+                                    'L\'Enfant Plaza', 'Smithsonian', 'Federal Triangle', 'Archives-Navy Memorial-Penn Quarter'
                                 ].sort();
-                                resolve({ stationData: stationData, lineData: lineData });
+                                
+                                attractionsData = [
+                                    'Smithsonian National Museum of Natural History', 'Lincoln Memorial', 'Washington Monument',
+                                    'United States Capitol', 'White House', 'National Gallery of Art', 'Kennedy Center',
+                                    'Georgetown Waterfront', 'Tidal Basin', 'National Air and Space Museum',
+                                    'Hirshhorn Museum', 'National Museum of American History', 'National Zoo',
+                                    'Ford\'s Theatre', 'International Spy Museum', 'National Portrait Gallery',
+                                    'Renwick Gallery', 'National Museum of African American History and Culture',
+                                    'United States Holocaust Memorial Museum', 'Eastern Market', 'Union Market',
+                                    'The Wharf', 'National Cathedral', 'Dupont Circle', 'Adams Morgan'
+                                ].sort();
+                                
+                                resolve({ stationData: stationData, lineData: lineData, attractionsData: attractionsData });
                             });
                     });
             });
         }
 
+        function loadAttractionsData() {
+            return new Promise(function(resolve) {
+                // Try to load attractions from a dedicated file first
+                fetch('/static/data/museums.json')
+                    .then(function(response) {
+                        if (response.ok) {
+                            return response.json();
+                        }
+                        throw new Error('Attractions JSON not found');
+                    })
+                    .then(function(attractionsJson) {
+                        console.log('Loaded attractions from JSON:', attractionsJson);
+                        var attractionNames = new Set();
+                        
+                        if (Array.isArray(attractionsJson)) {
+                            attractionsJson.forEach(function(attraction) {
+                                var name = attraction.name || attraction.museum_name || attraction.attraction_name || attraction.business_name;
+                                if (name && typeof name === 'string' && name.trim()) {
+                                    attractionNames.add(name.trim());
+                                }
+                            });
+                        }
+                        
+                        resolve(Array.from(attractionNames).sort());
+                    })
+                    .catch(function() {
+                        console.log('attractions.json not found, using fallback data...');
+                        // Fallback attractions data
+                        var fallbackAttractions = [
+                            'Smithsonian National Museum of Natural History', 'Lincoln Memorial', 'Washington Monument',
+                            'United States Capitol', 'White House', 'National Gallery of Art', 'Kennedy Center',
+                            'Georgetown Waterfront', 'Tidal Basin', 'National Air and Space Museum',
+                            'Hirshhorn Museum', 'National Museum of American History', 'National Zoo',
+                            'Ford\'s Theatre', 'International Spy Museum', 'National Portrait Gallery',
+                            'Renwick Gallery', 'National Museum of African American History and Culture',
+                            'United States Holocaust Memorial Museum', 'National Arboretum',
+                            'Eastern Market', 'Union Market', 'The Wharf', 'National Cathedral',
+                            'Dupont Circle', 'Adams Morgan', 'H Street Corridor', 'Navy Yard',
+                            'Capitol Hill', 'Penn Quarter', 'Chinatown', 'Logan Circle'
+                        ].sort();
+                        
+                        resolve(fallbackAttractions);
+                    });
+            });
+        }
+
+        // Initialize everything when DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Loading station data...');
             loadStationData().then(function(data) {
                 var stationData = data.stationData;
                 var lineData = data.lineData;
+                var attractionsData = data.attractionsData;
                 
+                console.log('Data loaded:', {
+                    stations: stationData.length,
+                    lines: lineData.length,
+                    attractions: attractionsData.length
+                });
+                
+                // Initialize Station Typeahead
                 stationTypeahead = new MetroMatchTypeahead({
                     containerId: 'station-typeahead',
                     compatibilityId: 'station-search',
@@ -1016,6 +1127,7 @@
                     }
                 });
 
+                // Initialize Line Typeahead
                 lineTypeahead = new MetroMatchTypeahead({
                     containerId: 'line-typeahead',
                     compatibilityId: 'line-search',
@@ -1030,52 +1142,82 @@
                     }
                 });
 
+                // Initialize Attractions Typeahead
+                attractionsTypeahead = new MetroMatchTypeahead({
+                    containerId: 'attractions-typeahead',
+                    compatibilityId: 'attractions-search',
+                    placeholder: attractionsData.length > 0 ? 
+                        'Click to see all attractions or type to search...' : 
+                        'Loading attractions...',
+                    label: 'Attractions',
+                    data: attractionsData,
+                    minChars: 1,
+                    maxResults: 15,
+                    showAllOnFocus: true,
+		    onSelect: function(attraction) {
+                        console.log('Attraction selected:', attraction);
+                        
+                        // NEW: Center map on selected attraction
+                        if (attraction && typeof window.centerMapOnAttraction === 'function') {
+                            window.centerMapOnAttraction(attraction);
+                        }
+                        
+                        handleSearchChange();
+                    }               
+		 });
+
+                // Set up clear button
                 document.getElementById('clearButton').addEventListener('click', handleClearSearch);
 
+                // Initialize with saved search params
                 initializeSearchInputs();
 
+                // Listen for storage changes
                 window.addEventListener('storage', function(event) {
-                    if (event.key === 'stationQuery' || event.key === 'lineQuery') {
+                    if (event.key === 'stationQuery' || event.key === 'lineQuery' || event.key === 'attractionsQuery') {
                         initializeSearchInputs();
                         window.dispatchEvent(new Event('searchUpdated'));
                     }
                 });
 
-                var modal = document.getElementById('metromatch-modal');
-                var skipBtn = document.getElementById('skip-button');
-                var form = document.getElementById('metromatch-form');
+                console.log('All typeaheads initialized successfully');
+            });
 
-                if (!localStorage.getItem('metromatchDismissed')) {
-                    modal.style.display = 'flex';
-                }
+            // Modal functionality
+            var modal = document.getElementById('metromatch-modal');
+            var skipBtn = document.getElementById('skip-button');
+            var form = document.getElementById('metromatch-form');
 
-                skipBtn.addEventListener('click', function() {
-                    modal.style.display = 'none';
+            if (!localStorage.getItem('metromatchDismissed')) {
+                modal.style.display = 'flex';
+            }
+
+            skipBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                localStorage.setItem('metromatchDismissed', 'true');
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                var formData = new FormData(form);
+
+                fetch("/submit_feedback", {
+                    method: "POST",
+                    body: formData
+                }).then(function() {
                     localStorage.setItem('metromatchDismissed', 'true');
-                });
-
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-
-                    var formData = new FormData(form);
-
-                    fetch("/submit_feedback", {
-                        method: "POST",
-                        body: formData
-                    }).then(function() {
-                        localStorage.setItem('metromatchDismissed', 'true');
-                        form.innerHTML = '<p style="margin-top: 20px; font-size: 1.1em; color: green;">' +
-                            'Thanks for your input! We will be in touch to learn more about your experience with our platform.' +
-                            '</p>';
-                        setTimeout(function() {
-                            modal.style.display = 'none';
-                        }, 2000);
-                    }).catch(function(err) {
-                        console.error("Submission failed:", err);
-                        form.innerHTML = '<p style="margin-top: 20px; font-size: 1.1em; color: red;">' +
-                            'Something went wrong. Please refresh the page and try again.' +
-                            '</p>';
-                    });
+                    form.innerHTML = '<p style="margin-top: 20px; font-size: 1.1em; color: green;">' +
+                        'Thanks for your input! We will be in touch to learn more about your experience with our platform.' +
+                        '</p>';
+                    setTimeout(function() {
+                        modal.style.display = 'none';
+                    }, 2000);
+                }).catch(function(err) {
+                    console.error("Submission failed:", err);
+                    form.innerHTML = '<p style="margin-top: 20px; font-size: 1.1em; color: red;">' +
+                        'Something went wrong. Please refresh the page and try again.' +
+                        '</p>';
                 });
             });
         });
