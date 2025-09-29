@@ -61,78 +61,205 @@
     </header>
 
     <!-- Main Content -->
-    <main class="about-main" style="text-align: left; line-height: 2.0;">
+    <main class="about-main" style="text-align: left; line-height: 1.8;">
         
         <h2 style="text-align: left; margin-top: 40px; margin-bottom: 20px;">How to Use MetroMatch</h2>
         
-        <p style="text-align: left; line-height: 2.0; margin-bottom: 2em;">
-            Welcome to MetroMatch! This guide will help you make the most of our platform to discover amazing destinations accessible by Metro, MARC, and VRE throughout the Washington DC region.
+        <p style="text-align: left; line-height: 1.8; margin-bottom: 2em;">
+            Using MetroMatch to plan your itinerary is a snap! Just follow these steps:
         </p>
 
-        <!-- Getting Started Section -->
-        <h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Getting Started</h3>
-        
-        <p style="text-align: left; line-height: 1.5; margin-bottom: 2em;">
-            Add your step-by-step instructions here for how users can get started with MetroMatch.
-        </p>
+       <!-- Getting Started Section -->
+<h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Getting Started</h3>
 
-        <!-- Navigation Section -->
-        <h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Navigating the Map</h3>
-        
-        <ul style="text-align: left; line-height: 1.5; margin-bottom: 2em; list-style-position: outside;">
-            <li style="text-align: left; line-height: 1.5; margin-bottom: 1em;">Add your map navigation instructions here</li>
-            <li style="text-align: left; line-height: 1.5; margin-bottom: 1em;">Include zoom and pan instructions</li>
-            <li style="text-align: left; line-height: 1.5; margin-bottom: 1em;">Explain search functionality</li>
-        </ul>
+<p style="text-align: left; line-height: 1.8; margin-bottom: 2em;">
+    To get started, <strong>zoom in or out</strong> (use two fingers or mouse wheel) to areas of interest. Labels will get larger as you zoom in. The base map includes popular tourist attractions, e.g. the Smithsonian American Art Museum, shown with "museum" icons.
+</p>
 
-        <!-- Using Filters Section -->
-        <h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Using Filters and Categories</h3>
-        
-        <p style="text-align: left; line-height: 1.5; margin-bottom: 1em;">
-            Explain how to use the legend and category filters here.
-        </p>
+<!-- Zoom Images Container -->
+<div class="zoom-images-container" style="display: flex; gap: 20px; justify-content: center; margin-bottom: 2em; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center;">
+        <img src="{{ url_for('static', filename='images/zoomin.png') }}" 
+             alt="Zoom In Example" 
+             style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Zoom In</p>
+    </div>
+    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center;">
+        <img src="{{ url_for('static', filename='images/zoomout.png') }}" 
+             alt="Zoom Out Example" 
+             style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Zoom Out</p>
+    </div>
+</div>
 
-        <!-- Placeholder for key/legend image -->
-        <img src="{{ url_for('static', filename='images/key.png') }}" alt="MetroMatch Key" style="display: block; margin: 20px auto; width: 80%; max-width: 600px; height: auto;">
+<style>
+    /* Make images stack vertically on mobile */
+    @media (max-width: 768px) {
+        .zoom-images-container {
+            flex-direction: column;
+            align-items: center;
+        }
+        .zoom-images-container > div {
+            max-width: 100%;
+        }
+    }
+</style>
+
+        <!-- Focus on Station or Line -->
+<h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Focus on a Station or Line</h3>
+
+<p style="text-align: left; line-height: 1.8; margin-bottom: 2em;">
+    <strong>Focus on a station or line</strong> using the search bars atop the landing page. Click in the search bars to identify stations or lines, or zoom in or out to view neighborhoods (use a mouse wheel or two fingers on touch screens).
+</p>
+
+<!-- Station and Line Images Container -->
+<div class="search-images-container" style="display: flex; gap: 20px; justify-content: center; margin-bottom: 2em; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center;">
+        <img src="{{ url_for('static', filename='images/stations.png') }}" 
+             alt="Station Search Example" 
+             style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Search by Station</p>
+    </div>
+    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center;">
+        <img src="{{ url_for('static', filename='images/lines.png') }}" 
+             alt="Line Search Example" 
+             style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Search by Line</p>
+    </div>
+</div>
+
+<style>
+    /* Make images stack vertically on mobile */
+    @media (max-width: 768px) {
+        .search-images-container {
+            flex-direction: column;
+            align-items: center;
+        }
+        .search-images-container > div {
+            max-width: 100%;
+        }
+    }
+</style>
+
+      <!-- Using the Legend -->
+<h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Using the Legend</h3>
+
+<p style="text-align: left; line-height: 1.8; margin-bottom: 1em;">
+    Use the <strong>legend</strong> (top right) to toggle on/off destination types:
+</p>
+
+<ul style="text-align: left; line-height: 2.2; margin-bottom: 2em; list-style-position: outside; margin-left: 20px;">
+    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+        Pharmacies
+        <img src="{{ url_for('static', filename='images/pharmacies.svg') }}" alt="Pharmacies" style="width: 20px; height: 20px;">
+    </li>
+    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+        Grocery stores
+        <img src="{{ url_for('static', filename='images/supermarket.svg') }}" alt="Grocery" style="width: 20px; height: 20px;">
+    </li>
+    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+        Nightlife
+        <img src="{{ url_for('static', filename='images/nightlife.svg') }}" alt="Nightlife" style="width: 20px; height: 20px;">
+    </li>
+    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+        Coffee shops
+        <img src="{{ url_for('static', filename='images/coffee.svg') }}" alt="Coffee" style="width: 20px; height: 20px;">
+    </li>
+    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+        Restaurants
+        <img src="{{ url_for('static', filename='images/restaurants.svg') }}" alt="Restaurants" style="width: 20px; height: 20px;">
+    </li>
+    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+        Hotels
+        <img src="{{ url_for('static', filename='images/hotel.svg') }}" alt="Hotels" style="width: 20px; height: 20px;">
+    </li>
+</ul>
+
+     <p style="text-align: left; line-height: 1.8; margin-bottom: 1em;">
+    The map will display one or more options for each destination type as you click. Click again to remove a destination type. After selecting a destination, you will see the business name, nearest station and distance from the station.
+</p>
+
+<!-- Example Destination Image -->
+<div style="text-align: center; margin-bottom: 2em;">
+    <img src="{{ url_for('static', filename='images/tatte.png') }}" 
+         alt="Example destination selection" 
+         style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Example: Destination details display</p>
+</div>
+        <!-- Lodging Information -->
+<h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Booking Lodging</h3>
+
+<p style="text-align: left; line-height: 1.8; margin-bottom: 1em;">
+    When you click on a <strong>lodging</strong>, you will see the hotel name, nearest station and distance from the station, along with links to three travel booking companies that allow you to explore prices and book your stay.
+</p>
+
+<!-- Hotel Information Image -->
+<div style="text-align: center; margin-bottom: 2em;">
+    <img src="{{ url_for('static', filename='images/hotelinfo.png') }}" 
+         alt="Hotel information display with booking links" 
+         style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Example: Hotel details with booking options</p>
+</div>
 
         <!-- Favorites Section -->
-        <h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Saving Favorites</h3>
-        
-        <p style="text-align: left; line-height: 1.5; margin-bottom: 2em;">
-            Add instructions on how to save and manage favorite locations here.
-        </p>
+<h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Selecting and Saving Favorites</h3>
 
-        <!-- Planning Trips Section -->
-        <h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Planning Your Trip</h3>
-        
-        <ul style="text-align: left; line-height: 1.5; margin-bottom: 2em; list-style-position: outside;">
-            <li style="text-align: left; line-height: 1.5; margin-bottom: 1em;">Add trip planning tips here</li>
-            <li style="text-align: left; line-height: 1.5; margin-bottom: 1em;">Include information about the WMATA Trip Planner integration</li>
-            <li style="text-align: left; line-height: 1.5; margin-bottom: 1em;">Mention itinerary creation features</li>
-        </ul>
+<p style="text-align: left; line-height: 1.8; margin-bottom: 1em;">
+    To <strong>select and save favorites</strong>, click on the star icon that appears when you select a destination. Then click on the star in the legend to display your choices. Click again on your destinations, then the star, to remove.
+</p>
 
-        <!-- Mobile App Section -->
-        <h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Using the Mobile App</h3>
-        
-        <p style="text-align: left; line-height: 1.5; margin-bottom: 2em;">
-            Add instructions specific to the mobile app experience here, including location services and offline features.
-        </p>
+<!-- Favorites Key Image -->
+<div style="text-align: center; margin-bottom: 2em;">
+    <img src="{{ url_for('static', filename='images/key.png') }}" 
+         alt="Legend showing favorites feature" 
+         style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Legend with favorites star icon</p>
+</div>
 
-        <!-- Tips and Tricks Section -->
-        <h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Tips and Tricks</h3>
-        
-        <ul style="text-align: left; line-height: 1.5; margin-bottom: 2em; list-style-position: outside;">
-            <li style="text-align: left; line-height: 1.5; margin-bottom: 1em;">Add helpful tips for using MetroMatch effectively</li>
-            <li style="text-align: left; line-height: 1.5; margin-bottom: 1em;">Include best practices for trip planning</li>
-            <li style="text-align: left; line-height: 1.5; margin-bottom: 1em;">Share insider knowledge about the DC transit system</li>
-        </ul>
+        <!-- Destinations by Station -->
+<h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Destinations by Station</h3>
 
-        <!-- Troubleshooting Section -->
-        <h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Troubleshooting</h3>
-        
-        <p style="text-align: left; line-height: 1.5; margin-bottom: 2em;">
-            Add common issues and their solutions here. Include contact information for additional support.
-        </p>
+<p style="text-align: left; line-height: 1.8; margin-bottom: 1em;">
+    The <strong>Destinations by Station</strong> tab provides a tabular list of amenities by each station. Click to expand each window.
+</p>
+
+<!-- Destinations by Station Image -->
+<div style="text-align: center; margin-bottom: 2em;">
+    <img src="{{ url_for('static', filename='images/bystation.png') }}" 
+         alt="Destinations by Station table view" 
+         style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Destinations organized by station</p>
+</div>
+
+        <!-- Itineraries Section -->
+<h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Itineraries</h3>
+
+<p style="text-align: left; line-height: 1.8; margin-bottom: 1em;">
+    The <strong>Itineraries</strong> tab features our recommendations for full or half-day experiences traveling in the DMV (District of Columbia-Maryland-Virginia) entirely by Metrorail. We focus on stops that highlight the District's African American heritage and the region's immigrant culture, independent businesses, historic districts, and vibrant neighborhoods.
+</p>
+
+<!-- Itineraries Image -->
+<div style="text-align: center; margin-bottom: 2em;">
+    <img src="{{ url_for('static', filename='images/itineraries.png') }}" 
+         alt="Sample itineraries for Metro travel" 
+         style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Curated Metro itineraries</p>
+</div>
+
+      <!-- WMATA Trip Planner -->
+<h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Planning Your Trip</h3>
+
+<p style="text-align: left; line-height: 1.8; margin-bottom: 1em;">
+    Click the <strong>WMATA Trip Planner</strong> (top left) to plan your trip by transit, which will open in a new window.
+</p>
+
+<!-- Trip Planner Image -->
+<div style="text-align: center; margin-bottom: 2em;">
+    <img src="{{ url_for('static', filename='images/tripplanner.png') }}" 
+         alt="WMATA Trip Planner link location" 
+         style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <p style="margin-top: 10px; font-size: 0.9em; color: #666;">WMATA Trip Planner access point</p>
+</div>
 
     </main>
 
