@@ -1,20 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="fo-verify" content="85c1d85f-63f4-4904-9446-e562715438d3" />
-<script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.src = 'https://mn-tz.com/NDIzMjM2.js?t=423236';
-      document.head.appendChild(script);
-  })();
-</script>
+    <!-- Character Encoding and Viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Go Car Free in DC</title>
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>MetroMatch - Find DC Metro Accessible Restaurants, Bars & Activities Near You</title>
+    <meta name="description" content="MetroMatch helps you discover restaurants, bars, attractions, and activities within walking distance of Washington DC Metro stations. Plan your car-free outing in DC with our interactive map and search tool.">
+    <meta name="keywords" content="DC Metro, Washington Metro, car-free DC, Metro accessible restaurants, DC attractions, Metro stations, Washington transit, DC dining near Metro">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://metromatchapp.com/">
+    
+    <!-- Geographic Meta Tags for Local SEO -->
+    <meta name="geo.region" content="US-DC">
+    <meta name="geo.placename" content="Washington, District of Columbia">
+    <meta name="geo.position" content="38.9072;-77.0369">
+    
+    <!-- Open Graph Tags for Social Media -->
+    <meta property="og:title" content="MetroMatch - Find DC Metro Accessible Places">
+    <meta property="og:description" content="Discover restaurants, bars, and attractions near DC Metro stations. Plan your car-free trip in Washington.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metromatchapp.com">
+    <meta property="og:image" content="https://metromatchapp.com/static/images/metromatch-preview.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="MetroMatch">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MetroMatch - Find DC Metro Accessible Places">
+    <meta name="twitter:description" content="Discover restaurants, bars, and attractions near DC Metro stations. Plan your car-free trip in Washington.">
+    <meta name="twitter:image" content="https://metromatchapp.com/static/images/metromatch-preview.jpg">
+    
+    <!-- Favicon -->
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-
+    
+    <!-- Structured Data (JSON-LD) for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MetroMatch",
+      "description": "Find restaurants, bars, and attractions near Washington DC Metro stations",
+      "url": "https://metromatchapp.com",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "Web",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Washington",
+        "@id": "https://en.wikipedia.org/wiki/Washington,_D.C."
+      },
+      "featureList": [
+        "Interactive Metro map",
+        "Restaurant search near Metro stations",
+        "Bar and nightlife discovery",
+        "Attraction finder",
+        "Walking distance calculator"
+      ]
+    }
+    </script>
+    
+    <!-- Verification Tags (keep your existing ones) -->
+    <meta name="fo-verify" content="85c1d85f-63f4-4904-9446-e562715438d3" />
+    
+    <!-- NOTE: Review this script - consider moving to end of body for better performance -->
+    <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
+      (function () {
+          var script = document.createElement("script");
+          script.async = 1;
+          script.src = 'https://mn-tz.com/NDIzMjM2.js?t=423236';
+          document.head.appendChild(script);
+      })();
+    </script>
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKPPWRVZ5R"></script>
     <script>
@@ -24,10 +89,12 @@
         gtag('config', 'G-MKPPWRVZ5R');
     </script>
 
-    <!-- Leaflet CSS -->
+    <!-- External Libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">    
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
 
+   
     <!-- Mapbox functionality -->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
 
@@ -415,11 +482,21 @@
 
     <h1 style="text-align: center; margin-top: 20px;">MetroMatch: Go Car-Free in DC</h1>
     
-    <div class="description-text">
-        MetroMatch is a dynamic, easy-to-use platform to search for places to stay, eat, drink, and play. Our database displays hundreds of destinations within walking distance of Washington subway and commuter rail stations so visitors and locals can better plan a trip or outing and go car-free in DC.
-    </div>
-
-    <div class="text-container" style="max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center;"></div>
+<div class="description-text" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center; line-height: 1.5;">
+    <span>1. Explore Hotels Near Metro</span>
+    <img src="static/images/hotel.svg" alt="Hotels" style="width: 20px; height: 20px; vertical-align: middle;">
+    <span style="margin-left: 8px;">2. Discover Your Favorite Neighborhood</span>
+    <img src="static/images/restaurants.svg" alt="Restaurants" style="width: 20px; height: 20px; vertical-align: middle;">
+    <img src="static/images/coffee.svg" alt="Coffee" style="width: 20px; height: 20px; vertical-align: middle;">
+    <img src="static/images/nightlife.svg" alt="Nightlife" style="width: 20px; height: 20px; vertical-align: middle;">
+    <img src="static/images/supermarket.svg" alt="Grocery" style="width: 20px; height: 20px; vertical-align: middle;">
+    <img src="static/images/pharmacies.svg" alt="Pharmacy" style="width: 20px; height: 20px; vertical-align: middle;">
+    <span style="margin-left: 8px;">3. Plan Your Trip with the</span>
+    <a href="#" onclick="openExternalLink('https://www.wmata.com/schedules/trip-planner/'); return false;" style="color: #007cba; text-decoration: none;">WMATA Trip Planner</a>
+    <span>|</span>
+    <a href="http://metromatchapp.com/how-to-use" style="color: #007cba; text-decoration: none;">More Info</a>
+</div>
+<div class="text-container" style="max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center;"></div>    
 
     <div class="search-container">
         <div id="station-typeahead" class="typeahead-wrapper"></div>
