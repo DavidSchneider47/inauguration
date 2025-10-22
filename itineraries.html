@@ -1,21 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.src = 'https://mn-tz.com/NDIzMjM2.js?t=423236';
-      document.head.appendChild(script);
-  })();
-</script>
+    <!-- Character Encoding and Viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Itineraries</title>
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>DC Metro Itineraries - Guided Tours by Metro Line | MetroMatch</title>
+    <meta name="description" content="Explore Washington DC with our curated Metro itineraries. Follow the Red, Green, Yellow, Blue, Orange, and Silver lines to discover restaurants, museums, neighborhoods, and attractions. Plan less, experience more with car-free DC tours.">
+    <meta name="keywords" content="DC Metro itineraries, Washington Metro tours, DC day trips, Red Line tour, Green Line attractions, Metro line itinerary, car-free DC tours, Washington transit tourism, DC neighborhood tours, Metro day pass activities">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://metromatchapp.com/itineraries">
+    
+    <!-- Geographic Meta Tags for Local SEO -->
+    <meta name="geo.region" content="US-DC">
+    <meta name="geo.placename" content="Washington, District of Columbia">
+    <meta name="geo.position" content="38.9072;-77.0369">
+    
+    <!-- Open Graph Tags for Social Media -->
+    <meta property="og:title" content="DC Metro Itineraries - Guided Tours by Line | MetroMatch">
+    <meta property="og:description" content="Explore DC with curated Metro itineraries. Follow each line to discover restaurants, museums, and neighborhoods. Car-free tourism made easy.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metromatchapp.com/itineraries">
+    <meta property="og:image" content="https://metromatchapp.com/static/images/metromatch-preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="MetroMatch DC Metro itineraries guide">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="MetroMatch">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DC Metro Itineraries - Guided Tours by Line | MetroMatch">
+    <meta name="twitter:description" content="Explore DC with curated Metro itineraries. Follow each line to discover restaurants, museums, and neighborhoods.">
+    <meta name="twitter:image" content="https://metromatchapp.com/static/images/metromatch-preview.jpg">
+    
     <!-- Favicon -->
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    
+    <!-- Structured Data (JSON-LD) for Search Engines - TouristTrip Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "DC Metro Line Itineraries",
+      "description": "Curated day trips and tours along Washington DC Metro lines featuring restaurants, museums, and attractions",
+      "url": "https://metromatchapp.com/itineraries",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "TouristTrip",
+            "name": "Red Line Itinerary: Shady Grove to Glenmont",
+            "description": "Explore DC's Red Line from the National Zoo to ethnic neighborhoods, featuring breakfast at Bread Furst, the pandas at the National Zoo, and dinner in Bethesda",
+            "itinerary": {
+              "@type": "ItemList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Breakfast at Van-Ness UDC"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Morning at Woodley Park-Zoo (National Zoo)"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Lunch at Gallery Place Chinatown"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "name": "Afternoon at NoMa Gallaudet-U"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "TouristTrip",
+            "name": "Green Line Itinerary: Branch Avenue to Greenbelt",
+            "description": "Discover African American heritage along the Green Line, featuring Ben's Chili Bowl, U Street, Howard University, and the National Portrait Gallery",
+            "itinerary": {
+              "@type": "ItemList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Breakfast at Anacostia (Busboys and Poets)"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Morning at Navy Yard (Yards Park)"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Lunch at Archives (National Portrait Gallery)"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "name": "Dinner at U Street (Ben's Chili Bowl)"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "provider": {
+        "@type": "WebApplication",
+        "name": "MetroMatch",
+        "url": "https://metromatchapp.com"
+      }
+    }
+    </script>
+    
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://metromatchapp.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Itineraries",
+          "item": "https://metromatchapp.com/itineraries"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Additional Event Schema for Cultural Tourism -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Guide",
+      "name": "Washington DC Metro Transit Tourism Guide",
+      "description": "Comprehensive guide to experiencing Washington DC culture, cuisine, and attractions using the Metro system",
+      "about": {
+        "@type": "Place",
+        "name": "Washington, D.C.",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "38.9072",
+          "longitude": "-77.0369"
+        }
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Tourists, visitors, and locals interested in car-free DC exploration"
+      }
+    }
+    </script>
+    
+    <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
+      (function () {
+          var script = document.createElement("script");
+          script.async = 1;
+          script.src = 'https://mn-tz.com/NDIzMjM2.js?t=423236';
+          document.head.appendChild(script);
+      })();
+    </script>
+    
     <!-- FontAwesome CSS for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+    <style>
+        /* Your existing styles continue here... */
+    </style>
+</head>
     <!-- Custom Styles -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     
